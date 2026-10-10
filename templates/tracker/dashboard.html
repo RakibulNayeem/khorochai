@@ -19,7 +19,7 @@
       <div class="d-flex gap-2 align-items-center flex-wrap">
         {% include "tracker/_ai_quota.html" %}
         <a href="{% url 'transaction_add' %}" class="btn btn-outline-secondary">{% translate "Add manually" %}</a>
-        <button class="btn btn-brand px-4" id="ai-btn"{% if ai_quota.left == 0 %} disabled{% endif %}>{% translate "Add with AI" %}</button>
+        <button class="btn btn-brand px-4" id="ai-btn"{% if not ai_quota.can_use %} disabled{% endif %}>{% translate "Add with AI" %}</button>
       </div>
     </div>
   </form>

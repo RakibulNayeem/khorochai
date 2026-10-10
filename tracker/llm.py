@@ -42,7 +42,12 @@ def _extract_json(text: str) -> dict:
         raise
 
 
-def _call_gemini(system: str, user: str) -> str:
+def _estimate_tokens(*texts) -> int:
+    """Rough fallback when a provider does not report usage (~3 characters per token for mixed Bangla/English)."""
+    return sum(len(t or "") for t in texts) // 3 + 1
+
+
+def _call_gemini(system: str, user: str) -> tuple[str, int]:
     if not settings.GEMINI_API_KEY:
         raise LLMError("GEMINI_API_KEY is not set")
     payload = {
@@ -59,12 +64,15 @@ def _call_gemini(system: str, user: str) -> str:
     if r.status_code != 200:
         raise LLMError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
     try:
-        return r.json()["candidates"][0]["content"]["parts"][0]["text"]
+        body = r.json()
+        text = body["candidates"][0]["content"]["parts"][0]["text"]
     except (KeyError, IndexError, ValueError):
         raise LLMError("Gemini returned an empty response")
+    tokens = (body.get("usageMetadata") or {}).get("totalTokenCount") or _estimate_tokens(system, user, text)
+    return text, int(tokens)
 
 
-def _call_groq(system: str, user: str) -> str:
+def _call_groq(system: str, user: str) -> tuple[str, int]:
     if not settings.GROQ_API_KEY:
         raise LLMError("GROQ_API_KEY is not set")
     payload = {
@@ -82,23 +90,29 @@ def _call_groq(system: str, user: str) -> str:
     if r.status_code != 200:
         raise LLMError(f"Groq HTTP {r.status_code}: {r.text[:300]}")
     try:
-        return r.json()["choices"][0]["message"]["content"]
+        body = r.json()
+        text = body["choices"][0]["message"]["content"]
     except (KeyError, IndexError, ValueError):
         raise LLMError("Groq returned an empty response")
+    tokens = (body.get("usage") or {}).get("total_tokens") or _estimate_tokens(system, user, text)
+    return text, int(tokens)
 
 
 PROVIDERS = {"gemini": _call_gemini, "groq": _call_groq}
 
 
-def call_llm(system: str, user: str) -> dict:
-    """Try each configured provider in order; return the parsed JSON dict."""
+def call_llm(system: str, user: str, usage: dict | None = None) -> dict:
+    """Try each configured provider in order; return the parsed JSON dict.
+    If `usage` is given, the tokens spent (including on a reply that could not be parsed) are added to usage["tokens"]."""
     errors = []
     for name in settings.LLM_PROVIDERS:
         fn = PROVIDERS.get(name)
         if not fn:
             continue
         try:
-            raw = fn(system, user)
+            raw, tokens = fn(system, user)
+            if usage is not None:
+                usage["tokens"] = usage.get("tokens", 0) + tokens
             return _extract_json(raw)
         except (LLMError, requests.RequestException, json.JSONDecodeError) as exc:
             logger.warning("LLM provider %s failed: %s", name, exc)
@@ -220,14 +234,14 @@ def _fill(template: str, today, expense_names, income_names, account_names=()) -
     )
 
 
-def parse_transactions(text, today, expense_names, income_names, account_names=()) -> dict:
+def parse_transactions(text, today, expense_names, income_names, account_names=(), usage=None) -> dict:
     system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names)
-    return call_llm(system, normalize_text(text))
+    return call_llm(system, normalize_text(text), usage=usage)
 
 
-def build_query(question, today, expense_names, income_names, language="en", account_names=()) -> dict:
+def build_query(question, today, expense_names, income_names, language="en", account_names=(), usage=None) -> dict:
     system = _fill(QUERY_PROMPT, today, expense_names, income_names, account_names)
     # the app's display language decides the language of the title shown above the answer
     title_lang = "Bangla (বাংলা script)" if language == "bn" else "English"
     system += f'- Write "title" in {title_lang}.\n'
-    return call_llm(system, normalize_text(question))
+    return call_llm(system, normalize_text(question), usage=usage)

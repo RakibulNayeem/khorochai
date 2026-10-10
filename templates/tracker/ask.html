@@ -9,7 +9,7 @@
     <div class="input-group">
       <input type="text" id="question" name="question" maxlength="500" class="form-control form-control-lg" required
              value="{{ question }}" placeholder="এই মাসে খাবারে কত খরচ হলো?">
-      <button class="btn btn-brand px-4" id="ask-btn"{% if ai_quota.left == 0 %} disabled{% endif %}>{% translate "Ask" %}</button>
+      <button class="btn btn-brand px-4" id="ask-btn"{% if not ai_quota.can_use %} disabled{% endif %}>{% translate "Ask" %}</button>
     </div>
     <div class="mt-2">{% include "tracker/_ai_quota.html" %}</div>
     <div class="mt-2">

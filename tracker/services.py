@@ -418,36 +418,33 @@ def run_query(user, q):
 
 
 # --------------------------------------------------------------------------- AI daily limits
-# The free Gemini/Groq tiers allow only so many requests per day for the whole app.
-# Each user gets a fair share (AI_DAILY_LIMIT_PER_USER) and the app as a whole stops at
-# AI_DAILY_LIMIT_TOTAL so one busy day can't use up the free quota. Days follow Bangladesh time.
+# The free Gemini/Groq tiers only allow so many tokens/requests per day for the whole app.
+# Every user gets a daily token allowance (AI_DAILY_TOKENS_PER_USER), shown as "% used".
+# The app as a whole stops at AI_DAILY_TOKENS_TOTAL tokens or AI_DAILY_REQUESTS_TOTAL requests,
+# whichever comes first, so one busy day can't use up the free quota. Days follow Bangladesh time.
 
 def ai_quota(user):
     today = timezone.localdate()
-    used = AIUsage.objects.filter(user=user, date=today).values_list("count", flat=True).first() or 0
-    total_used = AIUsage.objects.filter(date=today).aggregate(t=Sum("count"))["t"] or 0
-    limit = settings.AI_DAILY_LIMIT_PER_USER
-    total_left = max(settings.AI_DAILY_LIMIT_TOTAL - total_used, 0)
-    left = max(min(limit - used, total_left), 0)
+    mine = AIUsage.objects.filter(user=user, date=today).first()
+    used = mine.tokens if mine else 0
+    totals = AIUsage.objects.filter(date=today).aggregate(t=Sum("tokens"), n=Sum("count"))
+    app_full = (
+        (totals["t"] or 0) >= settings.AI_DAILY_TOKENS_TOTAL
+        or (totals["n"] or 0) >= settings.AI_DAILY_REQUESTS_TOTAL
+    )
+    limit = settings.AI_DAILY_TOKENS_PER_USER
+    pct = min(round(used / limit * 100), 100) if limit else 100
     return {
-        "used": used,
-        "limit": limit,
-        "left": left,
-        "app_full": total_left == 0,
-        "pct_used": min(round(used / limit * 100), 100) if limit else 100,
+        "tokens_used": used,
+        "tokens_limit": limit,
+        "pct_used": pct,
+        "pct_left": 100 - pct,
+        "can_use": used < limit and not app_full,
+        "app_full": app_full,
     }
 
 
-def use_ai_request(user):
-    """Reserve one AI request for today. Returns False when the user's or the app's limit is reached."""
-    if ai_quota(user)["left"] <= 0:
-        return False
-    today = timezone.localdate()
-    row, _ = AIUsage.objects.get_or_create(user=user, date=today)
-    AIUsage.objects.filter(pk=row.pk).update(count=F("count") + 1)
-    return True
-
-
-def refund_ai_request(user):
-    """Give the request back when the AI could not answer (so failures don't eat the limit)."""
-    AIUsage.objects.filter(user=user, date=timezone.localdate(), count__gt=0).update(count=F("count") - 1)
+def record_ai_usage(user, tokens):
+    """Add one successful AI request and the tokens it used to today's total."""
+    row, _ = AIUsage.objects.get_or_create(user=user, date=timezone.localdate())
+    AIUsage.objects.filter(pk=row.pk).update(count=F("count") + 1, tokens=F("tokens") + max(int(tokens), 0))

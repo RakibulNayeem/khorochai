@@ -130,10 +130,11 @@ class Transfer(models.Model):
 
 
 class AIUsage(models.Model):
-    """How many AI requests a user made on a day (for the free-tier daily limits)."""
+    """AI requests and tokens a user used on a day (for the free-tier daily limits)."""
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="ai_usage")
     date = models.DateField()
     count = models.PositiveIntegerField(default=0)
+    tokens = models.PositiveIntegerField(default=0)
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=["user", "date"], name="unique_ai_usage_per_day")]

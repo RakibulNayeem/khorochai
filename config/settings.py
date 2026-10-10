@@ -5,6 +5,7 @@ Works locally (SQLite) and on Vercel + Neon (PostgreSQL) with no code changes.
 All secrets come from environment variables (.env locally, Vercel dashboard in production).
 """
 import os
+import sys
 from pathlib import Path
 
 import dj_database_url
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "tracker",
 ]
 
@@ -70,7 +72,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 # ---------------------------------------------------------------- Database
 # Local: SQLite. Production: set DATABASE_URL to your Neon *pooled* connection string.
 DATABASE_URL = os.environ.get("DATABASE_URL")
-if DATABASE_URL:
+RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == "test"
+if DATABASE_URL and not RUNNING_TESTS:  # tests always use local SQLite, never the live database
     DATABASES = {
         "default": dj_database_url.parse(DATABASE_URL, conn_max_age=0, ssl_require=True)
     }
@@ -128,9 +131,11 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 LLM_TIMEOUT = int(os.environ.get("LLM_TIMEOUT", "25"))
-# Daily AI limits (free tiers: Gemini Flash-Lite ~500 requests/day, Groq gpt-oss-120b ~100 of our calls/day).
-AI_DAILY_LIMIT_PER_USER = int(os.environ.get("AI_DAILY_LIMIT_PER_USER", "20"))
-AI_DAILY_LIMIT_TOTAL = int(os.environ.get("AI_DAILY_LIMIT_TOTAL", "400"))
+# Daily AI limits. Free tiers: Gemini Flash-Lite ~500 requests/day; Groq gpt-oss-120b 200,000 tokens/day.
+# Measured: one "Add with AI" request uses ~1,600 tokens, one "Ask AI" ~700 (so 30,000 = ~18 adds a day).
+AI_DAILY_TOKENS_PER_USER = int(os.environ.get("AI_DAILY_TOKENS_PER_USER", "30000"))
+AI_DAILY_TOKENS_TOTAL = int(os.environ.get("AI_DAILY_TOKENS_TOTAL", "1000000"))
+AI_DAILY_REQUESTS_TOTAL = int(os.environ.get("AI_DAILY_REQUESTS_TOTAL", "400"))
 
 CURRENCY_SYMBOL = os.environ.get("CURRENCY_SYMBOL", "৳")
 

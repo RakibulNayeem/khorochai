@@ -18,7 +18,7 @@ Type what you spent or earned in **English, বাংলা or Banglish**. The A
 - Multi-user: everyone has their own account and data
 - Accounts: Cash, bKash, Nagad, Bank, Card (add your own). The AI picks the account from your text
   ("bkash e 500 dilam"); "Move money" records ATM withdrawals / cash outs between accounts
-- Daily AI limit per user and for the whole app (stays inside the free tiers), shown next to the AI box
+- Daily AI token allowance per user and for the whole app (stays inside the free tiers), shown as "% used" next to the AI box
 - ⚙ Settings (gear icon, top right): Light / Dark / System theme and English / বাংলা interface
 - Free AI: Google Gemini (main) + Groq (backup). If the AI fails, you can still add manually.
 
@@ -152,7 +152,7 @@ Vercel → Project → **Settings → Domains** → add your domain. Then add it
 | Problem | Fix |
 |---|---|
 | "The AI is busy or not configured" | Check `GEMINI_API_KEY` on Vercel, then redeploy. Free tier has per-minute limits; wait a minute. Add `GROQ_API_KEY` as backup. |
-| "No AI uses left today" | Daily limit reached. Change `AI_DAILY_LIMIT_PER_USER` / `AI_DAILY_LIMIT_TOTAL` (keep the total under your free quota). |
+| "AI limit used up" | Daily token allowance reached. Change `AI_DAILY_TOKENS_PER_USER` / `AI_DAILY_TOKENS_TOTAL` / `AI_DAILY_REQUESTS_TOTAL` (keep the totals under your free quota). |
 | Gemini says the model is not found | Google retires models over time. Set `GEMINI_MODEL` to a current free model from https://ai.google.dev/gemini-api/docs/models and redeploy. |
 | `relation "tracker_category" does not exist` | Tables not created in Neon → run PART 3, step 3. |
 | 400 Bad Request | `ALLOWED_HOSTS` is wrong. Use `.vercel.app` (with the dot). |

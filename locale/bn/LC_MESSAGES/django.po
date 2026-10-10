@@ -621,25 +621,15 @@ msgid "Transfer deleted."
 msgstr "ট্রান্সফার মুছে ফেলা হয়েছে।"
 
 # ---------------------------------------------------------------- AI daily limit
-msgid "The AI runs on a free plan with a daily limit. It resets at midnight."
-msgstr "AI একটি ফ্রি প্ল্যানে চলে, যার দৈনিক সীমা আছে। রাত ১২টায় আবার শুরু হয়।"
 
 msgid "AI limit reached for everyone today — resets at midnight"
 msgstr "আজ সবার জন্য AI-এর সীমা শেষ — রাত ১২টায় আবার চালু হবে"
 
-msgid "No AI uses left today — resets at midnight"
-msgstr "আজ আর AI ব্যবহার বাকি নেই — রাত ১২টায় আবার চালু হবে"
 
-msgid "%(n)s of %(limit)s AI use left today"
-msgid_plural "%(n)s of %(limit)s AI uses left today"
-msgstr[0] "আজ AI ব্যবহার বাকি %(limit)sটির মধ্যে %(n)sটি"
-msgstr[1] "আজ AI ব্যবহার বাকি %(limit)sটির মধ্যে %(n)sটি"
 
 msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
 msgstr "আজ সবার জন্য AI-এর সীমা শেষ। রাত ১২টায় আবার চালু হবে। এর মধ্যে নিজে লেনদেন যোগ করতে পারবেন।"
 
-msgid "You've used all %(n)s AI requests for today. They reset at midnight. You can still add transactions manually."
-msgstr "আজকের %(n)sটি AI ব্যবহার শেষ। রাত ১২টায় আবার চালু হবে। এর মধ্যে নিজে লেনদেন যোগ করতে পারবেন।"
 
 msgid "Transfer"
 msgstr "ট্রান্সফার"
@@ -661,3 +651,18 @@ msgstr "তারিখ:"
 
 msgid "Show all dates"
 msgstr "সব তারিখ দেখুন"
+
+msgid "AI today: %(p)s%% used"
+msgstr "আজ AI ব্যবহার: %(p)s%%"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "আজ %(limit)s AI টোকেনের মধ্যে %(used)s ব্যবহার হয়েছে। AI একটি ফ্রি প্ল্যানে চলে, যার দৈনিক সীমা আছে; রাত ১২টায় আবার শুরু হয়।"
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "আজকের AI সীমা শেষ — রাত ১২টায় আবার চালু হবে"
+
+msgid "AI usage today"
+msgstr "আজকের AI ব্যবহার"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "আজকের AI সীমার ১০০% ব্যবহার হয়ে গেছে। রাত ১২টায় আবার চালু হবে। এর মধ্যে নিজে লেনদেন যোগ করতে পারবেন।"

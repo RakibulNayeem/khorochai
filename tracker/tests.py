@@ -223,31 +223,60 @@ class AILimitTests(TestCase):
         self.user = User.objects.create_user("rakib", password="pass12345!")
         self.client.login(username="rakib", password="pass12345!")
 
-    @override_settings(AI_DAILY_LIMIT_PER_USER=2)
-    def test_user_daily_limit(self):
-        fake = {"transactions": [{"type": "expense", "amount": 50, "category": "Food"}], "message": ""}
-        with mock.patch.object(llm, "call_llm", return_value=fake) as m:
+    @staticmethod
+    def fake_llm(tokens):
+        """Stand-in for call_llm that reports `tokens` used, like the real providers do."""
+        def fake(system, user, usage=None):
+            if usage is not None:
+                usage["tokens"] = usage.get("tokens", 0) + tokens
+            return {"transactions": [{"type": "expense", "amount": 50, "category": "Food"}], "message": ""}
+        return fake
+
+    @override_settings(AI_DAILY_TOKENS_PER_USER=5000)
+    def test_tokens_counted_and_shown_as_percent(self):
+        with mock.patch.object(llm, "call_llm", side_effect=self.fake_llm(1250)):
+            self.client.post(reverse("ai_parse"), {"text": "tea 50"})
+        usage = AIUsage.objects.get(user=self.user)
+        self.assertEqual((usage.count, usage.tokens), (1, 1250))
+        r = self.client.get(reverse("dashboard"))
+        self.assertContains(r, "AI today: 25% used")
+        self.assertContains(r, "1,250 of 5,000 AI tokens used today")
+
+    @override_settings(AI_DAILY_TOKENS_PER_USER=3000)
+    def test_user_token_limit(self):
+        with mock.patch.object(llm, "call_llm", side_effect=self.fake_llm(1600)) as m:
             for _ in range(3):
                 r = self.client.post(reverse("ai_parse"), {"text": "tea 50"}, follow=True)
-        self.assertEqual(m.call_count, 2)  # third request never reached the AI
-        self.assertContains(r, "used all 2 AI requests")
-        self.assertContains(r, "No AI uses left today")
+        self.assertEqual(m.call_count, 2)  # 1600 + 1600 >= 3000, so the third never reached the AI
+        self.assertContains(r, "used 100% of today")
+        self.assertContains(r, "AI limit used up for today")
+        self.assertContains(r, 'id="ai-btn" disabled')
 
-    def test_failed_request_is_refunded(self):
+    def test_failed_request_costs_nothing(self):
         with mock.patch.object(llm, "call_llm", side_effect=llm.LLMError("down")):
             self.client.post(reverse("ai_parse"), {"text": "tea 50"})
-        self.assertEqual(AIUsage.objects.get(user=self.user).count, 0)
-        r = self.client.get(reverse("dashboard"))
-        self.assertContains(r, "20 of 20 AI uses left today")
+        self.assertFalse(AIUsage.objects.exists())
+        self.assertContains(self.client.get(reverse("dashboard")), "AI today: 0% used")
 
-    @override_settings(AI_DAILY_LIMIT_TOTAL=3)
-    def test_app_wide_limit(self):
+    @override_settings(AI_DAILY_TOKENS_TOTAL=10000)
+    def test_app_wide_token_limit(self):
         other = User.objects.create_user("other", password="x")
-        AIUsage.objects.create(user=other, date=timezone.localdate(), count=3)
+        AIUsage.objects.create(user=other, date=timezone.localdate(), count=4, tokens=10000)
         with mock.patch.object(llm, "call_llm") as m:
             r = self.client.post(reverse("ask"), {"question": "food this month?"})
         m.assert_not_called()
         self.assertContains(r, "limit for everyone")
+
+    def test_provider_reports_tokens(self):
+        class Resp:
+            status_code = 200
+            def json(self):
+                return {"candidates": [{"content": {"parts": [{"text": '{"ok": true}'}]}}],
+                        "usageMetadata": {"totalTokenCount": 2345}}
+        usage = {}
+        with override_settings(GEMINI_API_KEY="k", LLM_PROVIDERS=["gemini"]),                 mock.patch.object(llm.requests, "post", return_value=Resp()):
+            self.assertEqual(llm.call_llm("sys", "hi", usage=usage), {"ok": True})
+        self.assertEqual(usage["tokens"], 2345)
 
 
 class RecentPeriodTests(TestCase):

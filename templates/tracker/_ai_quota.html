@@ -1,12 +1,13 @@
-{% load i18n %}
-<div class="ai-quota small{% if ai_quota.left == 0 %} is-empty{% elif ai_quota.left <= 3 %} is-low{% endif %}"
-     title="{% translate 'The AI runs on a free plan with a daily limit. It resets at midnight.' %}">
+{% load i18n humanize %}
+<div class="ai-quota small{% if not ai_quota.can_use %} is-empty{% elif ai_quota.pct_used >= 80 %} is-low{% endif %}"
+     title="{% blocktranslate with used=ai_quota.tokens_used|intcomma limit=ai_quota.tokens_limit|intcomma %}{{ used }} of {{ limit }} AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight.{% endblocktranslate %}">
   {% if ai_quota.app_full %}
     {% translate "AI limit reached for everyone today — resets at midnight" %}
-  {% elif ai_quota.left == 0 %}
-    {% translate "No AI uses left today — resets at midnight" %}
+  {% elif not ai_quota.can_use %}
+    {% translate "AI limit used up for today — resets at midnight" %}
   {% else %}
-    {% blocktranslate count n=ai_quota.left with limit=ai_quota.limit %}{{ n }} of {{ limit }} AI use left today{% plural %}{{ n }} of {{ limit }} AI uses left today{% endblocktranslate %}
+    {% blocktranslate with p=ai_quota.pct_used %}AI today: {{ p }}% used{% endblocktranslate %}
   {% endif %}
-  <div class="ai-quota-bar" aria-hidden="true"><span style="width: {{ ai_quota.pct_used }}%"></span></div>
+  <div class="ai-quota-bar" role="progressbar" aria-valuenow="{{ ai_quota.pct_used }}" aria-valuemin="0" aria-valuemax="100"
+       aria-label="{% translate 'AI usage today' %}"><span style="width: {{ ai_quota.pct_used }}%"></span></div>
 </div>

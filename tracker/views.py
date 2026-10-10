@@ -114,18 +114,21 @@ def ai_parse(request):
         request.session["last_ai_text"] = text[:MAX_INPUT_CHARS]
         return redirect("dashboard")
 
-    if not services.use_ai_request(request.user):
+    if not services.ai_quota(request.user)["can_use"]:
         messages.warning(request, _limit_message(request.user))
         request.session["last_ai_text"] = text
         return redirect("dashboard")
 
     exp_names, inc_names = services.category_names(request.user)
     account_names = [a.name for a in Account.objects.filter(user=request.user)]
+    usage = {}
     try:
-        data = llm.parse_transactions(text, timezone.localdate(), exp_names, inc_names, account_names)
+        data = llm.parse_transactions(text, timezone.localdate(), exp_names, inc_names, account_names, usage=usage)
+        services.record_ai_usage(request.user, usage.get("tokens", 0))
     except llm.LLMError as exc:
         logger.error("AI parse failed: %s", exc)
-        services.refund_ai_request(request.user)
+        if usage.get("tokens"):  # a reply came back but was unusable: those tokens were still spent
+            services.record_ai_usage(request.user, usage["tokens"])
         messages.error(request, _("The AI is busy or not configured right now. Please try again, or add it manually."))
         request.session["last_ai_text"] = text
         return redirect("dashboard")
@@ -229,18 +232,21 @@ def ai_confirm(request):
 def ask(request):
     question = (request.POST.get("question") or "").strip() if request.method == "POST" else ""
     result = None
-    if question and not services.use_ai_request(request.user):
+    if question and not services.ai_quota(request.user)["can_use"]:
         messages.warning(request, _limit_message(request.user))
     elif question:
         exp_names, inc_names = services.category_names(request.user)
         account_names = [a.name for a in Account.objects.filter(user=request.user)]
+        usage = {}
         try:
             q = llm.build_query(question[:500], timezone.localdate(), exp_names, inc_names,
-                                language=request.LANGUAGE_CODE, account_names=account_names)
+                                language=request.LANGUAGE_CODE, account_names=account_names, usage=usage)
+            services.record_ai_usage(request.user, usage.get("tokens", 0))
             result = services.run_query(request.user, q)
         except llm.LLMError as exc:
             logger.error("AI query failed: %s", exc)
-            services.refund_ai_request(request.user)
+            if usage.get("tokens"):
+                services.record_ai_usage(request.user, usage["tokens"])
             messages.error(request, _("The AI is busy or not configured right now. Please try again."))
     return render(request, "tracker/ask.html", {"question": question, "result": result,
                                                "ai_quota": services.ai_quota(request.user)})
@@ -250,8 +256,8 @@ def _limit_message(user):
     if services.ai_quota(user)["app_full"]:
         return _("The AI has reached today's limit for everyone. It resets at midnight. "
                  "You can still add transactions manually.")
-    return _("You've used all %(n)s AI requests for today. They reset at midnight. "
-             "You can still add transactions manually.") % {"n": django_settings.AI_DAILY_LIMIT_PER_USER}
+    return _("You've used 100% of today's AI allowance. It resets at midnight. "
+             "You can still add transactions manually.")
 
 
 # --------------------------------------------------------------------------- transactions
