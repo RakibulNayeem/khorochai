@@ -35,7 +35,6 @@ KhorochAi/
 ├── templates/         HTML (Bootstrap)
 ├── static/css/app.css
 ├── requirements.txt
-├── vercel.json
 └── .env.example
 ```
 
@@ -116,7 +115,7 @@ Check on GitHub that **`.env` is NOT uploaded** (it is in `.gitignore`). Your ke
 # PART 4 — Deploy on Vercel
 
 1. Go to **https://vercel.com** → sign in with GitHub → **Add New… → Project**
-2. Find `KhorochAi` → **Import**. Set the Vercel project name to `khorochai` (Vercel only allows lowercase). Vercel detects Django automatically (it finds `manage.py`).
+2. Find `KhorochAi` → **Import**. Set the Vercel project name to `khorochai` (Vercel only allows lowercase). Vercel detects Django automatically (it finds `manage.py`). Check that **Framework Preset** says **Django** (Settings → Build and Deployment).
 3. Open **Environment Variables** and add these (one by one):
 
 | Name | Value |
