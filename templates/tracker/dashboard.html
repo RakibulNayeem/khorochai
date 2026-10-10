@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{% translate "Dashboard" %} · KhorochAi{% endblock %}
+{% block content %}
+
+<!-- AI input -->
+<div class="card ai-box p-3 p-md-4 mb-4">
+  <form method="post" action="{% url 'ai_parse' %}" id="ai-form">
+    {% csrf_token %}
+    <label for="ai-text" class="form-label fw-semibold mb-2">✨ {% translate "Tell me what you spent or earned — English, বাংলা, or Banglish" %}</label>
+    <textarea id="ai-text" name="text" rows="3" maxlength="2000" class="form-control mb-2" required
+      placeholder="{% translate "e.g." %} আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০, টিউশন থেকে ৫০০০ পেলাম">{{ last_text }}</textarea>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div>
+        <span class="example-chip" data-text="আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০">আজ বাজারে ৫৫০, রিকশা ৮০</span>
+        <span class="example-chip" data-text="gotokal lunch 250 ar mobile recharge 100">gotokal lunch 250, recharge 100</span>
+        <span class="example-chip" data-text="Got my salary 35000 today and paid rent 12000">salary 35000, rent 12000</span>
+      </div>
+      <div class="d-flex gap-2 align-items-center flex-wrap">
+        {% include "tracker/_ai_quota.html" %}
+        <a href="{% url 'transaction_add' %}" class="btn btn-outline-secondary">{% translate "Add manually" %}</a>
+        <button class="btn btn-brand px-4" id="ai-btn"{% if ai_quota.left == 0 %} disabled{% endif %}>{% translate "Add with AI" %}</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Month switcher -->
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h1 class="h4 m-0">{{ month|date:"F Y" }}</h1>
+  <div class="btn-group">
+    <a class="btn btn-sm btn-outline-secondary" href="?month={{ prev_month }}&recent={{ recent_period }}">← {% translate "Prev" %}</a>
+    {% if not is_current_month %}<a class="btn btn-sm btn-outline-secondary" href="{% url 'dashboard' %}">{% translate "This month" %}</a>{% endif %}
+    <a class="btn btn-sm btn-outline-secondary" href="?month={{ next_month }}&recent={{ recent_period }}">{% translate "Next" %} →</a>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">{% translate "Income" %}</div>
+    <div class="stat text-income">{{ summary.income|money }}</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">{% translate "Expense" %}</div>
+    <div class="stat text-expense">{{ summary.expense|money }}</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">{% translate "Balance this month" %}</div>
+    <div class="stat {% if summary.balance < 0 %}text-expense{% endif %}">{{ summary.balance|money }}</div>
+    {% if summary.savings_rate is not None %}<div class="small text-muted">{% blocktranslate with p=summary.savings_rate %}Saved {{ p }}% of income{% endblocktranslate %}</div>{% endif %}
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">{% translate "All-time balance" %}</div>
+    <div class="stat {% if all_time_balance < 0 %}text-expense{% endif %}">{{ all_time_balance|money }}</div>
+  </div></div>
+</div>
+
+<!-- Accounts -->
+<div class="d-flex justify-content-between align-items-center mb-2">
+  <div class="card-title-sm">{% translate "Accounts" %}</div>
+  <a href="{% url 'accounts' %}" class="small">{% translate "Manage" %}</a>
+</div>
+<div class="account-strip mb-4">
+  {% for r in accounts %}
+  <a href="{% url 'transactions' %}?account={{ r.account.pk }}" class="card account-card account-chip p-2 px-3" style="--acc: {{ r.account.color }}">
+    <div class="small text-muted text-nowrap">{{ r.account }}</div>
+    <div class="fw-bold amount {% if r.balance < 0 %}text-expense{% endif %}">{{ r.balance|money }}</div>
+  </a>
+  {% endfor %}
+</div>
+
+<div class="row g-3 mb-4">
+  <!-- Expense by category -->
+  <div class="col-lg-5"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">{% translate "Where your money went" %}</div>
+    {% if summary.expense_by_category %}
+      <div style="max-width:260px;margin:0 auto"><canvas id="catChart"></canvas></div>
+      <table class="table table-sm mt-3 mb-0">
+        {% for c in summary.expense_by_category %}
+        <tr>
+          <td><span class="cat-dot" style="background:{{ c.color }}"></span>{{ c.icon }} {{ c.name }}</td>
+          <td class="text-muted small text-end">{{ c.pct }}%</td>
+          <td class="amount text-end">{{ c.total|money }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p class="text-muted my-4 text-center">{% translate "No expenses this month yet." %}</p>
+    {% endif %}
+  </div></div>
+
+  <!-- Daily chart + budgets -->
+  <div class="col-lg-7 d-flex flex-column gap-3">
+    <div class="card p-3">
+      <div class="card-title-sm mb-2">{% translate "Day by day" %}</div>
+      <canvas id="dailyChart" height="150"></canvas>
+    </div>
+    <div class="card p-3">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <div class="card-title-sm">{% translate "Budgets" %}</div>
+        <a href="{% url 'categories' %}" class="small">{% translate "Set budgets" %}</a>
+      </div>
+      {% for b in budgets %}
+        <div class="mb-2">
+          <div class="d-flex justify-content-between small">
+            <span>{{ b.category }}</span>
+            <span class="amount">{{ b.spent|money }} / {{ b.limit|money }}</span>
+          </div>
+          <div class="progress"><div class="progress-bar bg-{{ b.level }}" style="width: {{ b.bar }}%"></div></div>
+          {% if b.pct >= 100 %}<div class="small text-danger">{% blocktranslate with a=b.left|money %}Over budget by {{ a }}{% endblocktranslate %}</div>
+          {% elif b.pct >= 80 %}<div class="small text-warning">{% blocktranslate with p=b.pct %}{{ p }}% used{% endblocktranslate %}</div>{% endif %}
+        </div>
+      {% empty %}
+        <p class="text-muted small mb-0">{% translate "No budgets yet. Add a monthly limit to any expense category to track it here." %}</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Recent -->
+<div class="card p-3" id="recent">
+  <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+    <div>
+      <div class="card-title-sm">{% translate "Recent transactions" %}</div>
+      <div class="small text-muted">{% if recent_start == recent_end %}{{ recent_start|date:"d M Y" }}{% else %}{{ recent_start|date:"d M" }} – {{ recent_end|date:"d M Y" }}{% endif %}</div>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <a href="{% url 'transactions' %}?from={{ recent_start|date:'Y-m-d' }}&to={{ recent_end|date:'Y-m-d' }}" class="small">{% translate "See all" %}</a>
+      <div class="btn-group btn-group-sm period-switch" role="group" aria-label="{% translate 'Period' %}">
+        {% for key, label in recent_periods %}
+        <a href="?{% if request.GET.month %}month={{ request.GET.month }}&{% endif %}recent={{ key }}#recent"
+           class="btn btn-outline-secondary{% if key == recent_period %} active{% endif %}">{{ label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% if recent %}
+    {% include "tracker/_transaction_table.html" with items=recent %}
+  {% else %}
+    <p class="text-muted text-center my-4">{% translate "No transactions in this period." %}</p>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ chart_data|json_script:"chart-data" }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+  document.querySelectorAll('.example-chip').forEach(el => el.addEventListener('click', () => {
+    const t = document.getElementById('ai-text'); t.value = el.dataset.text; t.focus();
+  }));
+  document.getElementById('ai-form').addEventListener('submit', () => {
+    const b = document.getElementById('ai-btn'); b.disabled = true; b.textContent = '{% translate "Reading…" as t %}{{ t|escapejs }}';
+  });
+  const d = JSON.parse(document.getElementById('chart-data').textContent);
+  const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const charts = [];
+  function drawCharts() {
+    charts.splice(0).forEach(c => c.destroy());
+    Chart.defaults.font.family = 'Inter, "Hind Siliguri", system-ui, sans-serif';
+    Chart.defaults.color = css('--muted');
+    Chart.defaults.borderColor = css('--border');
+    const cat = document.getElementById('catChart');
+    if (cat && d.cat_values.length) {
+      charts.push(new Chart(cat, { type: 'doughnut',
+        data: { labels: d.cat_labels, datasets: [{ data: d.cat_values, backgroundColor: d.cat_colors, borderWidth: 2, borderColor: css('--surface') }] },
+        options: { plugins: { legend: { display: false } }, cutout: '62%' } }));
+    }
+    charts.push(new Chart(document.getElementById('dailyChart'), { type: 'bar',
+      data: { labels: d.days, datasets: [
+        { label: '{% translate "Expense" as l %}{{ l|escapejs }}', data: d.daily_expense, backgroundColor: css('--chart-expense') },
+        { label: '{% translate "Income" as l %}{{ l|escapejs }}', data: d.daily_income, backgroundColor: css('--chart-income') } ] },
+      options: { responsive: true, scales: { x: { grid: { display: false } }, y: { beginAtZero: true } },
+        plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } } } }));
+  }
+  if (window.Chart) {
+    drawCharts();
+    window.addEventListener('themechange', drawCharts);  // "System" theme flipped while the page is open
+  }
+</script>
+{% endblock %}

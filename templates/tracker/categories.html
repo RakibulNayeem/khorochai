@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{% translate "Categories" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h4 m-0">{% translate "Categories &amp; Budgets" %}</h1>
+  <a href="{% url 'category_add' %}" class="btn btn-sm btn-brand">+ {% translate "Add category" %}</a>
+</div>
+<p class="text-muted small">{% translate "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard." %}</p>
+
+<div class="row g-3">
+  <div class="col-lg-7"><div class="card p-3">
+    <div class="d-flex justify-content-between"><div class="card-title-sm mb-2">{% translate "Expense categories" %}</div>
+      <a class="small" href="{% url 'category_add' %}?type=expense">+ {% translate "Add" %}</a></div>
+    <div class="table-responsive"><table class="table align-middle mb-0">
+      <thead class="small text-muted"><tr><th>{% translate "Name" %}</th><th class="text-end">{% translate "This month" %}</th><th class="text-end">{% translate "Budget" %}</th><th></th></tr></thead>
+      {% for r in expense_rows %}
+      <tr>
+        <td><span class="cat-dot" style="background:{{ r.c.color }}"></span>{{ r.c }}</td>
+        <td class="amount text-end">{{ r.this_month|money }}</td>
+        <td class="amount text-end text-muted">{% if r.c.monthly_budget %}{{ r.c.monthly_budget|money }}{% else %}—{% endif %}</td>
+        <td class="text-end text-nowrap"><a href="{% url 'category_edit' r.c.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a></td>
+      </tr>
+      {% endfor %}
+    </table></div>
+  </div></div>
+
+  <div class="col-lg-5"><div class="card p-3">
+    <div class="d-flex justify-content-between"><div class="card-title-sm mb-2">{% translate "Income categories" %}</div>
+      <a class="small" href="{% url 'category_add' %}?type=income">+ {% translate "Add" %}</a></div>
+    <table class="table align-middle mb-0">
+      <thead class="small text-muted"><tr><th>{% translate "Name" %}</th><th class="text-end">{% translate "This month" %}</th><th></th></tr></thead>
+      {% for r in income_rows %}
+      <tr>
+        <td><span class="cat-dot" style="background:{{ r.c.color }}"></span>{{ r.c }}</td>
+        <td class="amount text-end">{{ r.this_month|money }}</td>
+        <td class="text-end"><a href="{% url 'category_edit' r.c.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div></div>
+</div>
+{% endblock %}

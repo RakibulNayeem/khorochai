@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{% translate "Accounts" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+  <h1 class="h4 m-0">{% translate "Accounts" %}</h1>
+  <div class="d-flex gap-2">
+    <a href="{% url 'transfer_add' %}" class="btn btn-sm btn-outline-secondary">⇄ {% translate "Move money" %}</a>
+    <a href="{% url 'account_add' %}" class="btn btn-sm btn-brand">+ {% translate "Add account" %}</a>
+  </div>
+</div>
+<p class="text-muted small">{% translate "Where your money is kept. Each transaction comes from or goes into an account; tell the AI “bkash e 500 dilam” and it picks bKash. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense." %}</p>
+
+<div class="card p-3 mb-3 d-flex flex-row justify-content-between align-items-center">
+  <div class="card-title-sm">{% translate "Total in all accounts" %}</div>
+  <div class="stat {% if total < 0 %}text-expense{% endif %}">{{ total|money }}</div>
+</div>
+
+<div class="row g-3 mb-4">
+  {% for r in rows %}
+  <div class="col-sm-6 col-lg-4">
+    <div class="card account-card p-3 h-100" style="--acc: {{ r.account.color }}">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <div class="fw-semibold">{{ r.account }}</div>
+          <div class="small text-muted">{{ r.account.get_kind_display }}{% if r.account.is_default %} · <span class="badge badge-new">{% translate "Default" %}</span>{% endif %}</div>
+        </div>
+        <a href="{% url 'account_edit' r.account.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
+      </div>
+      <div class="stat mt-2 {% if r.balance < 0 %}text-expense{% endif %}">{{ r.balance|money }}</div>
+      <div class="small text-muted d-flex gap-3 flex-wrap">
+        <span>{% translate "Income" %} <span class="text-income amount">{{ r.income|money }}</span></span>
+        <span>{% translate "Expense" %} <span class="text-expense amount">{{ r.expense|money }}</span></span>
+      </div>
+      <div class="mt-2 d-flex gap-3 small">
+        <a href="{% url 'transactions' %}?account={{ r.account.pk }}">{% translate "Transactions" %}</a>
+        <a href="{% url 'transfer_add' %}?from={{ r.account.pk }}">{% translate "Move money" %}</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="card p-3">
+  <div class="card-title-sm mb-2">{% translate "Recent transfers" %}</div>
+  {% if transfers %}
+  <div class="table-responsive"><table class="table align-middle mb-0">
+    <thead class="small text-muted"><tr><th>{% translate "Date" %}</th><th>{% translate "From" %}</th><th>{% translate "To" %}</th><th>{% translate "Note" %}</th><th class="text-end">{% translate "Amount" %}</th><th></th></tr></thead>
+    {% for t in transfers %}
+    <tr>
+      <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>
+      <td class="text-nowrap">{{ t.from_account }}</td>
+      <td class="text-nowrap">→ {{ t.to_account }}</td>
+      <td class="small">{{ t.note }}</td>
+      <td class="amount text-end fw-semibold">{{ t.amount|money }}</td>
+      <td class="text-end"><a href="{% url 'transfer_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a></td>
+    </tr>
+    {% endfor %}
+  </table></div>
+  {% else %}
+  <p class="text-muted small mb-0">{% translate "No transfers yet." %}</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load i18n %}
+<div class="ai-quota small{% if ai_quota.left == 0 %} is-empty{% elif ai_quota.left <= 3 %} is-low{% endif %}"
+     title="{% translate 'The AI runs on a free plan with a daily limit. It resets at midnight.' %}">
+  {% if ai_quota.app_full %}
+    {% translate "AI limit reached for everyone today — resets at midnight" %}
+  {% elif ai_quota.left == 0 %}
+    {% translate "No AI uses left today — resets at midnight" %}
+  {% else %}
+    {% blocktranslate count n=ai_quota.left with limit=ai_quota.limit %}{{ n }} of {{ limit }} AI use left today{% plural %}{{ n }} of {{ limit }} AI uses left today{% endblocktranslate %}
+  {% endif %}
+  <div class="ai-quota-bar" aria-hidden="true"><span style="width: {{ ai_quota.pct_used }}%"></span></div>
+</div>

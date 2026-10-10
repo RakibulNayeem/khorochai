@@ -1,0 +1,663 @@
+# Bangla translation for KhorochAi.
+# Edit the msgstr lines, then run:  python manage.py compile_po
+msgid ""
+msgstr ""
+"Project-Id-Version: KhorochAi\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# ---------------------------------------------------------------- navbar, settings
+msgid "Settings"
+msgstr "সেটিংস"
+
+msgid "Theme"
+msgstr "থিম"
+
+msgid "Light"
+msgstr "লাইট"
+
+msgid "Dark"
+msgstr "ডার্ক"
+
+msgid "System"
+msgstr "সিস্টেম"
+
+msgid "Language"
+msgstr "ভাষা"
+
+msgid "All settings"
+msgstr "সব সেটিংস"
+
+msgid "Log out"
+msgstr "লগ আউট"
+
+msgid "Menu"
+msgstr "মেনু"
+
+msgid "Dashboard"
+msgstr "ড্যাশবোর্ড"
+
+msgid "Transactions"
+msgstr "লেনদেন"
+
+msgid "Categories &amp; Budgets"
+msgstr "ক্যাটাগরি ও বাজেট"
+
+msgid "Ask AI"
+msgstr "AI-কে জিজ্ঞেস করুন"
+
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "<strong>%(name)s</strong> হিসেবে লগ ইন করা আছে"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "সিস্টেম বেছে নিলে আপনার ফোন বা কম্পিউটারের ডার্ক মোড সেটিং অনুযায়ী চলবে।"
+
+msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
+msgstr "অ্যাপের মেনু, বাটন ও বার্তার ভাষা বদলায়। AI-কে যেকোনো সময় English, বাংলা বা Banglish-এ লিখতে পারবেন।"
+
+msgid "These settings are saved in this browser."
+msgstr "এই সেটিংস এই ব্রাউজারে সংরক্ষিত থাকে।"
+
+# ---------------------------------------------------------------- login, signup
+msgid "Log in"
+msgstr "লগ ইন"
+
+msgid "Welcome back"
+msgstr "আবার স্বাগতম"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "শুধু লিখেই টাকার হিসাব রাখুন, English বা বাংলায়।"
+
+msgid "Wrong username or password."
+msgstr "ইউজারনেম বা পাসওয়ার্ড ভুল।"
+
+msgid "Username"
+msgstr "ইউজারনেম"
+
+msgid "Password"
+msgstr "পাসওয়ার্ড"
+
+msgid "No account?"
+msgstr "অ্যাকাউন্ট নেই?"
+
+msgid "Sign up"
+msgstr "সাইন আপ"
+
+msgid "Create your account"
+msgstr "আপনার অ্যাকাউন্ট খুলুন"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "শুরু করার জন্য কিছু তৈরি ক্যাটাগরি পাবেন।"
+
+msgid "Already have an account?"
+msgstr "আগে থেকেই অ্যাকাউন্ট আছে?"
+
+msgid "Email (optional)"
+msgstr "ইমেইল (ঐচ্ছিক)"
+
+# ---------------------------------------------------------------- dashboard
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "কী খরচ বা আয় করলেন লিখুন — English, বাংলা বা Banglish"
+
+msgid "e.g."
+msgstr "যেমন:"
+
+msgid "Add manually"
+msgstr "নিজে যোগ করুন"
+
+msgid "Add with AI"
+msgstr "AI দিয়ে যোগ করুন"
+
+msgid "Reading…"
+msgstr "পড়ছি…"
+
+msgid "Prev"
+msgstr "আগের"
+
+msgid "Next"
+msgstr "পরের"
+
+msgid "This month"
+msgstr "এই মাস"
+
+msgid "Income"
+msgstr "আয়"
+
+msgid "Expense"
+msgstr "খরচ"
+
+msgid "Balance this month"
+msgstr "এই মাসের ব্যালেন্স"
+
+msgid "Saved %(p)s%% of income"
+msgstr "আয়ের %(p)s%% সঞ্চয় হয়েছে"
+
+msgid "All-time balance"
+msgstr "মোট ব্যালেন্স"
+
+msgid "Where your money went"
+msgstr "টাকা কোথায় গেল"
+
+msgid "No expenses this month yet."
+msgstr "এই মাসে এখনো কোনো খরচ নেই।"
+
+msgid "Day by day"
+msgstr "দিনভিত্তিক"
+
+msgid "Budgets"
+msgstr "বাজেট"
+
+msgid "Set budgets"
+msgstr "বাজেট ঠিক করুন"
+
+msgid "Over budget by %(a)s"
+msgstr "বাজেটের চেয়ে %(a)s বেশি"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% খরচ হয়েছে"
+
+msgid "No budgets yet. Add a monthly limit to any expense category to track it here."
+msgstr "এখনো কোনো বাজেট নেই। যেকোনো খরচের ক্যাটাগরিতে মাসিক সীমা দিলে এখানে দেখা যাবে।"
+
+msgid "Recent transactions"
+msgstr "সাম্প্রতিক লেনদেন"
+
+msgid "See all"
+msgstr "সব দেখুন"
+
+# ---------------------------------------------------------------- transaction table, list
+msgid "Date"
+msgstr "তারিখ"
+
+msgid "Category"
+msgstr "ক্যাটাগরি"
+
+msgid "Note"
+msgstr "নোট"
+
+msgid "Amount"
+msgstr "পরিমাণ"
+
+msgid "Uncategorized"
+msgstr "ক্যাটাগরি নেই"
+
+msgid "Added with AI"
+msgstr "AI দিয়ে যোগ করা"
+
+msgid "Edit"
+msgstr "এডিট"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "এখনো কোনো লেনদেন নেই। ওপরের বক্সে কিছু লিখুন!"
+
+msgid "Export CSV"
+msgstr "CSV ডাউনলোড"
+
+msgid "Add"
+msgstr "যোগ করুন"
+
+msgid "Month"
+msgstr "মাস"
+
+msgid "Type"
+msgstr "ধরন"
+
+msgid "All"
+msgstr "সব"
+
+msgid "Search"
+msgstr "খুঁজুন"
+
+msgid "note or text"
+msgstr "নোট বা লেখা"
+
+msgid "Filter"
+msgstr "ফিল্টার"
+
+msgid "Reset"
+msgstr "রিসেট"
+
+msgid "Net"
+msgstr "নিট"
+
+msgid "Newer"
+msgstr "নতুনগুলো"
+
+msgid "Older"
+msgstr "পুরনোগুলো"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "পৃষ্ঠা %(a)s / %(b)s"
+
+# ---------------------------------------------------------------- AI preview
+msgid "Confirm"
+msgstr "নিশ্চিত করুন"
+
+msgid "Check before saving"
+msgstr "সেভ করার আগে দেখে নিন"
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI %(n)sটি লেনদেন পেয়েছে। ভুল থাকলে ঠিক করে সেভ করুন।"
+msgstr[1] "AI %(n)sটি লেনদেন পেয়েছে। ভুল থাকলে ঠিক করে সেভ করুন।"
+
+msgid "You wrote:"
+msgstr "আপনি লিখেছেন:"
+
+msgid "Save this one"
+msgstr "এটি সেভ করুন"
+
+msgid "New category:"
+msgstr "নতুন ক্যাটাগরি:"
+
+msgid "New:"
+msgstr "নতুন:"
+
+msgid "New category…"
+msgstr "নতুন ক্যাটাগরি…"
+
+msgid "New category name"
+msgstr "নতুন ক্যাটাগরির নাম"
+
+msgid "Save"
+msgstr "সেভ করুন"
+
+msgid "Cancel"
+msgstr "বাতিল"
+
+msgid "Delete this permanently?"
+msgstr "এটি স্থায়ীভাবে মুছে ফেলবেন?"
+
+msgid "Delete"
+msgstr "মুছে ফেলুন"
+
+# ---------------------------------------------------------------- Ask AI
+msgid "Ask anything about your money"
+msgstr "আপনার টাকা নিয়ে যেকোনো প্রশ্ন করুন"
+
+msgid "Ask"
+msgstr "জিজ্ঞেস করুন"
+
+msgid "Thinking…"
+msgstr "ভাবছি…"
+
+msgid "Where did I spend the most last month?"
+msgstr "গত মাসে সবচেয়ে বেশি খরচ কোথায় হয়েছে?"
+
+msgid "Where did I spend most last month?"
+msgstr "গত মাসে সবচেয়ে বেশি খরচ কোথায়?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "এই বছর রিকশায় কত খরচ হয়েছে?"
+
+msgid "Rickshaw spending this year"
+msgstr "এই বছর রিকশা খরচ"
+
+msgid "income vs expense per month this year"
+msgstr "এই বছর মাসভিত্তিক আয় বনাম খরচ"
+
+msgid "Income vs expense per month"
+msgstr "মাসভিত্তিক আয় বনাম খরচ"
+
+msgid "notes containing “%(k)s”"
+msgstr "“%(k)s” আছে এমন নোট"
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)sটি লেনদেন"
+msgstr[1] "%(n)sটি লেনদেন"
+
+msgid "Spent"
+msgstr "খরচ"
+
+msgid "Earned"
+msgstr "আয়"
+
+msgid "Group"
+msgstr "গ্রুপ"
+
+msgid "Count"
+msgstr "সংখ্যা"
+
+msgid "Total"
+msgstr "মোট"
+
+msgid "Matching transactions"
+msgstr "মিলে যাওয়া লেনদেন"
+
+msgid "first 50"
+msgstr "প্রথম ৫০টি"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI শুধু আপনার প্রশ্নটি বুঝেছে; এখানের প্রতিটি সংখ্যা আপনার সেভ করা তথ্য থেকে হিসাব করা।"
+
+msgid "Your question"
+msgstr "আপনার প্রশ্ন"
+
+# ---------------------------------------------------------------- categories
+msgid "Categories"
+msgstr "ক্যাটাগরি"
+
+msgid "Add category"
+msgstr "ক্যাটাগরি যোগ করুন"
+
+msgid "Edit category"
+msgstr "ক্যাটাগরি এডিট করুন"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI এই ক্যাটাগরিগুলো থেকে বেছে নেয়। কোনোটা না মিললে নতুন একটি প্রস্তাব করে এবং তৈরি করার আগে আপনাকে জিজ্ঞেস করে। খরচের ক্যাটাগরিতে মাসিক বাজেট দিলে ড্যাশবোর্ডে অগ্রগতি দেখাবে।"
+
+msgid "Expense categories"
+msgstr "খরচের ক্যাটাগরি"
+
+msgid "Income categories"
+msgstr "আয়ের ক্যাটাগরি"
+
+msgid "Name"
+msgstr "নাম"
+
+msgid "Budget"
+msgstr "বাজেট"
+
+msgid "Icon"
+msgstr "আইকন"
+
+msgid "Color"
+msgstr "রং"
+
+msgid "Monthly budget"
+msgstr "মাসিক বাজেট"
+
+msgid "e.g. 🍔"
+msgstr "যেমন 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "ঐচ্ছিক মাসিক খরচের সীমা (শুধু খরচের ক্যাটাগরির জন্য)।"
+
+msgid "You already have a category with this name."
+msgstr "এই নামে আপনার আগে থেকেই একটি ক্যাটাগরি আছে।"
+
+# ---------------------------------------------------------------- default category names (stored in English)
+msgid "Food"
+msgstr "খাবার"
+
+msgid "Groceries"
+msgstr "বাজার"
+
+msgid "Transport"
+msgstr "যাতায়াত"
+
+msgid "Rent"
+msgstr "বাসা ভাড়া"
+
+msgid "Utilities"
+msgstr "বিল (বিদ্যুৎ, গ্যাস, পানি)"
+
+msgid "Mobile & Internet"
+msgstr "মোবাইল ও ইন্টারনেট"
+
+msgid "Health"
+msgstr "স্বাস্থ্য"
+
+msgid "Education"
+msgstr "পড়াশোনা"
+
+msgid "Shopping"
+msgstr "কেনাকাটা"
+
+msgid "Entertainment"
+msgstr "বিনোদন"
+
+msgid "Family"
+msgstr "পরিবার"
+
+msgid "Other Expense"
+msgstr "অন্যান্য খরচ"
+
+msgid "Salary"
+msgstr "বেতন"
+
+msgid "Tuition"
+msgstr "টিউশন"
+
+msgid "Freelance"
+msgstr "ফ্রিল্যান্স"
+
+msgid "Business"
+msgstr "ব্যবসা"
+
+msgid "Gift"
+msgstr "উপহার"
+
+msgid "Other Income"
+msgstr "অন্যান্য আয়"
+
+# ---------------------------------------------------------------- forms, models
+msgid "Amount must be greater than zero."
+msgstr "পরিমাণ শূন্যের বেশি হতে হবে।"
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' একটি খরচের ক্যাটাগরি; আয়ের একটি ক্যাটাগরি বেছে নিন।"
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' একটি আয়ের ক্যাটাগরি; খরচের একটি ক্যাটাগরি বেছে নিন।"
+
+msgid "Manual"
+msgstr "নিজে যোগ করা"
+
+# ---------------------------------------------------------------- messages
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "স্বাগতম! ক্যাটাগরিগুলো তৈরি আছে। আপনার প্রথম খরচটি লিখে দেখুন।"
+
+msgid "Please type what you spent or earned."
+msgstr "কী খরচ বা আয় করলেন লিখুন।"
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "লেখাটি অনেক বড় (সর্বোচ্চ %(n)s অক্ষর)।"
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI এখন ব্যস্ত বা চালু করা নেই। আবার চেষ্টা করুন, অথবা নিজে যোগ করুন।"
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI এখন ব্যস্ত বা চালু করা নেই। আবার চেষ্টা করুন।"
+
+msgid "The AI response was not understood. Please try again."
+msgstr "AI-এর উত্তর বোঝা যায়নি। আবার চেষ্টা করুন।"
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "আপনার লেখায় টাকার পরিমাণসহ কোনো আয় বা খরচ পাওয়া যায়নি।"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "%(n)sটি লেনদেন সেভ হয়েছে।"
+msgstr[1] "%(n)sটি লেনদেন সেভ হয়েছে।"
+
+msgid "New categories: %(names)s."
+msgstr "নতুন ক্যাটাগরি: %(names)s।"
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "পরিমাণ, ধরন বা অ্যাকাউন্ট ঠিক না থাকায় %(n)sটি সারি বাদ দেওয়া হয়েছে।"
+
+msgid "Nothing was saved."
+msgstr "কিছুই সেভ হয়নি।"
+
+msgid "Transaction added."
+msgstr "লেনদেন যোগ হয়েছে।"
+
+msgid "Add transaction"
+msgstr "লেনদেন যোগ করুন"
+
+msgid "Transaction updated."
+msgstr "লেনদেন আপডেট হয়েছে।"
+
+msgid "Edit transaction"
+msgstr "লেনদেন এডিট করুন"
+
+msgid "Transaction deleted."
+msgstr "লেনদেন মুছে ফেলা হয়েছে।"
+
+msgid "Category '%(name)s' added."
+msgstr "'%(name)s' ক্যাটাগরি যোগ হয়েছে।"
+
+msgid "Category updated."
+msgstr "ক্যাটাগরি আপডেট হয়েছে।"
+
+msgid "Category '%(name)s' deleted."
+msgstr "'%(name)s' ক্যাটাগরি মুছে ফেলা হয়েছে।"
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)sটি লেনদেন এখন ক্যাটাগরি ছাড়া।"
+
+# ---------------------------------------------------------------- accounts & transfers
+msgid "Accounts"
+msgstr "অ্যাকাউন্ট"
+
+msgid "Account"
+msgstr "অ্যাকাউন্ট"
+
+msgid "Move money"
+msgstr "টাকা সরান"
+
+msgid "Add account"
+msgstr "অ্যাকাউন্ট যোগ করুন"
+
+msgid "Edit account"
+msgstr "অ্যাকাউন্ট এডিট করুন"
+
+msgid "Where your money is kept. Each transaction comes from or goes into an account; tell the AI “bkash e 500 dilam” and it picks bKash. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense."
+msgstr "আপনার টাকা কোথায় রাখা আছে। প্রতিটি লেনদেন কোনো একটি অ্যাকাউন্ট থেকে যায় বা আসে; AI-কে “bkash e 500 dilam” লিখলে সে বিকাশ বেছে নেবে। ATM থেকে তোলা, বিকাশ ক্যাশ আউট বা অন্য ট্রান্সফারের জন্য “টাকা সরান” ব্যবহার করুন — এতে ব্যালেন্স বদলায়, কিন্তু আয় বা খরচ হিসেবে ধরা হয় না।"
+
+msgid "Total in all accounts"
+msgstr "সব অ্যাকাউন্টে মোট"
+
+msgid "Default"
+msgstr "ডিফল্ট"
+
+msgid "Recent transfers"
+msgstr "সাম্প্রতিক ট্রান্সফার"
+
+msgid "From"
+msgstr "যেখান থেকে"
+
+msgid "To"
+msgstr "যেখানে"
+
+msgid "No transfers yet."
+msgstr "এখনো কোনো ট্রান্সফার নেই।"
+
+msgid "Manage"
+msgstr "ম্যানেজ করুন"
+
+msgid "e.g. 💵"
+msgstr "যেমন 💵"
+
+msgid "Opening balance"
+msgstr "শুরুর ব্যালেন্স"
+
+msgid "Default account"
+msgstr "ডিফল্ট অ্যাকাউন্ট"
+
+msgid "You already have an account with this name."
+msgstr "এই নামে আপনার আগে থেকেই একটি অ্যাকাউন্ট আছে।"
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "যেমন ATM থেকে তোলা, বিকাশ ক্যাশ আউট"
+
+msgid "Pick two different accounts."
+msgstr "দুটি আলাদা অ্যাকাউন্ট বেছে নিন।"
+
+msgid "Cash"
+msgstr "ক্যাশ"
+
+msgid "Card"
+msgstr "কার্ড"
+
+msgid "Mobile banking"
+msgstr "মোবাইল ব্যাংকিং"
+
+msgid "Bank account"
+msgstr "ব্যাংক অ্যাকাউন্ট"
+
+msgid "Other"
+msgstr "অন্যান্য"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "KhorochAi ব্যবহার শুরুর সময় এই অ্যাকাউন্টে যত টাকা ছিল।"
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "কোন অ্যাকাউন্ট তা না বললে এটি ব্যবহার হবে (যেমন 'lunch 250')।"
+
+msgid "Account '%(name)s' added."
+msgstr "'%(name)s' অ্যাকাউন্ট যোগ হয়েছে।"
+
+msgid "Account updated."
+msgstr "অ্যাকাউন্ট আপডেট হয়েছে।"
+
+msgid "Account '%(name)s' deleted."
+msgstr "'%(name)s' অ্যাকাউন্ট মুছে ফেলা হয়েছে।"
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)sটি লেনদেনের এখন কোনো অ্যাকাউন্ট নেই।"
+
+msgid "Transfer saved."
+msgstr "ট্রান্সফার সেভ হয়েছে।"
+
+msgid "Move money between accounts"
+msgstr "অ্যাকাউন্টের মধ্যে টাকা সরান"
+
+msgid "Transfer updated."
+msgstr "ট্রান্সফার আপডেট হয়েছে।"
+
+msgid "Edit transfer"
+msgstr "ট্রান্সফার এডিট করুন"
+
+msgid "Transfer deleted."
+msgstr "ট্রান্সফার মুছে ফেলা হয়েছে।"
+
+# ---------------------------------------------------------------- AI daily limit
+msgid "The AI runs on a free plan with a daily limit. It resets at midnight."
+msgstr "AI একটি ফ্রি প্ল্যানে চলে, যার দৈনিক সীমা আছে। রাত ১২টায় আবার শুরু হয়।"
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "আজ সবার জন্য AI-এর সীমা শেষ — রাত ১২টায় আবার চালু হবে"
+
+msgid "No AI uses left today — resets at midnight"
+msgstr "আজ আর AI ব্যবহার বাকি নেই — রাত ১২টায় আবার চালু হবে"
+
+msgid "%(n)s of %(limit)s AI use left today"
+msgid_plural "%(n)s of %(limit)s AI uses left today"
+msgstr[0] "আজ AI ব্যবহার বাকি %(limit)sটির মধ্যে %(n)sটি"
+msgstr[1] "আজ AI ব্যবহার বাকি %(limit)sটির মধ্যে %(n)sটি"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "আজ সবার জন্য AI-এর সীমা শেষ। রাত ১২টায় আবার চালু হবে। এর মধ্যে নিজে লেনদেন যোগ করতে পারবেন।"
+
+msgid "You've used all %(n)s AI requests for today. They reset at midnight. You can still add transactions manually."
+msgstr "আজকের %(n)sটি AI ব্যবহার শেষ। রাত ১২টায় আবার চালু হবে। এর মধ্যে নিজে লেনদেন যোগ করতে পারবেন।"
+
+msgid "Transfer"
+msgstr "ট্রান্সফার"
+
+msgid "Day"
+msgstr "দিন"
+
+msgid "Week"
+msgstr "সপ্তাহ"
+
+msgid "Period"
+msgstr "সময়কাল"
+
+msgid "No transactions in this period."
+msgstr "এই সময়ে কোনো লেনদেন নেই।"
+
+msgid "Dates:"
+msgstr "তারিখ:"
+
+msgid "Show all dates"
+msgstr "সব তারিখ দেখুন"

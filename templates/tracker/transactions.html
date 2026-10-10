@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{% translate "Transactions" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+  <h1 class="h4 m-0">{% translate "Transactions" %}</h1>
+  <div class="d-flex gap-2">
+    <a href="{% url 'export_csv' %}?{{ querystring }}" class="btn btn-sm btn-outline-secondary">{% translate "Export CSV" %}</a>
+    <a href="{% url 'transaction_add' %}" class="btn btn-sm btn-brand">+ {% translate "Add" %}</a>
+  </div>
+</div>
+
+<form class="card p-3 mb-3" method="get">
+  {% if f.from or f.to %}
+  <input type="hidden" name="from" value="{{ f.from }}"><input type="hidden" name="to" value="{{ f.to }}">
+  <div class="small mb-2">{% translate "Dates:" %} <strong>{{ f.from }} – {{ f.to }}</strong> · <a href="{% url 'transactions' %}">{% translate "Show all dates" %}</a></div>
+  {% endif %}
+  <div class="row g-2 align-items-end">
+    <div class="col-6 col-md-2">
+      <label class="form-label small text-muted mb-1">{% translate "Month" %}</label>
+      <input type="month" name="month" value="{{ f.month }}" class="form-control">
+    </div>
+    <div class="col-6 col-md-2">
+      <label class="form-label small text-muted mb-1">{% translate "Type" %}</label>
+      <select name="type" class="form-select">
+        <option value="">{% translate "All" %}</option>
+        <option value="expense" {% if f.type == "expense" %}selected{% endif %}>{% translate "Expense" %}</option>
+        <option value="income" {% if f.type == "income" %}selected{% endif %}>{% translate "Income" %}</option>
+        <option value="transfer" {% if f.type == "transfer" %}selected{% endif %}>⇄ {% translate "Transfer" %}</option>
+      </select>
+    </div>
+    <div class="col-6 col-md-2">
+      <label class="form-label small text-muted mb-1">{% translate "Account" %}</label>
+      <select name="account" class="form-select">
+        <option value="">{% translate "All" %}</option>
+        {% for a in accounts %}
+        <option value="{{ a.id }}" {% if f.account == a.id|stringformat:"s" %}selected{% endif %}>{{ a }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-6 col-md-2">
+      <label class="form-label small text-muted mb-1">{% translate "Category" %}</label>
+      <select name="category" class="form-select">
+        <option value="">{% translate "All" %}</option>
+        <option value="none" {% if f.category == "none" %}selected{% endif %}>{% translate "Uncategorized" %}</option>
+        {% for c in categories %}
+        <option value="{{ c.id }}" {% if f.category == c.id|stringformat:"s" %}selected{% endif %}>{{ c }} ({{ c.get_type_display }})</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-6 col-md-2">
+      <label class="form-label small text-muted mb-1">{% translate "Search" %}</label>
+      <input type="search" name="q" value="{{ f.q }}" class="form-control" placeholder="{% translate 'note or text' %}">
+    </div>
+    <div class="col-12 col-md-2 d-flex gap-2">
+      <button class="btn btn-brand flex-fill">{% translate "Filter" %}</button>
+      <a href="{% url 'transactions' %}" class="btn btn-outline-secondary">{% translate "Reset" %}</a>
+    </div>
+  </div>
+</form>
+
+<div class="row g-3 mb-3">
+  <div class="col-4"><div class="card p-2 px-3"><div class="card-title-sm">{% translate "Income" %}</div><div class="fw-bold text-income amount">{{ income|money }}</div></div></div>
+  <div class="col-4"><div class="card p-2 px-3"><div class="card-title-sm">{% translate "Expense" %}</div><div class="fw-bold text-expense amount">{{ expense|money }}</div></div></div>
+  <div class="col-4"><div class="card p-2 px-3"><div class="card-title-sm">{% translate "Net" %}</div><div class="fw-bold amount {% if net < 0 %}text-expense{% endif %}">{{ net|money }}</div></div></div>
+</div>
+
+<div class="card p-3">
+  {% include "tracker/_transaction_table.html" with items=page.object_list %}
+  {% if page.paginator.num_pages > 1 %}
+  <nav class="mt-3 d-flex justify-content-center gap-2">
+    {% if page.has_previous %}<a class="btn btn-sm btn-outline-secondary" href="?{{ querystring }}&page={{ page.previous_page_number }}">← {% translate "Newer" %}</a>{% endif %}
+    <span class="small text-muted align-self-center">{% blocktranslate with a=page.number b=page.paginator.num_pages %}Page {{ a }} of {{ b }}{% endblocktranslate %}</span>
+    {% if page.has_next %}<a class="btn btn-sm btn-outline-secondary" href="?{{ querystring }}&page={{ page.next_page_number }}">{% translate "Older" %} →</a>{% endif %}
+  </nav>
+  {% endif %}
+</div>
+{% endblock %}

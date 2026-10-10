@@ -1,0 +1,233 @@
+"""
+LLM layer. The AI ONLY turns free text into structured JSON.
+All money math (totals, balances, budgets) is done by Python/SQL, never by the AI.
+
+Providers (both have free tiers):
+  - Google Gemini  (best for Bangla / Banglish)  -> GEMINI_API_KEY
+  - Groq (Llama)   (very fast fallback)          -> GROQ_API_KEY
+"""
+import json
+import logging
+import re
+
+import requests
+from django.conf import settings
+
+logger = logging.getLogger(__name__)
+
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+
+BN_DIGITS = str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789")
+
+
+class LLMError(Exception):
+    """Raised when no provider could return usable JSON."""
+
+
+def normalize_text(text: str) -> str:
+    """Convert Bangla digits to English digits so the model reads numbers reliably."""
+    return text.translate(BN_DIGITS)
+
+
+def _extract_json(text: str) -> dict:
+    text = text.strip()
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        start, end = text.find("{"), text.rfind("}")
+        if start != -1 and end > start:
+            return json.loads(text[start:end + 1])
+        raise
+
+
+def _call_gemini(system: str, user: str) -> str:
+    if not settings.GEMINI_API_KEY:
+        raise LLMError("GEMINI_API_KEY is not set")
+    payload = {
+        "system_instruction": {"parts": [{"text": system}]},
+        "contents": [{"role": "user", "parts": [{"text": user}]}],
+        "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"},
+    }
+    r = requests.post(
+        GEMINI_URL.format(model=settings.GEMINI_MODEL),
+        headers={"x-goog-api-key": settings.GEMINI_API_KEY, "Content-Type": "application/json"},
+        json=payload,
+        timeout=settings.LLM_TIMEOUT,
+    )
+    if r.status_code != 200:
+        raise LLMError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
+    try:
+        return r.json()["candidates"][0]["content"]["parts"][0]["text"]
+    except (KeyError, IndexError, ValueError):
+        raise LLMError("Gemini returned an empty response")
+
+
+def _call_groq(system: str, user: str) -> str:
+    if not settings.GROQ_API_KEY:
+        raise LLMError("GROQ_API_KEY is not set")
+    payload = {
+        "model": settings.GROQ_MODEL,
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+        "temperature": 0.1,
+        "response_format": {"type": "json_object"},
+    }
+    r = requests.post(
+        GROQ_URL,
+        headers={"Authorization": f"Bearer {settings.GROQ_API_KEY}"},
+        json=payload,
+        timeout=settings.LLM_TIMEOUT,
+    )
+    if r.status_code != 200:
+        raise LLMError(f"Groq HTTP {r.status_code}: {r.text[:300]}")
+    try:
+        return r.json()["choices"][0]["message"]["content"]
+    except (KeyError, IndexError, ValueError):
+        raise LLMError("Groq returned an empty response")
+
+
+PROVIDERS = {"gemini": _call_gemini, "groq": _call_groq}
+
+
+def call_llm(system: str, user: str) -> dict:
+    """Try each configured provider in order; return the parsed JSON dict."""
+    errors = []
+    for name in settings.LLM_PROVIDERS:
+        fn = PROVIDERS.get(name)
+        if not fn:
+            continue
+        try:
+            raw = fn(system, user)
+            return _extract_json(raw)
+        except (LLMError, requests.RequestException, json.JSONDecodeError) as exc:
+            logger.warning("LLM provider %s failed: %s", name, exc)
+            errors.append(f"{name}: {exc}")
+    raise LLMError("; ".join(errors) or "No LLM provider configured")
+
+
+# --------------------------------------------------------------------------- prompts
+
+PARSE_PROMPT = """You extract income, expense and transfer transactions for a personal budget app used in Bangladesh.
+The user may write in English, Bangla, Banglish (Bangla in English letters) or any other language,
+and may mention several transactions in one message.
+
+Return ONLY JSON in exactly this shape:
+{"transactions": [{"type": "expense" or "income" or "transfer", "amount": number, "category": "string",
+  "is_new_category": true or false, "account": "string", "to_account": "string",
+  "note": "short note", "date": "YYYY-MM-DD"}],
+ "message": "short explanation ONLY if no transaction was found, otherwise empty string"}
+
+Rules:
+1. Today is __TODAY__ (__WEEKDAY__). Convert relative dates to YYYY-MM-DD:
+   আজ / aaj / today = today; গতকাল / gotokal / kal (past) / yesterday = yesterday;
+   পরশু / porshu (past) = 2 days ago; "last Friday", "গত শুক্রবার" etc. = the most recent such day.
+   If no date is mentioned, use today.
+2. amount: positive number in BDT. "1.5k" or "১.৫ হাজার" = 1500, "hazar/হাজার" = 1000,
+   "lakh/লাখ" = 100000. If another currency is used, keep the number and mention the currency in note.
+3. type: spent, paid, bought, gave, bill, khoroch, খরচ, দিলাম, কিনলাম = expense.
+   received, earned, got, salary, income, পেলাম, আয়, বেতন = income.
+4. category: pick the best match from the EXISTING categories of the same type, using the exact name:
+   EXPENSE categories: __EXPENSE__
+   INCOME categories: __INCOME__
+   Set is_new_category=false when you use one of them.
+   Only when nothing fits reasonably, invent a short new English category name (1-2 words, Title Case)
+   and set is_new_category=true. Prefer a clear specific new category over dumping things
+   into "Other Expense" / "Other Income".
+5. account: which of the user's money accounts was used, exact name from: __ACCOUNTS__
+   e.g. "bkash e pathalam", "বিকাশে", "bKash theke" = bKash; "card diye", "কার্ডে" = Card;
+   "bank theke", "ব্যাংকে" = Bank; "nogod" / "নগদে" = Nagad; "cash", "hate" = Cash.
+   If no account is mentioned, use an empty string "".
+   TRANSFER: money moved between two of the user's OWN accounts is type "transfer" (not income or expense):
+   "move 500 from cash to bkash", "bkash theke 1000 cash out", "ATM theke 2000 tullam" (Bank -> Cash),
+   "bkash e 500 cash in korlam" (Cash -> bKash), "card bill 3000 bank theke dilam" (Bank -> Card).
+   For a transfer: account = where the money comes FROM, to_account = where it goes TO,
+   category = "", is_new_category = false. If a side is not mentioned, use "" for it.
+   Sending money to ANOTHER person or paying a shop is NOT a transfer:
+   "ma ke bkash e 1000 pathalam" = expense (category Family, account bKash).
+   For income and expense, to_account = "".
+6. note: short description in the user's own language, e.g. "রিকশা ভাড়া", "lunch with friends".
+7. Never calculate totals. Never invent transactions. If there is no money amount at all,
+   return {"transactions": [], "message": "<explain briefly in the user's language>"}.
+
+Example
+Input: "আজ বাজারে 550 টাকা খরচ, রিকশা 80, আর টিউশন থেকে 5000 পেলাম"
+Output: {"transactions": [
+ {"type":"expense","amount":550,"category":"Groceries","is_new_category":false,"account":"","note":"বাজার","date":"__TODAY__"},
+ {"type":"expense","amount":80,"category":"Transport","is_new_category":false,"account":"","note":"রিকশা","date":"__TODAY__"},
+ {"type":"income","amount":5000,"category":"Tuition","is_new_category":false,"account":"","note":"টিউশন","date":"__TODAY__"}],
+ "message": ""}
+
+Example
+Input: "move 500 from cash to bkash, ATM theke 2000 tullam"
+Output: {"transactions": [
+ {"type":"transfer","amount":500,"category":"","is_new_category":false,"account":"Cash","to_account":"bKash","note":"move to bKash","date":"__TODAY__"},
+ {"type":"transfer","amount":2000,"category":"","is_new_category":false,"account":"Bank","to_account":"Cash","note":"ATM","date":"__TODAY__"}],
+ "message": ""}
+
+Example
+Input: "gotokal gym membership 1500 bkash e dilam"
+Output: {"transactions": [
+ {"type":"expense","amount":1500,"category":"Fitness","is_new_category":true,"account":"bKash","note":"gym membership","date":"__YESTERDAY__"}],
+ "message": ""}
+"""
+
+
+QUERY_PROMPT = """You convert a user's question about their own money into a JSON database query
+for a budget app in Bangladesh. The user may ask in English, Bangla, Banglish or another language.
+
+Return ONLY JSON in exactly this shape:
+{"type": "expense" or "income" or "both",
+ "categories": ["exact existing category names, or empty list for all"],
+ "accounts": ["exact account names if the question is about specific accounts, else empty list"],
+ "keyword": "word to search in notes, or empty string",
+ "start_date": "YYYY-MM-DD",
+ "end_date": "YYYY-MM-DD",
+ "group_by": "none" or "category" or "day" or "month",
+ "title": "the question restated briefly in the user's language"}
+
+Rules:
+- Today is __TODAY__ (__WEEKDAY__).
+- "this month"/"এই মাসে" = __MONTH_START__ to __TODAY__. "last month"/"গত মাসে" = the full previous month.
+  "this year" = Jan 1 of this year to today. "today", "yesterday", "this week", "last 7 days" etc. accordingly.
+  If no period is mentioned, use this month.
+- Use only these category names (exact spelling):
+  EXPENSE: __EXPENSE__
+  INCOME: __INCOME__
+  ACCOUNTS: __ACCOUNTS__
+  Map words like food/khabar/খাবার to the closest category. If the question is about a specific
+  thing that is not a category (e.g. "rickshaw", "coffee"), put it in keyword instead.
+- "how much did I spend/save/earn", "balance", "income vs expense" questions: choose type sensibly
+  ("both" for balance / savings / comparisons).
+- "where did I spend most", "breakdown" -> group_by "category". "daily", "per day" -> "day".
+  "per month", "monthly trend" -> "month". Otherwise "none".
+- Never compute numbers yourself.
+"""
+
+
+def _fill(template: str, today, expense_names, income_names, account_names=()) -> str:
+    import datetime as dt
+
+    yesterday = today - dt.timedelta(days=1)
+    return (
+        template.replace("__TODAY__", today.isoformat())
+        .replace("__YESTERDAY__", yesterday.isoformat())
+        .replace("__WEEKDAY__", today.strftime("%A"))
+        .replace("__MONTH_START__", today.replace(day=1).isoformat())
+        .replace("__EXPENSE__", ", ".join(expense_names) or "(none)")
+        .replace("__INCOME__", ", ".join(income_names) or "(none)")
+        .replace("__ACCOUNTS__", ", ".join(account_names) or "(none)")
+    )
+
+
+def parse_transactions(text, today, expense_names, income_names, account_names=()) -> dict:
+    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names)
+    return call_llm(system, normalize_text(text))
+
+
+def build_query(question, today, expense_names, income_names, language="en", account_names=()) -> dict:
+    system = _fill(QUERY_PROMPT, today, expense_names, income_names, account_names)
+    # the app's display language decides the language of the title shown above the answer
+    title_lang = "Bangla (বাংলা script)" if language == "bn" else "English"
+    system += f'- Write "title" in {title_lang}.\n'
+    return call_llm(system, normalize_text(question))

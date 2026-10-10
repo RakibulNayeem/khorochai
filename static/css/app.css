@@ -1,0 +1,129 @@
+:root {
+  --brand: #1e2a44;
+  --brand-hover: #2c3e64;
+  --link: #1e2a44;
+  --link-hover: #2c3e64;
+  --gold: #f2a900;
+  --gold-text: #d48c00;
+  --brand-soft: #fff4d6;
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --income: #15803d;
+  --expense: #c2410c;
+  --chart-income: #16a34a;
+  --chart-expense: #ea580c;
+  --ai-box-end: #fff8e6;
+  --ai-box-border: #f3d98b;
+  --chip-border: #d1d5db;
+  --badge-new-bg: #fef3c7;
+  --badge-new-ink: #92400e;
+}
+/* Dark theme: Bootstrap's own dark mode (data-bs-theme="dark") + the app's colors */
+[data-bs-theme="dark"] {
+  --brand: #31456f;
+  --brand-hover: #3d5587;
+  --link: #f2c14e;
+  --link-hover: #ffd57a;
+  --gold-text: #f2b630;
+  --brand-soft: #3a2f12;
+  --bg: #0f141c;
+  --surface: #171e2a;
+  --border: #2a3444;
+  --ink: #e5e7eb;
+  --muted: #9aa3b2;
+  --income: #4ade80;
+  --expense: #fb923c;
+  --chart-income: #22c55e;
+  --chart-expense: #f97316;
+  --ai-box-end: #2a2412;
+  --ai-box-border: #5c4a17;
+  --chip-border: #3a4556;
+  --badge-new-bg: #3a2f12;
+  --badge-new-ink: #fcd34d;
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--ink);
+  --bs-secondary-color: var(--muted);
+  --bs-border-color: var(--border);
+  --bs-tertiary-bg: #1d2635;
+}
+[data-bs-theme="dark"] .text-muted { color: var(--muted) !important; }
+[data-bs-theme="dark"] .form-control, [data-bs-theme="dark"] .form-select { background-color: #111823; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", "Hind Siliguri", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.navbar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.navbar-brand { font-weight: 700; color: var(--brand) !important; letter-spacing: -.01em; }
+.nav-link.active { color: var(--ink) !important; font-weight: 600; box-shadow: inset 0 -2px 0 var(--gold); }
+/* Ask AI stands out in the navbar as a gold pill */
+.navbar .nav-link.nav-ask { font-weight: 600; color: var(--ink) !important; background: var(--brand-soft);
+  border: 1px solid var(--gold); border-radius: 999px; padding: .3rem .9rem; margin: .2rem 0 .2rem .4rem; }
+.navbar .nav-link.nav-ask:hover { background: var(--gold); color: #1f2937 !important; }
+.navbar .nav-link.nav-ask.active { box-shadow: none; background: var(--gold); color: #1f2937 !important; }
+@media (max-width: 767.98px) { .navbar .nav-link.nav-ask { display: inline-block; margin-left: 0; } }
+.card { --bs-card-bg: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
+.card-title-sm { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.stat { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.text-income { color: var(--income) !important; }
+.text-expense { color: var(--expense) !important; }
+.btn-brand { background: var(--brand); color: #fff; border: none; }
+.btn-brand:hover, .btn-brand:focus { background: var(--brand-hover); color: #fff; }
+.ai-box { background: linear-gradient(135deg, var(--surface) 0%, var(--ai-box-end) 100%); border: 1px solid var(--ai-box-border); }
+.ai-box textarea { border-radius: 12px; resize: vertical; font-size: 1.05rem; }
+.example-chip { cursor: pointer; font-size: .8rem; background: var(--surface); border: 1px solid var(--chip-border); border-radius: 999px;
+  padding: .2rem .7rem; color: var(--muted); display: inline-block; margin: .15rem .2rem .15rem 0; }
+.example-chip:hover { border-color: var(--link); color: var(--link); }
+.cat-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+.amount { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table { --bs-table-bg: transparent; }
+.table > :not(caption) > * > * { padding: .6rem .6rem; }
+.preview-row { border-left: 4px solid var(--gold); }
+.preview-row.is-income { border-left-color: var(--income); }
+.preview-row.is-expense { border-left-color: var(--expense); }
+.preview-row.excluded { opacity: .45; }
+.preview-row.is-transfer { border-left-color: #6366f1; }
+.preview-row.is-transfer .tx-only, .preview-row:not(.is-transfer) .transfer-only { display: none; }
+.badge-new { background: var(--badge-new-bg); color: var(--badge-new-ink); }
+.progress { height: 8px; border-radius: 999px; }
+@media (max-width: 576px) {
+  .stat { font-size: 1.3rem; }
+  .table { font-size: .9rem; }
+}
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+.bg-brand { background-color: var(--brand) !important; }
+[data-bs-theme="dark"] .progress-bar.bg-brand { background-color: var(--gold) !important; }
+.btn-link { --bs-btn-color: var(--link); --bs-btn-hover-color: var(--link-hover); }
+.wordmark { font-weight: 700; font-size: 1.3rem; color: var(--ink); letter-spacing: -.02em; }
+.wordmark-ai { color: var(--gold-text); }
+.ai-box textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 .2rem rgba(242,169,0,.2); }
+.form-control:focus, .form-select:focus { border-color: #8a98b8; box-shadow: 0 0 0 .2rem rgba(30,42,68,.12); }
+
+/* Settings menu (gear in the navbar) and Settings page */
+.btn-icon { color: var(--muted); border: 1px solid var(--border); border-radius: 10px; padding: .35rem .5rem; line-height: 1; }
+.btn-icon:hover, .btn-icon[aria-expanded="true"] { color: var(--ink); background: var(--bs-tertiary-bg); }
+.settings-menu { min-width: 280px; border-color: var(--border); background: var(--surface); }
+.settings-menu .btn-group .btn { font-size: .8rem; }
+.btn-outline-secondary.active, .btn-check:checked + .btn-outline-secondary {
+  background: var(--brand-soft); color: var(--ink); border-color: var(--gold);
+}
+.choice { font-weight: 600; }
+
+/* Accounts */
+.account-card { border-left: 4px solid var(--acc, var(--border)); }
+.account-strip { display: flex; gap: .75rem; overflow-x: auto; padding-bottom: .25rem; }
+.account-chip { flex: 0 0 auto; min-width: 150px; text-decoration: none; color: var(--ink); }
+.account-chip:hover { border-color: var(--acc); color: var(--ink); }
+
+/* "AI uses left today" */
+.ai-quota { color: var(--muted); min-width: 170px; }
+.ai-quota-bar { height: 4px; border-radius: 999px; background: var(--border); margin-top: 3px; overflow: hidden; }
+.ai-quota-bar span { display: block; height: 100%; background: var(--gold); }
+.ai-quota.is-low { color: var(--expense); }
+.ai-quota.is-low .ai-quota-bar span { background: var(--expense); }
+.ai-quota.is-empty { color: var(--expense); font-weight: 600; }
+.ai-quota.is-empty .ai-quota-bar span { background: var(--expense); }

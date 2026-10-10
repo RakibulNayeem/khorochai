@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Confirm" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-start mb-3 flex-wrap gap-2">
+  <div>
+    <h1 class="h4 mb-1">{% translate "Check before saving" %}</h1>
+    <p class="text-muted mb-0">{% blocktranslate count n=row_count %}The AI found {{ n }} transaction. Fix anything that looks wrong, then save.{% plural %}The AI found {{ n }} transactions. Fix anything that looks wrong, then save.{% endblocktranslate %}</p>
+  </div>
+</div>
+
+<div class="card p-3 mb-3 small text-muted">{% translate "You wrote:" %} <span class="text-body">“{{ raw_text }}”</span></div>
+
+<form method="post" action="{% url 'ai_confirm' %}">
+  {% csrf_token %}
+  <input type="hidden" name="row_count" value="{{ row_count }}">
+  <input type="hidden" name="raw_text" value="{{ raw_text }}">
+
+  {% for r in rows %}
+  {% with i=forloop.counter0 %}
+  <div class="card preview-row is-{{ r.type }} p-3 mb-3" data-row="{{ i }}">
+    <div class="form-check mb-2">
+      <input class="form-check-input include-box" type="checkbox" name="include_{{ i }}" id="include_{{ i }}" value="1" checked>
+      <label class="form-check-label fw-semibold" for="include_{{ i }}">{% translate "Save this one" %}</label>
+      {% if not r.category_id and r.type != "transfer" %}<span class="badge badge-new ms-2">{% translate "New category:" %} {{ r.new_category }}</span>{% endif %}
+    </div>
+    <div class="row g-2">
+      <div class="col-6 col-md-2">
+        <label class="form-label small text-muted mb-1">{% translate "Type" %}</label>
+        <select name="type_{{ i }}" class="form-select type-select">
+          <option value="expense" {% if r.type == "expense" %}selected{% endif %}>{% translate "Expense" %}</option>
+          <option value="income" {% if r.type == "income" %}selected{% endif %}>{% translate "Income" %}</option>
+          <option value="transfer" {% if r.type == "transfer" %}selected{% endif %}>⇄ {% translate "Transfer" %}</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-2">
+        <label class="form-label small text-muted mb-1">{% translate "Amount" %} (৳)</label>
+        <input type="number" step="0.01" min="0.01" name="amount_{{ i }}" value="{{ r.amount }}" class="form-control" required>
+      </div>
+      <div class="col-6 col-md-2 tx-only">
+        <label class="form-label small text-muted mb-1">{% translate "Category" %}</label>
+        <select name="category_{{ i }}" class="form-select cat-select">
+          {% if not r.category_id %}<option value="__new__" selected>➕ {% translate "New:" %} {{ r.new_category }}</option>
+          {% else %}<option value="__new__">➕ {% translate "New category…" %}</option>{% endif %}
+          <optgroup label="{% translate 'Expense' %}">
+            {% for c in categories %}{% if c.type == "expense" %}
+            <option value="{{ c.id }}" {% if c.id == r.category_id %}selected{% endif %}>{{ c }}</option>
+            {% endif %}{% endfor %}
+          </optgroup>
+          <optgroup label="{% translate 'Income' %}">
+            {% for c in categories %}{% if c.type == "income" %}
+            <option value="{{ c.id }}" {% if c.id == r.category_id %}selected{% endif %}>{{ c }}</option>
+            {% endif %}{% endfor %}
+          </optgroup>
+        </select>
+        <input type="text" name="new_category_{{ i }}" value="{{ r.new_category }}" maxlength="60"
+               class="form-control mt-1 new-cat-input" placeholder="{% translate 'New category name' %}"
+               {% if r.category_id %}style="display:none"{% endif %}>
+      </div>
+      <div class="col-6 col-md-2">
+        <label class="form-label small text-muted mb-1"><span class="tx-only">{% translate "Account" %}</span><span class="transfer-only">{% translate "From" %}</span></label>
+        <select name="account_{{ i }}" class="form-select">
+          {% for a in accounts %}<option value="{{ a.id }}" {% if a.id == r.account_id %}selected{% endif %}>{{ a }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="col-6 col-md-2 transfer-only">
+        <label class="form-label small text-muted mb-1">{% translate "To" %}</label>
+        <select name="to_account_{{ i }}" class="form-select">
+          {% for a in accounts %}<option value="{{ a.id }}" {% if a.id == r.to_account_id %}selected{% endif %}>{{ a }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="col-6 col-md-2">
+        <label class="form-label small text-muted mb-1">{% translate "Note" %}</label>
+        <input type="text" name="note_{{ i }}" value="{{ r.note }}" maxlength="255" class="form-control">
+      </div>
+      <div class="col-6 col-md-2">
+        <label class="form-label small text-muted mb-1">{% translate "Date" %}</label>
+        <input type="date" name="date_{{ i }}" value="{{ r.date|date:'Y-m-d' }}" class="form-control">
+      </div>
+    </div>
+  </div>
+  {% endwith %}
+  {% endfor %}
+
+  <div class="d-flex gap-2 justify-content-end">
+    <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary">{% translate "Cancel" %}</a>
+    <button class="btn btn-brand px-4">{% translate "Save" %}</button>
+  </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.preview-row').forEach(row => {
+  const inc = row.querySelector('.include-box');
+  const type = row.querySelector('.type-select');
+  const cat = row.querySelector('.cat-select');
+  const newInput = row.querySelector('.new-cat-input');
+  inc.addEventListener('change', () => row.classList.toggle('excluded', !inc.checked));
+  type.addEventListener('change', () => {
+    row.classList.remove('is-income', 'is-expense', 'is-transfer');
+    row.classList.add('is-' + type.value);
+  });
+  cat.addEventListener('change', () => {
+    const isNew = cat.value === '__new__';
+    newInput.style.display = isNew ? '' : 'none';
+    if (isNew) newInput.focus();
+  });
+});
+</script>
+{% endblock %}

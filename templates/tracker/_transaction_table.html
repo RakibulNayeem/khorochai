@@ -1,0 +1,41 @@
+{% load i18n money %}
+{% if items %}
+<div class="table-responsive">
+<table class="table table-hover align-middle mb-0">
+  <thead class="small text-muted"><tr><th>{% translate "Date" %}</th><th>{% translate "Category" %}</th><th class="d-none d-sm-table-cell">{% translate "Account" %}</th><th>{% translate "Note" %}</th><th class="text-end">{% translate "Amount" %}</th><th></th></tr></thead>
+  <tbody>
+  {% for t in items %}
+    {% if t.is_transfer %}
+    <tr class="transfer-row">
+      <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>
+      <td class="text-nowrap"><span class="text-muted">⇄ {% translate "Transfer" %}</span></td>
+      <td class="small text-nowrap d-none d-sm-table-cell">{{ t.from_account }} → {{ t.to_account }}</td>
+      <td class="small">{{ t.note }}<span class="d-sm-none text-muted"> {{ t.from_account.label }} → {{ t.to_account.label }}</span></td>
+      <td class="amount text-end fw-semibold text-muted">{{ t.amount|money }}</td>
+      <td class="text-end text-nowrap">
+        <a href="{% url 'transfer_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>
+      <td class="text-nowrap">
+        {% if t.category %}<span class="cat-dot" style="background:{{ t.category.color }}"></span>{{ t.category }}{% else %}<span class="text-muted">{% translate "Uncategorized" %}</span>{% endif %}
+      </td>
+      <td class="small text-nowrap d-none d-sm-table-cell">{% if t.account %}{{ t.account }}{% else %}<span class="text-muted">—</span>{% endif %}</td>
+      <td class="small">{{ t.note }}{% if t.source == "ai" %} <span title="{% translate 'Added with AI' %}">✨</span>{% endif %}</td>
+      <td class="amount text-end fw-semibold {% if t.type == 'income' %}text-income{% else %}text-expense{% endif %}">
+        {% if t.type == 'income' %}+{% else %}−{% endif %}{{ t.amount|money }}
+      </td>
+      <td class="text-end text-nowrap">
+        <a href="{% url 'transaction_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
+      </td>
+    </tr>
+    {% endif %}
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}
+<p class="text-muted text-center my-4">{% translate "No transactions yet. Type something in the box above!" %}</p>
+{% endif %}

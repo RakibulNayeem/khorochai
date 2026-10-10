@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{% translate "Ask AI" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="card ai-box p-3 p-md-4 mb-4">
+  <form method="post" id="ask-form">
+    {% csrf_token %}
+    <label class="form-label fw-semibold" for="question">✨ {% translate "Ask anything about your money" %}</label>
+    <div class="input-group">
+      <input type="text" id="question" name="question" maxlength="500" class="form-control form-control-lg" required
+             value="{{ question }}" placeholder="এই মাসে খাবারে কত খরচ হলো?">
+      <button class="btn btn-brand px-4" id="ask-btn"{% if ai_quota.left == 0 %} disabled{% endif %}>{% translate "Ask" %}</button>
+    </div>
+    <div class="mt-2">{% include "tracker/_ai_quota.html" %}</div>
+    <div class="mt-2">
+      <span class="example-chip" data-text="এই মাসে খাবারে কত খরচ হলো?">এই মাসে খাবারে কত খরচ?</span>
+      <span class="example-chip" data-text="{% translate 'Where did I spend the most last month?' %}">{% translate "Where did I spend most last month?" %}</span>
+      <span class="example-chip" data-text="{% translate 'How much did I spend on rickshaw this year?' %}">{% translate "Rickshaw spending this year" %}</span>
+      <span class="example-chip" data-text="{% translate 'income vs expense per month this year' %}">{% translate "Income vs expense per month" %}</span>
+    </div>
+  </form>
+</div>
+
+{% if result %}
+<div class="card p-3 p-md-4">
+  <h2 class="h5 mb-1">{{ result.title }}</h2>
+  <p class="small text-muted mb-3">
+    {{ result.start|date:"d M Y" }} – {{ result.end|date:"d M Y" }}
+    {% if result.categories %} · {{ result.categories|join:", " }}{% endif %}
+    {% if result.accounts %} · {{ result.accounts|join:", " }}{% endif %}
+    {% if result.keyword %} · {% blocktranslate with k=result.keyword %}notes containing “{{ k }}”{% endblocktranslate %}{% endif %}
+    · {% blocktranslate count n=result.count %}{{ n }} transaction{% plural %}{{ n }} transactions{% endblocktranslate %}
+  </p>
+
+  <div class="row g-3 mb-3">
+    {% if result.type != "income" %}
+    <div class="col-sm-4"><div class="card-title-sm">{% translate "Spent" %}</div><div class="stat text-expense">{{ result.expense|money }}</div></div>
+    {% endif %}
+    {% if result.type != "expense" %}
+    <div class="col-sm-4"><div class="card-title-sm">{% translate "Earned" %}</div><div class="stat text-income">{{ result.income|money }}</div></div>
+    {% endif %}
+    {% if result.type == "both" %}
+    <div class="col-sm-4"><div class="card-title-sm">{% translate "Net" %}</div><div class="stat">{{ result.net|money }}</div></div>
+    {% endif %}
+  </div>
+
+  {% if result.groups %}
+  <div class="table-responsive mb-3">
+    <table class="table table-sm align-middle">
+      <thead class="small text-muted"><tr><th>{% translate "Group" %}</th><th>{% translate "Type" %}</th><th class="text-end">{% translate "Count" %}</th><th class="text-end">{% translate "Total" %}</th></tr></thead>
+      {% for g in result.groups %}
+      <tr><td>{{ g.label }}</td><td class="small text-muted">{% if g.type == "income" %}{% translate "Income" %}{% else %}{% translate "Expense" %}{% endif %}</td><td class="text-end small">{{ g.n }}</td>
+        <td class="amount text-end {% if g.type == 'income' %}text-income{% else %}text-expense{% endif %}">{{ g.total|money }}</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+
+  {% if result.items %}
+  <details {% if not result.groups %}open{% endif %}>
+    <summary class="small text-muted mb-2">{% translate "Matching transactions" %}{% if result.count > 50 %} ({% translate "first 50" %}){% endif %}</summary>
+    {% include "tracker/_transaction_table.html" with items=result.items %}
+  </details>
+  {% endif %}
+  <p class="small text-muted mt-3 mb-0">{% translate "The AI only understood your question; every number here was calculated from your saved data." %}</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.example-chip').forEach(el => el.addEventListener('click', () => {
+  document.getElementById('question').value = el.dataset.text;
+  document.getElementById('ask-form').requestSubmit();
+}));
+document.getElementById('ask-form').addEventListener('submit', () => {
+  const b = document.getElementById('ask-btn'); b.disabled = true; b.textContent = '{% translate "Thinking…" as t %}{{ t|escapejs }}';
+});
+</script>
+{% endblock %}

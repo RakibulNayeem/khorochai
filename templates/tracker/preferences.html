@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Settings" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-md-8 col-lg-6">
+  <h1 class="h4 mb-3">{% translate "Settings" %}</h1>
+  <form method="post" class="card p-3 p-md-4">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{% url 'preferences' %}">
+
+    <fieldset class="mb-4">
+      <legend class="card-title-sm mb-2">{% translate "Theme" %}</legend>
+      <div class="row g-2">
+        {% translate "Light" as light %}{% translate "Dark" as dark %}{% translate "System" as system %}
+        <div class="col-4">
+          <input type="radio" class="btn-check" name="theme" id="theme-light" value="light" {% if theme == "light" %}checked{% endif %}>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-light"><span class="fs-4 d-block">☀️</span>{{ light }}</label>
+        </div>
+        <div class="col-4">
+          <input type="radio" class="btn-check" name="theme" id="theme-dark" value="dark" {% if theme == "dark" %}checked{% endif %}>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-dark"><span class="fs-4 d-block">🌙</span>{{ dark }}</label>
+        </div>
+        <div class="col-4">
+          <input type="radio" class="btn-check" name="theme" id="theme-system" value="system" {% if theme == "system" %}checked{% endif %}>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-system"><span class="fs-4 d-block">💻</span>{{ system }}</label>
+        </div>
+      </div>
+      <div class="form-text">{% translate "System follows your phone or computer's dark mode setting." %}</div>
+    </fieldset>
+
+    <fieldset class="mb-4">
+      <legend class="card-title-sm mb-2">{% translate "Language" %}</legend>
+      <div class="row g-2">
+        {% for code, name in languages %}
+        <div class="col-6">
+          <input type="radio" class="btn-check" name="language" id="lang-{{ code }}" value="{{ code }}" {% if code == LANGUAGE_CODE %}checked{% endif %}>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="lang-{{ code }}" lang="{{ code }}">{{ name }}</label>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="form-text">{% translate "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish." %}</div>
+    </fieldset>
+
+    <button class="btn btn-brand px-4 align-self-start">{% translate "Save" %}</button>
+  </form>
+  <p class="small text-muted mt-3">{% translate "These settings are saved in this browser." %}</p>
+</div></div>
+{% endblock %}
