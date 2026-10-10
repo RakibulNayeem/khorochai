@@ -86,9 +86,10 @@
 
 <main class="container py-4">
   {% for m in messages %}
-    <div class="alert alert-{% if m.tags == 'error' %}danger{% else %}{{ m.tags }}{% endif %} alert-dismissible fade show js-auto-dismiss" role="alert">
+    <div class="alert alert-{% if m.tags == 'error' %}danger{% else %}{{ m.tags }}{% endif %} alert-dismissible toast-msg" role="alert">
       {{ m }}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% translate 'Close' %}"></button>
+      <button type="button" class="btn-close" aria-label="{% translate 'Close' %}"></button>
+      <span class="toast-timer" aria-hidden="true"></span>
     </div>
   {% endfor %}
   {% block content %}{% endblock %}
@@ -97,8 +98,19 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // notifications close themselves after 20 seconds
-  setTimeout(() => document.querySelectorAll('.js-auto-dismiss').forEach(el => bootstrap.Alert.getOrCreateInstance(el).close()), 20000);
+  // Notifications slide in, close themselves after 10 seconds (the timer pauses while hovered)
+  // and slide away while their space collapses, so the page below moves up smoothly.
+  document.querySelectorAll('.toast-msg').forEach(el => {
+    const dismiss = () => {
+      if (el.classList.contains('is-leaving')) return;
+      el.style.height = el.offsetHeight + 'px';  // fix the start height so it can animate to 0
+      requestAnimationFrame(() => el.classList.add('is-leaving'));
+      el.addEventListener('transitionend', e => { if (e.propertyName === 'height') el.remove(); });
+      setTimeout(() => el.remove(), 800);        // fallback if transitions are off
+    };
+    el.querySelector('.btn-close').addEventListener('click', dismiss);
+    el.querySelector('.toast-timer').addEventListener('animationend', dismiss);
+  });
 </script>
 {% block scripts %}{% endblock %}
 </body>

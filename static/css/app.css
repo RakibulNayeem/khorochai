@@ -127,3 +127,19 @@ a:hover { color: var(--link-hover); }
 .ai-quota.is-low .ai-quota-bar span { background: var(--expense); }
 .ai-quota.is-empty { color: var(--expense); font-weight: 600; }
 .ai-quota.is-empty .ai-quota-bar span { background: var(--expense); }
+
+/* Notifications: slide in, 10-second timer line, smooth slide-out + collapse */
+.toast-msg { position: relative; overflow: hidden; animation: toast-in .35s cubic-bezier(.2,.8,.2,1);
+  transition: opacity .35s ease, transform .35s ease, height .4s ease .1s, margin .4s ease .1s,
+              padding .4s ease .1s, border-width .4s ease .1s; }
+.toast-msg.is-leaving { opacity: 0; transform: translateY(-12px); height: 0 !important;
+  margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; border-width: 0; }
+.toast-timer { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: currentColor;
+  opacity: .35; transform-origin: left; animation: toast-timer 10s linear forwards; }
+.toast-msg:hover .toast-timer { animation-play-state: paused; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+@keyframes toast-timer { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .toast-msg { animation: none; transition: opacity .2s ease, height .01s linear .2s; }
+  .toast-msg.is-leaving { transform: none; }
+}
