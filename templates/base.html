@@ -89,7 +89,6 @@
     <div class="alert alert-{% if m.tags == 'error' %}danger{% else %}{{ m.tags }}{% endif %} alert-dismissible toast-msg" role="alert">
       {{ m }}
       <button type="button" class="btn-close" aria-label="{% translate 'Close' %}"></button>
-      <span class="toast-timer" aria-hidden="true"></span>
     </div>
   {% endfor %}
   {% block content %}{% endblock %}
@@ -98,7 +97,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Notifications slide in, close themselves after 10 seconds (the timer pauses while hovered)
+  // Notifications slide in, close themselves after 10 seconds
   // and slide away while their space collapses, so the page below moves up smoothly.
   document.querySelectorAll('.toast-msg').forEach(el => {
     const dismiss = () => {
@@ -109,7 +108,7 @@
       setTimeout(() => el.remove(), 800);        // fallback if transitions are off
     };
     el.querySelector('.btn-close').addEventListener('click', dismiss);
-    el.querySelector('.toast-timer').addEventListener('animationend', dismiss);
+    setTimeout(dismiss, 10000);
   });
 </script>
 {% block scripts %}{% endblock %}
