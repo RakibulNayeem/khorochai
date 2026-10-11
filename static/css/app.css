@@ -139,3 +139,12 @@ a:hover { color: var(--link-hover); }
   .toast-msg { animation: none; transition: opacity .2s ease, height .01s linear .2s; }
   .toast-msg.is-leaving { transform: none; }
 }
+
+/* Login / sign-up / code pages (django-allauth) */
+.auth-wrap { max-width: 440px; margin: 0 auto; }
+@media (min-width: 768px) { .auth-wrap { margin-top: 1.5rem; } }
+.auth-card h1 { color: var(--ink); }
+.auth-card input[name="code"] { font-size: 1.6rem; letter-spacing: .5em; text-align: center; font-variant-numeric: tabular-nums; }
+.social-btn { display: flex; align-items: center; justify-content: center; gap: .6rem; font-weight: 600; color: var(--ink); }
+.auth-divider { display: flex; align-items: center; gap: .75rem; color: var(--muted); font-size: .8rem; }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; border-top: 1px solid var(--border); }

@@ -1,0 +1,18 @@
+{% load ui %}
+{% for e in attrs.form.non_field_errors %}<div class="alert alert-danger small py-2">{{ e }}</div>{% endfor %}
+{% for field in attrs.form.hidden_fields %}{{ field }}{% endfor %}
+{% for field in attrs.form.visible_fields %}
+  {% if field.widget_type == "checkbox" %}
+  <div class="form-check mb-3">
+    {{ field|bs_widget }}
+    <label class="form-check-label small" for="{{ field.id_for_label }}">{{ field.label }}</label>
+  </div>
+  {% else %}
+  <div class="mb-3">
+    <label class="form-label small fw-semibold" for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field|bs_widget }}
+    {% for e in field.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
+    {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+  </div>
+  {% endif %}
+{% endfor %}

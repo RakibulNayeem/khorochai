@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% comment %}All django-allauth pages (login, sign-up, codes, password reset...) use the app's layout in a centred card.{% endcomment %}
+{% block title %}{% block head_title %}{% endblock head_title %} · KhorochAi{% endblock %}
+{% block before_content %}<div class="auth-wrap"><div class="card auth-card p-4">{% endblock %}
+{% block after_content %}</div></div>{% endblock %}
+{% block scripts %}{% block extra_body %}{% endblock extra_body %}{% endblock %}

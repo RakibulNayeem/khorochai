@@ -1,0 +1,6 @@
+{% load i18n socialaccount %}
+{% get_providers as socialaccount_providers %}
+{% if socialaccount_providers %}
+  {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+  <div class="auth-divider my-3"><span>{% translate "or with email" %}</span></div>
+{% endif %}

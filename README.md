@@ -15,7 +15,8 @@ Type what you spent or earned in **English, বাংলা or Banglish**. The A
 - Monthly budgets per category with progress bars and warnings
 - ✨ Ask AI: "এই মাসে খাবারে কত খরচ হলো?", "Where did I spend most last month?"
 - Transactions list with filters, search, edit, delete, CSV export (Bangla-safe for Excel)
-- Multi-user: everyone has their own account and data
+- Multi-user: log in with email + password (or Google / Facebook). New emails are verified with a 6-digit code;
+  forgotten passwords are reset with a 6-digit code sent by email
 - Accounts: Cash, bKash, Nagad, Bank, Card (add your own). The AI picks the account from your text
   ("bkash e 500 dilam"); "Move money" records ATM withdrawals / cash outs between accounts
 - Daily AI token allowance per user and for the whole app (stays inside the free tiers), shown as "% used" next to the AI box
@@ -146,6 +147,25 @@ Vercel → Project → **Settings → Domains** → add your domain. Then add it
 `CSRF_TRUSTED_ORIGINS` (e.g. `https://*.vercel.app,https://budget.example.com`), and redeploy.
 
 ---
+
+## Login emails, Google and Facebook
+
+**Gmail (verification + password-reset codes)** — free, about 500 emails a day:
+1. Google Account → **Security** → turn on **2-Step Verification**.
+2. Google Account → search **App passwords** → create one named `KhorochAi` → copy the 16-letter password.
+3. Set `EMAIL_HOST_USER` (your Gmail address) and `EMAIL_HOST_PASSWORD` (the app password) in `.env` and on Vercel.
+Without them (local development) the emails are printed in the terminal.
+
+**Continue with Google** (optional): [Google Cloud Console](https://console.cloud.google.com/apis/credentials) →
+Create credentials → **OAuth client ID** → Web application. Authorized redirect URI:
+`https://YOUR-APP.vercel.app/auth/google/login/callback/` (and `http://127.0.0.1:8000/auth/google/login/callback/` for local).
+Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
+
+**Continue with Facebook** (optional): [developers.facebook.com](https://developers.facebook.com/apps) → Create app →
+add **Facebook Login** → Valid OAuth redirect URI: `https://YOUR-APP.vercel.app/auth/facebook/login/callback/`.
+Set `FACEBOOK_APP_ID` and `FACEBOOK_APP_SECRET`, and switch the app to **Live** mode.
+
+Each button appears on the login page only when its keys are set.
 
 ## Troubleshooting
 

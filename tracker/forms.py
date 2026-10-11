@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.utils.translation import gettext, gettext_lazy as _
 
@@ -18,16 +17,23 @@ class BootstrapMixin:
                 w.attrs.setdefault("class", "form-control")
 
 
-class SignupForm(BootstrapMixin, UserCreationForm):
-    email = forms.EmailField(required=False, label=_("Email (optional)"))
-
+class UsernameForm(BootstrapMixin, forms.ModelForm):
+    """The username is only a display name inside the app; people log in with their email."""
     class Meta:
         model = User
-        fields = ("username", "email")
+        fields = ("username",)
+        labels = {"username": _("Username")}
+        help_texts = {"username": _("Shown in the app. You log in with your email, not this.")}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._style()
+
+    def clean_username(self):
+        name = self.cleaned_data["username"].strip()
+        if User.objects.filter(username__iexact=name).exclude(pk=self.instance.pk).exists():
+            raise forms.ValidationError(_("This username is already taken."))
+        return name
 
 
 class TransactionForm(BootstrapMixin, forms.ModelForm):

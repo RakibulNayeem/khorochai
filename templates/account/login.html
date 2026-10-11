@@ -1,0 +1,17 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n static allauth account socialaccount %}
+{% block head_title %}{% translate "Log in" %}{% endblock head_title %}
+{% block content %}
+  <img src="{% static 'img/logo.svg' %}" alt="KhorochAi" width="52" height="52" class="mb-3">
+  <h1 class="h4 mb-1">{% translate "Welcome back" %}</h1>
+  <p class="text-muted small mb-3">{% translate "Track your money by just typing, in English or বাংলা." %}</p>
+  {% include "socialaccount/snippets/social_buttons.html" %}
+  {% url 'account_login' as login_url %}
+  <form method="post" action="{{ login_url }}" class="auth-form" novalidate>
+    {% csrf_token %}
+    {% element fields form=form %}{% endelement %}
+    {{ redirect_field }}
+    <button class="btn btn-brand w-100">{% translate "Log in" %}</button>
+  </form>
+  <p class="small text-center mt-3 mb-0">{% translate "No account?" %} <a href="{{ signup_url }}">{% translate "Sign up" %}</a></p>
+{% endblock content %}

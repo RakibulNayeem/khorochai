@@ -1,0 +1,9 @@
+{% extends "account/email/base_message.txt" %}
+{% load i18n %}
+{% block content %}{% autoescape off %}{% if code %}{% translate "Your email verification code is:" %}
+
+    {{ code }}
+
+{% translate "Enter it in the KhorochAi page that is open in your browser. The code expires soon." %}{% else %}{% blocktranslate %}To confirm your email, open {{ activate_url }}{% endblocktranslate %}{% endif %}
+
+{% translate "If you did not sign up for KhorochAi, you can ignore this email." %}{% endautoescape %}{% endblock content %}

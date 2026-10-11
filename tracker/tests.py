@@ -1,8 +1,10 @@
+import re
 import datetime as dt
 from decimal import Decimal
 from unittest import mock
 
 from django.contrib.auth.models import User
+from django.core import mail
 from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
@@ -119,12 +121,6 @@ class FlowTests(TestCase):
         self.assertEqual(llm._extract_json('```json\n{"a": 1}\n```'), {"a": 1})
         self.assertEqual(llm._extract_json('Sure! {"a": 2} hope this helps'), {"a": 2})
         self.assertEqual(llm.normalize_text("৫৫০"), "550")
-
-    def test_signup(self):
-        self.client.logout()
-        r = self.client.post(reverse("signup"), {"username": "newbie", "email": "", "password1": "Strong-pass-123",
-                                                 "password2": "Strong-pass-123"}, follow=True)
-        self.assertContains(r, "Default categories are ready")
 
     def test_theme_and_language_settings(self):
         r = self.client.post(reverse("preferences"), {"theme": "dark", "language": "bn", "next": reverse("dashboard")})
@@ -307,3 +303,69 @@ class RecentPeriodTests(TestCase):
         lst = self.client.get(reverse("transactions") + f"?from={old.isoformat()}&to={old.isoformat()}")
         self.assertContains(lst, "old-shoes")
         self.assertNotContains(lst, "today-tea")
+
+
+def _code_from(message):
+    """The 6-digit code, on its own indented line in the email."""
+    return re.search(r"^\s+(\d{6})\s*$", message.body, re.M).group(1)
+
+
+class AuthTests(TestCase):
+    """Email + password login, email verification and password reset by code (django-allauth)."""
+    PW = "Strong-pass-123"
+
+    def test_signup_needs_email_code(self):
+        r = self.client.post(reverse("account_signup"), {"email": "new@example.com", "password1": self.PW,
+                                                         "password2": self.PW})
+        self.assertRedirects(r, reverse("account_email_verification_sent"))
+        user = User.objects.get(email="new@example.com")
+        self.assertTrue(user.username)  # made automatically from the email
+        self.assertNotIn("_auth_user_id", self.client.session)  # not logged in before the code
+        self.assertEqual(len(mail.outbox), 1)
+        r = self.client.post(reverse("account_email_verification_sent"), {"code": "000000"})
+        self.assertNotIn("_auth_user_id", self.client.session)
+        r = self.client.post(reverse("account_email_verification_sent"), {"code": _code_from(mail.outbox[0])}, follow=True)
+        self.assertEqual(int(self.client.session["_auth_user_id"]), user.pk)
+        self.assertContains(r, "Default categories are ready")
+        self.assertTrue(Account.objects.filter(user=user, name="bKash").exists())
+
+    def _verified_user(self, email="me@example.com"):
+        from allauth.account.models import EmailAddress
+        user = User.objects.create_user("me", email=email, password=self.PW)
+        EmailAddress.objects.create(user=user, email=email, verified=True, primary=True)
+        return user
+
+    def test_login_with_email_not_username(self):
+        user = self._verified_user()
+        r = self.client.post(reverse("account_login"), {"login": "me", "password": self.PW})
+        self.assertNotIn("_auth_user_id", self.client.session)
+        r = self.client.post(reverse("account_login"), {"login": "ME@example.com", "password": self.PW})
+        self.assertRedirects(r, reverse("dashboard"))
+        self.assertEqual(int(self.client.session["_auth_user_id"]), user.pk)
+
+    def test_password_reset_by_code(self):
+        self._verified_user()
+        r = self.client.post(reverse("account_reset_password"), {"email": "me@example.com"})
+        self.assertRedirects(r, reverse("account_confirm_password_reset_code"))
+        r = self.client.post(reverse("account_confirm_password_reset_code"), {"code": _code_from(mail.outbox[-1])})
+        self.assertRedirects(r, reverse("account_complete_password_reset"))
+        self.client.post(reverse("account_complete_password_reset"), {"password1": "New-pass-456", "password2": "New-pass-456"})
+        self.client.logout()
+        self.client.post(reverse("account_login"), {"login": "me@example.com", "password": "New-pass-456"})
+        self.assertIn("_auth_user_id", self.client.session)
+
+    def test_old_urls_and_login_page(self):
+        self.assertRedirects(self.client.get("/login/"), reverse("account_login"), fetch_redirect_response=False)
+        self.assertRedirects(self.client.get(reverse("dashboard")), reverse("account_login") + "?next=/",
+                             fetch_redirect_response=False)
+        r = self.client.get(reverse("account_login"))
+        self.assertContains(r, "Welcome back")
+        self.assertContains(r, 'type="email"')
+
+    def test_change_username_in_settings(self):
+        user = self._verified_user()
+        self.client.force_login(user)
+        r = self.client.post(reverse("preferences"), {"username": "rakib_bd"}, follow=True)
+        self.assertContains(r, "Username updated")
+        user.refresh_from_db()
+        self.assertEqual(user.username, "rakib_bd")

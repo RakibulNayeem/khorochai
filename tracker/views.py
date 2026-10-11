@@ -3,7 +3,6 @@ import logging
 
 from django.conf import settings as django_settings
 from django.contrib import messages
-from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import transaction as db_transaction
@@ -18,7 +17,7 @@ from django.views.decorators.http import require_POST
 
 from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
-from .forms import AccountForm, CategoryForm, SignupForm, TransactionForm, TransferForm
+from .forms import AccountForm, CategoryForm, TransactionForm, TransferForm, UsernameForm
 from .models import EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
 
 logger = logging.getLogger(__name__)
@@ -29,7 +28,17 @@ MAX_INPUT_CHARS = 2000
 # --------------------------------------------------------------------------- settings
 
 def preferences(request):
-    """Theme + language. Stored in cookies so they also work on the login page."""
+    """Theme + language (cookies, so they also work on the login page) and, when logged in, the username."""
+    username_form = None
+    if request.user.is_authenticated:
+        posted = request.method == "POST" and "username" in request.POST
+        username_form = UsernameForm(request.POST if posted else None, instance=request.user)
+        if posted:
+            if username_form.is_valid():
+                username_form.save()
+                messages.success(request, _("Username updated."))
+                return redirect("preferences")
+            return render(request, "tracker/preferences.html", {"username_form": username_form})
     if request.method == "POST":
         nxt = request.POST.get("next", "")
         if not url_has_allowed_host_and_scheme(nxt, allowed_hosts={request.get_host()}):
@@ -43,21 +52,7 @@ def preferences(request):
         if lang in dict(django_settings.LANGUAGES):
             response.set_cookie(django_settings.LANGUAGE_COOKIE_NAME, lang, max_age=year, samesite="Lax")
         return response
-    return render(request, "tracker/preferences.html")
-
-
-# --------------------------------------------------------------------------- auth
-
-def signup(request):
-    if request.user.is_authenticated:
-        return redirect("dashboard")
-    form = SignupForm(request.POST or None)
-    if request.method == "POST" and form.is_valid():
-        user = form.save()
-        login(request, user)
-        messages.success(request, _("Welcome! Default categories are ready. Try typing your first expense."))
-        return redirect("dashboard")
-    return render(request, "registration/signup.html", {"form": form})
+    return render(request, "tracker/preferences.html", {"username_form": username_form})
 
 
 # --------------------------------------------------------------------------- dashboard

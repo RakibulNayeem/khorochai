@@ -1,4 +1,3 @@
-from django.contrib.auth import views as auth_views
 from django.urls import path
 
 from . import views
@@ -25,7 +24,4 @@ urlpatterns = [
     path("transfers/<int:pk>/edit/", views.transfer_edit, name="transfer_edit"),
     path("transfers/<int:pk>/delete/", views.transfer_delete, name="transfer_delete"),
     path("settings/", views.preferences, name="preferences"),
-    path("signup/", views.signup, name="signup"),
-    path("login/", auth_views.LoginView.as_view(), name="login"),
-    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
 ]

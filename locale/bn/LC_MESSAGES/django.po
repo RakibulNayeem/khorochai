@@ -666,3 +666,187 @@ msgstr "আজকের AI ব্যবহার"
 
 msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
 msgstr "আজকের AI সীমার ১০০% ব্যবহার হয়ে গেছে। রাত ১২টায় আবার চালু হবে। এর মধ্যে নিজে লেনদেন যোগ করতে পারবেন।"
+
+# ---------------------------------------------------------------- login, sign-up, codes (django-allauth + Django)
+msgid "Email"
+msgstr "ইমেইল"
+
+msgid "Password (again)"
+msgstr "পাসওয়ার্ড (আবার)"
+
+msgid "Forgot your password?"
+msgstr "পাসওয়ার্ড ভুলে গেছেন?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "ইমেইল বা পাসওয়ার্ড ঠিক নয়।"
+
+msgid "A user is already registered with this email address."
+msgstr "এই ইমেইল দিয়ে আগেই একটি অ্যাকাউন্ট খোলা আছে।"
+
+msgid "You must type the same password each time."
+msgstr "দুইবার একই পাসওয়ার্ড লিখতে হবে।"
+
+msgid "Code"
+msgstr "কোড"
+
+msgid "Incorrect code."
+msgstr "কোড ভুল।"
+
+msgid "Email Verification"
+msgstr "ইমেইল যাচাই"
+
+msgid "Enter Email Verification Code"
+msgstr "ইমেইলে পাঠানো কোডটি লিখুন"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "%(recipient)s-এ একটি কোড পাঠানো হয়েছে। কোডটি কিছুক্ষণের মধ্যে মেয়াদোত্তীর্ণ হবে, তাই তাড়াতাড়ি লিখুন।"
+
+msgid "Request new code"
+msgstr "নতুন কোড পাঠান"
+
+msgid "Use a different email address"
+msgstr "অন্য ইমেইল ব্যবহার করুন"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "%(email)s-এ যাচাইয়ের কোড পাঠানো হয়েছে।"
+
+msgid "Successfully signed in as %(name)s."
+msgstr "%(name)s হিসেবে লগ ইন হয়েছে।"
+
+msgid "You have signed out."
+msgstr "আপনি লগ আউট করেছেন।"
+
+msgid "You have confirmed %(email)s."
+msgstr "%(email)s যাচাই হয়েছে।"
+
+msgid "Password successfully changed."
+msgstr "পাসওয়ার্ড বদলানো হয়েছে।"
+
+msgid "Password successfully set."
+msgstr "পাসওয়ার্ড সেট হয়েছে।"
+
+msgid "Password Reset"
+msgstr "পাসওয়ার্ড রিসেট"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "পাসওয়ার্ড ভুলে গেছেন? নিচে আপনার ইমেইল লিখুন, আমরা পাসওয়ার্ড রিসেটের একটি কোড পাঠাব।"
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "পাসওয়ার্ড রিসেটে সমস্যা হলে আমাদের জানান।"
+
+msgid "Reset My Password"
+msgstr "কোড পাঠান"
+
+msgid "Enter Password Reset Code"
+msgstr "পাসওয়ার্ড রিসেটের কোড লিখুন"
+
+msgid "Change Password"
+msgstr "পাসওয়ার্ড বদলান"
+
+msgid "Your password is now changed."
+msgstr "আপনার পাসওয়ার্ড বদলানো হয়েছে।"
+
+msgid "New Password"
+msgstr "নতুন পাসওয়ার্ড"
+
+msgid "Current Password"
+msgstr "বর্তমান পাসওয়ার্ড"
+
+msgid "Sign Out"
+msgstr "লগ আউট"
+
+msgid "Are you sure you want to sign out?"
+msgstr "আপনি কি লগ আউট করতে চান?"
+
+msgid "This password is too common."
+msgstr "এই পাসওয়ার্ডটি খুব সাধারণ।"
+
+msgid "This password is entirely numeric."
+msgstr "পাসওয়ার্ডে শুধু সংখ্যা থাকতে পারবে না।"
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "পাসওয়ার্ডটি %(verbose_name)s-এর সাথে খুব মিল।"
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "পাসওয়ার্ড খুব ছোট। কমপক্ষে %d অক্ষর হতে হবে।"
+msgstr[1] "পাসওয়ার্ড খুব ছোট। কমপক্ষে %d অক্ষর হতে হবে।"
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "পাসওয়ার্ড আপনার অন্য ব্যক্তিগত তথ্যের সাথে খুব মিল হতে পারবে না।"
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "পাসওয়ার্ডে কমপক্ষে %(min_length)d অক্ষর থাকতে হবে।"
+msgstr[1] "পাসওয়ার্ডে কমপক্ষে %(min_length)d অক্ষর থাকতে হবে।"
+
+msgid "Your password can’t be a commonly used password."
+msgstr "খুব সাধারণ পাসওয়ার্ড ব্যবহার করা যাবে না।"
+
+msgid "Your password can’t be entirely numeric."
+msgstr "পাসওয়ার্ডে শুধু সংখ্যা থাকতে পারবে না।"
+
+# ---------------------------------------------------------------- our login / sign-up / profile text
+msgid "Continue with %(provider)s"
+msgstr "%(provider)s দিয়ে চালিয়ে যান"
+
+msgid "or with email"
+msgstr "অথবা ইমেইল দিয়ে"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "শুরু করার জন্য তৈরি ক্যাটাগরি ও অ্যাকাউন্ট পাবেন। ইমেইল যাচাইয়ের জন্য আমরা ৬ সংখ্যার একটি কোড পাঠাব।"
+
+msgid "Profile"
+msgstr "প্রোফাইল"
+
+msgid "Email (used to log in)"
+msgstr "ইমেইল (লগ ইনের জন্য)"
+
+msgid "Change email"
+msgstr "ইমেইল বদলান"
+
+msgid "Change password"
+msgstr "পাসওয়ার্ড বদলান"
+
+msgid "Google / Facebook login"
+msgstr "Google / Facebook লগ ইন"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "অ্যাপে দেখানো হয়। লগ ইন করবেন ইমেইল দিয়ে, এটি দিয়ে নয়।"
+
+msgid "This username is already taken."
+msgstr "এই ইউজারনেমটি আগেই নেওয়া হয়েছে।"
+
+msgid "Username updated."
+msgstr "ইউজারনেম আপডেট হয়েছে।"
+
+# ---------------------------------------------------------------- code emails
+msgid "Hello from KhorochAi!"
+msgstr "KhorochAi থেকে শুভেচ্ছা!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "KhorochAi ব্যবহারের জন্য ধন্যবাদ।"
+
+msgid "Your email verification code is:"
+msgstr "আপনার ইমেইল যাচাইয়ের কোড:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "ব্রাউজারে খোলা KhorochAi পেজে কোডটি লিখুন। কোডটি কিছুক্ষণ পর মেয়াদোত্তীর্ণ হবে।"
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "ইমেইল যাচাই করতে খুলুন: %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "আপনি KhorochAi-তে সাইন আপ না করে থাকলে এই ইমেইলটি উপেক্ষা করুন।"
+
+msgid "Your verification code"
+msgstr "আপনার যাচাইয়ের কোড"
+
+msgid "Your password reset code is:"
+msgstr "আপনার পাসওয়ার্ড রিসেটের কোড:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "আপনি পাসওয়ার্ড রিসেট করতে না চাইলে এই ইমেইলটি উপেক্ষা করুন। আপনার পাসওয়ার্ড বদলায়নি।"
+
+msgid "Your password reset code"
+msgstr "আপনার পাসওয়ার্ড রিসেটের কোড"

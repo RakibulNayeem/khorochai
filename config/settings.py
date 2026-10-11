@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "tracker",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
 
 MIDDLEWARE = [
@@ -45,6 +48,7 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -113,9 +117,67 @@ WHITENOISE_USE_FINDERS = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_URL = "login"
+# ---------------------------------------------------------------- Accounts & login (django-allauth)
+# Users log in with email + password, or with Google / Facebook. The username still exists
+# (made from the email, changeable in Settings) but is never needed to log in.
+# New emails must be verified with a 6-digit code; forgotten passwords are reset with a code.
+LOGIN_URL = "account_login"
 LOGIN_REDIRECT_URL = "dashboard"
-LOGOUT_REDIRECT_URL = "login"
+ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+ACCOUNT_LOGIN_METHODS = {"email"}
+ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = True
+ACCOUNT_PASSWORD_RESET_BY_CODE_ENABLED = True
+ALLAUTH_USER_CODE_FORMAT = {"numeric": True, "length": 6, "dashed": False}  # e.g. 482913
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "KhorochAi: "
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http" if DEBUG else "https"
+
+# Google / Facebook login: each one switches on only when its keys are set.
+SOCIALACCOUNT_PROVIDERS = {}
+if os.environ.get("GOOGLE_CLIENT_ID") and os.environ.get("GOOGLE_CLIENT_SECRET"):
+    INSTALLED_APPS.append("allauth.socialaccount.providers.google")
+    SOCIALACCOUNT_PROVIDERS["google"] = {
+        "APP": {"client_id": os.environ["GOOGLE_CLIENT_ID"], "secret": os.environ["GOOGLE_CLIENT_SECRET"]},
+        "SCOPE": ["profile", "email"],
+        "AUTH_PARAMS": {"prompt": "select_account"},
+    }
+if os.environ.get("FACEBOOK_APP_ID") and os.environ.get("FACEBOOK_APP_SECRET"):
+    INSTALLED_APPS.append("allauth.socialaccount.providers.facebook")
+    SOCIALACCOUNT_PROVIDERS["facebook"] = {
+        "APP": {"client_id": os.environ["FACEBOOK_APP_ID"], "secret": os.environ["FACEBOOK_APP_SECRET"]},
+        "METHOD": "oauth2",
+        "SCOPE": ["email", "public_profile"],
+        "FIELDS": ["id", "email", "name", "first_name", "last_name"],
+    }
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True           # Google login with the same (verified) email = same user
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
+
+# ---------------------------------------------------------------- Email (verification + reset codes)
+# Gmail: EMAIL_HOST_USER = your Gmail address, EMAIL_HOST_PASSWORD = a Google "App password".
+# Without them (local development) emails are printed in the terminal instead of sent.
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "").replace(" ", "")
+if EMAIL_HOST_USER and EMAIL_HOST_PASSWORD:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
+    EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
+    EMAIL_USE_TLS = True
+    EMAIL_TIMEOUT = 20
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows terminals can't print Bangla emails otherwise
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL") or f"KhorochAi <{EMAIL_HOST_USER or 'noreply@localhost'}>"
 
 # ---------------------------------------------------------------- Security (production)
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
