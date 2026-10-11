@@ -144,7 +144,7 @@ class AccountTests(TestCase):
 
     def test_default_accounts(self):
         names = set(Account.objects.filter(user=self.user).values_list("name", flat=True))
-        self.assertEqual(names, {"Cash", "bKash", "Nagad", "Bank", "Card"})
+        self.assertEqual(names, {"Cash", "bKash", "Nagad", "Rocket", "Bank", "Card"})
         self.assertTrue(self.cash.is_default)
 
     def test_balances_with_transfer(self):
@@ -207,6 +207,32 @@ class AccountTests(TestCase):
         lst = self.client.get(reverse("transactions"))
         self.assertContains(lst, "Transfer")
         self.assertNotContains(self.client.get(reverse("transactions") + "?type=expense"), "⇄ Transfer</span>")
+
+    def test_ai_sets_balance(self):
+        food = Category.objects.get(user=self.user, name="Food")
+        Transaction.objects.create(user=self.user, type="expense", amount=300, category=food, account=self.bkash)
+        fake = {"transactions": [
+            {"type": "balance", "amount": "৫০০০", "account": "bkash"},
+            {"type": "balance", "amount": 0, "account": "Nagad"},
+        ], "message": ""}
+        with mock.patch.object(llm, "call_llm", return_value=fake):
+            r = self.client.post(reverse("ai_parse"), {"text": "amar bkash e 5000 ache, nagad e kichu nai"})
+        rows = r.context["rows"]
+        self.assertEqual([(x["type"], x["amount"]) for x in rows], [("balance", Decimal("5000.00")), ("balance", Decimal("0.00"))])
+        self.assertContains(r, "Set balance")
+        nagad = Account.objects.get(user=self.user, name="Nagad")
+        post = {"row_count": 2, "raw_text": "x",
+                "include_0": "1", "type_0": "balance", "amount_0": "5000", "account_0": self.bkash.id,
+                "include_1": "1", "type_1": "balance", "amount_1": "0", "account_1": nagad.id}
+        r = self.client.post(reverse("ai_confirm"), post, follow=True)
+        self.assertContains(r, "Balance updated")
+        bal = {row["account"].name: row["balance"] for row in self.client.get(reverse("accounts")).context["rows"]}
+        self.assertEqual(bal["bKash"], Decimal("5000"))  # even after the ৳300 already spent from it
+        self.assertEqual(bal["Nagad"], Decimal("0"))
+        self.bkash.refresh_from_db()
+        self.assertEqual(self.bkash.opening_balance, Decimal("5300"))
+        self.assertEqual(Transaction.objects.count(), 1)  # no fake income/expense was created
+        self.assertEqual(r.context["summary"]["income"], Decimal("0"))
 
     def test_only_one_default_account(self):
         self.client.post(reverse("account_edit", args=[self.bkash.id]), {

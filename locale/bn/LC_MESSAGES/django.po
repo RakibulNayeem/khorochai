@@ -530,8 +530,8 @@ msgstr "অ্যাকাউন্ট যোগ করুন"
 msgid "Edit account"
 msgstr "অ্যাকাউন্ট এডিট করুন"
 
-msgid "Where your money is kept. Each transaction comes from or goes into an account; tell the AI “bkash e 500 dilam” and it picks bKash. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense."
-msgstr "আপনার টাকা কোথায় রাখা আছে। প্রতিটি লেনদেন কোনো একটি অ্যাকাউন্ট থেকে যায় বা আসে; AI-কে “bkash e 500 dilam” লিখলে সে বিকাশ বেছে নেবে। ATM থেকে তোলা, বিকাশ ক্যাশ আউট বা অন্য ট্রান্সফারের জন্য “টাকা সরান” ব্যবহার করুন — এতে ব্যালেন্স বদলায়, কিন্তু আয় বা খরচ হিসেবে ধরা হয় না।"
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "আপনার টাকা কোথায় রাখা আছে। AI-কে “bkash e 500 dilam” লিখলে বিকাশ থেকে খরচ হবে, আর “amar bkash e 5000 ache” লিখলে বিকাশের ব্যালেন্স ঠিক হয়ে যাবে। ATM থেকে তোলা, বিকাশ ক্যাশ আউট বা অন্য ট্রান্সফারের জন্য “টাকা সরান” ব্যবহার করুন — এতে ব্যালেন্স বদলায়, কিন্তু আয় বা খরচ হিসেবে ধরা হয় না। “এডিট” দিয়ে যেকোনো অ্যাকাউন্টের নাম বদলাতে পারবেন (যেমন Bank → আপনার ব্যাংকের নাম)।"
 
 msgid "Total in all accounts"
 msgstr "সব অ্যাকাউন্টে মোট"
@@ -850,3 +850,12 @@ msgstr "আপনি পাসওয়ার্ড রিসেট করতে
 
 msgid "Your password reset code"
 msgstr "আপনার পাসওয়ার্ড রিসেটের কোড"
+
+msgid "Set balance"
+msgstr "ব্যালেন্স ঠিক করুন"
+
+msgid "Balance now"
+msgstr "এখনকার ব্যালেন্স"
+
+msgid "Balance updated: %(list)s."
+msgstr "ব্যালেন্স আপডেট হয়েছে: %(list)s।"

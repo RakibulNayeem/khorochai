@@ -6,6 +6,7 @@ from django.utils.translation import gettext, gettext_lazy as _
 INCOME = "income"
 EXPENSE = "expense"
 TRANSFER = "transfer"  # only used by the AI preview + lists; stored in the Transfer model
+BALANCE = "balance"    # AI preview only: "bkash e 5000 ache" sets an account's current balance
 TYPE_CHOICES = [(EXPENSE, _("Expense")), (INCOME, _("Income"))]
 
 # Names of the ready-made categories. They are stored in English (the AI matches on them)

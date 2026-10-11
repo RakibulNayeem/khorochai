@@ -114,6 +114,8 @@ body {
 .preview-row.excluded { opacity: .45; }
 .preview-row.is-transfer { border-left-color: #6366f1; }
 .preview-row.is-transfer .tx-only, .preview-row:not(.is-transfer) .transfer-only { display: none; }
+.preview-row.is-balance { border-left-color: #0ea5e9; }
+.preview-row.is-balance .no-balance, .preview-row:not(.is-balance) .balance-only { display: none; }
 .badge-new { background: var(--badge-new-bg); color: var(--badge-new-ink); }
 .progress { height: 8px; border-radius: 999px; }
 @media (max-width: 576px) {

@@ -13,7 +13,7 @@ from django.utils.formats import date_format
 from django.utils.translation import gettext
 
 from .models import (
-    ACCOUNT_KIND_ORDER, EXPENSE, INCOME, TRANSFER, Account, AIUsage, Category, Transaction, Transfer, category_label,
+    ACCOUNT_KIND_ORDER, BALANCE, EXPENSE, INCOME, TRANSFER, Account, AIUsage, Category, Transaction, Transfer, category_label,
 )
 
 DEFAULT_CATEGORIES = [
@@ -39,10 +39,11 @@ DEFAULT_CATEGORIES = [
 ]
 
 DEFAULT_ACCOUNTS = [
-    # (name, kind, icon, color, is_default) - keep in sync with migrations/0003_default_accounts.py
+    # (name, kind, icon, color, is_default) - Rocket was added later in migrations/0006_add_rocket_account.py
     ("Cash", "cash", "💵", "#16a34a", True),
     ("bKash", "mobile", "📱", "#e2136e", False),
     ("Nagad", "mobile", "📲", "#f6921e", False),
+    ("Rocket", "mobile", "🚀", "#8c3494", False),
     ("Bank", "bank", "🏦", "#2563eb", False),
     ("Card", "card", "💳", "#7c3aed", False),
 ]
@@ -157,6 +158,30 @@ def parse_date(value, default=None):
         return default
 
 
+def parse_balance(value):
+    """Like parse_amount, but a balance may also be 0 or negative (e.g. a card you owe money on)."""
+    if value is None or str(value).strip() == "":
+        return None
+    s = str(value).translate(str.maketrans("০১২৩৪৫৬৭৮৯", "0123456789"))
+    s = s.replace(",", "").replace("৳", "").replace("tk", "").replace("Tk", "").strip()
+    try:
+        d = Decimal(s).quantize(Decimal("0.01"))
+    except (InvalidOperation, ValueError):
+        return None
+    return d if abs(d) < Decimal("10000000000") else None
+
+
+def set_account_balance(account, target):
+    """Make `account` show `target` as its balance today by adjusting its opening balance
+    (so no income or expense is invented). Returns the change made."""
+    current = next(r["balance"] for r in account_balances(account.user) if r["account"].pk == account.pk)
+    diff = target - current
+    if diff:
+        account.opening_balance += diff
+        account.save(update_fields=["opening_balance"])
+    return diff
+
+
 def parse_amount(value):
     """Return a positive Decimal with 2 places, or None."""
     if value is None:
@@ -196,8 +221,13 @@ def clean_parsed(data, user):
         if not isinstance(item, dict):
             continue
         type_ = str(item.get("type", "")).lower().strip()
-        if type_ not in (INCOME, EXPENSE, TRANSFER):
+        if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE):
             type_ = EXPENSE
+        if type_ == BALANCE:
+            rows.append(_balance_row(item, accounts, fallback_account, today))
+            if rows[-1]["amount"] is None:
+                rows.pop()
+            continue
         amount = parse_amount(item.get("amount"))
         if amount is None:
             continue
@@ -224,6 +254,21 @@ def clean_parsed(data, user):
     if not rows and not message:
         message = gettext("No income or expense with an amount was found in your message.")
     return rows, message
+
+
+def _balance_row(item, accounts, fallback_account, today):
+    name = str(item.get("account") or "").strip().lower()
+    account = next((a for a in accounts if a.name.lower() == name), None) or fallback_account
+    return {
+        "type": BALANCE,
+        "amount": parse_balance(item.get("amount")),
+        "category_id": None,
+        "new_category": "",
+        "account_id": account.id if account else None,
+        "to_account_id": None,
+        "note": "",
+        "date": today,
+    }
 
 
 def _transfer_row(item, amount, date, accounts, fallback_account):

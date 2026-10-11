@@ -122,12 +122,12 @@ def call_llm(system: str, user: str, usage: dict | None = None) -> dict:
 
 # --------------------------------------------------------------------------- prompts
 
-PARSE_PROMPT = """You extract income, expense and transfer transactions for a personal budget app used in Bangladesh.
+PARSE_PROMPT = """You extract income, expense, transfer and balance entries for a personal budget app used in Bangladesh.
 The user may write in English, Bangla, Banglish (Bangla in English letters) or any other language,
 and may mention several transactions in one message.
 
 Return ONLY JSON in exactly this shape:
-{"transactions": [{"type": "expense" or "income" or "transfer", "amount": number, "category": "string",
+{"transactions": [{"type": "expense" or "income" or "transfer" or "balance", "amount": number, "category": "string",
   "is_new_category": true or false, "account": "string", "to_account": "string",
   "note": "short note", "date": "YYYY-MM-DD"}],
  "message": "short explanation ONLY if no transaction was found, otherwise empty string"}
@@ -160,6 +160,11 @@ Rules:
    Sending money to ANOTHER person or paying a shop is NOT a transfer:
    "ma ke bkash e 1000 pathalam" = expense (category Family, account bKash).
    For income and expense, to_account = "".
+   BALANCE: a statement of how much money is in an account RIGHT NOW (not money received or spent) is type "balance":
+   "amar bkash e 5000 ache", "বিকাশে ৫০০০ টাকা আছে", "bank balance 50000", "hate 2000 taka ache" (Cash),
+   "my cash is 1500 now". amount = that balance, account = the account (or "" if not said),
+   category = "", is_new_category = false, to_account = "". "ache/আছে/balance/have/now" signal a balance;
+   "pelam/পেলাম/got/received" is income, not a balance.
 6. note: short description in the user's own language, e.g. "রিকশা ভাড়া", "lunch with friends".
 7. Never calculate totals. Never invent transactions. If there is no money amount at all,
    return {"transactions": [], "message": "<explain briefly in the user's language>"}.
@@ -177,6 +182,13 @@ Input: "move 500 from cash to bkash, ATM theke 2000 tullam"
 Output: {"transactions": [
  {"type":"transfer","amount":500,"category":"","is_new_category":false,"account":"Cash","to_account":"bKash","note":"move to bKash","date":"__TODAY__"},
  {"type":"transfer","amount":2000,"category":"","is_new_category":false,"account":"Bank","to_account":"Cash","note":"ATM","date":"__TODAY__"}],
+ "message": ""}
+
+Example
+Input: "amar bkash e 5000 ache, bank e 50000"
+Output: {"transactions": [
+ {"type":"balance","amount":5000,"category":"","is_new_category":false,"account":"bKash","to_account":"","note":"","date":"__TODAY__"},
+ {"type":"balance","amount":50000,"category":"","is_new_category":false,"account":"Bank","to_account":"","note":"","date":"__TODAY__"}],
  "message": ""}
 
 Example

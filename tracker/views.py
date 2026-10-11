@@ -18,7 +18,8 @@ from django.views.decorators.http import require_POST
 from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
 from .forms import AccountForm, CategoryForm, TransactionForm, TransferForm, UsernameForm
-from .models import EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
+from .models import BALANCE, EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
+from .templatetags.money import money
 
 logger = logging.getLogger(__name__)
 
@@ -153,15 +154,24 @@ def ai_confirm(request):
     raw_text = (request.POST.get("raw_text") or "")[:MAX_INPUT_CHARS]
     user = request.user
     today = timezone.localdate()
-    saved, new_cats, skipped = 0, [], 0
+    saved, new_cats, skipped, balances = 0, [], 0, []
 
     with db_transaction.atomic():
         for i in range(count):
             if not request.POST.get(f"include_{i}"):
                 continue
             type_ = request.POST.get(f"type_{i}")
-            if type_ not in (INCOME, EXPENSE, TRANSFER):
+            if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE):
                 skipped += 1
+                continue
+            if type_ == BALANCE:
+                account = Account.objects.filter(user=user, pk=request.POST.get(f"account_{i}") or 0).first()
+                target = services.parse_balance(request.POST.get(f"amount_{i}"))
+                if not account or target is None:
+                    skipped += 1
+                    continue
+                services.set_account_balance(account, target)
+                balances.append(f"{account.name} {money(target)}")
                 continue
             amount = services.parse_amount(request.POST.get(f"amount_{i}"))
             if amount is None:
@@ -214,9 +224,11 @@ def ai_confirm(request):
         if new_cats:
             msg += " " + _("New categories: %(names)s.") % {"names": ", ".join(new_cats)}
         messages.success(request, msg)
+    if balances:
+        messages.success(request, _("Balance updated: %(list)s.") % {"list": ", ".join(balances)})
     if skipped:
         messages.warning(request, _("%(n)s row(s) skipped because the amount, type or accounts were invalid.") % {"n": skipped})
-    if not saved and not skipped:
+    if not saved and not skipped and not balances:
         messages.info(request, _("Nothing was saved."))
     return redirect("dashboard")
 
