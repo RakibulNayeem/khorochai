@@ -50,15 +50,15 @@
   <div class="card p-3 p-md-4">
     <form method="post" class="mb-3" novalidate>
       {% csrf_token %}
-      {% with f=username_form.username %}
-      <label class="form-label small fw-semibold" for="{{ f.id_for_label }}">{{ f.label }}</label>
-      <div class="input-group">
+      {% for f in username_form %}
+      <div class="mb-3">
+        <label class="form-label small fw-semibold" for="{{ f.id_for_label }}">{{ f.label }}</label>
         {{ f }}
-        <button class="btn btn-outline-secondary">{% translate "Save" %}</button>
+        {% for e in f.errors %}<div class="text-danger small mt-1">{{ e }}</div>{% endfor %}
+        <div class="form-text">{{ f.help_text }}</div>
       </div>
-      {% for e in f.errors %}<div class="text-danger small mt-1">{{ e }}</div>{% endfor %}
-      <div class="form-text">{{ f.help_text }}</div>
-      {% endwith %}
+      {% endfor %}
+      <button class="btn btn-brand px-4">{% translate "Save" %}</button>
     </form>
     <div class="small mb-3">
       <div class="card-title-sm mb-1">{% translate "Email (used to log in)" %}</div>

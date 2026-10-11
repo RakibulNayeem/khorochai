@@ -908,3 +908,89 @@ msgstr "মাসিক বাজেট ঠিক হয়েছে: %(list)s�
 
 msgid "%(name)s (removed)"
 msgstr "%(name)s (বাদ দেওয়া হয়েছে)"
+
+# ---------------------------------------------------------------- profile menu, help & contact
+msgid "Help & contact"
+msgstr "সাহায্য ও যোগাযোগ"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "সবকিছু চলে সাধারণ ইংরেজি, বাংলা বা Banglish-এ লিখে বা বলে। কিছু সেভ হওয়ার আগে সবসময় একবার দেখে নিতে পারবেন।"
+
+msgid "How to use KhorochAi"
+msgstr "KhorochAi কীভাবে ব্যবহার করবেন"
+
+msgid "Good to know"
+msgstr "জেনে রাখুন"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI শুধু আপনার লেখা বোঝে; প্রতিটি মোট হিসাব ও ব্যালেন্স অ্যাপ আপনার সেভ করা তথ্য থেকে হিসাব করে।"
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "AI ব্যবহারের একটি দৈনিক সীমা আছে (“আজ AI ব্যবহার: x%” হিসেবে দেখায়)। রাত ১২টায় আবার শুরু হয়, আর যেকোনো সময় নিজে যোগ করতে পারবেন।"
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "আপনি যা লেখেন বা বলেন তা বোঝার জন্য Google Gemini (বা Groq)-এ পাঠানো হয়। কার্ড নম্বর বা পাসওয়ার্ড লিখবেন না।"
+
+msgid "Change the theme, language and your name from the menu at the top right."
+msgstr "ওপরে ডান দিকের মেনু থেকে থিম, ভাষা ও আপনার নাম বদলাতে পারবেন।"
+
+msgid "Contact"
+msgstr "যোগাযোগ"
+
+msgid "Questions, problems or ideas"
+msgstr "প্রশ্ন, সমস্যা বা কোনো আইডিয়া"
+
+msgid "Write to us and we'll get back to you."
+msgstr "আমাদের লিখুন, আমরা উত্তর দেব।"
+
+msgid "Developer"
+msgstr "ডেভেলপার"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi তৈরি করেছেন %(name)s।"
+
+msgid "Account menu"
+msgstr "অ্যাকাউন্ট মেনু"
+
+msgid "First name"
+msgstr "নাম"
+
+msgid "Shown in the greeting and the menu."
+msgstr "শুভেচ্ছা বার্তা ও মেনুতে দেখানো হয়।"
+
+msgid "Profile updated."
+msgstr "প্রোফাইল আপডেট হয়েছে।"
+
+msgid "Add spending or income"
+msgstr "খরচ বা আয় যোগ করুন"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "ড্যাশবোর্ডের বক্সে কী হয়েছে লিখুন, তারপর “AI দিয়ে যোগ করুন” চাপুন।"
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "বক্সের মাইক চাপুন, কথা বলুন, তারপর থামান। লেখাটা দেখে নিয়ে “AI দিয়ে যোগ করুন” চাপুন।"
+
+msgid "Accounts and moving money"
+msgstr "অ্যাকাউন্ট ও টাকা সরানো"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "কোন অ্যাকাউন্ট ব্যবহার করেছেন বলুন, অথবা নিজের অ্যাকাউন্টের মধ্যে টাকা সরান।"
+
+msgid "Set an account balance"
+msgstr "অ্যাকাউন্টের ব্যালেন্স ঠিক করুন"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "এখন কোন অ্যাকাউন্টে কত টাকা আছে AI-কে বলুন।"
+
+msgid "Monthly budgets"
+msgstr "মাসিক বাজেট"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "কোনো ক্যাটাগরির জন্য খরচের সীমা ঠিক করুন, ড্যাশবোর্ডে অগ্রগতি দেখুন।"
+
+msgid "Ask about your money"
+msgstr "আপনার টাকা নিয়ে প্রশ্ন করুন"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "মোট হিসাব, খাতওয়ারি বিবরণ ও তুলনার জন্য “AI-কে জিজ্ঞেস করুন” ব্যবহার করুন।"
+

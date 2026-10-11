@@ -17,13 +17,14 @@ class BootstrapMixin:
                 w.attrs.setdefault("class", "form-control")
 
 
-class UsernameForm(BootstrapMixin, forms.ModelForm):
-    """The username is only a display name inside the app; people log in with their email."""
+class ProfileForm(BootstrapMixin, forms.ModelForm):
+    """First name (greeting + menu) and username. People log in with their email, not these."""
     class Meta:
         model = User
-        fields = ("username",)
-        labels = {"username": _("Username")}
-        help_texts = {"username": _("Shown in the app. You log in with your email, not this.")}
+        fields = ("first_name", "username")
+        labels = {"first_name": _("First name"), "username": _("Username")}
+        help_texts = {"first_name": _("Shown in the greeting and the menu."),
+                      "username": _("Shown in the app. You log in with your email, not this.")}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -17,7 +17,7 @@ from django.views.decorators.http import require_POST
 
 from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
-from .forms import AccountForm, CategoryForm, TransactionForm, TransferForm, UsernameForm
+from .forms import AccountForm, CategoryForm, ProfileForm, TransactionForm, TransferForm
 from .models import BALANCE, BUDGET, EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
 from .templatetags.money import money
 
@@ -33,11 +33,11 @@ def preferences(request):
     username_form = None
     if request.user.is_authenticated:
         posted = request.method == "POST" and "username" in request.POST
-        username_form = UsernameForm(request.POST if posted else None, instance=request.user)
+        username_form = ProfileForm(request.POST if posted else None, instance=request.user)
         if posted:
             if username_form.is_valid():
                 username_form.save()
-                messages.success(request, _("Username updated."))
+                messages.success(request, _("Profile updated."))
                 return redirect("preferences")
             return render(request, "tracker/preferences.html", {"username_form": username_form})
     if request.method == "POST":
@@ -54,6 +54,29 @@ def preferences(request):
             response.set_cookie(django_settings.LANGUAGE_COOKIE_NAME, lang, max_age=year, samesite="Lax")
         return response
     return render(request, "tracker/preferences.html", {"username_form": username_form})
+
+
+# --------------------------------------------------------------------------- help & contact
+
+def help_page(request):
+    guide = [
+        {"title": _("Add spending or income"), "text": _("Type what happened in the box on the dashboard and press Add with AI."),
+         "examples": ["আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০", "gotokal lunch 250 ar recharge 100", "Got my salary 35000"]},
+        {"title": _("Speak instead of typing"), "text": _("Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI.")},
+        {"title": _("Accounts and moving money"), "text": _("Say which account you used, or move money between your own accounts."),
+         "examples": ["bkash e lunch 300 dilam", "ATM theke 2000 tullam", "move 500 from cash to bkash"]},
+        {"title": _("Set an account balance"), "text": _("Tell the AI how much is in an account right now."),
+         "examples": ["amar bkash e 5000 ache", "bank balance 50000"]},
+        {"title": _("Monthly budgets"), "text": _("Set a spending limit for a category and watch the progress bar on the dashboard."),
+         "examples": ["khabar e mashe 6000 budget", "transport budget 2000"]},
+        {"title": _("Ask about your money"), "text": _("Use Ask AI for totals, breakdowns and comparisons."),
+         "examples": ["এই মাসে খাবারে কত খরচ হলো?", "Where did I spend most last month?"]},
+    ]
+    return render(request, "tracker/help.html", {
+        "guide": guide,
+        "contact_email": django_settings.CONTACT_EMAIL,
+        "developer": django_settings.DEVELOPER,
+    })
 
 
 # --------------------------------------------------------------------------- dashboard

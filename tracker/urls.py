@@ -25,4 +25,5 @@ urlpatterns = [
     path("transfers/<int:pk>/edit/", views.transfer_edit, name="transfer_edit"),
     path("transfers/<int:pk>/delete/", views.transfer_delete, name="transfer_delete"),
     path("settings/", views.preferences, name="preferences"),
+    path("help/", views.help_page, name="help"),
 ]

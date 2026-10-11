@@ -269,3 +269,29 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
   .voice-dot { animation: none; }
   .voice-btn[data-state="busy"] .voice-spin { animation-duration: 1.6s; }
 }
+
+/* ---------------------------------------------------------------- profile menu */
+.avatar { --avatar: var(--primary); width: 32px; height: 32px; flex: none; display: inline-grid; place-items: center;
+  border-radius: 50%; background: var(--avatar); color: #fff; font-size: .8125rem; font-weight: 700; letter-spacing: .02em; }
+.avatar.lg { width: 40px; height: 40px; font-size: .95rem; }
+.user-chip { display: inline-flex; align-items: center; gap: .5rem; border: 0; background: transparent; color: var(--ink);
+  padding: .2rem .5rem .2rem .2rem; border-radius: 999px; font-weight: 600; transition: background-color .15s ease, transform .1s ease-out; }
+.user-chip:hover, .user-chip[aria-expanded="true"] { background: var(--surface-2); }
+.user-chip:active { transform: scale(.97); }
+.user-chip-name { max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.user-chip-caret { width: 16px; height: 16px; color: var(--muted); transition: transform .2s ease; }
+.user-chip[aria-expanded="true"] .user-chip-caret { transform: rotate(180deg); }
+.settings-menu { min-width: 290px; }
+.menu-sep { height: 1px; background: var(--hairline); margin: .35rem .25rem; }
+.menu-item { display: flex; align-items: center; gap: .65rem; padding: .5rem .6rem; border-radius: 8px; border: 0;
+  background: transparent; color: var(--ink); font-weight: 500; text-align: left; }
+.menu-item svg { width: 18px; height: 18px; color: var(--muted); flex: none; }
+.menu-item:hover { background: var(--surface-2); color: var(--ink); text-decoration: none; }
+.menu-item-danger, .menu-item-danger svg { color: #d93025; }
+[data-bs-theme="dark"] .menu-item-danger, [data-bs-theme="dark"] .menu-item-danger svg { color: #ff6961; }
+.menu-item-danger:hover { color: #d93025; }
+
+/* ---------------------------------------------------------------- help page */
+.help-example { display: inline-block; font-size: .8125rem; background: var(--surface-2); border-radius: 8px;
+  padding: .2rem .55rem; margin: 0 .3rem .3rem 0; }
+.help-list li + li { margin-top: .4rem; }

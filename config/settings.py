@@ -140,6 +140,7 @@ ALLAUTH_USER_CODE_FORMAT = {"numeric": True, "length": 6, "dashed": False}  # e.
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
 ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_USER_DISPLAY = lambda user: user.first_name or user.username  # e.g. "Signed in as Rakibul"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "KhorochAi: "
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http" if DEBUG else "https"
 
@@ -204,6 +205,15 @@ AI_DAILY_TOKENS_TOTAL = int(os.environ.get("AI_DAILY_TOKENS_TOTAL", "1000000"))
 AI_DAILY_REQUESTS_TOTAL = int(os.environ.get("AI_DAILY_REQUESTS_TOTAL", "400"))
 
 CURRENCY_SYMBOL = os.environ.get("CURRENCY_SYMBOL", "৳")
+
+# ---------------------------------------------------------------- Help & contact page
+CONTACT_EMAIL = "khorochai@gmail.com"
+DEVELOPER = {
+    "name": "Rakibul Nayeem",
+    "email": "rakibul.cse.ruet@gmail.com",
+    "facebook": "",   # full profile URL; the button is hidden while empty
+    "linkedin": "",
+}
 
 LOGGING = {
     "version": 1,
