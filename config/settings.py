@@ -76,9 +76,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 # ---------------------------------------------------------------- Database
 # Local: SQLite. Production: set DATABASE_URL to your Neon *pooled* connection string.
 DATABASE_URL = os.environ.get("DATABASE_URL")
-# Locally the live database is opt-in: set USE_LIVE_DB=1 for a single command (e.g. migrate).
-if not DATABASE_URL and os.environ.get("USE_LIVE_DB") == "1":
-    DATABASE_URL = os.environ.get("LIVE_DATABASE_URL")
 RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == "test"
 if DATABASE_URL and not RUNNING_TESTS:  # tests always use local SQLite, never the live database
     DATABASES = {
