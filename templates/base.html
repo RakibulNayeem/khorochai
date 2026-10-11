@@ -75,7 +75,14 @@
         <li class="nav-item"><a class="nav-link {% if url == 'transactions' %}active{% endif %}" href="{% url 'transactions' %}">{% translate "Transactions" %}</a></li>
         <li class="nav-item"><a class="nav-link {% if url == 'accounts' %}active{% endif %}" href="{% url 'accounts' %}">{% translate "Accounts" %}</a></li>
         <li class="nav-item"><a class="nav-link {% if url == 'categories' %}active{% endif %}" href="{% url 'categories' %}">{% translate "Categories &amp; Budgets" %}</a></li>
-        <li class="nav-item"><a class="nav-link nav-ask {% if url == 'ask' %}active{% endif %}" href="{% url 'ask' %}">✨ {% translate "Ask AI" %}</a></li>
+        <li class="nav-item"><a class="nav-link nav-ask {% if url == 'ask' %}active{% endif %}" href="{% url 'ask' %}">
+          <svg class="nav-ask-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <defs><linearGradient id="ai-spark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2a900"/><stop offset=".5" stop-color="#ff7a59"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+            <path fill="url(#ai-spark)" d="M11 2.5c.4 4.6 2.9 7.1 7.5 7.5-4.6.4-7.1 2.9-7.5 7.5-.4-4.6-2.9-7.1-7.5-7.5 4.6-.4 7.1-2.9 7.5-7.5z"/>
+            <path fill="url(#ai-spark)" d="M18.5 14c.2 2.3 1.4 3.5 3.5 3.7-2.1.2-3.3 1.4-3.5 3.8-.2-2.4-1.4-3.6-3.5-3.8 2.1-.2 3.3-1.4 3.5-3.7z"/>
+          </svg>
+          <span class="nav-ask-text">{% translate "Ask AI" %}</span>
+        </a></li>
       </ul>
       <span class="text-muted small d-none d-md-inline me-2">{{ user.username }}</span>
     </div>

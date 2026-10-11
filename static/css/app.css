@@ -59,12 +59,38 @@ body {
 .navbar { background: var(--surface); border-bottom: 1px solid var(--border); }
 .navbar-brand { font-weight: 700; color: var(--brand) !important; letter-spacing: -.01em; }
 .nav-link.active { color: var(--ink) !important; font-weight: 600; box-shadow: inset 0 -2px 0 var(--gold); }
-/* Ask AI stands out in the navbar as a gold pill */
-.navbar .nav-link.nav-ask { font-weight: 600; color: var(--ink) !important; background: var(--brand-soft);
-  border: 1px solid var(--gold); border-radius: 999px; padding: .3rem .9rem; margin: .2rem 0 .2rem .4rem; }
-.navbar .nav-link.nav-ask:hover { background: var(--gold); color: #1f2937 !important; }
-.navbar .nav-link.nav-ask.active { box-shadow: none; background: var(--gold); color: #1f2937 !important; }
-@media (max-width: 767.98px) { .navbar .nav-link.nav-ask { display: inline-block; margin-left: 0; } }
+/* Ask AI: a glowing pill with a gold -> coral -> violet gradient border, a light sweep on hover,
+   and a gradient fill on the Ask AI page */
+:root { --ai-grad: linear-gradient(120deg, #f2a900 0%, #ff7a59 50%, #8b5cf6 100%); --ai-glow: rgba(242, 169, 0, .22); }
+[data-bs-theme="dark"] { --ai-glow: rgba(255, 140, 80, .28); }
+.navbar .nav-link.nav-ask {
+  position: relative; display: inline-flex; align-items: center; gap: .4rem; overflow: hidden;
+  font-weight: 700; letter-spacing: .01em; color: var(--ink) !important;
+  padding: .32rem .95rem .32rem .75rem; margin: .2rem 0 .2rem .5rem; border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--ai-grad) border-box;
+  box-shadow: 0 0 0 3px var(--ai-glow), 0 4px 14px -6px rgba(139, 92, 246, .45);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.nav-ask-icon { width: 17px; height: 17px; flex: none; }
+.nav-ask .nav-ask-text { background: var(--ai-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.navbar .nav-link.nav-ask::after {  /* the light that sweeps across on hover */
+  content: ""; position: absolute; inset: 0; transform: translateX(-120%);
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%);
+}
+.navbar .nav-link.nav-ask:hover { transform: translateY(-1px); box-shadow: 0 0 0 4px var(--ai-glow), 0 8px 20px -6px rgba(139, 92, 246, .6); }
+.navbar .nav-link.nav-ask:hover::after { transform: translateX(120%); transition: transform .7s ease; }
+.navbar .nav-link.nav-ask:hover .nav-ask-icon { animation: ai-twinkle .8s ease; }
+.navbar .nav-link.nav-ask.active { background: var(--ai-grad) border-box; color: #fff !important; box-shadow: 0 0 0 3px var(--ai-glow), 0 6px 18px -6px rgba(139, 92, 246, .7); }
+.navbar .nav-link.nav-ask.active .nav-ask-text { background: none; color: #fff; }
+.navbar .nav-link.nav-ask.active .nav-ask-icon path { fill: #fff; }
+@keyframes ai-twinkle { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.2) rotate(18deg); } }
+@media (max-width: 767.98px) { .navbar .nav-link.nav-ask { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .navbar .nav-link.nav-ask, .navbar .nav-link.nav-ask:hover::after { transition: none; }
+  .navbar .nav-link.nav-ask:hover { transform: none; }
+  .navbar .nav-link.nav-ask:hover .nav-ask-icon { animation: none; }
+}
 .card { --bs-card-bg: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
 .card-title-sm { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
 .stat { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
