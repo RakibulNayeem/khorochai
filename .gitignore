@@ -11,3 +11,8 @@ staticfiles/
 .vscode/
 .env.*
 !.env.example
+
+# AI coding-assistant skills (local tooling, not part of the app)
+.agents/
+.claude/
+skills-lock.json
