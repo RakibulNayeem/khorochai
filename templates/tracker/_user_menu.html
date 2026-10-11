@@ -32,7 +32,10 @@ Logged out: a gear with theme and language, so visitors can switch them on the l
     {% endif %}
     <a class="menu-item" href="{% url 'help' %}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"/></svg>
-      {% translate "Help & contact" %}</a>
+      {% translate "Help" %}</a>
+    <a class="menu-item" href="{% url 'about' %}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      {% translate "About & contact" %}</a>
     <div class="menu-sep"></div>
 
     <div class="px-2 pt-1">

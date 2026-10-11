@@ -60,23 +60,23 @@ def preferences(request):
 
 def help_page(request):
     guide = [
-        {"title": _("Add spending or income"), "text": _("Type what happened in the box on the dashboard and press Add with AI."),
+        {"icon": "type", "title": _("Add spending or income"), "text": _("Type what happened in the box on the dashboard and press Add with AI."),
          "examples": ["আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০", "gotokal lunch 250 ar recharge 100", "Got my salary 35000"]},
-        {"title": _("Speak instead of typing"), "text": _("Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI.")},
-        {"title": _("Accounts and moving money"), "text": _("Say which account you used, or move money between your own accounts."),
+        {"icon": "mic", "title": _("Speak instead of typing"), "text": _("Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI.")},
+        {"icon": "accounts", "title": _("Accounts and moving money"), "text": _("Say which account you used, or move money between your own accounts."),
          "examples": ["bkash e lunch 300 dilam", "ATM theke 2000 tullam", "move 500 from cash to bkash"]},
-        {"title": _("Set an account balance"), "text": _("Tell the AI how much is in an account right now."),
+        {"icon": "balance", "title": _("Set an account balance"), "text": _("Tell the AI how much is in an account right now."),
          "examples": ["amar bkash e 5000 ache", "bank balance 50000"]},
-        {"title": _("Monthly budgets"), "text": _("Set a spending limit for a category and watch the progress bar on the dashboard."),
+        {"icon": "budget", "title": _("Monthly budgets"), "text": _("Set a spending limit for a category and watch the progress bar on the dashboard."),
          "examples": ["khabar e mashe 6000 budget", "transport budget 2000"]},
-        {"title": _("Ask about your money"), "text": _("Use Ask AI for totals, breakdowns and comparisons."),
+        {"icon": "ask", "title": _("Ask about your money"), "text": _("Use Ask AI for totals, breakdowns and comparisons."),
          "examples": ["এই মাসে খাবারে কত খরচ হলো?", "Where did I spend most last month?"]},
     ]
-    return render(request, "tracker/help.html", {
-        "guide": guide,
-        "contact_email": django_settings.CONTACT_EMAIL,
-        "developer": django_settings.DEVELOPER,
-    })
+    return render(request, "tracker/help.html", {"guide": guide})
+
+
+def about_page(request):
+    return render(request, "tracker/about.html")
 
 
 # --------------------------------------------------------------------------- dashboard

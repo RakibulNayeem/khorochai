@@ -997,3 +997,59 @@ msgstr "মোট হিসাব, খাতওয়ারি বিবরণ �
 
 msgid "Portfolio"
 msgstr "পোর্টফোলিও"
+
+# ---------------------------------------------------------------- help, about, developer
+msgid "Help"
+msgstr "সাহায্য"
+
+msgid "About & contact"
+msgstr "আমাদের সম্পর্কে ও যোগাযোগ"
+
+msgid "Made by"
+msgstr "তৈরি করেছেন"
+
+msgid "Developer, KhorochAi"
+msgstr "ডেভেলপার, KhorochAi"
+
+msgid "How can we help?"
+msgstr "কীভাবে সাহায্য করতে পারি?"
+
+msgid "Still need help?"
+msgstr "আরও সাহায্য লাগবে?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "আমাদের লিখুন — প্রশ্ন, সমস্যা বা আইডিয়া, সবই স্বাগত।"
+
+msgid "Contact us"
+msgstr "যোগাযোগ করুন"
+
+msgid "Money tracking that speaks your language"
+msgstr "আপনার ভাষায় টাকার হিসাব"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi-তে শুধু লিখে বা বলে খরচ ও আয়ের হিসাব রাখুন — ইংরেজি, বাংলা বা Banglish-এ। AI আপনার কথা বোঝে; সব হিসাব করে অ্যাপ নিজেই।"
+
+msgid "Type or talk"
+msgstr "লিখুন বা বলুন"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "কোনো ফর্ম পূরণ করতে হয় না। “aaj lunch 250 bkash e” বললেই হিসাবে উঠে যায়।"
+
+msgid "See where it goes"
+msgstr "টাকা কোথায় যাচ্ছে দেখুন"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "অ্যাকাউন্ট, বাজেট আর চার্টে এক নজরে আপনার টাকার হিসাব, আর প্রশ্নের উত্তর দেয় AI।"
+
+msgid "Correct by design"
+msgstr "নির্ভুল হিসাব"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "সেভ করার আগে প্রতিটি এন্ট্রি আপনি দেখে নেন, আর মোট হিসাব সবসময় আপনার নিজের তথ্য থেকে হয়।"
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "প্রশ্ন, সমস্যা বা আইডিয়া — আমাদের লিখুন, আমরা উত্তর দেব।"
+
+msgid "Read the help guide"
+msgstr "সাহায্য গাইড পড়ুন"
+

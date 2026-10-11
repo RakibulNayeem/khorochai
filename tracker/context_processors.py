@@ -28,4 +28,6 @@ def preferences(request):
         "theme": get_theme(request),
         "languages": settings.LANGUAGES,
         "profile": _profile(user) if user is not None and user.is_authenticated else None,
+        "developer": settings.DEVELOPER,
+        "contact_email": settings.CONTACT_EMAIL,
     }

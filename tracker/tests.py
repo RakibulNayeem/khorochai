@@ -436,10 +436,18 @@ class AuthTests(TestCase):
         with translation.override("en"):
             self.assertEqual(money(-1500.5), "-৳ 1,500.50")
 
-    def test_help_page_is_public(self):
+    def test_help_and_about_pages_are_public(self):
+        self.client.logout()
         r = self.client.get(reverse("help"))
+        self.assertContains(r, "Still need help?")
+        r = self.client.get(reverse("about"))
         self.assertContains(r, "khorochai@gmail.com")
         self.assertContains(r, "rakibul.cse.ruet@gmail.com")
+        self.assertContains(r, "linkedin.com/in/rakibulnayeem")
+        # every page has the footer credit and the developer pop-up
+        r = self.client.get(reverse("account_login"))
+        self.assertContains(r, 'data-bs-target="#developerModal"')
+        self.assertContains(r, "img/developer.jpg")
 
 
 class VoiceInputTests(TestCase):

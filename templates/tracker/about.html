@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{% translate "About & contact" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-lg-10 col-xl-9">
+  <div class="page-hero text-center mb-4">
+    <img src="{% if LANGUAGE_CODE == 'bn' %}{% static 'img/logo-bn.svg' %}{% else %}{% static 'img/logo.svg' %}{% endif %}" alt="" width="64" height="64" class="mb-3">
+    <h1 class="h2 mb-2">{% translate "Money tracking that speaks your language" %}</h1>
+    <p class="text-muted mb-0 mx-auto about-lead">{% translate "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths." %}</p>
+  </div>
+
+  <div class="row g-3 mb-5">
+    <div class="col-md-4"><div class="card p-3 p-md-4 h-100">
+      <span class="help-icon mb-2" aria-hidden="true">{% include "tracker/_help_icon.html" with name="mic" %}</span>
+      <div class="fw-semibold mb-1">{% translate "Type or talk" %}</div>
+      <div class="small text-muted">{% translate "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded." %}</div>
+    </div></div>
+    <div class="col-md-4"><div class="card p-3 p-md-4 h-100">
+      <span class="help-icon mb-2" aria-hidden="true">{% include "tracker/_help_icon.html" with name="budget" %}</span>
+      <div class="fw-semibold mb-1">{% translate "See where it goes" %}</div>
+      <div class="small text-muted">{% translate "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions." %}</div>
+    </div></div>
+    <div class="col-md-4"><div class="card p-3 p-md-4 h-100">
+      <span class="help-icon mb-2" aria-hidden="true">{% include "tracker/_help_icon.html" with name="balance" %}</span>
+      <div class="fw-semibold mb-1">{% translate "Correct by design" %}</div>
+      <div class="small text-muted">{% translate "You check every entry before it's saved, and totals are always calculated from your own data." %}</div>
+    </div></div>
+  </div>
+
+  <div class="row g-3" id="contact">
+    <div class="col-md-6">
+      <div class="card p-3 p-md-4 h-100">
+        <h2 class="h5 mb-1">{% translate "Contact us" %}</h2>
+        <p class="small text-muted mb-3">{% translate "Questions, problems or ideas — write to us and we'll get back to you." %}</p>
+        <a class="btn btn-brand align-self-start" href="mailto:{{ contact_email }}" data-keep-digits>{{ contact_email }}</a>
+        <a class="small mt-3" href="{% url 'help' %}">{% translate "Read the help guide" %} →</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-3 p-md-4 h-100 text-center">
+        <h2 class="h5 mb-3 text-start">{% translate "Developer" %}</h2>
+        <button type="button" class="dev-mini" data-bs-toggle="modal" data-bs-target="#developerModal">
+          <img src="{% static developer.photo %}" alt="" class="dev-photo sm" width="76" height="76" loading="lazy">
+          <span class="d-block fw-semibold mt-2">{{ developer.name }}</span>
+          <span class="d-block small text-muted" data-keep-digits>{{ developer.title }}</span>
+        </button>
+        <div class="mt-3">{% include "tracker/_developer_links.html" %}</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+{% endblock %}

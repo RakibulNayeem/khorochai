@@ -1,0 +1,16 @@
+{% load i18n static %}
+<div class="modal fade" id="developerModal" tabindex="-1" aria-labelledby="developerModalName" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered dev-modal">
+    <div class="modal-content">
+      <button type="button" class="btn-close dev-close" data-bs-dismiss="modal" aria-label="{% translate 'Close' %}"></button>
+      <div class="text-center px-4 pt-4 pb-4">
+        <img src="{% static developer.photo %}" alt="{{ developer.name }}" class="dev-photo" width="128" height="128" loading="lazy">
+        <h2 class="h4 mt-3 mb-1" id="developerModalName">{{ developer.name }}</h2>
+        <div class="text-muted small" data-keep-digits>{{ developer.title }}</div>
+        <div class="text-muted small mb-3">{% translate "Developer, KhorochAi" %}</div>
+        {% include "tracker/_developer_links.html" %}
+        <div class="small text-muted mt-3" data-keep-digits>{{ developer.email }}</div>
+      </div>
+    </div>
+  </div>
+</div>

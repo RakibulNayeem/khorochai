@@ -209,6 +209,8 @@ CURRENCY_SYMBOL = os.environ.get("CURRENCY_SYMBOL", "৳")
 CONTACT_EMAIL = "khorochai@gmail.com"
 DEVELOPER = {
     "name": "Rakibul Nayeem",
+    "title": "CSE'17, RUET",
+    "photo": "img/developer.jpg",
     "email": "rakibul.cse.ruet@gmail.com",
     "facebook": "https://www.facebook.com/raki.nayeem",   # full URLs; a button is hidden while its link is empty
     "linkedin": "https://www.linkedin.com/in/rakibulnayeem/",

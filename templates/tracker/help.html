@@ -1,26 +1,30 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% translate "Help & contact" %} · KhorochAi{% endblock %}
+{% block title %}{% translate "Help" %} · KhorochAi{% endblock %}
 {% block content %}
-<div class="row justify-content-center"><div class="col-lg-9 col-xl-8">
-  <h1 class="h3 mb-1">{% translate "Help & contact" %}</h1>
-  <p class="text-muted mb-4">{% translate "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved." %}</p>
+<div class="row justify-content-center"><div class="col-lg-10 col-xl-9">
+  <div class="page-hero mb-4">
+    <h1 class="h2 mb-2">{% translate "How can we help?" %}</h1>
+    <p class="text-muted mb-0">{% translate "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved." %}</p>
+  </div>
 
-  <h2 class="h5 mb-3">{% translate "How to use KhorochAi" %}</h2>
   <div class="row g-3 mb-4">
     {% for item in guide %}
     <div class="col-md-6">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold mb-1">{{ item.title }}</div>
-        <div class="small text-muted mb-2">{{ item.text }}</div>
-        {% for ex in item.examples %}<div class="help-example" data-keep-digits>{{ ex }}</div>{% endfor %}
+      <div class="card help-card p-3 p-md-4 h-100">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="help-icon" aria-hidden="true">{% include "tracker/_help_icon.html" with name=item.icon %}</span>
+          <h2 class="h6 mb-0">{{ item.title }}</h2>
+        </div>
+        <p class="small text-muted mb-2">{{ item.text }}</p>
+        <div>{% for ex in item.examples %}<span class="help-example" data-keep-digits>{{ ex }}</span>{% endfor %}</div>
       </div>
     </div>
     {% endfor %}
   </div>
 
   <h2 class="h5 mb-3">{% translate "Good to know" %}</h2>
-  <div class="card p-3 mb-4">
+  <div class="card p-3 p-md-4 mb-4">
     <ul class="small mb-0 ps-3 help-list">
       <li>{% translate "The AI only reads your text; every total and balance is calculated by the app from your saved data." %}</li>
       <li>{% translate "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually." %}</li>
@@ -29,27 +33,12 @@
     </ul>
   </div>
 
-  <h2 class="h5 mb-3">{% translate "Contact" %}</h2>
-  <div class="row g-3 mb-4">
-    <div class="col-md-6">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold mb-1">{% translate "Questions, problems or ideas" %}</div>
-        <div class="small text-muted mb-3">{% translate "Write to us and we'll get back to you." %}</div>
-        <a class="btn btn-brand align-self-start" href="mailto:{{ contact_email }}" data-keep-digits>{{ contact_email }}</a>
-      </div>
+  <div class="card help-cta p-3 p-md-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
+    <div>
+      <div class="fw-semibold">{% translate "Still need help?" %}</div>
+      <div class="small text-muted">{% translate "Write to us — questions, problems and ideas are all welcome." %}</div>
     </div>
-    <div class="col-md-6">
-      <div class="card p-3 h-100">
-        <div class="fw-semibold mb-1">{% translate "Developer" %}</div>
-        <div class="small text-muted mb-3">{% blocktranslate with name=developer.name %}KhorochAi is built by {{ name }}.{% endblocktranslate %}</div>
-        <div class="d-flex flex-wrap gap-2">
-          <a class="btn btn-outline-secondary btn-sm" href="mailto:{{ developer.email }}" data-keep-digits>{{ developer.email }}</a>
-          {% if developer.facebook %}<a class="btn btn-outline-secondary btn-sm" href="{{ developer.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
-          {% if developer.linkedin %}<a class="btn btn-outline-secondary btn-sm" href="{{ developer.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-          {% if developer.portfolio %}<a class="btn btn-outline-secondary btn-sm" href="{{ developer.portfolio }}" target="_blank" rel="noopener">{% translate "Portfolio" %}</a>{% endif %}
-        </div>
-      </div>
-    </div>
+    <a class="btn btn-brand" href="{% url 'about' %}#contact">{% translate "Contact us" %}</a>
   </div>
 </div></div>
 {% endblock %}

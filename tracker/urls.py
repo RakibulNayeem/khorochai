@@ -26,4 +26,5 @@ urlpatterns = [
     path("transfers/<int:pk>/delete/", views.transfer_delete, name="transfer_delete"),
     path("settings/", views.preferences, name="preferences"),
     path("help/", views.help_page, name="help"),
+    path("about/", views.about_page, name="about"),
 ]
