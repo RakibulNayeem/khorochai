@@ -69,8 +69,9 @@
         </div>
       </div>
       {% if user.is_authenticated %}
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="{% translate 'Menu' %}">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler menu-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="{% translate 'Menu' %}">
+        <span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       {% endif %}
     </div>

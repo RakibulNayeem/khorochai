@@ -98,6 +98,23 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
   border-radius: 999px; padding: .35rem .95rem !important; margin-left: .35rem; }
 .navbar .nav-link.nav-ask:hover { background: var(--primary-hover); }
 .navbar .nav-link.nav-ask.active { box-shadow: 0 0 0 3px var(--focus); }
+/* Mobile menu button: three lines that turn into an X while the menu is open */
+.menu-toggle { width: 36px; height: 34px; padding: 0; border: 0; border-radius: 10px; background: var(--surface-2);
+  display: inline-grid; place-items: center; transition: background-color .15s ease, transform .1s ease-out; }
+.menu-toggle:hover { background: var(--border); }
+.menu-toggle:focus { box-shadow: none; }
+.menu-toggle:focus-visible { box-shadow: 0 0 0 3px var(--focus); }  /* ring for keyboard users only, not after a tap */
+.menu-toggle:active { transform: scale(.94); }
+.menu-lines { position: relative; width: 16px; height: 12px; display: block; }
+.menu-lines span { position: absolute; left: 0; width: 100%; height: 1.75px; border-radius: 2px; background: var(--ink);
+  transition: transform .25s cubic-bezier(.2, .8, .2, 1), opacity .15s ease, top .25s cubic-bezier(.2, .8, .2, 1); }
+.menu-lines span:nth-child(1) { top: 0; }
+.menu-lines span:nth-child(2) { top: 5px; }
+.menu-lines span:nth-child(3) { top: 10px; }
+.menu-toggle[aria-expanded="true"] .menu-lines span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-lines span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] .menu-lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .menu-lines span { transition: none; } }
 @media (max-width: 767.98px) {
   .navbar-nav { padding: .5rem 0; gap: .15rem; }
   .navbar .nav-link.nav-ask { display: inline-block; margin: .35rem 0 0; }
