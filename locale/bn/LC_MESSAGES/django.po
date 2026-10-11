@@ -1053,3 +1053,14 @@ msgstr "প্রশ্ন, সমস্যা বা আইডিয়া — 
 msgid "Read the help guide"
 msgstr "সাহায্য গাইড পড়ুন"
 
+
+# ---------------------------------------------------------------- tagline
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "খরচAi — কথা বলেই খরচ ও আয়ের হিসাব"
+
+msgid "Just say it. Your hisab is done."
+msgstr "শুধু বলুন, হিসাব হয়ে যাবে।"
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "শুধু বলুন, হিসাব হয়ে যাবে। ইংরেজি, বাংলা বা Banglish-এ লিখে বা বলে খরচ ও আয়ের হিসাব রাখুন।"
+
