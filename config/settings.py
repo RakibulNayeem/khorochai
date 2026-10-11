@@ -79,7 +79,9 @@ DATABASE_URL = os.environ.get("DATABASE_URL")
 RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == "test"
 if DATABASE_URL and not RUNNING_TESTS:  # tests always use local SQLite, never the live database
     DATABASES = {
-        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=0, ssl_require=True)
+        # Keep connections open between requests (a new TLS + login handshake costs several round trips);
+        # health checks drop a connection that Neon closed while it was idle.
+        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=300, conn_health_checks=True, ssl_require=True)
     }
     # Neon's pooler (PgBouncer, transaction mode) does not support server-side cursors
     DATABASES["default"]["DISABLE_SERVER_SIDE_CURSORS"] = True
