@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{% translate "KhorochAi — Expense & income tracker you can talk to" %}{% endblock %}
+{% block content %}
+{% with lang=LANGUAGE_CODE|default:"en" %}
+
+<!-- Hero -->
+<section class="lp-hero">
+  <div class="row align-items-center g-5">
+    <div class="col-lg-5">
+      <span class="lp-eyebrow">{% translate "Free · English, বাংলা & Banglish" %}</span>
+      <h1 class="lp-title">{% translate "Just say it. Your hisab is done." %}</h1>
+      <p class="lp-lead">{% translate "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions." %}</p>
+      <div class="d-flex flex-wrap gap-2 mt-4">
+        <a class="btn btn-brand btn-lg px-4" href="{% url 'account_signup' %}">{% translate "Create free account" %}</a>
+        <a class="btn btn-outline-secondary btn-lg px-4" href="{% url 'account_login' %}">{% translate "Log in" %}</a>
+      </div>
+      <p class="small text-muted mt-3 mb-0">{% translate "Sign up with your email. You check every entry before it's saved." %}</p>
+    </div>
+    <div class="col-lg-7">
+      <div class="lp-shots" aria-hidden="true">
+        <div class="lp-browser">
+          <div class="lp-browser-bar"><span></span><span></span><span></span></div>
+          <img class="shot-light" src="{% static 'img/landing/desktop-light-'|add:lang|add:'.webp' %}" alt="" width="1600" height="1025" fetchpriority="high">
+          <img class="shot-dark" src="{% static 'img/landing/desktop-dark-'|add:lang|add:'.webp' %}" alt="" width="1600" height="1025" loading="lazy">
+        </div>
+        <div class="lp-phone">
+          <img class="shot-light" src="{% static 'img/landing/phone-light-'|add:lang|add:'.webp' %}" alt="" width="600" height="1298" loading="lazy">
+          <img class="shot-dark" src="{% static 'img/landing/phone-dark-'|add:lang|add:'.webp' %}" alt="" width="600" height="1298" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- See it understand you -->
+<section class="lp-section">
+  <div class="text-center mb-4">
+    <h2 class="lp-h2">{% translate "Write it the way you talk" %}</h2>
+    <p class="text-muted mx-auto lp-narrow">{% translate "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save." %}</p>
+  </div>
+  <div class="lp-demo mx-auto">
+    <div class="lp-bubble" data-keep-digits>আজ বাজারে ৫৫০, রিকশা ৮০, bkash e lunch 300 dilam, tuition theke 6000 pelam</div>
+    <div class="lp-arrow" aria-hidden="true">↓</div>
+    <div class="card lp-result">
+      {% for r in demo_rows %}
+      <div class="lp-row">
+        <span class="lp-dot" style="--dot: {{ r.color }}"></span>
+        <span class="lp-row-main"><span class="fw-semibold">{{ r.category }}</span><span class="small text-muted"> · {{ r.account }}</span></span>
+        <span class="amount fw-semibold {% if r.income %}text-income{% else %}text-expense{% endif %}">{% if r.income %}+{% else %}−{% endif %}{{ r.amount }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="lp-section">
+  <h2 class="lp-h2 text-center mb-4">{% translate "How it works" %}</h2>
+  <div class="row g-3">
+    {% for step in steps %}
+    <div class="col-md-4">
+      <div class="card p-4 h-100">
+        <span class="lp-step">{{ forloop.counter }}</span>
+        <div class="fw-semibold mt-3 mb-1">{{ step.title }}</div>
+        <div class="small text-muted">{{ step.text }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Features -->
+<section class="lp-section">
+  <div class="text-center mb-4">
+    <h2 class="lp-h2">{% translate "Everything you need, nothing you don't" %}</h2>
+  </div>
+  <div class="row g-3">
+    {% for f in features %}
+    <div class="col-6 col-lg-3">
+      <div class="card lp-feature p-3 p-md-4 h-100">
+        <span class="help-icon mb-3" aria-hidden="true">{% include "tracker/_help_icon.html" with name=f.icon %}</span>
+        <div class="fw-semibold mb-1">{{ f.title }}</div>
+        <div class="small text-muted">{{ f.text }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Final call to action -->
+<section class="lp-section">
+  <div class="card lp-cta text-center p-4 p-md-5">
+    <h2 class="lp-h2 mb-2">{% translate "Start your hisab in a minute" %}</h2>
+    <p class="text-muted mb-4 mx-auto lp-narrow">{% translate "Create a free account with your email, then just tell KhorochAi what you spent today." %}</p>
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+      <a class="btn btn-brand btn-lg px-4" href="{% url 'account_signup' %}">{% translate "Create free account" %}</a>
+      <a class="btn btn-outline-secondary btn-lg px-4" href="{% url 'help' %}">{% translate "See how it works" %}</a>
+    </div>
+    <div class="lp-checks mt-4">
+      <span>✓ {% translate "Free to use" %}</span>
+      <span>✓ {% translate "You confirm every entry" %}</span>
+      <span>✓ {% translate "Works on phone and computer" %}</span>
+    </div>
+  </div>
+</section>
+
+{% endwith %}
+{% endblock %}

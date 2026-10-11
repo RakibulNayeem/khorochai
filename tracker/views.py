@@ -81,8 +81,35 @@ def about_page(request):
 
 # --------------------------------------------------------------------------- dashboard
 
-@login_required
+def landing(request):
+    """First page for visitors: what KhorochAi does, then Sign up / Log in."""
+    demo_rows = [
+        {"category": _("Groceries"), "account": _("Cash"), "amount": money(550), "color": "#84cc16"},
+        {"category": _("Transport"), "account": _("Cash"), "amount": money(80), "color": "#0ea5e9"},
+        {"category": _("Food"), "account": "bKash", "amount": money(300), "color": "#f97316"},
+        {"category": _("Tuition"), "account": "bKash", "amount": money(6000), "color": "#22c55e", "income": True},
+    ]
+    steps = [
+        {"title": _("Type or say it"), "text": _("Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine.")},
+        {"title": _("Check the preview"), "text": _("See exactly what the AI understood — amount, category, account and date. Fix anything with a tap.")},
+        {"title": _("Saved and up to date"), "text": _("Your totals, account balances, budgets and charts update instantly.")},
+    ]
+    features = [
+        {"icon": "mic", "title": _("Voice input"), "text": _("Tap the mic and speak. Your words appear in the box for you to check.")},
+        {"icon": "language", "title": _("Your language"), "text": _("English, বাংলা or Banglish — and the whole app can switch to Bangla.")},
+        {"icon": "accounts", "title": _("All your accounts"), "text": _("Cash, bKash, Nagad, Rocket, bank and card, with transfers between them.")},
+        {"icon": "budget", "title": _("Monthly budgets"), "text": _("Set limits per category and watch the progress bars as you spend.")},
+        {"icon": "ask", "title": _("Ask AI"), "text": _("“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data.")},
+        {"icon": "chart", "title": _("Clear dashboard"), "text": _("Income, expense, balance, where your money went and day-by-day charts.")},
+        {"icon": "moon", "title": _("Light and dark"), "text": _("A calm design that follows your phone's dark mode, or pick your own.")},
+        {"icon": "export", "title": _("Export to CSV"), "text": _("Download your transactions for Excel or Google Sheets any time.")},
+    ]
+    return render(request, "tracker/landing.html", {"demo_rows": demo_rows, "steps": steps, "features": features})
+
+
 def dashboard(request):
+    if not request.user.is_authenticated:
+        return landing(request)
     services.ensure_default_categories(request.user)
     services.ensure_default_accounts(request.user)
     month = services.parse_month(request.GET.get("month"))

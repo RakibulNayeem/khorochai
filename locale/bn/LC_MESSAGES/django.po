@@ -1064,3 +1064,107 @@ msgstr "শুধু বলুন, হিসাব হয়ে যাবে।"
 msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
 msgstr "শুধু বলুন, হিসাব হয়ে যাবে। ইংরেজি, বাংলা বা Banglish-এ লিখে বা বলে খরচ ও আয়ের হিসাব রাখুন।"
 
+
+# ---------------------------------------------------------------- landing page
+msgid "Free · English, বাংলা & Banglish"
+msgstr "ফ্রি · ইংরেজি, বাংলা ও Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "কী খরচ বা আয় করলেন লিখুন বা বলুন — বন্ধুকে যেভাবে বলেন। KhorochAi তা গুছিয়ে হিসাবে তোলে, অ্যাকাউন্ট ও বাজেট আপডেট রাখে, আর টাকা নিয়ে আপনার প্রশ্নের উত্তর দেয়।"
+
+msgid "Create free account"
+msgstr "ফ্রি অ্যাকাউন্ট খুলুন"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "ইমেইল দিয়ে সাইন আপ করুন। সেভ হওয়ার আগে প্রতিটি এন্ট্রি আপনি দেখে নেবেন।"
+
+msgid "Write it the way you talk"
+msgstr "যেভাবে কথা বলেন, সেভাবেই লিখুন"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "এক মেসেজেই একাধিক এন্ট্রি দিতে পারেন — খরচ, আয়, অ্যাকাউন্টের মধ্যে টাকা সরানো, এমনকি বাজেটও। AI পড়ে নেয়; আপনি দেখে সেভ করেন।"
+
+msgid "How it works"
+msgstr "কীভাবে কাজ করে"
+
+msgid "Type or say it"
+msgstr "লিখুন বা বলুন"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "কী হলো লিখুন বা বলুন — ইংরেজি, বাংলা বা Banglish-এ। এক মেসেজে কয়েকটা কথা বললেও চলবে।"
+
+msgid "Check the preview"
+msgstr "একবার দেখে নিন"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "AI ঠিক কী বুঝেছে দেখুন — পরিমাণ, ক্যাটাগরি, অ্যাকাউন্ট ও তারিখ। ভুল থাকলে এক ট্যাপেই ঠিক করুন।"
+
+msgid "Saved and up to date"
+msgstr "সেভ হয়ে যায়, সব আপডেট থাকে"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "মোট হিসাব, অ্যাকাউন্টের ব্যালেন্স, বাজেট আর চার্ট সঙ্গে সঙ্গে আপডেট হয়।"
+
+msgid "Everything you need, nothing you don't"
+msgstr "যা দরকার সব আছে, বাড়তি কিছু নেই"
+
+msgid "Voice input"
+msgstr "কথা বলে ইনপুট"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "মাইক চেপে বলুন। আপনার কথা বক্সে লেখা হয়ে যাবে, দেখে নিন।"
+
+msgid "Your language"
+msgstr "আপনার ভাষায়"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "ইংরেজি, বাংলা বা Banglish — আর পুরো অ্যাপটাই বাংলায় দেখতে পারবেন।"
+
+msgid "All your accounts"
+msgstr "সব অ্যাকাউন্ট এক জায়গায়"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "ক্যাশ, বিকাশ, নগদ, রকেট, ব্যাংক ও কার্ড — আর এদের মধ্যে টাকা সরানো।"
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "ক্যাটাগরি অনুযায়ী সীমা ঠিক করুন, খরচের সঙ্গে সঙ্গে অগ্রগতি দেখুন।"
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — উত্তর পাবেন আপনার নিজের তথ্য থেকে।"
+
+msgid "Clear dashboard"
+msgstr "পরিষ্কার ড্যাশবোর্ড"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "আয়, খরচ, ব্যালেন্স, টাকা কোথায় গেল আর দিনভিত্তিক চার্ট।"
+
+msgid "Light and dark"
+msgstr "লাইট ও ডার্ক"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "শান্ত ডিজাইন, যা ফোনের ডার্ক মোড অনুসরণ করে — বা নিজে বেছে নিন।"
+
+msgid "Export to CSV"
+msgstr "CSV-তে ডাউনলোড"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "যেকোনো সময় আপনার লেনদেন Excel বা Google Sheets-এর জন্য ডাউনলোড করুন।"
+
+msgid "Start your hisab in a minute"
+msgstr "এক মিনিটেই হিসাব শুরু করুন"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "ইমেইল দিয়ে ফ্রি অ্যাকাউন্ট খুলুন, তারপর KhorochAi-কে বলুন আজ কী খরচ করলেন।"
+
+msgid "See how it works"
+msgstr "কীভাবে কাজ করে দেখুন"
+
+msgid "Free to use"
+msgstr "ব্যবহার ফ্রি"
+
+msgid "You confirm every entry"
+msgstr "প্রতিটি এন্ট্রি আপনি নিশ্চিত করেন"
+
+msgid "Works on phone and computer"
+msgstr "ফোন ও কম্পিউটার দুটোতেই চলে"
+

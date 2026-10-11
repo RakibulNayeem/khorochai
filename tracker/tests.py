@@ -409,7 +409,10 @@ class AuthTests(TestCase):
 
     def test_old_urls_and_login_page(self):
         self.assertRedirects(self.client.get("/login/"), reverse("account_login"), fetch_redirect_response=False)
-        self.assertRedirects(self.client.get(reverse("dashboard")), reverse("account_login") + "?next=/",
+        r = self.client.get(reverse("dashboard"))  # visitors get the landing page
+        self.assertContains(r, "Create free account")
+        self.assertContains(r, reverse("account_signup"))
+        self.assertRedirects(self.client.get(reverse("transactions")), reverse("account_login") + "?next=/transactions/",
                              fetch_redirect_response=False)
         r = self.client.get(reverse("account_login"))
         self.assertContains(r, "Welcome back")
