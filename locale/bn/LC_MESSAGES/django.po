@@ -1168,3 +1168,9 @@ msgstr "প্রতিটি এন্ট্রি আপনি নিশ্চ
 msgid "Works on phone and computer"
 msgstr "ফোন ও কম্পিউটার দুটোতেই চলে"
 
+
+msgid "Write it the way you talk — or just talk."
+msgstr "যেভাবে কথা বলেন, সেভাবে লিখুন — বা শুধু বলুন।"
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "লিখুন, অথবা মাইক চেপে বলুন। এক মেসেজেই একাধিক এন্ট্রি দিতে পারেন — খরচ, আয়, অ্যাকাউন্টের মধ্যে টাকা সরানো, এমনকি বাজেটও। আপনি দেখে নিয়ে সেভ করেন।"
