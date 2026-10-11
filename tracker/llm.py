@@ -123,12 +123,12 @@ def call_llm(system: str, user: str, usage: dict | None = None) -> dict:
 
 # --------------------------------------------------------------------------- prompts
 
-PARSE_PROMPT = """You extract income, expense, transfer and balance entries for a personal budget app used in Bangladesh.
+PARSE_PROMPT = """You extract income, expense, transfer, balance and budget entries for a personal budget app used in Bangladesh.
 The user may write in English, Bangla, Banglish (Bangla in English letters) or any other language,
 and may mention several transactions in one message.
 
 Return ONLY JSON in exactly this shape:
-{"transactions": [{"type": "expense" or "income" or "transfer" or "balance", "amount": number, "category": "string",
+{"transactions": [{"type": "expense" or "income" or "transfer" or "balance" or "budget", "amount": number, "category": "string",
   "is_new_category": true or false, "account": "string", "to_account": "string",
   "note": "short note", "date": "YYYY-MM-DD"}],
  "message": "short explanation ONLY if no transaction was found, otherwise empty string"}
@@ -166,6 +166,12 @@ Rules:
    "my cash is 1500 now". amount = that balance, account = the account (or "" if not said),
    category = "", is_new_category = false, to_account = "". "ache/আছে/balance/have/now" signal a balance;
    "pelam/পেলাম/got/received" is income, not a balance.
+   BUDGET: setting a monthly spending limit for an EXPENSE category is type "budget":
+   "khabar e mashe 6000 budget", "transport budget 2000", "বাজারে মাসে ৮০০০ টাকার বেশি খরচ করব না",
+   "set my shopping limit to 5000", "rent budget 15000". amount = the monthly limit, category = the existing
+   expense category (exact name; or a new short English name with is_new_category=true), account = "",
+   to_account = "". "budget/বাজেট/limit/sima/সীমা/er beshi na/বেশি না" signal a budget.
+   "remove/delete/bad dao the food budget" = type "budget" with amount 0.
 6. note: short description in the user's own language, e.g. "রিকশা ভাড়া", "lunch with friends".
 7. Never calculate totals. Never invent transactions. If there is no money amount at all,
    return {"transactions": [], "message": "<explain briefly in the user's language>"}.
@@ -190,6 +196,13 @@ Input: "amar bkash e 5000 ache, bank e 50000"
 Output: {"transactions": [
  {"type":"balance","amount":5000,"category":"","is_new_category":false,"account":"bKash","to_account":"","note":"","date":"__TODAY__"},
  {"type":"balance","amount":50000,"category":"","is_new_category":false,"account":"Bank","to_account":"","note":"","date":"__TODAY__"}],
+ "message": ""}
+
+Example
+Input: "khabar e mashe 6000 budget, transport 2000"
+Output: {"transactions": [
+ {"type":"budget","amount":6000,"category":"Food","is_new_category":false,"account":"","to_account":"","note":"","date":"__TODAY__"},
+ {"type":"budget","amount":2000,"category":"Transport","is_new_category":false,"account":"","to_account":"","note":"","date":"__TODAY__"}],
  "message": ""}
 
 Example

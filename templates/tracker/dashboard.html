@@ -123,7 +123,7 @@
           {% elif b.pct >= 80 %}<div class="small text-warning">{% blocktranslate with p=b.pct %}{{ p }}% used{% endblocktranslate %}</div>{% endif %}
         </div>
       {% empty %}
-        <p class="text-muted small mb-0">{% translate "No budgets yet. Add a monthly limit to any expense category to track it here." %}</p>
+        <p class="text-muted small mb-0">{% translate "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories." %}</p>
       {% endfor %}
     </div>
   </div>

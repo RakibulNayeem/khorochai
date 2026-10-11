@@ -22,7 +22,7 @@
     <div class="form-check mb-2">
       <input class="form-check-input include-box" type="checkbox" name="include_{{ i }}" id="include_{{ i }}" value="1" checked>
       <label class="form-check-label fw-semibold" for="include_{{ i }}">{% translate "Save this one" %}</label>
-      {% if not r.category_id and r.type != "transfer" and r.type != "balance" %}<span class="badge badge-new ms-2">{% translate "New category:" %} {{ r.new_category }}</span>{% endif %}
+      {% if not r.category_id and r.type != "transfer" and r.type != "balance" and r.type != "budget" %}<span class="badge badge-new ms-2">{% translate "New category:" %} {{ r.new_category }}</span>{% endif %}
     </div>
     <div class="row g-2">
       <div class="col-6 col-md-2">
@@ -32,10 +32,11 @@
           <option value="income" {% if r.type == "income" %}selected{% endif %}>{% translate "Income" %}</option>
           <option value="transfer" {% if r.type == "transfer" %}selected{% endif %}>⇄ {% translate "Transfer" %}</option>
           <option value="balance" {% if r.type == "balance" %}selected{% endif %}>= {% translate "Set balance" %}</option>
+          <option value="budget" {% if r.type == "budget" %}selected{% endif %}>{% translate "Set budget" %}</option>
         </select>
       </div>
       <div class="col-6 col-md-2">
-        <label class="form-label small text-muted mb-1"><span class="no-balance">{% translate "Amount" %}</span><span class="balance-only">{% translate "Balance now" %}</span> (৳)</label>
+        <label class="form-label small text-muted mb-1"><span class="no-balance no-budget">{% translate "Amount" %}</span><span class="balance-only">{% translate "Balance now" %}</span><span class="budget-only">{% translate "Monthly budget" %}</span> (৳)</label>
         <input type="number" step="0.01" name="amount_{{ i }}" value="{{ r.amount }}" class="form-control" required>
       </div>
       <div class="col-6 col-md-2 tx-only no-balance">
@@ -58,7 +59,7 @@
                class="form-control mt-1 new-cat-input" placeholder="{% translate 'New category name' %}"
                {% if r.category_id %}style="display:none"{% endif %}>
       </div>
-      <div class="col-6 col-md-2">
+      <div class="col-6 col-md-2 no-budget">
         <label class="form-label small text-muted mb-1"><span class="tx-only">{% translate "Account" %}</span><span class="transfer-only">{% translate "From" %}</span></label>
         <select name="account_{{ i }}" class="form-select">
           {% for a in accounts %}<option value="{{ a.id }}" {% if a.id == r.account_id %}selected{% endif %}>{{ a }}</option>{% endfor %}
@@ -70,11 +71,11 @@
           {% for a in accounts %}<option value="{{ a.id }}" {% if a.id == r.to_account_id %}selected{% endif %}>{{ a }}</option>{% endfor %}
         </select>
       </div>
-      <div class="col-6 col-md-2 no-balance">
+      <div class="col-6 col-md-2 no-balance no-budget">
         <label class="form-label small text-muted mb-1">{% translate "Note" %}</label>
         <input type="text" name="note_{{ i }}" value="{{ r.note }}" maxlength="255" class="form-control">
       </div>
-      <div class="col-6 col-md-2 no-balance">
+      <div class="col-6 col-md-2 no-balance no-budget">
         <label class="form-label small text-muted mb-1">{% translate "Date" %}</label>
         <input type="date" name="date_{{ i }}" value="{{ r.date|date:'Y-m-d' }}" class="form-control">
       </div>
@@ -99,7 +100,7 @@ document.querySelectorAll('.preview-row').forEach(row => {
   const newInput = row.querySelector('.new-cat-input');
   inc.addEventListener('change', () => row.classList.toggle('excluded', !inc.checked));
   type.addEventListener('change', () => {
-    row.classList.remove('is-income', 'is-expense', 'is-transfer', 'is-balance');
+    row.classList.remove('is-income', 'is-expense', 'is-transfer', 'is-balance', 'is-budget');
     row.classList.add('is-' + type.value);
   });
   cat.addEventListener('change', () => {

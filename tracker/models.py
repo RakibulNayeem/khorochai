@@ -7,6 +7,7 @@ INCOME = "income"
 EXPENSE = "expense"
 TRANSFER = "transfer"  # only used by the AI preview + lists; stored in the Transfer model
 BALANCE = "balance"    # AI preview only: "bkash e 5000 ache" sets an account's current balance
+BUDGET = "budget"      # AI preview only: "khabar e mashe 6000 budget" sets a category's monthly budget
 TYPE_CHOICES = [(EXPENSE, _("Expense")), (INCOME, _("Income"))]
 
 # Names of the ready-made categories. They are stored in English (the AI matches on them)

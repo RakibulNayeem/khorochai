@@ -18,7 +18,7 @@ from django.views.decorators.http import require_POST
 from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
 from .forms import AccountForm, CategoryForm, TransactionForm, TransferForm, UsernameForm
-from .models import BALANCE, EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
+from .models import BALANCE, BUDGET, EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
 from .templatetags.money import money
 
 logger = logging.getLogger(__name__)
@@ -168,15 +168,36 @@ def ai_confirm(request):
     raw_text = (request.POST.get("raw_text") or "")[:MAX_INPUT_CHARS]
     user = request.user
     today = timezone.localdate()
-    saved, new_cats, skipped, balances = 0, [], 0, []
+    saved, new_cats, skipped, balances, budgets = 0, [], 0, [], []
 
     with db_transaction.atomic():
         for i in range(count):
             if not request.POST.get(f"include_{i}"):
                 continue
             type_ = request.POST.get(f"type_{i}")
-            if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE):
+            if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE, BUDGET):
                 skipped += 1
+                continue
+            if type_ == BUDGET:
+                limit = services.parse_balance(request.POST.get(f"amount_{i}"))
+                cat_value = request.POST.get(f"category_{i}", "")
+                if cat_value == "__new__":
+                    name = (request.POST.get(f"new_category_{i}") or "").strip()
+                    category, created = services.get_or_create_category(user, name, EXPENSE) if name else (None, False)
+                    if created:
+                        new_cats.append(category.name)
+                else:
+                    category = Category.objects.filter(user=user, pk=cat_value or 0).first()
+                    if category and category.type != EXPENSE:  # budgets only exist for expense categories
+                        category, created = services.get_or_create_category(user, category.name, EXPENSE)
+                        if created:
+                            new_cats.append(category.name)
+                if not category or limit is None or limit < 0:
+                    skipped += 1
+                    continue
+                category.monthly_budget = limit or None  # 0 removes the budget
+                category.save(update_fields=["monthly_budget"])
+                budgets.append(f"{category} {money(limit)}" if limit else _("%(name)s (removed)") % {"name": category})
                 continue
             if type_ == BALANCE:
                 account = Account.objects.filter(user=user, pk=request.POST.get(f"account_{i}") or 0).first()
@@ -240,9 +261,11 @@ def ai_confirm(request):
         messages.success(request, msg)
     if balances:
         messages.success(request, _("Balance updated: %(list)s.") % {"list": ", ".join(balances)})
+    if budgets:
+        messages.success(request, _("Monthly budget set: %(list)s.") % {"list": ", ".join(budgets)})
     if skipped:
         messages.warning(request, _("%(n)s row(s) skipped because the amount, type or accounts were invalid.") % {"n": skipped})
-    if not saved and not skipped and not balances:
+    if not saved and not skipped and not balances and not budgets:
         messages.info(request, _("Nothing was saved."))
     return redirect("dashboard")
 

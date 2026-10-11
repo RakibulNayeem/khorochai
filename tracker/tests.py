@@ -234,6 +234,33 @@ class AccountTests(TestCase):
         self.assertEqual(Transaction.objects.count(), 1)  # no fake income/expense was created
         self.assertEqual(r.context["summary"]["income"], Decimal("0"))
 
+    def test_ai_sets_budgets(self):
+        food = Category.objects.get(user=self.user, name="Food")
+        fake = {"transactions": [
+            {"type": "budget", "amount": 6000, "category": "food"},
+            {"type": "budget", "amount": 1500, "category": "Gym", "is_new_category": True},
+        ], "message": ""}
+        with mock.patch.object(llm, "call_llm", return_value=fake):
+            r = self.client.post(reverse("ai_parse"), {"text": "khabar e mashe 6000 budget, gym 1500"})
+        rows = r.context["rows"]
+        self.assertEqual([(x["type"], x["category_id"], x["new_category"]) for x in rows],
+                         [("budget", food.id, ""), ("budget", None, "Gym")])
+        post = {"row_count": 2, "raw_text": "x",
+                "include_0": "1", "type_0": "budget", "amount_0": "6000", "category_0": food.id,
+                "include_1": "1", "type_1": "budget", "amount_1": "1500", "category_1": "__new__", "new_category_1": "Gym"}
+        r = self.client.post(reverse("ai_confirm"), post, follow=True)
+        self.assertContains(r, "Monthly budget set")
+        food.refresh_from_db()
+        self.assertEqual(food.monthly_budget, Decimal("6000"))
+        self.assertEqual(Category.objects.get(user=self.user, name="Gym", type="expense").monthly_budget, Decimal("1500"))
+        self.assertEqual([b["category"].name for b in r.context["budgets"]], ["Food", "Gym"])
+        self.assertFalse(Transaction.objects.exists())  # a budget is not a transaction
+        # "budget 0" removes it
+        self.client.post(reverse("ai_confirm"), {"row_count": 1, "include_0": "1", "type_0": "budget",
+                                                 "amount_0": "0", "category_0": food.id})
+        food.refresh_from_db()
+        self.assertIsNone(food.monthly_budget)
+
     def test_only_one_default_account(self):
         self.client.post(reverse("account_edit", args=[self.bkash.id]), {
             "name": "bKash", "kind": "mobile", "icon": "📱", "color": "#e2136e", "opening_balance": "0", "is_default": "on"})

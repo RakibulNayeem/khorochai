@@ -162,8 +162,8 @@ msgstr "বাজেটের চেয়ে %(a)s বেশি"
 msgid "%(p)s%% used"
 msgstr "%(p)s%% খরচ হয়েছে"
 
-msgid "No budgets yet. Add a monthly limit to any expense category to track it here."
-msgstr "এখনো কোনো বাজেট নেই। যেকোনো খরচের ক্যাটাগরিতে মাসিক সীমা দিলে এখানে দেখা যাবে।"
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "এখনো কোনো বাজেট নেই। ওপরের বক্সে “khabar e mashe 6000 budget” লিখুন বা বলুন, অথবা ক্যাটাগরি পেজে বাজেট ঠিক করুন।"
 
 msgid "Recent transactions"
 msgstr "সাম্প্রতিক লেনদেন"
@@ -899,3 +899,12 @@ msgstr "এখন রেকর্ডিংটি লেখায় রূপা
 
 msgid "I couldn't hear anything. Please try again a little closer to the mic."
 msgstr "কিছু শোনা যায়নি। মাইকের একটু কাছে এসে আবার চেষ্টা করুন।"
+
+msgid "Set budget"
+msgstr "বাজেট ঠিক করুন"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "মাসিক বাজেট ঠিক হয়েছে: %(list)s।"
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (বাদ দেওয়া হয়েছে)"

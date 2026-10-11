@@ -13,7 +13,7 @@ from django.utils.formats import date_format
 from django.utils.translation import gettext
 
 from .models import (
-    ACCOUNT_KIND_ORDER, BALANCE, EXPENSE, INCOME, TRANSFER, Account, AIUsage, Category, Transaction, Transfer, category_label,
+    ACCOUNT_KIND_ORDER, BALANCE, BUDGET, EXPENSE, INCOME, TRANSFER, Account, AIUsage, Category, Transaction, Transfer, category_label,
 )
 
 DEFAULT_CATEGORIES = [
@@ -221,8 +221,13 @@ def clean_parsed(data, user):
         if not isinstance(item, dict):
             continue
         type_ = str(item.get("type", "")).lower().strip()
-        if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE):
+        if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE, BUDGET):
             type_ = EXPENSE
+        if type_ == BUDGET:
+            row = _budget_row(item, cats, today)
+            if row["amount"] is not None:
+                rows.append(row)
+            continue
         if type_ == BALANCE:
             rows.append(_balance_row(item, accounts, fallback_account, today))
             if rows[-1]["amount"] is None:
@@ -254,6 +259,23 @@ def clean_parsed(data, user):
     if not rows and not message:
         message = gettext("No income or expense with an amount was found in your message.")
     return rows, message
+
+
+def _budget_row(item, cats, today):
+    """A monthly budget for an expense category. 0 means "remove the budget"."""
+    cat_name = " ".join(str(item.get("category") or "").split())[:60]
+    match = next((c for c in cats if c.type == EXPENSE and c.name.lower() == cat_name.lower()), None)
+    amount = parse_balance(item.get("amount"))
+    return {
+        "type": BUDGET,
+        "amount": amount if amount is not None and amount >= 0 else None,
+        "category_id": match.id if match else None,
+        "new_category": "" if match else (cat_name or "Other Expense"),
+        "account_id": None,
+        "to_account_id": None,
+        "note": "",
+        "date": today,
+    }
 
 
 def _balance_row(item, accounts, fallback_account, today):
