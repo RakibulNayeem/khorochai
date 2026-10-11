@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import transaction as db_transaction
 from django.db.models import Q
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
@@ -245,6 +245,31 @@ def ai_confirm(request):
     if not saved and not skipped and not balances:
         messages.info(request, _("Nothing was saved."))
     return redirect("dashboard")
+
+
+# --------------------------------------------------------------------------- AI: voice input
+
+@login_required
+@require_POST
+def ai_transcribe(request):
+    """Mic button: a short WAV recording -> text that goes into the input box for the user to check."""
+    audio = request.FILES.get("audio")
+    if not audio:
+        return JsonResponse({"error": _("No recording was received.")}, status=400)
+    if audio.size > django_settings.VOICE_MAX_BYTES:
+        return JsonResponse({"error": _("The recording is too long. Please keep it under a minute.")}, status=400)
+    if not services.ai_quota(request.user)["can_use"]:
+        return JsonResponse({"error": _limit_message(request.user)}, status=429)
+    usage = {}
+    try:
+        text = llm.transcribe(audio.read(), "audio/wav", usage=usage)
+    except llm.LLMError as exc:
+        logger.error("Transcription failed: %s", exc)
+        return JsonResponse({"error": _("Couldn't turn the recording into text right now. Please try again or type it.")}, status=502)
+    services.record_ai_usage(request.user, usage.get("tokens", 0))
+    if not text:
+        return JsonResponse({"error": _("I couldn't hear anything. Please try again a little closer to the mic.")}, status=422)
+    return JsonResponse({"text": text, "quota": services.ai_quota(request.user)})
 
 
 # --------------------------------------------------------------------------- AI: ask questions

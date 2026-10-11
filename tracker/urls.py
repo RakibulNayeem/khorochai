@@ -6,6 +6,7 @@ urlpatterns = [
     path("", views.dashboard, name="dashboard"),
     path("ai/parse/", views.ai_parse, name="ai_parse"),
     path("ai/confirm/", views.ai_confirm, name="ai_confirm"),
+    path("ai/transcribe/", views.ai_transcribe, name="ai_transcribe"),
     path("ask/", views.ask, name="ask"),
     path("transactions/", views.transaction_list, name="transactions"),
     path("transactions/add/", views.transaction_create, name="transaction_add"),

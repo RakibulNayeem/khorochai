@@ -395,3 +395,51 @@ class AuthTests(TestCase):
         self.assertContains(r, "Username updated")
         user.refresh_from_db()
         self.assertEqual(user.username, "rakib_bd")
+
+
+class VoiceInputTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.login(username="rakib", password="pass12345!")
+
+    def _wav(self, size=32000):
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        return SimpleUploadedFile("voice.wav", bytes(4) + bytes(size), content_type="audio/wav")
+
+    def test_transcribe_returns_text_and_counts_tokens(self):
+        def fake(audio, mime, usage=None):
+            usage["tokens"] = 300
+            return "আজ lunch এ 250 টাকা দিলাম"
+        with mock.patch.object(llm, "transcribe", side_effect=fake):
+            r = self.client.post(reverse("ai_transcribe"), {"audio": self._wav()})
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.json()["text"], "আজ lunch এ 250 টাকা দিলাম")
+        self.assertEqual(AIUsage.objects.get(user=self.user).tokens, 300)
+
+    def test_transcribe_errors(self):
+        self.assertEqual(self.client.post(reverse("ai_transcribe")).status_code, 400)  # no file
+        with override_settings(VOICE_MAX_BYTES=10):
+            self.assertEqual(self.client.post(reverse("ai_transcribe"), {"audio": self._wav()}).status_code, 400)
+        with mock.patch.object(llm, "transcribe", side_effect=llm.LLMError("down")):
+            r = self.client.post(reverse("ai_transcribe"), {"audio": self._wav()})
+        self.assertEqual(r.status_code, 502)
+        self.assertFalse(AIUsage.objects.exists())  # failed attempts cost nothing
+        with mock.patch.object(llm, "transcribe", return_value=""):
+            self.assertEqual(self.client.post(reverse("ai_transcribe"), {"audio": self._wav()}).status_code, 422)
+
+    @override_settings(AI_DAILY_TOKENS_PER_USER=100)
+    def test_transcribe_respects_daily_limit(self):
+        AIUsage.objects.create(user=self.user, date=timezone.localdate(), count=1, tokens=100)
+        with mock.patch.object(llm, "transcribe") as m:
+            r = self.client.post(reverse("ai_transcribe"), {"audio": self._wav()})
+        self.assertEqual(r.status_code, 429)
+        m.assert_not_called()
+
+    def test_mic_button_on_pages(self):
+        for name in ("dashboard", "ask"):
+            self.assertContains(self.client.get(reverse(name)), 'class="voice-btn"')
+
+    def test_transcribe_requires_login(self):
+        self.client.logout()
+        r = self.client.post(reverse("ai_transcribe"), {"audio": self._wav()})
+        self.assertEqual(r.status_code, 302)

@@ -1,0 +1,16 @@
+{% load i18n %}{% comment %}
+Mic button for voice input. Put it inside a .voice-field next to the text box it fills (target = that box's id).
+{% endcomment %}
+<button type="button" class="voice-btn" data-voice-target="{{ target }}" data-url="{% url 'ai_transcribe' %}"
+        aria-label="{% translate 'Speak instead of typing' %}" title="{% translate 'Speak instead of typing' %}"
+        data-label-idle="{% translate 'Speak instead of typing' %}"
+        data-label-recording="{% translate 'Stop recording' %}"
+        data-label-busy="{% translate 'Writing what you said…' %}"
+        data-error-mic="{% translate 'Microphone access is blocked. Allow it in your browser settings and try again.' %}"
+        data-error-short="{% translate 'That was too short. Hold on a moment and speak, then tap stop.' %}"
+        data-error-network="{% translate 'Could not send the recording. Check your connection and try again.' %}"
+        {% if not ai_quota.can_use %}disabled{% endif %}>
+  <svg class="voice-icon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>
+  <span class="voice-rec" aria-hidden="true"><span class="voice-dot"></span><span class="voice-time">0:00</span><span class="voice-stop"></span></span>
+  <span class="voice-spin" aria-hidden="true"></span>
+</button>

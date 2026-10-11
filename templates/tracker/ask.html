@@ -7,8 +7,11 @@
     {% csrf_token %}
     <label class="form-label fw-semibold" for="question">{% translate "Ask anything about your money" %}</label>
     <div class="input-group">
-      <input type="text" id="question" name="question" maxlength="500" class="form-control form-control-lg" required
-             value="{{ question }}" placeholder="এই মাসে খাবারে কত খরচ হলো?">
+      <div class="voice-field voice-field-inline flex-grow-1">
+        <input type="text" id="question" name="question" maxlength="500" class="form-control form-control-lg" required
+               value="{{ question }}" placeholder="এই মাসে খাবারে কত খরচ হলো?">
+        {% include "tracker/_voice_button.html" with target="question" %}
+      </div>
       <button class="btn btn-brand px-4" id="ask-btn"{% if not ai_quota.can_use %} disabled{% endif %}>{% translate "Ask" %}</button>
     </div>
     <div class="mt-2">{% include "tracker/_ai_quota.html" %}</div>
@@ -68,6 +71,7 @@
 {% endblock %}
 
 {% block scripts %}
+{% load static %}<script src="{% static 'js/voice.js' %}" defer></script>
 <script>
 document.querySelectorAll('.example-chip').forEach(el => el.addEventListener('click', () => {
   document.getElementById('question').value = el.dataset.text;

@@ -76,6 +76,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 # ---------------------------------------------------------------- Database
 # Local: SQLite. Production: set DATABASE_URL to your Neon *pooled* connection string.
 DATABASE_URL = os.environ.get("DATABASE_URL")
+# Locally the live database is opt-in: set USE_LIVE_DB=1 for a single command (e.g. migrate).
+if not DATABASE_URL and os.environ.get("USE_LIVE_DB") == "1":
+    DATABASE_URL = os.environ.get("LIVE_DATABASE_URL")
 RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == "test"
 if DATABASE_URL and not RUNNING_TESTS:  # tests always use local SQLite, never the live database
     DATABASES = {
@@ -194,6 +197,8 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
+GROQ_TRANSCRIBE_MODEL = os.environ.get("GROQ_TRANSCRIBE_MODEL", "whisper-large-v3-turbo")  # voice input backup
+VOICE_MAX_BYTES = 2_000_000  # ~60 s of 16 kHz mono WAV
 LLM_TIMEOUT = int(os.environ.get("LLM_TIMEOUT", "25"))
 # Daily AI limits. Free tiers: Gemini Flash-Lite ~500 requests/day; Groq gpt-oss-120b 200,000 tokens/day.
 # Measured: one "Add with AI" request uses ~1,600 tokens, one "Ask AI" ~700 (so 30,000 = ~18 adds a day).

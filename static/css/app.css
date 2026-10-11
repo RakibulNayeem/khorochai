@@ -174,7 +174,7 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
 .account-chip:hover { color: var(--ink); text-decoration: none; box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }
 
 /* ---------------------------------------------------------------- "AI today: 23% used" */
-.ai-quota { color: var(--muted); min-width: 150px; }
+.ai-quota { color: var(--muted); min-width: 150px; max-width: 240px; }
 .ai-quota-bar { height: 4px; border-radius: 999px; background: var(--surface-2); margin-top: 4px; overflow: hidden; }
 .ai-quota-bar span { display: block; height: 100%; background: var(--muted); }
 .ai-quota.is-low, .ai-quota.is-empty { color: var(--expense); }
@@ -215,4 +215,36 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
   :root, [data-bs-theme="dark"] { --hairline: var(--border); --muted: var(--ink); }
   .navbar { background: var(--bg); backdrop-filter: none; box-shadow: 0 1px 0 var(--ink); }
   .card { box-shadow: 0 0 0 1px var(--ink); }
+}
+
+/* ---------------------------------------------------------------- voice input (mic button inside the text box) */
+.voice-field { position: relative; }
+.voice-field textarea { padding-right: 3.5rem; }
+.voice-field-inline input { padding-right: 3.25rem; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.voice-btn { position: absolute; right: .6rem; bottom: .6rem; height: 36px; min-width: 36px; padding: 0 .55rem;
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem; border: 0; border-radius: 999px;
+  background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--border);
+  transition: transform .1s ease-out, background-color .15s ease, box-shadow .15s ease, min-width .2s ease; }
+.voice-field-inline .voice-btn { top: 50%; bottom: auto; transform: translateY(-50%); }
+.voice-btn:hover { box-shadow: 0 0 0 1px color-mix(in srgb, var(--muted) 45%, var(--border)); }
+.voice-btn:active { transform: scale(.94); }
+.voice-field-inline .voice-btn:active { transform: translateY(-50%) scale(.94); }
+.voice-btn:disabled { opacity: .45; }
+.voice-btn svg { width: 18px; height: 18px; }
+.voice-rec, .voice-spin { display: none; }
+.voice-btn[data-state="recording"] { background: #ff3b30; color: #fff; box-shadow: 0 0 0 4px rgba(255, 59, 48, .18); padding: 0 .75rem; }
+.voice-btn[data-state="recording"] .voice-icon-mic { display: none; }
+.voice-btn[data-state="recording"] .voice-rec { display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .8125rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.voice-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: voice-pulse 1.2s ease-in-out infinite; }
+.voice-stop { width: 10px; height: 10px; border-radius: 2px; background: #fff; }
+.voice-btn[data-state="busy"] .voice-icon-mic { display: none; }
+.voice-btn[data-state="busy"] .voice-spin { display: block; width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid var(--border); border-top-color: var(--ink); animation: voice-spin .7s linear infinite; }
+.voice-error { color: var(--expense); margin: -.25rem 0 .5rem; }
+@keyframes voice-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@keyframes voice-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .voice-dot { animation: none; }
+  .voice-btn[data-state="busy"] .voice-spin { animation-duration: 1.6s; }
 }

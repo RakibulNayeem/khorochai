@@ -4,7 +4,8 @@ All money math (totals, balances, budgets) is done by Python/SQL, never by the A
 
 Providers (both have free tiers):
   - Google Gemini  (best for Bangla / Banglish)  -> GEMINI_API_KEY
-  - Groq (Llama)   (very fast fallback)          -> GROQ_API_KEY
+  - Groq           (very fast fallback)          -> GROQ_API_KEY
+Voice input is transcribed by Gemini (audio in the prompt), with Groq's Whisper as the backup.
 """
 import json
 import logging
@@ -257,3 +258,90 @@ def build_query(question, today, expense_names, income_names, language="en", acc
     title_lang = "Bangla (বাংলা script)" if language == "bn" else "English"
     system += f'- Write "title" in {title_lang}.\n'
     return call_llm(system, normalize_text(question), usage=usage)
+
+
+# --------------------------------------------------------------------------- voice input
+
+GROQ_TRANSCRIBE_URL = "https://api.groq.com/openai/v1/audio/transcriptions"
+
+TRANSCRIBE_PROMPT = """Transcribe this voice note exactly as spoken. The speaker is in Bangladesh and talks about
+money they spent, earned or moved, in Bangla, English or a mix of both.
+- Write Bangla words in Bangla script and English words in English letters, e.g. "আজ lunch এ 250 টাকা দিলাম".
+- Write all numbers as digits (0-9), e.g. "পাঁচশো" -> 500, "two thousand" -> 2000.
+- Do not translate, summarise or add anything. Return only the transcript, without quotes.
+- If there is no speech, return an empty string."""
+
+
+def _audio_tokens(audio: bytes) -> int:
+    """Gemini counts ~32 tokens per second of audio; our WAV is 16 kHz mono 16-bit = 32,000 bytes per second."""
+    return max(len(audio) // 1000, 1)
+
+
+def _transcribe_gemini(audio: bytes, mime: str) -> tuple[str, int]:
+    import base64
+
+    if not settings.GEMINI_API_KEY:
+        raise LLMError("GEMINI_API_KEY is not set")
+    payload = {
+        "contents": [{"role": "user", "parts": [
+            {"text": TRANSCRIBE_PROMPT},
+            {"inline_data": {"mime_type": mime, "data": base64.b64encode(audio).decode()}},
+        ]}],
+        "generationConfig": {"temperature": 0},
+    }
+    r = requests.post(
+        GEMINI_URL.format(model=settings.GEMINI_MODEL),
+        headers={"x-goog-api-key": settings.GEMINI_API_KEY, "Content-Type": "application/json"},
+        json=payload,
+        timeout=settings.LLM_TIMEOUT,
+    )
+    if r.status_code != 200:
+        raise LLMError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
+    try:
+        body = r.json()
+        parts = body["candidates"][0]["content"].get("parts") or [{"text": ""}]
+        text = "".join(p.get("text", "") for p in parts)
+    except (KeyError, IndexError, ValueError):
+        raise LLMError("Gemini returned an empty response")
+    tokens = (body.get("usageMetadata") or {}).get("totalTokenCount") or _audio_tokens(audio)
+    return text, int(tokens)
+
+
+def _transcribe_groq(audio: bytes, mime: str) -> tuple[str, int]:
+    if not settings.GROQ_API_KEY:
+        raise LLMError("GROQ_API_KEY is not set")
+    r = requests.post(
+        GROQ_TRANSCRIBE_URL,
+        headers={"Authorization": f"Bearer {settings.GROQ_API_KEY}"},
+        files={"file": ("voice.wav", audio, mime)},
+        data={"model": settings.GROQ_TRANSCRIBE_MODEL, "response_format": "json", "temperature": "0"},
+        timeout=settings.LLM_TIMEOUT,
+    )
+    if r.status_code != 200:
+        raise LLMError(f"Groq HTTP {r.status_code}: {r.text[:300]}")
+    try:
+        text = r.json()["text"]
+    except (KeyError, ValueError):
+        raise LLMError("Groq returned an empty transcription")
+    return text, _audio_tokens(audio)  # Whisper bills by audio length; count it like Gemini would
+
+
+TRANSCRIBERS = {"gemini": _transcribe_gemini, "groq": _transcribe_groq}
+
+
+def transcribe(audio: bytes, mime: str = "audio/wav", usage: dict | None = None) -> str:
+    """Speech -> text, trying each provider in order. Tokens spent are added to usage["tokens"]."""
+    errors = []
+    for name in settings.LLM_PROVIDERS:
+        fn = TRANSCRIBERS.get(name)
+        if not fn:
+            continue
+        try:
+            text, tokens = fn(audio, mime)
+            if usage is not None:
+                usage["tokens"] = usage.get("tokens", 0) + tokens
+            return " ".join(text.strip().strip('"').split())
+        except (LLMError, requests.RequestException) as exc:
+            logger.warning("Transcription with %s failed: %s", name, exc)
+            errors.append(f"{name}: {exc}")
+    raise LLMError("; ".join(errors) or "No transcription provider configured")

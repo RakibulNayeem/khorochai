@@ -868,3 +868,34 @@ msgstr "শুভ দুপুর, %(name)s"
 
 msgid "Good evening, %(name)s"
 msgstr "শুভ সন্ধ্যা, %(name)s"
+
+# ---------------------------------------------------------------- voice input
+msgid "Speak instead of typing"
+msgstr "লেখার বদলে বলুন"
+
+msgid "Stop recording"
+msgstr "রেকর্ডিং থামান"
+
+msgid "Writing what you said…"
+msgstr "আপনার কথা লেখা হচ্ছে…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "মাইক্রোফোন ব্যবহারের অনুমতি নেই। ব্রাউজারের সেটিংসে অনুমতি দিয়ে আবার চেষ্টা করুন।"
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "রেকর্ডিং খুব ছোট হয়েছে। একটু সময় নিয়ে বলুন, তারপর থামান।"
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "রেকর্ডিং পাঠানো যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।"
+
+msgid "No recording was received."
+msgstr "কোনো রেকর্ডিং পাওয়া যায়নি।"
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "রেকর্ডিং অনেক লম্বা। এক মিনিটের মধ্যে রাখুন।"
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "এখন রেকর্ডিংটি লেখায় রূপান্তর করা যায়নি। আবার চেষ্টা করুন অথবা লিখে দিন।"
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "কিছু শোনা যায়নি। মাইকের একটু কাছে এসে আবার চেষ্টা করুন।"
