@@ -110,7 +110,7 @@
     update();
     window.addEventListener('scroll', update, { passive: true });
   })();
-  // Notifications slide in, close themselves after 10 seconds
+  // Notifications slide in, close themselves after 6 seconds
   // and slide away while their space collapses, so the page below moves up smoothly.
   document.querySelectorAll('.toast-msg').forEach(el => {
     const dismiss = () => {
@@ -121,7 +121,7 @@
       setTimeout(() => el.remove(), 800);        // fallback if transitions are off
     };
     el.querySelector('.btn-close').addEventListener('click', dismiss);
-    setTimeout(dismiss, 10000);
+    setTimeout(dismiss, 6000);
   });
 </script>
 {% block scripts %}{% endblock %}

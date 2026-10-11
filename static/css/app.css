@@ -188,7 +188,7 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
 /* ---------------------------------------------------------------- greeting */
 .greeting { font-size: 1.6rem; font-weight: 650; letter-spacing: -.028em; margin-bottom: .15rem; }
 
-/* ---------------------------------------------------------------- notifications: slide in, slide away after 10 s */
+/* ---------------------------------------------------------------- notifications: slide in, slide away after 6 s */
 .toast-msg { position: relative; overflow: hidden; box-shadow: var(--shadow-card); animation: toast-in .35s cubic-bezier(.2, .8, .2, 1);
   transition: opacity .35s ease, transform .35s ease, height .4s ease .1s, margin .4s ease .1s,
               padding .4s ease .1s, border-width .4s ease .1s; }
