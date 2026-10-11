@@ -123,6 +123,9 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
 .btn-icon { color: var(--muted); background: var(--surface-2); border: 0; border-radius: 10px; padding: .4rem .5rem; line-height: 1; }
 .btn-icon:hover, .btn-icon[aria-expanded="true"] { color: var(--ink); background: var(--border); }
 .choice { font-weight: 600; }
+.theme-icon { width: 15px; height: 15px; margin-right: .35rem; vertical-align: -2px; }
+.theme-icon.lg { width: 24px; height: 24px; margin: 0; }
+.settings-menu .btn-group .btn { display: inline-flex; align-items: center; justify-content: center; }
 .btn-group > .btn:not(:first-child) { margin-left: 2px; }
 
 /* ---------------------------------------------------------------- forms */

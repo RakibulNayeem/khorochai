@@ -14,15 +14,15 @@
         {% translate "Light" as light %}{% translate "Dark" as dark %}{% translate "System" as system %}
         <div class="col-4">
           <input type="radio" class="btn-check" name="theme" id="theme-light" value="light" {% if theme == "light" %}checked{% endif %}>
-          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-light"><span class="fs-4 d-block">☀️</span>{{ light }}</label>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-light"><span class="d-block mb-1">{% include "tracker/_theme_icon.html" with name="light" size="lg" %}</span>{{ light }}</label>
         </div>
         <div class="col-4">
           <input type="radio" class="btn-check" name="theme" id="theme-dark" value="dark" {% if theme == "dark" %}checked{% endif %}>
-          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-dark"><span class="fs-4 d-block">🌙</span>{{ dark }}</label>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-dark"><span class="d-block mb-1">{% include "tracker/_theme_icon.html" with name="dark" size="lg" %}</span>{{ dark }}</label>
         </div>
         <div class="col-4">
           <input type="radio" class="btn-check" name="theme" id="theme-system" value="system" {% if theme == "system" %}checked{% endif %}>
-          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-system"><span class="fs-4 d-block">💻</span>{{ system }}</label>
+          <label class="btn btn-outline-secondary w-100 py-3 choice" for="theme-system"><span class="d-block mb-1">{% include "tracker/_theme_icon.html" with name="system" size="lg" %}</span>{{ system }}</label>
         </div>
       </div>
       <div class="form-text">{% translate "System follows your phone or computer's dark mode setting." %}</div>
