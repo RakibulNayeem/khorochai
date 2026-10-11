@@ -3,6 +3,11 @@
 {% block title %}{% translate "Dashboard" %} · KhorochAi{% endblock %}
 {% block content %}
 
+<div class="mb-3">
+  <div class="greeting">{{ greeting }}</div>
+  <div class="text-muted">{{ today|date:"l, j F" }}</div>
+</div>
+
 <!-- AI input -->
 <div class="card ai-box p-3 p-md-4 mb-4">
   <form method="post" action="{% url 'ai_parse' %}" id="ai-form">
@@ -10,14 +15,14 @@
     <label for="ai-text" class="form-label fw-semibold mb-2">{% translate "Tell me what you spent or earned — English, বাংলা, or Banglish" %}</label>
     <textarea id="ai-text" name="text" rows="3" maxlength="2000" class="form-control mb-2" required
       placeholder="{% translate "e.g." %} আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০, টিউশন থেকে ৫০০০ পেলাম">{{ last_text }}</textarea>
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div>
-        <span class="example-chip" data-text="আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০">আজ বাজারে ৫৫০, রিকশা ৮০</span>
-        <span class="example-chip" data-text="gotokal lunch 250 ar mobile recharge 100">gotokal lunch 250, recharge 100</span>
-        <span class="example-chip" data-text="Got my salary 35000 today and paid rent 12000">salary 35000, rent 12000</span>
-      </div>
-      <div class="d-flex gap-2 align-items-center flex-wrap">
-        {% include "tracker/_ai_quota.html" %}
+    <div class="mb-2">
+      <span class="example-chip" data-text="আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০">আজ বাজারে ৫৫০, রিকশা ৮০</span>
+      <span class="example-chip" data-text="gotokal lunch 250 ar mobile recharge 100">gotokal lunch 250, recharge 100</span>
+      <span class="example-chip" data-text="Got my salary 35000 today and paid rent 12000">salary 35000, rent 12000</span>
+    </div>
+    <div class="d-flex flex-wrap align-items-center gap-2">
+      <div class="me-auto">{% include "tracker/_ai_quota.html" %}</div>
+      <div class="composer-actions d-flex gap-2">
         <a href="{% url 'transaction_add' %}" class="btn btn-outline-secondary">{% translate "Add manually" %}</a>
         <button class="btn btn-brand px-4" id="ai-btn"{% if not ai_quota.can_use %} disabled{% endif %}>{% translate "Add with AI" %}</button>
       </div>
@@ -63,9 +68,12 @@
 </div>
 <div class="account-strip mb-4">
   {% for r in accounts %}
-  <a href="{% url 'transactions' %}?account={{ r.account.pk }}" class="card account-card account-chip p-2 px-3" style="--acc: {{ r.account.color }}">
-    <div class="small text-muted text-nowrap">{{ r.account }}</div>
-    <div class="fw-bold amount {% if r.balance < 0 %}text-expense{% endif %}">{{ r.balance|money }}</div>
+  <a href="{% url 'transactions' %}?account={{ r.account.pk }}" class="card account-chip p-3 d-flex flex-row align-items-center gap-2" style="--acc: {{ r.account.color }}">
+    <span class="acc-tile sm" aria-hidden="true">{{ r.account.icon }}</span>
+    <span class="d-flex flex-column lh-sm">
+      <span class="small text-muted text-nowrap">{{ r.account.label }}</span>
+      <span class="fw-semibold amount {% if r.balance < 0 %}text-expense{% endif %}">{{ r.balance|money }}</span>
+    </span>
   </a>
   {% endfor %}
 </div>
@@ -158,7 +166,7 @@
   const charts = [];
   function drawCharts() {
     charts.splice(0).forEach(c => c.destroy());
-    Chart.defaults.font.family = 'Inter, "Hind Siliguri", system-ui, sans-serif';
+    Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
     Chart.defaults.color = css('--muted');
     Chart.defaults.borderColor = css('--border');
     const cat = document.getElementById('catChart');

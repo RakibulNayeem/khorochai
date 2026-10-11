@@ -859,3 +859,12 @@ msgstr "এখনকার ব্যালেন্স"
 
 msgid "Balance updated: %(list)s."
 msgstr "ব্যালেন্স আপডেট হয়েছে: %(list)s।"
+
+msgid "Good morning, %(name)s"
+msgstr "শুভ সকাল, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "শুভ দুপুর, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "শুভ সন্ধ্যা, %(name)s"

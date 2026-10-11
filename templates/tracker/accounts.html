@@ -19,11 +19,14 @@
 <div class="row g-3 mb-4">
   {% for r in rows %}
   <div class="col-sm-6 col-lg-4">
-    <div class="card account-card p-3 h-100" style="--acc: {{ r.account.color }}">
+    <div class="card p-3 h-100" style="--acc: {{ r.account.color }}">
       <div class="d-flex justify-content-between align-items-start">
-        <div>
-          <div class="fw-semibold">{{ r.account }}</div>
+        <div class="d-flex gap-2 align-items-center">
+          <span class="acc-tile" aria-hidden="true">{{ r.account.icon }}</span>
+          <div>
+          <div class="fw-semibold">{{ r.account.label }}</div>
           <div class="small text-muted">{{ r.account.get_kind_display }}{% if r.account.is_default %} · <span class="badge badge-new">{% translate "Default" %}</span>{% endif %}</div>
+          </div>
         </div>
         <a href="{% url 'account_edit' r.account.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
       </div>

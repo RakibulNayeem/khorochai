@@ -80,6 +80,8 @@ def dashboard(request):
         "all_time_balance": services.all_time_balance(request.user),
         "accounts": services.account_balances(request.user),
         "ai_quota": services.ai_quota(request.user),
+        "greeting": _greeting(request.user),
+        "today": timezone.localdate(),
         "recent": services.merge_with_transfers(
             Transaction.objects.filter(user=request.user, date__gte=r_start, date__lte=r_end)
             .select_related("category", "account")[:50],
@@ -94,6 +96,18 @@ def dashboard(request):
         "last_text": request.session.pop("last_ai_text", ""),
     }
     return render(request, "tracker/dashboard.html", context)
+
+
+def _greeting(user):
+    hour = timezone.localtime().hour
+    name = user.first_name or user.username
+    if 5 <= hour < 12:
+        text = _("Good morning, %(name)s")
+    elif 12 <= hour < 17:
+        text = _("Good afternoon, %(name)s")
+    else:
+        text = _("Good evening, %(name)s")
+    return text % {"name": name}
 
 
 # --------------------------------------------------------------------------- AI: add transactions
