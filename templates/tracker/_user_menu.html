@@ -6,7 +6,7 @@ Logged out: a gear with theme and language, so visitors can switch them on the l
   {% if profile %}
   <button class="user-chip" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{% translate 'Account menu' %}">
     <span class="avatar" style="--avatar: {{ profile.color }}" aria-hidden="true">{{ profile.initials }}</span>
-    <span class="user-chip-name d-none d-md-inline">{{ profile.name }}</span>
+    <span class="user-chip-name d-none d-md-inline" data-keep-digits>{{ profile.name }}</span>
     <svg class="user-chip-caret d-none d-md-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
   </button>
   {% else %}
@@ -20,7 +20,7 @@ Logged out: a gear with theme and language, so visitors can switch them on the l
     {% if profile %}
     <div class="d-flex align-items-center gap-2 px-2 pt-1 pb-2">
       <span class="avatar lg" style="--avatar: {{ profile.color }}" aria-hidden="true">{{ profile.initials }}</span>
-      <div class="lh-sm text-truncate">
+      <div class="lh-sm text-truncate" data-keep-digits>
         <div class="fw-semibold text-truncate">{{ profile.name }}</div>
         <div class="small text-muted text-truncate">{{ user.email }}</div>
       </div>

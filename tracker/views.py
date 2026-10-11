@@ -123,7 +123,7 @@ def dashboard(request):
 
 def _greeting(user):
     hour = timezone.localtime().hour
-    name = user.first_name or user.username
+    name = user.username
     if 5 <= hour < 12:
         text = _("Good morning, %(name)s")
     elif 12 <= hour < 17:

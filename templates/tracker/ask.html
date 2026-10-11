@@ -15,7 +15,7 @@
       <button class="btn btn-brand px-4" id="ask-btn"{% if not ai_quota.can_use %} disabled{% endif %}>{% translate "Ask" %}</button>
     </div>
     <div class="mt-2">{% include "tracker/_ai_quota.html" %}</div>
-    <div class="mt-2">
+    <div class="mt-2" data-keep-digits>
       <span class="example-chip" data-text="এই মাসে খাবারে কত খরচ হলো?">এই মাসে খাবারে কত খরচ?</span>
       <span class="example-chip" data-text="{% translate 'Where did I spend the most last month?' %}">{% translate "Where did I spend most last month?" %}</span>
       <span class="example-chip" data-text="{% translate 'How much did I spend on rickshaw this year?' %}">{% translate "Rickshaw spending this year" %}</span>

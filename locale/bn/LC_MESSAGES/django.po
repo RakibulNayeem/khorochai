@@ -931,8 +931,8 @@ msgstr "AI ব্যবহারের একটি দৈনিক সীমা
 msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
 msgstr "আপনি যা লেখেন বা বলেন তা বোঝার জন্য Google Gemini (বা Groq)-এ পাঠানো হয়। কার্ড নম্বর বা পাসওয়ার্ড লিখবেন না।"
 
-msgid "Change the theme, language and your name from the menu at the top right."
-msgstr "ওপরে ডান দিকের মেনু থেকে থিম, ভাষা ও আপনার নাম বদলাতে পারবেন।"
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "ওপরে ডান দিকের মেনু থেকে থিম, ভাষা ও ইউজারনেম বদলাতে পারবেন।"
 
 msgid "Contact"
 msgstr "যোগাযোগ"

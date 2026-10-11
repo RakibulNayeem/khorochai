@@ -418,15 +418,23 @@ class AuthTests(TestCase):
     def test_change_username_in_settings(self):
         user = self._verified_user()
         self.client.force_login(user)
-        r = self.client.post(reverse("preferences"), {"username": "rakib_bd", "first_name": "Rakibul"}, follow=True)
+        r = self.client.post(reverse("preferences"), {"username": "Rakibul"}, follow=True)
         self.assertContains(r, "Profile updated")
         user.refresh_from_db()
-        self.assertEqual((user.username, user.first_name), ("rakib_bd", "Rakibul"))
-        # the first name is used in the menu (avatar initials) and the greeting
+        self.assertEqual(user.username, "Rakibul")
+        # the username is used in the menu (avatar initial) and the greeting
         r = self.client.get(reverse("dashboard"))
         self.assertContains(r, ">Rakibul<")
         self.assertContains(r, '>R</span>')
         self.assertIn("Rakibul", r.context["greeting"])
+
+    def test_bangla_digits_for_money(self):
+        from django.utils import translation
+        from .templatetags.money import money
+        with translation.override("bn"):
+            self.assertEqual(money(43810), "৳ ৪৩,৮১০.০০")
+        with translation.override("en"):
+            self.assertEqual(money(-1500.5), "-৳ 1,500.50")
 
     def test_help_page_is_public(self):
         r = self.client.get(reverse("help"))

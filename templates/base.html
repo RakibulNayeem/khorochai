@@ -74,6 +74,26 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+  // Bangla interface: show the app's numbers in Bangla digits (০-৯). Only page text is changed; form values,
+  // links and anything marked data-keep-digits (what users typed, emails, usernames) stay as they are.
+  (function () {
+    if (document.documentElement.lang !== 'bn') return;
+    const BN = '০১২৩৪৫৬৭৮৯';
+    const SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|CODE|PRE)$/;
+    const keep = (node) => node.parentElement && node.parentElement.closest('[data-keep-digits]');
+    const convertNode = (node) => {
+      if (/[0-9]/.test(node.nodeValue) && !SKIP.test(node.parentElement.tagName) && !keep(node)) {
+        node.nodeValue = node.nodeValue.replace(/[0-9]/g, (d) => BN[d]);
+      }
+    };
+    const convertTree = (root) => {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) convertNode(walker.currentNode);
+    };
+    convertTree(document.body);
+    new MutationObserver((changes) => changes.forEach((c) => c.addedNodes.forEach((n) =>
+      n.nodeType === 3 ? convertNode(n) : n.nodeType === 1 && convertTree(n)))).observe(document.body, { childList: true, subtree: true });
+  })();
   // The navbar is translucent; show its hairline only once content scrolls underneath it.
   (function () {
     const nav = document.querySelector('.navbar');

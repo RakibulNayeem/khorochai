@@ -14,7 +14,7 @@ AVATAR_COLORS = ["#2457a6", "#1a7f37", "#b3261e", "#7b3fbf", "#c26a00", "#0b7a75
 
 def _profile(user):
     """Name, initials and a stable avatar colour for the profile menu."""
-    name = (user.first_name or user.username or "").strip()
+    name = (user.username or "").strip()
     words = name.split()
     initials = "".join(w[0] for w in words[:2]).upper() if words else "?"
     color = AVATAR_COLORS[sum(map(ord, user.username or "x")) % len(AVATAR_COLORS)]

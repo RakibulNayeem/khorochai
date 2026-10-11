@@ -10,7 +10,7 @@
       <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>
       <td class="text-nowrap"><span class="text-muted">⇄ {% translate "Transfer" %}</span></td>
       <td class="small text-nowrap d-none d-sm-table-cell">{{ t.from_account }} → {{ t.to_account }}</td>
-      <td class="small">{{ t.note }}<span class="d-sm-none text-muted"> {{ t.from_account.label }} → {{ t.to_account.label }}</span></td>
+      <td class="small"><span data-keep-digits>{{ t.note }}</span><span class="d-sm-none text-muted"> {{ t.from_account.label }} → {{ t.to_account.label }}</span></td>
       <td class="amount text-end fw-semibold text-muted">{{ t.amount|money }}</td>
       <td class="text-end text-nowrap">
         <a href="{% url 'transfer_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
@@ -23,7 +23,7 @@
         {% if t.category %}<span class="cat-dot" style="background:{{ t.category.color }}"></span>{{ t.category }}{% else %}<span class="text-muted">{% translate "Uncategorized" %}</span>{% endif %}
       </td>
       <td class="small text-nowrap d-none d-sm-table-cell">{% if t.account %}{{ t.account }}{% else %}<span class="text-muted">—</span>{% endif %}</td>
-      <td class="small">{{ t.note }}</td>
+      <td class="small" data-keep-digits>{{ t.note }}</td>
       <td class="amount text-end fw-semibold {% if t.type == 'income' %}text-income{% else %}text-expense{% endif %}">
         {% if t.type == 'income' %}+{% else %}−{% endif %}{{ t.amount|money }}
       </td>

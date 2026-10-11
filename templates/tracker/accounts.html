@@ -54,7 +54,7 @@
       <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>
       <td class="text-nowrap">{{ t.from_account }}</td>
       <td class="text-nowrap">→ {{ t.to_account }}</td>
-      <td class="small">{{ t.note }}</td>
+      <td class="small" data-keep-digits>{{ t.note }}</td>
       <td class="amount text-end fw-semibold">{{ t.amount|money }}</td>
       <td class="text-end"><a href="{% url 'transfer_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a></td>
     </tr>

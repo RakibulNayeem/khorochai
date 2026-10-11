@@ -18,13 +18,12 @@ class BootstrapMixin:
 
 
 class ProfileForm(BootstrapMixin, forms.ModelForm):
-    """First name (greeting + menu) and username. People log in with their email, not these."""
+    """The username: shown in the greeting and the menu. People log in with their email, not this."""
     class Meta:
         model = User
-        fields = ("first_name", "username")
-        labels = {"first_name": _("First name"), "username": _("Username")}
-        help_texts = {"first_name": _("Shown in the greeting and the menu."),
-                      "username": _("Shown in the app. You log in with your email, not this.")}
+        fields = ("username",)
+        labels = {"username": _("Username")}
+        help_texts = {"username": _("Shown in the app. You log in with your email, not this.")}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

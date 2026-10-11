@@ -2,6 +2,7 @@ from decimal import Decimal, InvalidOperation
 
 from django import template
 from django.conf import settings
+from django.utils.translation import get_language
 
 register = template.Library()
 
@@ -14,4 +15,12 @@ def money(value):
     except (InvalidOperation, ValueError):
         return value
     sign = "-" if d < 0 else ""
-    return f"{sign}{settings.CURRENCY_SYMBOL} {abs(d):,.2f}"
+    text = f"{sign}{settings.CURRENCY_SYMBOL} {abs(d):,.2f}"
+    return bangla_digits(text) if (get_language() or "").startswith("bn") else text
+
+
+BN_DIGITS = str.maketrans("0123456789", "০১২৩৪৫৬৭৮৯")
+
+
+def bangla_digits(text):
+    return str(text).translate(BN_DIGITS)

@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="card p-3 mb-3 small text-muted">{% translate "You wrote:" %} <span class="text-body">“{{ raw_text }}”</span></div>
+<div class="card p-3 mb-3 small text-muted">{% translate "You wrote:" %} <span class="text-body" data-keep-digits>“{{ raw_text }}”</span></div>
 
 <form method="post" action="{% url 'ai_confirm' %}">
   {% csrf_token %}

@@ -140,7 +140,6 @@ ALLAUTH_USER_CODE_FORMAT = {"numeric": True, "length": 6, "dashed": False}  # e.
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
 ACCOUNT_SESSION_REMEMBER = True
-ACCOUNT_USER_DISPLAY = lambda user: user.first_name or user.username  # e.g. "Signed in as Rakibul"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "KhorochAi: "
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http" if DEBUG else "https"
 
