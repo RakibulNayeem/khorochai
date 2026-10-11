@@ -1,0 +1,1162 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Light"
+msgstr "Açık"
+
+msgid "Dark"
+msgstr "Koyu"
+
+msgid "System"
+msgstr "Sistem"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "All settings"
+msgstr "Tüm ayarlar"
+
+msgid "Log out"
+msgstr "Çıkış yap"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Dashboard"
+msgstr "Panel"
+
+msgid "Transactions"
+msgstr "İşlemler"
+
+msgid "Categories &amp; Budgets"
+msgstr "Kategoriler &amp; Bütçeler"
+
+msgid "Ask AI"
+msgstr "AI'ya Sor"
+
+msgid "Close"
+msgstr "Kapat"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "<strong>%(name)s</strong> olarak giriş yapıldı"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Sistem, telefonunuzun veya bilgisayarınızın karanlık mod ayarını takip eder."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Uygulamanın menülerini, düğmelerini ve mesajlarını değiştirir. AI ile her zaman istediğiniz dilde yazışabilir veya konuşabilirsiniz — বাংলা, English, Banglish ve daha fazlası."
+
+msgid "These settings are saved in this browser."
+msgstr "Bu ayarlar bu tarayıcıda kaydedilir."
+
+msgid "Log in"
+msgstr "Giriş yap"
+
+msgid "Welcome back"
+msgstr "Tekrar hoş geldiniz"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "Paranızı sadece yazarak takip edin; İngilizce veya বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Hatalı kullanıcı adı veya şifre."
+
+msgid "Username"
+msgstr "Kullanıcı adı"
+
+msgid "Password"
+msgstr "Şifre"
+
+msgid "No account?"
+msgstr "Hesabınız yok mu?"
+
+msgid "Sign up"
+msgstr "Kaydol"
+
+msgid "Create your account"
+msgstr "Hesabınızı oluşturun"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Başlangıç için hazır kategoriler alacaksınız."
+
+msgid "Already have an account?"
+msgstr "Zaten bir hesabınız var mı?"
+
+msgid "Email (optional)"
+msgstr "E-posta (isteğe bağlı)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Ne harcadığınızı veya kazandığınızı söyleyin — İngilizce, বাংলা veya Banglish"
+
+msgid "e.g."
+msgstr "örneğin"
+
+msgid "Add manually"
+msgstr "Manuel ekle"
+
+msgid "Add with AI"
+msgstr "AI ile ekle"
+
+msgid "Reading…"
+msgstr "Okunuyor…"
+
+msgid "Prev"
+msgstr "Geri"
+
+msgid "Next"
+msgstr "İleri"
+
+msgid "This month"
+msgstr "Bu ay"
+
+msgid "Income"
+msgstr "Gelir"
+
+msgid "Expense"
+msgstr "Gider"
+
+msgid "Balance this month"
+msgstr "Bu ayki bakiye"
+
+msgid "Saved %(p)s%% of income"
+msgstr "Gelirin %%%(p)s kadarı biriktirildi"
+
+msgid "All-time balance"
+msgstr "Toplam bakiye"
+
+msgid "Where your money went"
+msgstr "Paranızın gittiği yer"
+
+msgid "No expenses this month yet."
+msgstr "Bu ay henüz harcama yok."
+
+msgid "Day by day"
+msgstr "Günden güne"
+
+msgid "Budgets"
+msgstr "Bütçeler"
+
+msgid "Set budgets"
+msgstr "Bütçeleri ayarla"
+
+msgid "Over budget by %(a)s"
+msgstr "Bütçe aşımı: %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% kullanıldı"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Henüz bütçe yok. Yukarıdaki kutuya “khabar e mashe 6000 budget” yazın veya söyleyin ya da Kategoriler kısmından bir tane belirleyin."
+
+msgid "Recent transactions"
+msgstr "Son işlemler"
+
+msgid "See all"
+msgstr "Hepsini gör"
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Note"
+msgstr "Not"
+
+msgid "Amount"
+msgstr "Tutar"
+
+msgid "Uncategorized"
+msgstr "Kategorize edilmemiş"
+
+msgid "Added with AI"
+msgstr "AI ile eklendi"
+
+msgid "Edit"
+msgstr "Düzenle"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Henüz işlem yok. Yukarıdaki kutuya bir şeyler yazın!"
+
+msgid "Export CSV"
+msgstr "CSV dışa aktar"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Month"
+msgstr "Ay"
+
+msgid "Type"
+msgstr "Tür"
+
+msgid "All"
+msgstr "Tümü"
+
+msgid "Search"
+msgstr "Ara"
+
+msgid "note or text"
+msgstr "not veya metin"
+
+msgid "Filter"
+msgstr "Filtrele"
+
+msgid "Reset"
+msgstr "Sıfırla"
+
+msgid "Net"
+msgstr "Net"
+
+msgid "Newer"
+msgstr "Daha yeni"
+
+msgid "Older"
+msgstr "Daha eski"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Sayfa %(a)s / %(b)s"
+
+msgid "Confirm"
+msgstr "Onayla"
+
+msgid "Check before saving"
+msgstr "Kaydetmeden önce kontrol et"
+
+msgid "You wrote:"
+msgstr "Şunu yazdınız:"
+
+msgid "Save this one"
+msgstr "Bunu kaydet"
+
+msgid "New category:"
+msgstr "Yeni kategori:"
+
+msgid "New:"
+msgstr "Yeni:"
+
+msgid "New category…"
+msgstr "Yeni kategori…"
+
+msgid "New category name"
+msgstr "Yeni kategori adı"
+
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Delete this permanently?"
+msgstr "Bunu kalıcı olarak silinsin mi?"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Ask anything about your money"
+msgstr "Paranızla ilgili her şeyi sorun"
+
+msgid "Ask"
+msgstr "Sor"
+
+msgid "Thinking…"
+msgstr "Düşünüyor..."
+
+msgid "Where did I spend the most last month?"
+msgstr "Geçen ay en çok nereye harcadım?"
+
+msgid "Where did I spend most last month?"
+msgstr "Geçen ay en çok nereye harcadım?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Bu yıl çekçeke ne kadar harcadım?"
+
+msgid "Rickshaw spending this year"
+msgstr "Bu yılki çekçek harcaması"
+
+msgid "income vs expense per month this year"
+msgstr "bu yıl aylık gelir ve gider karşılaştırması"
+
+msgid "Income vs expense per month"
+msgstr "Aylık gelir-gider dengesi"
+
+msgid "notes containing “%(k)s”"
+msgstr "“%(k)s” içeren notlar"
+
+msgid "Spent"
+msgstr "Harcanan"
+
+msgid "Earned"
+msgstr "Kazanılan"
+
+msgid "Group"
+msgstr "Grup"
+
+msgid "Count"
+msgstr "Sayı"
+
+msgid "Total"
+msgstr "Toplam"
+
+msgid "Matching transactions"
+msgstr "Eşleşen işlemler"
+
+msgid "first 50"
+msgstr "ilk 50"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI sadece sorunuzu anladı; buradaki her sayı kayıtlı verilerinizden hesaplanmıştır."
+
+msgid "Your question"
+msgstr "Sorunuz"
+
+msgid "Categories"
+msgstr "Kategoriler"
+
+msgid "Add category"
+msgstr "Kategori ekle"
+
+msgid "Edit category"
+msgstr "Kategoriyi düzenle"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI bu kategorilerden seçim yapar. Hiçbiri uymadığında, yeni bir tane önerir ve oluşturmadan önce size sorar. Bir harcama kategorisine aylık bütçe vererek kontrol panelinde ilerleme çubuklarını görebilirsiniz."
+
+msgid "Expense categories"
+msgstr "Gider kategorileri"
+
+msgid "Income categories"
+msgstr "Gelir kategorileri"
+
+msgid "Name"
+msgstr "İsim"
+
+msgid "Budget"
+msgstr "Bütçe"
+
+msgid "Icon"
+msgstr "Simge"
+
+msgid "Color"
+msgstr "Renk"
+
+msgid "Monthly budget"
+msgstr "Aylık bütçe"
+
+msgid "e.g. 🍔"
+msgstr "örneğin 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "İsteğe bağlı aylık harcama limiti (sadece gider kategorileri için)."
+
+msgid "You already have a category with this name."
+msgstr "Bu isimde bir kategoriniz zaten var."
+
+msgid "Food"
+msgstr "Yiyecek"
+
+msgid "Groceries"
+msgstr "Market alışverişi"
+
+msgid "Transport"
+msgstr "Ulaşım"
+
+msgid "Rent"
+msgstr "Kira"
+
+msgid "Utilities"
+msgstr "Faturalar"
+
+msgid "Mobile & Internet"
+msgstr "Mobil ve İnternet"
+
+msgid "Health"
+msgstr "Sağlık"
+
+msgid "Education"
+msgstr "Eğitim"
+
+msgid "Shopping"
+msgstr "Alışveriş"
+
+msgid "Entertainment"
+msgstr "Eğlence"
+
+msgid "Family"
+msgstr "Aile"
+
+msgid "Other Expense"
+msgstr "Diğer Gider"
+
+msgid "Salary"
+msgstr "Maaş"
+
+msgid "Tuition"
+msgstr "Eğitim"
+
+msgid "Freelance"
+msgstr "Serbest meslek"
+
+msgid "Business"
+msgstr "İş"
+
+msgid "Gift"
+msgstr "Hediye"
+
+msgid "Other Income"
+msgstr "Diğer Gelir"
+
+msgid "Amount must be greater than zero."
+msgstr "Tutar sıfırdan büyük olmalıdır."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' bir gider kategorisidir; bir gelir kategorisi seçin."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' bir gelir kategorisidir; bir gider kategorisi seçin."
+
+msgid "Manual"
+msgstr "Manuel"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Hoş geldiniz! Varsayılan kategoriler hazır. İlk harcamanızı yazmayı deneyin."
+
+msgid "Please type what you spent or earned."
+msgstr "Lütfen ne kadar harcadığınızı veya kazandığınızı yazın."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Mesaj çok uzun (maksimum %(n)s karakter)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI şu anda meşgul veya yapılandırılmamış. Lütfen tekrar deneyin veya manuel olarak ekleyin."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI şu anda meşgul veya yapılandırılmamış. Lütfen tekrar deneyin."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "AI yanıtı anlaşılamadı. Lütfen tekrar deneyin."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Mesajınızda tutarı olan bir gelir veya gider bulunamadı."
+
+msgid "New categories: %(names)s."
+msgstr "Yeni kategoriler: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "Tutar, tür veya hesaplar geçersiz olduğu için %(n)s satır atlandı."
+
+msgid "Nothing was saved."
+msgstr "Hiçbir şey kaydedilmedi."
+
+msgid "Transaction added."
+msgstr "İşlem eklendi."
+
+msgid "Add transaction"
+msgstr "İşlem ekle"
+
+msgid "Transaction updated."
+msgstr "İşlem güncellendi."
+
+msgid "Edit transaction"
+msgstr "İşlemi düzenle"
+
+msgid "Transaction deleted."
+msgstr "İşlem silindi."
+
+msgid "Category '%(name)s' added."
+msgstr "'%(name)s' kategorisi eklendi."
+
+msgid "Category updated."
+msgstr "Kategori güncellendi."
+
+msgid "Category '%(name)s' deleted."
+msgstr "'%(name)s' kategorisi silindi."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s işlem artık Kategorisiz."
+
+msgid "Accounts"
+msgstr "Hesaplar"
+
+msgid "Account"
+msgstr "Hesap"
+
+msgid "Move money"
+msgstr "Para transferi"
+
+msgid "Add account"
+msgstr "Hesap ekle"
+
+msgid "Edit account"
+msgstr "Hesabı düzenle"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Paranızın tutulduğu yer. AI'ya “bkash e 500 dilam” derseniz bKash'i kullanır veya “amar bkash e 5000 ache” derseniz bKash bakiyesini ayarlar. ATM'den para çekme, bKash para çıkışı ve diğer transferler için Para taşı'yı kullanın — bunlar bakiyeleri değiştirir ancak gelir veya gider değildir. Düzenle ile herhangi bir hesabı yeniden adlandırın (örneğin Banka → bankanızın adı)."
+
+msgid "Total in all accounts"
+msgstr "Tüm hesaplardaki toplam"
+
+msgid "Default"
+msgstr "Varsayılan"
+
+msgid "Recent transfers"
+msgstr "Son transferler"
+
+msgid "From"
+msgstr "Başlangıç"
+
+msgid "To"
+msgstr "Hedef"
+
+msgid "No transfers yet."
+msgstr "Henüz transfer yok."
+
+msgid "Manage"
+msgstr "Yönet"
+
+msgid "e.g. 💵"
+msgstr "örneğin 💵"
+
+msgid "Opening balance"
+msgstr "Açılış bakiyesi"
+
+msgid "Default account"
+msgstr "Varsayılan hesap"
+
+msgid "You already have an account with this name."
+msgstr "Bu isimde bir hesabınız zaten var."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "örneğin ATM'den para çekme, bKash nakit çıkışı"
+
+msgid "Pick two different accounts."
+msgstr "İki farklı hesap seçin."
+
+msgid "Cash"
+msgstr "Nakit"
+
+msgid "Card"
+msgstr "Kart"
+
+msgid "Mobile banking"
+msgstr "Mobil bankacılık"
+
+msgid "Bank account"
+msgstr "Banka hesabı"
+
+msgid "Other"
+msgstr "Diğer"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "KhorochAi kullanmaya başladığınızda bu hesapta zaten bulunan para."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Hangi hesabı belirtmediğinizde kullanılır (örneğin 'öğle yemeği 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "'%(name)s' hesabı eklendi."
+
+msgid "Account updated."
+msgstr "Hesap güncellendi."
+
+msgid "Account '%(name)s' deleted."
+msgstr "'%(name)s' hesabı silindi."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s işlemin artık bir hesabı yok."
+
+msgid "Transfer saved."
+msgstr "Transfer kaydedildi."
+
+msgid "Move money between accounts"
+msgstr "Hesaplar arası para transferi"
+
+msgid "Transfer updated."
+msgstr "Transfer güncellendi."
+
+msgid "Edit transfer"
+msgstr "Transferi düzenle"
+
+msgid "Transfer deleted."
+msgstr "Transfer silindi."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "Bugün herkes için AI limiti doldu — gece yarısı sıfırlanır"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI herkes için bugünkü limitine ulaştı. Gece yarısı sıfırlanır. İşlemleri manuel olarak eklemeye devam edebilirsiniz."
+
+msgid "Transfer"
+msgstr "Transfer"
+
+msgid "Day"
+msgstr "Gün"
+
+msgid "Week"
+msgstr "Hafta"
+
+msgid "Period"
+msgstr "Dönem"
+
+msgid "No transactions in this period."
+msgstr "Bu dönemde işlem yok."
+
+msgid "Dates:"
+msgstr "Tarihler:"
+
+msgid "Show all dates"
+msgstr "Tüm tarihleri göster"
+
+msgid "AI today: %(p)s%% used"
+msgstr "Bugünkü AI: %(p)s%% kullanıldı"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "Bugün %(limit)s AI token'ının %(used)s kadarı kullanıldı. AI, günlük limitli ücretsiz bir planda çalışır; gece yarısı sıfırlanır."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "Bugün için AI limiti tükendi — gece yarısı sıfırlanır"
+
+msgid "AI usage today"
+msgstr "Bugünkü AI kullanımı"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Bugünkü AI limitinizin %100'ünü kullandınız. Gece yarısı sıfırlanır. İşlemleri manuel olarak eklemeye devam edebilirsiniz."
+
+msgid "Email"
+msgstr "E-posta"
+
+msgid "Password (again)"
+msgstr "Şifre (tekrar)"
+
+msgid "Forgot your password?"
+msgstr "Şifrenizi mi unuttunuz?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "Belirttiğiniz e-posta adresi ve/veya şifre doğru değil."
+
+msgid "A user is already registered with this email address."
+msgstr "Bu e-posta adresiyle zaten kayıtlı bir kullanıcı var."
+
+msgid "You must type the same password each time."
+msgstr "Her seferinde aynı şifreyi yazmalısınız."
+
+msgid "Code"
+msgstr "Kod"
+
+msgid "Incorrect code."
+msgstr "Hatalı kod."
+
+msgid "Email Verification"
+msgstr "E-posta Doğrulama"
+
+msgid "Enter Email Verification Code"
+msgstr "E-posta Doğrulama Kodunu Girin"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "%(recipient)s adresine bir kod gönderdik. Kodun süresi kısa süre içinde dolacaktır, lütfen hemen girin."
+
+msgid "Request new code"
+msgstr "Yeni kod iste"
+
+msgid "Use a different email address"
+msgstr "Farklı bir e-posta adresi kullanın"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "%(email)s adresine doğrulama e-postası gönderildi."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "%(name)s olarak başarıyla giriş yapıldı."
+
+msgid "You have signed out."
+msgstr "Çıkış yaptınız."
+
+msgid "You have confirmed %(email)s."
+msgstr "%(email)s adresini doğruladınız."
+
+msgid "Password successfully changed."
+msgstr "Şifre başarıyla değiştirildi."
+
+msgid "Password successfully set."
+msgstr "Şifre başarıyla ayarlandı."
+
+msgid "Password Reset"
+msgstr "Şifre Sıfırlama"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Şifrenizi mi unuttunuz? E-posta adresinizi aşağıya girin, size şifrenizi sıfırlamanızı sağlayacak bir e-posta gönderelim."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Şifre sıfırlama ile ilgili bir sorun yaşarsanız lütfen bizimle iletişime geçin."
+
+msgid "Reset My Password"
+msgstr "Şifremi Sıfırla"
+
+msgid "Enter Password Reset Code"
+msgstr "Şifre Sıfırlama Kodunu Girin"
+
+msgid "Change Password"
+msgstr "Şifre Değiştir"
+
+msgid "Your password is now changed."
+msgstr "Şifreniz değiştirildi."
+
+msgid "New Password"
+msgstr "Yeni Şifre"
+
+msgid "Current Password"
+msgstr "Mevcut Şifre"
+
+msgid "Sign Out"
+msgstr "Çıkış Yap"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Çıkış yapmak istediğinizden emin misiniz?"
+
+msgid "This password is too common."
+msgstr "Bu şifre çok yaygın."
+
+msgid "This password is entirely numeric."
+msgstr "Bu şifre tamamen rakamlardan oluşuyor."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Şifre, %(verbose_name)s ile çok benzer."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Şifreniz diğer kişisel bilgilerinizle çok benzer olamaz."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Şifreniz yaygın kullanılan bir şifre olamaz."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Şifreniz tamamen rakamlardan oluşamaz."
+
+msgid "Continue with %(provider)s"
+msgstr "%(provider)s ile devam et"
+
+msgid "or with email"
+msgstr "veya e-posta ile"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Başlangıç için hazır kategoriler ve hesaplar alacaksınız. E-postanızı doğrulamak için size 6 haneli bir kod göndereceğiz."
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Email (used to log in)"
+msgstr "E-posta (giriş yapmak için kullanılır)"
+
+msgid "Change email"
+msgstr "E-postayı değiştir"
+
+msgid "Change password"
+msgstr "Şifreyi değiştir"
+
+msgid "Google / Facebook login"
+msgstr "Google / Facebook ile giriş"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Uygulamada gösterilir. Giriş yaparken bunu değil, e-postanızı kullanırsınız."
+
+msgid "This username is already taken."
+msgstr "Bu kullanıcı adı zaten alınmış."
+
+msgid "Username updated."
+msgstr "Kullanıcı adı güncellendi."
+
+msgid "Hello from KhorochAi!"
+msgstr "KhorochAi'den merhaba!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "KhorochAi'yi kullandığınız için teşekkürler."
+
+msgid "Your email verification code is:"
+msgstr "E-posta doğrulama kodunuz:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Kodu tarayıcınızda açık olan KhorochAi sayfasına girin. Kodun süresi yakında dolacak."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "E-postanızı doğrulamak için %(activate_url)s adresini açın"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "KhorochAi'ye kaydolmadıysanız, bu e-postayı görmezden gelebilirsiniz."
+
+msgid "Your verification code"
+msgstr "Doğrulama kodunuz"
+
+msgid "Your password reset code is:"
+msgstr "Şifre sıfırlama kodunuz:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Şifrenizi sıfırlama talebinde bulunmadıysanız, bu e-postayı görmezden gelebilirsiniz. Şifreniz değiştirilmedi."
+
+msgid "Your password reset code"
+msgstr "Şifre sıfırlama kodunuz"
+
+msgid "Set balance"
+msgstr "Bakiyeyi ayarla"
+
+msgid "Balance now"
+msgstr "Güncel bakiye"
+
+msgid "Balance updated: %(list)s."
+msgstr "Bakiye güncellendi: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Günaydın, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Tünaydın, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "İyi akşamlar, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Yazmak yerine konuşun"
+
+msgid "Stop recording"
+msgstr "Kaydı durdur"
+
+msgid "Writing what you said…"
+msgstr "Söylediklerinizi yazıyorum…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Mikrofon erişimi engellendi. Tarayıcı ayarlarınızdan izin verin ve tekrar deneyin."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Çok kısa sürdü. Bir an bekleyin ve konuşun, sonra durdur'a dokunun."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Kayıt gönderilemedi. Bağlantınızı kontrol edip tekrar deneyin."
+
+msgid "No recording was received."
+msgstr "Kayıt alınamadı."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "Kayıt çok uzun. Lütfen bir dakikanın altında tutun."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Kayıt şu anda metne dönüştürülemedi. Lütfen tekrar deneyin veya yazarak girin."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Hiçbir şey duyamadım. Lütfen mikrofona biraz daha yakın olarak tekrar deneyin."
+
+msgid "Set budget"
+msgstr "Bütçe ayarla"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Aylık bütçe belirlendi: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (kaldırıldı)"
+
+msgid "Help & contact"
+msgstr "Yardım ve iletişim"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Her şey düz İngilizce, বাংলা veya Banglish dillerinde yazarak veya konuşarak çalışır. Herhangi bir şey kaydedilmeden önce her zaman bir önizleme görürsünüz."
+
+msgid "How to use KhorochAi"
+msgstr "KhorochAi nasıl kullanılır"
+
+msgid "Good to know"
+msgstr "Bilmekte fayda var"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI sadece metninizi okur; her toplam ve bakiye, kayıtlı verilerinizden uygulama tarafından hesaplanır."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "AI kullanımının günlük bir kotası vardır (\"Bugünkü AI: x% kullanıldı\" olarak gösterilir). Gece yarısı sıfırlanır ve her zaman manuel olarak ekleme yapabilirsiniz."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Yazdıklarınız veya söyledikleriniz anlaşılması için Google Gemini (veya Groq) sistemine gönderilir. Kart numarası veya şifre girmeyin."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Sağ üstteki menüden temayı, dili ve kullanıcı adınızı değiştirin."
+
+msgid "Contact"
+msgstr "İletişim"
+
+msgid "Questions, problems or ideas"
+msgstr "Sorular, sorunlar veya fikirler"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Bize yazın, size geri dönelim."
+
+msgid "Developer"
+msgstr "Geliştirici"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi, %(name)s tarafından geliştirilmiştir."
+
+msgid "Account menu"
+msgstr "Hesap menüsü"
+
+msgid "First name"
+msgstr "Ad"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Karşılama ekranında ve menüde gösterilir."
+
+msgid "Profile updated."
+msgstr "Profil güncellendi."
+
+msgid "Add spending or income"
+msgstr "Harcama veya gelir ekle"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "Dashboard'daki kutuya ne olduğunu yazın ve AI ile Ekle'ye basın."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "Kutudaki mikrofona dokunun, konuşun ve durdur'a basın. Metni kontrol edin, ardından AI ile Ekle'ye basın."
+
+msgid "Accounts and moving money"
+msgstr "Hesaplar ve para transferi"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Hangi hesabı kullandığınızı belirtin veya kendi hesaplarınız arasında para transferi yapın."
+
+msgid "Set an account balance"
+msgstr "Hesap bakiyesi ayarla"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "AI'ya şu anda bir hesapta ne kadar olduğunu söyleyin."
+
+msgid "Monthly budgets"
+msgstr "Aylık bütçeler"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Bir kategori için harcama limiti belirleyin ve kontrol panelindeki ilerleme çubuğunu izleyin."
+
+msgid "Ask about your money"
+msgstr "Paranız hakkında soru sorun"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Toplamlar, dökümler ve karşılaştırmalar için AI'ya Sor'u kullanın."
+
+msgid "Portfolio"
+msgstr "Portföy"
+
+msgid "Help"
+msgstr "Yardım"
+
+msgid "About & contact"
+msgstr "Hakkında ve iletişim"
+
+msgid "Made by"
+msgstr "Geliştirici:"
+
+msgid "Developer, KhorochAi"
+msgstr "Geliştirici, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Size nasıl yardımcı olabiliriz?"
+
+msgid "Still need help?"
+msgstr "Hâlâ yardıma mı ihtiyacınız var?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Bize yazın — sorularınız, sorunlarınız ve fikirleriniz için her zaman açığız."
+
+msgid "Contact us"
+msgstr "Bize ulaşın"
+
+msgid "Money tracking that speaks your language"
+msgstr "Dilinizden anlayan para takibi"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi, English, বাংলা veya Banglish dillerinde yazarak veya konuşarak harcamalarınızı ve gelirinizi takip etmenizi sağlar. AI ne demek istediğinizi anlar; uygulama tüm hesaplamaları yapar."
+
+msgid "Type or talk"
+msgstr "Yazın veya konuşun"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Form doldurmaya gerek yok. “aaj lunch 250 bkash e” deyin, kaydedilsin."
+
+msgid "See where it goes"
+msgstr "Nereye gittiğini gör"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Hesaplar, bütçeler ve grafikler paranızı bir bakışta gösterir, AI'ya Sor ise sorularınızı yanıtlar."
+
+msgid "Correct by design"
+msgstr "Tasarım gereği doğru"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "Her girişi kaydedilmeden önce kontrol edersiniz ve toplamlar her zaman kendi verilerinizden hesaplanır."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Sorularınız, sorunlarınız veya fikirleriniz için bize yazın, size geri dönüş yapalım."
+
+msgid "Read the help guide"
+msgstr "Yardım kılavuzunu oku"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Konuşabileceğiniz gider ve gelir takipçisi"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Sadece söyleyin. Hisabınız hazır."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Sadece söyleyin. Hisabınız hazır. English, বাংলা veya Banglish dillerinde yazarak veya konuşarak harcamalarınızı ve gelirinizi takip edin."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Ücretsiz · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "Harcadığınız veya kazandığınız şeyi bir arkadaşınıza anlatır gibi yazın veya söyleyin. KhorochAi bunu düzenli girişlere dönüştürür, hesaplarınızı ve bütçelerinizi güncel tutar ve para ile ilgili sorularınızı yanıtlar."
+
+msgid "Create free account"
+msgstr "Ücretsiz hesap oluştur"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "E-postanızla kaydolun. Kaydedilmeden önce her girişi kontrol edersiniz."
+
+msgid "Write it the way you talk"
+msgstr "Konuştuğunuz gibi yazın"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Tek bir mesajla harcamalar, gelirler, hesaplar arası transferler ve hatta bütçeler gibi birçok girişi yapabilirsiniz. AI okur; siz önizlemeyi kontrol edip kaydedersiniz."
+
+msgid "How it works"
+msgstr "Nasıl çalışır"
+
+msgid "Type or say it"
+msgstr "Yazın veya söyleyin"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Ne olduğunu İngilizce, বাংলা veya Banglish olarak yazın veya söyleyin. Tek mesajda birden fazla şey olması sorun değil."
+
+msgid "Check the preview"
+msgstr "Önizlemeyi kontrol et"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "AI'nın ne anladığını tam olarak görün; tutar, kategori, hesap ve tarih. Bir dokunuşla düzeltin."
+
+msgid "Saved and up to date"
+msgstr "Kaydedildi ve güncel"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "Toplamlarınız, hesap bakiyeleriniz, bütçeleriniz ve grafikleriniz anında güncellenir."
+
+msgid "Everything you need, nothing you don't"
+msgstr "İhtiyacınız olan her şey, gereksiz hiçbir şey yok"
+
+msgid "Voice input"
+msgstr "Sesli giriş"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "Mikrofona dokunun ve konuşun. Sözleriniz kontrol etmeniz için kutuda görünecektir."
+
+msgid "Your language"
+msgstr "Diliniz"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা veya Banglish — uygulamanın tamamı Bangla diline geçebilir."
+
+msgid "All your accounts"
+msgstr "Tüm hesaplarınız"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Nakit, bKash, Nagad, Rocket, banka ve kart; aralarında transfer imkanıyla."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Kategori bazlı limitler belirleyin ve harcama yaptıkça ilerleme çubuklarını izleyin."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — kendi verilerinizden yanıt alın."
+
+msgid "Clear dashboard"
+msgstr "Paneli temizle"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Gelir, gider, bakiye, paranızın nereye gittiği ve günlük grafikler."
+
+msgid "Light and dark"
+msgstr "Açık ve koyu"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Telefonunuzun karanlık modunu takip eden sakin bir tasarım veya kendinizinkini seçin."
+
+msgid "Export to CSV"
+msgstr "CSV olarak dışa aktar"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "İşlemlerinizi istediğiniz zaman Excel veya Google Sheets için indirin."
+
+msgid "Start your hisab in a minute"
+msgstr "Hesabınızı bir dakikada başlatın"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "E-postanızla ücretsiz bir hesap oluşturun, ardından bugün ne harcadığınızı KhorochAi'ye söylemeniz yeterli."
+
+msgid "See how it works"
+msgstr "Nasıl çalıştığını gör"
+
+msgid "Free to use"
+msgstr "Ücretsiz kullanım"
+
+msgid "You confirm every entry"
+msgstr "Her girişi siz onaylarsınız"
+
+msgid "Works on phone and computer"
+msgstr "Telefonda ve bilgisayarda çalışır"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Konuştuğunuz gibi yazın — veya sadece konuşun."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "Yazın veya mikrofona dokunup söyleyin. Tek bir mesajda harcamalar, gelirler, hesaplar arası transferler ve hatta bütçeler gibi birçok giriş bulunabilir. Önizlemeyi kontrol edip kaydedersiniz."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Ücretsiz · বাংলা, English, Banglish & her dil"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Konuştuğunuz gibi yazın — herhangi bir dilde veya sadece konuşun."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Bangla, İngilizce, Banglish — veya konuştuğunuz herhangi bir dil. Uygulamanın kendisi 9 dilde mevcuttur."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Ne harcadığınızı veya kazandığınızı söyleyin — বাংলা, İngilizce, Banglish veya herhangi bir dil"
+
+msgid "Currency"
+msgstr "Para birimi"
+
+msgid "Used for every amount in the app."
+msgstr "Uygulamadaki her tutar için kullanılır."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI %(n)s işlem buldu. Yanlış görünen bir şey varsa düzeltin ve kaydedin."
+msgstr[1] "AI %(n)s işlem buldu. Yanlış görünen bir şey varsa düzeltin ve kaydedin."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s işlem"
+msgstr[1] "%(n)s işlem"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "%(n)s işlem kaydedildi."
+msgstr[1] "%(n)s işlem kaydedildi."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Bu şifre çok kısa. En az %d karakter içermelidir."
+msgstr[1] "Bu şifre çok kısa. En az %d karakter içermelidir."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Şifreniz en az %(min_length)d karakter içermelidir."
+msgstr[1] "Şifreniz en az %(min_length)d karakter içermelidir."

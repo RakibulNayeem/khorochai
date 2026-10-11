@@ -1,0 +1,1157 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Settings"
+msgstr "설정"
+
+msgid "Theme"
+msgstr "테마"
+
+msgid "Light"
+msgstr "라이트 모드"
+
+msgid "Dark"
+msgstr "다크 모드"
+
+msgid "System"
+msgstr "시스템"
+
+msgid "Language"
+msgstr "언어"
+
+msgid "All settings"
+msgstr "모든 설정"
+
+msgid "Log out"
+msgstr "로그아웃"
+
+msgid "Menu"
+msgstr "메뉴"
+
+msgid "Dashboard"
+msgstr "대시보드"
+
+msgid "Transactions"
+msgstr "거래 내역"
+
+msgid "Categories &amp; Budgets"
+msgstr "카테고리 &amp; 예산"
+
+msgid "Ask AI"
+msgstr "AI에게 묻기"
+
+msgid "Close"
+msgstr "닫기"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "<strong>%(name)s</strong>님으로 로그인됨"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "휴대폰 또는 컴퓨터의 다크 모드 설정을 따릅니다."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "앱의 메뉴, 버튼, 메시지 언어를 변경합니다. AI와는 언제든 বাংলা, English, Banglish 등 원하는 언어로 대화하거나 입력할 수 있습니다."
+
+msgid "These settings are saved in this browser."
+msgstr "이 설정은 현재 브라우저에 저장됩니다."
+
+msgid "Log in"
+msgstr "로그인"
+
+msgid "Welcome back"
+msgstr "다시 오신 것을 환영합니다"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "영어 또는 বাংলা로 입력하여 자금을 관리하세요."
+
+msgid "Wrong username or password."
+msgstr "사용자 이름이나 비밀번호가 잘못되었습니다."
+
+msgid "Username"
+msgstr "사용자 이름"
+
+msgid "Password"
+msgstr "비밀번호"
+
+msgid "No account?"
+msgstr "계좌가 없나요?"
+
+msgid "Sign up"
+msgstr "회원가입"
+
+msgid "Create your account"
+msgstr "계정 만들기"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "시작하기 위한 기본 카테고리가 제공됩니다."
+
+msgid "Already have an account?"
+msgstr "이미 계정이 있으신가요?"
+
+msgid "Email (optional)"
+msgstr "이메일 (선택 사항)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "지출이나 수입 내역을 말씀해 주세요 — 영어, বাংলা, 또는 Banglish"
+
+msgid "e.g."
+msgstr "예:"
+
+msgid "Add manually"
+msgstr "수동 추가"
+
+msgid "Add with AI"
+msgstr "AI로 추가"
+
+msgid "Reading…"
+msgstr "읽는 중…"
+
+msgid "Prev"
+msgstr "이전"
+
+msgid "Next"
+msgstr "다음"
+
+msgid "This month"
+msgstr "이번 달"
+
+msgid "Income"
+msgstr "수입"
+
+msgid "Expense"
+msgstr "지출"
+
+msgid "Balance this month"
+msgstr "이번 달 잔액"
+
+msgid "Saved %(p)s%% of income"
+msgstr "수입의 %(p)s%% 저축"
+
+msgid "All-time balance"
+msgstr "전체 잔액"
+
+msgid "Where your money went"
+msgstr "지출 내역"
+
+msgid "No expenses this month yet."
+msgstr "이번 달 지출 내역이 없습니다."
+
+msgid "Day by day"
+msgstr "일별 보기"
+
+msgid "Budgets"
+msgstr "예산"
+
+msgid "Set budgets"
+msgstr "예산 설정"
+
+msgid "Over budget by %(a)s"
+msgstr "예산 초과: %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% 사용됨"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "아직 설정된 예산이 없습니다. 위 입력창에 “khabar e mashe 6000 budget”이라고 입력하거나 말해보세요. 또는 카테고리 메뉴에서 설정할 수 있습니다."
+
+msgid "Recent transactions"
+msgstr "최근 거래 내역"
+
+msgid "See all"
+msgstr "모두 보기"
+
+msgid "Date"
+msgstr "날짜"
+
+msgid "Category"
+msgstr "카테고리"
+
+msgid "Note"
+msgstr "메모"
+
+msgid "Amount"
+msgstr "금액"
+
+msgid "Uncategorized"
+msgstr "분류되지 않음"
+
+msgid "Added with AI"
+msgstr "AI로 추가됨"
+
+msgid "Edit"
+msgstr "편집"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "아직 거래 내역이 없습니다. 위 입력창에 내용을 적어보세요!"
+
+msgid "Export CSV"
+msgstr "CSV 내보내기"
+
+msgid "Add"
+msgstr "추가"
+
+msgid "Month"
+msgstr "월"
+
+msgid "Type"
+msgstr "유형"
+
+msgid "All"
+msgstr "전체"
+
+msgid "Search"
+msgstr "검색"
+
+msgid "note or text"
+msgstr "메모 또는 텍스트"
+
+msgid "Filter"
+msgstr "필터"
+
+msgid "Reset"
+msgstr "재설정"
+
+msgid "Net"
+msgstr "순액"
+
+msgid "Newer"
+msgstr "최신"
+
+msgid "Older"
+msgstr "이전"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "%(a)s / %(b)s 페이지"
+
+msgid "Confirm"
+msgstr "확인"
+
+msgid "Check before saving"
+msgstr "저장 전 확인"
+
+msgid "You wrote:"
+msgstr "작성하신 내용:"
+
+msgid "Save this one"
+msgstr "이 항목 저장"
+
+msgid "New category:"
+msgstr "새 카테고리:"
+
+msgid "New:"
+msgstr "신규:"
+
+msgid "New category…"
+msgstr "새 카테고리…"
+
+msgid "New category name"
+msgstr "새 카테고리 이름"
+
+msgid "Save"
+msgstr "저장"
+
+msgid "Cancel"
+msgstr "취소"
+
+msgid "Delete this permanently?"
+msgstr "영구적으로 삭제할까요?"
+
+msgid "Delete"
+msgstr "삭제"
+
+msgid "Ask anything about your money"
+msgstr "자산에 대해 무엇이든 물어보세요"
+
+msgid "Ask"
+msgstr "질문하기"
+
+msgid "Thinking…"
+msgstr "생각 중..."
+
+msgid "Where did I spend the most last month?"
+msgstr "지난달에 가장 많이 지출한 곳은 어디인가요?"
+
+msgid "Where did I spend most last month?"
+msgstr "지난달에 어디에 가장 많이 썼나요?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "올해 릭샤 비용으로 얼마를 썼을까?"
+
+msgid "Rickshaw spending this year"
+msgstr "올해 릭샤 지출"
+
+msgid "income vs expense per month this year"
+msgstr "올해 월별 수입 대 지출"
+
+msgid "Income vs expense per month"
+msgstr "월별 수입 vs 지출"
+
+msgid "notes containing “%(k)s”"
+msgstr "“%(k)s”를 포함하는 메모"
+
+msgid "Spent"
+msgstr "지출"
+
+msgid "Earned"
+msgstr "수입"
+
+msgid "Group"
+msgstr "그룹"
+
+msgid "Count"
+msgstr "개수"
+
+msgid "Total"
+msgstr "합계"
+
+msgid "Matching transactions"
+msgstr "일치하는 거래"
+
+msgid "first 50"
+msgstr "처음 50개"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI는 질문만 이해합니다. 여기에 표시된 모든 숫자는 저장된 데이터를 바탕으로 계산되었습니다."
+
+msgid "Your question"
+msgstr "질문"
+
+msgid "Categories"
+msgstr "카테고리"
+
+msgid "Add category"
+msgstr "카테고리 추가"
+
+msgid "Edit category"
+msgstr "카테고리 편집"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI는 이 카테고리들 중에서 선택합니다. 적절한 항목이 없으면 새로운 카테고리를 제안하고 생성 전 사용자에게 확인을 요청합니다. 지출 카테고리에 월 예산을 설정하여 대시보드에서 진행률을 확인하세요."
+
+msgid "Expense categories"
+msgstr "지출 카테고리"
+
+msgid "Income categories"
+msgstr "수입 카테고리"
+
+msgid "Name"
+msgstr "이름"
+
+msgid "Budget"
+msgstr "예산"
+
+msgid "Icon"
+msgstr "아이콘"
+
+msgid "Color"
+msgstr "색상"
+
+msgid "Monthly budget"
+msgstr "월 예산"
+
+msgid "e.g. 🍔"
+msgstr "예: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "월별 지출 한도 설정 (지출 카테고리만 가능)."
+
+msgid "You already have a category with this name."
+msgstr "이미 같은 이름의 카테고리가 있습니다."
+
+msgid "Food"
+msgstr "식비"
+
+msgid "Groceries"
+msgstr "식료품"
+
+msgid "Transport"
+msgstr "교통비"
+
+msgid "Rent"
+msgstr "임대료"
+
+msgid "Utilities"
+msgstr "공과금"
+
+msgid "Mobile & Internet"
+msgstr "모바일 및 인터넷"
+
+msgid "Health"
+msgstr "건강"
+
+msgid "Education"
+msgstr "교육"
+
+msgid "Shopping"
+msgstr "쇼핑"
+
+msgid "Entertainment"
+msgstr "엔터테인먼트"
+
+msgid "Family"
+msgstr "가족"
+
+msgid "Other Expense"
+msgstr "기타 지출"
+
+msgid "Salary"
+msgstr "급여"
+
+msgid "Tuition"
+msgstr "교육비"
+
+msgid "Freelance"
+msgstr "프리랜서"
+
+msgid "Business"
+msgstr "비즈니스"
+
+msgid "Gift"
+msgstr "선물"
+
+msgid "Other Income"
+msgstr "기타 수입"
+
+msgid "Amount must be greater than zero."
+msgstr "금액은 0보다 커야 합니다."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s'은(는) 지출 카테고리입니다. 수입 카테고리를 선택하세요."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s'은(는) 수입 카테고리입니다. 지출 카테고리를 선택하세요."
+
+msgid "Manual"
+msgstr "수동"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "환영합니다! 기본 카테고리가 준비되었습니다. 첫 지출 내역을 입력해보세요."
+
+msgid "Please type what you spent or earned."
+msgstr "지출 또는 수입 내역을 입력해주세요."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "메시지가 너무 깁니다 (최대 %(n)s자)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI가 현재 바쁘거나 설정이 올바르지 않습니다. 다시 시도하거나 수동으로 추가해 주세요."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI가 현재 바쁘거나 설정이 올바르지 않습니다. 다시 시도해 주세요."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "AI가 응답을 이해하지 못했습니다. 다시 시도해 주세요."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "메시지에서 금액 정보를 찾을 수 없습니다."
+
+msgid "New categories: %(names)s."
+msgstr "새 카테고리: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "금액, 유형 또는 계좌 정보가 유효하지 않아 %(n)s개의 행을 건너뛰었습니다."
+
+msgid "Nothing was saved."
+msgstr "저장된 내용이 없습니다."
+
+msgid "Transaction added."
+msgstr "거래가 추가되었습니다."
+
+msgid "Add transaction"
+msgstr "거래 추가"
+
+msgid "Transaction updated."
+msgstr "거래가 업데이트되었습니다."
+
+msgid "Edit transaction"
+msgstr "거래 편집"
+
+msgid "Transaction deleted."
+msgstr "거래가 삭제되었습니다."
+
+msgid "Category '%(name)s' added."
+msgstr "'%(name)s' 카테고리가 추가되었습니다."
+
+msgid "Category updated."
+msgstr "카테고리가 업데이트되었습니다."
+
+msgid "Category '%(name)s' deleted."
+msgstr "'%(name)s' 카테고리가 삭제되었습니다."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s건의 거래가 '분류되지 않음'으로 변경되었습니다."
+
+msgid "Accounts"
+msgstr "계좌"
+
+msgid "Account"
+msgstr "계좌"
+
+msgid "Move money"
+msgstr "이체"
+
+msgid "Add account"
+msgstr "계좌 추가"
+
+msgid "Edit account"
+msgstr "계정 편집"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "자금이 보관되는 곳입니다. AI에게 “bkash e 500 dilam”이라고 말하면 bKash를 사용하며, “amar bkash e 5000 ache”라고 하면 bKash 잔액을 설정합니다. ATM 출금, bKash 현금 인출 및 기타 이체는 '자금 이동'을 사용하세요. 잔액은 변경되지만 수입이나 지출로 처리되지 않습니다. 편집을 통해 계좌 이름을 변경할 수 있습니다 (예: Bank → 은행 이름)."
+
+msgid "Total in all accounts"
+msgstr "모든 계좌 합계"
+
+msgid "Default"
+msgstr "기본값"
+
+msgid "Recent transfers"
+msgstr "최근 이체 내역"
+
+msgid "From"
+msgstr "시작일"
+
+msgid "To"
+msgstr "대상"
+
+msgid "No transfers yet."
+msgstr "아직 이체 내역이 없습니다."
+
+msgid "Manage"
+msgstr "관리"
+
+msgid "e.g. 💵"
+msgstr "예: 💵"
+
+msgid "Opening balance"
+msgstr "기초 잔액"
+
+msgid "Default account"
+msgstr "기본 계정"
+
+msgid "You already have an account with this name."
+msgstr "이미 같은 이름의 계좌가 있습니다."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "예: ATM 출금, bKash 현금 인출"
+
+msgid "Pick two different accounts."
+msgstr "서로 다른 두 계좌를 선택하세요."
+
+msgid "Cash"
+msgstr "현금"
+
+msgid "Card"
+msgstr "카드"
+
+msgid "Mobile banking"
+msgstr "모바일 뱅킹"
+
+msgid "Bank account"
+msgstr "은행 계좌"
+
+msgid "Other"
+msgstr "기타"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "KhorochAi를 시작할 때 이 계좌에 이미 있던 금액."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "계좌를 지정하지 않았을 때 사용됩니다 (예: '점심 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "'%(name)s' 계좌가 추가되었습니다."
+
+msgid "Account updated."
+msgstr "계좌가 업데이트되었습니다."
+
+msgid "Account '%(name)s' deleted."
+msgstr "'%(name)s' 계좌가 삭제되었습니다."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s건의 거래에 계좌 정보가 없습니다."
+
+msgid "Transfer saved."
+msgstr "이체 내역이 저장되었습니다."
+
+msgid "Move money between accounts"
+msgstr "계좌 간 이체"
+
+msgid "Transfer updated."
+msgstr "이체 내역이 업데이트되었습니다."
+
+msgid "Edit transfer"
+msgstr "이체 편집"
+
+msgid "Transfer deleted."
+msgstr "이체 내역이 삭제되었습니다."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "오늘의 AI 사용 제한에 도달했습니다 — 자정에 초기화됩니다"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI의 일일 사용 한도에 도달했습니다. 자정에 초기화됩니다. 수동으로 거래를 추가할 수 있습니다."
+
+msgid "Transfer"
+msgstr "이체"
+
+msgid "Day"
+msgstr "일"
+
+msgid "Week"
+msgstr "주간"
+
+msgid "Period"
+msgstr "기간"
+
+msgid "No transactions in this period."
+msgstr "이 기간의 거래 내역이 없습니다."
+
+msgid "Dates:"
+msgstr "날짜:"
+
+msgid "Show all dates"
+msgstr "모든 날짜 보기"
+
+msgid "AI today: %(p)s%% used"
+msgstr "오늘의 AI: %(p)s%% 사용됨"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "오늘 %(used)s/%(limit)s AI 토큰을 사용했습니다. AI는 일일 제한이 있는 무료 플랜으로 운영되며, 자정에 초기화됩니다."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "오늘의 AI 사용 제한을 모두 소진했습니다 — 자정에 초기화됩니다"
+
+msgid "AI usage today"
+msgstr "오늘의 AI 사용량"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "오늘의 AI 사용량을 모두 소진했습니다. 자정에 초기화됩니다. 수동으로 거래를 추가할 수는 있습니다."
+
+msgid "Email"
+msgstr "이메일"
+
+msgid "Password (again)"
+msgstr "비밀번호 (확인)"
+
+msgid "Forgot your password?"
+msgstr "비밀번호를 잊으셨나요?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "입력하신 이메일 주소나 비밀번호가 올바르지 않습니다."
+
+msgid "A user is already registered with this email address."
+msgstr "이미 해당 이메일로 등록된 사용자가 있습니다."
+
+msgid "You must type the same password each time."
+msgstr "매번 동일한 비밀번호를 입력해야 합니다."
+
+msgid "Code"
+msgstr "코드"
+
+msgid "Incorrect code."
+msgstr "잘못된 코드입니다."
+
+msgid "Email Verification"
+msgstr "이메일 인증"
+
+msgid "Enter Email Verification Code"
+msgstr "이메일 인증 코드 입력"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "%(recipient)s(으)로 코드를 보냈습니다. 코드는 곧 만료되니 서둘러 입력해주세요."
+
+msgid "Request new code"
+msgstr "새 코드 요청"
+
+msgid "Use a different email address"
+msgstr "다른 이메일 주소 사용"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "%(email)s(으)로 확인 이메일이 발송되었습니다."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "%(name)s님으로 성공적으로 로그인되었습니다."
+
+msgid "You have signed out."
+msgstr "로그아웃되었습니다."
+
+msgid "You have confirmed %(email)s."
+msgstr "%(email)s 인증이 완료되었습니다."
+
+msgid "Password successfully changed."
+msgstr "비밀번호가 변경되었습니다."
+
+msgid "Password successfully set."
+msgstr "비밀번호가 설정되었습니다."
+
+msgid "Password Reset"
+msgstr "비밀번호 재설정"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "비밀번호를 잊으셨나요? 아래에 이메일 주소를 입력하시면 비밀번호 재설정 이메일을 보내드립니다."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "비밀번호 재설정에 문제가 있다면 문의해주세요."
+
+msgid "Reset My Password"
+msgstr "비밀번호 재설정"
+
+msgid "Enter Password Reset Code"
+msgstr "비밀번호 재설정 코드 입력"
+
+msgid "Change Password"
+msgstr "비밀번호 변경"
+
+msgid "Your password is now changed."
+msgstr "비밀번호가 변경되었습니다."
+
+msgid "New Password"
+msgstr "새 비밀번호"
+
+msgid "Current Password"
+msgstr "현재 비밀번호"
+
+msgid "Sign Out"
+msgstr "로그아웃"
+
+msgid "Are you sure you want to sign out?"
+msgstr "정말로 로그아웃하시겠습니까?"
+
+msgid "This password is too common."
+msgstr "너무 흔한 비밀번호입니다."
+
+msgid "This password is entirely numeric."
+msgstr "비밀번호가 모두 숫자로만 구성되어 있습니다."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "비밀번호가 %(verbose_name)s와 너무 비슷합니다."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "비밀번호가 개인 정보와 너무 비슷해서는 안 됩니다."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "비밀번호로 흔히 사용되는 문구는 설정할 수 없습니다."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "비밀번호를 숫자만으로 구성할 수 없습니다."
+
+msgid "Continue with %(provider)s"
+msgstr "%(provider)s 계정으로 계속하기"
+
+msgid "or with email"
+msgstr "또는 이메일로"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "시작하기 위한 기본 카테고리와 계좌가 제공됩니다. 이메일 인증을 위해 6자리 코드를 이메일로 보내드립니다."
+
+msgid "Profile"
+msgstr "프로필"
+
+msgid "Email (used to log in)"
+msgstr "이메일 (로그인용)"
+
+msgid "Change email"
+msgstr "이메일 변경"
+
+msgid "Change password"
+msgstr "비밀번호 변경"
+
+msgid "Google / Facebook login"
+msgstr "Google / Facebook 로그인"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "앱에 표시되는 이름입니다. 로그인 시에는 이메일을 사용합니다."
+
+msgid "This username is already taken."
+msgstr "이미 사용 중인 사용자 이름입니다."
+
+msgid "Username updated."
+msgstr "사용자 이름이 업데이트되었습니다."
+
+msgid "Hello from KhorochAi!"
+msgstr "KhorochAi에서 보내는 인사!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "KhorochAi를 이용해 주셔서 감사합니다."
+
+msgid "Your email verification code is:"
+msgstr "이메일 인증 코드는 다음과 같습니다:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "브라우저에서 열린 KhorochAi 페이지에 코드를 입력하세요. 코드는 곧 만료됩니다."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "이메일을 인증하려면 %(activate_url)s 링크를 여세요."
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "KhorochAi에 가입하지 않으셨다면 이 이메일을 무시하셔도 됩니다."
+
+msgid "Your verification code"
+msgstr "인증 코드"
+
+msgid "Your password reset code is:"
+msgstr "비밀번호 재설정 코드는 다음과 같습니다:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "비밀번호 재설정을 요청하지 않으셨다면 이 이메일을 무시하셔도 됩니다. 비밀번호는 변경되지 않았습니다."
+
+msgid "Your password reset code"
+msgstr "비밀번호 재설정 코드"
+
+msgid "Set balance"
+msgstr "잔액 설정"
+
+msgid "Balance now"
+msgstr "현재 잔액"
+
+msgid "Balance updated: %(list)s."
+msgstr "잔액 업데이트됨: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "좋은 아침입니다, %(name)s님"
+
+msgid "Good afternoon, %(name)s"
+msgstr "좋은 오후입니다, %(name)s님"
+
+msgid "Good evening, %(name)s"
+msgstr "좋은 저녁입니다, %(name)s님"
+
+msgid "Speak instead of typing"
+msgstr "입력 대신 말하기"
+
+msgid "Stop recording"
+msgstr "녹음 중지"
+
+msgid "Writing what you said…"
+msgstr "말씀하신 내용을 받아쓰는 중…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "마이크 접근이 차단되었습니다. 브라우저 설정에서 허용하고 다시 시도하세요."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "너무 짧습니다. 잠시 기다렸다가 말씀하신 후 중지 버튼을 눌러주세요."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "녹음 파일을 전송할 수 없습니다. 연결 상태를 확인하고 다시 시도하세요."
+
+msgid "No recording was received."
+msgstr "녹음된 내용이 없습니다."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "녹음 시간이 너무 깁니다. 1분 이내로 유지해 주세요."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "현재 녹음을 텍스트로 변환할 수 없습니다. 다시 시도하거나 직접 입력해 주세요."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "소리가 들리지 않습니다. 마이크에 조금 더 가까이 대고 다시 시도해 주세요."
+
+msgid "Set budget"
+msgstr "예산 설정"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "월 예산 설정 완료: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (삭제됨)"
+
+msgid "Help & contact"
+msgstr "도움말 및 문의"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "간단한 English, বাংলা 또는 Banglish로 입력하거나 말하면 모든 것이 작동합니다. 저장 전 항상 미리보기를 확인할 수 있습니다."
+
+msgid "How to use KhorochAi"
+msgstr "KhorochAi 사용 방법"
+
+msgid "Good to know"
+msgstr "알아두면 좋은 점"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI는 텍스트만 읽습니다. 모든 합계와 잔액은 저장된 데이터를 바탕으로 앱이 계산합니다."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "AI 사용에는 일일 제한이 있습니다('오늘의 AI: x% 사용됨'으로 표시). 자정에 초기화되며, 언제든지 수동으로 입력할 수 있습니다."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "입력하거나 말한 내용은 이해를 돕기 위해 Google Gemini(또는 Groq)로 전송됩니다. 카드 번호나 비밀번호는 포함하지 마세요."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "우측 상단 메뉴에서 테마, 언어, 사용자 이름을 변경하세요."
+
+msgid "Contact"
+msgstr "문의"
+
+msgid "Questions, problems or ideas"
+msgstr "문의, 문제 신고 또는 아이디어"
+
+msgid "Write to us and we'll get back to you."
+msgstr "문의사항을 보내주시면 답변해 드리겠습니다."
+
+msgid "Developer"
+msgstr "개발자"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi는 %(name)s님이 만들었습니다."
+
+msgid "Account menu"
+msgstr "계좌 메뉴"
+
+msgid "First name"
+msgstr "이름"
+
+msgid "Shown in the greeting and the menu."
+msgstr "인사말과 메뉴에 표시됩니다."
+
+msgid "Profile updated."
+msgstr "프로필이 업데이트되었습니다."
+
+msgid "Add spending or income"
+msgstr "지출 또는 수입 추가"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "대시보드 상자에 내용을 입력하고 'AI로 추가'를 누르세요."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "상자의 마이크를 누르고 말한 뒤 중지 버튼을 누르세요. 텍스트를 확인하고 'AI로 추가'를 누르세요."
+
+msgid "Accounts and moving money"
+msgstr "계좌 및 자금 이동"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "사용하신 계좌를 선택하거나 계좌 간 이체를 하세요."
+
+msgid "Set an account balance"
+msgstr "계좌 잔액 설정"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "현재 계좌 잔액을 AI에게 알려주세요."
+
+msgid "Monthly budgets"
+msgstr "월 예산"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "카테고리별 지출 한도를 설정하고 대시보드에서 진행률 바를 확인하세요."
+
+msgid "Ask about your money"
+msgstr "자산에 대해 물어보기"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Ask AI를 사용하여 합계, 내역 분석 및 비교를 확인하세요."
+
+msgid "Portfolio"
+msgstr "자산 현황"
+
+msgid "Help"
+msgstr "도움말"
+
+msgid "About & contact"
+msgstr "정보 및 연락처"
+
+msgid "Made by"
+msgstr "제작자"
+
+msgid "Developer, KhorochAi"
+msgstr "개발자, KhorochAi"
+
+msgid "How can we help?"
+msgstr "무엇을 도와드릴까요?"
+
+msgid "Still need help?"
+msgstr "도움이 더 필요하신가요?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "문의사항, 문제점, 아이디어 등 무엇이든 환영합니다."
+
+msgid "Contact us"
+msgstr "문의하기"
+
+msgid "Money tracking that speaks your language"
+msgstr "당신의 언어로 기록하는 가계부"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi를 사용하면 English, বাংলা 또는 Banglish로 입력하거나 말하는 것만으로 지출과 수입을 추적할 수 있습니다. AI가 의미를 이해하고 앱이 모든 계산을 처리합니다."
+
+msgid "Type or talk"
+msgstr "입력 또는 음성"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "복잡한 입력은 필요 없습니다. “aaj lunch 250 bkash e”라고 말하면 자동으로 기록됩니다."
+
+msgid "See where it goes"
+msgstr "지출 내역 보기"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "계좌, 예산, 차트를 통해 자산 현황을 한눈에 확인하고, Ask AI에게 궁금한 점을 물어보세요."
+
+msgid "Correct by design"
+msgstr "설계부터 정확하게"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "모든 항목은 저장 전 직접 확인하며, 합계는 항상 사용자의 데이터를 기반으로 계산됩니다."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "문의나 의견을 보내주시면 확인 후 답변드리겠습니다."
+
+msgid "Read the help guide"
+msgstr "도움말 보기"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — 대화형 지출 및 수입 추적기"
+
+msgid "Just say it. Your hisab is done."
+msgstr "말만 하세요. 당신의 hisab이 완료됩니다."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "말만 하세요. 당신의 hisab이 완료됩니다. English, বাংলা 또는 Banglish로 입력하거나 말하여 지출과 수입을 기록하세요."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "무료 · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "친구에게 말하듯 지출이나 수입을 입력하거나 말해보세요. KhorochAi가 깔끔하게 정리하여 계좌와 예산을 최신 상태로 유지하고, 돈에 관한 질문에 답변해 드립니다."
+
+msgid "Create free account"
+msgstr "무료 계정 만들기"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "이메일로 가입하세요. 저장 전 모든 항목을 직접 확인할 수 있습니다."
+
+msgid "Write it the way you talk"
+msgstr "말하듯이 작성하세요"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "한 번의 메시지로 지출, 수입, 계좌 이체, 예산까지 모두 기록할 수 있습니다. AI가 내용을 읽으면, 미리보기를 확인하고 저장하세요."
+
+msgid "How it works"
+msgstr "작동 원리"
+
+msgid "Type or say it"
+msgstr "입력하거나 말하기"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "영어, বাংলা 또는 Banglish로 내용을 작성하거나 말하세요. 한 메시지에 여러 항목을 넣어도 됩니다."
+
+msgid "Check the preview"
+msgstr "미리보기 확인"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "AI가 인식한 금액, 카테고리, 계좌, 날짜를 확인하세요. 탭하여 수정할 수 있습니다."
+
+msgid "Saved and up to date"
+msgstr "저장 완료 및 최신 상태"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "합계, 계좌 잔액, 예산 및 차트가 즉시 업데이트됩니다."
+
+msgid "Everything you need, nothing you don't"
+msgstr "필요한 모든 기능, 불필요한 기능은 제외"
+
+msgid "Voice input"
+msgstr "음성 입력"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "마이크를 누르고 말씀하세요. 입력 상자에 텍스트가 나타나면 확인하실 수 있습니다."
+
+msgid "Your language"
+msgstr "사용 언어"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা 또는 Banglish — 앱 전체 언어를 Bangla로 전환할 수 있습니다."
+
+msgid "All your accounts"
+msgstr "모든 계좌"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "현금, bKash, Nagad, Rocket, 은행 및 카드 계좌 간의 자금 이체를 지원합니다."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "카테고리별 한도를 설정하고 지출에 따른 진행률 바를 확인하세요."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — 내 데이터에서 답변을 확인하세요."
+
+msgid "Clear dashboard"
+msgstr "대시보드 초기화"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "수입, 지출, 잔액, 지출 내역 및 일별 차트."
+
+msgid "Light and dark"
+msgstr "라이트 및 다크 모드"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "휴대폰 다크 모드에 맞춘 차분한 디자인을 사용하거나 직접 선택하세요."
+
+msgid "Export to CSV"
+msgstr "CSV로 내보내기"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "언제든지 Excel이나 Google Sheets용으로 거래 내역을 다운로드하세요."
+
+msgid "Start your hisab in a minute"
+msgstr "1분 만에 가계부 시작하기"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "이메일로 무료 계정을 만들고, 오늘 지출한 내용을 KhorochAi에게 알려주세요."
+
+msgid "See how it works"
+msgstr "작동 방식 보기"
+
+msgid "Free to use"
+msgstr "무료 사용"
+
+msgid "You confirm every entry"
+msgstr "모든 항목 직접 확인"
+
+msgid "Works on phone and computer"
+msgstr "휴대폰과 컴퓨터에서 모두 사용 가능"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "말하듯이 작성하거나 그냥 말해보세요."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "직접 입력하거나 마이크를 눌러 말하세요. 한 번의 메시지에 지출, 수입, 계좌 간 이체, 예산 등 여러 항목을 담을 수 있습니다. 미리보기를 확인하고 저장하세요."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "무료 · বাংলা, English, Banglish & 모든 언어"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "말하듯이 작성하거나 그냥 말해보세요. 어떤 언어로든 가능합니다."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "벵골어, 영어, Banglish 등 사용하시는 모든 언어를 지원합니다. 앱 자체는 9개 언어로 제공됩니다."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "지출이나 수입 내역을 말씀해 주세요 — বাংলা, 영어, Banglish 또는 기타 언어"
+
+msgid "Currency"
+msgstr "통화"
+
+msgid "Used for every amount in the app."
+msgstr "앱 내 모든 금액에 사용됩니다."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI가 %(n)s건의 거래를 찾았습니다. 잘못된 부분을 수정하고 저장하세요."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s건의 거래"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "%(n)s건의 거래가 저장되었습니다."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "비밀번호가 너무 짧습니다. 최소 %d자 이상이어야 합니다."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "비밀번호는 최소 %(min_length)d자 이상이어야 합니다."

@@ -1,0 +1,1157 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Theme"
+msgstr "テーマ"
+
+msgid "Light"
+msgstr "ライトモード"
+
+msgid "Dark"
+msgstr "ダークモード"
+
+msgid "System"
+msgstr "システム"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "All settings"
+msgstr "すべての設定"
+
+msgid "Log out"
+msgstr "ログアウト"
+
+msgid "Menu"
+msgstr "メニュー"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Transactions"
+msgstr "取引"
+
+msgid "Categories &amp; Budgets"
+msgstr "カテゴリーと予算"
+
+msgid "Ask AI"
+msgstr "AIに質問"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "<strong>%(name)s</strong>としてサインイン中"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "システムは、スマホやPCのダークモード設定に従います。"
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "アプリのメニュー、ボタン、メッセージの言語を変更します。AIへの入力や会話は、いつでも好きな言語（বাংলা、English、Banglishなど）で行えます。"
+
+msgid "These settings are saved in this browser."
+msgstr "これらの設定はこのブラウザに保存されます。"
+
+msgid "Log in"
+msgstr "ログイン"
+
+msgid "Welcome back"
+msgstr "おかえりなさい"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "英語またはবাংলাで入力して、お金を管理しましょう。"
+
+msgid "Wrong username or password."
+msgstr "ユーザー名またはパスワードが間違っています。"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "No account?"
+msgstr "口座がありませんか？"
+
+msgid "Sign up"
+msgstr "サインアップ"
+
+msgid "Create your account"
+msgstr "アカウントを作成"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "すぐに使えるカテゴリーが用意されます。"
+
+msgid "Already have an account?"
+msgstr "すでにアカウントをお持ちですか？"
+
+msgid "Email (optional)"
+msgstr "メールアドレス（任意）"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "支出や収入を教えてください — 英語、বাংলা、またはBanglishで"
+
+msgid "e.g."
+msgstr "例:"
+
+msgid "Add manually"
+msgstr "手動で追加"
+
+msgid "Add with AI"
+msgstr "AIで追加"
+
+msgid "Reading…"
+msgstr "読み込み中…"
+
+msgid "Prev"
+msgstr "前へ"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "This month"
+msgstr "今月"
+
+msgid "Income"
+msgstr "収入"
+
+msgid "Expense"
+msgstr "支出"
+
+msgid "Balance this month"
+msgstr "今月の残高"
+
+msgid "Saved %(p)s%% of income"
+msgstr "収入の%(p)s%%を貯蓄"
+
+msgid "All-time balance"
+msgstr "累計残高"
+
+msgid "Where your money went"
+msgstr "お金の使い道"
+
+msgid "No expenses this month yet."
+msgstr "今月の支出はまだありません。"
+
+msgid "Day by day"
+msgstr "日別"
+
+msgid "Budgets"
+msgstr "予算"
+
+msgid "Set budgets"
+msgstr "予算を設定する"
+
+msgid "Over budget by %(a)s"
+msgstr "予算超過: %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% 使用済み"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "予算がまだ設定されていません。上のボックスに「khabar e mashe 6000 budget」と入力するか、カテゴリーから設定してください。"
+
+msgid "Recent transactions"
+msgstr "最近の取引"
+
+msgid "See all"
+msgstr "すべて見る"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Category"
+msgstr "カテゴリー"
+
+msgid "Note"
+msgstr "メモ"
+
+msgid "Amount"
+msgstr "金額"
+
+msgid "Uncategorized"
+msgstr "未分類"
+
+msgid "Added with AI"
+msgstr "AIで追加済み"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "取引はまだありません。上のボックスに入力してみましょう！"
+
+msgid "Export CSV"
+msgstr "CSVエクスポート"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Month"
+msgstr "月"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "note or text"
+msgstr "メモまたはテキスト"
+
+msgid "Filter"
+msgstr "フィルター"
+
+msgid "Reset"
+msgstr "リセット"
+
+msgid "Net"
+msgstr "純額"
+
+msgid "Newer"
+msgstr "新しい"
+
+msgid "Older"
+msgstr "古い"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "%(a)s / %(b)s ページ"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Check before saving"
+msgstr "保存前に確認"
+
+msgid "You wrote:"
+msgstr "入力内容:"
+
+msgid "Save this one"
+msgstr "これを保存"
+
+msgid "New category:"
+msgstr "新しいカテゴリー:"
+
+msgid "New:"
+msgstr "新規:"
+
+msgid "New category…"
+msgstr "新しいカテゴリー…"
+
+msgid "New category name"
+msgstr "新しいカテゴリー名"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Delete this permanently?"
+msgstr "完全に削除しますか？"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Ask anything about your money"
+msgstr "お金に関する質問は何でもどうぞ"
+
+msgid "Ask"
+msgstr "質問する"
+
+msgid "Thinking…"
+msgstr "考え中…"
+
+msgid "Where did I spend the most last month?"
+msgstr "先月、どこで一番お金を使いましたか？"
+
+msgid "Where did I spend most last month?"
+msgstr "先月、どこで一番お金を使いましたか？"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "今年、リキシャにいくら使った？"
+
+msgid "Rickshaw spending this year"
+msgstr "今年の人力車代"
+
+msgid "income vs expense per month this year"
+msgstr "今年の月別収支"
+
+msgid "Income vs expense per month"
+msgstr "月別収支"
+
+msgid "notes containing “%(k)s”"
+msgstr "「%(k)s」を含むメモ"
+
+msgid "Spent"
+msgstr "支出"
+
+msgid "Earned"
+msgstr "収入"
+
+msgid "Group"
+msgstr "グループ"
+
+msgid "Count"
+msgstr "件数"
+
+msgid "Total"
+msgstr "合計"
+
+msgid "Matching transactions"
+msgstr "一致する取引"
+
+msgid "first 50"
+msgstr "最初の50件"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AIは質問を理解しただけです。ここにある数値はすべて、保存されたデータから計算されています。"
+
+msgid "Your question"
+msgstr "質問内容"
+
+msgid "Categories"
+msgstr "カテゴリー"
+
+msgid "Add category"
+msgstr "カテゴリーを追加"
+
+msgid "Edit category"
+msgstr "カテゴリーを編集"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AIはこれらのカテゴリーから選択します。該当するものがない場合は新しいカテゴリーを提案し、作成前に確認を求めます。支出カテゴリーに月間予算を設定すると、ダッシュボードで進捗バーを確認できます。"
+
+msgid "Expense categories"
+msgstr "支出カテゴリー"
+
+msgid "Income categories"
+msgstr "収入カテゴリー"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Budget"
+msgstr "予算"
+
+msgid "Icon"
+msgstr "アイコン"
+
+msgid "Color"
+msgstr "色"
+
+msgid "Monthly budget"
+msgstr "月間予算"
+
+msgid "e.g. 🍔"
+msgstr "例: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "月間支出制限（支出カテゴリーのみ）"
+
+msgid "You already have a category with this name."
+msgstr "その名前のカテゴリーは既に存在します。"
+
+msgid "Food"
+msgstr "食費"
+
+msgid "Groceries"
+msgstr "食料品"
+
+msgid "Transport"
+msgstr "交通費"
+
+msgid "Rent"
+msgstr "家賃"
+
+msgid "Utilities"
+msgstr "公共料金"
+
+msgid "Mobile & Internet"
+msgstr "モバイル・インターネット"
+
+msgid "Health"
+msgstr "健康"
+
+msgid "Education"
+msgstr "教育"
+
+msgid "Shopping"
+msgstr "ショッピング"
+
+msgid "Entertainment"
+msgstr "娯楽"
+
+msgid "Family"
+msgstr "家族"
+
+msgid "Other Expense"
+msgstr "その他の支出"
+
+msgid "Salary"
+msgstr "給与"
+
+msgid "Tuition"
+msgstr "授業料"
+
+msgid "Freelance"
+msgstr "フリーランス"
+
+msgid "Business"
+msgstr "ビジネス"
+
+msgid "Gift"
+msgstr "ギフト"
+
+msgid "Other Income"
+msgstr "その他の収入"
+
+msgid "Amount must be greater than zero."
+msgstr "金額は0より大きくしてください。"
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "「%(name)s」は支出カテゴリーです。収入カテゴリーを選択してください。"
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "「%(name)s」は収入カテゴリーです。支出カテゴリーを選択してください。"
+
+msgid "Manual"
+msgstr "手動"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "ようこそ！デフォルトのカテゴリーが準備できました。最初の支出を入力してみましょう。"
+
+msgid "Please type what you spent or earned."
+msgstr "支出または収入を入力してください。"
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "メッセージが長すぎます（最大%(n)s文字）。"
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AIが混雑しているか、設定されていません。再試行するか、手動で追加してください。"
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AIが混雑しているか、設定されていません。再試行してください。"
+
+msgid "The AI response was not understood. Please try again."
+msgstr "AIの回答を理解できませんでした。もう一度お試しください。"
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "メッセージ内に金額を含む収入や支出が見つかりませんでした。"
+
+msgid "New categories: %(names)s."
+msgstr "新しいカテゴリー: %(names)s。"
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "金額、タイプ、またはアカウントが無効なため、%(n)s行をスキップしました。"
+
+msgid "Nothing was saved."
+msgstr "保存されませんでした。"
+
+msgid "Transaction added."
+msgstr "取引を追加しました。"
+
+msgid "Add transaction"
+msgstr "取引を追加"
+
+msgid "Transaction updated."
+msgstr "取引を更新しました。"
+
+msgid "Edit transaction"
+msgstr "取引を編集"
+
+msgid "Transaction deleted."
+msgstr "取引を削除しました。"
+
+msgid "Category '%(name)s' added."
+msgstr "カテゴリー「%(name)s」を追加しました。"
+
+msgid "Category updated."
+msgstr "カテゴリーを更新しました。"
+
+msgid "Category '%(name)s' deleted."
+msgstr "カテゴリー「%(name)s」を削除しました。"
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s件の取引が「未分類」になりました。"
+
+msgid "Accounts"
+msgstr "アカウント"
+
+msgid "Account"
+msgstr "アカウント"
+
+msgid "Move money"
+msgstr "資金移動"
+
+msgid "Add account"
+msgstr "アカウントを追加"
+
+msgid "Edit account"
+msgstr "アカウントを編集"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "お金を管理する場所です。AIに「bkash e 500 dilam」と伝えるとbKashが使われ、「amar bkash e 5000 ache」と伝えるとbKashの残高が設定されます。ATMでの引き出しやbKashのキャッシュアウトなどの振替には「資金移動」を使用してください。これらは残高を変更しますが、収入や支出には含まれません。「編集」から口座名を変更できます（例：Bank → 銀行名）。"
+
+msgid "Total in all accounts"
+msgstr "全口座の合計"
+
+msgid "Default"
+msgstr "デフォルト"
+
+msgid "Recent transfers"
+msgstr "最近の振替"
+
+msgid "From"
+msgstr "開始日"
+
+msgid "To"
+msgstr "宛先"
+
+msgid "No transfers yet."
+msgstr "振替履歴はまだありません。"
+
+msgid "Manage"
+msgstr "管理"
+
+msgid "e.g. 💵"
+msgstr "例: 💵"
+
+msgid "Opening balance"
+msgstr "開始残高"
+
+msgid "Default account"
+msgstr "デフォルトのアカウント"
+
+msgid "You already have an account with this name."
+msgstr "その名前の口座は既に存在します。"
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "例: ATM引き出し、bKashキャッシュアウト"
+
+msgid "Pick two different accounts."
+msgstr "異なる2つの口座を選択してください。"
+
+msgid "Cash"
+msgstr "現金"
+
+msgid "Card"
+msgstr "カード"
+
+msgid "Mobile banking"
+msgstr "モバイルバンキング"
+
+msgid "Bank account"
+msgstr "銀行口座"
+
+msgid "Other"
+msgstr "その他"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "KhorochAiを使い始めた時点での口座残高です。"
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "口座を指定しない場合に使用されます（例：「ランチ 250」）。"
+
+msgid "Account '%(name)s' added."
+msgstr "アカウント「%(name)s」を追加しました。"
+
+msgid "Account updated."
+msgstr "アカウントを更新しました。"
+
+msgid "Account '%(name)s' deleted."
+msgstr "アカウント「%(name)s」を削除しました。"
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s件の取引のアカウント設定が解除されました。"
+
+msgid "Transfer saved."
+msgstr "振替を保存しました。"
+
+msgid "Move money between accounts"
+msgstr "口座間の資金移動"
+
+msgid "Transfer updated."
+msgstr "振替を更新しました。"
+
+msgid "Edit transfer"
+msgstr "振替を編集"
+
+msgid "Transfer deleted."
+msgstr "振替を削除しました。"
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "本日のAI利用上限に達しました。深夜0時にリセットされます。"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AIの本日分の上限に達しました。深夜にリセットされます。手動での追加は可能です。"
+
+msgid "Transfer"
+msgstr "振替"
+
+msgid "Day"
+msgstr "日"
+
+msgid "Week"
+msgstr "週"
+
+msgid "Period"
+msgstr "期間"
+
+msgid "No transactions in this period."
+msgstr "この期間の取引はありません。"
+
+msgid "Dates:"
+msgstr "日付:"
+
+msgid "Show all dates"
+msgstr "すべての日付を表示"
+
+msgid "AI today: %(p)s%% used"
+msgstr "本日のAI利用：%(p)s%%"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "本日のAIトークン使用量：%(used)s / %(limit)s。AIは無料プランのため1日の上限があり、深夜0時にリセットされます。"
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "本日のAI利用上限に達しました。深夜0時にリセットされます。"
+
+msgid "AI usage today"
+msgstr "本日のAI利用状況"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "本日のAI利用枠を使い切りました。深夜0時にリセットされます。手動での取引入力は引き続き可能です。"
+
+msgid "Email"
+msgstr "メールアドレス"
+
+msgid "Password (again)"
+msgstr "パスワード（確認用）"
+
+msgid "Forgot your password?"
+msgstr "パスワードをお忘れですか？"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "メールアドレスまたはパスワードが正しくありません。"
+
+msgid "A user is already registered with this email address."
+msgstr "このメールアドレスは既に登録されています。"
+
+msgid "You must type the same password each time."
+msgstr "パスワードは毎回同じものを入力してください。"
+
+msgid "Code"
+msgstr "コード"
+
+msgid "Incorrect code."
+msgstr "コードが正しくありません。"
+
+msgid "Email Verification"
+msgstr "メール認証"
+
+msgid "Enter Email Verification Code"
+msgstr "メール認証コードを入力"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "%(recipient)s にコードを送信しました。コードには有効期限がありますので、お早めに入力してください。"
+
+msgid "Request new code"
+msgstr "新しいコードをリクエスト"
+
+msgid "Use a different email address"
+msgstr "別のメールアドレスを使用する"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "確認メールを %(email)s に送信しました。"
+
+msgid "Successfully signed in as %(name)s."
+msgstr "%(name)sとして正常にサインインしました。"
+
+msgid "You have signed out."
+msgstr "サインアウトしました。"
+
+msgid "You have confirmed %(email)s."
+msgstr "%(email)s を確認しました。"
+
+msgid "Password successfully changed."
+msgstr "パスワードを変更しました。"
+
+msgid "Password successfully set."
+msgstr "パスワードを設定しました。"
+
+msgid "Password Reset"
+msgstr "パスワードのリセット"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "パスワードをお忘れですか？メールアドレスを入力してください。パスワードリセット用のメールをお送りします。"
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "パスワードのリセットで問題が発生した場合は、お問い合わせください。"
+
+msgid "Reset My Password"
+msgstr "パスワードをリセット"
+
+msgid "Enter Password Reset Code"
+msgstr "パスワードリセットコードを入力"
+
+msgid "Change Password"
+msgstr "パスワード変更"
+
+msgid "Your password is now changed."
+msgstr "パスワードを変更しました。"
+
+msgid "New Password"
+msgstr "新しいパスワード"
+
+msgid "Current Password"
+msgstr "現在のパスワード"
+
+msgid "Sign Out"
+msgstr "サインアウト"
+
+msgid "Are you sure you want to sign out?"
+msgstr "サインアウトしてもよろしいですか？"
+
+msgid "This password is too common."
+msgstr "このパスワードは一般的すぎます。"
+
+msgid "This password is entirely numeric."
+msgstr "このパスワードは数字のみです。"
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "パスワードが%(verbose_name)sと似すぎています。"
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "個人情報と類似したパスワードは設定できません。"
+
+msgid "Your password can’t be a commonly used password."
+msgstr "よく使われるパスワードは設定できません。"
+
+msgid "Your password can’t be entirely numeric."
+msgstr "数字のみのパスワードは設定できません。"
+
+msgid "Continue with %(provider)s"
+msgstr "%(provider)s で続ける"
+
+msgid "or with email"
+msgstr "またはメールで登録"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "すぐに使えるカテゴリーとアカウントが用意されます。メールアドレス確認用の6桁のコードを送信します。"
+
+msgid "Profile"
+msgstr "プロフィール"
+
+msgid "Email (used to log in)"
+msgstr "メールアドレス（ログイン用）"
+
+msgid "Change email"
+msgstr "メールアドレス変更"
+
+msgid "Change password"
+msgstr "パスワードを変更"
+
+msgid "Google / Facebook login"
+msgstr "Google / Facebookでログイン"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "アプリ内に表示されます。ログインにはこれではなくメールアドレスを使用します。"
+
+msgid "This username is already taken."
+msgstr "このユーザー名は既に使用されています。"
+
+msgid "Username updated."
+msgstr "ユーザー名を更新しました。"
+
+msgid "Hello from KhorochAi!"
+msgstr "KhorochAiへようこそ！"
+
+msgid "Thank you for using KhorochAi."
+msgstr "KhorochAiをご利用いただきありがとうございます。"
+
+msgid "Your email verification code is:"
+msgstr "メール認証コード:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "ブラウザで開いているKhorochAiのページにコードを入力してください。コードには有効期限があります。"
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "メールアドレスを確認するには、%(activate_url)s を開いてください。"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "KhorochAiに登録していない場合は、このメールを無視してください。"
+
+msgid "Your verification code"
+msgstr "認証コード"
+
+msgid "Your password reset code is:"
+msgstr "パスワードリセットコード:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "パスワードリセットを依頼していない場合は、このメールを無視してください。パスワードは変更されていません。"
+
+msgid "Your password reset code"
+msgstr "パスワードリセットコード"
+
+msgid "Set balance"
+msgstr "残高を設定"
+
+msgid "Balance now"
+msgstr "現在の残高"
+
+msgid "Balance updated: %(list)s."
+msgstr "残高を更新しました：%(list)s"
+
+msgid "Good morning, %(name)s"
+msgstr "おはようございます、%(name)sさん"
+
+msgid "Good afternoon, %(name)s"
+msgstr "こんにちは、%(name)sさん"
+
+msgid "Good evening, %(name)s"
+msgstr "こんばんは、%(name)sさん"
+
+msgid "Speak instead of typing"
+msgstr "入力の代わりに話す"
+
+msgid "Stop recording"
+msgstr "録音を停止"
+
+msgid "Writing what you said…"
+msgstr "音声を解析中…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "マイクへのアクセスがブロックされています。ブラウザの設定で許可してから再試行してください。"
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "短すぎます。少し待ってから話し、停止ボタンをタップしてください。"
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "録音を送信できませんでした。接続を確認して再試行してください。"
+
+msgid "No recording was received."
+msgstr "記録が受信されませんでした。"
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "録音が長すぎます。1分以内に収めてください。"
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "現在、録音をテキストに変換できません。再試行するか、直接入力してください。"
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "音声が認識できませんでした。マイクに近づいてもう一度試してください。"
+
+msgid "Set budget"
+msgstr "予算を設定"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "月間予算を設定しました: %(list)s。"
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (削除済み)"
+
+msgid "Help & contact"
+msgstr "ヘルプと連絡先"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "English、বাংলা、Banglishで入力または話しかけるだけで、すべてが機能します。保存前に必ずプレビューが表示されます。"
+
+msgid "How to use KhorochAi"
+msgstr "KhorochAiの使い方"
+
+msgid "Good to know"
+msgstr "豆知識"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AIはテキストを読み取るだけです。合計や残高は、保存されたデータからアプリが計算します。"
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "AI利用には1日の上限があります（「本日のAI利用：x%」と表示）。深夜0時にリセットされますが、手動での入力はいつでも可能です。"
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "入力または話した内容は、Google Gemini（またはGroq）に送信され、解析されます。カード番号やパスワードは入力しないでください。"
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "右上のメニューからテーマ、言語、ユーザー名を変更できます。"
+
+msgid "Contact"
+msgstr "お問い合わせ"
+
+msgid "Questions, problems or ideas"
+msgstr "質問、問題、アイデア"
+
+msgid "Write to us and we'll get back to you."
+msgstr "お問い合わせいただければ、折り返しご連絡いたします。"
+
+msgid "Developer"
+msgstr "開発者"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAiは%(name)sによって開発されました。"
+
+msgid "Account menu"
+msgstr "アカウントメニュー"
+
+msgid "First name"
+msgstr "名"
+
+msgid "Shown in the greeting and the menu."
+msgstr "挨拶やメニューに表示されます。"
+
+msgid "Profile updated."
+msgstr "プロフィールを更新しました。"
+
+msgid "Add spending or income"
+msgstr "支出または収入を追加"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "ダッシュボードのボックスに出来事を入力し、「AIで追加」を押してください。"
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "ボックスのマイクをタップして話し、停止ボタンを押してください。テキストを確認後、「AIで追加」を押します。"
+
+msgid "Accounts and moving money"
+msgstr "アカウントと資金移動"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "使用した口座を指定するか、口座間で資金を移動してください。"
+
+msgid "Set an account balance"
+msgstr "口座残高を設定"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "現在の口座残高をAIに伝えてください。"
+
+msgid "Monthly budgets"
+msgstr "月間予算"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "カテゴリーごとに支出上限を設定し、ダッシュボードの進捗バーで確認しましょう。"
+
+msgid "Ask about your money"
+msgstr "お金について質問する"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "「Ask AI」を使って、合計金額、内訳、比較を確認しましょう。"
+
+msgid "Portfolio"
+msgstr "ポートフォリオ"
+
+msgid "Help"
+msgstr "ヘルプ"
+
+msgid "About & contact"
+msgstr "KhorochAiについて・お問い合わせ"
+
+msgid "Made by"
+msgstr "開発者"
+
+msgid "Developer, KhorochAi"
+msgstr "開発者, KhorochAi"
+
+msgid "How can we help?"
+msgstr "何かお手伝いしましょうか？"
+
+msgid "Still need help?"
+msgstr "ヘルプが必要ですか？"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "ご質問、問題点、アイデアなど、お気軽にお寄せください。"
+
+msgid "Contact us"
+msgstr "お問い合わせ"
+
+msgid "Money tracking that speaks your language"
+msgstr "あなたの言葉で家計管理"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAiは、英語、বাংলা、Banglishで入力または話すだけで、支出と収入を記録できます。AIが内容を理解し、アプリが自動で計算します。"
+
+msgid "Type or talk"
+msgstr "入力または音声入力"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "面倒な入力は不要です。「aaj lunch 250 bkash e」と入力するだけで記録されます。"
+
+msgid "See where it goes"
+msgstr "支出の内訳を見る"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "アカウント、予算、グラフで収支を一目で把握。AIへの質問も可能です。"
+
+msgid "Correct by design"
+msgstr "設計による正確性"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "すべての項目は保存前に確認でき、合計金額は常にあなたのデータに基づいて計算されます。"
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "質問や問題、アイデアがあれば、お気軽にご連絡ください。"
+
+msgid "Read the help guide"
+msgstr "ヘルプガイドを読む"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — 会話で記録する収支管理アプリ"
+
+msgid "Just say it. Your hisab is done."
+msgstr "話すだけで、家計簿が完了。"
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "話すだけで、家計簿が完了。英語、বাংলা、Banglishで入力または話して、支出と収入を記録しましょう。"
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "無料 · 英語、বাংলা、Banglish対応"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "友達に話すように、支出や収入を入力または話しかけてください。KhorochAiが自動的に整理して、口座や予算を更新し、お金に関する質問に答えます。"
+
+msgid "Create free account"
+msgstr "無料アカウントを作成"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "メールアドレスでサインアップ。保存前にすべての入力を確認できます。"
+
+msgid "Write it the way you talk"
+msgstr "話すように入力"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "1つのメッセージで、支出、収入、口座間の振替、予算までまとめて記録できます。AIが読み取った内容を確認して保存してください。"
+
+msgid "How it works"
+msgstr "使い方"
+
+msgid "Type or say it"
+msgstr "入力または音声入力"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "英語、বাংলা、またはBanglishで、出来事を入力または話しかけてください。1つのメッセージに複数の内容を含めても大丈夫です。"
+
+msgid "Check the preview"
+msgstr "プレビューを確認"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "AIが認識した内容（金額、カテゴリー、口座、日付）を確認してください。タップで修正可能です。"
+
+msgid "Saved and up to date"
+msgstr "保存済み、最新の状態です"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "合計金額、口座残高、予算、グラフが即座に更新されます。"
+
+msgid "Everything you need, nothing you don't"
+msgstr "必要な機能だけをシンプルに"
+
+msgid "Voice input"
+msgstr "音声入力"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "マイクをタップして話してください。内容がボックスに表示されるので確認できます。"
+
+msgid "Your language"
+msgstr "言語設定"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English、বাংলা、Banglishに対応しており、アプリ全体をবাংলাに切り替えることも可能です。"
+
+msgid "All your accounts"
+msgstr "すべてのアカウント"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "現金、bKash、Nagad、Rocket、銀行、カード間の資金移動に対応しています。"
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "カテゴリーごとに上限を設定し、支出の進捗バーを確認しましょう。"
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — 自分のデータから回答を得られます。"
+
+msgid "Clear dashboard"
+msgstr "ダッシュボードをクリア"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "収入、支出、残高、お金の使い道、日別チャートを表示します。"
+
+msgid "Light and dark"
+msgstr "ライト/ダークモード"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "スマホのダークモードに合わせた落ち着いたデザイン、またはお好みのデザインを選択できます。"
+
+msgid "Export to CSV"
+msgstr "CSVにエクスポート"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "取引履歴はいつでもExcelやGoogle Sheets用にダウンロードできます。"
+
+msgid "Start your hisab in a minute"
+msgstr "1分で家計簿を始めよう"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "メールアドレスで無料アカウントを作成し、今日の支出をKhorochAiに伝えるだけです。"
+
+msgid "See how it works"
+msgstr "使い方を見る"
+
+msgid "Free to use"
+msgstr "無料で利用可能"
+
+msgid "You confirm every entry"
+msgstr "すべての項目を確認"
+
+msgid "Works on phone and computer"
+msgstr "スマートフォンとパソコンで利用可能"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "話すように入力するか、そのまま話しかけてください。"
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "入力するか、マイクをタップして話しかけてください。1つのメッセージで、支出、収入、口座間の振替、予算設定など、複数の項目をまとめて処理できます。プレビューを確認して保存してください。"
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "無料 · বাংলা、英語、Banglish、その他言語対応"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "話すように入力するか、そのまま話しかけてください（言語は問いません）。"
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "ベンガル語、英語、Banglishなど、お好みの言語で。アプリ自体は9言語に対応しています。"
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "支出や収入を教えてください — বাংলা、英語、Banglish、またはその他の言語で"
+
+msgid "Currency"
+msgstr "通貨"
+
+msgid "Used for every amount in the app."
+msgstr "アプリ内のすべての金額に使用されます。"
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AIが%(n)s件の取引を見つけました。誤りがあれば修正して保存してください。"
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s件の取引"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "%(n)s件の取引を保存しました。"
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "パスワードが短すぎます。%d文字以上で入力してください。"
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "パスワードは%(min_length)d文字以上である必要があります。"

@@ -1,0 +1,1162 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: sw\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Settings"
+msgstr "Mipangilio"
+
+msgid "Theme"
+msgstr "Mandhari"
+
+msgid "Light"
+msgstr "Nuru"
+
+msgid "Dark"
+msgstr "Giza"
+
+msgid "System"
+msgstr "Mfumo"
+
+msgid "Language"
+msgstr "Lugha"
+
+msgid "All settings"
+msgstr "Mipangilio yote"
+
+msgid "Log out"
+msgstr "Toka"
+
+msgid "Menu"
+msgstr "Menyu"
+
+msgid "Dashboard"
+msgstr "Dashibodi"
+
+msgid "Transactions"
+msgstr "Miamala"
+
+msgid "Categories &amp; Budgets"
+msgstr "Kategoria &amp; Bajeti"
+
+msgid "Ask AI"
+msgstr "Uliza AI"
+
+msgid "Close"
+msgstr "Funga"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "Umeingia kama <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Mfumo unafuata mpangilio wa hali ya giza wa simu au kompyuta yako."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Inabadilisha menyu, vitufe na ujumbe wa programu. Unaweza kuandika au kuzungumza na AI wakati wowote kwa lugha yoyote — বাংলা, English, Banglish na zaidi."
+
+msgid "These settings are saved in this browser."
+msgstr "Mipangilio hii imehifadhiwa kwenye kivinjari hiki."
+
+msgid "Log in"
+msgstr "Ingia"
+
+msgid "Welcome back"
+msgstr "Karibu tena"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "Fuatilia pesa zako kwa kuandika tu, kwa Kiingereza au বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Jina la mtumiaji au nenosiri si sahihi."
+
+msgid "Username"
+msgstr "Jina la mtumiaji"
+
+msgid "Password"
+msgstr "Nenosiri"
+
+msgid "No account?"
+msgstr "Huna akaunti?"
+
+msgid "Sign up"
+msgstr "Jisajili"
+
+msgid "Create your account"
+msgstr "Fungua akaunti yako"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Utapata kategoria zilizotayarishwa ili kuanza."
+
+msgid "Already have an account?"
+msgstr "Tayari una akaunti?"
+
+msgid "Email (optional)"
+msgstr "Barua pepe (hiari)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Niambie ulichotumia au ulichopata — Kiingereza, বাংলা, au Banglish"
+
+msgid "e.g."
+msgstr "mfano"
+
+msgid "Add manually"
+msgstr "Ongeza mwenyewe"
+
+msgid "Add with AI"
+msgstr "Ongeza na AI"
+
+msgid "Reading…"
+msgstr "Inasoma..."
+
+msgid "Prev"
+msgstr "Iliyotangulia"
+
+msgid "Next"
+msgstr "Inayofuata"
+
+msgid "This month"
+msgstr "Mwezi huu"
+
+msgid "Income"
+msgstr "Mapato"
+
+msgid "Expense"
+msgstr "Gharama"
+
+msgid "Balance this month"
+msgstr "Salio la mwezi huu"
+
+msgid "Saved %(p)s%% of income"
+msgstr "Umehifadhi %(p)s%% ya mapato"
+
+msgid "All-time balance"
+msgstr "Salio la muda wote"
+
+msgid "Where your money went"
+msgstr "Pesa zako zilienda wapi"
+
+msgid "No expenses this month yet."
+msgstr "Hakuna matumizi mwezi huu bado."
+
+msgid "Day by day"
+msgstr "Siku baada ya siku"
+
+msgid "Budgets"
+msgstr "Bajeti"
+
+msgid "Set budgets"
+msgstr "Weka bajeti"
+
+msgid "Over budget by %(a)s"
+msgstr "Umezidi bajeti kwa %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% imetumika"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Hakuna bajeti bado. Andika au sema “khabar e mashe 6000 budget” kwenye kisanduku hapo juu, au weka moja chini ya Aina."
+
+msgid "Recent transactions"
+msgstr "Miamala ya hivi karibuni"
+
+msgid "See all"
+msgstr "Ona yote"
+
+msgid "Date"
+msgstr "Tarehe"
+
+msgid "Category"
+msgstr "Jamii"
+
+msgid "Note"
+msgstr "Dokezo"
+
+msgid "Amount"
+msgstr "Kiasi"
+
+msgid "Uncategorized"
+msgstr "Haijaainishwa"
+
+msgid "Added with AI"
+msgstr "Imeongezwa na AI"
+
+msgid "Edit"
+msgstr "Hariri"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Hakuna miamala bado. Andika kitu kwenye kisanduku hapo juu!"
+
+msgid "Export CSV"
+msgstr "Hamisha CSV"
+
+msgid "Add"
+msgstr "Ongeza"
+
+msgid "Month"
+msgstr "Mwezi"
+
+msgid "Type"
+msgstr "Aina"
+
+msgid "All"
+msgstr "Zote"
+
+msgid "Search"
+msgstr "Tafuta"
+
+msgid "note or text"
+msgstr "dokezo au maandishi"
+
+msgid "Filter"
+msgstr "Chuja"
+
+msgid "Reset"
+msgstr "Weka upya"
+
+msgid "Net"
+msgstr "Neti"
+
+msgid "Newer"
+msgstr "Mpya zaidi"
+
+msgid "Older"
+msgstr "Zamani zaidi"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Ukurasa %(a)s kati ya %(b)s"
+
+msgid "Confirm"
+msgstr "Thibitisha"
+
+msgid "Check before saving"
+msgstr "Angalia kabla ya kuhifadhi"
+
+msgid "You wrote:"
+msgstr "Umeandika:"
+
+msgid "Save this one"
+msgstr "Hifadhi hii"
+
+msgid "New category:"
+msgstr "Aina mpya:"
+
+msgid "New:"
+msgstr "Mpya:"
+
+msgid "New category…"
+msgstr "Aina mpya..."
+
+msgid "New category name"
+msgstr "Jina la aina mpya"
+
+msgid "Save"
+msgstr "Hifadhi"
+
+msgid "Cancel"
+msgstr "Ghairi"
+
+msgid "Delete this permanently?"
+msgstr "Futa hii kabisa?"
+
+msgid "Delete"
+msgstr "Futa"
+
+msgid "Ask anything about your money"
+msgstr "Uliza chochote kuhusu pesa zako"
+
+msgid "Ask"
+msgstr "Uliza"
+
+msgid "Thinking…"
+msgstr "Inafikiri…"
+
+msgid "Where did I spend the most last month?"
+msgstr "Nilitumia wapi zaidi mwezi uliopita?"
+
+msgid "Where did I spend most last month?"
+msgstr "Nilitumia wapi zaidi mwezi uliopita?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Nimetumia kiasi gani kwenye rickshaw mwaka huu?"
+
+msgid "Rickshaw spending this year"
+msgstr "Matumizi ya riksho mwaka huu"
+
+msgid "income vs expense per month this year"
+msgstr "mapato dhidi ya matumizi kwa mwezi mwaka huu"
+
+msgid "Income vs expense per month"
+msgstr "Mapato dhidi ya gharama kwa mwezi"
+
+msgid "notes containing “%(k)s”"
+msgstr "madokezo yenye “%(k)s”"
+
+msgid "Spent"
+msgstr "Umetumia"
+
+msgid "Earned"
+msgstr "Uliopata"
+
+msgid "Group"
+msgstr "Kikundi"
+
+msgid "Count"
+msgstr "Idadi"
+
+msgid "Total"
+msgstr "Jumla"
+
+msgid "Matching transactions"
+msgstr "Miamala inayolingana"
+
+msgid "first 50"
+msgstr "50 za kwanza"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI imeelewa swali lako tu; kila namba hapa imehesabiwa kutoka kwa data uliyohifadhi."
+
+msgid "Your question"
+msgstr "Swali lako"
+
+msgid "Categories"
+msgstr "Kategoria"
+
+msgid "Add category"
+msgstr "Ongeza kategoria"
+
+msgid "Edit category"
+msgstr "Hariri jamii"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI huchagua kutoka kwa kategoria hizi. Wakati hakuna kinachofaa, inapendekeza mpya na kukuuliza kabla ya kuiumba. Weka bajeti ya kila mwezi kwa kategoria ya matumizi ili kuona pau za maendeleo kwenye dashibodi."
+
+msgid "Expense categories"
+msgstr "Aina za gharama"
+
+msgid "Income categories"
+msgstr "Aina za mapato"
+
+msgid "Name"
+msgstr "Jina"
+
+msgid "Budget"
+msgstr "Bajeti"
+
+msgid "Icon"
+msgstr "Ikoni"
+
+msgid "Color"
+msgstr "Rangi"
+
+msgid "Monthly budget"
+msgstr "Bajeti ya mwezi"
+
+msgid "e.g. 🍔"
+msgstr "mfano: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "Kikomo cha matumizi ya mwezi cha hiari (aina za matumizi pekee)."
+
+msgid "You already have a category with this name."
+msgstr "Tayari una aina yenye jina hili."
+
+msgid "Food"
+msgstr "Chakula"
+
+msgid "Groceries"
+msgstr "Vyakula"
+
+msgid "Transport"
+msgstr "Usafiri"
+
+msgid "Rent"
+msgstr "Kodi"
+
+msgid "Utilities"
+msgstr "Huduma"
+
+msgid "Mobile & Internet"
+msgstr "Simu na Intaneti"
+
+msgid "Health"
+msgstr "Afya"
+
+msgid "Education"
+msgstr "Elimu"
+
+msgid "Shopping"
+msgstr "Ununuzi"
+
+msgid "Entertainment"
+msgstr "Burudani"
+
+msgid "Family"
+msgstr "Familia"
+
+msgid "Other Expense"
+msgstr "Matumizi Mengine"
+
+msgid "Salary"
+msgstr "Mshahara"
+
+msgid "Tuition"
+msgstr "Ada ya shule"
+
+msgid "Freelance"
+msgstr "Kujiajiri"
+
+msgid "Business"
+msgstr "Biashara"
+
+msgid "Gift"
+msgstr "Zawadi"
+
+msgid "Other Income"
+msgstr "Mapato Mengine"
+
+msgid "Amount must be greater than zero."
+msgstr "Kiasi lazima kiwe kikubwa kuliko sifuri."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' ni kategoria ya matumizi; chagua kategoria ya mapato."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' ni kategoria ya mapato; chagua kategoria ya matumizi."
+
+msgid "Manual"
+msgstr "Mwongozo"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Karibu! Aina za kawaida ziko tayari. Jaribu kuandika matumizi yako ya kwanza."
+
+msgid "Please type what you spent or earned."
+msgstr "Tafadhali andika ulichotumia au ulichopata."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Ujumbe ni mrefu sana (kiwango cha juu %(n)s vibambo)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI iko busy au haijasanidiwa sasa hivi. Tafadhali jaribu tena, au ongeza mwenyewe."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI iko busy au haijasanidiwa sasa hivi. Tafadhali jaribu tena."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "Jibu la AI halikueleweka. Tafadhali jaribu tena."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Hakuna mapato au matumizi yenye kiasi yaliyopatikana kwenye ujumbe wako."
+
+msgid "New categories: %(names)s."
+msgstr "Aina mpya: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "Safu %(n)s zimeachwa kwa sababu kiasi, aina au akaunti hazikuwa sahihi."
+
+msgid "Nothing was saved."
+msgstr "Hakuna kilichohifadhiwa."
+
+msgid "Transaction added."
+msgstr "Miamala imeongezwa."
+
+msgid "Add transaction"
+msgstr "Ongeza muamala"
+
+msgid "Transaction updated."
+msgstr "Miamala imesasishwa."
+
+msgid "Edit transaction"
+msgstr "Hariri muamala"
+
+msgid "Transaction deleted."
+msgstr "Miamala imefutwa."
+
+msgid "Category '%(name)s' added."
+msgstr "Jamii '%(name)s' imeongezwa."
+
+msgid "Category updated."
+msgstr "Jamii imesasishwa."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Jamii '%(name)s' imefutwa."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "Miamala %(n)s sasa haina kategoria."
+
+msgid "Accounts"
+msgstr "Akaunti"
+
+msgid "Account"
+msgstr "Akaunti"
+
+msgid "Move money"
+msgstr "Hamisha pesa"
+
+msgid "Add account"
+msgstr "Ongeza akaunti"
+
+msgid "Edit account"
+msgstr "Hariri akaunti"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Mahali pesa zako zinapohifadhiwa. Iambie AI “bkash e 500 dilam” na itatumia bKash, au “amar bkash e 5000 ache” ili kuweka salio la bKash. Tumia Hamisha pesa kwa kutoa pesa kwenye ATM, kutoa pesa bKash na uhamisho mwingine — hubadilisha salio lakini si mapato au matumizi. Badilisha jina la akaunti yoyote (mfano Bank → jina la benki yako) kwa Hariri."
+
+msgid "Total in all accounts"
+msgstr "Jumla katika akaunti zote"
+
+msgid "Default"
+msgstr "Chaguo-msingi"
+
+msgid "Recent transfers"
+msgstr "Uhamisho wa hivi karibuni"
+
+msgid "From"
+msgstr "Kutoka"
+
+msgid "To"
+msgstr "Kwa"
+
+msgid "No transfers yet."
+msgstr "Hakuna uhamisho bado."
+
+msgid "Manage"
+msgstr "Dhibiti"
+
+msgid "e.g. 💵"
+msgstr "mfano: 💵"
+
+msgid "Opening balance"
+msgstr "Salio la kuanzia"
+
+msgid "Default account"
+msgstr "Akaunti chaguo-msingi"
+
+msgid "You already have an account with this name."
+msgstr "Tayari una akaunti yenye jina hili."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "mfano: kutoa pesa kwenye ATM, bKash cash out"
+
+msgid "Pick two different accounts."
+msgstr "Chagua akaunti mbili tofauti."
+
+msgid "Cash"
+msgstr "Pesa taslimu"
+
+msgid "Card"
+msgstr "Kadi"
+
+msgid "Mobile banking"
+msgstr "Benki ya simu"
+
+msgid "Bank account"
+msgstr "Akaunti ya benki"
+
+msgid "Other"
+msgstr "Nyingine"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "Pesa zilizokuwa tayari kwenye akaunti hii ulipoanza kutumia KhorochAi."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Inatumika wakati husemi akaunti ipi (mfano 'lunch 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "Akaunti '%(name)s' imeongezwa."
+
+msgid "Account updated."
+msgstr "Akaunti imesasishwa."
+
+msgid "Account '%(name)s' deleted."
+msgstr "Akaunti '%(name)s' imefutwa."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "Miamala %(n)s haina akaunti tena."
+
+msgid "Transfer saved."
+msgstr "Uhamisho umehifadhiwa."
+
+msgid "Move money between accounts"
+msgstr "Hamisha pesa kati ya akaunti"
+
+msgid "Transfer updated."
+msgstr "Uhamisho umesasishwa."
+
+msgid "Edit transfer"
+msgstr "Hariri uhamisho"
+
+msgid "Transfer deleted."
+msgstr "Uhamisho umefutwa."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "Kikomo cha AI kimefikiwa kwa kila mtu leo — kitajirekebisha saa sita usiku"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI imefikia kikomo cha leo kwa kila mtu. Inajirekebisha saa sita usiku. Bado unaweza kuongeza miamala mwenyewe."
+
+msgid "Transfer"
+msgstr "Hamisha"
+
+msgid "Day"
+msgstr "Siku"
+
+msgid "Week"
+msgstr "Wiki"
+
+msgid "Period"
+msgstr "Kipindi"
+
+msgid "No transactions in this period."
+msgstr "Hakuna miamala katika kipindi hiki."
+
+msgid "Dates:"
+msgstr "Tarehe:"
+
+msgid "Show all dates"
+msgstr "Onyesha tarehe zote"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI leo: %(p)s%% imetumika"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "%(used)s kati ya %(limit)s tokeni za AI zimetumika leo. AI inafanya kazi kwa mpango wa bure wenye kikomo cha kila siku; inajirekebisha saa sita usiku."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "Kikomo cha AI kimeisha kwa leo — kitajirekebisha saa sita usiku"
+
+msgid "AI usage today"
+msgstr "Matumizi ya AI leo"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Umetumia 100% ya posho yako ya AI ya leo. Itawekwa upya saa sita usiku. Bado unaweza kuongeza miamala wewe mwenyewe."
+
+msgid "Email"
+msgstr "Barua pepe"
+
+msgid "Password (again)"
+msgstr "Nenosiri (tena)"
+
+msgid "Forgot your password?"
+msgstr "Umesahau nenosiri lako?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "Barua pepe na/au nenosiri uliloweka si sahihi."
+
+msgid "A user is already registered with this email address."
+msgstr "Mtumiaji tayari amesajiliwa na barua pepe hii."
+
+msgid "You must type the same password each time."
+msgstr "Lazima uandike nenosiri lilelile kila wakati."
+
+msgid "Code"
+msgstr "Msimbo"
+
+msgid "Incorrect code."
+msgstr "Nambari si sahihi."
+
+msgid "Email Verification"
+msgstr "Uthibitishaji wa Barua pepe"
+
+msgid "Enter Email Verification Code"
+msgstr "Ingiza Msimbo wa Uthibitishaji wa Barua pepe"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "Tumetuma msimbo kwa %(recipient)s. Msimbo utaisha muda wake hivi karibuni, tafadhali uweke haraka."
+
+msgid "Request new code"
+msgstr "Omba msimbo mpya"
+
+msgid "Use a different email address"
+msgstr "Tumia anwani nyingine ya barua pepe"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "Barua pepe ya uthibitisho imetumwa kwa %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "Umeingia kwa mafanikio kama %(name)s."
+
+msgid "You have signed out."
+msgstr "Umetoka kwenye akaunti."
+
+msgid "You have confirmed %(email)s."
+msgstr "Umethibitisha %(email)s."
+
+msgid "Password successfully changed."
+msgstr "Nenosiri limebadilishwa kwa mafanikio."
+
+msgid "Password successfully set."
+msgstr "Nenosiri limewekwa kwa mafanikio."
+
+msgid "Password Reset"
+msgstr "Weka Upya Nenosiri"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Umesahau nenosiri lako? Ingiza anwani yako ya barua pepe hapa chini, na tutakutumia barua pepe ya kuliweka upya."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Tafadhali wasiliana nasi ikiwa una shida yoyote ya kuweka upya nenosiri lako."
+
+msgid "Reset My Password"
+msgstr "Weka Upya Nenosiri Langu"
+
+msgid "Enter Password Reset Code"
+msgstr "Ingiza Msimbo wa Kuweka Upya Nenosiri"
+
+msgid "Change Password"
+msgstr "Badilisha Nenosiri"
+
+msgid "Your password is now changed."
+msgstr "Nenosiri lako limebadilishwa sasa."
+
+msgid "New Password"
+msgstr "Nenosiri Jipya"
+
+msgid "Current Password"
+msgstr "Nenosiri la Sasa"
+
+msgid "Sign Out"
+msgstr "Ondoka"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Je, una uhakika unataka kutoka?"
+
+msgid "This password is too common."
+msgstr "Nenosiri hili ni la kawaida sana."
+
+msgid "This password is entirely numeric."
+msgstr "Nenosiri hili lina namba pekee."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Nenosiri linafanana sana na %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Nenosiri lako haliwezi kufanana sana na taarifa zako nyingine binafsi."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Nenosiri lako haliwezi kuwa nenosiri linalotumiwa sana."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Nenosiri lako haliwezi kuwa namba pekee."
+
+msgid "Continue with %(provider)s"
+msgstr "Endelea na %(provider)s"
+
+msgid "or with email"
+msgstr "au kwa barua pepe"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Utapata kategoria na akaunti zilizotayarishwa ili kuanza. Tutakutumia msimbo wa tarakimu 6 kwa barua pepe ili kuthibitisha barua pepe yako."
+
+msgid "Profile"
+msgstr "Wasifu"
+
+msgid "Email (used to log in)"
+msgstr "Barua pepe (inayotumika kuingia)"
+
+msgid "Change email"
+msgstr "Badilisha barua pepe"
+
+msgid "Change password"
+msgstr "Badilisha nenosiri"
+
+msgid "Google / Facebook login"
+msgstr "Ingia kupitia Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Inaonekana kwenye programu. Unaingia na barua pepe yako, si hii."
+
+msgid "This username is already taken."
+msgstr "Jina hili la mtumiaji tayari linatumiwa."
+
+msgid "Username updated."
+msgstr "Jina la mtumiaji limesasishwa."
+
+msgid "Hello from KhorochAi!"
+msgstr "Salamu kutoka KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "Asante kwa kutumia KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "Msimbo wako wa kuthibitisha barua pepe ni:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Ingiza kwenye ukurasa wa KhorochAi ulio wazi kwenye kivinjari chako. Msimbo utaisha muda wake hivi karibuni."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "Ili kuthibitisha barua pepe yako, fungua %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "Ikiwa hukujiunga na KhorochAi, unaweza kupuuza barua pepe hii."
+
+msgid "Your verification code"
+msgstr "Msimbo wako wa uthibitishaji"
+
+msgid "Your password reset code is:"
+msgstr "Msimbo wako wa kuweka upya nenosiri ni:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Ikiwa hukuomba kuweka upya nenosiri lako, unaweza kupuuza barua pepe hii. Nenosiri lako halijabadilika."
+
+msgid "Your password reset code"
+msgstr "Msimbo wako wa kuweka upya nenosiri"
+
+msgid "Set balance"
+msgstr "Weka salio"
+
+msgid "Balance now"
+msgstr "Salio sasa"
+
+msgid "Balance updated: %(list)s."
+msgstr "Salio limesasishwa: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Habari za asubuhi, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Habari za mchana, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "Habari za jioni, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Ongea badala ya kuandika"
+
+msgid "Stop recording"
+msgstr "Acha kurekodi"
+
+msgid "Writing what you said…"
+msgstr "Ninaandika ulichosema…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Ufikiaji wa maikrofoni umezuiwa. Ruhusu katika mipangilio ya kivinjari chako na ujaribu tena."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Hiyo ilikuwa fupi sana. Subiri kidogo na uongee, kisha gusa acha."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Imeshindwa kutuma rekodi. Angalia muunganisho wako na ujaribu tena."
+
+msgid "No recording was received."
+msgstr "Hakuna rekodi iliyopokelewa."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "Rekodi ni ndefu sana. Tafadhali iweke chini ya dakika moja."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Imeshindwa kubadilisha rekodi kuwa maandishi kwa sasa. Tafadhali jaribu tena au uandike."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Sijasikia chochote. Tafadhali jaribu tena ukiwa karibu zaidi na maikrofoni."
+
+msgid "Set budget"
+msgstr "Weka bajeti"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Bajeti ya mwezi imewekwa: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (imeondolewa)"
+
+msgid "Help & contact"
+msgstr "Msaada na mawasiliano"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Kila kitu kinafanya kazi kwa kuandika au kuzungumza kwa Kiingereza rahisi, বাংলা au Banglish. Daima unaona hakikisho kabla ya kitu chochote kuhifadhiwa."
+
+msgid "How to use KhorochAi"
+msgstr "Jinsi ya kutumia KhorochAi"
+
+msgid "Good to know"
+msgstr "Vizuri kujua"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI inasoma maandishi yako tu; kila jumla na salio huhesabiwa na programu kutoka kwa data uliyohifadhi."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "Matumizi ya AI yana posho ya kila siku (inayoonyeshwa kama “AI leo: x% imetumika”). Inajirekebisha saa sita usiku, na unaweza kuongeza vitu mwenyewe wakati wowote."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Unachoandika au kusema kinatumwa kwa Google Gemini (au Groq) ili kieleweke. Usijumuishe namba za kadi au nenosiri."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Badilisha mandhari, lugha na jina lako la mtumiaji kutoka kwenye menyu iliyo juu kulia."
+
+msgid "Contact"
+msgstr "Wasiliana"
+
+msgid "Questions, problems or ideas"
+msgstr "Maswali, matatizo au mawazo"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Tuandikie nasi tutakujibu."
+
+msgid "Developer"
+msgstr "Msanidi"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi imejengwa na %(name)s."
+
+msgid "Account menu"
+msgstr "Menyu ya akaunti"
+
+msgid "First name"
+msgstr "Jina la kwanza"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Inaonekana kwenye salamu na menyu."
+
+msgid "Profile updated."
+msgstr "Wasifu umesasishwa."
+
+msgid "Add spending or income"
+msgstr "Ongeza matumizi au mapato"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "Andika kilichotokea kwenye kisanduku kwenye dashibodi na ubonyeze Ongeza na AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "Gusa maikrofoni kwenye kisanduku, ongea, kisha gusa acha. Kagua maandishi, kisha bonyeza Ongeza na AI."
+
+msgid "Accounts and moving money"
+msgstr "Akaunti na kuhamisha pesa"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Sema akaunti uliyotumia, au hamisha pesa kati ya akaunti zako."
+
+msgid "Set an account balance"
+msgstr "Weka salio la akaunti"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "Iambie AI kiasi kilichopo kwenye akaunti sasa hivi."
+
+msgid "Monthly budgets"
+msgstr "Bajeti za mwezi"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Weka kikomo cha matumizi kwa kategoria na uone upau wa maendeleo kwenye dashibodi."
+
+msgid "Ask about your money"
+msgstr "Uliza kuhusu pesa zako"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Tumia Uliza AI kwa jumla, uchambuzi na ulinganisho."
+
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Help"
+msgstr "Msaada"
+
+msgid "About & contact"
+msgstr "Kuhusu & mawasiliano"
+
+msgid "Made by"
+msgstr "Imetengenezwa na"
+
+msgid "Developer, KhorochAi"
+msgstr "Msanidi, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Tunawezaje kusaidia?"
+
+msgid "Still need help?"
+msgstr "Bado unahitaji msaada?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Tuandikie — maswali, matatizo na mawazo yote yanakaribishwa."
+
+msgid "Contact us"
+msgstr "Wasiliana nasi"
+
+msgid "Money tracking that speaks your language"
+msgstr "Ufuatiliaji wa pesa unaozungumza lugha yako"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi inakuwezesha kufuatilia matumizi na mapato kwa kuandika au kuzungumza tu — kwa English, বাংলা au Banglish. AI inaelewa unachomaanisha; programu inafanya hesabu zote."
+
+msgid "Type or talk"
+msgstr "Andika au ongea"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Hakuna fomu za kujaza. Sema “aaj lunch 250 bkash e” na itarekodiwa."
+
+msgid "See where it goes"
+msgstr "Ona matumizi yako"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Akaunti, bajeti na chati zinaonyesha pesa zako kwa haraka, na Uliza AI inajibu maswali yako."
+
+msgid "Correct by design"
+msgstr "Sahihi kwa muundo"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "Unakagua kila ingizo kabla halijahifadhiwa, na jumla huhesabiwa kila wakati kutoka kwa data yako mwenyewe."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Maswali, matatizo au mawazo — tuandikie nasi tutakujibu."
+
+msgid "Read the help guide"
+msgstr "Soma mwongozo wa usaidizi"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Kifuatiliaji cha gharama na mapato unachoweza kuzungumza nacho"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Sema tu. Hisab yako imekamilika."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Sema tu. Hisab yako imekamilika. Fuatilia matumizi na mapato kwa kuandika au kuzungumza kwa English, বাংলা au Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Bure · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "Andika au sema ulichotumia au ulichopata — kama unavyomwambia rafiki. KhorochAi inageuza kuwa maingizo nadhifu, inasasisha akaunti na bajeti zako, na kujibu maswali yako ya kifedha."
+
+msgid "Create free account"
+msgstr "Fungua akaunti ya bure"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "Jisajili na barua pepe yako. Unakagua kila ingizo kabla halijahifadhiwa."
+
+msgid "Write it the way you talk"
+msgstr "Iandike jinsi unavyoongea"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Ujumbe mmoja unaweza kuwa na maingizo kadhaa — matumizi, mapato, uhamisho kati ya akaunti zako, hata bajeti. AI inaisoma; wewe unakagua hakikisho na kuhifadhi."
+
+msgid "How it works"
+msgstr "Jinsi inavyofanya kazi"
+
+msgid "Type or say it"
+msgstr "Iandike au iseme"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Andika au sema kilichotokea, kwa Kiingereza, বাংলা au Banglish. Mambo kadhaa katika ujumbe mmoja ni sawa."
+
+msgid "Check the preview"
+msgstr "Angalia hakikisho"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "Ona kile AI ilichoelewa — kiasi, kategoria, akaunti na tarehe. Rekebisha chochote kwa kugusa."
+
+msgid "Saved and up to date"
+msgstr "Imesahihishwa na kusasishwa"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "Jumla zako, salio la akaunti, bajeti na chati husasishwa papo hapo."
+
+msgid "Everything you need, nothing you don't"
+msgstr "Kila kitu unachohitaji, hakuna kisichohitajika"
+
+msgid "Voice input"
+msgstr "Ingizo la sauti"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "Gusa maikrofoni na uongee. Maneno yako yataonekana kwenye kisanduku ili uyakague."
+
+msgid "Your language"
+msgstr "Lugha yako"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা au Banglish — na programu nzima inaweza kubadilika kuwa Bangla."
+
+msgid "All your accounts"
+msgstr "Akaunti zako zote"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Pesa taslimu, bKash, Nagad, Rocket, benki na kadi, pamoja na uhamisho kati yao."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Weka vikomo kwa kila kategoria na uone upau wa maendeleo unapotumia."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — pata jibu kutoka kwa data yako mwenyewe."
+
+msgid "Clear dashboard"
+msgstr "Futa dashibodi"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Mapato, gharama, salio, pesa zako zilikwenda wapi na chati za kila siku."
+
+msgid "Light and dark"
+msgstr "Nuru na giza"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Muundo tulivu unaofuata hali ya giza ya simu yako, au chagua wako."
+
+msgid "Export to CSV"
+msgstr "Hamisha kwenda CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "Pakua miamala yako kwa ajili ya Excel au Google Sheets wakati wowote."
+
+msgid "Start your hisab in a minute"
+msgstr "Anza hisab yako kwa dakika moja"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "Fungua akaunti ya bure kwa barua pepe yako, kisha mwambie KhorochAi ulichotumia leo."
+
+msgid "See how it works"
+msgstr "Ona jinsi inavyofanya kazi"
+
+msgid "Free to use"
+msgstr "Bure kutumia"
+
+msgid "You confirm every entry"
+msgstr "Unathibitisha kila ingizo"
+
+msgid "Works on phone and computer"
+msgstr "Inafanya kazi kwenye simu na kompyuta"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Iandike jinsi unavyoongea — au ongea tu."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "Iandike, au gusa maikrofoni na uiseme. Ujumbe mmoja unaweza kuwa na maingizo kadhaa — matumizi, mapato, uhamisho kati ya akaunti zako, hata bajeti. Unakagua hakikisho na kuhifadhi."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Bure · বাংলা, English, Banglish & lugha yoyote"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Iandike jinsi unavyoongea — kwa lugha yoyote, au ongea tu."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Bangla, Kiingereza, Banglish — au lugha yoyote unayozungumza. Programu yenyewe inakuja katika lugha 9."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Niambie ulichotumia au ulichopata — বাংলা, Kiingereza, Banglish au lugha yoyote"
+
+msgid "Currency"
+msgstr "Sarafu"
+
+msgid "Used for every amount in the app."
+msgstr "Inatumika kwa kila kiasi kwenye programu."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI imepata muamala %(n)s. Rekebisha chochote kinachoonekana vibaya, kisha hifadhi."
+msgstr[1] "AI imepata miamala %(n)s. Rekebisha chochote kinachoonekana vibaya, kisha hifadhi."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "Miamala %(n)s"
+msgstr[1] "Miamala %(n)s"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "Imehifadhi miamala %(n)s."
+msgstr[1] "Imehifadhi miamala %(n)s."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Nenosiri hili ni fupi mno. Lazima liwe na angalau herufi %d."
+msgstr[1] "Nenosiri hili ni fupi mno. Lazima liwe na angalau herufi %d."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Nenosiri lako lazima liwe na angalau herufi %(min_length)d."
+msgstr[1] "Nenosiri lako lazima liwe na angalau herufi %(min_length)d."

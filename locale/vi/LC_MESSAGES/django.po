@@ -1,0 +1,1157 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Settings"
+msgstr "Cài đặt"
+
+msgid "Theme"
+msgstr "Chủ đề"
+
+msgid "Light"
+msgstr "Sáng"
+
+msgid "Dark"
+msgstr "Tối"
+
+msgid "System"
+msgstr "Hệ thống"
+
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+msgid "All settings"
+msgstr "Tất cả cài đặt"
+
+msgid "Log out"
+msgstr "Đăng xuất"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
+
+msgid "Transactions"
+msgstr "Giao dịch"
+
+msgid "Categories &amp; Budgets"
+msgstr "Danh mục &amp; Ngân sách"
+
+msgid "Ask AI"
+msgstr "Hỏi AI"
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "Đã đăng nhập với tư cách <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Hệ thống tuân theo cài đặt chế độ tối trên điện thoại hoặc máy tính của bạn."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Thay đổi menu, nút và thông báo của ứng dụng. Bạn luôn có thể nhập hoặc nói chuyện với AI bằng bất kỳ ngôn ngữ nào — বাংলা, English, Banglish và hơn thế nữa."
+
+msgid "These settings are saved in this browser."
+msgstr "Các cài đặt này được lưu trong trình duyệt này."
+
+msgid "Log in"
+msgstr "Đăng nhập"
+
+msgid "Welcome back"
+msgstr "Chào mừng trở lại"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "Theo dõi chi tiêu bằng cách nhập liệu, bằng tiếng Anh hoặc বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Tên người dùng hoặc mật khẩu không đúng."
+
+msgid "Username"
+msgstr "Tên người dùng"
+
+msgid "Password"
+msgstr "Mật khẩu"
+
+msgid "No account?"
+msgstr "Chưa có tài khoản?"
+
+msgid "Sign up"
+msgstr "Đăng ký"
+
+msgid "Create your account"
+msgstr "Tạo tài khoản của bạn"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Bạn sẽ nhận được các danh mục có sẵn để bắt đầu."
+
+msgid "Already have an account?"
+msgstr "Bạn đã có tài khoản?"
+
+msgid "Email (optional)"
+msgstr "Email (tùy chọn)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Cho tôi biết bạn đã chi hoặc kiếm được bao nhiêu — tiếng Anh, বাংলা, hoặc Banglish"
+
+msgid "e.g."
+msgstr "ví dụ:"
+
+msgid "Add manually"
+msgstr "Thêm thủ công"
+
+msgid "Add with AI"
+msgstr "Thêm bằng AI"
+
+msgid "Reading…"
+msgstr "Đang đọc…"
+
+msgid "Prev"
+msgstr "Trước"
+
+msgid "Next"
+msgstr "Tiếp theo"
+
+msgid "This month"
+msgstr "Tháng này"
+
+msgid "Income"
+msgstr "Thu nhập"
+
+msgid "Expense"
+msgstr "Chi tiêu"
+
+msgid "Balance this month"
+msgstr "Số dư tháng này"
+
+msgid "Saved %(p)s%% of income"
+msgstr "Đã tiết kiệm %(p)s%% thu nhập"
+
+msgid "All-time balance"
+msgstr "Số dư tổng"
+
+msgid "Where your money went"
+msgstr "Tiền của bạn đã đi đâu"
+
+msgid "No expenses this month yet."
+msgstr "Chưa có chi tiêu nào trong tháng này."
+
+msgid "Day by day"
+msgstr "Theo ngày"
+
+msgid "Budgets"
+msgstr "Ngân sách"
+
+msgid "Set budgets"
+msgstr "Đặt các ngân sách"
+
+msgid "Over budget by %(a)s"
+msgstr "Vượt ngân sách %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "Đã dùng %(p)s%%"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Chưa có ngân sách. Hãy nhập hoặc nói “khabar e mashe 6000 budget” vào ô phía trên, hoặc thiết lập trong phần Danh mục."
+
+msgid "Recent transactions"
+msgstr "Giao dịch gần đây"
+
+msgid "See all"
+msgstr "Xem tất cả"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Category"
+msgstr "Danh mục"
+
+msgid "Note"
+msgstr "Ghi chú"
+
+msgid "Amount"
+msgstr "Số tiền"
+
+msgid "Uncategorized"
+msgstr "Chưa phân loại"
+
+msgid "Added with AI"
+msgstr "Đã thêm bằng AI"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Chưa có giao dịch nào. Hãy nhập gì đó vào ô phía trên!"
+
+msgid "Export CSV"
+msgstr "Xuất CSV"
+
+msgid "Add"
+msgstr "Thêm"
+
+msgid "Month"
+msgstr "Tháng"
+
+msgid "Type"
+msgstr "Loại"
+
+msgid "All"
+msgstr "Tất cả"
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "note or text"
+msgstr "ghi chú hoặc văn bản"
+
+msgid "Filter"
+msgstr "Bộ lọc"
+
+msgid "Reset"
+msgstr "Đặt lại"
+
+msgid "Net"
+msgstr "Ròng"
+
+msgid "Newer"
+msgstr "Mới hơn"
+
+msgid "Older"
+msgstr "Cũ hơn"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Trang %(a)s trên %(b)s"
+
+msgid "Confirm"
+msgstr "Xác nhận"
+
+msgid "Check before saving"
+msgstr "Kiểm tra trước khi lưu"
+
+msgid "You wrote:"
+msgstr "Bạn đã viết:"
+
+msgid "Save this one"
+msgstr "Lưu mục này"
+
+msgid "New category:"
+msgstr "Danh mục mới:"
+
+msgid "New:"
+msgstr "Mới:"
+
+msgid "New category…"
+msgstr "Danh mục mới…"
+
+msgid "New category name"
+msgstr "Tên danh mục mới"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Delete this permanently?"
+msgstr "Xóa vĩnh viễn mục này?"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Ask anything about your money"
+msgstr "Hỏi bất cứ điều gì về tài chính của bạn"
+
+msgid "Ask"
+msgstr "Hỏi"
+
+msgid "Thinking…"
+msgstr "Đang suy nghĩ…"
+
+msgid "Where did I spend the most last month?"
+msgstr "Tháng trước tôi đã chi tiêu nhiều nhất vào việc gì?"
+
+msgid "Where did I spend most last month?"
+msgstr "Tháng trước tôi đã chi tiêu nhiều nhất vào việc gì?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Tôi đã chi bao nhiêu cho xe kéo trong năm nay?"
+
+msgid "Rickshaw spending this year"
+msgstr "Chi tiêu xe kéo năm nay"
+
+msgid "income vs expense per month this year"
+msgstr "thu nhập so với chi phí mỗi tháng trong năm nay"
+
+msgid "Income vs expense per month"
+msgstr "Thu nhập so với chi tiêu hàng tháng"
+
+msgid "notes containing “%(k)s”"
+msgstr "ghi chú chứa “%(k)s”"
+
+msgid "Spent"
+msgstr "Đã chi"
+
+msgid "Earned"
+msgstr "Đã kiếm được"
+
+msgid "Group"
+msgstr "Nhóm"
+
+msgid "Count"
+msgstr "Số lượng"
+
+msgid "Total"
+msgstr "Tổng cộng"
+
+msgid "Matching transactions"
+msgstr "Các giao dịch khớp"
+
+msgid "first 50"
+msgstr "50 mục đầu tiên"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI chỉ hiểu câu hỏi của bạn; mọi con số ở đây đều được tính toán từ dữ liệu đã lưu."
+
+msgid "Your question"
+msgstr "Câu hỏi của bạn"
+
+msgid "Categories"
+msgstr "Danh mục"
+
+msgid "Add category"
+msgstr "Thêm danh mục"
+
+msgid "Edit category"
+msgstr "Chỉnh sửa danh mục"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI chọn từ các danh mục này. Khi không có danh mục phù hợp, nó sẽ gợi ý danh mục mới và hỏi bạn trước khi tạo. Hãy đặt ngân sách hàng tháng cho danh mục chi tiêu để xem thanh tiến trình trên bảng điều khiển."
+
+msgid "Expense categories"
+msgstr "Danh mục chi tiêu"
+
+msgid "Income categories"
+msgstr "Danh mục thu nhập"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "Budget"
+msgstr "Ngân sách"
+
+msgid "Icon"
+msgstr "Biểu tượng"
+
+msgid "Color"
+msgstr "Màu sắc"
+
+msgid "Monthly budget"
+msgstr "Ngân sách hàng tháng"
+
+msgid "e.g. 🍔"
+msgstr "ví dụ: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "Giới hạn chi tiêu hàng tháng tùy chọn (chỉ dành cho danh mục chi phí)."
+
+msgid "You already have a category with this name."
+msgstr "Bạn đã có một danh mục với tên này."
+
+msgid "Food"
+msgstr "Thực phẩm"
+
+msgid "Groceries"
+msgstr "Tạp hóa"
+
+msgid "Transport"
+msgstr "Di chuyển"
+
+msgid "Rent"
+msgstr "Tiền thuê nhà"
+
+msgid "Utilities"
+msgstr "Tiện ích"
+
+msgid "Mobile & Internet"
+msgstr "Di động & Internet"
+
+msgid "Health"
+msgstr "Sức khỏe"
+
+msgid "Education"
+msgstr "Giáo dục"
+
+msgid "Shopping"
+msgstr "Mua sắm"
+
+msgid "Entertainment"
+msgstr "Giải trí"
+
+msgid "Family"
+msgstr "Gia đình"
+
+msgid "Other Expense"
+msgstr "Chi phí khác"
+
+msgid "Salary"
+msgstr "Lương"
+
+msgid "Tuition"
+msgstr "Học phí"
+
+msgid "Freelance"
+msgstr "Tự do"
+
+msgid "Business"
+msgstr "Kinh doanh"
+
+msgid "Gift"
+msgstr "Quà tặng"
+
+msgid "Other Income"
+msgstr "Thu nhập khác"
+
+msgid "Amount must be greater than zero."
+msgstr "Số tiền phải lớn hơn không."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' là danh mục chi tiêu; hãy chọn danh mục thu nhập."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' là danh mục thu nhập; hãy chọn danh mục chi tiêu."
+
+msgid "Manual"
+msgstr "Thủ công"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Chào mừng! Các danh mục mặc định đã sẵn sàng. Hãy thử nhập khoản chi tiêu đầu tiên của bạn."
+
+msgid "Please type what you spent or earned."
+msgstr "Vui lòng nhập số tiền bạn đã chi hoặc đã kiếm được."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Tin nhắn quá dài (tối đa %(n)s ký tự)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI đang bận hoặc chưa được cấu hình. Vui lòng thử lại hoặc thêm thủ công."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI đang bận hoặc chưa được cấu hình. Vui lòng thử lại."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "Phản hồi của AI không được hiểu. Vui lòng thử lại."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Không tìm thấy thu nhập hoặc chi phí nào với số tiền trong tin nhắn của bạn."
+
+msgid "New categories: %(names)s."
+msgstr "Danh mục mới: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "%(n)s hàng đã bị bỏ qua vì số tiền, loại hoặc tài khoản không hợp lệ."
+
+msgid "Nothing was saved."
+msgstr "Không có gì được lưu lại."
+
+msgid "Transaction added."
+msgstr "Đã thêm giao dịch."
+
+msgid "Add transaction"
+msgstr "Thêm giao dịch"
+
+msgid "Transaction updated."
+msgstr "Đã cập nhật giao dịch."
+
+msgid "Edit transaction"
+msgstr "Chỉnh sửa giao dịch"
+
+msgid "Transaction deleted."
+msgstr "Đã xóa giao dịch."
+
+msgid "Category '%(name)s' added."
+msgstr "Đã thêm danh mục '%(name)s'."
+
+msgid "Category updated."
+msgstr "Đã cập nhật danh mục."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Đã xóa danh mục '%(name)s'."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s giao dịch hiện chưa được phân loại."
+
+msgid "Accounts"
+msgstr "Tài khoản"
+
+msgid "Account"
+msgstr "Tài khoản"
+
+msgid "Move money"
+msgstr "Chuyển tiền"
+
+msgid "Add account"
+msgstr "Thêm tài khoản"
+
+msgid "Edit account"
+msgstr "Chỉnh sửa tài khoản"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Nơi giữ tiền của bạn. Hãy nói với AI “bkash e 500 dilam” và nó sẽ sử dụng bKash, hoặc “amar bkash e 5000 ache” để đặt số dư cho bKash. Sử dụng Chuyển tiền cho các giao dịch rút ATM, bKash cash out và các chuyển khoản khác — chúng làm thay đổi số dư nhưng không phải là thu nhập hay chi tiêu. Đổi tên bất kỳ tài khoản nào (ví dụ: Bank → tên ngân hàng của bạn) bằng Chỉnh sửa."
+
+msgid "Total in all accounts"
+msgstr "Tổng số dư tất cả tài khoản"
+
+msgid "Default"
+msgstr "Mặc định"
+
+msgid "Recent transfers"
+msgstr "Chuyển khoản gần đây"
+
+msgid "From"
+msgstr "Từ"
+
+msgid "To"
+msgstr "Đến"
+
+msgid "No transfers yet."
+msgstr "Chưa có chuyển khoản nào."
+
+msgid "Manage"
+msgstr "Quản lý"
+
+msgid "e.g. 💵"
+msgstr "ví dụ: 💵"
+
+msgid "Opening balance"
+msgstr "Số dư đầu kỳ"
+
+msgid "Default account"
+msgstr "Tài khoản mặc định"
+
+msgid "You already have an account with this name."
+msgstr "Bạn đã có một tài khoản với tên này."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "ví dụ: Rút tiền ATM, rút tiền bKash"
+
+msgid "Pick two different accounts."
+msgstr "Vui lòng chọn hai tài khoản khác nhau."
+
+msgid "Cash"
+msgstr "Tiền mặt"
+
+msgid "Card"
+msgstr "Thẻ"
+
+msgid "Mobile banking"
+msgstr "Ngân hàng di động"
+
+msgid "Bank account"
+msgstr "Tài khoản ngân hàng"
+
+msgid "Other"
+msgstr "Khác"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "Số tiền đã có trong tài khoản này khi bạn bắt đầu sử dụng KhorochAi."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Được sử dụng khi bạn không nói rõ tài khoản nào (ví dụ: 'ăn trưa 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "Đã thêm tài khoản '%(name)s'."
+
+msgid "Account updated."
+msgstr "Đã cập nhật tài khoản."
+
+msgid "Account '%(name)s' deleted."
+msgstr "Đã xóa tài khoản '%(name)s'."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s giao dịch không còn tài khoản liên kết."
+
+msgid "Transfer saved."
+msgstr "Đã lưu chuyển khoản."
+
+msgid "Move money between accounts"
+msgstr "Chuyển tiền giữa các tài khoản"
+
+msgid "Transfer updated."
+msgstr "Đã cập nhật chuyển khoản."
+
+msgid "Edit transfer"
+msgstr "Chỉnh sửa chuyển khoản"
+
+msgid "Transfer deleted."
+msgstr "Đã xóa chuyển khoản."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "Đã đạt giới hạn AI cho hôm nay — sẽ đặt lại vào lúc nửa đêm"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI đã đạt giới hạn hôm nay cho mọi người. Nó sẽ đặt lại vào lúc nửa đêm. Bạn vẫn có thể thêm giao dịch thủ công."
+
+msgid "Transfer"
+msgstr "Chuyển khoản"
+
+msgid "Day"
+msgstr "Ngày"
+
+msgid "Week"
+msgstr "Tuần"
+
+msgid "Period"
+msgstr "Giai đoạn"
+
+msgid "No transactions in this period."
+msgstr "Không có giao dịch nào trong khoảng thời gian này."
+
+msgid "Dates:"
+msgstr "Ngày:"
+
+msgid "Show all dates"
+msgstr "Hiển thị tất cả ngày"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI hôm nay: Đã dùng %(p)s%%"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "Đã dùng %(used)s trên %(limit)s token AI hôm nay. AI chạy trên gói miễn phí với giới hạn hàng ngày; nó sẽ đặt lại vào lúc nửa đêm."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "Đã dùng hết giới hạn AI cho hôm nay — sẽ đặt lại vào lúc nửa đêm"
+
+msgid "AI usage today"
+msgstr "Mức sử dụng AI hôm nay"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Bạn đã sử dụng 100% hạn mức AI hôm nay. Hạn mức sẽ đặt lại vào lúc nửa đêm. Bạn vẫn có thể thêm giao dịch thủ công."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Password (again)"
+msgstr "Mật khẩu (nhập lại)"
+
+msgid "Forgot your password?"
+msgstr "Quên mật khẩu?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "Địa chỉ email và/hoặc mật khẩu bạn đã nhập không chính xác."
+
+msgid "A user is already registered with this email address."
+msgstr "Đã có người dùng đăng ký với địa chỉ email này."
+
+msgid "You must type the same password each time."
+msgstr "Bạn phải nhập cùng một mật khẩu mỗi lần."
+
+msgid "Code"
+msgstr "Mã"
+
+msgid "Incorrect code."
+msgstr "Mã không chính xác."
+
+msgid "Email Verification"
+msgstr "Xác minh Email"
+
+msgid "Enter Email Verification Code"
+msgstr "Nhập mã xác minh Email"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "Chúng tôi đã gửi mã đến %(recipient)s. Mã sẽ sớm hết hạn, vui lòng nhập sớm."
+
+msgid "Request new code"
+msgstr "Yêu cầu mã mới"
+
+msgid "Use a different email address"
+msgstr "Sử dụng địa chỉ email khác"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "Email xác nhận đã được gửi đến %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "Đã đăng nhập thành công với tư cách %(name)s."
+
+msgid "You have signed out."
+msgstr "Bạn đã đăng xuất."
+
+msgid "You have confirmed %(email)s."
+msgstr "Bạn đã xác nhận %(email)s."
+
+msgid "Password successfully changed."
+msgstr "Đã đổi mật khẩu thành công."
+
+msgid "Password successfully set."
+msgstr "Đã đặt mật khẩu thành công."
+
+msgid "Password Reset"
+msgstr "Đặt lại mật khẩu"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Bạn quên mật khẩu? Hãy nhập địa chỉ email của bạn bên dưới, chúng tôi sẽ gửi email để bạn đặt lại mật khẩu."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Vui lòng liên hệ với chúng tôi nếu bạn gặp khó khăn khi đặt lại mật khẩu."
+
+msgid "Reset My Password"
+msgstr "Đặt lại mật khẩu của tôi"
+
+msgid "Enter Password Reset Code"
+msgstr "Nhập mã đặt lại mật khẩu"
+
+msgid "Change Password"
+msgstr "Đổi mật khẩu"
+
+msgid "Your password is now changed."
+msgstr "Mật khẩu của bạn đã được thay đổi."
+
+msgid "New Password"
+msgstr "Mật khẩu mới"
+
+msgid "Current Password"
+msgstr "Mật khẩu hiện tại"
+
+msgid "Sign Out"
+msgstr "Đăng xuất"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Bạn có chắc chắn muốn đăng xuất không?"
+
+msgid "This password is too common."
+msgstr "Mật khẩu này quá phổ biến."
+
+msgid "This password is entirely numeric."
+msgstr "Mật khẩu này chỉ bao gồm các con số."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Mật khẩu quá giống với %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Mật khẩu của bạn không được quá giống với thông tin cá nhân khác của bạn."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Mật khẩu của bạn không được là mật khẩu phổ biến."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Mật khẩu của bạn không được chỉ bao gồm các con số."
+
+msgid "Continue with %(provider)s"
+msgstr "Tiếp tục với %(provider)s"
+
+msgid "or with email"
+msgstr "hoặc bằng email"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Bạn sẽ nhận được các danh mục và tài khoản có sẵn để bắt đầu. Chúng tôi sẽ gửi mã 6 chữ số qua email để xác nhận địa chỉ email của bạn."
+
+msgid "Profile"
+msgstr "Hồ sơ"
+
+msgid "Email (used to log in)"
+msgstr "Email (dùng để đăng nhập)"
+
+msgid "Change email"
+msgstr "Đổi email"
+
+msgid "Change password"
+msgstr "Đổi mật khẩu"
+
+msgid "Google / Facebook login"
+msgstr "Đăng nhập bằng Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Hiển thị trong ứng dụng. Bạn đăng nhập bằng email, không phải cái này."
+
+msgid "This username is already taken."
+msgstr "Tên người dùng này đã được sử dụng."
+
+msgid "Username updated."
+msgstr "Đã cập nhật tên người dùng."
+
+msgid "Hello from KhorochAi!"
+msgstr "Xin chào từ KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "Cảm ơn bạn đã sử dụng KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "Mã xác minh email của bạn là:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Nhập mã đó vào trang KhorochAi đang mở trong trình duyệt của bạn. Mã sẽ sớm hết hạn."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "Để xác nhận email, hãy mở %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "Nếu bạn không đăng ký KhorochAi, bạn có thể bỏ qua email này."
+
+msgid "Your verification code"
+msgstr "Mã xác minh của bạn"
+
+msgid "Your password reset code is:"
+msgstr "Mã đặt lại mật khẩu của bạn là:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Nếu bạn không yêu cầu đặt lại mật khẩu, bạn có thể bỏ qua email này. Mật khẩu của bạn không thay đổi."
+
+msgid "Your password reset code"
+msgstr "Mã đặt lại mật khẩu của bạn"
+
+msgid "Set balance"
+msgstr "Đặt số dư"
+
+msgid "Balance now"
+msgstr "Số dư hiện tại"
+
+msgid "Balance updated: %(list)s."
+msgstr "Số dư đã cập nhật: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Chào buổi sáng, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Chào buổi chiều, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "Chào buổi tối, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Nói thay vì gõ"
+
+msgid "Stop recording"
+msgstr "Dừng ghi âm"
+
+msgid "Writing what you said…"
+msgstr "Đang ghi lại những gì bạn nói…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Quyền truy cập micrô bị chặn. Hãy cho phép trong cài đặt trình duyệt của bạn và thử lại."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Quá ngắn. Hãy đợi một chút rồi nói, sau đó chạm dừng."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Không thể gửi bản ghi. Kiểm tra kết nối của bạn và thử lại."
+
+msgid "No recording was received."
+msgstr "Không nhận được bản ghi nào."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "Bản ghi âm quá dài. Vui lòng giữ dưới một phút."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Hiện không thể chuyển bản ghi thành văn bản. Vui lòng thử lại hoặc nhập văn bản."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Tôi không nghe thấy gì cả. Vui lòng thử lại gần mic hơn."
+
+msgid "Set budget"
+msgstr "Đặt ngân sách"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Đã đặt ngân sách hàng tháng: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (đã xóa)"
+
+msgid "Help & contact"
+msgstr "Trợ giúp & liên hệ"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Mọi thứ hoạt động bằng cách nhập hoặc nói bằng tiếng Anh, বাংলা hoặc Banglish đơn giản. Bạn luôn thấy bản xem trước trước khi bất kỳ thứ gì được lưu."
+
+msgid "How to use KhorochAi"
+msgstr "Cách sử dụng KhorochAi"
+
+msgid "Good to know"
+msgstr "Thông tin hữu ích"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI chỉ đọc văn bản của bạn; mọi tổng số và số dư đều được ứng dụng tính toán từ dữ liệu đã lưu."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "Việc sử dụng AI có hạn mức hàng ngày (hiển thị là “AI hôm nay: đã dùng x%”). Hạn mức này đặt lại vào nửa đêm, và bạn luôn có thể thêm giao dịch thủ công."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Những gì bạn nhập hoặc nói sẽ được gửi đến Google Gemini (hoặc Groq) để xử lý. Đừng bao gồm số thẻ hoặc mật khẩu."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Thay đổi chủ đề, ngôn ngữ và tên người dùng của bạn từ menu ở góc trên bên phải."
+
+msgid "Contact"
+msgstr "Liên hệ"
+
+msgid "Questions, problems or ideas"
+msgstr "Câu hỏi, vấn đề hoặc ý tưởng"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Viết cho chúng tôi và chúng tôi sẽ phản hồi lại bạn."
+
+msgid "Developer"
+msgstr "Nhà phát triển"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi được xây dựng bởi %(name)s."
+
+msgid "Account menu"
+msgstr "Menu tài khoản"
+
+msgid "First name"
+msgstr "Tên"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Hiển thị trong lời chào và menu."
+
+msgid "Profile updated."
+msgstr "Hồ sơ đã được cập nhật."
+
+msgid "Add spending or income"
+msgstr "Thêm chi tiêu hoặc thu nhập"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "Nhập những gì đã xảy ra vào ô trên bảng điều khiển và nhấn Thêm bằng AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "Chạm vào mic trong hộp, nói, sau đó chạm dừng. Kiểm tra văn bản, rồi nhấn Thêm bằng AI."
+
+msgid "Accounts and moving money"
+msgstr "Tài khoản và chuyển tiền"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Cho biết bạn đã dùng tài khoản nào hoặc chuyển tiền giữa các tài khoản của bạn."
+
+msgid "Set an account balance"
+msgstr "Đặt số dư tài khoản"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "Cho AI biết số dư hiện tại của tài khoản."
+
+msgid "Monthly budgets"
+msgstr "Ngân sách hàng tháng"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Đặt giới hạn chi tiêu cho một danh mục và theo dõi thanh tiến trình trên bảng điều khiển."
+
+msgid "Ask about your money"
+msgstr "Hỏi về tiền của bạn"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Sử dụng Ask AI để xem tổng số, phân tích và so sánh."
+
+msgid "Portfolio"
+msgstr "Danh mục đầu tư"
+
+msgid "Help"
+msgstr "Trợ giúp"
+
+msgid "About & contact"
+msgstr "Giới thiệu & liên hệ"
+
+msgid "Made by"
+msgstr "Được tạo bởi"
+
+msgid "Developer, KhorochAi"
+msgstr "Nhà phát triển, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Chúng tôi có thể giúp gì cho bạn?"
+
+msgid "Still need help?"
+msgstr "Bạn vẫn cần trợ giúp?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Viết cho chúng tôi — mọi câu hỏi, vấn đề và ý tưởng đều được hoan nghênh."
+
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
+
+msgid "Money tracking that speaks your language"
+msgstr "Quản lý tài chính bằng ngôn ngữ của bạn"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi cho phép bạn theo dõi chi tiêu và thu nhập chỉ bằng cách nhập hoặc nói — bằng tiếng Anh, বাংলা hoặc Banglish. AI hiểu ý bạn; ứng dụng sẽ thực hiện tất cả các phép tính."
+
+msgid "Type or talk"
+msgstr "Nhập hoặc nói"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Không cần điền biểu mẫu. Chỉ cần nói “aaj lunch 250 bkash e” và giao dịch sẽ được ghi lại."
+
+msgid "See where it goes"
+msgstr "Xem tiền đi đâu"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Tài khoản, ngân sách và biểu đồ giúp bạn xem nhanh tình hình tài chính, và Ask AI sẽ trả lời các câu hỏi của bạn."
+
+msgid "Correct by design"
+msgstr "Thiết kế chuẩn xác"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "Bạn kiểm tra mọi mục trước khi lưu và tổng số luôn được tính toán từ dữ liệu của chính bạn."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Câu hỏi, vấn đề hoặc ý tưởng — hãy viết cho chúng tôi và chúng tôi sẽ phản hồi lại bạn."
+
+msgid "Read the help guide"
+msgstr "Đọc hướng dẫn trợ giúp"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Ứng dụng theo dõi chi tiêu & thu nhập mà bạn có thể trò chuyện"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Chỉ cần nói ra. Hisab của bạn đã xong."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Chỉ cần nói ra. Hisab của bạn đã xong. Theo dõi chi tiêu và thu nhập bằng cách nhập hoặc nói bằng tiếng Anh, বাংলা hoặc Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Miễn phí · Tiếng Anh, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "Nhập hoặc nói những gì bạn đã chi hoặc kiếm được — như cách bạn kể với bạn bè. KhorochAi sẽ chuyển nó thành các mục gọn gàng, cập nhật tài khoản và ngân sách của bạn, đồng thời trả lời các câu hỏi về tiền bạc của bạn."
+
+msgid "Create free account"
+msgstr "Tạo tài khoản miễn phí"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "Đăng ký bằng email của bạn. Bạn kiểm tra mọi mục trước khi lưu."
+
+msgid "Write it the way you talk"
+msgstr "Viết theo cách bạn nói"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Một tin nhắn có thể chứa nhiều mục — chi tiêu, thu nhập, chuyển khoản giữa các tài khoản, thậm chí cả ngân sách. AI sẽ đọc tin nhắn đó; bạn chỉ cần kiểm tra bản xem trước và lưu lại."
+
+msgid "How it works"
+msgstr "Cách hoạt động"
+
+msgid "Type or say it"
+msgstr "Nhập hoặc nói"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Viết hoặc nói những gì đã xảy ra, bằng tiếng Anh, বাংলা hoặc Banglish. Nhiều mục trong một tin nhắn đều được."
+
+msgid "Check the preview"
+msgstr "Kiểm tra bản xem trước"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "Xem chính xác những gì AI đã hiểu — số tiền, danh mục, tài khoản và ngày tháng. Chỉnh sửa bất kỳ mục nào bằng một lần chạm."
+
+msgid "Saved and up to date"
+msgstr "Đã lưu và cập nhật"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "Tổng số dư, số dư tài khoản, ngân sách và biểu đồ của bạn được cập nhật ngay lập tức."
+
+msgid "Everything you need, nothing you don't"
+msgstr "Mọi thứ bạn cần, không có gì thừa thãi"
+
+msgid "Voice input"
+msgstr "Nhập liệu bằng giọng nói"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "Chạm vào mic và nói. Lời của bạn sẽ xuất hiện trong hộp để bạn kiểm tra."
+
+msgid "Your language"
+msgstr "Ngôn ngữ của bạn"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা hoặc Banglish — và toàn bộ ứng dụng có thể chuyển sang tiếng Bangla."
+
+msgid "All your accounts"
+msgstr "Tất cả tài khoản của bạn"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Tiền mặt, bKash, Nagad, Rocket, ngân hàng và thẻ, với tính năng chuyển tiền giữa các tài khoản."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Đặt giới hạn cho mỗi danh mục và theo dõi thanh tiến trình khi bạn chi tiêu."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — nhận câu trả lời từ chính dữ liệu của bạn."
+
+msgid "Clear dashboard"
+msgstr "Xóa bảng điều khiển"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Thu nhập, chi tiêu, số dư, nơi tiền của bạn đã đi và biểu đồ theo ngày."
+
+msgid "Light and dark"
+msgstr "Sáng và tối"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Thiết kế nhẹ nhàng theo chế độ tối của điện thoại, hoặc tự chọn theo ý bạn."
+
+msgid "Export to CSV"
+msgstr "Xuất sang CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "Tải xuống các giao dịch của bạn cho Excel hoặc Google Sheets bất cứ lúc nào."
+
+msgid "Start your hisab in a minute"
+msgstr "Bắt đầu quản lý tài chính của bạn trong một phút"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "Tạo tài khoản miễn phí bằng email của bạn, sau đó chỉ cần nói cho KhorochAi biết bạn đã chi tiêu gì hôm nay."
+
+msgid "See how it works"
+msgstr "Xem cách hoạt động"
+
+msgid "Free to use"
+msgstr "Sử dụng miễn phí"
+
+msgid "You confirm every entry"
+msgstr "Bạn xác nhận mọi mục"
+
+msgid "Works on phone and computer"
+msgstr "Hoạt động trên điện thoại và máy tính"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Viết theo cách bạn nói — hoặc chỉ cần nói."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "Nhập liệu hoặc nhấn vào mic và nói. Một tin nhắn có thể chứa nhiều mục — chi tiêu, thu nhập, chuyển khoản giữa các tài khoản, thậm chí là ngân sách. Bạn kiểm tra bản xem trước rồi lưu lại."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Miễn phí · বাংলা, Tiếng Anh, Banglish & bất kỳ ngôn ngữ nào"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Viết theo cách bạn nói — bằng bất kỳ ngôn ngữ nào, hoặc chỉ cần nói."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Tiếng Bangla, tiếng Anh, Banglish — hoặc bất kỳ ngôn ngữ nào bạn nói. Ứng dụng hỗ trợ 9 ngôn ngữ."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Cho tôi biết bạn đã chi hoặc kiếm được bao nhiêu — বাংলা, tiếng Anh, Banglish hoặc bất kỳ ngôn ngữ nào"
+
+msgid "Currency"
+msgstr "Tiền tệ"
+
+msgid "Used for every amount in the app."
+msgstr "Được sử dụng cho mọi số tiền trong ứng dụng."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI đã tìm thấy %(n)s giao dịch. Chỉnh sửa bất kỳ mục nào sai, rồi lưu."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s giao dịch"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "Đã lưu %(n)s giao dịch."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Mật khẩu quá ngắn. Phải có ít nhất %d ký tự."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."

@@ -268,7 +268,10 @@ def parse_transactions(text, today, expense_names, income_names, account_names=(
 
 TITLE_LANGUAGES = {
     "bn": "Bangla (বাংলা script)", "hi": "Hindi", "ur": "Urdu", "ar": "Arabic", "es": "Spanish",
-    "fr": "French", "zh-hans": "Simplified Chinese", "id": "Indonesian",
+    "fr": "French", "zh-hans": "Simplified Chinese", "id": "Indonesian", "ne": "Nepali", "si": "Sinhala",
+    "ta": "Tamil", "ms": "Malay", "th": "Thai", "vi": "Vietnamese", "fil": "Filipino", "ja": "Japanese",
+    "ko": "Korean", "my": "Burmese", "fa": "Persian", "tr": "Turkish", "pt": "Portuguese", "ru": "Russian",
+    "de": "German", "it": "Italian", "nl": "Dutch", "pl": "Polish", "uk": "Ukrainian", "sw": "Swahili",
 }
 
 

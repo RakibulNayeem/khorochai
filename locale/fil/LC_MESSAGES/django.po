@@ -1,0 +1,1162 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fil\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Settings"
+msgstr "Mga Setting"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Light"
+msgstr "Light"
+
+msgid "Dark"
+msgstr "Dark"
+
+msgid "System"
+msgstr "System"
+
+msgid "Language"
+msgstr "Wika"
+
+msgid "All settings"
+msgstr "Lahat ng settings"
+
+msgid "Log out"
+msgstr "Mag-log out"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Transactions"
+msgstr "Mga Transaksyon"
+
+msgid "Categories &amp; Budgets"
+msgstr "Mga Kategorya &amp; Budget"
+
+msgid "Ask AI"
+msgstr "Magtanong sa AI"
+
+msgid "Close"
+msgstr "Isara"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "Naka-sign in bilang <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Sinusunod ng system ang dark mode setting ng iyong telepono o computer."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Binabago ang mga menu, button, at mensahe ng app. Maaari kang laging mag-type o makipag-usap sa AI sa anumang wika — বাংলা, English, Banglish at iba pa."
+
+msgid "These settings are saved in this browser."
+msgstr "Ang mga setting na ito ay naka-save sa browser na ito."
+
+msgid "Log in"
+msgstr "Mag-log in"
+
+msgid "Welcome back"
+msgstr "Welcome back"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "I-track ang iyong pera sa pamamagitan ng pag-type, sa English o বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Maling username o password."
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "No account?"
+msgstr "Walang account?"
+
+msgid "Sign up"
+msgstr "Mag-sign up"
+
+msgid "Create your account"
+msgstr "Gumawa ng iyong account"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Makakakuha ka ng mga ready-made na kategorya para makapagsimula."
+
+msgid "Already have an account?"
+msgstr "May account ka na ba?"
+
+msgid "Email (optional)"
+msgstr "Email (opsyonal)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Sabihin sa akin ang iyong ginastos o kinita — English, বাংলা, o Banglish"
+
+msgid "e.g."
+msgstr "halimbawa"
+
+msgid "Add manually"
+msgstr "Magdagdag nang manual"
+
+msgid "Add with AI"
+msgstr "Magdagdag gamit ang AI"
+
+msgid "Reading…"
+msgstr "Binabasa…"
+
+msgid "Prev"
+msgstr "Nakaraan"
+
+msgid "Next"
+msgstr "Susunod"
+
+msgid "This month"
+msgstr "Ngayong buwan"
+
+msgid "Income"
+msgstr "Kita"
+
+msgid "Expense"
+msgstr "Gastos"
+
+msgid "Balance this month"
+msgstr "Balanse ngayong buwan"
+
+msgid "Saved %(p)s%% of income"
+msgstr "Na-save ang %(p)s%% ng kita"
+
+msgid "All-time balance"
+msgstr "Kabuuang balanse"
+
+msgid "Where your money went"
+msgstr "Saan napunta ang iyong pera"
+
+msgid "No expenses this month yet."
+msgstr "Wala pang mga gastos ngayong buwan."
+
+msgid "Day by day"
+msgstr "Araw-araw"
+
+msgid "Budgets"
+msgstr "Mga Budget"
+
+msgid "Set budgets"
+msgstr "Magtakda ng mga budget"
+
+msgid "Over budget by %(a)s"
+msgstr "Lampas sa badyet ng %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% ang nagamit"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Wala pang mga badyet. I-type o sabihin ang “khabar e mashe 6000 budget” sa kahon sa itaas, o magtakda ng isa sa ilalim ng Mga Kategorya."
+
+msgid "Recent transactions"
+msgstr "Mga kamakailang transaksyon"
+
+msgid "See all"
+msgstr "Tingnan lahat"
+
+msgid "Date"
+msgstr "Petsa"
+
+msgid "Category"
+msgstr "Kategorya"
+
+msgid "Note"
+msgstr "Tala"
+
+msgid "Amount"
+msgstr "Halaga"
+
+msgid "Uncategorized"
+msgstr "Walang kategorya"
+
+msgid "Added with AI"
+msgstr "Idinagdag gamit ang AI"
+
+msgid "Edit"
+msgstr "I-edit"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Wala pang mga transaksyon. Mag-type ng kahit ano sa kahon sa itaas!"
+
+msgid "Export CSV"
+msgstr "I-export ang CSV"
+
+msgid "Add"
+msgstr "Magdagdag"
+
+msgid "Month"
+msgstr "Buwan"
+
+msgid "Type"
+msgstr "Uri"
+
+msgid "All"
+msgstr "Lahat"
+
+msgid "Search"
+msgstr "Maghanap"
+
+msgid "note or text"
+msgstr "tala o teksto"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Reset"
+msgstr "I-reset"
+
+msgid "Net"
+msgstr "Neto"
+
+msgid "Newer"
+msgstr "Mas bago"
+
+msgid "Older"
+msgstr "Mas luma"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Pahina %(a)s ng %(b)s"
+
+msgid "Confirm"
+msgstr "Kumpirmahin"
+
+msgid "Check before saving"
+msgstr "Suriin bago i-save"
+
+msgid "You wrote:"
+msgstr "Ang isinulat mo:"
+
+msgid "Save this one"
+msgstr "I-save ito"
+
+msgid "New category:"
+msgstr "Bagong kategorya:"
+
+msgid "New:"
+msgstr "Bago:"
+
+msgid "New category…"
+msgstr "Bagong kategorya…"
+
+msgid "New category name"
+msgstr "Pangalan ng bagong kategorya"
+
+msgid "Save"
+msgstr "I-save"
+
+msgid "Cancel"
+msgstr "Kanselahin"
+
+msgid "Delete this permanently?"
+msgstr "Burahin ito nang permanente?"
+
+msgid "Delete"
+msgstr "Burahin"
+
+msgid "Ask anything about your money"
+msgstr "Magtanong ng kahit ano tungkol sa iyong pera"
+
+msgid "Ask"
+msgstr "Magtanong"
+
+msgid "Thinking…"
+msgstr "Nag-iisip…"
+
+msgid "Where did I spend the most last month?"
+msgstr "Saan ako pinakamaraming gumastos noong nakaraang buwan?"
+
+msgid "Where did I spend most last month?"
+msgstr "Saan ako pinakamaraming gumastos noong nakaraang buwan?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Magkano ang nagastos ko sa rickshaw ngayong taon?"
+
+msgid "Rickshaw spending this year"
+msgstr "Gastos sa traysikel ngayong taon"
+
+msgid "income vs expense per month this year"
+msgstr "kita vs gastos bawat buwan ngayong taon"
+
+msgid "Income vs expense per month"
+msgstr "Kita vs gastos bawat buwan"
+
+msgid "notes containing “%(k)s”"
+msgstr "mga tala na naglalaman ng “%(k)s”"
+
+msgid "Spent"
+msgstr "Nagastos"
+
+msgid "Earned"
+msgstr "Kinita"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "Count"
+msgstr "Bilang"
+
+msgid "Total"
+msgstr "Kabuuan"
+
+msgid "Matching transactions"
+msgstr "Mga katugmang transaksyon"
+
+msgid "first 50"
+msgstr "unang 50"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "Naintindihan lang ng AI ang iyong tanong; ang bawat numero rito ay kinalkula mula sa iyong mga naka-save na data."
+
+msgid "Your question"
+msgstr "Ang iyong tanong"
+
+msgid "Categories"
+msgstr "Mga Kategorya"
+
+msgid "Add category"
+msgstr "Magdagdag ng kategorya"
+
+msgid "Edit category"
+msgstr "I-edit ang kategorya"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "Pinipili ng AI mula sa mga kategoryang ito. Kapag walang tugma, magmumungkahi ito ng bago at tatanungin ka bago ito gawin. Magbigay ng buwanang budget sa kategorya ng gastos para makita ang mga progress bar sa dashboard."
+
+msgid "Expense categories"
+msgstr "Mga kategorya ng gastos"
+
+msgid "Income categories"
+msgstr "Mga kategorya ng kita"
+
+msgid "Name"
+msgstr "Pangalan"
+
+msgid "Budget"
+msgstr "Budget"
+
+msgid "Icon"
+msgstr "Icon"
+
+msgid "Color"
+msgstr "Kulay"
+
+msgid "Monthly budget"
+msgstr "Buwanang badyet"
+
+msgid "e.g. 🍔"
+msgstr "halimbawa: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "Opsyonal na limitasyon sa buwanang paggastos (para sa mga kategorya ng gastos lamang)."
+
+msgid "You already have a category with this name."
+msgstr "Mayroon ka nang kategorya na may ganitong pangalan."
+
+msgid "Food"
+msgstr "Pagkain"
+
+msgid "Groceries"
+msgstr "Groceries"
+
+msgid "Transport"
+msgstr "Transportasyon"
+
+msgid "Rent"
+msgstr "Upa"
+
+msgid "Utilities"
+msgstr "Utilities"
+
+msgid "Mobile & Internet"
+msgstr "Mobile & Internet"
+
+msgid "Health"
+msgstr "Kalusugan"
+
+msgid "Education"
+msgstr "Edukasyon"
+
+msgid "Shopping"
+msgstr "Pamimili"
+
+msgid "Entertainment"
+msgstr "Entertainment"
+
+msgid "Family"
+msgstr "Pamilya"
+
+msgid "Other Expense"
+msgstr "Ibang Gastos"
+
+msgid "Salary"
+msgstr "Sahod"
+
+msgid "Tuition"
+msgstr "Tuition"
+
+msgid "Freelance"
+msgstr "Freelance"
+
+msgid "Business"
+msgstr "Negosyo"
+
+msgid "Gift"
+msgstr "Regalo"
+
+msgid "Other Income"
+msgstr "Ibang Kita"
+
+msgid "Amount must be greater than zero."
+msgstr "Dapat ay higit sa zero ang halaga."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "Ang '%(name)s' ay isang expense category; pumili ng income category."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "Ang '%(name)s' ay isang income category; pumili ng expense category."
+
+msgid "Manual"
+msgstr "Manual"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Welcome! Handa na ang mga default na kategorya. Subukang i-type ang iyong unang gastos."
+
+msgid "Please type what you spent or earned."
+msgstr "Mangyaring i-type ang iyong ginastos o kinita."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Masyadong mahaba ang mensahe (max %(n)s characters)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "Busy ang AI o hindi naka-configure ngayon. Pakisubukan muli, o idagdag ito nang manu-mano."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "Busy ang AI o hindi naka-configure ngayon. Pakisubukan muli."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "Hindi naintindihan ang sagot ng AI. Pakisubukan muli."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Walang nahanap na kita o gastos na may halaga sa iyong mensahe."
+
+msgid "New categories: %(names)s."
+msgstr "Mga bagong kategorya: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "%(n)s row(s) ang nilaktawan dahil hindi wasto ang halaga, uri, o account."
+
+msgid "Nothing was saved."
+msgstr "Walang na-save."
+
+msgid "Transaction added."
+msgstr "Naidagdag na ang transaksyon."
+
+msgid "Add transaction"
+msgstr "Magdagdag ng transaksyon"
+
+msgid "Transaction updated."
+msgstr "Na-update na ang transaksyon."
+
+msgid "Edit transaction"
+msgstr "I-edit ang transaksyon"
+
+msgid "Transaction deleted."
+msgstr "Nabura na ang transaksyon."
+
+msgid "Category '%(name)s' added."
+msgstr "Naidagdag ang kategoryang '%(name)s'."
+
+msgid "Category updated."
+msgstr "Na-update ang kategorya."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Nabura ang kategoryang '%(name)s'."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s transaksyon ang kasalukuyang Uncategorized."
+
+msgid "Accounts"
+msgstr "Mga Account"
+
+msgid "Account"
+msgstr "Account"
+
+msgid "Move money"
+msgstr "Ilipat ang pera"
+
+msgid "Add account"
+msgstr "Magdagdag ng account"
+
+msgid "Edit account"
+msgstr "I-edit ang account"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Kung saan nakatago ang iyong pera. Sabihin sa AI ang “bkash e 500 dilam” at gagamitin nito ang bKash, o “amar bkash e 5000 ache” para i-set ang balance ng bKash. Gamitin ang Move money para sa mga ATM withdrawal, bKash cash out at iba pang transfer — binabago nito ang mga balance pero hindi ito kita o gastos. Palitan ang pangalan ng anumang account (hal. Bank → pangalan ng iyong bangko) gamit ang Edit."
+
+msgid "Total in all accounts"
+msgstr "Kabuuan sa lahat ng account"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Recent transfers"
+msgstr "Mga kamakailang transfer"
+
+msgid "From"
+msgstr "Mula sa"
+
+msgid "To"
+msgstr "Para sa"
+
+msgid "No transfers yet."
+msgstr "Wala pang mga transfer."
+
+msgid "Manage"
+msgstr "Pamahalaan"
+
+msgid "e.g. 💵"
+msgstr "halimbawa: 💵"
+
+msgid "Opening balance"
+msgstr "Panimulang balanse"
+
+msgid "Default account"
+msgstr "Default na account"
+
+msgid "You already have an account with this name."
+msgstr "Mayroon ka nang account na may ganitong pangalan."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "halimbawa: ATM withdrawal, bKash cash out"
+
+msgid "Pick two different accounts."
+msgstr "Pumili ng dalawang magkaibang account."
+
+msgid "Cash"
+msgstr "Cash"
+
+msgid "Card"
+msgstr "Card"
+
+msgid "Mobile banking"
+msgstr "Mobile banking"
+
+msgid "Bank account"
+msgstr "Bank account"
+
+msgid "Other"
+msgstr "Iba pa"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "Pera na nasa account na noong nagsimula kang gumamit ng KhorochAi."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Ginagamit kapag hindi mo nabanggit kung aling account (hal. 'lunch 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "Naidagdag ang account na '%(name)s'."
+
+msgid "Account updated."
+msgstr "Na-update ang account."
+
+msgid "Account '%(name)s' deleted."
+msgstr "Nabura ang account na '%(name)s'."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s transaksyon ang wala nang account."
+
+msgid "Transfer saved."
+msgstr "Na-save na ang transfer."
+
+msgid "Move money between accounts"
+msgstr "Ilipat ang pera sa pagitan ng mga account"
+
+msgid "Transfer updated."
+msgstr "Na-update na ang transfer."
+
+msgid "Edit transfer"
+msgstr "I-edit ang transfer"
+
+msgid "Transfer deleted."
+msgstr "Nabura na ang transfer."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "Naabot na ang AI limit para sa lahat ngayong araw — magre-reset sa hatinggabi"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "Naabot na ng AI ang limitasyon para sa araw na ito. Magre-reset ito sa hatinggabi. Maaari ka pa ring magdagdag ng mga transaksyon nang manu-mano."
+
+msgid "Transfer"
+msgstr "Transfer"
+
+msgid "Day"
+msgstr "Araw"
+
+msgid "Week"
+msgstr "Linggo"
+
+msgid "Period"
+msgstr "Panahon"
+
+msgid "No transactions in this period."
+msgstr "Walang mga transaksyon sa panahong ito."
+
+msgid "Dates:"
+msgstr "Mga petsa:"
+
+msgid "Show all dates"
+msgstr "Ipakita ang lahat ng petsa"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI ngayong araw: %(p)s%% ang nagamit"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "%(used)s ng %(limit)s AI tokens ang nagamit ngayong araw. Ang AI ay tumatakbo sa free plan na may daily limit; magre-reset ito sa hatinggabi."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "Naubos na ang AI limit para ngayong araw — magre-reset sa hatinggabi"
+
+msgid "AI usage today"
+msgstr "Paggamit ng AI ngayong araw"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Nagamit mo na ang 100% ng iyong AI allowance para sa araw na ito. Magre-reset ito sa hatinggabi. Maaari mo pa ring idagdag nang manu-mano ang iyong mga transaksyon."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Password (again)"
+msgstr "Password (ulit)"
+
+msgid "Forgot your password?"
+msgstr "Nakalimutan ang password?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "Ang email address at/o password na ibinigay mo ay hindi tama."
+
+msgid "A user is already registered with this email address."
+msgstr "May user na nakarehistro na gamit ang email address na ito."
+
+msgid "You must type the same password each time."
+msgstr "Dapat mong i-type ang parehong password sa bawat pagkakataon."
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Incorrect code."
+msgstr "Maling code."
+
+msgid "Email Verification"
+msgstr "Email Verification"
+
+msgid "Enter Email Verification Code"
+msgstr "Ilagay ang Email Verification Code"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "Nagpadala kami ng code sa %(recipient)s. Mag-e-expire ang code sa madaling panahon, kaya pakilagay ito agad."
+
+msgid "Request new code"
+msgstr "Humiling ng bagong code"
+
+msgid "Use a different email address"
+msgstr "Gumamit ng ibang email address"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "Naipadala na ang confirmation email sa %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "Matagumpay na naka-sign in bilang %(name)s."
+
+msgid "You have signed out."
+msgstr "Naka-sign out ka na."
+
+msgid "You have confirmed %(email)s."
+msgstr "Nakumpirma mo na ang %(email)s."
+
+msgid "Password successfully changed."
+msgstr "Matagumpay na nabago ang password."
+
+msgid "Password successfully set."
+msgstr "Matagumpay na naitakda ang password."
+
+msgid "Password Reset"
+msgstr "Pag-reset ng Password"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Nakalimutan ang password? Ilagay ang iyong email address sa ibaba, at magpapadala kami ng email para ma-reset ito."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Mangyaring makipag-ugnayan sa amin kung mayroon kang anumang problema sa pag-reset ng iyong password."
+
+msgid "Reset My Password"
+msgstr "I-reset ang Aking Password"
+
+msgid "Enter Password Reset Code"
+msgstr "Ilagay ang Password Reset Code"
+
+msgid "Change Password"
+msgstr "Palitan ang Password"
+
+msgid "Your password is now changed."
+msgstr "Napalitan na ang iyong password."
+
+msgid "New Password"
+msgstr "Bagong Password"
+
+msgid "Current Password"
+msgstr "Kasalukuyang Password"
+
+msgid "Sign Out"
+msgstr "Mag-sign Out"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Sigurado ka bang gusto mong mag-sign out?"
+
+msgid "This password is too common."
+msgstr "Ang password na ito ay masyadong karaniwan."
+
+msgid "This password is entirely numeric."
+msgstr "Ang password na ito ay puro numero lamang."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Ang password ay masyadong katulad ng %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Ang iyong password ay hindi maaaring masyadong katulad ng iyong iba pang personal na impormasyon."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Ang iyong password ay hindi maaaring maging karaniwang ginagamit na password."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Ang iyong password ay hindi maaaring puro numero lamang."
+
+msgid "Continue with %(provider)s"
+msgstr "Magpatuloy gamit ang %(provider)s"
+
+msgid "or with email"
+msgstr "o gamit ang email"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Makakakuha ka ng mga ready-made na kategorya at account para makapagsimula. Magpapadala kami ng 6-digit na code sa iyong email para kumpirmahin ito."
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "Email (used to log in)"
+msgstr "Email (ginagamit sa pag-log in)"
+
+msgid "Change email"
+msgstr "Palitan ang email"
+
+msgid "Change password"
+msgstr "Palitan ang password"
+
+msgid "Google / Facebook login"
+msgstr "Mag-login gamit ang Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Ipinapakita sa app. Mag-log in gamit ang iyong email, hindi ito."
+
+msgid "This username is already taken."
+msgstr "Ang username na ito ay ginagamit na."
+
+msgid "Username updated."
+msgstr "Na-update na ang username."
+
+msgid "Hello from KhorochAi!"
+msgstr "Hello mula sa KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "Salamat sa paggamit ng KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "Ang iyong email verification code ay:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Ilagay ito sa pahina ng KhorochAi na nakabukas sa iyong browser. Malapit nang mag-expire ang code."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "Para kumpirmahin ang iyong email, buksan ang %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "Kung hindi ka nag-sign up para sa KhorochAi, maaari mong balewalain ang email na ito."
+
+msgid "Your verification code"
+msgstr "Ang iyong verification code"
+
+msgid "Your password reset code is:"
+msgstr "Ang iyong password reset code ay:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Kung hindi mo hiniling na i-reset ang iyong password, maaari mong balewalain ang email na ito. Hindi nabago ang iyong password."
+
+msgid "Your password reset code"
+msgstr "Ang iyong password reset code"
+
+msgid "Set balance"
+msgstr "Itakda ang balanse"
+
+msgid "Balance now"
+msgstr "Balanse ngayon"
+
+msgid "Balance updated: %(list)s."
+msgstr "Na-update ang balanse: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Magandang umaga, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Magandang hapon, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "Magandang gabi, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Magsalita sa halip na mag-type"
+
+msgid "Stop recording"
+msgstr "Itigil ang pag-record"
+
+msgid "Writing what you said…"
+msgstr "Isinusulat ang sinabi mo…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Naka-block ang access sa mikropono. Payagan ito sa settings ng iyong browser at subukang muli."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Masyadong maikli iyon. Sandali lang at magsalita, pagkatapos ay i-tap ang stop."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Hindi maipadala ang recording. Suriin ang iyong koneksyon at subukan muli."
+
+msgid "No recording was received."
+msgstr "Walang natanggap na recording."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "Masyadong mahaba ang recording. Pakipanatili itong wala pang isang minuto."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Hindi ma-convert ang recording sa text sa ngayon. Pakisubukan muli o i-type na lang."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Hindi kita narinig. Pakisubukang muli nang mas malapit sa mic."
+
+msgid "Set budget"
+msgstr "Magtakda ng budget"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Itinakda ang buwanang badyet: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (tinanggal)"
+
+msgid "Help & contact"
+msgstr "Tulong at contact"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Gumagana ang lahat sa pamamagitan ng pag-type o pagsasalita sa simpleng English, বাংলা o Banglish. Laging may preview bago ma-save ang anumang bagay."
+
+msgid "How to use KhorochAi"
+msgstr "Paano gamitin ang KhorochAi"
+
+msgid "Good to know"
+msgstr "Mabuting malaman"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "Binabasa lang ng AI ang iyong text; ang bawat kabuuan at balanse ay kinakalkula ng app mula sa iyong mga naka-save na data."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "Ang paggamit ng AI ay may daily allowance (ipinapakita bilang “AI today: x% used”). Magre-reset ito sa hatinggabi, at maaari kang laging magdagdag nang manual."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Ang iyong tina-type o sinasabi ay ipinapadala sa Google Gemini (o Groq) para maintindihan. Huwag maglagay ng mga card number o password."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Baguhin ang tema, wika, at username mula sa menu sa kanang bahagi sa itaas."
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Questions, problems or ideas"
+msgstr "Mga tanong, problema o ideya"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Sumulat sa amin at babalikan ka namin."
+
+msgid "Developer"
+msgstr "Developer"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "Ang KhorochAi ay binuo ni %(name)s."
+
+msgid "Account menu"
+msgstr "Menu ng account"
+
+msgid "First name"
+msgstr "Pangalan"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Ipinapakita sa pagbati at sa menu."
+
+msgid "Profile updated."
+msgstr "Na-update ang profile."
+
+msgid "Add spending or income"
+msgstr "Magdagdag ng gastos o kita"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "I-type ang nangyari sa box sa dashboard at pindutin ang Add with AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "I-tap ang mic sa box, magsalita, pagkatapos ay i-tap ang stop. I-check ang text, at pindutin ang Add with AI."
+
+msgid "Accounts and moving money"
+msgstr "Mga account at paglilipat ng pera"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Sabihin kung anong account ang ginamit, o maglipat ng pera sa pagitan ng iyong mga account."
+
+msgid "Set an account balance"
+msgstr "Magtakda ng balanse ng account"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "Sabihin sa AI kung magkano ang laman ng account ngayon."
+
+msgid "Monthly budgets"
+msgstr "Mga buwanang badyet"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Magtakda ng limitasyon sa gastos para sa isang kategorya at bantayan ang progress bar sa dashboard."
+
+msgid "Ask about your money"
+msgstr "Magtanong tungkol sa iyong pera"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Gamitin ang Ask AI para sa mga kabuuan, breakdown, at paghahambing."
+
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Help"
+msgstr "Tulong"
+
+msgid "About & contact"
+msgstr "Tungkol sa amin & contact"
+
+msgid "Made by"
+msgstr "Gawa ni"
+
+msgid "Developer, KhorochAi"
+msgstr "Developer, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Paano kami makakatulong?"
+
+msgid "Still need help?"
+msgstr "Kailangan pa ng tulong?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Sumulat sa amin — welcome ang lahat ng tanong, problema, at ideya."
+
+msgid "Contact us"
+msgstr "Makipag-ugnayan sa amin"
+
+msgid "Money tracking that speaks your language"
+msgstr "Pagsubaybay ng pera na nagsasalita ng iyong wika"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "Hinahayaan ka ng KhorochAi na i-track ang gastos at kita sa pamamagitan lang ng pag-type o pagsasalita — sa English, বাংলা o Banglish. Naiintindihan ng AI ang ibig mong sabihin; ang app ang gagawa ng lahat ng math."
+
+msgid "Type or talk"
+msgstr "I-type o magsalita"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Walang mga form na pupunan. Sabihin ang “aaj lunch 250 bkash e” at mairerecord na ito."
+
+msgid "See where it goes"
+msgstr "Tingnan kung saan napupunta ang pera"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Ang mga account, budget, at chart ay nagpapakita ng iyong pera sa isang tingin, at sasagutin ng Ask AI ang iyong mga tanong."
+
+msgid "Correct by design"
+msgstr "Tama ayon sa disenyo"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "I-che-check mo ang bawat entry bago ito i-save, at ang mga kabuuan ay laging kinakalkula mula sa sarili mong data."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Mga tanong, problema o ideya — sumulat sa amin at babalikan ka namin."
+
+msgid "Read the help guide"
+msgstr "Basahin ang gabay sa tulong"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Expense & income tracker na pwede mong kausapin"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Sabihin mo lang. Tapos na ang iyong hisab."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Sabihin mo lang. Tapos na ang iyong hisab. I-track ang gastos at kita sa pamamagitan ng pag-type o pagsasalita sa English, বাংলা o Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Libre · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "I-type o sabihin ang iyong ginastos o kinita — parang nakikipag-usap ka lang sa kaibigan. Ginagawa itong maayos na entry ng KhorochAi, pinapanatiling updated ang iyong mga account at budget, at sinasagot ang iyong mga tanong tungkol sa pera."
+
+msgid "Create free account"
+msgstr "Gumawa ng libreng account"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "Mag-sign up gamit ang iyong email. I-check ang bawat entry bago ito i-save."
+
+msgid "Write it the way you talk"
+msgstr "Isulat ito sa paraang pananalita mo"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Ang isang mensahe ay maaaring maglaman ng ilang entry — paggastos, kita, paglilipat sa pagitan ng iyong mga account, kahit na mga badyet. Binabasa ito ng AI; i-check mo ang preview at i-save."
+
+msgid "How it works"
+msgstr "Paano ito gumagana"
+
+msgid "Type or say it"
+msgstr "I-type o sabihin ito"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Isulat o sabihin ang nangyari, sa English, বাংলা o Banglish. Pwede ang ilang bagay sa isang mensahe."
+
+msgid "Check the preview"
+msgstr "Tingnan ang preview"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "Tingnan nang eksakto ang naintindihan ng AI — halaga, kategorya, account, at petsa. I-tap para baguhin ang anumang mali."
+
+msgid "Saved and up to date"
+msgstr "Na-save at updated"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "Agad na nag-a-update ang iyong mga kabuuan, balanse ng account, badyet, at mga chart."
+
+msgid "Everything you need, nothing you don't"
+msgstr "Lahat ng kailangan mo, wala ang hindi mo kailangan"
+
+msgid "Voice input"
+msgstr "Voice input"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "I-tap ang mic at magsalita. Lalabas ang iyong mga salita sa box para ma-check mo."
+
+msgid "Your language"
+msgstr "Ang iyong wika"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা o Banglish — at ang buong app ay maaaring lumipat sa Bangla."
+
+msgid "All your accounts"
+msgstr "Lahat ng iyong mga account"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Cash, bKash, Nagad, Rocket, bank, at card, na may mga transfer sa pagitan nila."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Magtakda ng mga limitasyon bawat kategorya at bantayan ang mga progress bar habang gumagastos."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — makuha ang sagot mula sa sarili mong data."
+
+msgid "Clear dashboard"
+msgstr "Linisin ang dashboard"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Kita, gastos, balanse, kung saan napunta ang pera mo, at mga pang-araw-araw na chart."
+
+msgid "Light and dark"
+msgstr "Light at dark"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Isang kalmadong disenyo na sumusunod sa dark mode ng iyong phone, o pumili ng sarili mong disenyo."
+
+msgid "Export to CSV"
+msgstr "I-export sa CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "I-download ang iyong mga transaksyon para sa Excel o Google Sheets anumang oras."
+
+msgid "Start your hisab in a minute"
+msgstr "Simulan ang iyong hisab sa loob ng isang minuto"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "Gumawa ng libreng account gamit ang iyong email, pagkatapos ay sabihin lang sa KhorochAi ang ginastos mo ngayong araw."
+
+msgid "See how it works"
+msgstr "Tingnan kung paano ito gumagana"
+
+msgid "Free to use"
+msgstr "Libreng gamitin"
+
+msgid "You confirm every entry"
+msgstr "Kinukumpirma mo ang bawat entry"
+
+msgid "Works on phone and computer"
+msgstr "Gumagana sa phone at computer"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Isulat ito sa paraang pananalita mo — o magsalita na lang."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "I-type ito, o i-tap ang mic at sabihin ito. Ang isang mensahe ay maaaring maglaman ng ilang entry — gastos, kita, transfer sa pagitan ng iyong mga account, at pati na rin mga budget. I-check ang preview at i-save."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Libre · বাংলা, English, Banglish & anumang wika"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Isulat ito sa paraang pananalita mo — sa anumang wika, o magsalita na lang."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Bangla, English, Banglish — o anumang wikang ginagamit mo. Ang app mismo ay available sa 9 na wika."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Sabihin sa akin ang iyong ginastos o kinita — বাংলা, English, Banglish o anumang wika"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "Used for every amount in the app."
+msgstr "Ginagamit para sa bawat halaga sa app."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "Nakahanap ang AI ng %(n)s na transaksyon. Ayusin ang anumang mali, pagkatapos ay i-save."
+msgstr[1] "Nakahanap ang AI ng %(n)s na mga transaksyon. Ayusin ang anumang mali, pagkatapos ay i-save."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s transaksyon"
+msgstr[1] "%(n)s mga transaksyon"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "Na-save ang %(n)s na transaksyon."
+msgstr[1] "Na-save ang %(n)s na mga transaksyon."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Masyadong maikli ang password. Dapat ay mayroon itong hindi bababa sa %d character."
+msgstr[1] "Masyadong maikli ang password. Dapat ay mayroon itong hindi bababa sa %d mga character."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Ang iyong password ay dapat maglaman ng hindi bababa sa %(min_length)d karakter."
+msgstr[1] "Ang iyong password ay dapat maglaman ng hindi bababa sa %(min_length)d mga karakter."

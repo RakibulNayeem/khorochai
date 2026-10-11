@@ -7,6 +7,8 @@ CURRENCIES = {
     "USD": ("$", 2), "EUR": ("€", 2), "GBP": ("£", 2), "CAD": ("C$", 2), "AUD": ("A$", 2),
     "SAR": ("SAR", 2), "AED": ("AED", 2), "QAR": ("QAR", 2), "KWD": ("KWD", 3), "OMR": ("OMR", 3),
     "MYR": ("RM", 2), "SGD": ("S$", 2), "IDR": ("Rp", 0), "CNY": ("¥", 2), "JPY": ("¥", 0),
+    "THB": ("฿", 2), "VND": ("₫", 0), "PHP": ("₱", 2), "KRW": ("₩", 0), "MMK": ("K", 0), "IRR": ("IRR", 0),
+    "TRY": ("₺", 2), "BRL": ("R$", 2), "RUB": ("₽", 2), "UAH": ("₴", 2), "PLN": ("zł", 2), "KES": ("KSh", 2),
 }
 CURRENCY_CHOICES = [(code, f"{code} ({symbol})") for code, (symbol, _) in CURRENCIES.items()]
 DEFAULT_CURRENCY = "BDT"
@@ -14,7 +16,10 @@ DEFAULT_CURRENCY = "BDT"
 # A first guess for new users and visitors, from the language they use
 CURRENCY_BY_LANGUAGE = {
     "bn": "BDT", "en": "BDT", "hi": "INR", "ur": "PKR", "ar": "SAR",
-    "es": "EUR", "fr": "EUR", "zh-hans": "CNY", "id": "IDR",
+    "es": "EUR", "fr": "EUR", "zh-hans": "CNY", "id": "IDR", "ne": "NPR", "si": "LKR", "ta": "INR",
+    "ms": "MYR", "th": "THB", "vi": "VND", "fil": "PHP", "ja": "JPY", "ko": "KRW", "my": "MMK", "fa": "IRR",
+    "tr": "TRY", "pt": "BRL", "ru": "RUB", "de": "EUR", "it": "EUR", "nl": "EUR", "pl": "PLN", "uk": "UAH",
+    "sw": "KES",
 }
 
 _current = ContextVar("currency", default=DEFAULT_CURRENCY)

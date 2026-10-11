@@ -1,0 +1,1157 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+msgid "Theme"
+msgstr "ธีม"
+
+msgid "Light"
+msgstr "โหมดสว่าง"
+
+msgid "Dark"
+msgstr "โหมดมืด"
+
+msgid "System"
+msgstr "ระบบ"
+
+msgid "Language"
+msgstr "ภาษา"
+
+msgid "All settings"
+msgstr "การตั้งค่าทั้งหมด"
+
+msgid "Log out"
+msgstr "ออกจากระบบ"
+
+msgid "Menu"
+msgstr "เมนู"
+
+msgid "Dashboard"
+msgstr "แดชบอร์ด"
+
+msgid "Transactions"
+msgstr "รายการ"
+
+msgid "Categories &amp; Budgets"
+msgstr "หมวดหมู่ &amp; งบประมาณ"
+
+msgid "Ask AI"
+msgstr "ถาม AI"
+
+msgid "Close"
+msgstr "ปิด"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "เข้าสู่ระบบในชื่อ <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "ระบบจะปรับตามการตั้งค่าโหมดมืดของโทรศัพท์หรือคอมพิวเตอร์ของคุณ"
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "เปลี่ยนเมนู ปุ่ม และข้อความของแอป คุณสามารถพิมพ์หรือพูดคุยกับ AI ได้ทุกภาษา ไม่ว่าจะเป็น বাংলা, English, Banglish และอื่นๆ"
+
+msgid "These settings are saved in this browser."
+msgstr "การตั้งค่าเหล่านี้ถูกบันทึกไว้ในเบราว์เซอร์นี้"
+
+msgid "Log in"
+msgstr "เข้าสู่ระบบ"
+
+msgid "Welcome back"
+msgstr "ยินดีต้อนรับกลับมา"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "ติดตามการเงินของคุณเพียงแค่พิมพ์ ทั้งภาษาอังกฤษหรือ বাংলা"
+
+msgid "Wrong username or password."
+msgstr "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+
+msgid "Username"
+msgstr "ชื่อผู้ใช้"
+
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+msgid "No account?"
+msgstr "ยังไม่มีบัญชี?"
+
+msgid "Sign up"
+msgstr "ลงทะเบียน"
+
+msgid "Create your account"
+msgstr "สร้างบัญชีของคุณ"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "คุณจะได้รับหมวดหมู่ที่เตรียมไว้ให้เพื่อเริ่มต้นใช้งาน"
+
+msgid "Already have an account?"
+msgstr "มีบัญชีอยู่แล้วใช่ไหม?"
+
+msgid "Email (optional)"
+msgstr "อีเมล (ไม่บังคับ)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "บอกสิ่งที่คุณใช้จ่ายหรือรายได้ — English, বাংলা, หรือ Banglish"
+
+msgid "e.g."
+msgstr "เช่น"
+
+msgid "Add manually"
+msgstr "เพิ่มด้วยตนเอง"
+
+msgid "Add with AI"
+msgstr "เพิ่มด้วย AI"
+
+msgid "Reading…"
+msgstr "กำลังอ่าน..."
+
+msgid "Prev"
+msgstr "ก่อนหน้า"
+
+msgid "Next"
+msgstr "ถัดไป"
+
+msgid "This month"
+msgstr "เดือนนี้"
+
+msgid "Income"
+msgstr "รายรับ"
+
+msgid "Expense"
+msgstr "รายจ่าย"
+
+msgid "Balance this month"
+msgstr "ยอดเงินเดือนนี้"
+
+msgid "Saved %(p)s%% of income"
+msgstr "ออมได้ %(p)s%% ของรายได้"
+
+msgid "All-time balance"
+msgstr "ยอดเงินรวมทั้งหมด"
+
+msgid "Where your money went"
+msgstr "เงินของคุณไปไหนบ้าง"
+
+msgid "No expenses this month yet."
+msgstr "ยังไม่มีค่าใช้จ่ายในเดือนนี้"
+
+msgid "Day by day"
+msgstr "รายวัน"
+
+msgid "Budgets"
+msgstr "งบประมาณทั้งหมด"
+
+msgid "Set budgets"
+msgstr "ตั้งงบประมาณ"
+
+msgid "Over budget by %(a)s"
+msgstr "เกินงบประมาณไป %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "ใช้ไป %(p)s%%"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "ยังไม่มีงบประมาณ พิมพ์หรือพูดว่า “khabar e mashe 6000 budget” ในช่องด้านบน หรือตั้งค่าได้ที่หมวดหมู่"
+
+msgid "Recent transactions"
+msgstr "รายการล่าสุด"
+
+msgid "See all"
+msgstr "ดูทั้งหมด"
+
+msgid "Date"
+msgstr "วันที่"
+
+msgid "Category"
+msgstr "หมวดหมู่"
+
+msgid "Note"
+msgstr "หมายเหตุ"
+
+msgid "Amount"
+msgstr "จำนวนเงิน"
+
+msgid "Uncategorized"
+msgstr "ไม่ได้จัดหมวดหมู่"
+
+msgid "Added with AI"
+msgstr "เพิ่มด้วย AI แล้ว"
+
+msgid "Edit"
+msgstr "แก้ไข"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "ยังไม่มีรายการ พิมพ์อะไรสักอย่างในช่องด้านบนเลย!"
+
+msgid "Export CSV"
+msgstr "ส่งออก CSV"
+
+msgid "Add"
+msgstr "เพิ่ม"
+
+msgid "Month"
+msgstr "เดือน"
+
+msgid "Type"
+msgstr "ประเภท"
+
+msgid "All"
+msgstr "ทั้งหมด"
+
+msgid "Search"
+msgstr "ค้นหา"
+
+msgid "note or text"
+msgstr "บันทึกหรือข้อความ"
+
+msgid "Filter"
+msgstr "ตัวกรอง"
+
+msgid "Reset"
+msgstr "รีเซ็ต"
+
+msgid "Net"
+msgstr "สุทธิ"
+
+msgid "Newer"
+msgstr "ใหม่กว่า"
+
+msgid "Older"
+msgstr "เก่ากว่า"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "หน้า %(a)s จาก %(b)s"
+
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+msgid "Check before saving"
+msgstr "ตรวจสอบก่อนบันทึก"
+
+msgid "You wrote:"
+msgstr "คุณเขียนว่า:"
+
+msgid "Save this one"
+msgstr "บันทึกรายการนี้"
+
+msgid "New category:"
+msgstr "หมวดหมู่ใหม่:"
+
+msgid "New:"
+msgstr "ใหม่:"
+
+msgid "New category…"
+msgstr "หมวดหมู่ใหม่..."
+
+msgid "New category name"
+msgstr "ชื่อหมวดหมู่ใหม่"
+
+msgid "Save"
+msgstr "บันทึก"
+
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+msgid "Delete this permanently?"
+msgstr "ลบรายการนี้ถาวรหรือไม่?"
+
+msgid "Delete"
+msgstr "ลบ"
+
+msgid "Ask anything about your money"
+msgstr "ถามทุกเรื่องเกี่ยวกับการเงินของคุณ"
+
+msgid "Ask"
+msgstr "ถาม"
+
+msgid "Thinking…"
+msgstr "กำลังคิด..."
+
+msgid "Where did I spend the most last month?"
+msgstr "เดือนที่แล้วฉันใช้จ่ายกับอะไรมากที่สุด?"
+
+msgid "Where did I spend most last month?"
+msgstr "เดือนที่แล้วฉันใช้จ่ายกับอะไรมากที่สุด?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "ปีนี้ฉันจ่ายค่ารถสามล้อไปเท่าไหร่?"
+
+msgid "Rickshaw spending this year"
+msgstr "ค่ารถสามล้อปีนี้"
+
+msgid "income vs expense per month this year"
+msgstr "รายรับเทียบกับรายจ่ายรายเดือนในปีนี้"
+
+msgid "Income vs expense per month"
+msgstr "รายรับเทียบกับรายจ่ายรายเดือน"
+
+msgid "notes containing “%(k)s”"
+msgstr "บันทึกที่มีคำว่า “%(k)s”"
+
+msgid "Spent"
+msgstr "ใช้จ่ายไป"
+
+msgid "Earned"
+msgstr "รายได้"
+
+msgid "Group"
+msgstr "กลุ่ม"
+
+msgid "Count"
+msgstr "จำนวน"
+
+msgid "Total"
+msgstr "รวม"
+
+msgid "Matching transactions"
+msgstr "รายการที่ตรงกัน"
+
+msgid "first 50"
+msgstr "50 รายการแรก"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI เข้าใจเพียงคำถามของคุณ ตัวเลขทั้งหมดที่นี่คำนวณจากข้อมูลที่คุณบันทึกไว้"
+
+msgid "Your question"
+msgstr "คำถามของคุณ"
+
+msgid "Categories"
+msgstr "หมวดหมู่"
+
+msgid "Add category"
+msgstr "เพิ่มหมวดหมู่"
+
+msgid "Edit category"
+msgstr "แก้ไขหมวดหมู่"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI เลือกจากหมวดหมู่เหล่านี้ เมื่อไม่มีหมวดหมู่ที่เหมาะสม มันจะแนะนำหมวดหมู่ใหม่และถามคุณก่อนสร้าง ให้งบประมาณรายเดือนกับหมวดหมู่ค่าใช้จ่ายเพื่อดูแถบความคืบหน้าบนแดชบอร์ด"
+
+msgid "Expense categories"
+msgstr "หมวดหมู่รายจ่าย"
+
+msgid "Income categories"
+msgstr "หมวดหมู่รายรับ"
+
+msgid "Name"
+msgstr "ชื่อ"
+
+msgid "Budget"
+msgstr "งบประมาณ"
+
+msgid "Icon"
+msgstr "ไอคอน"
+
+msgid "Color"
+msgstr "สี"
+
+msgid "Monthly budget"
+msgstr "งบประมาณรายเดือน"
+
+msgid "e.g. 🍔"
+msgstr "เช่น 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "วงเงินใช้จ่ายรายเดือน (เฉพาะหมวดหมู่รายจ่าย)"
+
+msgid "You already have a category with this name."
+msgstr "คุณมีหมวดหมู่ชื่อนี้อยู่แล้ว"
+
+msgid "Food"
+msgstr "อาหาร"
+
+msgid "Groceries"
+msgstr "ของชำ"
+
+msgid "Transport"
+msgstr "การเดินทาง"
+
+msgid "Rent"
+msgstr "ค่าเช่า"
+
+msgid "Utilities"
+msgstr "สาธารณูปโภค"
+
+msgid "Mobile & Internet"
+msgstr "มือถือและอินเทอร์เน็ต"
+
+msgid "Health"
+msgstr "สุขภาพ"
+
+msgid "Education"
+msgstr "การศึกษา"
+
+msgid "Shopping"
+msgstr "ช้อปปิ้ง"
+
+msgid "Entertainment"
+msgstr "ความบันเทิง"
+
+msgid "Family"
+msgstr "ครอบครัว"
+
+msgid "Other Expense"
+msgstr "รายจ่ายอื่นๆ"
+
+msgid "Salary"
+msgstr "เงินเดือน"
+
+msgid "Tuition"
+msgstr "ค่าเล่าเรียน"
+
+msgid "Freelance"
+msgstr "ฟรีแลนซ์"
+
+msgid "Business"
+msgstr "ธุรกิจ"
+
+msgid "Gift"
+msgstr "ของขวัญ"
+
+msgid "Other Income"
+msgstr "รายรับอื่นๆ"
+
+msgid "Amount must be greater than zero."
+msgstr "จำนวนเงินต้องมากกว่าศูนย์"
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' เป็นหมวดหมู่รายจ่าย โปรดเลือกหมวดหมู่รายรับ"
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' เป็นหมวดหมู่รายรับ โปรดเลือกหมวดหมู่รายจ่าย"
+
+msgid "Manual"
+msgstr "ด้วยตนเอง"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "ยินดีต้อนรับ! หมวดหมู่เริ่มต้นพร้อมใช้งานแล้ว ลองพิมพ์รายจ่ายแรกของคุณดูสิ"
+
+msgid "Please type what you spent or earned."
+msgstr "โปรดพิมพ์สิ่งที่คุณใช้จ่ายหรือได้รับ"
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "ข้อความยาวเกินไป (สูงสุด %(n)s ตัวอักษร)"
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI กำลังยุ่งหรือไม่พร้อมใช้งานในขณะนี้ โปรดลองอีกครั้ง หรือเพิ่มด้วยตนเอง"
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI กำลังยุ่งหรือไม่พร้อมใช้งานในขณะนี้ โปรดลองอีกครั้ง"
+
+msgid "The AI response was not understood. Please try again."
+msgstr "ไม่เข้าใจการตอบกลับของ AI โปรดลองอีกครั้ง"
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "ไม่พบรายรับหรือรายจ่ายที่มีจำนวนเงินในข้อความของคุณ"
+
+msgid "New categories: %(names)s."
+msgstr "หมวดหมู่ใหม่: %(names)s"
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "ข้าม %(n)s แถวเนื่องจากจำนวนเงิน ประเภท หรือบัญชีไม่ถูกต้อง"
+
+msgid "Nothing was saved."
+msgstr "ไม่มีการบันทึกข้อมูล"
+
+msgid "Transaction added."
+msgstr "เพิ่มรายการแล้ว"
+
+msgid "Add transaction"
+msgstr "เพิ่มรายการ"
+
+msgid "Transaction updated."
+msgstr "อัปเดตรายการแล้ว"
+
+msgid "Edit transaction"
+msgstr "แก้ไขธุรกรรม"
+
+msgid "Transaction deleted."
+msgstr "ลบรายการแล้ว"
+
+msgid "Category '%(name)s' added."
+msgstr "เพิ่มหมวดหมู่ '%(name)s' แล้ว"
+
+msgid "Category updated."
+msgstr "อัปเดตหมวดหมู่แล้ว"
+
+msgid "Category '%(name)s' deleted."
+msgstr "ลบหมวดหมู่ '%(name)s' แล้ว"
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s รายการถูกเปลี่ยนเป็น 'ไม่มีหมวดหมู่'"
+
+msgid "Accounts"
+msgstr "บัญชีทั้งหมด"
+
+msgid "Account"
+msgstr "บัญชี"
+
+msgid "Move money"
+msgstr "ย้ายเงิน"
+
+msgid "Add account"
+msgstr "เพิ่มบัญชี"
+
+msgid "Edit account"
+msgstr "แก้ไขบัญชี"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "ที่เก็บเงินของคุณ บอก AI ว่า “bkash e 500 dilam” แล้วระบบจะใช้ bKash หรือ “amar bkash e 5000 ache” เพื่อตั้งยอดเงินใน bKash ใช้ Move money สำหรับการถอน ATM, bKash cash out และการโอนอื่นๆ ซึ่งจะเปลี่ยนยอดเงินแต่ไม่ใช่รายรับหรือรายจ่าย เปลี่ยนชื่อบัญชีใดก็ได้ (เช่น Bank → ชื่อธนาคารของคุณ) ด้วย Edit"
+
+msgid "Total in all accounts"
+msgstr "ยอดรวมในทุกบัญชี"
+
+msgid "Default"
+msgstr "ค่าเริ่มต้น"
+
+msgid "Recent transfers"
+msgstr "การโอนเงินล่าสุด"
+
+msgid "From"
+msgstr "จาก"
+
+msgid "To"
+msgstr "ถึง"
+
+msgid "No transfers yet."
+msgstr "ยังไม่มีการโอนเงิน"
+
+msgid "Manage"
+msgstr "จัดการ"
+
+msgid "e.g. 💵"
+msgstr "เช่น 💵"
+
+msgid "Opening balance"
+msgstr "ยอดคงเหลือเริ่มต้น"
+
+msgid "Default account"
+msgstr "บัญชีเริ่มต้น"
+
+msgid "You already have an account with this name."
+msgstr "คุณมีบัญชีชื่อนี้อยู่แล้ว"
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "เช่น ถอนเงินจากตู้ ATM, กดเงิน bKash"
+
+msgid "Pick two different accounts."
+msgstr "เลือกบัญชีที่แตกต่างกันสองบัญชี"
+
+msgid "Cash"
+msgstr "เงินสด"
+
+msgid "Card"
+msgstr "บัตร"
+
+msgid "Mobile banking"
+msgstr "ธนาคารบนมือถือ"
+
+msgid "Bank account"
+msgstr "บัญชีธนาคาร"
+
+msgid "Other"
+msgstr "อื่นๆ"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "เงินที่มีอยู่ในบัญชีนี้ก่อนที่คุณจะเริ่มใช้ KhorochAi"
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "ใช้เมื่อคุณไม่ได้ระบุบัญชี (เช่น 'lunch 250')"
+
+msgid "Account '%(name)s' added."
+msgstr "เพิ่มบัญชี '%(name)s' แล้ว"
+
+msgid "Account updated."
+msgstr "อัปเดตบัญชีแล้ว"
+
+msgid "Account '%(name)s' deleted."
+msgstr "ลบบัญชี '%(name)s' แล้ว"
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s รายการไม่มีบัญชีที่เกี่ยวข้อง"
+
+msgid "Transfer saved."
+msgstr "บันทึกการโอนเงินแล้ว"
+
+msgid "Move money between accounts"
+msgstr "ย้ายเงินระหว่างบัญชี"
+
+msgid "Transfer updated."
+msgstr "อัปเดตการโอนเงินแล้ว"
+
+msgid "Edit transfer"
+msgstr "แก้ไขการโอนเงิน"
+
+msgid "Transfer deleted."
+msgstr "ลบการโอนเงินแล้ว"
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "ขีดจำกัด AI สำหรับวันนี้เต็มแล้ว — จะรีเซ็ตตอนเที่ยงคืน"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI ถึงขีดจำกัดของวันนี้สำหรับทุกคนแล้ว จะรีเซ็ตตอนเที่ยงคืน คุณยังสามารถเพิ่มรายการด้วยตนเองได้"
+
+msgid "Transfer"
+msgstr "โอนเงิน"
+
+msgid "Day"
+msgstr "วัน"
+
+msgid "Week"
+msgstr "สัปดาห์"
+
+msgid "Period"
+msgstr "ช่วงเวลา"
+
+msgid "No transactions in this period."
+msgstr "ไม่มีรายการในช่วงเวลานี้"
+
+msgid "Dates:"
+msgstr "วันที่:"
+
+msgid "Show all dates"
+msgstr "แสดงวันที่ทั้งหมด"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI วันนี้: ใช้ไป %(p)s%%"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "ใช้ AI ไป %(used)s จาก %(limit)s โทเค็นในวันนี้ AI ทำงานบนแผนฟรีที่มีขีดจำกัดรายวัน ซึ่งจะรีเซ็ตตอนเที่ยงคืน"
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "ขีดจำกัด AI สำหรับวันนี้หมดแล้ว — จะรีเซ็ตตอนเที่ยงคืน"
+
+msgid "AI usage today"
+msgstr "การใช้งาน AI วันนี้"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "คุณใช้โควตา AI ประจำวันนี้ครบ 100% แล้ว ระบบจะรีเซ็ตตอนเที่ยงคืน คุณยังสามารถเพิ่มรายการด้วยตนเองได้"
+
+msgid "Email"
+msgstr "อีเมล"
+
+msgid "Password (again)"
+msgstr "รหัสผ่าน (อีกครั้ง)"
+
+msgid "Forgot your password?"
+msgstr "ลืมรหัสผ่าน?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "อีเมลและ/หรือรหัสผ่านที่คุณระบุไม่ถูกต้อง"
+
+msgid "A user is already registered with this email address."
+msgstr "มีผู้ใช้งานอีเมลนี้แล้ว"
+
+msgid "You must type the same password each time."
+msgstr "คุณต้องพิมพ์รหัสผ่านเดิมให้ตรงกันทุกครั้ง"
+
+msgid "Code"
+msgstr "รหัส"
+
+msgid "Incorrect code."
+msgstr "รหัสไม่ถูกต้อง"
+
+msgid "Email Verification"
+msgstr "การยืนยันอีเมล"
+
+msgid "Enter Email Verification Code"
+msgstr "ป้อนรหัสยืนยันอีเมล"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "เราได้ส่งรหัสไปที่ %(recipient)s แล้ว รหัสจะหมดอายุในไม่ช้า โปรดป้อนรหัสโดยเร็ว"
+
+msgid "Request new code"
+msgstr "ขอรหัสใหม่"
+
+msgid "Use a different email address"
+msgstr "ใช้อีเมลอื่น"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "ส่งอีเมลยืนยันไปยัง %(email)s แล้ว"
+
+msgid "Successfully signed in as %(name)s."
+msgstr "เข้าสู่ระบบในชื่อ %(name)s สำเร็จแล้ว"
+
+msgid "You have signed out."
+msgstr "คุณออกจากระบบแล้ว"
+
+msgid "You have confirmed %(email)s."
+msgstr "คุณได้ยืนยัน %(email)s แล้ว"
+
+msgid "Password successfully changed."
+msgstr "เปลี่ยนรหัสผ่านสำเร็จแล้ว"
+
+msgid "Password successfully set."
+msgstr "ตั้งรหัสผ่านสำเร็จแล้ว"
+
+msgid "Password Reset"
+msgstr "รีเซ็ตรหัสผ่าน"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "ลืมรหัสผ่านใช่ไหม? กรอกอีเมลของคุณด้านล่าง แล้วเราจะส่งอีเมลสำหรับรีเซ็ตรหัสผ่านไปให้"
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "โปรดติดต่อเราหากคุณมีปัญหาในการรีเซ็ตรหัสผ่าน"
+
+msgid "Reset My Password"
+msgstr "รีเซ็ตรหัสผ่านของฉัน"
+
+msgid "Enter Password Reset Code"
+msgstr "ป้อนรหัสรีเซ็ตรหัสผ่าน"
+
+msgid "Change Password"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+msgid "Your password is now changed."
+msgstr "เปลี่ยนรหัสผ่านเรียบร้อยแล้ว"
+
+msgid "New Password"
+msgstr "รหัสผ่านใหม่"
+
+msgid "Current Password"
+msgstr "รหัสผ่านปัจจุบัน"
+
+msgid "Sign Out"
+msgstr "ออกจากระบบ"
+
+msgid "Are you sure you want to sign out?"
+msgstr "คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?"
+
+msgid "This password is too common."
+msgstr "รหัสผ่านนี้พบบ่อยเกินไป"
+
+msgid "This password is entirely numeric."
+msgstr "รหัสผ่านนี้เป็นตัวเลขทั้งหมด"
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "รหัสผ่านคล้ายกับ %(verbose_name)s เกินไป"
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "รหัสผ่านของคุณไม่ควรคล้ายกับข้อมูลส่วนตัวอื่นๆ ของคุณมากเกินไป"
+
+msgid "Your password can’t be a commonly used password."
+msgstr "รหัสผ่านของคุณไม่ควรเป็นรหัสผ่านที่ใช้กันทั่วไป"
+
+msgid "Your password can’t be entirely numeric."
+msgstr "รหัสผ่านของคุณไม่ควรเป็นตัวเลขเพียงอย่างเดียว"
+
+msgid "Continue with %(provider)s"
+msgstr "ดำเนินการต่อด้วย %(provider)s"
+
+msgid "or with email"
+msgstr "หรือใช้อีเมล"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "คุณจะได้รับหมวดหมู่และบัญชีที่เตรียมไว้ให้เพื่อเริ่มต้นใช้งาน เราจะส่งรหัส 6 หลักไปที่อีเมลของคุณเพื่อยืนยันตัวตน"
+
+msgid "Profile"
+msgstr "โปรไฟล์"
+
+msgid "Email (used to log in)"
+msgstr "อีเมล (ใช้สำหรับเข้าสู่ระบบ)"
+
+msgid "Change email"
+msgstr "เปลี่ยนอีเมล"
+
+msgid "Change password"
+msgstr "เปลี่ยนรหัสผ่าน"
+
+msgid "Google / Facebook login"
+msgstr "เข้าสู่ระบบด้วย Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "แสดงในแอป คุณเข้าสู่ระบบด้วยอีเมลของคุณ ไม่ใช่สิ่งนี้"
+
+msgid "This username is already taken."
+msgstr "ชื่อผู้ใช้นี้มีคนใช้แล้ว"
+
+msgid "Username updated."
+msgstr "อัปเดตชื่อผู้ใช้แล้ว"
+
+msgid "Hello from KhorochAi!"
+msgstr "สวัสดีจาก KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "ขอบคุณที่ใช้ KhorochAi"
+
+msgid "Your email verification code is:"
+msgstr "รหัสยืนยันอีเมลของคุณคือ:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "ป้อนรหัสนั้นในหน้า KhorochAi ที่เปิดอยู่ในเบราว์เซอร์ของคุณ รหัสจะหมดอายุในไม่ช้า"
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "เพื่อยืนยันอีเมลของคุณ ให้เปิด %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "หากคุณไม่ได้สมัครใช้งาน KhorochAi คุณสามารถเพิกเฉยต่ออีเมลนี้ได้"
+
+msgid "Your verification code"
+msgstr "รหัสยืนยันของคุณ"
+
+msgid "Your password reset code is:"
+msgstr "รหัสรีเซ็ตรหัสผ่านของคุณคือ:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "หากคุณไม่ได้ขอรีเซ็ตรหัสผ่าน คุณสามารถเพิกเฉยต่ออีเมลนี้ได้ รหัสผ่านของคุณยังคงเหมือนเดิม"
+
+msgid "Your password reset code"
+msgstr "รหัสรีเซ็ตรหัสผ่านของคุณ"
+
+msgid "Set balance"
+msgstr "ตั้งยอดเงิน"
+
+msgid "Balance now"
+msgstr "ยอดเงินปัจจุบัน"
+
+msgid "Balance updated: %(list)s."
+msgstr "อัปเดตยอดเงินแล้ว: %(list)s"
+
+msgid "Good morning, %(name)s"
+msgstr "สวัสดีตอนเช้า %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "สวัสดีตอนบ่าย %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "สวัสดีตอนเย็น %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "พูดแทนการพิมพ์"
+
+msgid "Stop recording"
+msgstr "หยุดบันทึก"
+
+msgid "Writing what you said…"
+msgstr "กำลังเขียนสิ่งที่คุณพูด..."
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "ไมโครโฟนถูกบล็อก โปรดอนุญาตการเข้าถึงในการตั้งค่าเบราว์เซอร์ของคุณแล้วลองใหม่อีกครั้ง"
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "สั้นเกินไป โปรดรอสักครู่แล้วพูดใหม่ จากนั้นแตะหยุด"
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "ไม่สามารถส่งบันทึกเสียงได้ โปรดตรวจสอบการเชื่อมต่อแล้วลองใหม่อีกครั้ง"
+
+msgid "No recording was received."
+msgstr "ไม่ได้รับข้อมูลการบันทึก"
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "บันทึกยาวเกินไป โปรดให้สั้นกว่าหนึ่งนาที"
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "ไม่สามารถแปลงบันทึกเสียงเป็นข้อความได้ในขณะนี้ โปรดลองใหม่อีกครั้งหรือพิมพ์แทน"
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "ฉันไม่ได้ยินอะไรเลย โปรดลองใหม่อีกครั้งโดยขยับเข้าใกล้ไมโครโฟนมากขึ้น"
+
+msgid "Set budget"
+msgstr "ตั้งงบประมาณ"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "ตั้งงบประมาณรายเดือนแล้ว: %(list)s"
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (ถูกลบแล้ว)"
+
+msgid "Help & contact"
+msgstr "ความช่วยเหลือและการติดต่อ"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "ทุกอย่างทำงานได้โดยการพิมพ์หรือพูดเป็นภาษา English, বাংলা หรือ Banglish ปกติ คุณจะเห็นตัวอย่างก่อนบันทึกเสมอ"
+
+msgid "How to use KhorochAi"
+msgstr "วิธีใช้ KhorochAi"
+
+msgid "Good to know"
+msgstr "น่ารู้"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI เพียงแค่อ่านข้อความของคุณ ยอดรวมและยอดคงเหลือทั้งหมดคำนวณโดยแอปจากข้อมูลที่คุณบันทึกไว้"
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "การใช้ AI มีโควตารายวัน (แสดงเป็น “AI วันนี้: ใช้ไป x%”) ซึ่งจะรีเซ็ตตอนเที่ยงคืน และคุณสามารถเพิ่มรายการด้วยตนเองได้เสมอ"
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "สิ่งที่คุณพิมพ์หรือพูดจะถูกส่งไปยัง Google Gemini (หรือ Groq) เพื่อประมวลผล ห้ามใส่เลขบัตรหรือรหัสผ่าน"
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "เปลี่ยนธีม ภาษา และชื่อผู้ใช้ของคุณได้จากเมนูที่มุมขวาบน"
+
+msgid "Contact"
+msgstr "ติดต่อ"
+
+msgid "Questions, problems or ideas"
+msgstr "คำถาม ปัญหา หรือไอเดีย"
+
+msgid "Write to us and we'll get back to you."
+msgstr "เขียนถึงเราแล้วเราจะติดต่อกลับ"
+
+msgid "Developer"
+msgstr "ผู้พัฒนา"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi สร้างโดย %(name)s"
+
+msgid "Account menu"
+msgstr "เมนูบัญชี"
+
+msgid "First name"
+msgstr "ชื่อจริง"
+
+msgid "Shown in the greeting and the menu."
+msgstr "แสดงในคำทักทายและเมนู"
+
+msgid "Profile updated."
+msgstr "อัปเดตโปรไฟล์แล้ว"
+
+msgid "Add spending or income"
+msgstr "เพิ่มรายจ่ายหรือรายรับ"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "พิมพ์สิ่งที่เกิดขึ้นในช่องบนแดชบอร์ดแล้วกด Add with AI"
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "แตะไมโครโฟนในช่อง พูด แล้วแตะหยุด ตรวจสอบข้อความ จากนั้นกด เพิ่มด้วย AI"
+
+msgid "Accounts and moving money"
+msgstr "บัญชีและการโอนเงิน"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "ระบุบัญชีที่คุณใช้ หรือโอนเงินระหว่างบัญชีของคุณเอง"
+
+msgid "Set an account balance"
+msgstr "ตั้งยอดเงินคงเหลือในบัญชี"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "บอก AI ว่ามียอดเงินในบัญชีเท่าไหร่ในตอนนี้"
+
+msgid "Monthly budgets"
+msgstr "งบประมาณรายเดือน"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "ตั้งงบประมาณรายจ่ายสำหรับหมวดหมู่และดูแถบความคืบหน้าบนแดชบอร์ด"
+
+msgid "Ask about your money"
+msgstr "ถามเรื่องการเงินของคุณ"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "ใช้ Ask AI เพื่อดูยอดรวม รายละเอียด และการเปรียบเทียบ"
+
+msgid "Portfolio"
+msgstr "พอร์ตโฟลิโอ"
+
+msgid "Help"
+msgstr "ช่วยเหลือ"
+
+msgid "About & contact"
+msgstr "เกี่ยวกับเรา & ติดต่อ"
+
+msgid "Made by"
+msgstr "สร้างโดย"
+
+msgid "Developer, KhorochAi"
+msgstr "ผู้พัฒนา, KhorochAi"
+
+msgid "How can we help?"
+msgstr "ให้เราช่วยอะไรดี?"
+
+msgid "Still need help?"
+msgstr "ต้องการความช่วยเหลือเพิ่มเติมไหม?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "เขียนถึงเราได้เลย ไม่ว่าจะเป็นคำถาม ปัญหา หรือไอเดีย เรายินดีรับฟัง"
+
+msgid "Contact us"
+msgstr "ติดต่อเรา"
+
+msgid "Money tracking that speaks your language"
+msgstr "ติดตามการเงินที่เข้าใจภาษาของคุณ"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi ช่วยให้คุณติดตามรายรับรายจ่ายได้ง่ายๆ เพียงแค่พิมพ์หรือพูดเป็นภาษาอังกฤษ, বাংলা หรือ Banglish AI จะเข้าใจสิ่งที่คุณต้องการ และแอปจะคำนวณให้ทั้งหมด"
+
+msgid "Type or talk"
+msgstr "พิมพ์หรือพูด"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "ไม่ต้องกรอกแบบฟอร์ม เพียงพูดว่า “aaj lunch 250 bkash e” ระบบก็จะบันทึกให้ทันที"
+
+msgid "See where it goes"
+msgstr "ดูว่าเงินไปไหนบ้าง"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "บัญชี งบประมาณ และแผนภูมิช่วยให้คุณเห็นภาพรวมการเงิน และ Ask AI ช่วยตอบคำถามของคุณ"
+
+msgid "Correct by design"
+msgstr "ถูกต้องตามการออกแบบ"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "คุณตรวจสอบทุกรายการก่อนบันทึก และยอดรวมจะคำนวณจากข้อมูลของคุณเองเสมอ"
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "คำถาม ปัญหา หรือไอเดีย — เขียนถึงเราแล้วเราจะติดต่อกลับไป"
+
+msgid "Read the help guide"
+msgstr "อ่านคู่มือช่วยเหลือ"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — แอปติดตามรายรับรายจ่ายที่คุณคุยด้วยได้"
+
+msgid "Just say it. Your hisab is done."
+msgstr "แค่บอกเรา เดี๋ยว Hisab ของคุณก็เสร็จเรียบร้อย"
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "แค่บอกเรา เดี๋ยว Hisab ของคุณก็เสร็จเรียบร้อย ติดตามรายรับรายจ่ายด้วยการพิมพ์หรือพูดเป็นภาษาอังกฤษ, বাংলা หรือ Banglish"
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "ฟรี · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "พิมพ์หรือพูดสิ่งที่คุณจ่ายหรือได้รับ เหมือนคุยกับเพื่อน KhorochAi จะเปลี่ยนเป็นรายการที่เรียบร้อย อัปเดตบัญชีและงบประมาณของคุณ และตอบคำถามเรื่องเงินของคุณ"
+
+msgid "Create free account"
+msgstr "สร้างบัญชีฟรี"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "ลงทะเบียนด้วยอีเมลของคุณ คุณสามารถตรวจสอบทุกรายการก่อนบันทึก"
+
+msgid "Write it the way you talk"
+msgstr "เขียนในแบบที่คุณพูด"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "ข้อความเดียวสามารถใส่รายการได้หลายอย่าง ทั้งรายจ่าย รายรับ การโอนเงินระหว่างบัญชี หรือแม้แต่งบประมาณ AI จะอ่านข้อมูลให้ คุณเพียงแค่ตรวจสอบตัวอย่างแล้วกดบันทึก"
+
+msgid "How it works"
+msgstr "วิธีการใช้งาน"
+
+msgid "Type or say it"
+msgstr "พิมพ์หรือพูด"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "เขียนหรือพูดสิ่งที่เกิดขึ้น เป็นภาษาอังกฤษ, বাংলা หรือ Banglish ใส่หลายรายการในข้อความเดียวก็ได้"
+
+msgid "Check the preview"
+msgstr "ตรวจสอบตัวอย่าง"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "ดูสิ่งที่ AI เข้าใจอย่างละเอียด ทั้งจำนวน หมวดหมู่ บัญชี และวันที่ แก้ไขได้ง่ายๆ เพียงแตะ"
+
+msgid "Saved and up to date"
+msgstr "บันทึกและเป็นปัจจุบันแล้ว"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "ยอดรวม ยอดเงินคงเหลือในบัญชี งบประมาณ และแผนภูมิของคุณจะอัปเดตทันที"
+
+msgid "Everything you need, nothing you don't"
+msgstr "ทุกสิ่งที่คุณต้องการ ไม่มีอะไรที่คุณไม่จำเป็น"
+
+msgid "Voice input"
+msgstr "อินพุตเสียง"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "แตะไมโครโฟนแล้วพูด คำพูดของคุณจะปรากฏในช่องเพื่อให้คุณตรวจสอบ"
+
+msgid "Your language"
+msgstr "ภาษาของคุณ"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা หรือ Banglish — และทั้งแอปสามารถเปลี่ยนเป็นภาษา Bangla ได้"
+
+msgid "All your accounts"
+msgstr "บัญชีทั้งหมดของคุณ"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "เงินสด, bKash, Nagad, Rocket, ธนาคาร และบัตร พร้อมการโอนเงินระหว่างกัน"
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "ตั้งขีดจำกัดต่อหมวดหมู่และดูแถบความคืบหน้าขณะที่คุณใช้จ่าย"
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — รับคำตอบจากข้อมูลของคุณเอง"
+
+msgid "Clear dashboard"
+msgstr "ล้างแดชบอร์ด"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "รายรับ รายจ่าย ยอดคงเหลือ สรุปการใช้จ่าย และแผนภูมิรายวัน"
+
+msgid "Light and dark"
+msgstr "โหมดสว่างและมืด"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "ดีไซน์สบายตาที่ปรับตามโหมดมืดของโทรศัพท์ หรือเลือกตั้งค่าเองได้"
+
+msgid "Export to CSV"
+msgstr "ส่งออกเป็น CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "ดาวน์โหลดรายการธุรกรรมของคุณสำหรับ Excel หรือ Google Sheets ได้ตลอดเวลา"
+
+msgid "Start your hisab in a minute"
+msgstr "เริ่มทำบัญชีของคุณในหนึ่งนาที"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "สร้างบัญชีฟรีด้วยอีเมลของคุณ จากนั้นเพียงบอก KhorochAi ว่าวันนี้คุณใช้จ่ายอะไรไปบ้าง"
+
+msgid "See how it works"
+msgstr "ดูวิธีการใช้งาน"
+
+msgid "Free to use"
+msgstr "ใช้งานฟรี"
+
+msgid "You confirm every entry"
+msgstr "คุณยืนยันทุกรายการ"
+
+msgid "Works on phone and computer"
+msgstr "ใช้งานได้ทั้งบนโทรศัพท์และคอมพิวเตอร์"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "เขียนในแบบที่คุณพูด หรือแค่พูดก็ได้"
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "พิมพ์หรือแตะไมโครโฟนแล้วพูด ข้อความเดียวสามารถใส่ได้หลายรายการ ทั้งรายจ่าย รายรับ การโอนระหว่างบัญชี หรือแม้แต่งบประมาณ คุณตรวจสอบตัวอย่างก่อนบันทึกได้"
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "ฟรี · বাংলা, English, Banglish & ภาษาอื่นๆ"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "เขียนในแบบที่คุณพูด ไม่ว่าภาษาไหน หรือแค่พูดก็ได้"
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "ภาษาบังกลา, อังกฤษ, Banglish หรือภาษาใดก็ตามที่คุณใช้ แอปนี้รองรับถึง 9 ภาษา"
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "บอกสิ่งที่คุณใช้จ่ายหรือรายได้ — বাংলা, English, Banglish หรือภาษาใดก็ได้"
+
+msgid "Currency"
+msgstr "สกุลเงิน"
+
+msgid "Used for every amount in the app."
+msgstr "ใช้สำหรับทุกจำนวนเงินในแอป"
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI พบ %(n)s รายการ แก้ไขสิ่งที่ผิดพลาด จากนั้นบันทึก"
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s รายการ"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "บันทึกรายการ %(n)s รายการแล้ว"
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "รหัสผ่านสั้นเกินไป ต้องมีอย่างน้อย %d ตัวอักษร"
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "รหัสผ่านของคุณต้องมีความยาวอย่างน้อย %(min_length)d ตัวอักษร"

@@ -104,11 +104,21 @@ AUTH_PASSWORD_VALIDATORS = [
 # Interface language: chosen in Settings and stored in the "django_language" cookie.
 # Translations live in locale/bn/LC_MESSAGES/django.po -> run `python manage.py compile_po` after editing.
 LANGUAGE_CODE = "en"
-LANGUAGES = [
-    ("en", "English"), ("bn", "বাংলা"), ("hi", "हिन्दी"), ("ur", "اردو"), ("ar", "العربية"),
-    ("es", "Español"), ("fr", "Français"), ("zh-hans", "中文"), ("id", "Bahasa Indonesia"),
+LANGUAGES = [  # each shown in its own language; Arabic, Urdu and Persian are right-to-left
+    ("en", "English"), ("bn", "বাংলা"), ("hi", "हिन्दी"), ("ur", "اردو"), ("ne", "नेपाली"), ("si", "සිංහල"),
+    ("ta", "தமிழ்"), ("ar", "العربية"), ("fa", "فارسی"), ("tr", "Türkçe"), ("ms", "Bahasa Melayu"),
+    ("id", "Bahasa Indonesia"), ("th", "ไทย"), ("vi", "Tiếng Việt"), ("fil", "Filipino"), ("my", "မြန်မာ"),
+    ("zh-hans", "中文"), ("ja", "日本語"), ("ko", "한국어"), ("es", "Español"), ("pt", "Português"),
+    ("fr", "Français"), ("de", "Deutsch"), ("it", "Italiano"), ("nl", "Nederlands"), ("pl", "Polski"),
+    ("ru", "Русский"), ("uk", "Українська"), ("sw", "Kiswahili"),
 ]
 LOCALE_PATHS = [BASE_DIR / "locale"]
+# Django doesn't ship details for these two languages; register them so they work like the rest
+import django.conf.locale  # noqa: E402
+django.conf.locale.LANG_INFO.update({
+    "si": {"bidi": False, "code": "si", "name": "Sinhala", "name_local": "සිංහල"},
+    "fil": {"bidi": False, "code": "fil", "name": "Filipino", "name_local": "Filipino"},
+})
 LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 365
 TIME_ZONE = "Asia/Dhaka"
 USE_I18N = True

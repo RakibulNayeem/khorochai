@@ -1,0 +1,1162 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Light"
+msgstr "Chiaro"
+
+msgid "Dark"
+msgstr "Scuro"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "All settings"
+msgstr "Tutte le impostazioni"
+
+msgid "Log out"
+msgstr "Esci"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Transactions"
+msgstr "Transazioni"
+
+msgid "Categories &amp; Budgets"
+msgstr "Categorie &amp; Budget"
+
+msgid "Ask AI"
+msgstr "Chiedi all'AI"
+
+msgid "Close"
+msgstr "Chiudi"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "Accesso effettuato come <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Il sistema segue l'impostazione della modalità scura del tuo telefono o computer."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Cambia i menu, i pulsanti e i messaggi dell'app. Puoi sempre scrivere o parlare con l'AI in qualsiasi lingua: বাংলা, English, Banglish e altre."
+
+msgid "These settings are saved in this browser."
+msgstr "Queste impostazioni sono salvate in questo browser."
+
+msgid "Log in"
+msgstr "Accedi"
+
+msgid "Welcome back"
+msgstr "Bentornato"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "Traccia le tue spese scrivendo semplicemente, in inglese o বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Nome utente o password errati."
+
+msgid "Username"
+msgstr "Nome utente"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "No account?"
+msgstr "Nessun conto?"
+
+msgid "Sign up"
+msgstr "Registrati"
+
+msgid "Create your account"
+msgstr "Crea il tuo account"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Riceverai categorie predefinite per iniziare."
+
+msgid "Already have an account?"
+msgstr "Hai già un account?"
+
+msgid "Email (optional)"
+msgstr "Email (opzionale)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Dimmi cosa hai speso o guadagnato — English, বাংলা o Banglish"
+
+msgid "e.g."
+msgstr "es."
+
+msgid "Add manually"
+msgstr "Aggiungi manualmente"
+
+msgid "Add with AI"
+msgstr "Aggiungi con AI"
+
+msgid "Reading…"
+msgstr "Lettura in corso..."
+
+msgid "Prev"
+msgstr "Indietro"
+
+msgid "Next"
+msgstr "Avanti"
+
+msgid "This month"
+msgstr "Questo mese"
+
+msgid "Income"
+msgstr "Entrate"
+
+msgid "Expense"
+msgstr "Spesa"
+
+msgid "Balance this month"
+msgstr "Saldo di questo mese"
+
+msgid "Saved %(p)s%% of income"
+msgstr "Risparmiato il %(p)s%% del reddito"
+
+msgid "All-time balance"
+msgstr "Saldo totale"
+
+msgid "Where your money went"
+msgstr "Dove sono finiti i tuoi soldi"
+
+msgid "No expenses this month yet."
+msgstr "Nessuna spesa questo mese."
+
+msgid "Day by day"
+msgstr "Giorno per giorno"
+
+msgid "Budgets"
+msgstr "Budget"
+
+msgid "Set budgets"
+msgstr "Imposta budget"
+
+msgid "Over budget by %(a)s"
+msgstr "Budget superato di %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% utilizzato"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Ancora nessun budget. Scrivi o dì “khabar e mashe 6000 budget” nella casella in alto, oppure impostane uno in Categorie."
+
+msgid "Recent transactions"
+msgstr "Transazioni recenti"
+
+msgid "See all"
+msgstr "Vedi tutto"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "Amount"
+msgstr "Importo"
+
+msgid "Uncategorized"
+msgstr "Non categorizzato"
+
+msgid "Added with AI"
+msgstr "Aggiunto con AI"
+
+msgid "Edit"
+msgstr "Modifica"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Ancora nessuna transazione. Scrivi qualcosa nella casella qui sopra!"
+
+msgid "Export CSV"
+msgstr "Esporta CSV"
+
+msgid "Add"
+msgstr "Aggiungi"
+
+msgid "Month"
+msgstr "Mese"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "All"
+msgstr "Tutto"
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "note or text"
+msgstr "nota o testo"
+
+msgid "Filter"
+msgstr "Filtra"
+
+msgid "Reset"
+msgstr "Reimposta"
+
+msgid "Net"
+msgstr "Netto"
+
+msgid "Newer"
+msgstr "Più recente"
+
+msgid "Older"
+msgstr "Più vecchio"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Pagina %(a)s di %(b)s"
+
+msgid "Confirm"
+msgstr "Conferma"
+
+msgid "Check before saving"
+msgstr "Controlla prima di salvare"
+
+msgid "You wrote:"
+msgstr "Hai scritto:"
+
+msgid "Save this one"
+msgstr "Salva questo"
+
+msgid "New category:"
+msgstr "Nuova categoria:"
+
+msgid "New:"
+msgstr "Nuovo:"
+
+msgid "New category…"
+msgstr "Nuova categoria..."
+
+msgid "New category name"
+msgstr "Nome nuova categoria"
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Delete this permanently?"
+msgstr "Eliminare questo elemento in modo permanente?"
+
+msgid "Delete"
+msgstr "Elimina"
+
+msgid "Ask anything about your money"
+msgstr "Chiedi qualsiasi cosa sui tuoi soldi"
+
+msgid "Ask"
+msgstr "Chiedi"
+
+msgid "Thinking…"
+msgstr "Sto pensando..."
+
+msgid "Where did I spend the most last month?"
+msgstr "Dove ho speso di più il mese scorso?"
+
+msgid "Where did I spend most last month?"
+msgstr "Dove ho speso di più il mese scorso?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Quanto ho speso in risciò quest'anno?"
+
+msgid "Rickshaw spending this year"
+msgstr "Spese in risciò quest'anno"
+
+msgid "income vs expense per month this year"
+msgstr "entrate vs uscite per mese quest'anno"
+
+msgid "Income vs expense per month"
+msgstr "Entrate vs spese mensili"
+
+msgid "notes containing “%(k)s”"
+msgstr "note contenenti “%(k)s”"
+
+msgid "Spent"
+msgstr "Speso"
+
+msgid "Earned"
+msgstr "Guadagnato"
+
+msgid "Group"
+msgstr "Gruppo"
+
+msgid "Count"
+msgstr "Conteggio"
+
+msgid "Total"
+msgstr "Totale"
+
+msgid "Matching transactions"
+msgstr "Transazioni corrispondenti"
+
+msgid "first 50"
+msgstr "primi 50"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "L'AI ha capito solo la tua domanda; ogni numero qui è stato calcolato dai tuoi dati salvati."
+
+msgid "Your question"
+msgstr "La tua domanda"
+
+msgid "Categories"
+msgstr "Categorie"
+
+msgid "Add category"
+msgstr "Aggiungi categoria"
+
+msgid "Edit category"
+msgstr "Modifica categoria"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "L'AI sceglie tra queste categorie. Quando nulla corrisponde, ne suggerisce una nuova e ti chiede conferma prima di crearla. Assegna un budget mensile a una categoria di spesa per vedere le barre di avanzamento sulla dashboard."
+
+msgid "Expense categories"
+msgstr "Categorie di spesa"
+
+msgid "Income categories"
+msgstr "Categorie di entrata"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Budget"
+msgstr "Budget"
+
+msgid "Icon"
+msgstr "Icona"
+
+msgid "Color"
+msgstr "Colore"
+
+msgid "Monthly budget"
+msgstr "Budget mensile"
+
+msgid "e.g. 🍔"
+msgstr "es. 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "Limite di spesa mensile opzionale (solo per categorie di spesa)."
+
+msgid "You already have a category with this name."
+msgstr "Hai già una categoria con questo nome."
+
+msgid "Food"
+msgstr "Cibo"
+
+msgid "Groceries"
+msgstr "Spesa alimentare"
+
+msgid "Transport"
+msgstr "Trasporti"
+
+msgid "Rent"
+msgstr "Affitto"
+
+msgid "Utilities"
+msgstr "Utenze"
+
+msgid "Mobile & Internet"
+msgstr "Cellulare e Internet"
+
+msgid "Health"
+msgstr "Salute"
+
+msgid "Education"
+msgstr "Istruzione"
+
+msgid "Shopping"
+msgstr "Shopping"
+
+msgid "Entertainment"
+msgstr "Intrattenimento"
+
+msgid "Family"
+msgstr "Famiglia"
+
+msgid "Other Expense"
+msgstr "Altra spesa"
+
+msgid "Salary"
+msgstr "Stipendio"
+
+msgid "Tuition"
+msgstr "Istruzione"
+
+msgid "Freelance"
+msgstr "Freelance"
+
+msgid "Business"
+msgstr "Lavoro"
+
+msgid "Gift"
+msgstr "Regalo"
+
+msgid "Other Income"
+msgstr "Altra entrata"
+
+msgid "Amount must be greater than zero."
+msgstr "L'importo deve essere maggiore di zero."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' è una categoria di spesa; scegline una di entrata."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' è una categoria di entrata; scegline una di spesa."
+
+msgid "Manual"
+msgstr "Manuale"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Benvenuto! Le categorie predefinite sono pronte. Prova a inserire la tua prima spesa."
+
+msgid "Please type what you spent or earned."
+msgstr "Per favore, scrivi cosa hai speso o guadagnato."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Il messaggio è troppo lungo (massimo %(n)s caratteri)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "L'AI è occupata o non configurata al momento. Riprova o aggiungi manualmente."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "L'AI è occupata o non configurata al momento. Riprova."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "La risposta dell'AI non è stata compresa. Riprova."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Non è stato trovato alcun reddito o spesa con un importo nel tuo messaggio."
+
+msgid "New categories: %(names)s."
+msgstr "Nuove categorie: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "%(n)s riga/e saltata/e perché l'importo, il tipo o i conti non erano validi."
+
+msgid "Nothing was saved."
+msgstr "Non è stato salvato nulla."
+
+msgid "Transaction added."
+msgstr "Transazione aggiunta."
+
+msgid "Add transaction"
+msgstr "Aggiungi transazione"
+
+msgid "Transaction updated."
+msgstr "Transazione aggiornata."
+
+msgid "Edit transaction"
+msgstr "Modifica transazione"
+
+msgid "Transaction deleted."
+msgstr "Transazione eliminata."
+
+msgid "Category '%(name)s' added."
+msgstr "Categoria '%(name)s' aggiunta."
+
+msgid "Category updated."
+msgstr "Categoria aggiornata."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Categoria '%(name)s' eliminata."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s transazione/i ora senza categoria."
+
+msgid "Accounts"
+msgstr "Conti"
+
+msgid "Account"
+msgstr "Conto"
+
+msgid "Move money"
+msgstr "Trasferisci denaro"
+
+msgid "Add account"
+msgstr "Aggiungi conto"
+
+msgid "Edit account"
+msgstr "Modifica account"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Dove tieni i tuoi soldi. Dì all'AI “bkash e 500 dilam” e userà bKash, o “amar bkash e 5000 ache” per impostare il saldo di bKash. Usa Sposta denaro per prelievi ATM, cash out bKash e altri trasferimenti: modificano i saldi ma non sono entrate o spese. Rinomina qualsiasi conto (es. Bank → nome della tua banca) con Modifica."
+
+msgid "Total in all accounts"
+msgstr "Totale in tutti i conti"
+
+msgid "Default"
+msgstr "Predefinito"
+
+msgid "Recent transfers"
+msgstr "Trasferimenti recenti"
+
+msgid "From"
+msgstr "Da"
+
+msgid "To"
+msgstr "A"
+
+msgid "No transfers yet."
+msgstr "Ancora nessun trasferimento."
+
+msgid "Manage"
+msgstr "Gestisci"
+
+msgid "e.g. 💵"
+msgstr "es. 💵"
+
+msgid "Opening balance"
+msgstr "Saldo iniziale"
+
+msgid "Default account"
+msgstr "Account predefinito"
+
+msgid "You already have an account with this name."
+msgstr "Hai già un conto con questo nome."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "es. prelievo ATM, cash out bKash"
+
+msgid "Pick two different accounts."
+msgstr "Scegli due conti diversi."
+
+msgid "Cash"
+msgstr "Contanti"
+
+msgid "Card"
+msgstr "Carta"
+
+msgid "Mobile banking"
+msgstr "Mobile banking"
+
+msgid "Bank account"
+msgstr "Conto bancario"
+
+msgid "Other"
+msgstr "Altro"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "Soldi già presenti in questo conto quando hai iniziato a usare KhorochAi."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Usato quando non specifichi il conto (es. 'pranzo 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "Conto '%(name)s' aggiunto."
+
+msgid "Account updated."
+msgstr "Conto aggiornato."
+
+msgid "Account '%(name)s' deleted."
+msgstr "Conto '%(name)s' eliminato."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s transazione/i non ha/hanno più un conto."
+
+msgid "Transfer saved."
+msgstr "Trasferimento salvato."
+
+msgid "Move money between accounts"
+msgstr "Trasferisci denaro tra i conti"
+
+msgid "Transfer updated."
+msgstr "Trasferimento aggiornato."
+
+msgid "Edit transfer"
+msgstr "Modifica trasferimento"
+
+msgid "Transfer deleted."
+msgstr "Trasferimento eliminato."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "Limite AI raggiunto per tutti oggi — si azzera a mezzanotte"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "L'AI ha raggiunto il limite giornaliero per tutti. Si resetta a mezzanotte. Puoi comunque aggiungere transazioni manualmente."
+
+msgid "Transfer"
+msgstr "Trasferimento"
+
+msgid "Day"
+msgstr "Giorno"
+
+msgid "Week"
+msgstr "Settimana"
+
+msgid "Period"
+msgstr "Periodo"
+
+msgid "No transactions in this period."
+msgstr "Nessuna transazione in questo periodo."
+
+msgid "Dates:"
+msgstr "Date:"
+
+msgid "Show all dates"
+msgstr "Mostra tutte le date"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI oggi: %(p)s%% utilizzato"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "%(used)s di %(limit)s token AI utilizzati oggi. L'AI funziona con un piano gratuito con un limite giornaliero; si azzera a mezzanotte."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "Limite AI esaurito per oggi — si azzera a mezzanotte"
+
+msgid "AI usage today"
+msgstr "Utilizzo AI oggi"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Hai utilizzato il 100% del limite AI giornaliero. Si azzera a mezzanotte. Puoi comunque aggiungere transazioni manualmente."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Password (again)"
+msgstr "Password (di nuovo)"
+
+msgid "Forgot your password?"
+msgstr "Hai dimenticato la password?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "L'indirizzo email e/o la password specificati non sono corretti."
+
+msgid "A user is already registered with this email address."
+msgstr "Un utente è già registrato con questo indirizzo email."
+
+msgid "You must type the same password each time."
+msgstr "Devi digitare la stessa password ogni volta."
+
+msgid "Code"
+msgstr "Codice"
+
+msgid "Incorrect code."
+msgstr "Codice errato."
+
+msgid "Email Verification"
+msgstr "Verifica email"
+
+msgid "Enter Email Verification Code"
+msgstr "Inserisci il codice di verifica email"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "Abbiamo inviato un codice a %(recipient)s. Il codice scadrà a breve, quindi inseriscilo presto."
+
+msgid "Request new code"
+msgstr "Richiedi nuovo codice"
+
+msgid "Use a different email address"
+msgstr "Usa un indirizzo email diverso"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "Email di conferma inviata a %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "Accesso effettuato con successo come %(name)s."
+
+msgid "You have signed out."
+msgstr "Hai effettuato il logout."
+
+msgid "You have confirmed %(email)s."
+msgstr "Hai confermato %(email)s."
+
+msgid "Password successfully changed."
+msgstr "Password modificata con successo."
+
+msgid "Password successfully set."
+msgstr "Password impostata con successo."
+
+msgid "Password Reset"
+msgstr "Reimpostazione password"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Hai dimenticato la password? Inserisci il tuo indirizzo email qui sotto e ti invieremo un'email per reimpostarla."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Contattaci in caso di problemi con la reimpostazione della password."
+
+msgid "Reset My Password"
+msgstr "Reimposta la mia password"
+
+msgid "Enter Password Reset Code"
+msgstr "Inserisci il codice di ripristino password"
+
+msgid "Change Password"
+msgstr "Cambia password"
+
+msgid "Your password is now changed."
+msgstr "La tua password è stata modificata."
+
+msgid "New Password"
+msgstr "Nuova password"
+
+msgid "Current Password"
+msgstr "Password attuale"
+
+msgid "Sign Out"
+msgstr "Esci"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Sei sicuro di voler uscire?"
+
+msgid "This password is too common."
+msgstr "Questa password è troppo comune."
+
+msgid "This password is entirely numeric."
+msgstr "Questa password è interamente numerica."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "La password è troppo simile a %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "La tua password non può essere troppo simile alle tue informazioni personali."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "La tua password non può essere una password comunemente usata."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "La tua password non può essere interamente numerica."
+
+msgid "Continue with %(provider)s"
+msgstr "Continua con %(provider)s"
+
+msgid "or with email"
+msgstr "o con email"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Riceverai categorie e conti predefiniti per iniziare. Ti invieremo un codice a 6 cifre via email per confermare il tuo indirizzo."
+
+msgid "Profile"
+msgstr "Profilo"
+
+msgid "Email (used to log in)"
+msgstr "Email (usata per accedere)"
+
+msgid "Change email"
+msgstr "Cambia email"
+
+msgid "Change password"
+msgstr "Cambia password"
+
+msgid "Google / Facebook login"
+msgstr "Accedi con Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Mostrato nell'app. Accedi con la tua email, non con questo."
+
+msgid "This username is already taken."
+msgstr "Questo nome utente è già in uso."
+
+msgid "Username updated."
+msgstr "Nome utente aggiornato."
+
+msgid "Hello from KhorochAi!"
+msgstr "Ciao da KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "Grazie per aver usato KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "Il tuo codice di verifica email è:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Inseriscilo nella pagina di KhorochAi aperta nel tuo browser. Il codice scade presto."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "Per confermare la tua email, apri %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "Se non ti sei registrato a KhorochAi, puoi ignorare questa email."
+
+msgid "Your verification code"
+msgstr "Il tuo codice di verifica"
+
+msgid "Your password reset code is:"
+msgstr "Il tuo codice di ripristino password è:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Se non hai richiesto il ripristino della password, puoi ignorare questa email. La tua password non è stata modificata."
+
+msgid "Your password reset code"
+msgstr "Il tuo codice di ripristino password"
+
+msgid "Set balance"
+msgstr "Imposta saldo"
+
+msgid "Balance now"
+msgstr "Saldo attuale"
+
+msgid "Balance updated: %(list)s."
+msgstr "Saldo aggiornato: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Buongiorno, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Buon pomeriggio, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "Buonasera, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Parla invece di scrivere"
+
+msgid "Stop recording"
+msgstr "Interrompi registrazione"
+
+msgid "Writing what you said…"
+msgstr "Trascrizione in corso…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Accesso al microfono bloccato. Consentilo nelle impostazioni del browser e riprova."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Troppo breve. Attendi un momento e parla, poi tocca stop."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Impossibile inviare la registrazione. Controlla la connessione e riprova."
+
+msgid "No recording was received."
+msgstr "Nessuna registrazione ricevuta."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "La registrazione è troppo lunga. Tienila sotto il minuto."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Impossibile convertire la registrazione in testo al momento. Riprova o scrivi il testo."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Non ho sentito nulla. Riprova stando più vicino al microfono."
+
+msgid "Set budget"
+msgstr "Imposta budget"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Budget mensile impostato: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (rimosso)"
+
+msgid "Help & contact"
+msgstr "Aiuto e contatti"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Tutto funziona scrivendo o parlando in inglese semplice, বাংলা o Banglish. Vedrai sempre un'anteprima prima che qualsiasi cosa venga salvata."
+
+msgid "How to use KhorochAi"
+msgstr "Come usare KhorochAi"
+
+msgid "Good to know"
+msgstr "Buono a sapersi"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "L'AI legge solo il tuo testo; ogni totale e saldo è calcolato dall'app dai tuoi dati salvati."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "L'uso dell'AI ha un limite giornaliero (mostrato come “AI oggi: x% utilizzato”). Si azzera a mezzanotte e puoi sempre aggiungere le cose manualmente."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Ciò che scrivi o dici viene inviato a Google Gemini (o Groq) per essere compreso. Non includere numeri di carta o password."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Cambia tema, lingua e nome utente dal menu in alto a destra."
+
+msgid "Contact"
+msgstr "Contatti"
+
+msgid "Questions, problems or ideas"
+msgstr "Domande, problemi o idee"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Scrivici e ti risponderemo."
+
+msgid "Developer"
+msgstr "Sviluppatore"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi è creato da %(name)s."
+
+msgid "Account menu"
+msgstr "Menu conto"
+
+msgid "First name"
+msgstr "Nome"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Mostrato nel saluto e nel menu."
+
+msgid "Profile updated."
+msgstr "Profilo aggiornato."
+
+msgid "Add spending or income"
+msgstr "Aggiungi spesa o entrata"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "Scrivi cosa è successo nel riquadro sulla dashboard e premi Aggiungi con AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "Tocca il microfono, parla, poi tocca stop. Controlla il testo e premi Aggiungi con AI."
+
+msgid "Accounts and moving money"
+msgstr "Conti e trasferimenti di denaro"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Indica quale conto hai usato o sposta denaro tra i tuoi conti."
+
+msgid "Set an account balance"
+msgstr "Imposta saldo conto"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "Dì all'AI quanto c'è in un conto in questo momento."
+
+msgid "Monthly budgets"
+msgstr "Budget mensili"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Imposta un limite di spesa per una categoria e segui la barra di avanzamento sulla dashboard."
+
+msgid "Ask about your money"
+msgstr "Chiedi dei tuoi soldi"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Usa Chiedi all'AI per totali, riepiloghi e confronti."
+
+msgid "Portfolio"
+msgstr "Portafoglio"
+
+msgid "Help"
+msgstr "Aiuto"
+
+msgid "About & contact"
+msgstr "Informazioni e contatti"
+
+msgid "Made by"
+msgstr "Creato da"
+
+msgid "Developer, KhorochAi"
+msgstr "Sviluppatore, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Come possiamo aiutarti?"
+
+msgid "Still need help?"
+msgstr "Hai ancora bisogno di aiuto?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Scrivici: domande, problemi e idee sono tutti benvenuti."
+
+msgid "Contact us"
+msgstr "Contattaci"
+
+msgid "Money tracking that speaks your language"
+msgstr "Gestione spese che parla la tua lingua"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi ti permette di tracciare spese ed entrate semplicemente scrivendo o parlando, in English, বাংলা o Banglish. L'AI capisce cosa intendi; l'app fa tutti i calcoli."
+
+msgid "Type or talk"
+msgstr "Scrivi o parla"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Nessun modulo da compilare. Dì “aaj lunch 250 bkash e” e verrà registrato."
+
+msgid "See where it goes"
+msgstr "Vedi dove vanno i soldi"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Conti, budget e grafici mostrano i tuoi soldi a colpo d'occhio, e Chiedi all'AI risponde alle tue domande."
+
+msgid "Correct by design"
+msgstr "Corretto per design"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "Controlli ogni voce prima che venga salvata e i totali sono sempre calcolati dai tuoi dati."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Domande, problemi o idee: scrivici e ti risponderemo."
+
+msgid "Read the help guide"
+msgstr "Leggi la guida"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Tracker di spese ed entrate con cui puoi parlare"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Dillo e basta. Il tuo hisab è fatto."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Dillo e basta. Il tuo hisab è fatto. Tieni traccia di spese ed entrate scrivendo o parlando in English, বাংলা o Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Gratuito · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "Scrivi o detta ciò che hai speso o guadagnato, come se lo raccontassi a un amico. KhorochAi lo trasforma in voci precise, mantiene aggiornati i tuoi conti e budget e risponde alle tue domande finanziarie."
+
+msgid "Create free account"
+msgstr "Crea account gratuito"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "Registrati con la tua email. Controlli ogni voce prima che venga salvata."
+
+msgid "Write it the way you talk"
+msgstr "Scrivilo come parli"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Un messaggio può contenere diverse voci: spese, entrate, trasferimenti tra i tuoi conti, persino budget. L'AI lo legge; tu controlli l'anteprima e salvi."
+
+msgid "How it works"
+msgstr "Come funziona"
+
+msgid "Type or say it"
+msgstr "Scrivi o detta"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Scrivi o parla di ciò che è successo, in inglese, বাংলা o Banglish. Più cose in un unico messaggio vanno bene."
+
+msgid "Check the preview"
+msgstr "Controlla l'anteprima"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "Controlla esattamente cosa ha capito l'AI: importo, categoria, conto e data. Correggi con un tocco."
+
+msgid "Saved and up to date"
+msgstr "Salvato e aggiornato"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "I tuoi totali, saldi dei conti, budget e grafici si aggiornano istantaneamente."
+
+msgid "Everything you need, nothing you don't"
+msgstr "Tutto ciò di cui hai bisogno, niente di superfluo"
+
+msgid "Voice input"
+msgstr "Input vocale"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "Tocca il microfono e parla. Le tue parole appariranno nel riquadro per essere controllate."
+
+msgid "Your language"
+msgstr "La tua lingua"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা o Banglish: l'intera app può passare alla lingua bengalese."
+
+msgid "All your accounts"
+msgstr "Tutti i tuoi conti"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Contanti, bKash, Nagad, Rocket, banca e carta, con trasferimenti tra loro."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Imposta limiti per categoria e osserva le barre di avanzamento mentre spendi."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — ottieni la risposta dai tuoi dati."
+
+msgid "Clear dashboard"
+msgstr "Svuota dashboard"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Entrate, spese, saldo, dove sono finiti i tuoi soldi e grafici giornalieri."
+
+msgid "Light and dark"
+msgstr "Chiaro e scuro"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Un design calmo che segue la modalità scura del tuo telefono, o scegline uno tu."
+
+msgid "Export to CSV"
+msgstr "Esporta in CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "Scarica le tue transazioni per Excel o Google Sheets in qualsiasi momento."
+
+msgid "Start your hisab in a minute"
+msgstr "Inizia il tuo hisab in un minuto"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "Crea un account gratuito con la tua email, poi dì semplicemente a KhorochAi cosa hai speso oggi."
+
+msgid "See how it works"
+msgstr "Scopri come funziona"
+
+msgid "Free to use"
+msgstr "Gratuito"
+
+msgid "You confirm every entry"
+msgstr "Confermi ogni voce"
+
+msgid "Works on phone and computer"
+msgstr "Funziona su telefono e computer"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Scrivilo come parli, oppure parla e basta."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "Scrivilo o tocca il microfono e dettalo. Un solo messaggio può contenere diverse voci: spese, entrate, trasferimenti tra i tuoi conti, persino budget. Controlli l'anteprima e salvi."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Gratuito · বাংলা, English, Banglish & qualsiasi lingua"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Scrivilo come parli, in qualsiasi lingua, oppure parla e basta."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Bangla, inglese, Banglish — o qualsiasi lingua tu parli. L'app stessa è disponibile in 9 lingue."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Dimmi cosa hai speso o guadagnato — বাংলা, English, Banglish o qualsiasi lingua"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Used for every amount in the app."
+msgstr "Usato per ogni importo nell'app."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "L'AI ha trovato %(n)s transazione. Correggi eventuali errori, poi salva."
+msgstr[1] "L'AI ha trovato %(n)s transazioni. Correggi eventuali errori, poi salva."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s transazione"
+msgstr[1] "%(n)s transazioni"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "Salvata %(n)s transazione."
+msgstr[1] "Salvate %(n)s transazioni."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Questa password è troppo corta. Deve contenere almeno %d carattere."
+msgstr[1] "Questa password è troppo corta. Deve contenere almeno %d caratteri."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "La tua password deve contenere almeno %(min_length)d carattere."
+msgstr[1] "La tua password deve contenere almeno %(min_length)d caratteri."

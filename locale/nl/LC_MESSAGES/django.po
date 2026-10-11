@@ -1,0 +1,1162 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Theme"
+msgstr "Thema"
+
+msgid "Light"
+msgstr "Licht"
+
+msgid "Dark"
+msgstr "Donker"
+
+msgid "System"
+msgstr "Systeem"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "All settings"
+msgstr "Alle instellingen"
+
+msgid "Log out"
+msgstr "Uitloggen"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Transactions"
+msgstr "Transacties"
+
+msgid "Categories &amp; Budgets"
+msgstr "Categorieën &amp; Budgetten"
+
+msgid "Ask AI"
+msgstr "Vraag het AI"
+
+msgid "Close"
+msgstr "Sluiten"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "Ingelogd als <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Het systeem volgt de donkere modus-instelling van je telefoon of computer."
+
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Wijzigt de menu's, knoppen en berichten van de app. Je kunt altijd typen of spreken tegen de AI in elke taal — বাংলা, English, Banglish en meer."
+
+msgid "These settings are saved in this browser."
+msgstr "Deze instellingen worden in deze browser opgeslagen."
+
+msgid "Log in"
+msgstr "Inloggen"
+
+msgid "Welcome back"
+msgstr "Welkom terug"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "Houd je geld bij door simpelweg te typen, in het Engels of বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Verkeerde gebruikersnaam of wachtwoord."
+
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+msgid "Password"
+msgstr "Wachtwoord"
+
+msgid "No account?"
+msgstr "Geen rekening?"
+
+msgid "Sign up"
+msgstr "Aanmelden"
+
+msgid "Create your account"
+msgstr "Maak je account aan"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Je krijgt kant-en-klare categorieën om mee te beginnen."
+
+msgid "Already have an account?"
+msgstr "Heb je al een account?"
+
+msgid "Email (optional)"
+msgstr "E-mail (optioneel)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Vertel me wat je hebt uitgegeven of verdiend — Engels, বাংলা of Banglish"
+
+msgid "e.g."
+msgstr "bijv."
+
+msgid "Add manually"
+msgstr "Handmatig toevoegen"
+
+msgid "Add with AI"
+msgstr "Toevoegen met AI"
+
+msgid "Reading…"
+msgstr "Lezen…"
+
+msgid "Prev"
+msgstr "Vorige"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "This month"
+msgstr "Deze maand"
+
+msgid "Income"
+msgstr "Inkomen"
+
+msgid "Expense"
+msgstr "Uitgave"
+
+msgid "Balance this month"
+msgstr "Saldo deze maand"
+
+msgid "Saved %(p)s%% of income"
+msgstr "%(p)s%% van inkomen bespaard"
+
+msgid "All-time balance"
+msgstr "Totaalbalans"
+
+msgid "Where your money went"
+msgstr "Waar je geld naartoe is gegaan"
+
+msgid "No expenses this month yet."
+msgstr "Nog geen uitgaven deze maand."
+
+msgid "Day by day"
+msgstr "Dag per dag"
+
+msgid "Budgets"
+msgstr "Budgetten"
+
+msgid "Set budgets"
+msgstr "Budgetten instellen"
+
+msgid "Over budget by %(a)s"
+msgstr "Budget overschreden met %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% gebruikt"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Nog geen budgetten. Typ of zeg “khabar e mashe 6000 budget” in het vak hierboven, of stel er een in onder Categorieën."
+
+msgid "Recent transactions"
+msgstr "Recente transacties"
+
+msgid "See all"
+msgstr "Alles bekijken"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Category"
+msgstr "Categorie"
+
+msgid "Note"
+msgstr "Notitie"
+
+msgid "Amount"
+msgstr "Bedrag"
+
+msgid "Uncategorized"
+msgstr "Niet gecategoriseerd"
+
+msgid "Added with AI"
+msgstr "Toegevoegd met AI"
+
+msgid "Edit"
+msgstr "Bewerken"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Nog geen transacties. Typ iets in het vak hierboven!"
+
+msgid "Export CSV"
+msgstr "CSV exporteren"
+
+msgid "Add"
+msgstr "Toevoegen"
+
+msgid "Month"
+msgstr "Maand"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "All"
+msgstr "Alles"
+
+msgid "Search"
+msgstr "Zoeken"
+
+msgid "note or text"
+msgstr "notitie of tekst"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Reset"
+msgstr "Resetten"
+
+msgid "Net"
+msgstr "Netto"
+
+msgid "Newer"
+msgstr "Nieuwer"
+
+msgid "Older"
+msgstr "Ouder"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Pagina %(a)s van %(b)s"
+
+msgid "Confirm"
+msgstr "Bevestigen"
+
+msgid "Check before saving"
+msgstr "Controleer voor het opslaan"
+
+msgid "You wrote:"
+msgstr "Je schreef:"
+
+msgid "Save this one"
+msgstr "Sla dit op"
+
+msgid "New category:"
+msgstr "Nieuwe categorie:"
+
+msgid "New:"
+msgstr "Nieuw:"
+
+msgid "New category…"
+msgstr "Nieuwe categorie…"
+
+msgid "New category name"
+msgstr "Naam nieuwe categorie"
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Delete this permanently?"
+msgstr "Dit definitief verwijderen?"
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "Ask anything about your money"
+msgstr "Vraag alles over je geld"
+
+msgid "Ask"
+msgstr "Vragen"
+
+msgid "Thinking…"
+msgstr "Denken…"
+
+msgid "Where did I spend the most last month?"
+msgstr "Waar heb ik vorige maand het meeste aan uitgegeven?"
+
+msgid "Where did I spend most last month?"
+msgstr "Waar heb ik vorige maand het meeste aan uitgegeven?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Hoeveel heb ik dit jaar aan riksja uitgegeven?"
+
+msgid "Rickshaw spending this year"
+msgstr "Riksja-uitgaven dit jaar"
+
+msgid "income vs expense per month this year"
+msgstr "inkomsten versus uitgaven per maand dit jaar"
+
+msgid "Income vs expense per month"
+msgstr "Inkomen vs uitgaven per maand"
+
+msgid "notes containing “%(k)s”"
+msgstr "notities met “%(k)s”"
+
+msgid "Spent"
+msgstr "Uitgegeven"
+
+msgid "Earned"
+msgstr "Verdiend"
+
+msgid "Group"
+msgstr "Groep"
+
+msgid "Count"
+msgstr "Aantal"
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "Matching transactions"
+msgstr "Overeenkomende transacties"
+
+msgid "first 50"
+msgstr "eerste 50"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "De AI heeft alleen je vraag begrepen; elk getal hier is berekend op basis van je opgeslagen gegevens."
+
+msgid "Your question"
+msgstr "Jouw vraag"
+
+msgid "Categories"
+msgstr "Categorieën"
+
+msgid "Add category"
+msgstr "Categorie toevoegen"
+
+msgid "Edit category"
+msgstr "Categorie bewerken"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "De AI kiest uit deze categorieën. Wanneer niets past, stelt het een nieuwe voor en vraagt het je voordat deze wordt aangemaakt. Geef een uitgavencategorie een maandelijks budget om voortgangsbalken op het dashboard te zien."
+
+msgid "Expense categories"
+msgstr "Uitgavencategorieën"
+
+msgid "Income categories"
+msgstr "Inkomstencategorieën"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Budget"
+msgstr "Budget"
+
+msgid "Icon"
+msgstr "Icoon"
+
+msgid "Color"
+msgstr "Kleur"
+
+msgid "Monthly budget"
+msgstr "Maandelijks budget"
+
+msgid "e.g. 🍔"
+msgstr "bijv. 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "Optionele maandelijkse uitgavenlimiet (alleen voor uitgavencategorieën)."
+
+msgid "You already have a category with this name."
+msgstr "Je hebt al een categorie met deze naam."
+
+msgid "Food"
+msgstr "Eten"
+
+msgid "Groceries"
+msgstr "Boodschappen"
+
+msgid "Transport"
+msgstr "Vervoer"
+
+msgid "Rent"
+msgstr "Huur"
+
+msgid "Utilities"
+msgstr "Nutsvoorzieningen"
+
+msgid "Mobile & Internet"
+msgstr "Mobiel & Internet"
+
+msgid "Health"
+msgstr "Gezondheid"
+
+msgid "Education"
+msgstr "Onderwijs"
+
+msgid "Shopping"
+msgstr "Winkelen"
+
+msgid "Entertainment"
+msgstr "Entertainment"
+
+msgid "Family"
+msgstr "Familie"
+
+msgid "Other Expense"
+msgstr "Overige uitgave"
+
+msgid "Salary"
+msgstr "Salaris"
+
+msgid "Tuition"
+msgstr "Collegegeld"
+
+msgid "Freelance"
+msgstr "Freelance"
+
+msgid "Business"
+msgstr "Zakelijk"
+
+msgid "Gift"
+msgstr "Cadeau"
+
+msgid "Other Income"
+msgstr "Overige inkomst"
+
+msgid "Amount must be greater than zero."
+msgstr "Bedrag moet groter zijn dan nul."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' is een uitgavencategorie; kies een inkomstencategorie."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' is een inkomstencategorie; kies een uitgavencategorie."
+
+msgid "Manual"
+msgstr "Handmatig"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Welkom! De standaardcategorieën staan klaar. Probeer je eerste uitgave in te voeren."
+
+msgid "Please type what you spent or earned."
+msgstr "Typ wat je hebt uitgegeven of verdiend."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Bericht is te lang (max %(n)s tekens)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "De AI is momenteel bezet of niet geconfigureerd. Probeer het opnieuw of voeg het handmatig toe."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "De AI is momenteel bezet of niet geconfigureerd. Probeer het opnieuw."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "Het antwoord van de AI werd niet begrepen. Probeer het opnieuw."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Geen inkomsten of uitgaven met een bedrag gevonden in je bericht."
+
+msgid "New categories: %(names)s."
+msgstr "Nieuwe categorieën: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "%(n)s rij(en) overgeslagen omdat het bedrag, type of de rekeningen ongeldig waren."
+
+msgid "Nothing was saved."
+msgstr "Niets opgeslagen."
+
+msgid "Transaction added."
+msgstr "Transactie toegevoegd."
+
+msgid "Add transaction"
+msgstr "Transactie toevoegen"
+
+msgid "Transaction updated."
+msgstr "Transactie bijgewerkt."
+
+msgid "Edit transaction"
+msgstr "Transactie bewerken"
+
+msgid "Transaction deleted."
+msgstr "Transactie verwijderd."
+
+msgid "Category '%(name)s' added."
+msgstr "Categorie '%(name)s' toegevoegd."
+
+msgid "Category updated."
+msgstr "Categorie bijgewerkt."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Categorie '%(name)s' verwijderd."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s transactie(s) zijn nu 'Niet gecategoriseerd'."
+
+msgid "Accounts"
+msgstr "Rekeningen"
+
+msgid "Account"
+msgstr "Rekening"
+
+msgid "Move money"
+msgstr "Geld overboeken"
+
+msgid "Add account"
+msgstr "Rekening toevoegen"
+
+msgid "Edit account"
+msgstr "Account bewerken"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Waar je geld wordt bewaard. Vertel de AI “bkash e 500 dilam” en hij gebruikt bKash, of “amar bkash e 5000 ache” om het saldo van bKash in te stellen. Gebruik Geld verplaatsen voor geldopnames bij de geldautomaat, bKash cash-outs en andere overboekingen — deze veranderen je saldo, maar zijn geen inkomsten of uitgaven. Hernoem elke rekening (bijv. Bank → de naam van je bank) met Bewerken."
+
+msgid "Total in all accounts"
+msgstr "Totaal in alle rekeningen"
+
+msgid "Default"
+msgstr "Standaard"
+
+msgid "Recent transfers"
+msgstr "Recente overboekingen"
+
+msgid "From"
+msgstr "Van"
+
+msgid "To"
+msgstr "Naar"
+
+msgid "No transfers yet."
+msgstr "Nog geen overboekingen."
+
+msgid "Manage"
+msgstr "Beheren"
+
+msgid "e.g. 💵"
+msgstr "bijv. 💵"
+
+msgid "Opening balance"
+msgstr "Openingssaldo"
+
+msgid "Default account"
+msgstr "Standaardaccount"
+
+msgid "You already have an account with this name."
+msgstr "Je hebt al een rekening met deze naam."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "bijv. geldopname bij geldautomaat, bKash cash out"
+
+msgid "Pick two different accounts."
+msgstr "Kies twee verschillende rekeningen."
+
+msgid "Cash"
+msgstr "Contant"
+
+msgid "Card"
+msgstr "Kaart"
+
+msgid "Mobile banking"
+msgstr "Mobiel bankieren"
+
+msgid "Bank account"
+msgstr "Bankrekening"
+
+msgid "Other"
+msgstr "Overig"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "Geld dat al op deze rekening stond toen je KhorochAi begon te gebruiken."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Wordt gebruikt als je niet aangeeft welke rekening (bijv. 'lunch 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "Rekening '%(name)s' toegevoegd."
+
+msgid "Account updated."
+msgstr "Rekening bijgewerkt."
+
+msgid "Account '%(name)s' deleted."
+msgstr "Rekening '%(name)s' verwijderd."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s transactie(s) hebben geen rekening meer."
+
+msgid "Transfer saved."
+msgstr "Overboeking opgeslagen."
+
+msgid "Move money between accounts"
+msgstr "Geld overboeken tussen rekeningen"
+
+msgid "Transfer updated."
+msgstr "Overboeking bijgewerkt."
+
+msgid "Edit transfer"
+msgstr "Overboeking bewerken"
+
+msgid "Transfer deleted."
+msgstr "Overboeking verwijderd."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "AI-limiet voor iedereen vandaag bereikt — wordt om middernacht gereset"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "De AI heeft de dagelijkse limiet voor iedereen bereikt. Deze wordt om middernacht gereset. Je kunt nog steeds handmatig transacties toevoegen."
+
+msgid "Transfer"
+msgstr "Overboeking"
+
+msgid "Day"
+msgstr "Dag"
+
+msgid "Week"
+msgstr "Week"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "No transactions in this period."
+msgstr "Geen transacties in deze periode."
+
+msgid "Dates:"
+msgstr "Datums:"
+
+msgid "Show all dates"
+msgstr "Toon alle datums"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI vandaag: %(p)s%% gebruikt"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "%(used)s van de %(limit)s AI-tokens vandaag gebruikt. De AI draait op een gratis plan met een daglimiet; deze wordt om middernacht gereset."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "AI-limiet voor vandaag verbruikt — wordt om middernacht gereset"
+
+msgid "AI usage today"
+msgstr "AI-gebruik vandaag"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Je hebt 100% van je dagelijkse AI-limiet verbruikt. Deze wordt om middernacht gereset. Je kunt nog steeds handmatig transacties toevoegen."
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Password (again)"
+msgstr "Wachtwoord (opnieuw)"
+
+msgid "Forgot your password?"
+msgstr "Wachtwoord vergeten?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "Het opgegeven e-mailadres en/of wachtwoord is onjuist."
+
+msgid "A user is already registered with this email address."
+msgstr "Er is al een gebruiker geregistreerd met dit e-mailadres."
+
+msgid "You must type the same password each time."
+msgstr "Je moet elke keer hetzelfde wachtwoord typen."
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Incorrect code."
+msgstr "Onjuiste code."
+
+msgid "Email Verification"
+msgstr "E-mailverificatie"
+
+msgid "Enter Email Verification Code"
+msgstr "Voer e-mailverificatiecode in"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "We hebben een code naar %(recipient)s gestuurd. De code verloopt binnenkort, dus voer deze snel in."
+
+msgid "Request new code"
+msgstr "Nieuwe code aanvragen"
+
+msgid "Use a different email address"
+msgstr "Gebruik een ander e-mailadres"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "Bevestigingsmail verzonden naar %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "Succesvol ingelogd als %(name)s."
+
+msgid "You have signed out."
+msgstr "Je bent uitgelogd."
+
+msgid "You have confirmed %(email)s."
+msgstr "Je hebt %(email)s bevestigd."
+
+msgid "Password successfully changed."
+msgstr "Wachtwoord succesvol gewijzigd."
+
+msgid "Password successfully set."
+msgstr "Wachtwoord succesvol ingesteld."
+
+msgid "Password Reset"
+msgstr "Wachtwoord opnieuw instellen"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Wachtwoord vergeten? Voer hieronder je e-mailadres in en we sturen je een e-mail om het opnieuw in te stellen."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Neem contact met ons op als je problemen hebt met het opnieuw instellen van je wachtwoord."
+
+msgid "Reset My Password"
+msgstr "Mijn wachtwoord opnieuw instellen"
+
+msgid "Enter Password Reset Code"
+msgstr "Voer wachtwoordherstelcode in"
+
+msgid "Change Password"
+msgstr "Wachtwoord wijzigen"
+
+msgid "Your password is now changed."
+msgstr "Je wachtwoord is nu gewijzigd."
+
+msgid "New Password"
+msgstr "Nieuw wachtwoord"
+
+msgid "Current Password"
+msgstr "Huidig wachtwoord"
+
+msgid "Sign Out"
+msgstr "Uitloggen"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Weet je zeker dat je wilt uitloggen?"
+
+msgid "This password is too common."
+msgstr "Dit wachtwoord komt te vaak voor."
+
+msgid "This password is entirely numeric."
+msgstr "Dit wachtwoord bestaat alleen uit cijfers."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Het wachtwoord lijkt te veel op de %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Je wachtwoord mag niet te veel lijken op je andere persoonlijke gegevens."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Je wachtwoord mag geen veelgebruikt wachtwoord zijn."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Je wachtwoord mag niet volledig uit cijfers bestaan."
+
+msgid "Continue with %(provider)s"
+msgstr "Doorgaan met %(provider)s"
+
+msgid "or with email"
+msgstr "of met e-mail"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Je krijgt kant-en-klare categorieën en accounts om mee te beginnen. We sturen je een 6-cijferige code per e-mail om je e-mailadres te bevestigen."
+
+msgid "Profile"
+msgstr "Profiel"
+
+msgid "Email (used to log in)"
+msgstr "E-mail (gebruikt om in te loggen)"
+
+msgid "Change email"
+msgstr "E-mailadres wijzigen"
+
+msgid "Change password"
+msgstr "Wachtwoord wijzigen"
+
+msgid "Google / Facebook login"
+msgstr "Inloggen met Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Wordt getoond in de app. Je logt in met je e-mailadres, niet hiermee."
+
+msgid "This username is already taken."
+msgstr "Deze gebruikersnaam is al in gebruik."
+
+msgid "Username updated."
+msgstr "Gebruikersnaam bijgewerkt."
+
+msgid "Hello from KhorochAi!"
+msgstr "Hallo van KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "Bedankt voor het gebruik van KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "Je e-mailverificatiecode is:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Voer deze in op de KhorochAi-pagina die in je browser is geopend. De code verloopt binnenkort."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "Open %(activate_url)s om je e-mailadres te bevestigen"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "Als je je niet hebt aangemeld voor KhorochAi, kun je deze e-mail negeren."
+
+msgid "Your verification code"
+msgstr "Je verificatiecode"
+
+msgid "Your password reset code is:"
+msgstr "Je wachtwoordherstelcode is:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Als je niet hebt gevraagd om je wachtwoord opnieuw in te stellen, kun je deze e-mail negeren. Je wachtwoord is niet gewijzigd."
+
+msgid "Your password reset code"
+msgstr "Je wachtwoordherstelcode"
+
+msgid "Set balance"
+msgstr "Saldo instellen"
+
+msgid "Balance now"
+msgstr "Huidig saldo"
+
+msgid "Balance updated: %(list)s."
+msgstr "Saldo bijgewerkt: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Goedemorgen, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Goedemiddag, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "Goedenavond, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Spreek in plaats van te typen"
+
+msgid "Stop recording"
+msgstr "Opname stoppen"
+
+msgid "Writing what you said…"
+msgstr "Bezig met verwerken van wat je zei…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Microfoontoegang is geblokkeerd. Sta dit toe in je browserinstellingen en probeer het opnieuw."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Dat was te kort. Wacht even en spreek, tik daarna op stoppen."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Kon de opname niet verzenden. Controleer je verbinding en probeer het opnieuw."
+
+msgid "No recording was received."
+msgstr "Geen opname ontvangen."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "De opname is te lang. Houd het onder een minuut."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Kon de opname nu niet omzetten naar tekst. Probeer het opnieuw of typ het in."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Ik kon niets verstaan. Probeer het opnieuw, iets dichter bij de microfoon."
+
+msgid "Set budget"
+msgstr "Budget instellen"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Maandelijks budget ingesteld: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (verwijderd)"
+
+msgid "Help & contact"
+msgstr "Hulp & contact"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Alles werkt door te typen of te spreken in eenvoudig English, বাংলা of Banglish. Je ziet altijd een voorbeeld voordat er iets wordt opgeslagen."
+
+msgid "How to use KhorochAi"
+msgstr "Hoe gebruik je KhorochAi"
+
+msgid "Good to know"
+msgstr "Goed om te weten"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "De AI leest alleen je tekst; elk totaal en saldo wordt door de app berekend op basis van je opgeslagen gegevens."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "AI-gebruik heeft een dagelijkse limiet (weergegeven als “AI vandaag: x% gebruikt”). Deze wordt om middernacht gereset, en je kunt altijd handmatig dingen toevoegen."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Wat je typt of zegt wordt naar Google Gemini (of Groq) gestuurd om begrepen te worden. Voeg geen kaartnummers of wachtwoorden toe."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Wijzig het thema, de taal en je gebruikersnaam via het menu rechtsboven."
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Questions, problems or ideas"
+msgstr "Vragen, problemen of ideeën"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Schrijf ons en we komen bij je terug."
+
+msgid "Developer"
+msgstr "Ontwikkelaar"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi is gebouwd door %(name)s."
+
+msgid "Account menu"
+msgstr "Rekeningmenu"
+
+msgid "First name"
+msgstr "Voornaam"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Wordt getoond in de begroeting en het menu."
+
+msgid "Profile updated."
+msgstr "Profiel bijgewerkt."
+
+msgid "Add spending or income"
+msgstr "Uitgave of inkomst toevoegen"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "Typ wat er is gebeurd in het vak op het dashboard en druk op Toevoegen met AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "Tik op de microfoon in het vak, praat en tik daarna op stoppen. Controleer de tekst en druk op Toevoegen met AI."
+
+msgid "Accounts and moving money"
+msgstr "Rekeningen en geld overboeken"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Geef aan welk account je hebt gebruikt, of verplaats geld tussen je eigen accounts."
+
+msgid "Set an account balance"
+msgstr "Stel een accountsaldo in"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "Vertel de AI hoeveel er nu in een account staat."
+
+msgid "Monthly budgets"
+msgstr "Maandelijkse budgetten"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Stel een uitgavenlimiet in voor een categorie en bekijk de voortgangsbalk op het dashboard."
+
+msgid "Ask about your money"
+msgstr "Vraag over je geld"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Gebruik Vraag AI voor totalen, overzichten en vergelijkingen."
+
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "Help"
+msgstr "Hulp"
+
+msgid "About & contact"
+msgstr "Over & contact"
+
+msgid "Made by"
+msgstr "Gemaakt door"
+
+msgid "Developer, KhorochAi"
+msgstr "Ontwikkelaar, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Hoe kunnen we helpen?"
+
+msgid "Still need help?"
+msgstr "Nog steeds hulp nodig?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Schrijf ons — vragen, problemen en ideeën zijn allemaal welkom."
+
+msgid "Contact us"
+msgstr "Neem contact met ons op"
+
+msgid "Money tracking that speaks your language"
+msgstr "Geld bijhouden in jouw taal"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "Met KhorochAi kun je uitgaven en inkomsten bijhouden door simpelweg te typen of te spreken — in het Engels, বাংলা of Banglish. De AI begrijpt wat je bedoelt; de app doet al het rekenwerk."
+
+msgid "Type or talk"
+msgstr "Typen of spreken"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Geen formulieren om in te vullen. Zeg “aaj lunch 250 bkash e” en het wordt opgeslagen."
+
+msgid "See where it goes"
+msgstr "Bekijk waar het geld heen gaat"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Rekeningen, budgetten en grafieken tonen je geld in één oogopslag, en Ask AI beantwoordt je vragen."
+
+msgid "Correct by design"
+msgstr "Correct door ontwerp"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "Je controleert elke post voordat deze wordt opgeslagen, en totalen worden altijd berekend op basis van je eigen gegevens."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Vragen, problemen of ideeën — schrijf ons en we nemen contact met je op."
+
+msgid "Read the help guide"
+msgstr "Lees de helpgids"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Uitgaven- & inkomstenbeheer waar je tegen kunt praten"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Zeg het gewoon. Je hisab is klaar."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Zeg het gewoon. Je hisab is klaar. Houd uitgaven en inkomsten bij door te typen of te spreken in het Engels, বাংলা of Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Gratis · Engels, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "Typ of spreek in wat je hebt uitgegeven of verdiend — alsof je het aan een vriend vertelt. KhorochAi zet het om in nette posten, houdt je rekeningen en budgetten up-to-date en beantwoordt je vragen over geld."
+
+msgid "Create free account"
+msgstr "Gratis account aanmaken"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "Meld je aan met je e-mailadres. Je controleert elke invoer voordat deze wordt opgeslagen."
+
+msgid "Write it the way you talk"
+msgstr "Schrijf het zoals je praat"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Eén bericht kan meerdere items bevatten — uitgaven, inkomsten, overboekingen tussen je rekeningen, zelfs budgetten. De AI leest het; jij controleert het voorbeeld en slaat het op."
+
+msgid "How it works"
+msgstr "Hoe het werkt"
+
+msgid "Type or say it"
+msgstr "Typ of spreek in"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Schrijf of spreek in wat er is gebeurd, in het Engels, বাংলা of Banglish. Meerdere dingen in één bericht is prima."
+
+msgid "Check the preview"
+msgstr "Bekijk het voorbeeld"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "Bekijk precies wat de AI heeft begrepen — bedrag, categorie, account en datum. Pas alles aan met één tik."
+
+msgid "Saved and up to date"
+msgstr "Opgeslagen en bijgewerkt"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "Je totalen, rekeningsaldi, budgetten en grafieken worden direct bijgewerkt."
+
+msgid "Everything you need, nothing you don't"
+msgstr "Alles wat je nodig hebt, niets wat je niet nodig hebt"
+
+msgid "Voice input"
+msgstr "Spraakinvoer"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "Tik op de microfoon en spreek. Je woorden verschijnen in het vak zodat je ze kunt controleren."
+
+msgid "Your language"
+msgstr "Jouw taal"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "English, বাংলা of Banglish — en de hele app kan overschakelen naar het Bangla."
+
+msgid "All your accounts"
+msgstr "Al je rekeningen"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Contant, bKash, Nagad, Rocket, bank en kaart, met overboekingen tussen deze rekeningen."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Stel limieten per categorie in en bekijk de voortgangsbalken terwijl je uitgeeft."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — krijg het antwoord uit je eigen gegevens."
+
+msgid "Clear dashboard"
+msgstr "Dashboard wissen"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Inkomen, uitgaven, balans, waar je geld naartoe ging en dagelijkse grafieken."
+
+msgid "Light and dark"
+msgstr "Licht en donker"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Een rustig ontwerp dat de donkere modus van je telefoon volgt, of kies je eigen stijl."
+
+msgid "Export to CSV"
+msgstr "Exporteren naar CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "Download je transacties op elk gewenst moment voor Excel of Google Sheets."
+
+msgid "Start your hisab in a minute"
+msgstr "Start je hisab binnen een minuut"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "Maak een gratis account aan met je e-mailadres en vertel KhorochAi wat je vandaag hebt uitgegeven."
+
+msgid "See how it works"
+msgstr "Bekijk hoe het werkt"
+
+msgid "Free to use"
+msgstr "Gratis te gebruiken"
+
+msgid "You confirm every entry"
+msgstr "Je bevestigt elke post"
+
+msgid "Works on phone and computer"
+msgstr "Werkt op telefoon en computer"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Schrijf het zoals je praat — of praat gewoon."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "Typ het, of tik op de microfoon en spreek het in. Eén bericht kan meerdere posten bevatten — uitgaven, inkomsten, overboekingen tussen je rekeningen, en zelfs budgetten. Je controleert het voorbeeld en slaat het op."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Gratis · বাংলা, Engels, Banglish & elke taal"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Schrijf het zoals je praat — in elke taal, of praat gewoon."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Bangla, Engels, Banglish — of welke taal je ook spreekt. De app zelf is beschikbaar in 9 talen."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Vertel me wat je hebt uitgegeven of verdiend — বাংলা, Engels, Banglish of elke andere taal"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Used for every amount in the app."
+msgstr "Wordt gebruikt voor elk bedrag in de app."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "De AI heeft %(n)s transactie gevonden. Corrigeer wat er niet klopt en sla op."
+msgstr[1] "De AI heeft %(n)s transacties gevonden. Corrigeer wat er niet klopt en sla op."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s transactie"
+msgstr[1] "%(n)s transacties"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "%(n)s transactie opgeslagen."
+msgstr[1] "%(n)s transacties opgeslagen."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Dit wachtwoord is te kort. Het moet minimaal %d teken bevatten."
+msgstr[1] "Dit wachtwoord is te kort. Het moet minimaal %d tekens bevatten."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Je wachtwoord moet ten minste %(min_length)d teken bevatten."
+msgstr[1] "Je wachtwoord moet ten minste %(min_length)d tekens bevatten."
