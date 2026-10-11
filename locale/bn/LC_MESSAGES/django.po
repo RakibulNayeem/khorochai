@@ -994,3 +994,6 @@ msgstr "আপনার টাকা নিয়ে প্রশ্ন কর�
 msgid "Use Ask AI for totals, breakdowns and comparisons."
 msgstr "মোট হিসাব, খাতওয়ারি বিবরণ ও তুলনার জন্য “AI-কে জিজ্ঞেস করুন” ব্যবহার করুন।"
 
+
+msgid "Portfolio"
+msgstr "পোর্টফোলিও"

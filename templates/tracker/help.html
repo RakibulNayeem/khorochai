@@ -46,6 +46,7 @@
           <a class="btn btn-outline-secondary btn-sm" href="mailto:{{ developer.email }}">{{ developer.email }}</a>
           {% if developer.facebook %}<a class="btn btn-outline-secondary btn-sm" href="{{ developer.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
           {% if developer.linkedin %}<a class="btn btn-outline-secondary btn-sm" href="{{ developer.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+          {% if developer.portfolio %}<a class="btn btn-outline-secondary btn-sm" href="{{ developer.portfolio }}" target="_blank" rel="noopener">{% translate "Portfolio" %}</a>{% endif %}
         </div>
       </div>
     </div>
