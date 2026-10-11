@@ -5,7 +5,7 @@
 <div class="card ai-box p-3 p-md-4 mb-4">
   <form method="post" id="ask-form">
     {% csrf_token %}
-    <label class="form-label fw-semibold" for="question">✨ {% translate "Ask anything about your money" %}</label>
+    <label class="form-label fw-semibold" for="question">{% translate "Ask anything about your money" %}</label>
     <div class="input-group">
       <input type="text" id="question" name="question" maxlength="500" class="form-control form-control-lg" required
              value="{{ question }}" placeholder="এই মাসে খাবারে কত খরচ হলো?">
