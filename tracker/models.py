@@ -140,3 +140,12 @@ class AIUsage(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=["user", "date"], name="unique_ai_usage_per_day")]
+
+
+class Profile(models.Model):
+    """Per-user settings that must follow the user to every device."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile")
+    currency = models.CharField(max_length=3, default="BDT")
+
+    def __str__(self):
+        return f"{self.user} ({self.currency})"

@@ -18,7 +18,9 @@ class BootstrapMixin:
 
 
 class ProfileForm(BootstrapMixin, forms.ModelForm):
-    """The username: shown in the greeting and the menu. People log in with their email, not this."""
+    """Username (greeting + menu; people log in with their email) and the currency for every amount."""
+    currency = forms.ChoiceField(label=_("Currency"), help_text=_("Used for every amount in the app."))
+
     class Meta:
         model = User
         fields = ("username",)
@@ -27,7 +29,18 @@ class ProfileForm(BootstrapMixin, forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        from .currency import CURRENCY_CHOICES, DEFAULT_CURRENCY
+        from .models import Profile
+        self.fields["currency"].choices = CURRENCY_CHOICES
+        profile = Profile.objects.filter(user=self.instance).first() if self.instance.pk else None
+        self.fields["currency"].initial = profile.currency if profile else DEFAULT_CURRENCY
         self._style()
+
+    def save(self, commit=True):
+        from .models import Profile
+        user = super().save(commit)
+        Profile.objects.update_or_create(user=user, defaults={"currency": self.cleaned_data["currency"]})
+        return user
 
     def clean_username(self):
         name = self.cleaned_data["username"].strip()

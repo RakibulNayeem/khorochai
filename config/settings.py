@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "tracker.middleware.CurrencyMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
@@ -103,7 +104,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Interface language: chosen in Settings and stored in the "django_language" cookie.
 # Translations live in locale/bn/LC_MESSAGES/django.po -> run `python manage.py compile_po` after editing.
 LANGUAGE_CODE = "en"
-LANGUAGES = [("en", "English"), ("bn", "বাংলা")]
+LANGUAGES = [
+    ("en", "English"), ("bn", "বাংলা"), ("hi", "हिन्दी"), ("ur", "اردو"), ("ar", "العربية"),
+    ("es", "Español"), ("fr", "Français"), ("zh-hans", "中文"), ("id", "Bahasa Indonesia"),
+]
 LOCALE_PATHS = [BASE_DIR / "locale"]
 LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 365
 TIME_ZONE = "Asia/Dhaka"
@@ -203,7 +207,6 @@ AI_DAILY_TOKENS_PER_USER = int(os.environ.get("AI_DAILY_TOKENS_PER_USER", "30000
 AI_DAILY_TOKENS_TOTAL = int(os.environ.get("AI_DAILY_TOKENS_TOTAL", "1000000"))
 AI_DAILY_REQUESTS_TOTAL = int(os.environ.get("AI_DAILY_REQUESTS_TOTAL", "400"))
 
-CURRENCY_SYMBOL = os.environ.get("CURRENCY_SYMBOL", "৳")
 
 # ---------------------------------------------------------------- Help & contact page
 CONTACT_EMAIL = "khorochai@gmail.com"

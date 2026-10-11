@@ -20,6 +20,13 @@ def _welcome(request):
 
 
 @receiver(user_signed_up)
+def first_currency(request, user, **kwargs):
+    from . import currency
+    from .models import Profile
+    Profile.objects.get_or_create(user=user, defaults={"currency": currency.guess_for_language(getattr(request, "LANGUAGE_CODE", ""))})
+
+
+@receiver(user_signed_up)
 def welcome_social(request, user, sociallogin=None, **kwargs):
     if sociallogin:  # Google / Facebook sign-ups skip the email code, so welcome them now
         _welcome(request)

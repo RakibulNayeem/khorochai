@@ -19,6 +19,7 @@ from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
 from .forms import AccountForm, CategoryForm, ProfileForm, TransactionForm, TransferForm
 from .models import BALANCE, BUDGET, EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
+from .currency import current as current_currency
 from .templatetags.money import money
 
 logger = logging.getLogger(__name__)
@@ -96,7 +97,7 @@ def landing(request):
     ]
     features = [
         {"icon": "mic", "title": _("Voice input"), "text": _("Tap the mic and speak. Your words appear in the box for you to check.")},
-        {"icon": "language", "title": _("Your language"), "text": _("English, বাংলা or Banglish — and the whole app can switch to Bangla.")},
+        {"icon": "language", "title": _("Your language"), "text": _("Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages.")},
         {"icon": "accounts", "title": _("All your accounts"), "text": _("Cash, bKash, Nagad, Rocket, bank and card, with transfers between them.")},
         {"icon": "budget", "title": _("Monthly budgets"), "text": _("Set limits per category and watch the progress bars as you spend.")},
         {"icon": "ask", "title": _("Ask AI"), "text": _("“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data.")},
@@ -104,7 +105,9 @@ def landing(request):
         {"icon": "moon", "title": _("Light and dark"), "text": _("A calm design that follows your phone's dark mode, or pick your own.")},
         {"icon": "export", "title": _("Export to CSV"), "text": _("Download your transactions for Excel or Google Sheets any time.")},
     ]
-    return render(request, "tracker/landing.html", {"demo_rows": demo_rows, "steps": steps, "features": features})
+    shot_lang = "bn" if request.LANGUAGE_CODE == "bn" else "en"  # screenshots exist in these two
+    return render(request, "tracker/landing.html", {"demo_rows": demo_rows, "steps": steps, "features": features,
+                                                   "shot_lang": shot_lang})
 
 
 def dashboard(request):
@@ -183,7 +186,8 @@ def ai_parse(request):
     account_names = [a.name for a in Account.objects.filter(user=request.user)]
     usage = {}
     try:
-        data = llm.parse_transactions(text, timezone.localdate(), exp_names, inc_names, account_names, usage=usage)
+        data = llm.parse_transactions(text, timezone.localdate(), exp_names, inc_names, account_names, usage=usage,
+                                      currency=current_currency()[0])
         services.record_ai_usage(request.user, usage.get("tokens", 0))
     except llm.LLMError as exc:
         logger.error("AI parse failed: %s", exc)

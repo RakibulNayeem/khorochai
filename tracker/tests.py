@@ -421,7 +421,7 @@ class AuthTests(TestCase):
     def test_change_username_in_settings(self):
         user = self._verified_user()
         self.client.force_login(user)
-        r = self.client.post(reverse("preferences"), {"username": "Rakibul"}, follow=True)
+        r = self.client.post(reverse("preferences"), {"username": "Rakibul", "currency": "BDT"}, follow=True)
         self.assertContains(r, "Profile updated")
         user.refresh_from_db()
         self.assertEqual(user.username, "Rakibul")
@@ -499,3 +499,49 @@ class VoiceInputTests(TestCase):
         self.client.logout()
         r = self.client.post(reverse("ai_transcribe"), {"audio": self._wav()})
         self.assertEqual(r.status_code, 302)
+
+
+class CurrencyTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.login(username="rakib", password="pass12345!")
+        food = Category.objects.get(user=self.user, name="Food")
+        Transaction.objects.create(user=self.user, type="expense", amount=1500, category=food)
+
+    def test_default_is_taka_and_user_can_change_it(self):
+        self.assertContains(self.client.get(reverse("dashboard")), "৳ 1,500.00")
+        self.client.post(reverse("preferences"), {"username": "rakib", "currency": "USD"})
+        r = self.client.get(reverse("dashboard"))
+        self.assertContains(r, "$ 1,500.00")
+        self.assertNotContains(r, "৳ 1,500.00")
+        self.client.post(reverse("preferences"), {"username": "rakib", "currency": "IDR"})
+        self.assertContains(self.client.get(reverse("dashboard")), "Rp 1,500<")  # no decimals for rupiah
+
+    def test_language_does_not_change_a_users_currency(self):
+        self.client.cookies["django_language"] = "ar"
+        self.assertContains(self.client.get(reverse("dashboard")), "৳ 1,500.00")
+
+    def test_ai_is_told_the_currency(self):
+        self.client.post(reverse("preferences"), {"username": "rakib", "currency": "INR"})
+        seen = {}
+        def fake(system, user, usage=None):
+            seen["system"] = system
+            return {"transactions": [{"type": "expense", "amount": 50, "category": "Food"}], "message": ""}
+        with mock.patch.object(llm, "call_llm", side_effect=fake):
+            self.client.post(reverse("ai_parse"), {"text": "chai 50"})
+        self.assertIn("(INR)", seen["system"])
+
+    def test_signup_currency_follows_language(self):
+        from .models import Profile
+        self.client.logout()
+        self.client.cookies["django_language"] = "hi"
+        self.client.post(reverse("account_signup"), {"email": "new@example.com", "password1": "Strong-pass-123",
+                                                     "password2": "Strong-pass-123"})
+        self.assertEqual(Profile.objects.get(user__email="new@example.com").currency, "INR")
+
+    def test_browser_language_picks_site_language(self):
+        self.client.logout()
+        r = self.client.get(reverse("account_login"), HTTP_ACCEPT_LANGUAGE="es-ES,es;q=0.9")
+        self.assertContains(r, '<html lang="es"')
+        r = self.client.get(reverse("account_login"), HTTP_ACCEPT_LANGUAGE="ar")
+        self.assertContains(r, 'dir="rtl"')

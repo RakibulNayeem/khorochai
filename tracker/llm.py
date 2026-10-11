@@ -138,7 +138,7 @@ Rules:
    আজ / aaj / today = today; গতকাল / gotokal / kal (past) / yesterday = yesterday;
    পরশু / porshu (past) = 2 days ago; "last Friday", "গত শুক্রবার" etc. = the most recent such day.
    If no date is mentioned, use today.
-2. amount: positive number in BDT. "1.5k" or "১.৫ হাজার" = 1500, "hazar/হাজার" = 1000,
+2. amount: positive number in the user's currency (__CURRENCY__). "1.5k" or "১.৫ হাজার" = 1500, "hazar/হাজার" = 1000,
    "lakh/লাখ" = 100000. If another currency is used, keep the number and mention the currency in note.
 3. type: spent, paid, bought, gave, bill, khoroch, খরচ, দিলাম, কিনলাম = expense.
    received, earned, got, salary, income, পেলাম, আয়, বেতন = income.
@@ -245,7 +245,7 @@ Rules:
 """
 
 
-def _fill(template: str, today, expense_names, income_names, account_names=()) -> str:
+def _fill(template: str, today, expense_names, income_names, account_names=(), currency="BDT") -> str:
     import datetime as dt
 
     yesterday = today - dt.timedelta(days=1)
@@ -257,18 +257,25 @@ def _fill(template: str, today, expense_names, income_names, account_names=()) -
         .replace("__EXPENSE__", ", ".join(expense_names) or "(none)")
         .replace("__INCOME__", ", ".join(income_names) or "(none)")
         .replace("__ACCOUNTS__", ", ".join(account_names) or "(none)")
+        .replace("__CURRENCY__", currency)
     )
 
 
-def parse_transactions(text, today, expense_names, income_names, account_names=(), usage=None) -> dict:
-    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names)
+def parse_transactions(text, today, expense_names, income_names, account_names=(), usage=None, currency="BDT") -> dict:
+    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names, currency)
     return call_llm(system, normalize_text(text), usage=usage)
+
+
+TITLE_LANGUAGES = {
+    "bn": "Bangla (বাংলা script)", "hi": "Hindi", "ur": "Urdu", "ar": "Arabic", "es": "Spanish",
+    "fr": "French", "zh-hans": "Simplified Chinese", "id": "Indonesian",
+}
 
 
 def build_query(question, today, expense_names, income_names, language="en", account_names=(), usage=None) -> dict:
     system = _fill(QUERY_PROMPT, today, expense_names, income_names, account_names)
     # the app's display language decides the language of the title shown above the answer
-    title_lang = "Bangla (বাংলা script)" if language == "bn" else "English"
+    title_lang = TITLE_LANGUAGES.get(language, "English")
     system += f'- Write "title" in {title_lang}.\n'
     return call_llm(system, normalize_text(question), usage=usage)
 
@@ -277,9 +284,10 @@ def build_query(question, today, expense_names, income_names, language="en", acc
 
 GROQ_TRANSCRIBE_URL = "https://api.groq.com/openai/v1/audio/transcriptions"
 
-TRANSCRIBE_PROMPT = """Transcribe this voice note exactly as spoken. The speaker is in Bangladesh and talks about
-money they spent, earned or moved, in Bangla, English or a mix of both.
-- Write Bangla words in Bangla script and English words in English letters, e.g. "আজ lunch এ 250 টাকা দিলাম".
+TRANSCRIBE_PROMPT = """Transcribe this voice note exactly as spoken. The speaker talks about money they spent,
+earned or moved. Most users are in Bangladesh and speak Bangla, English or a mix, but any language is possible.
+- Write each language in its own script: Bangla in Bangla script, English in English letters, Hindi in Devanagari,
+  Arabic/Urdu in Arabic script, and so on. A Bangla-English mix stays mixed, e.g. "আজ lunch এ 250 টাকা দিলাম".
 - Write all numbers as digits (0-9), e.g. "পাঁচশো" -> 500, "two thousand" -> 2000.
 - Do not translate, summarise or add anything. Return only the transcript, without quotes.
 - If there is no speech, return an empty string."""

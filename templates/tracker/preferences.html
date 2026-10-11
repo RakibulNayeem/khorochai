@@ -32,7 +32,7 @@
       <legend class="card-title-sm mb-2">{% translate "Language" %}</legend>
       <div class="row g-2">
         {% for code, name in languages %}
-        <div class="col-6">
+        <div class="col-6 col-md-4">
           <input type="radio" class="btn-check" name="language" id="lang-{{ code }}" value="{{ code }}" {% if code == LANGUAGE_CODE %}checked{% endif %}>
           <label class="btn btn-outline-secondary w-100 py-3 choice" for="lang-{{ code }}" lang="{{ code }}">{{ name }}</label>
         </div>

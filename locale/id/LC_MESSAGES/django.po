@@ -1,0 +1,1157 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Settings"
+msgstr "Pengaturan"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Light"
+msgstr "Terang"
+
+msgid "Dark"
+msgstr "Gelap"
+
+msgid "System"
+msgstr "Sistem"
+
+msgid "Language"
+msgstr "Bahasa"
+
+msgid "All settings"
+msgstr "Semua pengaturan"
+
+msgid "Log out"
+msgstr "Logout"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Dashboard"
+msgstr "Dasbor"
+
+msgid "Transactions"
+msgstr "Transaksi"
+
+msgid "Categories &amp; Budgets"
+msgstr "Kategori &amp; Anggaran"
+
+msgid "Ask AI"
+msgstr "Tanya AI"
+
+msgid "Close"
+msgstr "Tutup"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "Masuk sebagai <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "Sistem mengikuti pengaturan mode gelap ponsel atau komputer Anda."
+
+msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
+msgstr "Mengubah menu, tombol, dan pesan aplikasi. Anda selalu dapat mengetik ke AI dalam bahasa Inggris, বাংলা, atau Banglish."
+
+msgid "These settings are saved in this browser."
+msgstr "Pengaturan ini disimpan di peramban ini."
+
+msgid "Log in"
+msgstr "Login"
+
+msgid "Welcome back"
+msgstr "Selamat datang kembali"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "Lacak uang Anda hanya dengan mengetik, dalam bahasa Inggris atau বাংলা."
+
+msgid "Wrong username or password."
+msgstr "Nama pengguna atau kata sandi salah."
+
+msgid "Username"
+msgstr "Nama pengguna"
+
+msgid "Password"
+msgstr "Kata Sandi"
+
+msgid "No account?"
+msgstr "Belum punya akun?"
+
+msgid "Sign up"
+msgstr "Daftar"
+
+msgid "Create your account"
+msgstr "Buat akun Anda"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "Anda akan mendapatkan kategori siap pakai untuk memulai."
+
+msgid "Already have an account?"
+msgstr "Sudah punya akun?"
+
+msgid "Email (optional)"
+msgstr "Email (opsional)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "Beri tahu saya apa yang Anda belanjakan atau hasilkan — English, বাংলা, atau Banglish"
+
+msgid "e.g."
+msgstr "contoh"
+
+msgid "Add manually"
+msgstr "Tambah manual"
+
+msgid "Add with AI"
+msgstr "Tambah dengan AI"
+
+msgid "Reading…"
+msgstr "Membaca..."
+
+msgid "Prev"
+msgstr "Sebelumnya"
+
+msgid "Next"
+msgstr "Selanjutnya"
+
+msgid "This month"
+msgstr "Bulan ini"
+
+msgid "Income"
+msgstr "Pemasukan"
+
+msgid "Expense"
+msgstr "Pengeluaran"
+
+msgid "Balance this month"
+msgstr "Saldo bulan ini"
+
+msgid "Saved %(p)s%% of income"
+msgstr "Menabung %(p)s%% dari pendapatan"
+
+msgid "All-time balance"
+msgstr "Saldo sepanjang waktu"
+
+msgid "Where your money went"
+msgstr "Ke mana uang Anda pergi"
+
+msgid "No expenses this month yet."
+msgstr "Belum ada pengeluaran bulan ini."
+
+msgid "Day by day"
+msgstr "Hari demi hari"
+
+msgid "Budgets"
+msgstr "Anggaran"
+
+msgid "Set budgets"
+msgstr "Atur anggaran"
+
+msgid "Over budget by %(a)s"
+msgstr "Melebihi anggaran sebesar %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "%(p)s%% digunakan"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "Belum ada anggaran. Ketik atau ucapkan “khabar e mashe 6000 budget” di kotak di atas, atau atur satu di bawah Kategori."
+
+msgid "Recent transactions"
+msgstr "Transaksi terbaru"
+
+msgid "See all"
+msgstr "Lihat semua"
+
+msgid "Date"
+msgstr "Tanggal"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Note"
+msgstr "Catatan"
+
+msgid "Amount"
+msgstr "Jumlah"
+
+msgid "Uncategorized"
+msgstr "Tidak Berkategori"
+
+msgid "Added with AI"
+msgstr "Ditambahkan dengan AI"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "Belum ada transaksi. Ketik sesuatu di kotak di atas!"
+
+msgid "Export CSV"
+msgstr "Ekspor CSV"
+
+msgid "Add"
+msgstr "Tambah"
+
+msgid "Month"
+msgstr "Bulan"
+
+msgid "Type"
+msgstr "Tipe"
+
+msgid "All"
+msgstr "Semua"
+
+msgid "Search"
+msgstr "Cari"
+
+msgid "note or text"
+msgstr "catatan atau teks"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Reset"
+msgstr "Atur Ulang"
+
+msgid "Net"
+msgstr "Bersih"
+
+msgid "Newer"
+msgstr "Lebih baru"
+
+msgid "Older"
+msgstr "Lebih lama"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "Halaman %(a)s dari %(b)s"
+
+msgid "Confirm"
+msgstr "Konfirmasi"
+
+msgid "Check before saving"
+msgstr "Periksa sebelum menyimpan"
+
+msgid "You wrote:"
+msgstr "Anda menulis:"
+
+msgid "Save this one"
+msgstr "Simpan ini"
+
+msgid "New category:"
+msgstr "Kategori baru:"
+
+msgid "New:"
+msgstr "Baru:"
+
+msgid "New category…"
+msgstr "Kategori baru..."
+
+msgid "New category name"
+msgstr "Nama kategori baru"
+
+msgid "Save"
+msgstr "Simpan"
+
+msgid "Cancel"
+msgstr "Batal"
+
+msgid "Delete this permanently?"
+msgstr "Hapus ini secara permanen?"
+
+msgid "Delete"
+msgstr "Hapus"
+
+msgid "Ask anything about your money"
+msgstr "Tanya apa saja tentang uang Anda"
+
+msgid "Ask"
+msgstr "Tanya"
+
+msgid "Thinking…"
+msgstr "Sedang berpikir…"
+
+msgid "Where did I spend the most last month?"
+msgstr "Di mana saya paling banyak belanja bulan lalu?"
+
+msgid "Where did I spend most last month?"
+msgstr "Di mana saya paling banyak belanja bulan lalu?"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "Berapa banyak yang saya habiskan untuk becak tahun ini?"
+
+msgid "Rickshaw spending this year"
+msgstr "Pengeluaran becak tahun ini"
+
+msgid "income vs expense per month this year"
+msgstr "pendapatan vs pengeluaran per bulan tahun ini"
+
+msgid "Income vs expense per month"
+msgstr "Pemasukan vs pengeluaran per bulan"
+
+msgid "notes containing “%(k)s”"
+msgstr "catatan yang berisi “%(k)s”"
+
+msgid "Spent"
+msgstr "Dibelanjakan"
+
+msgid "Earned"
+msgstr "Pendapatan"
+
+msgid "Group"
+msgstr "Grup"
+
+msgid "Count"
+msgstr "Jumlah"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Matching transactions"
+msgstr "Transaksi yang cocok"
+
+msgid "first 50"
+msgstr "50 pertama"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI hanya memahami pertanyaan Anda; setiap angka di sini dihitung dari data yang Anda simpan."
+
+msgid "Your question"
+msgstr "Pertanyaan Anda"
+
+msgid "Categories"
+msgstr "Kategori"
+
+msgid "Add category"
+msgstr "Tambah kategori"
+
+msgid "Edit category"
+msgstr "Edit kategori"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI memilih dari kategori ini. Jika tidak ada yang cocok, AI akan menyarankan kategori baru dan bertanya sebelum membuatnya. Berikan anggaran bulanan pada kategori pengeluaran untuk melihat bilah kemajuan di dasbor."
+
+msgid "Expense categories"
+msgstr "Kategori pengeluaran"
+
+msgid "Income categories"
+msgstr "Kategori pemasukan"
+
+msgid "Name"
+msgstr "Nama"
+
+msgid "Budget"
+msgstr "Anggaran"
+
+msgid "Icon"
+msgstr "Ikon"
+
+msgid "Color"
+msgstr "Warna"
+
+msgid "Monthly budget"
+msgstr "Anggaran bulanan"
+
+msgid "e.g. 🍔"
+msgstr "contoh: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "Batas pengeluaran bulanan opsional (hanya untuk kategori pengeluaran)."
+
+msgid "You already have a category with this name."
+msgstr "Anda sudah memiliki kategori dengan nama ini."
+
+msgid "Food"
+msgstr "Makanan"
+
+msgid "Groceries"
+msgstr "Belanjaan"
+
+msgid "Transport"
+msgstr "Transportasi"
+
+msgid "Rent"
+msgstr "Sewa"
+
+msgid "Utilities"
+msgstr "Utilitas"
+
+msgid "Mobile & Internet"
+msgstr "Seluler & Internet"
+
+msgid "Health"
+msgstr "Kesehatan"
+
+msgid "Education"
+msgstr "Pendidikan"
+
+msgid "Shopping"
+msgstr "Belanja"
+
+msgid "Entertainment"
+msgstr "Hiburan"
+
+msgid "Family"
+msgstr "Keluarga"
+
+msgid "Other Expense"
+msgstr "Pengeluaran Lainnya"
+
+msgid "Salary"
+msgstr "Gaji"
+
+msgid "Tuition"
+msgstr "Uang Kuliah"
+
+msgid "Freelance"
+msgstr "Freelance"
+
+msgid "Business"
+msgstr "Bisnis"
+
+msgid "Gift"
+msgstr "Hadiah"
+
+msgid "Other Income"
+msgstr "Pemasukan Lainnya"
+
+msgid "Amount must be greater than zero."
+msgstr "Jumlah harus lebih besar dari nol."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' adalah kategori pengeluaran; pilih kategori pemasukan."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' adalah kategori pemasukan; pilih kategori pengeluaran."
+
+msgid "Manual"
+msgstr "Manual"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "Selamat datang! Kategori bawaan sudah siap. Coba ketik pengeluaran pertama Anda."
+
+msgid "Please type what you spent or earned."
+msgstr "Silakan ketik apa yang Anda belanjakan atau hasilkan."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "Pesan terlalu panjang (maks %(n)s karakter)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI sedang sibuk atau belum dikonfigurasi. Silakan coba lagi, atau tambahkan secara manual."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI sedang sibuk atau belum dikonfigurasi. Silakan coba lagi."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "Respons AI tidak dipahami. Silakan coba lagi."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "Tidak ada pemasukan atau pengeluaran dengan jumlah yang ditemukan dalam pesan Anda."
+
+msgid "New categories: %(names)s."
+msgstr "Kategori baru: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "%(n)s baris dilewati karena jumlah, tipe, atau akun tidak valid."
+
+msgid "Nothing was saved."
+msgstr "Tidak ada yang disimpan."
+
+msgid "Transaction added."
+msgstr "Transaksi ditambahkan."
+
+msgid "Add transaction"
+msgstr "Tambah transaksi"
+
+msgid "Transaction updated."
+msgstr "Transaksi diperbarui."
+
+msgid "Edit transaction"
+msgstr "Edit transaksi"
+
+msgid "Transaction deleted."
+msgstr "Transaksi dihapus."
+
+msgid "Category '%(name)s' added."
+msgstr "Kategori '%(name)s' ditambahkan."
+
+msgid "Category updated."
+msgstr "Kategori diperbarui."
+
+msgid "Category '%(name)s' deleted."
+msgstr "Kategori '%(name)s' dihapus."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s transaksi kini Tidak Berkategori."
+
+msgid "Accounts"
+msgstr "Akun"
+
+msgid "Account"
+msgstr "Akun"
+
+msgid "Move money"
+msgstr "Pindahkan uang"
+
+msgid "Add account"
+msgstr "Tambah akun"
+
+msgid "Edit account"
+msgstr "Edit akun"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "Tempat uang Anda disimpan. Beri tahu AI “bkash e 500 dilam” dan AI akan menggunakan bKash, atau “amar bkash e 5000 ache” untuk mengatur saldo bKash. Gunakan Pindahkan uang untuk penarikan ATM, cash out bKash, dan transfer lainnya — ini mengubah saldo tetapi bukan pemasukan atau pengeluaran. Ubah nama akun apa pun (misal: Bank → nama bank Anda) dengan Edit."
+
+msgid "Total in all accounts"
+msgstr "Total di semua akun"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Recent transfers"
+msgstr "Transfer terbaru"
+
+msgid "From"
+msgstr "Dari"
+
+msgid "To"
+msgstr "Ke"
+
+msgid "No transfers yet."
+msgstr "Belum ada transfer."
+
+msgid "Manage"
+msgstr "Kelola"
+
+msgid "e.g. 💵"
+msgstr "contoh: 💵"
+
+msgid "Opening balance"
+msgstr "Saldo awal"
+
+msgid "Default account"
+msgstr "Akun default"
+
+msgid "You already have an account with this name."
+msgstr "Anda sudah memiliki akun dengan nama ini."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "contoh: penarikan ATM, bKash cash out"
+
+msgid "Pick two different accounts."
+msgstr "Pilih dua akun yang berbeda."
+
+msgid "Cash"
+msgstr "Tunai"
+
+msgid "Card"
+msgstr "Kartu"
+
+msgid "Mobile banking"
+msgstr "Mobile banking"
+
+msgid "Bank account"
+msgstr "Akun bank"
+
+msgid "Other"
+msgstr "Lainnya"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "Uang yang sudah ada di akun ini saat Anda mulai menggunakan KhorochAi."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "Digunakan saat Anda tidak menyebutkan akun (misal: 'makan siang 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "Akun '%(name)s' ditambahkan."
+
+msgid "Account updated."
+msgstr "Akun diperbarui."
+
+msgid "Account '%(name)s' deleted."
+msgstr "Akun '%(name)s' dihapus."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s transaksi tidak lagi memiliki akun."
+
+msgid "Transfer saved."
+msgstr "Transfer disimpan."
+
+msgid "Move money between accounts"
+msgstr "Pindahkan uang antar akun"
+
+msgid "Transfer updated."
+msgstr "Transfer diperbarui."
+
+msgid "Edit transfer"
+msgstr "Edit transfer"
+
+msgid "Transfer deleted."
+msgstr "Transfer dihapus."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "Batas AI untuk semua orang hari ini telah tercapai — diatur ulang pada tengah malam"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI telah mencapai batas harian untuk semua orang. Batas diatur ulang tengah malam. Anda masih bisa menambah transaksi secara manual."
+
+msgid "Transfer"
+msgstr "Transfer"
+
+msgid "Day"
+msgstr "Hari"
+
+msgid "Week"
+msgstr "Minggu"
+
+msgid "Period"
+msgstr "Periode"
+
+msgid "No transactions in this period."
+msgstr "Tidak ada transaksi dalam periode ini."
+
+msgid "Dates:"
+msgstr "Tanggal:"
+
+msgid "Show all dates"
+msgstr "Tampilkan semua tanggal"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI hari ini: %(p)s%% digunakan"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "%(used)s dari %(limit)s token AI digunakan hari ini. AI berjalan pada paket gratis dengan batas harian; akan diatur ulang pada tengah malam."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "Batas AI untuk hari ini telah habis — diatur ulang pada tengah malam"
+
+msgid "AI usage today"
+msgstr "Penggunaan AI hari ini"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "Kuota AI Anda hari ini sudah terpakai 100%. Kuota akan diatur ulang tengah malam. Anda tetap bisa menambahkan transaksi secara manual."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Password (again)"
+msgstr "Kata Sandi (ulangi)"
+
+msgid "Forgot your password?"
+msgstr "Lupa kata sandi?"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "Alamat email dan/atau kata sandi yang Anda masukkan tidak benar."
+
+msgid "A user is already registered with this email address."
+msgstr "Pengguna sudah terdaftar dengan alamat email ini."
+
+msgid "You must type the same password each time."
+msgstr "Anda harus mengetik kata sandi yang sama setiap saat."
+
+msgid "Code"
+msgstr "Kode"
+
+msgid "Incorrect code."
+msgstr "Kode salah."
+
+msgid "Email Verification"
+msgstr "Verifikasi Email"
+
+msgid "Enter Email Verification Code"
+msgstr "Masukkan Kode Verifikasi Email"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "Kami telah mengirim kode ke %(recipient)s. Kode akan segera kedaluwarsa, harap segera masukkan."
+
+msgid "Request new code"
+msgstr "Minta kode baru"
+
+msgid "Use a different email address"
+msgstr "Gunakan alamat email yang berbeda"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "Email konfirmasi telah dikirim ke %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "Berhasil masuk sebagai %(name)s."
+
+msgid "You have signed out."
+msgstr "Anda telah keluar."
+
+msgid "You have confirmed %(email)s."
+msgstr "Anda telah mengonfirmasi %(email)s."
+
+msgid "Password successfully changed."
+msgstr "Kata sandi berhasil diubah."
+
+msgid "Password successfully set."
+msgstr "Kata sandi berhasil diatur."
+
+msgid "Password Reset"
+msgstr "Atur Ulang Kata Sandi"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "Lupa kata sandi? Masukkan alamat email Anda di bawah ini, dan kami akan mengirimkan email untuk mengatur ulang kata sandi Anda."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "Silakan hubungi kami jika Anda mengalami kesulitan mengatur ulang kata sandi."
+
+msgid "Reset My Password"
+msgstr "Atur Ulang Kata Sandi Saya"
+
+msgid "Enter Password Reset Code"
+msgstr "Masukkan Kode Atur Ulang Kata Sandi"
+
+msgid "Change Password"
+msgstr "Ubah Kata Sandi"
+
+msgid "Your password is now changed."
+msgstr "Kata sandi Anda telah diubah."
+
+msgid "New Password"
+msgstr "Kata Sandi Baru"
+
+msgid "Current Password"
+msgstr "Kata Sandi Saat Ini"
+
+msgid "Sign Out"
+msgstr "Keluar"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Anda yakin ingin keluar?"
+
+msgid "This password is too common."
+msgstr "Kata sandi ini terlalu umum."
+
+msgid "This password is entirely numeric."
+msgstr "Kata sandi ini sepenuhnya berupa angka."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Kata sandi terlalu mirip dengan %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Kata sandi Anda tidak boleh terlalu mirip dengan informasi pribadi Anda lainnya."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "Kata sandi Anda tidak boleh menggunakan kata sandi yang umum digunakan."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "Kata sandi Anda tidak boleh hanya berupa angka."
+
+msgid "Continue with %(provider)s"
+msgstr "Lanjutkan dengan %(provider)s"
+
+msgid "or with email"
+msgstr "atau dengan email"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "Anda akan mendapatkan kategori dan akun siap pakai untuk memulai. Kami akan mengirimkan kode 6 digit ke email Anda untuk konfirmasi."
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Email (used to log in)"
+msgstr "Email (digunakan untuk masuk)"
+
+msgid "Change email"
+msgstr "Ubah email"
+
+msgid "Change password"
+msgstr "Ubah kata sandi"
+
+msgid "Google / Facebook login"
+msgstr "Login Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "Ditampilkan di aplikasi. Anda masuk dengan email, bukan ini."
+
+msgid "This username is already taken."
+msgstr "Nama pengguna ini sudah digunakan."
+
+msgid "Username updated."
+msgstr "Nama pengguna diperbarui."
+
+msgid "Hello from KhorochAi!"
+msgstr "Halo dari KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "Terima kasih telah menggunakan KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "Kode verifikasi email Anda adalah:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "Masukkan di halaman KhorochAi yang terbuka di browser Anda. Kode akan segera kedaluwarsa."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "Untuk mengonfirmasi email Anda, buka %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "Jika Anda tidak mendaftar ke KhorochAi, Anda bisa mengabaikan email ini."
+
+msgid "Your verification code"
+msgstr "Kode verifikasi Anda"
+
+msgid "Your password reset code is:"
+msgstr "Kode atur ulang kata sandi Anda adalah:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "Jika Anda tidak meminta pengaturan ulang kata sandi, Anda bisa mengabaikan email ini. Kata sandi Anda tidak berubah."
+
+msgid "Your password reset code"
+msgstr "Kode atur ulang kata sandi Anda"
+
+msgid "Set balance"
+msgstr "Atur saldo"
+
+msgid "Balance now"
+msgstr "Saldo saat ini"
+
+msgid "Balance updated: %(list)s."
+msgstr "Saldo diperbarui: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "Selamat pagi, %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "Selamat siang, %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "Selamat malam, %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "Bicara alih-alih mengetik"
+
+msgid "Stop recording"
+msgstr "Berhenti merekam"
+
+msgid "Writing what you said…"
+msgstr "Menulis apa yang Anda katakan…"
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "Akses mikrofon diblokir. Izinkan di pengaturan browser Anda dan coba lagi."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "Terlalu singkat. Tunggu sebentar dan bicara, lalu ketuk berhenti."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "Tidak dapat mengirim rekaman. Periksa koneksi Anda dan coba lagi."
+
+msgid "No recording was received."
+msgstr "Tidak ada rekaman yang diterima."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "Rekaman terlalu panjang. Harap jaga di bawah satu menit."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "Tidak dapat mengubah rekaman menjadi teks saat ini. Silakan coba lagi atau ketik saja."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "Saya tidak mendengar apa pun. Silakan coba lagi lebih dekat ke mikrofon."
+
+msgid "Set budget"
+msgstr "Atur anggaran"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "Anggaran bulanan diatur: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (dihapus)"
+
+msgid "Help & contact"
+msgstr "Bantuan & kontak"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "Semuanya berfungsi dengan mengetik atau berbicara dalam bahasa Inggris, বাংলা, atau Banglish. Anda selalu melihat pratinjau sebelum ada yang disimpan."
+
+msgid "How to use KhorochAi"
+msgstr "Cara menggunakan KhorochAi"
+
+msgid "Good to know"
+msgstr "Info menarik"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI hanya membaca teks Anda; setiap total dan saldo dihitung oleh aplikasi dari data yang Anda simpan."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "Penggunaan AI memiliki jatah harian (ditampilkan sebagai “AI hari ini: x% digunakan”). Ini diatur ulang pada tengah malam, dan Anda selalu dapat menambahkan data secara manual."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "Apa yang Anda ketik atau ucapkan dikirim ke Google Gemini (atau Groq) untuk dipahami. Jangan sertakan nomor kartu atau kata sandi."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "Ubah tema, bahasa, dan nama pengguna Anda dari menu di kanan atas."
+
+msgid "Contact"
+msgstr "Kontak"
+
+msgid "Questions, problems or ideas"
+msgstr "Pertanyaan, masalah, atau ide"
+
+msgid "Write to us and we'll get back to you."
+msgstr "Tulis kepada kami dan kami akan membalas Anda."
+
+msgid "Developer"
+msgstr "Pengembang"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi dibuat oleh %(name)s."
+
+msgid "Account menu"
+msgstr "Menu akun"
+
+msgid "First name"
+msgstr "Nama depan"
+
+msgid "Shown in the greeting and the menu."
+msgstr "Ditampilkan di salam dan menu."
+
+msgid "Profile updated."
+msgstr "Profil diperbarui."
+
+msgid "Add spending or income"
+msgstr "Tambah pengeluaran atau pemasukan"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "Ketik apa yang terjadi di kotak pada dasbor dan tekan Tambah dengan AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "Ketuk mikrofon di kotak, bicara, lalu ketuk berhenti. Periksa teksnya, lalu tekan Tambah dengan AI."
+
+msgid "Accounts and moving money"
+msgstr "Akun dan pemindahan uang"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "Sebutkan akun yang Anda gunakan, atau pindahkan uang antar akun Anda sendiri."
+
+msgid "Set an account balance"
+msgstr "Atur saldo akun"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "Beri tahu AI berapa saldo akun saat ini."
+
+msgid "Monthly budgets"
+msgstr "Anggaran bulanan"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "Tetapkan batas pengeluaran untuk kategori dan pantau bilah kemajuan di dasbor."
+
+msgid "Ask about your money"
+msgstr "Tanya tentang uang Anda"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "Gunakan Tanya AI untuk total, rincian, dan perbandingan."
+
+msgid "Portfolio"
+msgstr "Portofolio"
+
+msgid "Help"
+msgstr "Bantuan"
+
+msgid "About & contact"
+msgstr "Tentang & kontak"
+
+msgid "Made by"
+msgstr "Dibuat oleh"
+
+msgid "Developer, KhorochAi"
+msgstr "Pengembang, KhorochAi"
+
+msgid "How can we help?"
+msgstr "Ada yang bisa kami bantu?"
+
+msgid "Still need help?"
+msgstr "Masih butuh bantuan?"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "Tulis kepada kami — pertanyaan, masalah, dan ide semuanya diterima."
+
+msgid "Contact us"
+msgstr "Hubungi kami"
+
+msgid "Money tracking that speaks your language"
+msgstr "Pelacak keuangan yang mengerti bahasa Anda"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi memungkinkan Anda melacak pengeluaran dan pemasukan hanya dengan mengetik atau berbicara — dalam bahasa English, বাংলা, atau Banglish. AI memahami maksud Anda; aplikasi ini melakukan semua perhitungannya."
+
+msgid "Type or talk"
+msgstr "Ketik atau bicara"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "Tidak perlu isi formulir. Ucapkan “aaj lunch 250 bkash e” dan langsung tercatat."
+
+msgid "See where it goes"
+msgstr "Lihat ke mana uang pergi"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "Akun, anggaran, dan grafik menampilkan uang Anda secara sekilas, dan Ask AI menjawab pertanyaan Anda."
+
+msgid "Correct by design"
+msgstr "Benar sejak awal"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "Anda memeriksa setiap entri sebelum disimpan, dan total selalu dihitung dari data Anda sendiri."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "Pertanyaan, masalah, atau ide — tulis kepada kami dan kami akan segera membalasnya."
+
+msgid "Read the help guide"
+msgstr "Baca panduan bantuan"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — Pelacak pengeluaran & pemasukan yang bisa diajak bicara"
+
+msgid "Just say it. Your hisab is done."
+msgstr "Katakan saja. Hisab Anda selesai."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "Katakan saja. Hisab Anda selesai. Lacak pengeluaran dan pemasukan dengan mengetik atau berbicara dalam bahasa English, বাংলা, atau Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "Gratis · English, বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "Ketik atau ucapkan apa yang Anda belanjakan atau hasilkan — seperti bercerita kepada teman. KhorochAi mengubahnya menjadi entri rapi, menjaga akun dan anggaran Anda tetap terkini, serta menjawab pertanyaan keuangan Anda."
+
+msgid "Create free account"
+msgstr "Buat akun gratis"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "Daftar dengan email Anda. Anda memeriksa setiap entri sebelum disimpan."
+
+msgid "Write it the way you talk"
+msgstr "Tuliskan seperti Anda berbicara"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "Satu pesan bisa memuat beberapa entri — pengeluaran, pemasukan, transfer antar akun, bahkan anggaran. AI akan membacanya; Anda cukup periksa pratinjau dan simpan."
+
+msgid "How it works"
+msgstr "Cara kerja"
+
+msgid "Type or say it"
+msgstr "Ketik atau ucapkan"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "Tulis atau ucapkan apa yang terjadi, dalam bahasa Inggris, বাংলা, atau Banglish. Beberapa hal dalam satu pesan tidak masalah."
+
+msgid "Check the preview"
+msgstr "Periksa pratinjau"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "Lihat apa yang dipahami AI — jumlah, kategori, akun, dan tanggal. Perbaiki apa pun dengan sekali ketuk."
+
+msgid "Saved and up to date"
+msgstr "Tersimpan dan mutakhir"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "Total, saldo akun, anggaran, dan grafik Anda diperbarui secara instan."
+
+msgid "Everything you need, nothing you don't"
+msgstr "Semua yang Anda butuhkan, tanpa yang tidak perlu"
+
+msgid "Voice input"
+msgstr "Input suara"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "Ketuk mikrofon dan bicara. Kata-kata Anda akan muncul di kotak untuk diperiksa."
+
+msgid "Your language"
+msgstr "Bahasa Anda"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "Inggris, বাংলা, atau Banglish — dan seluruh aplikasi dapat beralih ke bahasa Bangla."
+
+msgid "All your accounts"
+msgstr "Semua akun Anda"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "Tunai, bKash, Nagad, Rocket, bank, dan kartu, dengan transfer antar akun."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "Tetapkan batas per kategori dan pantau bilah kemajuan saat Anda berbelanja."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — dapatkan jawaban dari data Anda sendiri."
+
+msgid "Clear dashboard"
+msgstr "Bersihkan dasbor"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "Pemasukan, pengeluaran, saldo, ke mana uang Anda pergi, dan grafik harian."
+
+msgid "Light and dark"
+msgstr "Terang dan gelap"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "Desain tenang yang mengikuti mode gelap ponsel Anda, atau pilih desain Anda sendiri."
+
+msgid "Export to CSV"
+msgstr "Ekspor ke CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "Unduh transaksi Anda untuk Excel atau Google Sheets kapan saja."
+
+msgid "Start your hisab in a minute"
+msgstr "Mulai hisab Anda dalam semenit"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "Buat akun gratis dengan email Anda, lalu beri tahu KhorochAi apa yang Anda belanjakan hari ini."
+
+msgid "See how it works"
+msgstr "Lihat cara kerjanya"
+
+msgid "Free to use"
+msgstr "Gratis digunakan"
+
+msgid "You confirm every entry"
+msgstr "Anda mengonfirmasi setiap entri"
+
+msgid "Works on phone and computer"
+msgstr "Berfungsi di ponsel dan komputer"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "Tuliskan seperti Anda berbicara — atau cukup bicara."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "Ketik, atau ketuk mikrofon dan ucapkan. Satu pesan bisa berisi beberapa entri — pengeluaran, pemasukan, transfer antar akun, bahkan anggaran. Anda periksa pratinjaunya lalu simpan."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "Gratis · বাংলা, English, Banglish & bahasa lainnya"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "Tuliskan seperti Anda berbicara — dalam bahasa apa pun, atau cukup bicara."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "Bangla, Inggris, Banglish — atau bahasa apa pun yang Anda gunakan. Aplikasi ini sendiri tersedia dalam 9 bahasa."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "Beri tahu saya apa yang Anda belanjakan atau hasilkan — বাংলা, English, Banglish, atau bahasa apa pun"
+
+msgid "Currency"
+msgstr "Mata uang"
+
+msgid "Used for every amount in the app."
+msgstr "Digunakan untuk setiap jumlah di aplikasi."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI menemukan %(n)s transaksi. Perbaiki jika ada yang salah, lalu simpan."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s transaksi"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "%(n)s transaksi disimpan."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "Kata sandi terlalu pendek. Harus berisi setidaknya %d karakter."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Kata sandi Anda harus berisi setidaknya %(min_length)d karakter."

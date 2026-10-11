@@ -2,13 +2,13 @@
 {% load i18n static %}
 {% block title %}{% translate "KhorochAi — Expense & income tracker you can talk to" %}{% endblock %}
 {% block content %}
-{% with lang=LANGUAGE_CODE|default:"en" %}
+{% with lang=shot_lang %}{% comment %}dashboard screenshots exist in English and Bangla{% endcomment %}
 
 <!-- Hero -->
 <section class="lp-hero">
   <div class="row align-items-center g-5">
     <div class="col-lg-5">
-      <span class="lp-eyebrow">{% translate "Free · English, বাংলা & Banglish" %}</span>
+      <span class="lp-eyebrow">{% translate "Free · বাংলা, English, Banglish & any language" %}</span>
       <h1 class="lp-title">{% translate "Just say it. Your hisab is done." %}</h1>
       <p class="lp-lead">{% translate "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions." %}</p>
       <div class="d-flex flex-wrap gap-2 mt-4">
@@ -36,7 +36,7 @@
 <!-- See it understand you -->
 <section class="lp-section">
   <div class="text-center mb-4">
-    <h2 class="lp-h2">{% translate "Write it the way you talk — or just talk." %}</h2>
+    <h2 class="lp-h2">{% translate "Write it the way you talk — in any language, or just talk." %}</h2>
     <p class="text-muted mx-auto lp-narrow">{% translate "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save." %}</p>
   </div>
   <div class="lp-demo mx-auto">

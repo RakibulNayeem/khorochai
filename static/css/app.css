@@ -362,3 +362,18 @@ html[lang="bn"] .lp-title { line-height: 1.2; letter-spacing: -.01em; }
 .lp-cta { background: color-mix(in srgb, var(--link) 7%, var(--surface)); }
 .lp-checks { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; color: var(--muted); font-size: .9rem; }
 @media (max-width: 575.98px) { .lp-feature .small { font-size: .8rem; } .lp-feature .help-icon { width: 32px; height: 32px; } }
+
+/* ---------------------------------------------------------------- right-to-left (Arabic, Urdu) */
+[dir="rtl"] .navbar .nav-link.nav-ask { margin-left: 0; margin-right: .35rem; }
+[dir="rtl"] .voice-btn { right: auto; left: .6rem; }
+[dir="rtl"] .voice-field textarea { padding-right: 1rem; padding-left: 3.5rem; }
+[dir="rtl"] .voice-field-inline input { padding-right: .75rem; padding-left: 3.25rem; border-radius: 0 10px 10px 0; }
+[dir="rtl"] .menu-item { text-align: right; }
+[dir="rtl"] .cat-dot { margin-right: 0; margin-left: 8px; }
+[dir="rtl"] .lp-phone { right: auto; left: -4%; }
+[dir="rtl"] .lp-bubble { margin-left: 0; margin-right: auto; border-radius: 20px 20px 20px 6px; }
+[dir="rtl"] .dev-close { right: auto; left: .9rem; }
+[dir="rtl"] .theme-icon { margin-right: 0; margin-left: .35rem; }
+[dir="rtl"] .user-chip { padding: .2rem .2rem .2rem .5rem; }
+[dir="rtl"] .example-chip, [dir="rtl"] .help-example { margin: .15rem 0 .15rem .25rem; }
+html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", var(--font); }

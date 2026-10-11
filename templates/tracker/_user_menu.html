@@ -47,11 +47,12 @@ Logged out: a gear with theme and language, so visitors can switch them on the l
         <button name="theme" value="system" class="btn btn-sm btn-outline-secondary{% if theme == 'system' %} active{% endif %}">{% include "tracker/_theme_icon.html" with name="system" %}{% translate "System" %}</button>
       </form>
       <div class="card-title-sm mb-1">{% translate "Language" %}</div>
-      <form method="post" action="{% url 'preferences' %}" class="btn-group w-100 mb-2" role="group">
+      <form method="post" action="{% url 'preferences' %}" class="mb-2">
         {% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}">
-        {% for code, name in languages %}
-        <button name="language" value="{{ code }}" lang="{{ code }}" class="btn btn-sm btn-outline-secondary{% if code == LANGUAGE_CODE %} active{% endif %}">{{ name }}</button>
-        {% endfor %}
+        <select name="language" class="form-select form-select-sm" aria-label="{% translate 'Language' %}" onchange="this.form.submit()">
+          {% for code, name in languages %}<option value="{{ code }}" lang="{{ code }}"{% if code == LANGUAGE_CODE %} selected{% endif %}>{{ name }}</option>{% endfor %}
+        </select>
+        <noscript><button class="btn btn-sm btn-outline-secondary w-100 mt-1">{% translate "Save" %}</button></noscript>
       </form>
     </div>
 

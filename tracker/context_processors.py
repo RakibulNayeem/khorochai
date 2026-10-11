@@ -1,5 +1,7 @@
 from django.conf import settings
 
+from . import currency
+
 THEME_COOKIE = "theme"
 THEMES = ("light", "dark", "system")
 
@@ -29,5 +31,7 @@ def preferences(request):
         "languages": settings.LANGUAGES,
         "profile": _profile(user) if user is not None and user.is_authenticated else None,
         "developer": settings.DEVELOPER,
+        "currency_code": currency.current()[0],
+        "currency_symbol": currency.current()[1],
         "contact_email": settings.CONTACT_EMAIL,
     }

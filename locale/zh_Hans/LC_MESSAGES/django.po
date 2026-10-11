@@ -1,0 +1,1157 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: zh_Hans\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Theme"
+msgstr "主题"
+
+msgid "Light"
+msgstr "浅色"
+
+msgid "Dark"
+msgstr "深色"
+
+msgid "System"
+msgstr "系统"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "All settings"
+msgstr "所有设置"
+
+msgid "Log out"
+msgstr "退出"
+
+msgid "Menu"
+msgstr "菜单"
+
+msgid "Dashboard"
+msgstr "仪表板"
+
+msgid "Transactions"
+msgstr "交易记录"
+
+msgid "Categories &amp; Budgets"
+msgstr "分类与预算"
+
+msgid "Ask AI"
+msgstr "问 AI"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "已登录为 <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "系统跟随您手机或电脑的深色模式设置。"
+
+msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
+msgstr "更改应用的菜单、按钮和消息。您可以随时用英语、বাংলা 或 Banglish 与 AI 对话。"
+
+msgid "These settings are saved in this browser."
+msgstr "这些设置已保存在此浏览器中。"
+
+msgid "Log in"
+msgstr "登录"
+
+msgid "Welcome back"
+msgstr "欢迎回来"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "只需输入英语或 বাংলা 即可追踪您的资金。"
+
+msgid "Wrong username or password."
+msgstr "用户名或密码错误。"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "No account?"
+msgstr "没有账户？"
+
+msgid "Sign up"
+msgstr "注册"
+
+msgid "Create your account"
+msgstr "创建您的账户"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "我们将为您提供现成的类别以供起步。"
+
+msgid "Already have an account?"
+msgstr "已有账户？"
+
+msgid "Email (optional)"
+msgstr "电子邮箱（可选）"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "告诉我您的支出或收入——支持英语、বাংলা 或 Banglish"
+
+msgid "e.g."
+msgstr "例如"
+
+msgid "Add manually"
+msgstr "手动添加"
+
+msgid "Add with AI"
+msgstr "使用 AI 添加"
+
+msgid "Reading…"
+msgstr "读取中…"
+
+msgid "Prev"
+msgstr "上一页"
+
+msgid "Next"
+msgstr "下一页"
+
+msgid "This month"
+msgstr "本月"
+
+msgid "Income"
+msgstr "收入"
+
+msgid "Expense"
+msgstr "支出"
+
+msgid "Balance this month"
+msgstr "本月余额"
+
+msgid "Saved %(p)s%% of income"
+msgstr "已节省收入的 %(p)s%%"
+
+msgid "All-time balance"
+msgstr "累计余额"
+
+msgid "Where your money went"
+msgstr "您的钱去哪了"
+
+msgid "No expenses this month yet."
+msgstr "本月暂无支出。"
+
+msgid "Day by day"
+msgstr "按天统计"
+
+msgid "Budgets"
+msgstr "预算"
+
+msgid "Set budgets"
+msgstr "设置预算"
+
+msgid "Over budget by %(a)s"
+msgstr "超出预算 %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "已使用 %(p)s%%"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "暂无预算。在上方输入框输入或说“khabar e mashe 6000 budget”，或在“类别”中进行设置。"
+
+msgid "Recent transactions"
+msgstr "近期交易"
+
+msgid "See all"
+msgstr "查看全部"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Category"
+msgstr "类别"
+
+msgid "Note"
+msgstr "备注"
+
+msgid "Amount"
+msgstr "金额"
+
+msgid "Uncategorized"
+msgstr "未分类"
+
+msgid "Added with AI"
+msgstr "已通过 AI 添加"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "暂无交易。在上方输入框写点什么吧！"
+
+msgid "Export CSV"
+msgstr "导出 CSV"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Month"
+msgstr "月份"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "All"
+msgstr "全部"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "note or text"
+msgstr "备注或文本"
+
+msgid "Filter"
+msgstr "筛选"
+
+msgid "Reset"
+msgstr "重置"
+
+msgid "Net"
+msgstr "净额"
+
+msgid "Newer"
+msgstr "较新"
+
+msgid "Older"
+msgstr "较旧"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "第 %(a)s 页，共 %(b)s 页"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Check before saving"
+msgstr "保存前检查"
+
+msgid "You wrote:"
+msgstr "您写道："
+
+msgid "Save this one"
+msgstr "保存此条"
+
+msgid "New category:"
+msgstr "新类别："
+
+msgid "New:"
+msgstr "新增："
+
+msgid "New category…"
+msgstr "新类别…"
+
+msgid "New category name"
+msgstr "新类别名称"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Delete this permanently?"
+msgstr "永久删除此项？"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Ask anything about your money"
+msgstr "询问任何关于你财务的问题"
+
+msgid "Ask"
+msgstr "询问"
+
+msgid "Thinking…"
+msgstr "思考中…"
+
+msgid "Where did I spend the most last month?"
+msgstr "上个月我哪里花钱最多？"
+
+msgid "Where did I spend most last month?"
+msgstr "上个月我哪里花钱最多？"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "我今年在人力车上花了多少钱？"
+
+msgid "Rickshaw spending this year"
+msgstr "今年的人力车支出"
+
+msgid "income vs expense per month this year"
+msgstr "今年每月收入与支出对比"
+
+msgid "Income vs expense per month"
+msgstr "每月收支对比"
+
+msgid "notes containing “%(k)s”"
+msgstr "包含“%(k)s”的备注"
+
+msgid "Spent"
+msgstr "已支出"
+
+msgid "Earned"
+msgstr "收入"
+
+msgid "Group"
+msgstr "群组"
+
+msgid "Count"
+msgstr "计数"
+
+msgid "Total"
+msgstr "总计"
+
+msgid "Matching transactions"
+msgstr "匹配的交易"
+
+msgid "first 50"
+msgstr "前 50 条"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "AI 仅理解了您的问题；此处的所有数字均由应用根据您的保存数据计算得出。"
+
+msgid "Your question"
+msgstr "您的问题"
+
+msgid "Categories"
+msgstr "类别"
+
+msgid "Add category"
+msgstr "添加类别"
+
+msgid "Edit category"
+msgstr "编辑类别"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "AI 会从这些类别中进行选择。如果没有合适的类别，它会建议一个新类别并在创建前询问您。为支出类别设置月度预算，即可在仪表板上查看进度条。"
+
+msgid "Expense categories"
+msgstr "支出类别"
+
+msgid "Income categories"
+msgstr "收入类别"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Budget"
+msgstr "预算"
+
+msgid "Icon"
+msgstr "图标"
+
+msgid "Color"
+msgstr "颜色"
+
+msgid "Monthly budget"
+msgstr "月度预算"
+
+msgid "e.g. 🍔"
+msgstr "例如：🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "可选月度支出限额（仅限支出类别）。"
+
+msgid "You already have a category with this name."
+msgstr "您已经有一个同名的类别。"
+
+msgid "Food"
+msgstr "餐饮"
+
+msgid "Groceries"
+msgstr "日用品"
+
+msgid "Transport"
+msgstr "交通"
+
+msgid "Rent"
+msgstr "租金"
+
+msgid "Utilities"
+msgstr "公用事业"
+
+msgid "Mobile & Internet"
+msgstr "移动通讯与互联网"
+
+msgid "Health"
+msgstr "健康"
+
+msgid "Education"
+msgstr "教育"
+
+msgid "Shopping"
+msgstr "购物"
+
+msgid "Entertainment"
+msgstr "娱乐"
+
+msgid "Family"
+msgstr "家庭"
+
+msgid "Other Expense"
+msgstr "其他支出"
+
+msgid "Salary"
+msgstr "工资"
+
+msgid "Tuition"
+msgstr "学费"
+
+msgid "Freelance"
+msgstr "自由职业"
+
+msgid "Business"
+msgstr "商务"
+
+msgid "Gift"
+msgstr "礼金"
+
+msgid "Other Income"
+msgstr "其他收入"
+
+msgid "Amount must be greater than zero."
+msgstr "金额必须大于零。"
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "“%(name)s”是支出类别；请选择收入类别。"
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "“%(name)s”是收入类别；请选择支出类别。"
+
+msgid "Manual"
+msgstr "手动"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "欢迎！默认类别已准备就绪。尝试输入您的第一笔支出。"
+
+msgid "Please type what you spent or earned."
+msgstr "请输入您的支出或收入情况。"
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "消息过长（最多 %(n)s 个字符）。"
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "AI 正忙或未配置。请重试，或手动添加。"
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "AI 正忙或未配置。请重试。"
+
+msgid "The AI response was not understood. Please try again."
+msgstr "无法理解 AI 的回复。请重试。"
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "在您的消息中未找到金额相关的收入或支出。"
+
+msgid "New categories: %(names)s."
+msgstr "新类别：%(names)s。"
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "因金额、类型或账户无效，已跳过 %(n)s 行。"
+
+msgid "Nothing was saved."
+msgstr "未保存任何内容。"
+
+msgid "Transaction added."
+msgstr "交易已添加。"
+
+msgid "Add transaction"
+msgstr "添加交易"
+
+msgid "Transaction updated."
+msgstr "交易已更新。"
+
+msgid "Edit transaction"
+msgstr "编辑交易"
+
+msgid "Transaction deleted."
+msgstr "交易已删除。"
+
+msgid "Category '%(name)s' added."
+msgstr "已添加类别 '%(name)s'。"
+
+msgid "Category updated."
+msgstr "类别已更新。"
+
+msgid "Category '%(name)s' deleted."
+msgstr "已删除类别 '%(name)s'。"
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s 笔交易现为“未分类”。"
+
+msgid "Accounts"
+msgstr "账户"
+
+msgid "Account"
+msgstr "账户"
+
+msgid "Move money"
+msgstr "转账"
+
+msgid "Add account"
+msgstr "添加账户"
+
+msgid "Edit account"
+msgstr "编辑账户"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "存放资金的地方。告诉 AI “bkash e 500 dilam”，它会使用 bKash，或者说 “amar bkash e 5000 ache” 来设置 bKash 的余额。使用“转账”功能进行 ATM 取款、bKash 提现和其他转账——它们会改变余额，但不是收入或支出。使用“编辑”重命名任何账户（例如 Bank → 您银行的名称）。"
+
+msgid "Total in all accounts"
+msgstr "所有账户总额"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Recent transfers"
+msgstr "近期转账"
+
+msgid "From"
+msgstr "从"
+
+msgid "To"
+msgstr "至"
+
+msgid "No transfers yet."
+msgstr "暂无转账记录。"
+
+msgid "Manage"
+msgstr "管理"
+
+msgid "e.g. 💵"
+msgstr "例如：💵"
+
+msgid "Opening balance"
+msgstr "期初余额"
+
+msgid "Default account"
+msgstr "默认账户"
+
+msgid "You already have an account with this name."
+msgstr "您已经有一个同名的账户。"
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "例如：ATM 取款、bKash 取现"
+
+msgid "Pick two different accounts."
+msgstr "请选择两个不同的账户。"
+
+msgid "Cash"
+msgstr "现金"
+
+msgid "Card"
+msgstr "卡片"
+
+msgid "Mobile banking"
+msgstr "移动银行"
+
+msgid "Bank account"
+msgstr "银行账户"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "开始使用 KhorochAi 时该账户中已有的金额。"
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "当您未说明账户时使用（例如“午餐 250”）。"
+
+msgid "Account '%(name)s' added."
+msgstr "已添加账户“%(name)s”。"
+
+msgid "Account updated."
+msgstr "账户已更新。"
+
+msgid "Account '%(name)s' deleted."
+msgstr "已删除账户“%(name)s”。"
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s 笔交易不再关联任何账户。"
+
+msgid "Transfer saved."
+msgstr "转账已保存。"
+
+msgid "Move money between accounts"
+msgstr "账户间转账"
+
+msgid "Transfer updated."
+msgstr "转账已更新。"
+
+msgid "Edit transfer"
+msgstr "编辑转账"
+
+msgid "Transfer deleted."
+msgstr "转账已删除。"
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "今日 AI 限额已达上限 — 将于午夜重置"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "AI 已达到今日限额。限额将在午夜重置。您仍可手动添加交易。"
+
+msgid "Transfer"
+msgstr "转账"
+
+msgid "Day"
+msgstr "天"
+
+msgid "Week"
+msgstr "周"
+
+msgid "Period"
+msgstr "周期"
+
+msgid "No transactions in this period."
+msgstr "此期间无交易记录。"
+
+msgid "Dates:"
+msgstr "日期："
+
+msgid "Show all dates"
+msgstr "显示所有日期"
+
+msgid "AI today: %(p)s%% used"
+msgstr "今日 AI：已使用 %(p)s%%"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "今日已使用 AI 配额 %(used)s / %(limit)s。AI 基于免费计划运行，设有每日限额，将于午夜重置。"
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "今日 AI 限额已用完 — 将于午夜重置"
+
+msgid "AI usage today"
+msgstr "今日 AI 使用情况"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "您已用完今日 100% 的 AI 使用额度。额度将在午夜重置。您仍可手动添加交易。"
+
+msgid "Email"
+msgstr "电子邮箱"
+
+msgid "Password (again)"
+msgstr "确认密码"
+
+msgid "Forgot your password?"
+msgstr "忘记密码？"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "您输入的电子邮件地址或密码不正确。"
+
+msgid "A user is already registered with this email address."
+msgstr "该电子邮箱已被注册。"
+
+msgid "You must type the same password each time."
+msgstr "您每次必须输入相同的密码。"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "Incorrect code."
+msgstr "验证码错误。"
+
+msgid "Email Verification"
+msgstr "邮箱验证"
+
+msgid "Enter Email Verification Code"
+msgstr "输入邮箱验证码"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "我们已向 %(recipient)s 发送了验证码。验证码很快过期，请尽快输入。"
+
+msgid "Request new code"
+msgstr "请求新验证码"
+
+msgid "Use a different email address"
+msgstr "使用不同的电子邮件地址"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "确认邮件已发送至 %(email)s。"
+
+msgid "Successfully signed in as %(name)s."
+msgstr "已成功登录为 %(name)s。"
+
+msgid "You have signed out."
+msgstr "您已登出。"
+
+msgid "You have confirmed %(email)s."
+msgstr "您已确认 %(email)s。"
+
+msgid "Password successfully changed."
+msgstr "密码修改成功。"
+
+msgid "Password successfully set."
+msgstr "密码设置成功。"
+
+msgid "Password Reset"
+msgstr "重置密码"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "忘记密码？请在下方输入您的电子邮箱地址，我们将发送一封邮件供您重置密码。"
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "如果您在重置密码时遇到任何问题，请联系我们。"
+
+msgid "Reset My Password"
+msgstr "重置我的密码"
+
+msgid "Enter Password Reset Code"
+msgstr "输入密码重置码"
+
+msgid "Change Password"
+msgstr "更改密码"
+
+msgid "Your password is now changed."
+msgstr "您的密码已修改。"
+
+msgid "New Password"
+msgstr "新密码"
+
+msgid "Current Password"
+msgstr "当前密码"
+
+msgid "Sign Out"
+msgstr "退出登录"
+
+msgid "Are you sure you want to sign out?"
+msgstr "确定要退出登录吗？"
+
+msgid "This password is too common."
+msgstr "此密码过于常见。"
+
+msgid "This password is entirely numeric."
+msgstr "此密码全为数字。"
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "密码与 %(verbose_name)s 太相似了。"
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "您的密码不能与您的其他个人信息过于相似。"
+
+msgid "Your password can’t be a commonly used password."
+msgstr "您的密码不能是常用密码。"
+
+msgid "Your password can’t be entirely numeric."
+msgstr "您的密码不能全为数字。"
+
+msgid "Continue with %(provider)s"
+msgstr "使用 %(provider)s 继续"
+
+msgid "or with email"
+msgstr "或使用邮箱"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "我们将为您提供现成的类别和账户以供起步。我们会向您的邮箱发送一个 6 位验证码以确认您的邮箱地址。"
+
+msgid "Profile"
+msgstr "个人资料"
+
+msgid "Email (used to log in)"
+msgstr "电子邮箱（用于登录）"
+
+msgid "Change email"
+msgstr "更改电子邮箱"
+
+msgid "Change password"
+msgstr "更改密码"
+
+msgid "Google / Facebook login"
+msgstr "Google / Facebook 登录"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "在应用中显示。您使用电子邮件登录，而非此名称。"
+
+msgid "This username is already taken."
+msgstr "此用户名已被占用。"
+
+msgid "Username updated."
+msgstr "用户名已更新。"
+
+msgid "Hello from KhorochAi!"
+msgstr "来自 KhorochAi 的问候！"
+
+msgid "Thank you for using KhorochAi."
+msgstr "感谢您使用 KhorochAi。"
+
+msgid "Your email verification code is:"
+msgstr "您的邮箱验证码是："
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "在浏览器中打开的 KhorochAi 页面输入此代码。代码即将过期。"
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "要确认您的电子邮件，请打开 %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "如果您没有注册 KhorochAi，请忽略此邮件。"
+
+msgid "Your verification code"
+msgstr "您的验证码"
+
+msgid "Your password reset code is:"
+msgstr "您的密码重置码是："
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "如果您没有申请重置密码，请忽略此邮件。您的密码未作更改。"
+
+msgid "Your password reset code"
+msgstr "您的密码重置码"
+
+msgid "Set balance"
+msgstr "设置余额"
+
+msgid "Balance now"
+msgstr "当前余额"
+
+msgid "Balance updated: %(list)s."
+msgstr "余额已更新：%(list)s。"
+
+msgid "Good morning, %(name)s"
+msgstr "早上好，%(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "下午好，%(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "晚上好，%(name)s"
+
+msgid "Speak instead of typing"
+msgstr "语音输入"
+
+msgid "Stop recording"
+msgstr "停止录音"
+
+msgid "Writing what you said…"
+msgstr "正在记录您所说的内容..."
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "麦克风权限被阻止。请在浏览器设置中允许权限后再试。"
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "录音太短。请稍等片刻再说话，然后点击停止。"
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "无法发送录音。请检查网络连接后重试。"
+
+msgid "No recording was received."
+msgstr "未收到录音。"
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "录音太长。请保持在一分钟以内。"
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "目前无法将录音转换为文字。请重试或直接输入。"
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "没听清。请靠近麦克风再试一次。"
+
+msgid "Set budget"
+msgstr "设置预算"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "已设置月度预算：%(list)s。"
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (已移除)"
+
+msgid "Help & contact"
+msgstr "帮助与联系"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "一切操作只需用简单的英语、বাংলা 或 Banglish 输入或语音即可。在保存任何内容之前，您总能看到预览。"
+
+msgid "How to use KhorochAi"
+msgstr "如何使用 KhorochAi"
+
+msgid "Good to know"
+msgstr "实用小贴士"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "AI 仅读取您的文字；所有总额和余额均由应用根据您的保存数据计算得出。"
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "AI 每日有使用限额（显示为“今日 AI：已使用 x%”）。限额将于午夜重置，你随时可以手动添加记录。"
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "您输入或说的内容会被发送到 Google Gemini（或 Groq）进行理解。请勿包含卡号或密码。"
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "通过右上角的菜单更改主题、语言和用户名。"
+
+msgid "Contact"
+msgstr "联系方式"
+
+msgid "Questions, problems or ideas"
+msgstr "疑问、问题或建议"
+
+msgid "Write to us and we'll get back to you."
+msgstr "写信给我们，我们会回复您。"
+
+msgid "Developer"
+msgstr "开发者"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "KhorochAi 由 %(name)s 开发。"
+
+msgid "Account menu"
+msgstr "账户菜单"
+
+msgid "First name"
+msgstr "名字"
+
+msgid "Shown in the greeting and the menu."
+msgstr "在问候语和菜单中显示。"
+
+msgid "Profile updated."
+msgstr "个人资料已更新。"
+
+msgid "Add spending or income"
+msgstr "添加支出或收入"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "在仪表板的框中输入发生的事情，然后点击“使用 AI 添加”。"
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "点击框中的麦克风，说话，然后点击停止。检查文字，然后按“使用 AI 添加”。"
+
+msgid "Accounts and moving money"
+msgstr "账户与资金流转"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "说明您使用的账户，或在您的账户之间转账。"
+
+msgid "Set an account balance"
+msgstr "设置账户余额"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "告诉 AI 账户当前的余额。"
+
+msgid "Monthly budgets"
+msgstr "月度预算"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "为类别设置支出限额，并在仪表板上查看进度条。"
+
+msgid "Ask about your money"
+msgstr "询问关于你的资金情况"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "使用 Ask AI 获取总计、明细和比较。"
+
+msgid "Portfolio"
+msgstr "资产组合"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "About & contact"
+msgstr "关于与联系"
+
+msgid "Made by"
+msgstr "开发者"
+
+msgid "Developer, KhorochAi"
+msgstr "开发者，KhorochAi"
+
+msgid "How can we help?"
+msgstr "我们需要如何帮助您？"
+
+msgid "Still need help?"
+msgstr "仍需帮助？"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "写信给我们——欢迎提出问题、问题和建议。"
+
+msgid "Contact us"
+msgstr "联系我们"
+
+msgid "Money tracking that speaks your language"
+msgstr "懂你语言的记账工具"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "KhorochAi 让您只需通过输入或语音（英语、বাংলা 或 Banglish）即可追踪支出和收入。AI 能理解您的意思，应用会自动完成计算。"
+
+msgid "Type or talk"
+msgstr "输入或语音"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "无需填写表格。只需说“aaj lunch 250 bkash e”，即可自动记录。"
+
+msgid "See where it goes"
+msgstr "查看支出去向"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "通过账户、预算和图表一目了然地查看资金状况，并使用 Ask AI 解答你的疑问。"
+
+msgid "Correct by design"
+msgstr "设计严谨"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "您在保存前会检查每条条目，总额始终根据您自己的数据计算。"
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "如有疑问、问题或建议，请写信给我们，我们会尽快回复。"
+
+msgid "Read the help guide"
+msgstr "阅读帮助指南"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — 可语音交互的收支追踪器"
+
+msgid "Just say it. Your hisab is done."
+msgstr "说出来就行。您的 hisab 已完成。"
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "说出来就行。您的 hisab 已完成。通过输入或使用英语、বাংলা 或 Banglish 语音来追踪支出和收入。"
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "免费 · 英语、বাংলা 和 Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "像告诉朋友一样输入或说出您的支出或收入。KhorochAi 会将其转化为整洁的条目，保持您的账户和预算更新，并回答您的财务问题。"
+
+msgid "Create free account"
+msgstr "创建免费账户"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "使用电子邮件注册。每条记录在保存前均需您确认。"
+
+msgid "Write it the way you talk"
+msgstr "像说话一样写下来"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "一条消息可包含多项内容——支出、收入、账户间转账，甚至预算。AI 会自动识别，您只需检查预览并保存即可。"
+
+msgid "How it works"
+msgstr "工作原理"
+
+msgid "Type or say it"
+msgstr "输入或说出来"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "用英语、বাংলা 或 Banglish 写下或说出发生的事情。一条消息中包含多项内容也可以。"
+
+msgid "Check the preview"
+msgstr "查看预览"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "查看 AI 的理解结果——金额、类别、账户和日期。点击即可修改。"
+
+msgid "Saved and up to date"
+msgstr "已保存并保持最新"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "您的总额、账户余额、预算和图表会即时更新。"
+
+msgid "Everything you need, nothing you don't"
+msgstr "所需功能一应俱全，拒绝冗余"
+
+msgid "Voice input"
+msgstr "语音输入"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "点击麦克风并说话。您的文字将出现在框中供您检查。"
+
+msgid "Your language"
+msgstr "您的语言"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "英语、বাংলা 或 Banglish — 整个应用都可以切换为孟加拉语。"
+
+msgid "All your accounts"
+msgstr "所有账户"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "现金、bKash、Nagad、Rocket、银行和卡片，支持账户间转账。"
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "设置各类别限额，并在消费时查看进度条。"
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — 从您自己的数据中获取答案。"
+
+msgid "Clear dashboard"
+msgstr "清除仪表板"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "收入、支出、余额、资金去向及每日图表。"
+
+msgid "Light and dark"
+msgstr "浅色与深色"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "简洁设计，可随手机深色模式自动切换，或自定义设置。"
+
+msgid "Export to CSV"
+msgstr "导出为 CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "随时下载您的交易记录以用于 Excel 或 Google Sheets。"
+
+msgid "Start your hisab in a minute"
+msgstr "一分钟开启您的记账"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "使用电子邮箱创建免费账户，然后告诉 KhorochAi 您今天的开销。"
+
+msgid "See how it works"
+msgstr "查看使用方法"
+
+msgid "Free to use"
+msgstr "免费使用"
+
+msgid "You confirm every entry"
+msgstr "您确认每条条目"
+
+msgid "Works on phone and computer"
+msgstr "适用于手机和电脑"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "像说话一样写下来——或者直接说出来。"
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "输入内容，或点击麦克风说出来。一条消息可以包含多项内容——支出、收入、账户间转账，甚至是预算。您可以检查预览并保存。"
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "免费 · বাংলা、英语、Banglish 及任何语言"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "像说话一样写下来——用任何语言，或者直接说出来。"
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "孟加拉语、英语、Banglish，或任何你使用的语言。应用本身支持 9 种语言。"
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "告诉我您的支出或收入——支持 বাংলা、英语、Banglish 或任何语言"
+
+msgid "Currency"
+msgstr "货币"
+
+msgid "Used for every amount in the app."
+msgstr "用于应用中的所有金额。"
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "AI 找到了 %(n)s 条交易。如有错误请修改，然后保存。"
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s 笔交易"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "已保存 %(n)s 条交易。"
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "此密码太短。必须包含至少 %d 个字符。"
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "您的密码必须至少包含 %(min_length)d 个字符。"

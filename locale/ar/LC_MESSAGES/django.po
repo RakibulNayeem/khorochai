@@ -1,0 +1,1182 @@
+# Machine-translated with Gemini from the English text. Run: python manage.py compile_po
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Theme"
+msgstr "السمة"
+
+msgid "Light"
+msgstr "فاتح"
+
+msgid "Dark"
+msgstr "داكن"
+
+msgid "System"
+msgstr "النظام"
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "All settings"
+msgstr "جميع الإعدادات"
+
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+msgid "Transactions"
+msgstr "المعاملات"
+
+msgid "Categories &amp; Budgets"
+msgstr "الفئات والميزانيات"
+
+msgid "Ask AI"
+msgstr "اسأل الذكاء الاصطناعي"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Signed in as <strong>%(name)s</strong>"
+msgstr "تم تسجيل الدخول باسم <strong>%(name)s</strong>"
+
+msgid "System follows your phone or computer's dark mode setting."
+msgstr "يتبع النظام إعدادات الوضع المظلم في هاتفك أو حاسوبك."
+
+msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
+msgstr "يغير قوائم التطبيق والأزرار والرسائل. يمكنك دائمًا الكتابة إلى AI باللغة الإنجليزية أو বাংলা أو Banglish."
+
+msgid "These settings are saved in this browser."
+msgstr "هذه الإعدادات محفوظة في هذا المتصفح."
+
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+msgid "Welcome back"
+msgstr "مرحباً بعودتك"
+
+msgid "Track your money by just typing, in English or বাংলা."
+msgstr "تتبع أموالك بمجرد الكتابة، باللغة الإنجليزية أو বাংলা."
+
+msgid "Wrong username or password."
+msgstr "اسم المستخدم أو كلمة المرور غير صحيحة."
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "No account?"
+msgstr "لا يوجد حساب؟"
+
+msgid "Sign up"
+msgstr "تسجيل"
+
+msgid "Create your account"
+msgstr "أنشئ حسابك"
+
+msgid "You'll get ready-made categories to start with."
+msgstr "ستحصل على فئات جاهزة للبدء."
+
+msgid "Already have an account?"
+msgstr "هل لديك حساب بالفعل؟"
+
+msgid "Email (optional)"
+msgstr "البريد الإلكتروني (اختياري)"
+
+msgid "Tell me what you spent or earned — English, বাংলা, or Banglish"
+msgstr "أخبرني بما أنفقته أو كسبته — بالإنجليزية، বাংলা، أو Banglish"
+
+msgid "e.g."
+msgstr "مثال:"
+
+msgid "Add manually"
+msgstr "إضافة يدوياً"
+
+msgid "Add with AI"
+msgstr "إضافة باستخدام AI"
+
+msgid "Reading…"
+msgstr "جاري القراءة..."
+
+msgid "Prev"
+msgstr "السابق"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "This month"
+msgstr "هذا الشهر"
+
+msgid "Income"
+msgstr "دخل"
+
+msgid "Expense"
+msgstr "مصروف"
+
+msgid "Balance this month"
+msgstr "رصيد هذا الشهر"
+
+msgid "Saved %(p)s%% of income"
+msgstr "تم توفير %(p)s%% من الدخل"
+
+msgid "All-time balance"
+msgstr "الرصيد الإجمالي"
+
+msgid "Where your money went"
+msgstr "أين ذهبت أموالك"
+
+msgid "No expenses this month yet."
+msgstr "لا توجد مصاريف لهذا الشهر بعد."
+
+msgid "Day by day"
+msgstr "يوم بيوم"
+
+msgid "Budgets"
+msgstr "الميزانيات"
+
+msgid "Set budgets"
+msgstr "ضبط الميزانيات"
+
+msgid "Over budget by %(a)s"
+msgstr "تجاوزت الميزانية بمقدار %(a)s"
+
+msgid "%(p)s%% used"
+msgstr "تم استخدام %(p)s%%"
+
+msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
+msgstr "لا توجد ميزانيات بعد. اكتب أو قل “khabar e mashe 6000 budget” في المربع أعلاه، أو قم بضبط واحدة من خلال الفئات."
+
+msgid "Recent transactions"
+msgstr "المعاملات الأخيرة"
+
+msgid "See all"
+msgstr "عرض الكل"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "Note"
+msgstr "ملاحظة"
+
+msgid "Amount"
+msgstr "المبلغ"
+
+msgid "Uncategorized"
+msgstr "غير مصنف"
+
+msgid "Added with AI"
+msgstr "تمت الإضافة باستخدام AI"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "No transactions yet. Type something in the box above!"
+msgstr "لا توجد معاملات بعد. اكتب شيئاً في المربع أعلاه!"
+
+msgid "Export CSV"
+msgstr "تصدير CSV"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Month"
+msgstr "الشهر"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "note or text"
+msgstr "ملاحظة أو نص"
+
+msgid "Filter"
+msgstr "تصفية"
+
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+msgid "Net"
+msgstr "صافي"
+
+msgid "Newer"
+msgstr "الأحدث"
+
+msgid "Older"
+msgstr "الأقدم"
+
+msgid "Page %(a)s of %(b)s"
+msgstr "صفحة %(a)s من %(b)s"
+
+msgid "Confirm"
+msgstr "تأكيد"
+
+msgid "Check before saving"
+msgstr "تحقق قبل الحفظ"
+
+msgid "You wrote:"
+msgstr "لقد كتبت:"
+
+msgid "Save this one"
+msgstr "احفظ هذا"
+
+msgid "New category:"
+msgstr "فئة جديدة:"
+
+msgid "New:"
+msgstr "جديد:"
+
+msgid "New category…"
+msgstr "فئة جديدة..."
+
+msgid "New category name"
+msgstr "اسم فئة جديدة"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Delete this permanently?"
+msgstr "هل تريد حذف هذا نهائيًا؟"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Ask anything about your money"
+msgstr "اسأل أي شيء عن أموالك"
+
+msgid "Ask"
+msgstr "اسأل"
+
+msgid "Thinking…"
+msgstr "جاري التفكير..."
+
+msgid "Where did I spend the most last month?"
+msgstr "أين أنفقت أكثر من غيره الشهر الماضي؟"
+
+msgid "Where did I spend most last month?"
+msgstr "أين أنفقت معظم أموالي الشهر الماضي؟"
+
+msgid "How much did I spend on rickshaw this year?"
+msgstr "كم أنفقت على عربة الريكشا هذا العام؟"
+
+msgid "Rickshaw spending this year"
+msgstr "مصاريف الريكشا هذا العام"
+
+msgid "income vs expense per month this year"
+msgstr "الدخل مقابل المصروفات شهرياً لهذا العام"
+
+msgid "Income vs expense per month"
+msgstr "الدخل مقابل المصروفات شهرياً"
+
+msgid "notes containing “%(k)s”"
+msgstr "الملاحظات التي تحتوي على \"%(k)s\""
+
+msgid "Spent"
+msgstr "المنفق"
+
+msgid "Earned"
+msgstr "المكتسب"
+
+msgid "Group"
+msgstr "مجموعة"
+
+msgid "Count"
+msgstr "العدد"
+
+msgid "Total"
+msgstr "الإجمالي"
+
+msgid "Matching transactions"
+msgstr "مطابقة المعاملات"
+
+msgid "first 50"
+msgstr "أول 50"
+
+msgid "The AI only understood your question; every number here was calculated from your saved data."
+msgstr "فهم الذكاء الاصطناعي سؤالك فقط؛ كل رقم هنا تم حسابه من بياناتك المحفوظة."
+
+msgid "Your question"
+msgstr "سؤالك"
+
+msgid "Categories"
+msgstr "الفئات"
+
+msgid "Add category"
+msgstr "إضافة فئة"
+
+msgid "Edit category"
+msgstr "تعديل الفئة"
+
+msgid "The AI picks from these categories. When nothing fits, it suggests a new one and asks you before creating it. Give an expense category a monthly budget to see progress bars on the dashboard."
+msgstr "يختار الذكاء الاصطناعي من هذه الفئات. عندما لا يناسب أي شيء، يقترح فئة جديدة ويسألك قبل إنشائها. امنح فئة المصاريف ميزانية شهرية لرؤية أشرطة التقدم على لوحة التحكم."
+
+msgid "Expense categories"
+msgstr "فئات المصروفات"
+
+msgid "Income categories"
+msgstr "فئات الدخل"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Budget"
+msgstr "ميزانية"
+
+msgid "Icon"
+msgstr "أيقونة"
+
+msgid "Color"
+msgstr "اللون"
+
+msgid "Monthly budget"
+msgstr "الميزانية الشهرية"
+
+msgid "e.g. 🍔"
+msgstr "مثال: 🍔"
+
+msgid "Optional monthly spending limit (expense categories only)."
+msgstr "حد إنفاق شهري اختياري (لفئات المصاريف فقط)."
+
+msgid "You already have a category with this name."
+msgstr "لديك بالفعل فئة بهذا الاسم."
+
+msgid "Food"
+msgstr "طعام"
+
+msgid "Groceries"
+msgstr "بقالة"
+
+msgid "Transport"
+msgstr "المواصلات"
+
+msgid "Rent"
+msgstr "إيجار"
+
+msgid "Utilities"
+msgstr "المرافق"
+
+msgid "Mobile & Internet"
+msgstr "الجوال والإنترنت"
+
+msgid "Health"
+msgstr "صحة"
+
+msgid "Education"
+msgstr "التعليم"
+
+msgid "Shopping"
+msgstr "تسوق"
+
+msgid "Entertainment"
+msgstr "الترفيه"
+
+msgid "Family"
+msgstr "عائلة"
+
+msgid "Other Expense"
+msgstr "مصروف آخر"
+
+msgid "Salary"
+msgstr "الراتب"
+
+msgid "Tuition"
+msgstr "الرسوم الدراسية"
+
+msgid "Freelance"
+msgstr "عمل حر"
+
+msgid "Business"
+msgstr "عمل تجاري"
+
+msgid "Gift"
+msgstr "هدية"
+
+msgid "Other Income"
+msgstr "دخل آخر"
+
+msgid "Amount must be greater than zero."
+msgstr "يجب أن يكون المبلغ أكبر من صفر."
+
+msgid "'%(name)s' is an expense category; pick an income category."
+msgstr "'%(name)s' هي فئة مصاريف؛ اختر فئة دخل."
+
+msgid "'%(name)s' is an income category; pick an expense category."
+msgstr "'%(name)s' هي فئة دخل؛ اختر فئة مصاريف."
+
+msgid "Manual"
+msgstr "يدوي"
+
+msgid "Welcome! Default categories are ready. Try typing your first expense."
+msgstr "أهلاً بك! الفئات الافتراضية جاهزة. جرب كتابة أول مصروف لك."
+
+msgid "Please type what you spent or earned."
+msgstr "يرجى كتابة ما أنفقته أو كسبته."
+
+msgid "Message is too long (max %(n)s characters)."
+msgstr "الرسالة طويلة جداً (الحد الأقصى %(n)s حرفاً)."
+
+msgid "The AI is busy or not configured right now. Please try again, or add it manually."
+msgstr "الذكاء الاصطناعي مشغول أو غير مهيأ حالياً. يرجى المحاولة مرة أخرى، أو الإضافة يدوياً."
+
+msgid "The AI is busy or not configured right now. Please try again."
+msgstr "الذكاء الاصطناعي مشغول أو غير مهيأ حالياً. يرجى المحاولة مرة أخرى."
+
+msgid "The AI response was not understood. Please try again."
+msgstr "لم يتم فهم رد الذكاء الاصطناعي. يرجى المحاولة مرة أخرى."
+
+msgid "No income or expense with an amount was found in your message."
+msgstr "لم يتم العثور على دخل أو مصروف بمبلغ في رسالتك."
+
+msgid "New categories: %(names)s."
+msgstr "فئات جديدة: %(names)s."
+
+msgid "%(n)s row(s) skipped because the amount, type or accounts were invalid."
+msgstr "تم تخطي %(n)s صفوف بسبب عدم صحة المبلغ أو النوع أو الحسابات."
+
+msgid "Nothing was saved."
+msgstr "لم يتم حفظ أي شيء."
+
+msgid "Transaction added."
+msgstr "تمت إضافة المعاملة."
+
+msgid "Add transaction"
+msgstr "إضافة معاملة"
+
+msgid "Transaction updated."
+msgstr "تم تحديث المعاملة."
+
+msgid "Edit transaction"
+msgstr "تعديل المعاملة"
+
+msgid "Transaction deleted."
+msgstr "تم حذف المعاملة."
+
+msgid "Category '%(name)s' added."
+msgstr "تمت إضافة الفئة '%(name)s'."
+
+msgid "Category updated."
+msgstr "تم تحديث الفئة."
+
+msgid "Category '%(name)s' deleted."
+msgstr "تم حذف الفئة '%(name)s'."
+
+msgid "%(n)s transaction(s) are now Uncategorized."
+msgstr "%(n)s معاملة أصبحت الآن غير مصنفة."
+
+msgid "Accounts"
+msgstr "الحسابات"
+
+msgid "Account"
+msgstr "حساب"
+
+msgid "Move money"
+msgstr "نقل الأموال"
+
+msgid "Add account"
+msgstr "إضافة حساب"
+
+msgid "Edit account"
+msgstr "تعديل الحساب"
+
+msgid "Where your money is kept. Tell the AI “bkash e 500 dilam” and it uses bKash, or “amar bkash e 5000 ache” to set bKash’s balance. Use Move money for ATM withdrawals, bKash cash out and other transfers — they change balances but are not income or expense. Rename any account (e.g. Bank → your bank’s name) with Edit."
+msgstr "حيث يتم الاحتفاظ بأموالك. أخبر AI بـ “bkash e 500 dilam” وسيستخدم bKash، أو “amar bkash e 5000 ache” لضبط رصيد bKash. استخدم نقل الأموال للسحوبات من الصراف الآلي، وسحب bKash، والتحويلات الأخرى — فهي تغير الأرصدة ولكنها ليست دخلاً أو مصروفاً. أعد تسمية أي حساب (مثلاً Bank → اسم بنكك) باستخدام تعديل."
+
+msgid "Total in all accounts"
+msgstr "الإجمالي في جميع الحسابات"
+
+msgid "Default"
+msgstr "افتراضي"
+
+msgid "Recent transfers"
+msgstr "التحويلات الأخيرة"
+
+msgid "From"
+msgstr "من"
+
+msgid "To"
+msgstr "إلى"
+
+msgid "No transfers yet."
+msgstr "لا توجد تحويلات بعد."
+
+msgid "Manage"
+msgstr "إدارة"
+
+msgid "e.g. 💵"
+msgstr "مثال: 💵"
+
+msgid "Opening balance"
+msgstr "الرصيد الافتتاحي"
+
+msgid "Default account"
+msgstr "الحساب الافتراضي"
+
+msgid "You already have an account with this name."
+msgstr "لديك بالفعل حساب بهذا الاسم."
+
+msgid "e.g. ATM withdrawal, bKash cash out"
+msgstr "مثال: سحب من الصراف الآلي، سحب نقدي من bKash"
+
+msgid "Pick two different accounts."
+msgstr "اختر حسابين مختلفين."
+
+msgid "Cash"
+msgstr "نقد"
+
+msgid "Card"
+msgstr "بطاقة"
+
+msgid "Mobile banking"
+msgstr "الخدمات المصرفية عبر الهاتف المحمول"
+
+msgid "Bank account"
+msgstr "حساب بنكي"
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "Money already in this account when you started using KhorochAi."
+msgstr "الأموال الموجودة بالفعل في هذا الحساب عند بدء استخدام KhorochAi."
+
+msgid "Used when you don't say which account (e.g. 'lunch 250')."
+msgstr "يُستخدم عندما لا تحدد الحساب (مثلاً 'غداء 250')."
+
+msgid "Account '%(name)s' added."
+msgstr "تمت إضافة الحساب '%(name)s'."
+
+msgid "Account updated."
+msgstr "تم تحديث الحساب."
+
+msgid "Account '%(name)s' deleted."
+msgstr "تم حذف الحساب '%(name)s'."
+
+msgid "%(n)s transaction(s) no longer have an account."
+msgstr "%(n)s معاملة لم يعد لها حساب."
+
+msgid "Transfer saved."
+msgstr "تم حفظ التحويل."
+
+msgid "Move money between accounts"
+msgstr "نقل الأموال بين الحسابات"
+
+msgid "Transfer updated."
+msgstr "تم تحديث التحويل."
+
+msgid "Edit transfer"
+msgstr "تعديل التحويل"
+
+msgid "Transfer deleted."
+msgstr "تم حذف التحويل."
+
+msgid "AI limit reached for everyone today — resets at midnight"
+msgstr "تم الوصول إلى حد AI للجميع اليوم — يتم إعادة التعيين عند منتصف الليل"
+
+msgid "The AI has reached today's limit for everyone. It resets at midnight. You can still add transactions manually."
+msgstr "وصل الذكاء الاصطناعي إلى الحد اليومي للجميع. يتم إعادة تعيينه عند منتصف الليل. لا يزال بإمكانك إضافة المعاملات يدوياً."
+
+msgid "Transfer"
+msgstr "تحويل"
+
+msgid "Day"
+msgstr "يوم"
+
+msgid "Week"
+msgstr "أسبوع"
+
+msgid "Period"
+msgstr "الفترة"
+
+msgid "No transactions in this period."
+msgstr "لا توجد معاملات في هذه الفترة."
+
+msgid "Dates:"
+msgstr "التواريخ:"
+
+msgid "Show all dates"
+msgstr "عرض كل التواريخ"
+
+msgid "AI today: %(p)s%% used"
+msgstr "AI اليوم: تم استخدام %(p)s%%"
+
+msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
+msgstr "تم استخدام %(used)s من أصل %(limit)s من رموز AI اليوم. يعمل AI ضمن خطة مجانية بحد يومي؛ يتم إعادة تعيينه عند منتصف الليل."
+
+msgid "AI limit used up for today — resets at midnight"
+msgstr "تم استهلاك حد AI لهذا اليوم — يتم إعادة التعيين عند منتصف الليل"
+
+msgid "AI usage today"
+msgstr "استخدام AI اليوم"
+
+msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
+msgstr "لقد استهلكت 100% من حصة AI اليومية. يتم إعادة تعيينها عند منتصف الليل. لا يزال بإمكانك إضافة المعاملات يدوياً."
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Password (again)"
+msgstr "كلمة المرور (مرة أخرى)"
+
+msgid "Forgot your password?"
+msgstr "هل نسيت كلمة المرور؟"
+
+msgid "The email address and/or password you specified are not correct."
+msgstr "عنوان البريد الإلكتروني و/أو كلمة المرور التي أدخلتها غير صحيحة."
+
+msgid "A user is already registered with this email address."
+msgstr "يوجد مستخدم مسجل بالفعل بهذا البريد الإلكتروني."
+
+msgid "You must type the same password each time."
+msgstr "يجب عليك كتابة نفس كلمة المرور في كل مرة."
+
+msgid "Code"
+msgstr "الرمز"
+
+msgid "Incorrect code."
+msgstr "رمز غير صحيح."
+
+msgid "Email Verification"
+msgstr "التحقق من البريد الإلكتروني"
+
+msgid "Enter Email Verification Code"
+msgstr "أدخل رمز التحقق من البريد الإلكتروني"
+
+msgid "We've sent a code to %(recipient)s. The code expires shortly, so please enter it soon."
+msgstr "لقد أرسلنا رمزاً إلى %(recipient)s. تنتهي صلاحية الرمز قريباً، لذا يرجى إدخاله في أقرب وقت."
+
+msgid "Request new code"
+msgstr "طلب رمز جديد"
+
+msgid "Use a different email address"
+msgstr "استخدم عنوان بريد إلكتروني مختلف"
+
+msgid "Confirmation email sent to %(email)s."
+msgstr "تم إرسال بريد إلكتروني للتأكيد إلى %(email)s."
+
+msgid "Successfully signed in as %(name)s."
+msgstr "تم تسجيل الدخول بنجاح باسم %(name)s."
+
+msgid "You have signed out."
+msgstr "لقد قمت بتسجيل الخروج."
+
+msgid "You have confirmed %(email)s."
+msgstr "لقد قمت بتأكيد %(email)s."
+
+msgid "Password successfully changed."
+msgstr "تم تغيير كلمة المرور بنجاح."
+
+msgid "Password successfully set."
+msgstr "تم ضبط كلمة المرور بنجاح."
+
+msgid "Password Reset"
+msgstr "إعادة تعيين كلمة المرور"
+
+msgid "Forgotten your password? Enter your email address below, and we'll send you an email allowing you to reset it."
+msgstr "هل نسيت كلمة المرور؟ أدخل عنوان بريدك الإلكتروني أدناه، وسنرسل لك رسالة تتيح لك إعادة تعيينها."
+
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr "يرجى التواصل معنا إذا واجهت أي مشكلة في إعادة تعيين كلمة المرور."
+
+msgid "Reset My Password"
+msgstr "إعادة تعيين كلمة المرور الخاصة بي"
+
+msgid "Enter Password Reset Code"
+msgstr "أدخل رمز إعادة تعيين كلمة المرور"
+
+msgid "Change Password"
+msgstr "تغيير كلمة المرور"
+
+msgid "Your password is now changed."
+msgstr "تم تغيير كلمة مرورك الآن."
+
+msgid "New Password"
+msgstr "كلمة مرور جديدة"
+
+msgid "Current Password"
+msgstr "كلمة المرور الحالية"
+
+msgid "Sign Out"
+msgstr "تسجيل الخروج"
+
+msgid "Are you sure you want to sign out?"
+msgstr "هل أنت متأكد أنك تريد تسجيل الخروج؟"
+
+msgid "This password is too common."
+msgstr "كلمة المرور هذه شائعة جداً."
+
+msgid "This password is entirely numeric."
+msgstr "هذه كلمة المرور رقمية بالكامل."
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "كلمة المرور متشابهة جداً مع %(verbose_name)s."
+
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "لا يمكن أن تكون كلمة مرورك مشابهة جداً لمعلوماتك الشخصية الأخرى."
+
+msgid "Your password can’t be a commonly used password."
+msgstr "لا يمكن أن تكون كلمة مرورك شائعة الاستخدام."
+
+msgid "Your password can’t be entirely numeric."
+msgstr "لا يمكن أن تتكون كلمة مرورك من أرقام فقط."
+
+msgid "Continue with %(provider)s"
+msgstr "المتابعة باستخدام %(provider)s"
+
+msgid "or with email"
+msgstr "أو باستخدام البريد الإلكتروني"
+
+msgid "You'll get ready-made categories and accounts to start with. We'll email you a 6-digit code to confirm your email."
+msgstr "ستحصل على فئات وحسابات جاهزة للبدء. سنرسل لك رمزاً مكوناً من 6 أرقام عبر البريد الإلكتروني لتأكيده."
+
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+msgid "Email (used to log in)"
+msgstr "البريد الإلكتروني (يستخدم لتسجيل الدخول)"
+
+msgid "Change email"
+msgstr "تغيير البريد الإلكتروني"
+
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+msgid "Google / Facebook login"
+msgstr "تسجيل الدخول عبر Google / Facebook"
+
+msgid "Shown in the app. You log in with your email, not this."
+msgstr "يظهر في التطبيق. أنت تسجل الدخول ببريدك الإلكتروني، وليس بهذا."
+
+msgid "This username is already taken."
+msgstr "اسم المستخدم هذا مستخدم بالفعل."
+
+msgid "Username updated."
+msgstr "تم تحديث اسم المستخدم."
+
+msgid "Hello from KhorochAi!"
+msgstr "تحية من KhorochAi!"
+
+msgid "Thank you for using KhorochAi."
+msgstr "شكراً لاستخدامك KhorochAi."
+
+msgid "Your email verification code is:"
+msgstr "رمز التحقق من بريدك الإلكتروني هو:"
+
+msgid "Enter it in the KhorochAi page that is open in your browser. The code expires soon."
+msgstr "أدخله في صفحة KhorochAi المفتوحة في متصفحك. تنتهي صلاحية الرمز قريبًا."
+
+msgid "To confirm your email, open %(activate_url)s"
+msgstr "لتأكيد بريدك الإلكتروني، افتح %(activate_url)s"
+
+msgid "If you did not sign up for KhorochAi, you can ignore this email."
+msgstr "إذا لم تقم بالتسجيل في KhorochAi، يمكنك تجاهل هذا البريد الإلكتروني."
+
+msgid "Your verification code"
+msgstr "رمز التحقق الخاص بك"
+
+msgid "Your password reset code is:"
+msgstr "رمز إعادة تعيين كلمة المرور الخاص بك هو:"
+
+msgid "If you did not ask to reset your password, you can ignore this email. Your password has not changed."
+msgstr "إذا لم تطلب إعادة تعيين كلمة المرور، يمكنك تجاهل هذا البريد الإلكتروني. لم يتم تغيير كلمة مرورك."
+
+msgid "Your password reset code"
+msgstr "رمز إعادة تعيين كلمة المرور"
+
+msgid "Set balance"
+msgstr "ضبط الرصيد"
+
+msgid "Balance now"
+msgstr "الرصيد الحالي"
+
+msgid "Balance updated: %(list)s."
+msgstr "تم تحديث الرصيد: %(list)s."
+
+msgid "Good morning, %(name)s"
+msgstr "صباح الخير، %(name)s"
+
+msgid "Good afternoon, %(name)s"
+msgstr "طاب مساؤك، %(name)s"
+
+msgid "Good evening, %(name)s"
+msgstr "مساء الخير، %(name)s"
+
+msgid "Speak instead of typing"
+msgstr "تحدث بدلاً من الكتابة"
+
+msgid "Stop recording"
+msgstr "إيقاف التسجيل"
+
+msgid "Writing what you said…"
+msgstr "جاري كتابة ما قلته..."
+
+msgid "Microphone access is blocked. Allow it in your browser settings and try again."
+msgstr "الوصول إلى الميكروفون محظور. اسمح به في إعدادات متصفحك وحاول مرة أخرى."
+
+msgid "That was too short. Hold on a moment and speak, then tap stop."
+msgstr "كان ذلك قصيراً جداً. انتظر لحظة وتحدث، ثم اضغط إيقاف."
+
+msgid "Could not send the recording. Check your connection and try again."
+msgstr "تعذر إرسال التسجيل. تحقق من اتصالك وحاول مرة أخرى."
+
+msgid "No recording was received."
+msgstr "لم يتم تلقي أي تسجيل."
+
+msgid "The recording is too long. Please keep it under a minute."
+msgstr "التسجيل طويل جداً. يرجى إبقاؤه أقل من دقيقة."
+
+msgid "Couldn't turn the recording into text right now. Please try again or type it."
+msgstr "تعذر تحويل التسجيل إلى نص في الوقت الحالي. يرجى المحاولة مرة أخرى أو كتابته."
+
+msgid "I couldn't hear anything. Please try again a little closer to the mic."
+msgstr "لم أسمع شيئاً. يرجى المحاولة مرة أخرى بالقرب من الميكروفون."
+
+msgid "Set budget"
+msgstr "ضبط الميزانية"
+
+msgid "Monthly budget set: %(list)s."
+msgstr "تم ضبط الميزانية الشهرية: %(list)s."
+
+msgid "%(name)s (removed)"
+msgstr "%(name)s (تمت إزالته)"
+
+msgid "Help & contact"
+msgstr "المساعدة والاتصال"
+
+msgid "Everything works by typing or speaking in plain English, বাংলা or Banglish. You always see a preview before anything is saved."
+msgstr "يعمل كل شيء عن طريق الكتابة أو التحدث باللغة الإنجليزية البسيطة أو বাংলা أو Banglish. ترى دائمًا معاينة قبل حفظ أي شيء."
+
+msgid "How to use KhorochAi"
+msgstr "كيفية استخدام KhorochAi"
+
+msgid "Good to know"
+msgstr "معلومات مفيدة"
+
+msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
+msgstr "الذكاء الاصطناعي يقرأ نصك فقط؛ يتم حساب كل إجمالي ورصيد بواسطة التطبيق من بياناتك المحفوظة."
+
+msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
+msgstr "استخدام AI له حد يومي (يظهر كـ “AI اليوم: تم استخدام x%”). يتم إعادة تعيينه عند منتصف الليل، ويمكنك دائماً إضافة البيانات يدوياً."
+
+msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
+msgstr "ما تكتبه أو تقوله يتم إرساله إلى Google Gemini (أو Groq) ليتم فهمه. لا تدرج أرقام البطاقات أو كلمات المرور."
+
+msgid "Change the theme, language and your username from the menu at the top right."
+msgstr "قم بتغيير السمة واللغة واسم المستخدم الخاص بك من القائمة الموجودة في أعلى اليمين."
+
+msgid "Contact"
+msgstr "اتصل بنا"
+
+msgid "Questions, problems or ideas"
+msgstr "أسئلة، مشاكل أو أفكار"
+
+msgid "Write to us and we'll get back to you."
+msgstr "اكتب لنا وسنرد عليك."
+
+msgid "Developer"
+msgstr "المطور"
+
+msgid "KhorochAi is built by %(name)s."
+msgstr "تم بناء KhorochAi بواسطة %(name)s."
+
+msgid "Account menu"
+msgstr "قائمة الحساب"
+
+msgid "First name"
+msgstr "الاسم الأول"
+
+msgid "Shown in the greeting and the menu."
+msgstr "يظهر في التحية والقائمة."
+
+msgid "Profile updated."
+msgstr "تم تحديث الملف الشخصي."
+
+msgid "Add spending or income"
+msgstr "إضافة مصروف أو دخل"
+
+msgid "Type what happened in the box on the dashboard and press Add with AI."
+msgstr "اكتب ما حدث في المربع الموجود على لوحة التحكم واضغط على إضافة باستخدام AI."
+
+msgid "Tap the mic in the box, talk, then tap stop. Check the text, then press Add with AI."
+msgstr "اضغط على الميكروفون في المربع، تحدث، ثم اضغط إيقاف. راجع النص، ثم اضغط إضافة بالذكاء الاصطناعي."
+
+msgid "Accounts and moving money"
+msgstr "الحسابات وتحويل الأموال"
+
+msgid "Say which account you used, or move money between your own accounts."
+msgstr "حدد الحساب الذي استخدمته، أو انقل الأموال بين حساباتك الخاصة."
+
+msgid "Set an account balance"
+msgstr "ضبط رصيد الحساب"
+
+msgid "Tell the AI how much is in an account right now."
+msgstr "أخبر الذكاء الاصطناعي بالمبلغ الموجود في الحساب الآن."
+
+msgid "Monthly budgets"
+msgstr "الميزانيات الشهرية"
+
+msgid "Set a spending limit for a category and watch the progress bar on the dashboard."
+msgstr "حدد سقفاً للإنفاق لفئة معينة وراقب شريط التقدم على لوحة التحكم."
+
+msgid "Ask about your money"
+msgstr "اسأل عن أموالك"
+
+msgid "Use Ask AI for totals, breakdowns and comparisons."
+msgstr "استخدم Ask AI للحصول على الإجماليات، والتفاصيل، والمقارنات."
+
+msgid "Portfolio"
+msgstr "المحفظة"
+
+msgid "Help"
+msgstr "مساعدة"
+
+msgid "About & contact"
+msgstr "حول التطبيق وتواصل معنا"
+
+msgid "Made by"
+msgstr "صنع بواسطة"
+
+msgid "Developer, KhorochAi"
+msgstr "المطور، KhorochAi"
+
+msgid "How can we help?"
+msgstr "كيف يمكننا مساعدتك؟"
+
+msgid "Still need help?"
+msgstr "هل ما زلت بحاجة إلى مساعدة؟"
+
+msgid "Write to us — questions, problems and ideas are all welcome."
+msgstr "اكتب لنا — الأسئلة والمشاكل والأفكار كلها موضع ترحيب."
+
+msgid "Contact us"
+msgstr "اتصل بنا"
+
+msgid "Money tracking that speaks your language"
+msgstr "تتبع أموالك بلغتك"
+
+msgid "KhorochAi lets you track spending and income just by typing or speaking — in English, বাংলা or Banglish. The AI understands what you mean; the app does all the maths."
+msgstr "يسمح لك KhorochAi بتتبع الإنفاق والدخل بمجرد الكتابة أو التحدث — بالإنجليزية أو বাংলা أو Banglish. الذكاء الاصطناعي يفهم ما تقصده؛ والتطبيق يقوم بكل العمليات الحسابية."
+
+msgid "Type or talk"
+msgstr "اكتب أو تحدث"
+
+msgid "No forms to fill. Say “aaj lunch 250 bkash e” and it's recorded."
+msgstr "لا حاجة لملء نماذج. قل “aaj lunch 250 bkash e” وسيتم تسجيلها."
+
+msgid "See where it goes"
+msgstr "شاهد أين تذهب أموالك"
+
+msgid "Accounts, budgets and charts show your money at a glance, and Ask AI answers your questions."
+msgstr "الحسابات والميزانيات والرسوم البيانية تعرض أموالك في لمحة، و Ask AI يجيب على أسئلتك."
+
+msgid "Correct by design"
+msgstr "تصميم دقيق"
+
+msgid "You check every entry before it's saved, and totals are always calculated from your own data."
+msgstr "أنت تراجع كل إدخال قبل حفظه، ويتم حساب الإجماليات دائماً من بياناتك الخاصة."
+
+msgid "Questions, problems or ideas — write to us and we'll get back to you."
+msgstr "أسئلة، مشاكل أو أفكار — اكتب لنا وسنرد عليك."
+
+msgid "Read the help guide"
+msgstr "اقرأ دليل المساعدة"
+
+msgid "KhorochAi — Expense & income tracker you can talk to"
+msgstr "KhorochAi — متتبع المصروفات والدخل الذي يمكنك التحدث إليه"
+
+msgid "Just say it. Your hisab is done."
+msgstr "فقط قلها. تم تسجيل حسابك."
+
+msgid "Just say it. Your hisab is done. Track spending and income by typing or speaking in English, বাংলা or Banglish."
+msgstr "فقط قلها. تم تسجيل حسابك. تتبع الإنفاق والدخل عن طريق الكتابة أو التحدث بالإنجليزية أو বাংলা أو Banglish."
+
+msgid "Free · English, বাংলা & Banglish"
+msgstr "مجاني · الإنجليزية، বাংলা & Banglish"
+
+msgid "Type or speak what you spent or earned — like you'd tell a friend. KhorochAi turns it into neat entries, keeps your accounts and budgets up to date, and answers your money questions."
+msgstr "اكتب أو تحدث بما أنفقته أو كسبته — كما لو كنت تخبر صديقاً. يقوم KhorochAi بتحويل ذلك إلى إدخالات منظمة، ويحافظ على تحديث حساباتك وميزانياتك، ويجيب على أسئلتك المالية."
+
+msgid "Create free account"
+msgstr "إنشاء حساب مجاني"
+
+msgid "Sign up with your email. You check every entry before it's saved."
+msgstr "سجل باستخدام بريدك الإلكتروني. أنت تراجع كل إدخال قبل حفظه."
+
+msgid "Write it the way you talk"
+msgstr "اكتبها بالطريقة التي تتحدث بها"
+
+msgid "One message can hold several entries — spending, income, transfers between your accounts, even budgets. The AI reads it; you check the preview and save."
+msgstr "يمكن لرسالة واحدة أن تحتوي على عدة إدخالات — مصاريف، دخل، تحويلات بين حساباتك، وحتى ميزانيات. يقوم KhorochAi بقراءتها؛ أنت تراجع المعاينة ثم تحفظها."
+
+msgid "How it works"
+msgstr "كيف يعمل"
+
+msgid "Type or say it"
+msgstr "اكتبها أو تحدث بها"
+
+msgid "Write or speak what happened, in English, বাংলা or Banglish. Several things in one message is fine."
+msgstr "اكتب أو تحدث بما حدث، باللغة الإنجليزية أو বাংলা أو Banglish. عدة أشياء في رسالة واحدة مقبولة."
+
+msgid "Check the preview"
+msgstr "تحقق من المعاينة"
+
+msgid "See exactly what the AI understood — amount, category, account and date. Fix anything with a tap."
+msgstr "شاهد ما فهمه الذكاء الاصطناعي بدقة — المبلغ، الفئة، الحساب، والتاريخ. قم بتعديل أي شيء بلمسة واحدة."
+
+msgid "Saved and up to date"
+msgstr "تم الحفظ والتحديث"
+
+msgid "Your totals, account balances, budgets and charts update instantly."
+msgstr "يتم تحديث إجمالياتك، وأرصدة حساباتك، وميزانياتك، ورسومك البيانية فوراً."
+
+msgid "Everything you need, nothing you don't"
+msgstr "كل ما تحتاجه، لا شيء لا تحتاجه"
+
+msgid "Voice input"
+msgstr "الإدخال الصوتي"
+
+msgid "Tap the mic and speak. Your words appear in the box for you to check."
+msgstr "اضغط على الميكروفون وتحدث. ستظهر كلماتك في المربع لتراجعها."
+
+msgid "Your language"
+msgstr "لغتك"
+
+msgid "English, বাংলা or Banglish — and the whole app can switch to Bangla."
+msgstr "الإنجليزية أو বাংলা أو Banglish — ويمكن للتطبيق بأكمله التحول إلى اللغة البنغالية."
+
+msgid "All your accounts"
+msgstr "جميع حساباتك"
+
+msgid "Cash, bKash, Nagad, Rocket, bank and card, with transfers between them."
+msgstr "نقد، bKash، Nagad، Rocket، بنك وبطاقة، مع تحويلات بينها."
+
+msgid "Set limits per category and watch the progress bars as you spend."
+msgstr "حدد حدوداً لكل فئة وراقب أشرطة التقدم أثناء الإنفاق."
+
+msgid "“এই মাসে খাবারে কত খরচ হলো?” — get the answer from your own data."
+msgstr "“এই মাসে খাবারে কত খরচ হলো?” — احصل على الإجابة من بياناتك الخاصة."
+
+msgid "Clear dashboard"
+msgstr "مسح لوحة التحكم"
+
+msgid "Income, expense, balance, where your money went and day-by-day charts."
+msgstr "الدخل، المصروفات، الرصيد، أين ذهبت أموالك، ورسوم بيانية يومية."
+
+msgid "Light and dark"
+msgstr "فاتح وداكن"
+
+msgid "A calm design that follows your phone's dark mode, or pick your own."
+msgstr "تصميم هادئ يتبع الوضع المظلم لهاتفك، أو يمكنك اختيار ما يناسبك."
+
+msgid "Export to CSV"
+msgstr "تصدير إلى CSV"
+
+msgid "Download your transactions for Excel or Google Sheets any time."
+msgstr "قم بتنزيل معاملاتك لـ Excel أو Google Sheets في أي وقت."
+
+msgid "Start your hisab in a minute"
+msgstr "ابدأ حساباتك في دقيقة"
+
+msgid "Create a free account with your email, then just tell KhorochAi what you spent today."
+msgstr "أنشئ حسابًا مجانيًا باستخدام بريدك الإلكتروني، ثم أخبر KhorochAi بما أنفقته اليوم."
+
+msgid "See how it works"
+msgstr "تعرف على كيفية عمله"
+
+msgid "Free to use"
+msgstr "مجاني للاستخدام"
+
+msgid "You confirm every entry"
+msgstr "أنت تؤكد كل إدخال"
+
+msgid "Works on phone and computer"
+msgstr "يعمل على الهاتف والكمبيوتر"
+
+msgid "Write it the way you talk — or just talk."
+msgstr "اكتبها بالطريقة التي تتحدث بها — أو فقط تحدث."
+
+msgid "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save."
+msgstr "اكتبها، أو اضغط على الميكروفون وتحدث بها. يمكن للرسالة الواحدة أن تحتوي على عدة إدخالات — إنفاق، دخل، تحويلات بين حساباتك، وحتى ميزانيات. يمكنك مراجعة المعاينة والحفظ."
+
+msgid "Free · বাংলা, English, Banglish & any language"
+msgstr "مجاني · বাংলা، الإنجليزية، Banglish وأي لغة"
+
+msgid "Write it the way you talk — in any language, or just talk."
+msgstr "اكتبها بالطريقة التي تتحدث بها — بأي لغة، أو فقط تحدث."
+
+msgid "Bangla, English, Banglish — or any language you speak. The app itself comes in 9 languages."
+msgstr "البنغالية، الإنجليزية، البنغليزية — أو أي لغة تتحدثها. التطبيق نفسه متوفر بـ 9 لغات."
+
+msgid "Tell me what you spent or earned — বাংলা, English, Banglish or any language"
+msgstr "أخبرني بما أنفقته أو كسبته — بالـ বাংলা، الإنجليزية، Banglish أو أي لغة"
+
+msgid "Currency"
+msgstr "العملة"
+
+msgid "Used for every amount in the app."
+msgstr "يُستخدم لكل مبلغ في التطبيق."
+
+msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
+msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
+msgstr[0] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."
+msgstr[1] "وجد الذكاء الاصطناعي %(n)s معاملة. صحح أي شيء يبدو خاطئاً، ثم احفظ."
+msgstr[2] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."
+msgstr[3] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."
+msgstr[4] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."
+msgstr[5] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."
+
+msgid "%(n)s transaction"
+msgid_plural "%(n)s transactions"
+msgstr[0] "%(n)s معاملة"
+msgstr[1] "%(n)s معاملة"
+msgstr[2] "%(n)s معاملة"
+msgstr[3] "%(n)s معاملة"
+msgstr[4] "%(n)s معاملة"
+msgstr[5] "%(n)s معاملة"
+
+msgid "Saved %(n)s transaction."
+msgid_plural "Saved %(n)s transactions."
+msgstr[0] "تم حفظ %(n)s معاملات."
+msgstr[1] "تم حفظ %(n)s معاملة."
+msgstr[2] "تم حفظ %(n)s معاملات."
+msgstr[3] "تم حفظ %(n)s معاملات."
+msgstr[4] "تم حفظ %(n)s معاملات."
+msgstr[5] "تم حفظ %(n)s معاملات."
+
+msgid "This password is too short. It must contain at least %d character."
+msgid_plural "This password is too short. It must contain at least %d characters."
+msgstr[0] "كلمة المرور قصيرة جداً. يجب أن تحتوي على %d أحرف على الأقل."
+msgstr[1] "كلمة المرور قصيرة جداً. يجب أن تحتوي على %d حرف على الأقل."
+msgstr[2] "كلمة المرور قصيرة جداً. يجب أن تحتوي على %d أحرف على الأقل."
+msgstr[3] "كلمة المرور قصيرة جداً. يجب أن تحتوي على %d أحرف على الأقل."
+msgstr[4] "كلمة المرور قصيرة جداً. يجب أن تحتوي على %d أحرف على الأقل."
+msgstr[5] "كلمة المرور قصيرة جداً. يجب أن تحتوي على %d أحرف على الأقل."
+
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
+msgstr[1] "يجب أن تحتوي كلمة مرورك على %(min_length)d حرف على الأقل."
+msgstr[2] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
+msgstr[3] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
+msgstr[4] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
+msgstr[5] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
