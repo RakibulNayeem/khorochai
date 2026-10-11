@@ -73,7 +73,8 @@ body {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .nav-ask-icon { width: 17px; height: 17px; flex: none; }
-.nav-ask .nav-ask-text { background: var(--ai-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.nav-ask .nav-ask-text { color: var(--ink); }  /* solid for readability; the gradient lives on the border + icon */
+[data-bs-theme="dark"] .nav-ask .nav-ask-text { color: #fff; }
 .navbar .nav-link.nav-ask::after {  /* the light that sweeps across on hover */
   content: ""; position: absolute; inset: 0; transform: translateX(-120%);
   background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, .55) 50%, transparent 70%);
@@ -82,7 +83,7 @@ body {
 .navbar .nav-link.nav-ask:hover::after { transform: translateX(120%); transition: transform .7s ease; }
 .navbar .nav-link.nav-ask:hover .nav-ask-icon { animation: ai-twinkle .8s ease; }
 .navbar .nav-link.nav-ask.active { background: var(--ai-grad) border-box; color: #fff !important; box-shadow: 0 0 0 3px var(--ai-glow), 0 6px 18px -6px rgba(139, 92, 246, .7); }
-.navbar .nav-link.nav-ask.active .nav-ask-text { background: none; color: #fff; }
+.navbar .nav-link.nav-ask.active .nav-ask-text { color: #fff; text-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
 .navbar .nav-link.nav-ask.active .nav-ask-icon path { fill: #fff; }
 @keyframes ai-twinkle { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.2) rotate(18deg); } }
 @media (max-width: 767.98px) { .navbar .nav-link.nav-ask { margin-left: 0; } }
