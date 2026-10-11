@@ -53,8 +53,8 @@ msgstr "<strong>%(name)s</strong> کے طور پر سائن ان ہیں"
 msgid "System follows your phone or computer's dark mode setting."
 msgstr "سسٹم آپ کے فون یا کمپیوٹر کی ڈارک موڈ سیٹنگ کی پیروی کرتا ہے۔"
 
-msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
-msgstr "ایپ کے مینو، بٹن اور پیغامات کو تبدیل کرتا ہے۔ آپ ہمیشہ AI سے انگریزی، বাংলা یا Banglish میں بات کر سکتے ہیں۔"
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "ایپ کے مینو، بٹن اور پیغامات کی زبان بدلتا ہے۔ آپ AI سے کسی بھی زبان میں لکھ یا بول سکتے ہیں — বাংলা، انگریزی، Banglish اور بہت کچھ۔"
 
 msgid "These settings are saved in this browser."
 msgstr "یہ ترتیبات اس براؤزر میں محفوظ ہیں۔"

@@ -53,8 +53,8 @@ msgstr "已登录为 <strong>%(name)s</strong>"
 msgid "System follows your phone or computer's dark mode setting."
 msgstr "系统跟随您手机或电脑的深色模式设置。"
 
-msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
-msgstr "更改应用的菜单、按钮和消息。您可以随时用英语、বাংলা 或 Banglish 与 AI 对话。"
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "更改应用菜单、按钮和消息的语言。您始终可以用任何语言向 AI 输入或说话——বাংলা、英语、Banglish 等。"
 
 msgid "These settings are saved in this browser."
 msgstr "这些设置已保存在此浏览器中。"

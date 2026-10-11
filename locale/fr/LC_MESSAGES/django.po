@@ -53,8 +53,8 @@ msgstr "Connecté en tant que <strong>%(name)s</strong>"
 msgid "System follows your phone or computer's dark mode setting."
 msgstr "Le système suit le mode sombre de votre téléphone ou ordinateur."
 
-msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
-msgstr "Modifie les menus, les boutons et les messages de l'application. Vous pouvez toujours écrire à l'AI en anglais, en বাংলা ou en Banglish."
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Change la langue des menus, boutons et messages de l'app. Vous pouvez toujours écrire ou parler à l'IA dans n'importe quelle langue — বাংলা, anglais, Banglish et plus."
 
 msgid "These settings are saved in this browser."
 msgstr "Ces paramètres sont enregistrés dans ce navigateur."

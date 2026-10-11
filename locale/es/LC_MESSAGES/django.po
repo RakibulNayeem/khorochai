@@ -53,8 +53,8 @@ msgstr "Sesión iniciada como <strong>%(name)s</strong>"
 msgid "System follows your phone or computer's dark mode setting."
 msgstr "El sistema sigue la configuración de modo oscuro de tu teléfono o computadora."
 
-msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
-msgstr "Cambia los menús, botones y mensajes de la aplicación. Siempre puedes escribirle a la AI en inglés, বাংলা o Banglish."
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Cambia los menús, botones y mensajes de la app. Siempre puedes escribirle o hablarle a la IA en cualquier idioma: বাংলা, inglés, Banglish y más."
 
 msgid "These settings are saved in this browser."
 msgstr "Estos ajustes se guardan en este navegador."

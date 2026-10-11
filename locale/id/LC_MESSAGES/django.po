@@ -53,8 +53,8 @@ msgstr "Masuk sebagai <strong>%(name)s</strong>"
 msgid "System follows your phone or computer's dark mode setting."
 msgstr "Sistem mengikuti pengaturan mode gelap ponsel atau komputer Anda."
 
-msgid "Changes the app's menus, buttons and messages. You can always type to the AI in English, বাংলা or Banglish."
-msgstr "Mengubah menu, tombol, dan pesan aplikasi. Anda selalu dapat mengetik ke AI dalam bahasa Inggris, বাংলা, atau Banglish."
+msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
+msgstr "Mengubah bahasa menu, tombol, dan pesan aplikasi. Anda selalu bisa mengetik atau berbicara ke AI dalam bahasa apa pun — বাংলা, Inggris, Banglish, dan lainnya."
 
 msgid "These settings are saved in this browser."
 msgstr "Pengaturan ini disimpan di peramban ini."
