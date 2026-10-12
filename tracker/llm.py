@@ -10,6 +10,7 @@ Voice input is transcribed by Gemini (audio in the prompt), with Groq's Whisper 
 import json
 import logging
 import re
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 
 import requests
 from django.conf import settings
@@ -102,23 +103,55 @@ def _call_groq(system: str, user: str) -> tuple[str, int]:
 PROVIDERS = {"gemini": _call_gemini, "groq": _call_groq}
 
 
-def call_llm(system: str, user: str, usage: dict | None = None) -> dict:
-    """Try each configured provider in order; return the parsed JSON dict.
-    If `usage` is given, the tokens spent (including on a reply that could not be parsed) are added to usage["tokens"]."""
-    errors = []
-    for name in settings.LLM_PROVIDERS:
-        fn = PROVIDERS.get(name)
-        if not fn:
+_pool = ThreadPoolExecutor(max_workers=8)
+
+
+def _first_success(names, providers, call, what, hedge_seconds=None):
+    """Ask providers in order, but don't wait for a slow one: if the current provider hasn't answered within
+    settings.LLM_HEDGE_SECONDS, the next one is asked too and the first good answer wins. A provider that
+    fails outright hands over immediately. Returns (name, result)."""
+    hedge = settings.LLM_HEDGE_SECONDS if hedge_seconds is None else hedge_seconds
+    queue = [n for n in names if n in providers]
+    running, errors = {}, []
+
+    def start_next():
+        if queue:
+            name = queue.pop(0)
+            running[_pool.submit(call, providers[name])] = name
+
+    start_next()
+    while running:
+        done, _ = wait(running, timeout=hedge if queue else settings.LLM_TIMEOUT + 5,
+                       return_when=FIRST_COMPLETED)
+        if not done:          # still waiting: bring in the next provider alongside (or give up if none is left)
+            if not queue:
+                errors.append("timed out")
+                break
+            start_next()
             continue
-        try:
-            raw, tokens = fn(system, user)
-            if usage is not None:
-                usage["tokens"] = usage.get("tokens", 0) + tokens
-            return _extract_json(raw)
-        except (LLMError, requests.RequestException, json.JSONDecodeError) as exc:
-            logger.warning("LLM provider %s failed: %s", name, exc)
-            errors.append(f"{name}: {exc}")
-    raise LLMError("; ".join(errors) or "No LLM provider configured")
+        for future in done:
+            name = running.pop(future)
+            try:
+                return name, future.result()
+            except (LLMError, requests.RequestException, json.JSONDecodeError, KeyError, ValueError) as exc:
+                logger.warning("%s with %s failed: %s", what, name, exc)
+                errors.append(f"{name}: {exc}")
+        if not running:
+            start_next()
+    raise LLMError("; ".join(errors) or f"No {what} provider configured")
+
+
+def call_llm(system: str, user: str, usage: dict | None = None) -> dict:
+    """Return the parsed JSON dict from the first provider that answers well (see _first_success).
+    If `usage` is given, the tokens spent are added to usage["tokens"]."""
+    def call(fn):
+        raw, tokens = fn(system, user)
+        return _extract_json(raw), tokens
+
+    _, (data, tokens) = _first_success(settings.LLM_PROVIDERS, PROVIDERS, call, "LLM")
+    if usage is not None:
+        usage["tokens"] = usage.get("tokens", 0) + tokens
+    return data
 
 
 # --------------------------------------------------------------------------- prompts
@@ -338,7 +371,9 @@ def _transcribe_groq(audio: bytes, mime: str) -> tuple[str, int]:
         GROQ_TRANSCRIBE_URL,
         headers={"Authorization": f"Bearer {settings.GROQ_API_KEY}"},
         files={"file": ("voice.wav", audio, mime)},
-        data={"model": settings.GROQ_TRANSCRIBE_MODEL, "response_format": "json", "temperature": "0"},
+        # the prompt is a spelling hint for local names and words Whisper doesn't know well
+        data={"model": settings.GROQ_TRANSCRIBE_MODEL, "response_format": "json", "temperature": "0",
+              "prompt": "bKash, Nagad, Rocket."},
         timeout=settings.LLM_TIMEOUT,
     )
     if r.status_code != 200:
@@ -354,18 +389,10 @@ TRANSCRIBERS = {"gemini": _transcribe_gemini, "groq": _transcribe_groq}
 
 
 def transcribe(audio: bytes, mime: str = "audio/wav", usage: dict | None = None) -> str:
-    """Speech -> text, trying each provider in order. Tokens spent are added to usage["tokens"]."""
-    errors = []
-    for name in settings.LLM_PROVIDERS:
-        fn = TRANSCRIBERS.get(name)
-        if not fn:
-            continue
-        try:
-            text, tokens = fn(audio, mime)
-            if usage is not None:
-                usage["tokens"] = usage.get("tokens", 0) + tokens
-            return " ".join(text.strip().strip('"').split())
-        except (LLMError, requests.RequestException) as exc:
-            logger.warning("Transcription with %s failed: %s", name, exc)
-            errors.append(f"{name}: {exc}")
-    raise LLMError("; ".join(errors) or "No transcription provider configured")
+    """Speech -> text: Gemini first (it gets Bangla amounts right); Groq's Whisper only joins if Gemini is very
+    slow or fails, because Whisper often mishears Bangla numbers. Tokens spent are added to usage["tokens"]."""
+    _, (text, tokens) = _first_success(settings.TRANSCRIBE_PROVIDERS, TRANSCRIBERS, lambda fn: fn(audio, mime), "Transcription",
+                                       hedge_seconds=settings.VOICE_HEDGE_SECONDS)
+    if usage is not None:
+        usage["tokens"] = usage.get("tokens", 0) + tokens
+    return " ".join(text.strip().strip('"').split())

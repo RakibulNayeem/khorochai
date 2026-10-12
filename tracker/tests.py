@@ -545,3 +545,57 @@ class CurrencyTests(TestCase):
         self.assertContains(r, '<html lang="es"')
         r = self.client.get(reverse("account_login"), HTTP_ACCEPT_LANGUAGE="ar")
         self.assertContains(r, 'dir="rtl"')
+
+
+class HedgingTests(TestCase):
+    """A slow AI provider must not make people wait: the next one is asked and the faster answer wins."""
+
+    @override_settings(LLM_PROVIDERS=["gemini", "groq"], LLM_HEDGE_SECONDS=0.2)
+    def test_slow_first_provider_is_overtaken(self):
+        import time as _time
+        def slow(system, user):
+            _time.sleep(2)
+            return '{"who": "gemini"}', 10
+        def fast(system, user):
+            return '{"who": "groq"}', 20
+        usage = {}
+        start = _time.monotonic()
+        with mock.patch.dict(llm.PROVIDERS, {"gemini": slow, "groq": fast}):
+            self.assertEqual(llm.call_llm("s", "u", usage=usage), {"who": "groq"})
+        self.assertLess(_time.monotonic() - start, 1.5)
+        self.assertEqual(usage["tokens"], 20)
+
+    @override_settings(LLM_PROVIDERS=["gemini", "groq"], LLM_HEDGE_SECONDS=5)
+    def test_fast_first_provider_is_used_alone(self):
+        calls = []
+        def first(system, user):
+            calls.append("gemini")
+            return '{"who": "gemini"}', 10
+        def second(system, user):
+            calls.append("groq")
+            return '{"who": "groq"}', 20
+        with mock.patch.dict(llm.PROVIDERS, {"gemini": first, "groq": second}):
+            self.assertEqual(llm.call_llm("s", "u"), {"who": "gemini"})
+        self.assertEqual(calls, ["gemini"])
+
+    @override_settings(LLM_PROVIDERS=["gemini", "groq"], LLM_HEDGE_SECONDS=5)
+    def test_failing_provider_hands_over_immediately(self):
+        def broken(system, user):
+            raise llm.LLMError("503 high demand")
+        def ok(system, user):
+            return '{"who": "groq"}', 20
+        with mock.patch.dict(llm.PROVIDERS, {"gemini": broken, "groq": ok}):
+            self.assertEqual(llm.call_llm("s", "u"), {"who": "groq"})
+
+    @override_settings(TRANSCRIBE_PROVIDERS=["gemini", "groq"], VOICE_HEDGE_SECONDS=5)
+    def test_voice_uses_gemini_first(self):
+        with mock.patch.dict(llm.TRANSCRIBERS, {"gemini": lambda a, m: ("আজ বাজারে 550 টাকা", 9),
+                                                "groq": lambda a, m: ("should not be used", 5)}):
+            self.assertEqual(llm.transcribe(b"x"), "আজ বাজারে 550 টাকা")
+
+    @override_settings(TRANSCRIBE_PROVIDERS=["gemini", "groq"], VOICE_HEDGE_SECONDS=5)
+    def test_voice_falls_back_to_whisper_when_gemini_fails(self):
+        def down(a, m):
+            raise llm.LLMError("503 high demand")
+        with mock.patch.dict(llm.TRANSCRIBERS, {"gemini": down, "groq": lambda a, m: ("hello 250", 5)}):
+            self.assertEqual(llm.transcribe(b"x"), "hello 250")

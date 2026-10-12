@@ -205,12 +205,20 @@ if not DEBUG:
 # Provider order: the first one is tried first, the next is the fallback.
 LLM_PROVIDERS = env_list("LLM_PROVIDERS", "gemini,groq")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
+# "-latest" follows Google's current Flash-Lite model, so it never disappears when an old version is retired
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-lite-latest")
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 GROQ_TRANSCRIBE_MODEL = os.environ.get("GROQ_TRANSCRIBE_MODEL", "whisper-large-v3-turbo")  # voice input backup
 VOICE_MAX_BYTES = 2_000_000  # ~60 s of 16 kHz mono WAV
 LLM_TIMEOUT = int(os.environ.get("LLM_TIMEOUT", "25"))
+# If the first AI hasn't answered after this many seconds, the next one is asked too and the faster answer wins
+# (Gemini's free tier can slow down a lot when Google is busy).
+LLM_HEDGE_SECONDS = float(os.environ.get("LLM_HEDGE_SECONDS", "3"))
+# Voice: Gemini first because it hears Bangla amounts correctly; Whisper (fast, but weaker at Bangla numbers)
+# only joins after VOICE_HEDGE_SECONDS.
+TRANSCRIBE_PROVIDERS = env_list("TRANSCRIBE_PROVIDERS", "gemini,groq")
+VOICE_HEDGE_SECONDS = float(os.environ.get("VOICE_HEDGE_SECONDS", "8"))
 # Daily AI limits. Free tiers: Gemini Flash-Lite ~500 requests/day; Groq gpt-oss-120b 200,000 tokens/day.
 # Measured: one "Add with AI" request uses ~1,600 tokens, one "Ask AI" ~700 (so 30,000 = ~18 adds a day).
 AI_DAILY_TOKENS_PER_USER = int(os.environ.get("AI_DAILY_TOKENS_PER_USER", "30000"))
