@@ -875,11 +875,11 @@ msgstr "دانستنی‌های مفید"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI فقط متن شما را می‌خواند؛ هر مجموع و موجودی توسط برنامه از داده‌های ذخیره‌شده شما محاسبه می‌شود."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "استفاده از AI دارای سهمیه روزانه است (که به صورت «AI امروز: x% استفاده شد» نمایش داده می‌شود). این سهمیه در نیمه‌شب بازنشانی می‌شود و شما همیشه می‌توانید موارد را به صورت دستی اضافه کنید."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "استفاده از AI دارای سقف روزانه است که در داشبورد نمایش داده می‌شود. این سقف در نیمه‌شب بازنشانی می‌شود و شما همیشه می‌توانید موارد را به‌صورت دستی اضافه کنید."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "آنچه تایپ یا می‌گویید برای درک بهتر به Google Gemini (یا Groq) ارسال می‌شود. شماره کارت یا رمز عبور را وارد نکنید."
+msgid "Never type card numbers or passwords."
+msgstr "هرگز شماره کارت یا رمز عبور خود را تایپ نکنید."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "تم، زبان و نام کاربری خود را از منوی بالا سمت راست تغییر دهید."
@@ -1160,3 +1160,6 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "رمز عبور شما باید حداقل شامل %(min_length)d کاراکتر باشد."
 msgstr[1] "رمز عبور شما باید حداقل شامل %(min_length)d کاراکتر باشد."
+
+msgid "or"
+msgstr "یا"

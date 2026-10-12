@@ -377,3 +377,6 @@ html[lang="bn"] .lp-title { line-height: 1.2; letter-spacing: -.01em; }
 [dir="rtl"] .user-chip { padding: .2rem .2rem .2rem .5rem; }
 [dir="rtl"] .example-chip, [dir="rtl"] .help-example { margin: .15rem 0 .15rem .25rem; }
 html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", var(--font); }
+.lp-or { display: flex; align-items: center; gap: .75rem; color: var(--muted); font-size: .8125rem; margin: .55rem 0 .55rem 8%; }
+.lp-or::before, .lp-or::after { content: ""; flex: 1; border-top: 1px solid var(--border); }
+[dir="rtl"] .lp-or { margin: .55rem 8% .55rem 0; }

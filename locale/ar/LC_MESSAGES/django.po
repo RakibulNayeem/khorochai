@@ -875,11 +875,11 @@ msgstr "معلومات مفيدة"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "الذكاء الاصطناعي يقرأ نصك فقط؛ يتم حساب كل إجمالي ورصيد بواسطة التطبيق من بياناتك المحفوظة."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "استخدام AI له حد يومي (يظهر كـ “AI اليوم: تم استخدام x%”). يتم إعادة تعيينه عند منتصف الليل، ويمكنك دائماً إضافة البيانات يدوياً."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "يحتوي استخدام AI على مخصص يومي يظهر في لوحة التحكم. يتم إعادة تعيينه عند منتصف الليل، ويمكنك دائماً إضافة العناصر يدوياً."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "ما تكتبه أو تقوله يتم إرساله إلى Google Gemini (أو Groq) ليتم فهمه. لا تدرج أرقام البطاقات أو كلمات المرور."
+msgid "Never type card numbers or passwords."
+msgstr "لا تقم أبداً بكتابة أرقام البطاقات أو كلمات المرور."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "قم بتغيير السمة واللغة واسم المستخدم الخاص بك من القائمة الموجودة في أعلى اليمين."
@@ -1180,3 +1180,6 @@ msgstr[2] "يجب أن تحتوي كلمة مرورك على %(min_length)d أح
 msgstr[3] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
 msgstr[4] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
 msgstr[5] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
+
+msgid "or"
+msgstr "أو"

@@ -875,11 +875,11 @@ msgstr "豆知識"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AIはテキストを読み取るだけです。合計や残高は、保存されたデータからアプリが計算します。"
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "AI利用には1日の上限があります（「本日のAI利用：x%」と表示）。深夜0時にリセットされますが、手動での入力はいつでも可能です。"
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AIの利用には1日の上限があり、ダッシュボードで確認できます。上限は深夜0時にリセットされますが、いつでも手動で追加可能です。"
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "入力または話した内容は、Google Gemini（またはGroq）に送信され、解析されます。カード番号やパスワードは入力しないでください。"
+msgid "Never type card numbers or passwords."
+msgstr "カード番号やパスワードは絶対に入力しないでください。"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "右上のメニューからテーマ、言語、ユーザー名を変更できます。"
@@ -1155,3 +1155,6 @@ msgstr[0] "パスワードが短すぎます。%d文字以上で入力してく�
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "パスワードは%(min_length)d文字以上である必要があります。"
+
+msgid "or"
+msgstr "または"

@@ -875,11 +875,11 @@ msgstr "Thông tin hữu ích"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI chỉ đọc văn bản của bạn; mọi tổng số và số dư đều được ứng dụng tính toán từ dữ liệu đã lưu."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "Việc sử dụng AI có hạn mức hàng ngày (hiển thị là “AI hôm nay: đã dùng x%”). Hạn mức này đặt lại vào nửa đêm, và bạn luôn có thể thêm giao dịch thủ công."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AI có hạn mức sử dụng hàng ngày, được hiển thị trên bảng điều khiển. Hạn mức này sẽ đặt lại vào lúc nửa đêm và bạn luôn có thể thêm các mục theo cách thủ công."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "Những gì bạn nhập hoặc nói sẽ được gửi đến Google Gemini (hoặc Groq) để xử lý. Đừng bao gồm số thẻ hoặc mật khẩu."
+msgid "Never type card numbers or passwords."
+msgstr "Không bao giờ nhập số thẻ hoặc mật khẩu."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Thay đổi chủ đề, ngôn ngữ và tên người dùng của bạn từ menu ở góc trên bên phải."
@@ -1155,3 +1155,6 @@ msgstr[0] "Mật khẩu quá ngắn. Phải có ít nhất %d ký tự."
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
+
+msgid "or"
+msgstr "hoặc"

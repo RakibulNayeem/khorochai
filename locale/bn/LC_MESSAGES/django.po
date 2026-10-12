@@ -925,11 +925,11 @@ msgstr "জেনে রাখুন"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI শুধু আপনার লেখা বোঝে; প্রতিটি মোট হিসাব ও ব্যালেন্স অ্যাপ আপনার সেভ করা তথ্য থেকে হিসাব করে।"
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "AI ব্যবহারের একটি দৈনিক সীমা আছে (“আজ AI ব্যবহার: x%” হিসেবে দেখায়)। রাত ১২টায় আবার শুরু হয়, আর যেকোনো সময় নিজে যোগ করতে পারবেন।"
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AI ব্যবহারের একটি দৈনিক সীমা আছে, যা ড্যাশবোর্ডে দেখা যায়। রাত ১২টায় আবার শুরু হয়, আর যেকোনো সময় নিজে যোগ করতে পারবেন।"
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "আপনি যা লেখেন বা বলেন তা বোঝার জন্য Google Gemini (বা Groq)-এ পাঠানো হয়। কার্ড নম্বর বা পাসওয়ার্ড লিখবেন না।"
+msgid "Never type card numbers or passwords."
+msgstr "কখনো কার্ড নম্বর বা পাসওয়ার্ড লিখবেন না।"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "ওপরে ডান দিকের মেনু থেকে থিম, ভাষা ও ইউজারনেম বদলাতে পারবেন।"
@@ -1194,3 +1194,6 @@ msgstr "মুদ্রা"
 msgid "Used for every amount in the app."
 msgstr "অ্যাপের সব পরিমাণে এটি ব্যবহার হয়।"
 
+
+msgid "or"
+msgstr "অথবা"

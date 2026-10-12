@@ -875,11 +875,11 @@ msgstr "जान्न राम्रो"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI ले तपाईंको पाठ मात्र पढ्छ; प्रत्येक कुल र मौज्दात एपद्वारा तपाईंको बचत गरिएको डेटाबाट गणना गरिन्छ।"
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "AI प्रयोगको दैनिक सीमा हुन्छ (जुन “AI आज: x% प्रयोग भयो” भनेर देखिन्छ)। यो मध्यरातमा रिसेट हुन्छ, र तपाईं सधैं म्यानुअल रूपमा विवरण थप्न सक्नुहुन्छ।"
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AI प्रयोगको दैनिक सीमा हुन्छ, जुन ड्यासबोर्डमा देखाइन्छ। यो मध्यरातमा रिसेट हुन्छ, र तपाईंले सधैं म्यानुअल रूपमा कुराहरू थप्न सक्नुहुन्छ।"
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "तपाईंले टाइप वा बोल्नुभएको कुरा बुझ्नका लागि Google Gemini (वा Groq) मा पठाइन्छ। कार्ड नम्बर वा पासवर्डहरू समावेश नगर्नुहोस्।"
+msgid "Never type card numbers or passwords."
+msgstr "कार्ड नम्बर वा पासवर्डहरू कहिल्यै टाइप नगर्नुहोस्।"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "माथिल्लो दायाँपट्टिको मेनुबाट थिम, भाषा र आफ्नो प्रयोगकर्ता नाम परिवर्तन गर्नुहोस्।"
@@ -1160,3 +1160,6 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "तपाईंको पासवर्डमा कम्तीमा %(min_length)d क्यारेक्टर हुनुपर्छ।"
 msgstr[1] "तपाईंको पासवर्डमा कम्तीमा %(min_length)d क्यारेक्टरहरू हुनुपर्छ।"
+
+msgid "or"
+msgstr "वा"

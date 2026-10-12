@@ -875,11 +875,11 @@ msgstr "Info menarik"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI hanya membaca teks Anda; setiap total dan saldo dihitung oleh aplikasi dari data yang Anda simpan."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "Penggunaan AI memiliki jatah harian (ditampilkan sebagai “AI hari ini: x% digunakan”). Ini diatur ulang pada tengah malam, dan Anda selalu dapat menambahkan data secara manual."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "Penggunaan AI memiliki batas harian yang ditampilkan di dasbor. Batas ini akan diatur ulang pada tengah malam, dan Anda selalu dapat menambahkan data secara manual."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "Apa yang Anda ketik atau ucapkan dikirim ke Google Gemini (atau Groq) untuk dipahami. Jangan sertakan nomor kartu atau kata sandi."
+msgid "Never type card numbers or passwords."
+msgstr "Jangan pernah mengetikkan nomor kartu atau kata sandi."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Ubah tema, bahasa, dan nama pengguna Anda dari menu di kanan atas."
@@ -1155,3 +1155,6 @@ msgstr[0] "Kata sandi terlalu pendek. Harus berisi setidaknya %d karakter."
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Kata sandi Anda harus berisi setidaknya %(min_length)d karakter."
+
+msgid "or"
+msgstr "atau"

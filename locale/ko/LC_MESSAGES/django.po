@@ -875,11 +875,11 @@ msgstr "알아두면 좋은 점"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI는 텍스트만 읽습니다. 모든 합계와 잔액은 저장된 데이터를 바탕으로 앱이 계산합니다."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "AI 사용에는 일일 제한이 있습니다('오늘의 AI: x% 사용됨'으로 표시). 자정에 초기화되며, 언제든지 수동으로 입력할 수 있습니다."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AI 사용에는 일일 한도가 있으며 대시보드에서 확인할 수 있습니다. 자정에 초기화되며 언제든지 수동으로 항목을 추가할 수 있습니다."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "입력하거나 말한 내용은 이해를 돕기 위해 Google Gemini(또는 Groq)로 전송됩니다. 카드 번호나 비밀번호는 포함하지 마세요."
+msgid "Never type card numbers or passwords."
+msgstr "카드 번호나 비밀번호는 절대 입력하지 마세요."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "우측 상단 메뉴에서 테마, 언어, 사용자 이름을 변경하세요."
@@ -1155,3 +1155,6 @@ msgstr[0] "비밀번호가 너무 짧습니다. 최소 %d자 이상이어야 합
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "비밀번호는 최소 %(min_length)d자 이상이어야 합니다."
+
+msgid "or"
+msgstr "또는"

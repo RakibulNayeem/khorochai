@@ -875,11 +875,11 @@ msgstr "Vizuri kujua"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI inasoma maandishi yako tu; kila jumla na salio huhesabiwa na programu kutoka kwa data uliyohifadhi."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "Matumizi ya AI yana posho ya kila siku (inayoonyeshwa kama “AI leo: x% imetumika”). Inajirekebisha saa sita usiku, na unaweza kuongeza vitu mwenyewe wakati wowote."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "Matumizi ya AI yana kiasi cha kila siku, kinachoonekana kwenye dashibodi. Hujirekebisha saa sita usiku, na unaweza kuongeza vitu mwenyewe wakati wowote."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "Unachoandika au kusema kinatumwa kwa Google Gemini (au Groq) ili kieleweke. Usijumuishe namba za kadi au nenosiri."
+msgid "Never type card numbers or passwords."
+msgstr "Usiwahi kuandika namba za kadi au nywila."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Badilisha mandhari, lugha na jina lako la mtumiaji kutoka kwenye menyu iliyo juu kulia."
@@ -1160,3 +1160,6 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Nenosiri lako lazima liwe na angalau herufi %(min_length)d."
 msgstr[1] "Nenosiri lako lazima liwe na angalau herufi %(min_length)d."
+
+msgid "or"
+msgstr "au"

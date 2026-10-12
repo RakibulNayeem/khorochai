@@ -875,11 +875,11 @@ msgstr "实用小贴士"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI 仅读取您的文字；所有总额和余额均由应用根据您的保存数据计算得出。"
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "AI 每日有使用限额（显示为“今日 AI：已使用 x%”）。限额将于午夜重置，你随时可以手动添加记录。"
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AI 使用有每日限额，显示在仪表板上。它会在午夜重置，你也可以随时手动添加内容。"
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "您输入或说的内容会被发送到 Google Gemini（或 Groq）进行理解。请勿包含卡号或密码。"
+msgid "Never type card numbers or passwords."
+msgstr "切勿输入卡号或密码。"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "通过右上角的菜单更改主题、语言和用户名。"
@@ -1155,3 +1155,6 @@ msgstr[0] "此密码太短。必须包含至少 %d 个字符。"
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "您的密码必须至少包含 %(min_length)d 个字符。"
+
+msgid "or"
+msgstr "或"

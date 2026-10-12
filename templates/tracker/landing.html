@@ -40,7 +40,9 @@
     <p class="text-muted mx-auto lp-narrow">{% translate "Type it, or tap the mic and say it. One message can hold several entries — spending, income, transfers between your accounts, even budgets. You check the preview and save." %}</p>
   </div>
   <div class="lp-demo mx-auto">
-    <div class="lp-bubble" data-keep-digits>আজ বাজারে ৫৫০, রিকশা ৮০, bkash e lunch 300 dilam, tuition theke 6000 pelam</div>
+    <div class="lp-bubble" data-keep-digits lang="bn">আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০, বিকাশে লাঞ্চ ৩০০ দিলাম, টিউশন থেকে ৬০০০ পেলাম</div>
+    <div class="lp-or"><span>{% translate "or" %}</span></div>
+    <div class="lp-bubble" data-keep-digits>aaj bazare 550 taka khoroch, rickshaw 80, bkash e lunch 300 dilam, tuition theke 6000 pelam</div>
     <div class="lp-arrow" aria-hidden="true">↓</div>
     <div class="card lp-result">
       {% for r in demo_rows %}

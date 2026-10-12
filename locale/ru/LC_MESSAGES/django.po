@@ -875,11 +875,11 @@ msgstr "Полезно знать"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI только читает ваш текст; все итоги и балансы рассчитываются приложением на основе ваших сохраненных данных."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "Использование AI имеет дневной лимит (показан как «AI сегодня: x% использовано»). Он сбрасывается в полночь, и вы всегда можете добавлять записи вручную."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "Использование AI имеет ежедневный лимит, который отображается на панели управления. Он сбрасывается в полночь, и вы всегда можете добавить данные вручную."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "То, что вы пишете или говорите, отправляется в Google Gemini (или Groq) для обработки. Не указывайте номера карт или пароли."
+msgid "Never type card numbers or passwords."
+msgstr "Никогда не вводите номера карт или пароли."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Измените тему, язык и имя пользователя в меню в правом верхнем углу."
@@ -1165,3 +1165,6 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Ваш пароль должен содержать не менее %(min_length)d символа."
 msgstr[1] "Ваш пароль должен содержать не менее %(min_length)d символов."
 msgstr[2] "Ваш пароль должен содержать не менее %(min_length)d символов."
+
+msgid "or"
+msgstr "или"

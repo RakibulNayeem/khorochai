@@ -875,11 +875,11 @@ msgstr "น่ารู้"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI เพียงแค่อ่านข้อความของคุณ ยอดรวมและยอดคงเหลือทั้งหมดคำนวณโดยแอปจากข้อมูลที่คุณบันทึกไว้"
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "การใช้ AI มีโควตารายวัน (แสดงเป็น “AI วันนี้: ใช้ไป x%”) ซึ่งจะรีเซ็ตตอนเที่ยงคืน และคุณสามารถเพิ่มรายการด้วยตนเองได้เสมอ"
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "การใช้งาน AI มีวงเงินรายวันแสดงบนแดชบอร์ด โดยจะรีเซ็ตตอนเที่ยงคืน และคุณสามารถเพิ่มรายการด้วยตนเองได้เสมอ"
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "สิ่งที่คุณพิมพ์หรือพูดจะถูกส่งไปยัง Google Gemini (หรือ Groq) เพื่อประมวลผล ห้ามใส่เลขบัตรหรือรหัสผ่าน"
+msgid "Never type card numbers or passwords."
+msgstr "ห้ามพิมพ์หมายเลขบัตรหรือรหัสผ่านโดยเด็ดขาด"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "เปลี่ยนธีม ภาษา และชื่อผู้ใช้ของคุณได้จากเมนูที่มุมขวาบน"
@@ -1155,3 +1155,6 @@ msgstr[0] "รหัสผ่านสั้นเกินไป ต้อง�
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "รหัสผ่านของคุณต้องมีความยาวอย่างน้อย %(min_length)d ตัวอักษร"
+
+msgid "or"
+msgstr "หรือ"

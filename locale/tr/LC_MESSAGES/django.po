@@ -875,11 +875,11 @@ msgstr "Bilmekte fayda var"
 msgid "The AI only reads your text; every total and balance is calculated by the app from your saved data."
 msgstr "AI sadece metninizi okur; her toplam ve bakiye, kayıtlı verilerinizden uygulama tarafından hesaplanır."
 
-msgid "AI use has a daily allowance (shown as “AI today: x% used”). It resets at midnight, and you can always add things manually."
-msgstr "AI kullanımının günlük bir kotası vardır (\"Bugünkü AI: x% kullanıldı\" olarak gösterilir). Gece yarısı sıfırlanır ve her zaman manuel olarak ekleme yapabilirsiniz."
+msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
+msgstr "AI kullanımının günlük bir limiti vardır ve bu gösterge panelinde görünür. Gece yarısı sıfırlanır ve her zaman manuel olarak ekleme yapabilirsiniz."
 
-msgid "What you type or say is sent to Google Gemini (or Groq) to be understood. Don't include card numbers or passwords."
-msgstr "Yazdıklarınız veya söyledikleriniz anlaşılması için Google Gemini (veya Groq) sistemine gönderilir. Kart numarası veya şifre girmeyin."
+msgid "Never type card numbers or passwords."
+msgstr "Asla kart numarası veya şifre girmeyin."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Sağ üstteki menüden temayı, dili ve kullanıcı adınızı değiştirin."
@@ -1160,3 +1160,6 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Şifreniz en az %(min_length)d karakter içermelidir."
 msgstr[1] "Şifreniz en az %(min_length)d karakter içermelidir."
+
+msgid "or"
+msgstr "veya"
