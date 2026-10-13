@@ -1412,3 +1412,23 @@ msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)sটি ধারের ফেরতের তারিখ পেরিয়ে গেছে।"
 msgstr[1] "%(n)sটি ধারের ফেরতের তারিখ পেরিয়ে গেছে।"
 
+
+# ---------------------------------------------------------------- debt repayments are expenses
+msgid "Financial Expenses"
+msgstr "আর্থিক খরচ"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s-কে ধার শোধ"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "এই খরচটি একটি ধার শোধ। এখান থেকে বদলান।"
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "কাকে কত ধার দিলেন বা কার কাছ থেকে নিলেন তার হিসাব রাখুন। অ্যাকাউন্টের ব্যালেন্স বদলায়। নেওয়া ধার শোধ করলে তা খরচ হিসেবে গোনা হয় (আর্থিক খরচ)।"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "কাউকে ধার দেওয়া বা কারও কাছ থেকে ধার নেওয়া টাকা। ধার দিলে অ্যাকাউন্ট থেকে টাকা কমে, ধার নিলে বাড়ে — তাই ব্যালেন্স ঠিক থাকে। নেওয়া ধার শোধ করলে তা খরচ হিসেবে গোনা হয় (আর্থিক খরচ)। AI-কেও বলতে পারেন: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”।"
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“ফেরত দেওয়া হয়েছে” টাকা অ্যাকাউন্ট থেকে কমায় এবং খরচ হিসেবে গোনা হয় (আর্থিক খরচ)। আরও ধার নিলে “ধারে যোগ” বেছে নিন।"
+

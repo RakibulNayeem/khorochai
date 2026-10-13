@@ -13,7 +13,7 @@ from django.utils.formats import date_format
 from django.utils.translation import gettext
 
 from .models import (
-    ACCOUNT_KIND_ORDER, BALANCE, BORROW, BORROWED, BUDGET, DEBT_AI_TYPES, EXPENSE, INCOME, INCREASE, LEND, LENT,
+    ACCOUNT_KIND_ORDER, BALANCE, BORROW, BORROWED, BUDGET, DEBT_AI_TYPES, EXPENSE, FINANCIAL_EXPENSES, INCOME, INCREASE, LEND, LENT,
     REPAY, TRANSFER, Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer, category_label,
 )
 
@@ -31,6 +31,7 @@ DEFAULT_CATEGORIES = [
     ("Entertainment", EXPENSE, "🎉", "#a855f7"),
     ("Family", EXPENSE, "👪", "#14b8a6"),
     ("Other Expense", EXPENSE, "💸", "#64748b"),
+    ("Financial Expenses", EXPENSE, "🏦", "#b45309"),
     ("Salary", INCOME, "💼", "#16a34a"),
     ("Tuition", INCOME, "🎓", "#22c55e"),
     ("Freelance", INCOME, "💻", "#10b981"),
@@ -92,7 +93,7 @@ def account_balances(user):
     for r in Debt.objects.filter(user=user, account__isnull=False).values("account_id", "direction").annotate(t=Sum("amount")):
         sign = -1 if r["direction"] == LENT else 1
         debt_flow[r["account_id"]] = debt_flow.get(r["account_id"], Decimal("0")) + sign * r["t"]
-    for r in (DebtRecord.objects.filter(debt__user=user, account__isnull=False)
+    for r in (DebtRecord.objects.filter(debt__user=user, account__isnull=False, expense__isnull=True)
               .values("account_id", "debt__direction", "kind").annotate(t=Sum("amount"))):
         sign = 1 if r["debt__direction"] == LENT else -1
         if r["kind"] != REPAY:
@@ -450,7 +451,9 @@ def record_debt_payment(user, person, direction, amount, account, date, note="")
         part = left if i == len(debts) - 1 else min(left, max(d.remaining, Decimal("0")))
         if part <= 0:
             continue
-        records.append(DebtRecord.objects.create(debt=d, kind=REPAY, amount=part, account=account, date=date, note=note))
+        record = DebtRecord.objects.create(debt=d, kind=REPAY, amount=part, account=account, date=date, note=note)
+        sync_debt_expense(record)
+        records.append(record)
         refresh_debt_status(d)
         left -= part
         if left <= 0:
@@ -458,10 +461,40 @@ def record_debt_payment(user, person, direction, amount, account, date, note="")
     return records
 
 
+def financial_category(user):
+    """The "Financial Expenses" category (made again if the user deleted it)."""
+    cat = Category.objects.filter(user=user, type=EXPENSE, name__iexact=FINANCIAL_EXPENSES).first()
+    return cat or Category.objects.create(user=user, name=FINANCIAL_EXPENSES, type=EXPENSE, icon="🏦", color="#b45309")
+
+
+def sync_debt_expense(record):
+    """Paying back borrowed money is an expense: keep one Transaction (Financial Expenses) in step with the record.
+    Any other record (money I lent coming back, or more borrowed) has none."""
+    debt = record.debt
+    existing = Transaction.objects.filter(debt_record=record).first()
+    if not record.is_expense:
+        if existing:
+            existing.delete()
+        return None
+    t = existing or Transaction(user=debt.user, type=EXPENSE, debt_record=record, source="manual")
+    t.amount, t.account, t.date = record.amount, record.account, record.date
+    if not t.category_id:
+        t.category = financial_category(debt.user)
+    t.note = (gettext("Paid back %(person)s") % {"person": debt.person} + (f" · {record.note}" if record.note else ""))[:255]
+    t.save()
+    return t
+
+
+def sync_debt_expenses(debt):
+    for record in debt.records.all():
+        sync_debt_expense(record)
+
+
 def debt_events(user, start=None, end=None, account_id=None, q=""):
-    """Debt rows for the transaction lists: each new debt and each later payment (both have .flow, +1 in / -1 out)."""
+    """Debt rows for the transaction lists: each new debt and each later payment (both have .flow, +1 in / -1 out).
+    Repayments of borrowed money are left out here because they are listed as expenses."""
     debts = Debt.objects.filter(user=user).select_related("account")
-    records = DebtRecord.objects.filter(debt__user=user).select_related("debt", "account")
+    records = DebtRecord.objects.filter(debt__user=user, expense__isnull=True).select_related("debt", "account")
     if start:
         debts, records = debts.filter(date__gte=start), records.filter(date__gte=start)
     if end:

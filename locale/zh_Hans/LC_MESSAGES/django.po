@@ -1337,6 +1337,24 @@ msgstr "编辑付款"
 msgid "Payment deleted."
 msgstr "付款已删除。"
 
+msgid "Financial Expenses"
+msgstr "财务支出"
+
+msgid "Paid back %(person)s"
+msgstr "已偿还给 %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "这笔支出是债务偿还。可在此处修改。"
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "记录您借出或借入的资金。账户余额会相应变动。偿还所借资金会计入支出（财务支出）。"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "您借给他人或从他人处借入的资金。借出资金会从账户中扣除，借入资金会存入账户，以便保持余额准确。偿还所借资金会计入支出（财务支出）。您也可以对 AI 说：“rahim ke 500 dhar dilam”、“karim theke 2000 dhar nilam”、“karim ke 1000 ferot dilam”。"
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“已偿还”会从账户中扣除资金并计入支出（财务支出）。“加入债务”适用于您借入更多资金的情况。"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI 找到了 %(n)s 条交易。如有错误请修改，然后保存。"

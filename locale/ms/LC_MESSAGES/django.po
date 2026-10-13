@@ -1337,6 +1337,24 @@ msgstr "Sunting pembayaran"
 msgid "Payment deleted."
 msgstr "Pembayaran dipadamkan."
 
+msgid "Financial Expenses"
+msgstr "Perbelanjaan Kewangan"
+
+msgid "Paid back %(person)s"
+msgstr "Dibayar balik kepada %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Perbelanjaan ini adalah bayaran balik hutang. Ubahnya di sini."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Jejak wang yang anda beri atau pinjam. Baki akaun akan berubah. Membayar balik wang yang dipinjam dikira sebagai perbelanjaan (Perbelanjaan Kewangan)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Wang yang anda beri pinjam kepada orang lain atau pinjam daripada mereka. Memberi pinjam mengeluarkan wang daripada akaun dan meminjam memasukkannya, jadi baki kekal betul. Membayar balik wang yang dipinjam dikira sebagai perbelanjaan (Perbelanjaan Kewangan). Anda juga boleh memberitahu AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“Dibayar balik” mengeluarkan wang daripada akaun dan dikira sebagai perbelanjaan (Perbelanjaan Kewangan). “Ditambah pada hutang” adalah apabila anda meminjam lagi."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI menemui %(n)s transaksi. Betulkan apa yang salah, kemudian simpan."

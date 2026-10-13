@@ -1337,6 +1337,24 @@ msgstr "भुक्तानी सम्पादन गर्नुहोस�
 msgid "Payment deleted."
 msgstr "भुक्तानी मेटाइयो।"
 
+msgid "Financial Expenses"
+msgstr "वित्तीय खर्चहरू"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s लाई फिर्ता गरियो"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "यो खर्च ऋण भुक्तानी हो। यसलाई यहाँ परिवर्तन गर्नुहोस्।"
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "तपाईंले दिएको वा लिनुभएको ऋणको ट्रrack राख्नुहोस्। खाताको ब्यालेन्स परिवर्तन हुन्छ। ऋण तिर्दा खर्चको रूपमा गणना हुन्छ (वित्तीय खर्चहरू)।"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "तपाईंले मानिसहरूलाई दिएको वा उनीहरूबाट लिएको ऋण। ऋण दिँदा खाताबाट पैसा बाहिरिन्छ र लिँदा जम्मा हुन्छ, त्यसैले ब्यालेन्स सही रहन्छ। लिएको ऋण तिर्दा खर्चको रूपमा गणना हुन्छ (वित्तीय खर्चहरू)। तपाईं AI लाई यो पनि भन्न सक्नुहुन्छ: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”।"
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“फिर्ता गरियो” भन्दा खाताबाट पैसा बाहिरिन्छ र खर्चको रूपमा गणना हुन्छ (वित्तीय खर्चहरू)। “ऋणमा थपियो” भनेको तपाईंले थप ऋण लिँदा हो।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ले %(n)s कारोबार फेला पारेको छ। गलत देखिएको कुरा सच्याउनुहोस्, त्यसपछि बचत गर्नुहोस्।"

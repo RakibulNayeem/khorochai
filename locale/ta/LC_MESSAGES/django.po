@@ -1337,6 +1337,24 @@ msgstr "பணம் செலுத்தலைத் திருத்து"
 msgid "Payment deleted."
 msgstr "பணம் செலுத்தப்பட்டது நீக்கப்பட்டது."
 
+msgid "Financial Expenses"
+msgstr "நிதிச் செலவுகள்"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s-க்குத் திருப்பித் செலுத்தப்பட்டது"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "இந்தச் செலவு ஒரு கடன் செலுத்துதலாகும். இதை இங்கே மாற்றவும்."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "நீங்கள் கொடுத்த அல்லது வாங்கிய கடன்களைக் கண்காணிக்கவும். கணக்கின் மீதத்தொகை மாறும். நீங்கள் வாங்கிய கடனைத் திருப்பிச் செலுத்துவது ஒரு செலவாகக் கணக்கிடப்படும் (நிதிச் செலவுகள்)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "You lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI %(n)s பரிவர்த்தனையைக் கண்டறிந்தது. தவறாகத் தெரிவதைச் சரிசெய்து, பிறகு சேமிக்கவும்."

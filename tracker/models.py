@@ -15,8 +15,9 @@ TYPE_CHOICES = [(EXPENSE, _("Expense")), (INCOME, _("Income"))]
 DEFAULT_CATEGORY_NAMES = {
     "Food", "Groceries", "Transport", "Rent", "Utilities", "Mobile & Internet", "Health", "Education",
     "Shopping", "Entertainment", "Family", "Other Expense", "Salary", "Tuition", "Freelance", "Business",
-    "Gift", "Other Income",
+    "Gift", "Other Income", "Financial Expenses",
 }
+FINANCIAL_EXPENSES = "Financial Expenses"  # paying back borrowed money is counted here
 
 
 def category_label(name):
@@ -98,6 +99,8 @@ class Transaction(models.Model):
     date = models.DateField(default=timezone.localdate)
     raw_text = models.TextField(blank=True, help_text="Original message typed by the user (AI entries).")
     source = models.CharField(max_length=10, choices=SOURCE_CHOICES, default="manual")
+    # Set when this expense is the repayment of a borrowed debt; it is kept in step with that record.
+    debt_record = models.OneToOneField("DebtRecord", on_delete=models.CASCADE, null=True, blank=True, related_name="expense")
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -227,6 +230,11 @@ class DebtRecord(models.Model):
     @property
     def person(self):
         return self.debt.person
+
+    @property
+    def is_expense(self):
+        """Paying back money I borrowed is counted as an expense (Financial Expenses)."""
+        return self.kind == REPAY and not self.debt.is_lent
 
     @property
     def flow(self):

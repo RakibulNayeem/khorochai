@@ -1337,6 +1337,24 @@ msgstr "I-edit ang bayad"
 msgid "Payment deleted."
 msgstr "Na-delete ang pagbabayad."
 
+msgid "Financial Expenses"
+msgstr "Gastos sa Pananalapi"
+
+msgid "Paid back %(person)s"
+msgstr "Binayaran si %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Ang gastusin na ito ay pagbabayad ng utang. Baguhin ito dito."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Subaybayan ang pera na iyong ipinahiram o hiniram. Nagbabago ang balanse ng account. Ang pagbabayad ng iyong hiniram na pera ay ibinibilang bilang gastos (Gastos sa Pananalapi)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Pera na iyong ipinahiram sa mga tao o hiniram mula sa kanila. Ang pagpapahiram ay naglalabas ng pera mula sa isang account at ang paghiram ay naglalagay nito, kaya tama ang mga balanse. Ang pagbabayad ng iyong hiniram na pera ay ibinibilang bilang gastos (Gastos sa Pananalapi). Maaari mo ring sabihin sa AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "Ang “Binayaran” ay naglalabas ng pera mula sa account at ibinibilang bilang gastos (Gastos sa Pananalapi). Ang “Idinagdag sa utang” ay kapag humiram ka pa."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "Nakahanap ang AI ng %(n)s na transaksyon. Ayusin ang anumang mali, pagkatapos ay i-save."

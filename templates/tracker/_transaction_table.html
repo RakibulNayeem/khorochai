@@ -39,7 +39,8 @@
         {% if t.type == 'income' %}+{% else %}−{% endif %}{{ t.amount|money }}
       </td>
       <td class="text-end text-nowrap">
-        <a href="{% url 'transaction_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
+        {% if t.debt_record_id %}<a href="{% url 'debt_detail' t.debt_record.debt_id %}" class="btn btn-sm btn-link px-1">{% translate "Open" %}</a>
+        {% else %}<a href="{% url 'transaction_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>{% endif %}
       </td>
     </tr>
     {% endif %}

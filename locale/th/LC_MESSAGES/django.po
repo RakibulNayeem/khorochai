@@ -1337,6 +1337,24 @@ msgstr "แก้ไขการชำระเงิน"
 msgid "Payment deleted."
 msgstr "ลบการชำระเงินแล้ว"
 
+msgid "Financial Expenses"
+msgstr "ค่ากิจกรรมเงินสະดวก"
+
+msgid "Paid back %(person)s"
+msgstr "คุให่เงินคืน %(person)s แล้ว"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "ค่าใช่จ่ายนี่คือการชำระหนี้ เปลี่ยนแล้วที่นี่"
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "กะระยะเวลาติดตามเงินที่คุณให้ยูมละหริอยูมมา ยรอดคงเลือนไป การจ่ายเงินคืนที่คุณยูมมาถือเป็นเกลือจ่าย (ค่ากิจกรรมใช้จ่ายเงิน)"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "เงินที่คุณให้ยูมผู้อื่นมาหรือยูมพวกเขามา การให้ยูมจะหักเงินอลองจากบังคัน และการยูมจะเพิ่มเงินเข้ามา ทำให้ยยลยลวดฉลาดนะ การจ่ายเงินคินคืนนี่มันคือเงินลด (ค่าใข่จ่ายเงิน) คุณยังสามารถบอก AI วิ่งกเลิก: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“คุ่นเงินคิน” จะหักเงินอลองจากบังคันและนับเป็นเนลียจาย (ค่ากิจกรรมเงินสะยาด) “เพิ่มเข้าหนี้” คือตอนที่คุณยูมเกินขึ้น"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI พบ %(n)s รายการ แก้ไขสิ่งที่ผิดพลาด จากนั้นบันทึก"

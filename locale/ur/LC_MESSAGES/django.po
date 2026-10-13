@@ -1337,6 +1337,24 @@ msgstr "ادائیگی میں ترمیم کریں"
 msgid "Payment deleted."
 msgstr "ادائیگی حذف کر دی گئی۔"
 
+msgid "Financial Expenses"
+msgstr "مالی اخراجات"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s کو واپس کر دیے"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "یہ خرچہ قرض کی ادائیگی ہے۔ اسے یہاں تبدیل کریں۔"
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "اپنے ادھار دیے یا لیے گئے پیسوں کا حساب رکھیں۔ اکاؤنٹ کا بیلنس بدل جاتا ہے۔ ادھار لیے ہوئے پیسے واپس کرنا ایک خرچہ (مالی اخراجات) مانا جاتا ہے۔"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "وہ رقم جو آپ نے لوگوں کو ادھار دی یا ان سے لی۔ ادھار دینے سے اکاؤنٹ سے پیسے نکلتے ہیں اور ادھار لینے سے جمع ہوتے ہیں، اس لیے بیلنس درست رہتا ہے۔ ادھار لیے ہوئے پیسے واپس کرنا ایک خرچہ (مالی اخراجات) مانا جاتا ہے۔ آپ AI کو یہ بھی بتا سکتے ہیں: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”۔"
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“Paid back” سے اکاؤنٹ سے پیسے نکل جاتے ہیں اور یہ ایک خرچہ (مالی اخراجات) شمار ہوتا ہے۔ “Added to debt” وہ ہے جب آپ مزید قرض لیں۔"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI نے %(n)s ٹرانزیکشن تلاش کی۔ جو غلط لگے اسے درست کریں، پھر محفوظ کریں۔"

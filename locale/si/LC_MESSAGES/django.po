@@ -1337,6 +1337,24 @@ msgstr "ගෙවීම සංස්කරණය කරන්න"
 msgid "Payment deleted."
 msgstr "ගෙවීම මකා දමන ලදී."
 
+msgid "Financial Expenses"
+msgstr "මූ ভ්‍ය අ ප ද ම్"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s වෙත ආපසු ගෙවන ලදී"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "මෙම වියදම ණය ගෙවීමකි. එය මෙහිදී වෙනස් කරන්න."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "ඔබ ණයට දුන් හෝ ගත් මුදල් නිරීක්ෂණය කරන්න. ගිණුම් ශේෂයන් වෙනස් වේ. ඔබ ගත් ණය ආපසු ගෙවීම වියදමක් (මූල්‍ය වියදම්) ලෙස සැලකේ."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "ඔබ මිනිසුන්ට ණයට දුන් හෝ ඔවුන්ගෙන් ණයට ගත් මුදල්. ණයට දීමෙන් ගිණුමකින් මුදල් පිටතට යන අතර ණයට ගැනීමෙන් ඇතුළට පැමිණේ, එබැවින් ශේෂයන් නිවැරදිව පවතී. ඔබ ගත් ණය ආපසු ගෙවීම වියදමක් (මූල්‍ය වියදම්) ලෙස සැලකේ. ඔබට AI වෙතද පැවසිය හැක: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "\"ආපසු ගෙවන ලදී\" මගින් ගිණුමෙන් මුදල් ඉවත් කර වියදමක් (මූල්‍ය වියදම්) ලෙස ගණන් ගනී. \"ණයට එකතු කරන ලදී\" යනු ඔබ වැඩිපුර ණයට ගන්නා අවස්ථාවයි."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI විසින් ගනුදෙනුවක් %(n)s සොයා ගන්නා ලදී. වැරදි ලෙස පෙනෙන ඕනෑම දෙයක් නිවැරදි කර සුරකින්න."

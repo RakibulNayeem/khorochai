@@ -62,7 +62,7 @@
           <label class="form-label small text-muted mb-1" for="{{ form.note.id_for_label }}">{{ form.note.label }}</label>{{ form.note }}
         </div>
       </div>
-      <div class="form-text">{% if debt.is_lent %}{% translate "“Paid back” adds the money to the account. “Added to debt” is when you lend them more." %}{% else %}{% translate "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more." %}{% endif %}</div>
+      <div class="form-text">{% if debt.is_lent %}{% translate "“Paid back” adds the money to the account. “Added to debt” is when you lend them more." %}{% else %}{% translate "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more." %}{% endif %}</div>
       <button class="btn btn-brand px-4 mt-3">{% translate "Save" %}</button>
     </form>
   </div>

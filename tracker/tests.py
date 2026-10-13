@@ -667,6 +667,29 @@ class DebtTests(TestCase):
         summary = self.client.get(reverse("debts")).context["summary"]
         self.assertEqual(summary["i_owe"], Decimal("1500"))
         self.assertEqual(summary["owed_to_me"], Decimal("0"))
+        # paying back borrowed money is an expense (Financial Expenses), and the balance only drops once
+        dash = self.client.get(reverse("dashboard"))
+        self.assertEqual(dash.context["summary"]["expense"], Decimal("1000"))
+        self.assertEqual(dash.context["summary"]["income"], Decimal("0"))
+        t = Transaction.objects.get()
+        self.assertEqual((t.type, t.category.name, t.account, t.amount), ("expense", "Financial Expenses", self.cash, Decimal("1000")))
+        self.assertIn("Karim", t.note)
+        # the expense is changed on its debt, not on its own
+        self.assertRedirects(self.client.get(reverse("transaction_edit", args=[t.pk])), reverse("debt_detail", args=[debt.pk]))
+        self.client.post(reverse("transaction_delete", args=[t.pk]))
+        self.assertTrue(Transaction.objects.filter(pk=t.pk).exists())
+        # editing the payment updates the expense
+        record = DebtRecord.objects.get(kind="repay")
+        self.client.post(reverse("debt_record_edit", args=[record.pk]), {"kind": "repay", "amount": "1200",
+                         "account": self.bkash.id, "date": self.today.isoformat()})
+        t.refresh_from_db()
+        self.assertEqual((t.amount, t.account), (Decimal("1200"), self.bkash))
+        self.assertEqual(self.balances()["bKash"], Decimal("1300"))
+        self.assertEqual(self.balances()["Cash"], Decimal("5000"))
+        # deleting the payment removes the expense
+        self.client.post(reverse("debt_record_delete", args=[record.pk]))
+        self.assertFalse(Transaction.objects.exists())
+        self.assertEqual(self.balances()["bKash"], Decimal("2500"))
 
     def test_debts_page_lists_and_closes(self):
         self.add("lent", "Rahim", "500", self.cash, due_date=(self.today + dt.timedelta(days=7)).isoformat())
@@ -729,7 +752,7 @@ class DebtTests(TestCase):
         self.assertContains(r, "paid you back")
         self.assertContains(r, "anything")  # nobody to repay: warned, not saved
         self.assertEqual(Debt.objects.count(), 3)
-        self.assertFalse(Transaction.objects.exists())
+        self.assertFalse(Transaction.objects.exists())  # getting lent money back is not income
         # 300 back: 200 closes the old debt, 100 goes to the newer one
         old = Debt.objects.get(amount=200)
         self.assertTrue(old.closed)
@@ -749,3 +772,15 @@ class DebtTests(TestCase):
         self.assertEqual(self.client.get(reverse("debt_detail", args=[d.pk])).status_code, 404)
         self.assertEqual(self.client.post(reverse("debt_delete", args=[d.pk])).status_code, 404)
         self.assertNotContains(self.client.get(reverse("debts")), ">X<")
+
+
+    def test_ai_repay_is_an_expense(self):
+        Debt.objects.create(user=self.user, direction="borrowed", person="Karim", amount=3000, account=self.cash, date=self.today)
+        post = {"row_count": 1, "raw_text": "karim ke 1000 ferot dilam", "include_0": "1", "type_0": "repay",
+                "amount_0": "1000", "account_0": self.bkash.id, "person_0": "karim", "date_0": self.today.isoformat()}
+        r = self.client.post(reverse("ai_confirm"), post, follow=True)
+        self.assertContains(r, "You paid karim back")
+        self.assertEqual(r.context["summary"]["expense"], Decimal("1000"))
+        self.assertEqual(self.balances()["bKash"], Decimal("-1000"))
+        self.assertEqual(Transaction.objects.get().category.name, "Financial Expenses")
+        self.assertContains(self.client.get(reverse("dashboard")), "Paid back Karim")

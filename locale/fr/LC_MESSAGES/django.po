@@ -1337,6 +1337,24 @@ msgstr "Modifier le paiement"
 msgid "Payment deleted."
 msgstr "Paiement supprimé."
 
+msgid "Financial Expenses"
+msgstr "Dépenses financières"
+
+msgid "Paid back %(person)s"
+msgstr "Remboursé à %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Cette dépense est un remboursement de dette. Modifiez-la ici."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Suivez l'argent prêté ou emprunté. Les soldes des comptes changent. Le remboursement d'un emprunt compte comme une dépense (Dépenses financières)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Argent prêté à des personnes ou emprunté auprès d'elles. Prêter retire de l'argent d'un compte et emprunter en ajoute, pour que les soldes soient corrects. Le remboursement d'un emprunt compte comme une dépense (Dépenses financières). Vous pouvez aussi dire à l'AI : \"rahim ke 500 dhar dilam\", \"karim theke 2000 dhar nilam\", \"karim ke 1000 ferot dilam\"."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "\"Remboursé\" retire l'argent du compte et compte comme une dépense (Dépenses financières). \"Ajouté à la dette\" correspond au moment où vous empruntez davantage."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "L'AI a trouvé %(n)s transaction. Corrigez si besoin, puis enregistrez."

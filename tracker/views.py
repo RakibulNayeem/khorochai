@@ -71,7 +71,7 @@ def help_page(request):
          "examples": ["bkash e lunch 300 dilam", "ATM theke 2000 tullam", "move 500 from cash to bkash"]},
         {"icon": "balance", "title": _("Set an account balance"), "text": _("Tell the AI how much is in an account right now."),
          "examples": ["amar bkash e 5000 ache", "bank balance 50000"]},
-        {"icon": "debt", "title": _("Lend and borrow"), "text": _("Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."),
+        {"icon": "debt", "title": _("Lend and borrow"), "text": _("Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."),
          "examples": ["rahim ke 500 dhar dilam", "karim theke 2000 dhar nilam", "রহিম ৩০০ টাকা ফেরত দিল"]},
         {"icon": "budget", "title": _("Monthly budgets"), "text": _("Set a spending limit for a category and watch the progress bar on the dashboard."),
          "examples": ["khabar e mashe 6000 budget", "transport budget 2000"]},
@@ -544,6 +544,9 @@ def transaction_create(request):
 @login_required
 def transaction_edit(request, pk):
     t = get_object_or_404(Transaction, pk=pk, user=request.user)
+    if t.debt_record_id:
+        messages.info(request, _("This expense is a debt repayment. Change it here."))
+        return redirect("debt_detail", pk=t.debt_record.debt_id)
     form = TransactionForm(request.POST or None, instance=t, user=request.user)
     if request.method == "POST" and form.is_valid():
         form.save()
@@ -557,6 +560,9 @@ def transaction_edit(request, pk):
 @require_POST
 def transaction_delete(request, pk):
     t = get_object_or_404(Transaction, pk=pk, user=request.user)
+    if t.debt_record_id:
+        messages.info(request, _("This expense is a debt repayment. Change it here."))
+        return redirect("debt_detail", pk=t.debt_record.debt_id)
     t.delete()
     messages.success(request, _("Transaction deleted."))
     nxt = request.POST.get("next", "")
@@ -786,6 +792,7 @@ def debt_detail(request, pk):
         r = form.save(commit=False)
         r.debt = debt
         r.save()
+        services.sync_debt_expense(r)
         services.refresh_debt_status(debt)
         if debt.closed:
             messages.success(request, _("Fully paid back. The debt is closed."))
@@ -804,6 +811,7 @@ def debt_edit(request, pk):
     form = DebtForm(request.POST or None, instance=debt, user=request.user)
     if request.method == "POST" and form.is_valid():
         form.save()
+        services.sync_debt_expenses(debt)  # a change of person/direction updates the repayment expenses
         if not settled_by_hand:
             services.refresh_debt_status(debt)
         messages.success(request, _("Debt updated."))
@@ -839,6 +847,7 @@ def debt_record_edit(request, pk):
     form = DebtRecordForm(request.POST or None, instance=record, user=request.user, debt=record.debt)
     if request.method == "POST" and form.is_valid():
         form.save()
+        services.sync_debt_expense(record)
         services.refresh_debt_status(record.debt)
         messages.success(request, _("Payment updated."))
         return redirect("debt_detail", pk=record.debt.pk)

@@ -1337,6 +1337,24 @@ msgstr "تعديل الدفعة"
 msgid "Payment deleted."
 msgstr "تم حذف الدفعة."
 
+msgid "Financial Expenses"
+msgstr "المصروفات المالية"
+
+msgid "Paid back %(person)s"
+msgstr "تمت الإعادة إلى %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "هذا المصروف هو سداد دين. قم بتغييره هنا."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "تابع الأموال التي أقرضتها أو اقترضتها. تتغير أرصدة الحسابات. يُحتسب سداد الأموال التي اقترضتها كمصروف (مصروفات مالية)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "الأموال التي أقرضتها للأشخاص أو اقترضتها منهم. الإقراض يخصم الأموال من الحساب والاقتراض يضيفها إليه، لتبقى الأرصدة صحيحة. يُحتسب سداد الأموال التي اقترضتها كمصروف (مصروفات مالية). يمكنك أيضاً إخبار الذكاء الاصطناعي: “rahim ke 500 dhar dilam”، “karim theke 2000 dhar nilam”، “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "عبارة \"تمت الإعادة\" تخصم الأموال من الحساب وتحتسب كمصروف (مصروفات مالية). و\"تتم الإضافة إلى الدين\" عندما تقترض المزيد."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."

@@ -1337,6 +1337,24 @@ msgstr "상환 수정"
 msgid "Payment deleted."
 msgstr "상환이 삭제되었습니다."
 
+msgid "Financial Expenses"
+msgstr "재무 지출"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s님에게 상환함"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "이 지출은 부채 상환입니다. 여기서 변경하세요."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "빌려주거나 빌린 돈을 추적하세요. 계좌 잔액이 변경됩니다. 빌린 돈을 갚는 것은 지출(재무 지출)로 계산됩니다."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "사람들에게 빌려주거나 빌린 돈입니다. 빌려주면 계좌에서 돈이 나가고 빌리면 돈이 들어와 잔액이 올바르게 유지됩니다. 빌린 돈을 갚는 것은 지출(재무 지출)로 계산됩니다. AI에게 이렇게 말할 수도 있습니다: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“상환함”은 계좌에서 돈을 인출하고 지출(재무 지출)로 계산합니다. “부채에 추가됨”은 추가로 차용할 때 발생합니다."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI가 %(n)s건의 거래를 찾았습니다. 잘못된 부분을 수정하고 저장하세요."
