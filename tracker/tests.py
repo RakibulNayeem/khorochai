@@ -883,7 +883,7 @@ GOOGLE_ON = {"google": {"APP": {"client_id": "test-id.apps.googleusercontent.com
 
 
 class SocialLoginTests(TestCase):
-    """Log in with Google / Facebook (the providers' side is faked)."""
+    """Log in with Google (Google's side is faked)."""
 
     def setUp(self):
         from django.core.cache import cache
@@ -892,11 +892,11 @@ class SocialLoginTests(TestCase):
     def test_no_buttons_without_keys(self):
         self.assertNotContains(self.client.get(reverse("account_login")), "Continue with")
 
-    @override_settings(SOCIALACCOUNT_PROVIDERS={**GOOGLE_ON, "facebook": {"APP": {"client_id": "1", "secret": "s"}}})
+    @override_settings(SOCIALACCOUNT_PROVIDERS=GOOGLE_ON)
     def test_buttons_and_redirect_to_google(self):
         r = self.client.get(reverse("account_login"))
         self.assertContains(r, "Continue with Google")
-        self.assertContains(r, "Continue with Facebook")
+        self.assertNotContains(r, "Continue with Facebook")
         self.assertContains(self.client.get(reverse("account_signup")), "Continue with Google")
         r = self.client.post("/auth/google/login/?process=login")
         self.assertTrue(r["Location"].startswith("https://accounts.google.com/"))
@@ -938,46 +938,3 @@ class SocialLoginTests(TestCase):
         r = self.client.get(reverse("privacy"))
         self.assertContains(r, "Deleting your data")
         self.assertContains(r, "khorochai@gmail.com")
-
-
-FACEBOOK_ON = {"facebook": {"APP": {"client_id": "1", "secret": "s"}, "METHOD": "oauth2",
-                            "SCOPE": ["email", "public_profile"], "FIELDS": ["id", "email", "name", "first_name", "last_name"]}}
-
-
-@override_settings(SOCIALACCOUNT_PROVIDERS=FACEBOOK_ON)
-class FacebookLoginTests(TestCase):
-    """Facebook doesn't promise the email is verified, so a new Facebook user confirms it with the 6-digit code."""
-
-    def setUp(self):
-        from django.core.cache import cache
-        cache.clear()
-
-    def facebook_login(self, email):
-        from urllib.parse import parse_qs, urlparse
-        from allauth.socialaccount.providers.facebook import flows
-        from allauth.socialaccount.providers.oauth2.client import OAuth2Client
-        r = self.client.post("/auth/facebook/login/?process=login")
-        self.assertTrue(r["Location"].startswith("https://www.facebook.com/"))
-        state = parse_qs(urlparse(r["Location"]).query)["state"][0]
-        data = {"id": "5551", "email": email, "name": "Faruk Ahmed", "first_name": "Faruk", "last_name": "Ahmed"}
-        with mock.patch.object(OAuth2Client, "get_access_token", return_value={"access_token": "t"}), \
-             mock.patch.object(flows, "complete_login", side_effect=lambda request, provider, token: provider.sociallogin_from_response(request, data)):
-            return self.client.get(f"/auth/facebook/login/callback/?code=abc&state={state}", follow=True)
-
-    def test_new_facebook_user_confirms_email_with_code(self):
-        r = self.facebook_login("faruk@example.com")
-        self.assertTrue(User.objects.filter(email="faruk@example.com").exists())
-        self.assertEqual(len(mail.outbox), 1)
-        code = _code_from(mail.outbox[0])
-        r = self.client.post(r.request["PATH_INFO"], {"code": code}, follow=True)
-        self.assertEqual(r.wsgi_request.user.email, "faruk@example.com")
-
-    def test_existing_email_is_not_taken_over(self):
-        from allauth.account.models import EmailAddress
-        user = User.objects.create_user("faruk", email="faruk@example.com", password="kh0r0ch-zebra-river-91")
-        EmailAddress.objects.create(user=user, email="faruk@example.com", verified=True, primary=True)
-        r = self.facebook_login("faruk@example.com")
-        self.assertFalse(r.wsgi_request.user.is_authenticated)  # an unverified Facebook email can't log into it
-        self.assertEqual(User.objects.filter(email="faruk@example.com").count(), 1)
-        self.assertEqual(r.status_code, 200)
-        self.assertFalse(user.socialaccount_set.exists())  # not linked; the owner can link Facebook from Settings

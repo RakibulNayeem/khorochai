@@ -1505,3 +1505,17 @@ msgstr "আপনার অ্যাকাউন্ট ও সব তথ্য �
 msgid "Questions about privacy: <a href=\"mailto:%(email)s\">%(email)s</a>."
 msgstr "গোপনীয়তা নিয়ে প্রশ্ন: <a href=\"mailto:%(email)s\">%(email)s</a>।"
 
+
+# ---------------------------------------------------------------- Google-only login wording
+msgid "Log in with Google"
+msgstr "Google দিয়ে লগইন"
+
+msgid "If you choose to log in with Google, we receive only your name, email address and an account ID from Google, to create and log you in to your account. We never get your Google password and we never post anything for you."
+msgstr "Google দিয়ে লগইন করলে আমরা Google-এর কাছ থেকে শুধু আপনার নাম, ইমেইল ও একটি অ্যাকাউন্ট আইডি পাই — আপনার অ্যাকাউন্ট খুলতে ও লগইন করাতে। আপনার Google পাসওয়ার্ড আমরা কখনো পাই না, আর আপনার হয়ে কিছু পোস্টও করি না।"
+
+msgid "To delete your account and all its data, email <a href=\"mailto:%(email)s\">%(email)s</a> from the email address you log in with. We delete everything within 30 days and confirm by email. If you logged in with Google, you can also remove KhorochAi's access at myaccount.google.com → Security → Third-party connections."
+msgstr "আপনার অ্যাকাউন্ট ও সব তথ্য মুছতে, যে ইমেইল দিয়ে লগইন করেন সেখান থেকে <a href=\"mailto:%(email)s\">%(email)s</a>-এ ইমেইল করুন। আমরা ৩০ দিনের মধ্যে সব মুছে ইমেইলে জানাব। Google দিয়ে লগইন করে থাকলে myaccount.google.com → Security → Third-party connections থেকে KhorochAi-এর অনুমতিও সরাতে পারেন।"
+
+msgid "Google login"
+msgstr "Google লগইন"
+

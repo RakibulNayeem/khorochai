@@ -16,8 +16,8 @@
       <li>{% translate "Your settings: language, theme and currency." %}</li>
     </ul>
 
-    <h2 class="h6 mt-3">{% translate "Log in with Google or Facebook" %}</h2>
-    <p>{% translate "If you choose to log in with Google or Facebook, we receive only your name, email address and an account ID from them, to create and log you in to your account. We never get your Google or Facebook password and we never post anything for you." %}</p>
+    <h2 class="h6 mt-3">{% translate "Log in with Google" %}</h2>
+    <p>{% translate "If you choose to log in with Google, we receive only your name, email address and an account ID from Google, to create and log you in to your account. We never get your Google password and we never post anything for you." %}</p>
 
     <h2 class="h6 mt-3">{% translate "AI processing" %}</h2>
     <p>{% translate "When you use Add with AI, voice input or Ask AI, the text or recording you send is passed to our AI service providers only to understand it, and the result comes back to the app. Don't include card numbers or passwords in what you type or say." %}</p>
@@ -29,7 +29,7 @@
     <p>{% translate "We use cookies only to keep you logged in, protect forms, and remember your language and theme." %}</p>
 
     <h2 class="h6 mt-3" id="delete">{% translate "Deleting your data" %}</h2>
-    <p>{% blocktranslate with email=contact_email %}To delete your account and all its data, email <a href="mailto:{{ email }}">{{ email }}</a> from the email address you log in with. We delete everything within 30 days and confirm by email. If you logged in with Facebook, you can also remove KhorochAi in Facebook under Settings → Apps and websites; then email us to delete your data.{% endblocktranslate %}</p>
+    <p>{% blocktranslate with email=contact_email %}To delete your account and all its data, email <a href="mailto:{{ email }}">{{ email }}</a> from the email address you log in with. We delete everything within 30 days and confirm by email. If you logged in with Google, you can also remove KhorochAi's access at myaccount.google.com → Security → Third-party connections.{% endblocktranslate %}</p>
 
     <h2 class="h6 mt-3">{% translate "Contact" %}</h2>
     <p class="mb-0">{% blocktranslate with email=contact_email %}Questions about privacy: <a href="mailto:{{ email }}">{{ email }}</a>.{% endblocktranslate %}</p>

@@ -28,7 +28,7 @@ def first_currency(request, user, **kwargs):
 
 @receiver(user_signed_up)
 def welcome_social(request, user, sociallogin=None, **kwargs):
-    if sociallogin:  # Google / Facebook sign-ups skip the email code, so welcome them now
+    if sociallogin:  # Google sign-ups skip the email code, so welcome them now
         _welcome(request)
 
 

@@ -4,7 +4,7 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # login, sign-up, email codes, password reset, Google/Facebook (django-allauth)
+    # login, sign-up, email codes, password reset, Google (django-allauth)
     path("auth/", include("allauth.urls")),
     # old addresses
     path("login/", RedirectView.as_view(pattern_name="account_login", query_string=True)),

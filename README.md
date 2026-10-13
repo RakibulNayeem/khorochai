@@ -15,7 +15,7 @@ Type what you spent or earned in **English, বাংলা or Banglish**. The A
 - Monthly budgets per category with progress bars and warnings
 - ✨ Ask AI: "এই মাসে খাবারে কত খরচ হলো?", "Where did I spend most last month?"
 - Transactions list with filters, search, edit, delete, CSV export (Bangla-safe for Excel)
-- Multi-user: log in with email + password (or Google / Facebook). New emails are verified with a 6-digit code;
+- Multi-user: log in with email + password (or Google). New emails are verified with a 6-digit code;
   forgotten passwords are reset with a 6-digit code sent by email
 - Accounts: Cash, bKash, Nagad, Bank, Card (add your own). The AI picks the account from your text
   ("bkash e 500 dilam"); "Move money" records ATM withdrawals / cash outs between accounts
@@ -148,7 +148,7 @@ Vercel → Project → **Settings → Domains** → add your domain. Then add it
 
 ---
 
-## Login emails, Google and Facebook
+## Login emails and Google
 
 **Gmail (verification + password-reset codes)** — free, about 500 emails a day:
 1. Google Account → **Security** → turn on **2-Step Verification**.
@@ -161,11 +161,7 @@ Create credentials → **OAuth client ID** → Web application. Authorized redir
 `https://YOUR-APP.vercel.app/auth/google/login/callback/` (and `http://127.0.0.1:8000/auth/google/login/callback/` for local).
 Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
 
-**Continue with Facebook** (optional): [developers.facebook.com](https://developers.facebook.com/apps) → Create app →
-add **Facebook Login** → Valid OAuth redirect URI: `https://YOUR-APP.vercel.app/auth/facebook/login/callback/`.
-Set `FACEBOOK_APP_ID` and `FACEBOOK_APP_SECRET`, and switch the app to **Live** mode.
-
-Each button appears on the login page only when its keys are set.
+The button appears on the login page only when these keys are set.
 
 ## Troubleshooting
 

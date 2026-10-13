@@ -86,7 +86,7 @@ def about_page(request):
 
 
 def privacy_page(request):
-    """Public privacy policy (Google and Facebook ask for its link before login with them can go live)."""
+    """Public privacy policy (Google asks for its link before "Continue with Google" can go live)."""
     return render(request, "tracker/privacy.html")
 
 

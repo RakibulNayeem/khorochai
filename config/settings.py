@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    # always installed; a button only appears once its keys are set (see SOCIALACCOUNT_PROVIDERS below)
+    # always installed; the button only appears once its keys are set (see SOCIALACCOUNT_PROVIDERS below)
     "allauth.socialaccount.providers.google",
-    "allauth.socialaccount.providers.facebook",
 ]
 
 MIDDLEWARE = [
@@ -140,7 +139,7 @@ WHITENOISE_USE_FINDERS = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ---------------------------------------------------------------- Accounts & login (django-allauth)
-# Users log in with email + password, or with Google / Facebook. The username still exists
+# Users log in with email + password, or with Google. The username still exists
 # (made from the email, changeable in Settings) but is never needed to log in.
 # New emails must be verified with a 6-digit code; forgotten passwords are reset with a code.
 LOGIN_URL = "account_login"
@@ -163,20 +162,13 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "KhorochAi: "
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http" if DEBUG else "https"
 
-# Google / Facebook login: each one switches on only when its keys are set.
+# Google login: switches on only when its keys are set.
 SOCIALACCOUNT_PROVIDERS = {}
 if os.environ.get("GOOGLE_CLIENT_ID") and os.environ.get("GOOGLE_CLIENT_SECRET"):
     SOCIALACCOUNT_PROVIDERS["google"] = {
         "APP": {"client_id": os.environ["GOOGLE_CLIENT_ID"], "secret": os.environ["GOOGLE_CLIENT_SECRET"]},
         "SCOPE": ["profile", "email"],
         "AUTH_PARAMS": {"prompt": "select_account"},
-    }
-if os.environ.get("FACEBOOK_APP_ID") and os.environ.get("FACEBOOK_APP_SECRET"):
-    SOCIALACCOUNT_PROVIDERS["facebook"] = {
-        "APP": {"client_id": os.environ["FACEBOOK_APP_ID"], "secret": os.environ["FACEBOOK_APP_SECRET"]},
-        "METHOD": "oauth2",
-        "SCOPE": ["email", "public_profile"],
-        "FIELDS": ["id", "email", "name", "first_name", "last_name"],
     }
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_EMAIL_AUTHENTICATION = True           # Google login with the same (verified) email = same user
