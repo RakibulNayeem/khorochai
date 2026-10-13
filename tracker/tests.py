@@ -784,3 +784,47 @@ class DebtTests(TestCase):
         self.assertEqual(self.balances()["bKash"], Decimal("-1000"))
         self.assertEqual(Transaction.objects.get().category.name, "Financial Expenses")
         self.assertContains(self.client.get(reverse("dashboard")), "Paid back Karim")
+
+
+class AskDebtTests(TestCase):
+    """Ask AI answers "who owes whom" from the saved debts."""
+
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.login(username="rakib", password="pass12345!")
+        cash = Account.objects.get(user=self.user, name="Cash")
+        today = timezone.localdate()
+        rahim = Debt.objects.create(user=self.user, direction="lent", person="Rahim", amount=1000, account=cash, date=today)
+        DebtRecord.objects.create(debt=rahim, amount=400, account=cash, date=today)
+        Debt.objects.create(user=self.user, direction="lent", person="Sumi", amount=500, account=cash, date=today)
+        Debt.objects.create(user=self.user, direction="borrowed", person="Karim", amount=2000, account=cash, date=today)
+        Debt.objects.create(user=self.user, direction="lent", person="Old", amount=50, account=cash, date=today, closed=True)
+
+    def ask(self, q):
+        q = {"kind": "debts", "title": "t", **q}
+        with mock.patch.object(llm, "call_llm", return_value=q) as call:
+            r = self.client.post(reverse("ask"), {"question": "x"})
+        self.assertIn("Rahim", call.call_args[0][0])  # the AI is told the people's names
+        return r
+
+    def test_one_person(self):
+        r = self.ask({"debt_direction": "lent", "people": ["rahim"]})
+        res = r.context["result"]
+        self.assertEqual(res["summary"]["owed_to_me"], Decimal("600"))
+        self.assertEqual([d.person for d in res["debts"]], ["Rahim"])
+        self.assertContains(r, "Owed to me")
+        self.assertNotContains(r, "I owe</div>")
+
+    def test_who_owes_me(self):
+        res = self.ask({"debt_direction": "lent", "people": []}).context["result"]
+        self.assertEqual(res["summary"]["owed_to_me"], Decimal("1100"))
+        self.assertEqual([p["person"] for p in res["people"]], ["Rahim", "Sumi"])  # biggest first, closed left out
+
+    def test_everything(self):
+        res = self.ask({"debt_direction": "both", "people": []}).context["result"]
+        self.assertEqual((res["summary"]["owed_to_me"], res["summary"]["i_owe"]), (Decimal("1100"), Decimal("2000")))
+        self.assertEqual(len(res["debts"]), 3)
+
+    def test_nobody_matches(self):
+        r = self.ask({"debt_direction": "borrowed", "people": ["Nobody"]})
+        self.assertContains(r, "No matching debts")

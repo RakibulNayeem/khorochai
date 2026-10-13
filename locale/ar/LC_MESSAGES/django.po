@@ -1355,6 +1355,9 @@ msgstr "الأموال التي أقرضتها للأشخاص أو اقترضت�
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "عبارة \"تمت الإعادة\" تخصم الأموال من الحساب وتحتسب كمصروف (مصروفات مالية). و\"تتم الإضافة إلى الدين\" عندما تقترض المزيد."
 
+msgid "No matching debts."
+msgstr "لا توجد ديون مطابقة."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."

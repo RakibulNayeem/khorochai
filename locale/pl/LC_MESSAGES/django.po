@@ -1337,6 +1337,27 @@ msgstr "Edytuj płatność"
 msgid "Payment deleted."
 msgstr "Płatność usunięta."
 
+msgid "Financial Expenses"
+msgstr "Wydatki finansowe"
+
+msgid "Paid back %(person)s"
+msgstr "Spłacono %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Ten wydatek to spłata długu. Zmień to tutaj."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Śledź pożyczone lub oddane pieniądze. Salda kont ulegają zmianie. Spłata pożyczki liczy się jako wydatek (Wydatki finansowe)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Pieniądze pożyczone innym lub od innych. Pożyczanie zabiera pieniądze z konta, a pożyczanie dodaje, dzięki czemu salda pozostają prawidłowe. Spłata pożyczki liczy się jako wydatek (Wydatki finansowe). Możesz też powiedzieć AI: „rahim ke 500 dhar dilam”, „karim theke 2000 dhar nilam”, „karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "„Spłacono” pobiera pieniądze z konta i liczy się jako wydatek (Wydatki finansowe). „Dodano do długu” występuje, gdy pożyczasz więcej."
+
+msgid "No matching debts."
+msgstr "Brak pasujących długów."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI znalazło %(n)s transakcję. Popraw to, co wygląda na błędne, a następnie zapisz."

@@ -1355,6 +1355,9 @@ msgstr "जो पैसे आपने लोगों को उधार द
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“चुका दिया” विकल्प से खाते से पैसे कट जाते हैं और यह खर्च (वित्तीय खर्च) में गिना जाता है। “कर्ज में जोड़ा गया” तब होता है जब आप और उधार लेते हैं।"
 
+msgid "No matching debts."
+msgstr "कोई मेल खाते कर्ज नहीं मिले।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ने %(n)s ट्रांजेक्शन पाया। जो गलत लगे उसे ठीक करें, फिर सेव करें।"

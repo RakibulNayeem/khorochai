@@ -1355,6 +1355,9 @@ msgstr "사람들에게 빌려주거나 빌린 돈입니다. 빌려주면 계좌
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“상환함”은 계좌에서 돈을 인출하고 지출(재무 지출)로 계산합니다. “부채에 추가됨”은 추가로 차용할 때 발생합니다."
 
+msgid "No matching debts."
+msgstr "일치하는 부채가 없습니다."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI가 %(n)s건의 거래를 찾았습니다. 잘못된 부분을 수정하고 저장하세요."

@@ -1432,3 +1432,6 @@ msgstr "কাউকে ধার দেওয়া বা কারও কা�
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“ফেরত দেওয়া হয়েছে” টাকা অ্যাকাউন্ট থেকে কমায় এবং খরচ হিসেবে গোনা হয় (আর্থিক খরচ)। আরও ধার নিলে “ধারে যোগ” বেছে নিন।"
 
+
+msgid "No matching debts."
+msgstr "মিলে যায় এমন কোনো ধার নেই।"

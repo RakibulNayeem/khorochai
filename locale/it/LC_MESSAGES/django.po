@@ -1337,6 +1337,27 @@ msgstr "Modifica pagamento"
 msgid "Payment deleted."
 msgstr "Pagamento eliminato."
 
+msgid "Financial Expenses"
+msgstr "Spese finanziarie"
+
+msgid "Paid back %(person)s"
+msgstr "Restituito a %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Questa spesa è un rimborso del debito. Modificalo qui."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Tieni traccia del denaro prestato o preso in prestito. I saldi dei conti cambiano. La restituzione del denaro preso in prestito viene conteggiata come spesa (Spese finanziarie)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Denaro che hai prestato a persone o preso in prestito da loro. Il prestito preleva denaro da un conto e l'aver preso in prestito lo deposita, così i saldi rimangono corretti. La restituzione del denaro preso in prestito viene conteggiata come spesa (Spese finanziarie). Puoi anche dire all'AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "\"Restituito\" preleva il denaro dal conto e lo conteggia come spesa (Spese finanziarie). \"Aggiunto al debito\" si verifica quando prendi altro in prestito."
+
+msgid "No matching debts."
+msgstr "Nessun debito corrispondente."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "L'AI ha trovato %(n)s transazione. Correggi eventuali errori, poi salva."

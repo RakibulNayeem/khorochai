@@ -1355,6 +1355,9 @@ msgstr "Pera na iyong ipinahiram sa mga tao o hiniram mula sa kanila. Ang pagpap
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "Ang “Binayaran” ay naglalabas ng pera mula sa account at ibinibilang bilang gastos (Gastos sa Pananalapi). Ang “Idinagdag sa utang” ay kapag humiram ka pa."
 
+msgid "No matching debts."
+msgstr "Walang katugmang utang."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "Nakahanap ang AI ng %(n)s na transaksyon. Ayusin ang anumang mali, pagkatapos ay i-save."

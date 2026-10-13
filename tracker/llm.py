@@ -275,13 +275,17 @@ QUERY_PROMPT = """You convert a user's question about their own money into a JSO
 for a budget app in Bangladesh. The user may ask in English, Bangla, Banglish or another language.
 
 Return ONLY JSON in exactly this shape:
-{"type": "expense" or "income" or "both",
+{"kind": "money" or "debts",
+ "type": "expense" or "income" or "both",
  "categories": ["exact existing category names, or empty list for all"],
  "accounts": ["exact account names if the question is about specific accounts, else empty list"],
  "keyword": "word to search in notes, or empty string",
  "start_date": "YYYY-MM-DD",
  "end_date": "YYYY-MM-DD",
  "group_by": "none" or "category" or "day" or "month",
+ "debt_direction": "lent" or "borrowed" or "both",
+ "people": ["names of people the question is about, or empty list"],
+ "include_closed": true or false,
  "title": "the question restated briefly in the user's language"}
 
 Rules:
@@ -301,6 +305,16 @@ Rules:
   ("both" for balance / savings / comparisons).
 - "where did I spend most", "breakdown" -> group_by "category". "daily", "per day" -> "day".
   "per month", "monthly trend" -> "month". Otherwise "none".
+- kind = "debts" when the question is about who owes whom / how much is owed right now: money the user lent to people
+  or borrowed from them. Examples: "Rahim er kache koto pabo?", "রহিমের কাছে কত পাবো?", "ke ke amar kache dhar?",
+  "how much do I owe?", "আমি কার কাছে কত দেনা?", "Karim ke koto ferot dite hobe?", "all my debts".
+  debt_direction: "lent" = others owe the user (pabo/পাবো/owes me/dhar dilam/"ke ke amar kache dhar"/"কে কে আমার কাছে ধারী"), "borrowed" = the user owes others
+  (debo/দেবো/I owe/dhar nilam/ferot dite hobe), "both" if unclear or both.
+  people: exact spelling from this list when it is one of them: __PEOPLE__ ; else the name as written.
+  include_closed: true only if the question asks about past, paid or closed debts too.
+  For kind "debts" the other fields can keep their defaults. Paying back debts as SPENDING over a period
+  ("ei mashe dhar shodhe koto gelo") is kind "money" with the "Financial Expenses" category.
+  Otherwise kind = "money" and debt_direction = "both", people = [], include_closed = false.
 - Never compute numbers yourself.
 """
 
@@ -337,8 +351,9 @@ TITLE_LANGUAGES = {
 }
 
 
-def build_query(question, today, expense_names, income_names, language="en", account_names=(), usage=None) -> dict:
-    system = _fill(QUERY_PROMPT, today, expense_names, income_names, account_names)
+def build_query(question, today, expense_names, income_names, language="en", account_names=(), usage=None,
+                people=()) -> dict:
+    system = _fill(QUERY_PROMPT, today, expense_names, income_names, account_names, people=people)
     # the app's display language decides the language of the title shown above the answer
     title_lang = TITLE_LANGUAGES.get(language, "English")
     system += f'- Write "title" in {title_lang}.\n'

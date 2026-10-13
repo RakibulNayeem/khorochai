@@ -406,9 +406,13 @@ def ask(request):
         usage = {}
         try:
             q = llm.build_query(question[:500], timezone.localdate(), exp_names, inc_names,
-                                language=request.LANGUAGE_CODE, account_names=account_names, usage=usage)
+                                language=request.LANGUAGE_CODE, account_names=account_names, usage=usage,
+                                people=services.all_debt_people(request.user))
             services.record_ai_usage(request.user, usage.get("tokens", 0))
-            result = services.run_query(request.user, q)
+            if str(q.get("kind") or "").lower() == "debts":
+                result = services.run_debt_query(request.user, q)
+            else:
+                result = services.run_query(request.user, q)
         except llm.LLMError as exc:
             logger.error("AI query failed: %s", exc)
             if usage.get("tokens"):

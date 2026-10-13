@@ -1337,6 +1337,27 @@ msgstr "Редагувати платіж"
 msgid "Payment deleted."
 msgstr "Платіж видалено."
 
+msgid "Financial Expenses"
+msgstr "Фінансові витрати"
+
+msgid "Paid back %(person)s"
+msgstr "Повернуто %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Ця витрата є виплатою боргу. Змініть її тут."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Відстежуйте гроші, які ви позичили або взяли в борг. Баланси рахунків змінюються. Повернення боргу зараховується як витрата (Фінансові витрати)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Гроші, які ви позичили людям або взяли у них. Позичання знімає гроші з рахунку, а позика додає їх, тому баланси залишаються правильними. Повернення боргу зараховується як витрата (Фінансові витрати). Ви також можете сказати штучному інтелекту: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "«Повернуто» списує гроші з рахунку та зараховує їх як витрату (Фінансові витрати). «Додано до боргу» — це коли ви берете в борг додатково."
+
+msgid "No matching debts."
+msgstr "Немає відповідних боргів."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI знайшов %(n)s транзакцію. Виправте те, що виглядає неправильно, і збережіть."

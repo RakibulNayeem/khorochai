@@ -1355,6 +1355,9 @@ msgstr "You lent to people or borrowed from them. Lending takes money out of an 
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 
+msgid "No matching debts."
+msgstr "பொருத்தமான கடன்கள் எதுவும் இல்லை."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI %(n)s பரிவர்த்தனையைக் கண்டறிந்தது. தவறாகத் தெரிவதைச் சரிசெய்து, பிறகு சேமிக்கவும்."

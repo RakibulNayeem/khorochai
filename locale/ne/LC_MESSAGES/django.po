@@ -1355,6 +1355,9 @@ msgstr "तपाईंले मानिसहरूलाई दिएको 
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“फिर्ता गरियो” भन्दा खाताबाट पैसा बाहिरिन्छ र खर्चको रूपमा गणना हुन्छ (वित्तीय खर्चहरू)। “ऋणमा थपियो” भनेको तपाईंले थप ऋण लिँदा हो।"
 
+msgid "No matching debts."
+msgstr "कुनै मिल्दो ऋण छैन।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ले %(n)s कारोबार फेला पारेको छ। गलत देखिएको कुरा सच्याउनुहोस्, त्यसपछि बचत गर्नुहोस्।"

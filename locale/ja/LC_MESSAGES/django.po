@@ -1355,6 +1355,9 @@ msgstr "人に貸した、または人から借りたお金です。貸すと口
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "「返済しました」を選択すると口座からお金が引き落とされ、支出（金融費）としてカウントされます。「借金に追加」は新しく借りた場合です。"
 
+msgid "No matching debts."
+msgstr "一致する借入・貸付はありません。"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AIが%(n)s件の取引を見つけました。誤りがあれば修正して保存してください。"

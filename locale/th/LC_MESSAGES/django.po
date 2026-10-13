@@ -1355,6 +1355,9 @@ msgstr "เงินที่คุณให้ยูมผู้อื่นม
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“คุ่นเงินคิน” จะหักเงินอลองจากบังคันและนับเป็นเนลียจาย (ค่ากิจกรรมเงินสะยาด) “เพิ่มเข้าหนี้” คือตอนที่คุณยูมเกินขึ้น"
 
+msgid "No matching debts."
+msgstr "ไม่พบหนี้ที่ตรงกัน"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI พบ %(n)s รายการ แก้ไขสิ่งที่ผิดพลาด จากนั้นบันทึก"

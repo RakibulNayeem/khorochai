@@ -1337,6 +1337,27 @@ msgstr "Betaling bewerken"
 msgid "Payment deleted."
 msgstr "Betaling verwijderd."
 
+msgid "Financial Expenses"
+msgstr "Financiële uitgaven"
+
+msgid "Paid back %(person)s"
+msgstr "Terugbetaald aan %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Deze uitgave is een schuldinlossing. Pas dit hier aan."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Houd bij hoeveel geld je hebt geleend of uitgeleend. Rekeningsaldi veranderen. Het terugbetalen van geleend geld telt als een uitgave (Financiële uitgaven)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Geld dat je aan mensen hebt uitgeleend of van hen hebt geleend. Uitlenen haalt geld van een rekening en lenen zet er geld op, zodat de saldi kloppen. Het terugbetalen van geleend geld telt als een uitgave (Financiële uitgaven). Je kunt de AI ook vertellen: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“Terugbetaald” haalt het geld van de rekening en telt als een uitgave (Financiële uitgaven). “Toegevoegd aan schuld” is wanneer je meer leent."
+
+msgid "No matching debts."
+msgstr "Geen overeenkomende schulden."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "De AI heeft %(n)s transactie gevonden. Corrigeer wat er niet klopt en sla op."

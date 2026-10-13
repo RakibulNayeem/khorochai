@@ -1337,6 +1337,27 @@ msgstr "ငွေပေးချေမှုကို တည်းဖြတ်�
 msgid "Payment deleted."
 msgstr "ငွေပေးချေမှုကို ဖျက်လိုက်ပါပြီ။"
 
+msgid "Financial Expenses"
+msgstr "ငွေကြေးဆိုင်ရာ သုံးစွဲမှုများ"
+
+msgid "Paid back %(person)s"
+msgstr "%(person)s ကို ပြန်ဆပ်ပြီးပါပြီ"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "ဤသုံးစွဲမှုသည် အကြွေးပြန်ဆပ်ခြင်း ဖြစ်ပါသည်။ ဤနေရာတွင် ပြောင်းလဲပါ။"
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "သင် ချေးငှားခဲ့သော သို့မဟုတ် ချေးယူခဲ့သော ငွေများကို ခြေရာခံပါ။ အကောင့်လက်ကျန်များ ပြောင်းလဲပါမည်။ သင်ချေးယူခဲ့သောငွေကို ပြန်ဆပ်ခြင်းသည် သုံးစွဲမှုတစ်ခု (ငွေကြေးဆိုင်ရာ သုံးစွဲမှုများ) အဖြစ် ရေတွက်ပါသည်။"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "လူများကို ချေးငှားခဲ့သော သို့မဟုတ် ၎င်းတို့ထံမှ ချေးယူခဲ့သော ငွေများ။ ချေးငှားခြင်းက အကောင့်ထဲမှ ငွေကို ထွက်စေပြီး ချေးယူခြင်းက ထည့်ပေးသောကြောင့် လက်ကျန်ငွေများ တိကျနေမည်ဖြစ်သည်။ သင်ချေးယူခဲ့သောငွေကို ပြန်ဆပ်ခြင်းသည် သုံးစွဲမှုတစ်ခု (ငွေကြေးဆိုင်ရာ သုံးစွဲမှုများ) အဖြစ် ရေတွက်ပါသည်။ AI ကိုလည်း ဤသို့ ပြောနိုင်သည်- “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”။"
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“ပြန်ဆပ်သည်” ဆိုသည်မှာ အကောင့်ထဲမှ ငွေကို နှုတ်ယူပြီး သုံးစွဲမှုတစ်ခု (ငွေကြေးဆိုင်ရာ သုံးစွဲမှုများ) အဖြစ် ရေတွက်သည်။ “အကြွေးသို့ ထည့်သွင်းသည်” ဆိုသည်မှာ သင် ငွေပိုချေးသည့်အခါ ဖြစ်သည်။"
+
+msgid "No matching debts."
+msgstr "ကိုက်ညီသော အကြွေးများ မရှိပါ။"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI က ငွေစာရင်း %(n)s ခုကို တွေ့ရှိခဲ့ပါတယ်။ မှားနေတာရှိရင် ပြင်ပြီး သိမ်းဆည်းပါ။"

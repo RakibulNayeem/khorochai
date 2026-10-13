@@ -1355,6 +1355,9 @@ msgstr "您借给他人或从他人处借入的资金。借出资金会从账户
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“已偿还”会从账户中扣除资金并计入支出（财务支出）。“加入债务”适用于您借入更多资金的情况。"
 
+msgid "No matching debts."
+msgstr "没有找到匹配的债务。"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI 找到了 %(n)s 条交易。如有错误请修改，然后保存。"

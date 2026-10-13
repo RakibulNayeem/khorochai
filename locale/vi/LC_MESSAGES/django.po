@@ -1355,6 +1355,9 @@ msgstr "Tiền bạn cho người khác mượn hoặc vay từ họ. Cho mượ
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“Đã trả lại” sẽ rút tiền khỏi tài khoản và được tính là chi phí (Chi phí tài chính). “Thêm vào khoản nợ” là khi bạn vay thêm."
 
+msgid "No matching debts."
+msgstr "Không có khoản nợ phù hợp."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI đã tìm thấy %(n)s giao dịch. Chỉnh sửa bất kỳ mục nào sai, rồi lưu."

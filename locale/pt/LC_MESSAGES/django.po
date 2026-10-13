@@ -1337,6 +1337,27 @@ msgstr "Editar pagamento"
 msgid "Payment deleted."
 msgstr "Pagamento excluído."
 
+msgid "Financial Expenses"
+msgstr "Despesas Financeiras"
+
+msgid "Paid back %(person)s"
+msgstr "Pago a %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Esta despesa é um pagamento de dívida. Altere-a aqui."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Acompanhe o dinheiro que você emprestou ou pegou emprestado. Os saldos das contas mudam. Pagar de volta o dinheiro que você pegou emprestado conta como uma despesa (Despesas Financeiras)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Dinheiro que você emprestou a pessoas ou pegou emprestado delas. Emprestar retira dinheiro de uma conta e pegar emprestado coloca, para que os saldos fiquem corretos. Pagar de volta o dinheiro que você pegou emprestado conta como uma despesa (Despesas Financeiras). Você também pode dizer à IA: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“Pago” retira o dinheiro da conta e conta como despesa (Despesas Financeiras). “Adicionado à dívida” é quando você pega mais emprestado."
+
+msgid "No matching debts."
+msgstr "Nenhuma dívida correspondente."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "A AI encontrou %(n)s transação. Corrija o que parecer errado e salve."

@@ -1355,6 +1355,9 @@ msgstr "Dinero que prestaste a personas o pediste prestado. Prestar saca dinero 
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“Devuelto” saca el dinero de la cuenta y cuenta como un gasto (Gastos financieros). “Agregado a la deuda” es cuando pides más prestado."
 
+msgid "No matching debts."
+msgstr "No hay deudas coincidentes."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "La AI encontró %(n)s transacción. Corrige lo que parezca incorrecto y guarda."

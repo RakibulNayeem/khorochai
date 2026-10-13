@@ -1337,6 +1337,27 @@ msgstr "Изменить платеж"
 msgid "Payment deleted."
 msgstr "Платеж удален."
 
+msgid "Financial Expenses"
+msgstr "Финансовые расходы"
+
+msgid "Paid back %(person)s"
+msgstr "Возвращено %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Этот расход — возврат долга. Измените это здесь."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Отслеживайте деньги, которые вы долны или вам должны. Балансы счетов изменяются. Возврат вознятого долга считается расходом (Финансовые расходы)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Деньги, которые вы одолжили людям или займов у них. Одолживание снимает деньги со счета, а займ добавляеть их, поэтому балансы остаются верными. Возврат займа считается расходом (Финансовые расходы). Вы также можете сказать AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "Кнопка «Возвращено» снимает деньги со счета и считает это расходом (Финансовые расходы). «Добавлено к долгу» означает, что вы взяли еще в долг."
+
+msgid "No matching debts."
+msgstr "Нет подходящих долгов."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI нашел %(n)s транзакцию. Исправьте ошибки, если они есть, и сохраните."

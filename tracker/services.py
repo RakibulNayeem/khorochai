@@ -667,6 +667,40 @@ def run_query(user, q):
     }
 
 
+def run_debt_query(user, q):
+    """Answer a debts question ("Rahim er kache koto pabo?") from the saved debts. All numbers come from the database."""
+    direction = str(q.get("debt_direction") or "both").lower()
+    names = [" ".join(n.split()).lower() for n in (q.get("people") or []) if isinstance(n, str) and n.strip()]
+    debts = debts_with_totals(user)
+    if direction in (LENT, BORROWED):
+        debts = [d for d in debts if d.direction == direction]
+    if names:
+        exact = [d for d in debts if d.person.lower() in names]
+        debts = exact or [d for d in debts if any(n in d.person.lower() or d.person.lower() in n for n in names)]
+    if not q.get("include_closed") and not (names and not any(not d.closed for d in debts)):
+        debts = [d for d in debts if not d.closed]   # a named person with only closed debts still gets an answer
+    by_person = {}
+    for d in debts:
+        p = by_person.setdefault(d.person.lower(), {"person": d.person, "owed_to_me": Decimal("0"), "i_owe": Decimal("0"), "n": 0})
+        p["n"] += 1
+        if not d.closed:
+            p["owed_to_me" if d.direction == LENT else "i_owe"] += max(d.remaining, Decimal("0"))
+    people = sorted(by_person.values(), key=lambda p: -(p["owed_to_me"] + p["i_owe"]))
+    for p in people:
+        p["net"] = p["owed_to_me"] - p["i_owe"]
+    summary = debt_summary(user, debts)
+    debts.sort(key=lambda d: (d.closed, not d.overdue, d.due_date or d.date))
+    return {
+        "kind": "debts",
+        "title": str(q.get("title") or gettext("Your question")),
+        "direction": direction if direction in (LENT, BORROWED) else "both",
+        "names": [p["person"] for p in people] if names else [],
+        "summary": summary,
+        "people": people if len(people) > 1 else [],
+        "debts": debts,
+    }
+
+
 # --------------------------------------------------------------------------- AI daily limits
 # The free Gemini/Groq tiers only allow so many tokens/requests per day for the whole app.
 # Every user gets a daily token allowance (AI_DAILY_TOKENS_PER_USER), shown as "% used".

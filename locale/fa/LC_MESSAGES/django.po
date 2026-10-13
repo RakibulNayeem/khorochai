@@ -1337,6 +1337,27 @@ msgstr "ویرایش پرداخت"
 msgid "Payment deleted."
 msgstr "پرداخت حذف شد."
 
+msgid "Financial Expenses"
+msgstr "هزینه‌های مالی"
+
+msgid "Paid back %(person)s"
+msgstr "بازپرداخت به %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "این هزینه یک بازپرداخت بدهی است. آن را در اینجا تغییر دهید."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "پول‌های قرض‌داده‌شده یا قرض‌گرفته‌شده خود را پیگیری کنید. موجودی حساب‌ها تغییر می‌کند. پس دادن پولی که قرض گرفته بودید، به عنوان هزینه (هزینه‌های مالی) محاسبه می‌شود."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "پولی که به افراد قرض داده‌اید یا از آن‌ها قرض گرفته‌اید. قرض دادن پول را از حساب خارج می‌کند و قرض گرفتن آن را واریز می‌کند، بنابراین موجودی‌ها درست می‌مانند. پس دادن پولی که قرض گرفته بودید، به عنوان هزینه (هزینه‌های مالی) محسوب می‌شود. همچنین می‌توانید به هوش مصنوعی بگویید: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "گزینه «بازپرداخت» پول را از حساب خارج کرده و به عنوان هزینه (هزینه‌های مالی) در نظر می‌گیرد. «افزودن به بدهی» زمانی است که بیشتر قرض می‌گیرید."
+
+msgid "No matching debts."
+msgstr "هیچ بدهی مطابقت‌داشته‌ای یافت نشد."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI تعداد %(n)s تراکنش پیدا کرد. هر چیزی که اشتباه به نظر می‌رسد را اصلاح و سپس ذخیره کنید."

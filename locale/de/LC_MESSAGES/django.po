@@ -1337,6 +1337,27 @@ msgstr "Zahlung bearbeiten"
 msgid "Payment deleted."
 msgstr "Zahlung gelöscht."
 
+msgid "Financial Expenses"
+msgstr "Finanzielle Ausgaben"
+
+msgid "Paid back %(person)s"
+msgstr "An %(person)s zurückgezahlt"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Diese Ausgabe ist eine Schuldenrückzahlung. Hier ändern."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Behalte den Überblick über verliehenes oder geliehenes Geld. Kontostände ändern sich. Die Rückzahlung von geliehenem Geld zählt als Ausgabe (Finanzielle Ausgaben)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Geld, das du verliehen oder geliehen hast. Verleihen nimmt Geld vom Konto, Leihen zahlt es ein, damit die Salden stimmen. Die Rückzahlung geliehenen Gelds zählt als Ausgabe (Finanzielle Ausgaben). Du kannst der AI auch sagen: „rahim ke 500 dhar dilam“, „karim theke 2000 dhar nilam“, „karim ke 1000 ferot dilam“."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "„Zurückgezahlt“ bucht das Geld vom Konto ab und zählt als Ausgabe (Finanzielle Ausgaben). „Zu Schulden hinzufügen“ nutzt man, wenn man mehr leiht."
+
+msgid "No matching debts."
+msgstr "Keine passenden Schulden."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "Die AI hat %(n)s Transaktion gefunden. Korrigiere alles, was falsch aussieht, und speichere dann."

@@ -1355,6 +1355,9 @@ msgstr "وہ رقم جو آپ نے لوگوں کو ادھار دی یا ان س�
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“Paid back” سے اکاؤنٹ سے پیسے نکل جاتے ہیں اور یہ ایک خرچہ (مالی اخراجات) شمار ہوتا ہے۔ “Added to debt” وہ ہے جب آپ مزید قرض لیں۔"
 
+msgid "No matching debts."
+msgstr "کوئی مطابقت رکھنے والا قرض نہیں ملا۔"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI نے %(n)s ٹرانزیکشن تلاش کی۔ جو غلط لگے اسے درست کریں، پھر محفوظ کریں۔"

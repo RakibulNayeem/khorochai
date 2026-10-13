@@ -1355,6 +1355,9 @@ msgstr "Wang yang anda beri pinjam kepada orang lain atau pinjam daripada mereka
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "“Dibayar balik” mengeluarkan wang daripada akaun dan dikira sebagai perbelanjaan (Perbelanjaan Kewangan). “Ditambah pada hutang” adalah apabila anda meminjam lagi."
 
+msgid "No matching debts."
+msgstr "Tiada hutang yang sepadan."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI menemui %(n)s transaksi. Betulkan apa yang salah, kemudian simpan."

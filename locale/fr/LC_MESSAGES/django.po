@@ -1355,6 +1355,9 @@ msgstr "Argent prêté à des personnes ou emprunté auprès d'elles. Prêter re
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "\"Remboursé\" retire l'argent du compte et compte comme une dépense (Dépenses financières). \"Ajouté à la dette\" correspond au moment où vous empruntez davantage."
 
+msgid "No matching debts."
+msgstr "Aucune dette correspondante."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "L'AI a trouvé %(n)s transaction. Corrigez si besoin, puis enregistrez."

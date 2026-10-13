@@ -18,6 +18,7 @@
     <div class="mt-2" data-keep-digits>
       <span class="example-chip" data-text="এই মাসে খাবারে কত খরচ হলো?">এই মাসে খাবারে কত খরচ?</span>
       <span class="example-chip" data-text="এই মাসে ধার শোধে কত গেল?">এই মাসে ধার শোধে কত গেল?</span>
+      <span class="example-chip" data-text="কার কাছে কত টাকা পাবো?">কার কাছে কত টাকা পাবো?</span>
       <span class="example-chip" data-text="{% translate 'Where did I spend the most last month?' %}">{% translate "Where did I spend most last month?" %}</span>
       <span class="example-chip" data-text="{% translate 'How much did I spend on rickshaw this year?' %}">{% translate "Rickshaw spending this year" %}</span>
       <span class="example-chip" data-text="{% translate 'income vs expense per month this year' %}">{% translate "Income vs expense per month" %}</span>
@@ -25,7 +26,41 @@
   </form>
 </div>
 
-{% if result %}
+{% if result.kind == "debts" %}
+<div class="card p-3 p-md-4">
+  <h2 class="h5 mb-1" data-keep-digits>{{ result.title }}</h2>
+  <p class="small text-muted mb-3">{% translate "Debts" %}{% if result.names %} · <span data-keep-digits>{{ result.names|join:", " }}</span>{% endif %}
+    · {% blocktranslate count n=result.debts|length %}{{ n }} debt{% plural %}{{ n }} debts{% endblocktranslate %}</p>
+  {% if result.debts %}
+  <div class="row g-3 mb-3">
+    {% if result.direction != "borrowed" %}
+    <div class="col-sm-4"><div class="card-title-sm">{% translate "Owed to me" %}</div><div class="stat text-income">{{ result.summary.owed_to_me|money }}</div></div>
+    {% endif %}
+    {% if result.direction != "lent" %}
+    <div class="col-sm-4"><div class="card-title-sm">{% translate "I owe" %}</div><div class="stat text-expense">{{ result.summary.i_owe|money }}</div></div>
+    {% endif %}
+  </div>
+  {% if result.people %}
+  <div class="table-responsive mb-3">
+    <table class="table table-sm align-middle">
+      <thead class="small text-muted"><tr><th>{% translate "Person" %}</th>
+        {% if result.direction != "borrowed" %}<th class="text-end">{% translate "Owed to me" %}</th>{% endif %}
+        {% if result.direction != "lent" %}<th class="text-end">{% translate "I owe" %}</th>{% endif %}</tr></thead>
+      {% for p in result.people %}
+      <tr><td data-keep-digits>{{ p.person }}</td>
+        {% if result.direction != "borrowed" %}<td class="amount text-end text-income">{{ p.owed_to_me|money }}</td>{% endif %}
+        {% if result.direction != "lent" %}<td class="amount text-end text-expense">{{ p.i_owe|money }}</td>{% endif %}</tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+  {% for d in result.debts %}{% include "tracker/_debt_card.html" %}{% endfor %}
+  {% else %}
+  <p class="text-muted mb-0">{% translate "No matching debts." %} <a href="{% url 'debts' %}">{% translate "All debts" %}</a></p>
+  {% endif %}
+  <p class="small text-muted mt-3 mb-0">{% translate "The AI only understood your question; every number here was calculated from your saved data." %}</p>
+</div>
+{% elif result %}
 <div class="card p-3 p-md-4">
   <h2 class="h5 mb-1">{{ result.title }}</h2>
   <p class="small text-muted mb-3">

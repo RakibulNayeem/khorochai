@@ -1337,6 +1337,27 @@ msgstr "Hariri malipo"
 msgid "Payment deleted."
 msgstr "Malipo yamefutwa."
 
+msgid "Financial Expenses"
+msgstr "Matumizi ya Kifedha"
+
+msgid "Paid back %(person)s"
+msgstr "Umemlipa %(person)s"
+
+msgid "This expense is a debt repayment. Change it here."
+msgstr "Matumizi haya ni malipo ya deni. Yabadilishe hapa."
+
+msgid "Keep track of money you lent or borrowed. Account balances change. Paying back money you borrowed counts as an expense (Financial Expenses)."
+msgstr "Fuatilia pesa uliyokopesha au kukopa. Salio la akaunti linabadilika. Kulipa pesa uliyokopa kunahesabiwa kuwa matumizi (Matumizi ya Kifedha)."
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right. Paying back money you borrowed counts as an expense (Financial Expenses). You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+msgstr "Pesa uliyowakopesha watu au kukopa kutoka kwao. Kukopesha kunatoa pesa kwenye akaunti na kukopa kunaweka, kwa hiyo salio linakaa sawa. Kulipa pesa uliyokopa kunahesabiwa kuwa matumizi (Matumizi ya Kifedha). Unaweza pia kumwambia AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “karim ke 1000 ferot dilam”."
+
+msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
+msgstr "“Umemlipa” kunatoa pesa kwenye akaunti na kuhesabiwa kama matumizi (Matumizi ya Kifedha). “Imeongezwa kwenye deni” ni wakati unapokopa zaidi."
+
+msgid "No matching debts."
+msgstr "Hakuna madeni yanayofanana."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI imepata muamala %(n)s. Rekebisha chochote kinachoonekana vibaya, kisha hifadhi."

@@ -1355,6 +1355,9 @@ msgstr "ඔබ මිනිසුන්ට ණයට දුන් හෝ ඔව�
 msgid "“Paid back” takes the money out of the account and counts as an expense (Financial Expenses). “Added to debt” is when you borrow more."
 msgstr "\"ආපසු ගෙවන ලදී\" මගින් ගිණුමෙන් මුදල් ඉවත් කර වියදමක් (මූල්‍ය වියදම්) ලෙස ගණන් ගනී. \"ණයට එකතු කරන ලදී\" යනු ඔබ වැඩිපුර ණයට ගන්නා අවස්ථාවයි."
 
+msgid "No matching debts."
+msgstr "ගැලපෙන ණය නොමැත."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI විසින් ගනුදෙනුවක් %(n)s සොයා ගන්නා ලදී. වැරදි ලෙස පෙනෙන ඕනෑම දෙයක් නිවැරදි කර සුරකින්න."
