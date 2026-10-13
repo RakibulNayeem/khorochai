@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "La deuda de %(n)s ha vencido."
 msgstr[1] "Las deudas de %(n)s han vencido."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Dime qué gastaste o ganaste, en cualquier idioma"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Hoy gasté 550 en el súper, taxi 80, y cobré 6000 por clases particulares"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Hoy gasté 550 en el súper y 80 en un taxi"
+
+msgid "groceries 550, taxi 80"
+msgstr "súper 550, taxi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Ayer almuerzo 250 y recarga del móvil 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "almuerzo 250, recarga 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Hoy cobré mi sueldo de 35000 y pagué 12000 de alquiler"
+
+msgid "salary 35000, rent 12000"
+msgstr "sueldo 35000, alquiler 12000"

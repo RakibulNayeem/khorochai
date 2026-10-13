@@ -12,10 +12,13 @@
 <div class="card ai-box p-3 p-md-4 mb-4">
   <form method="post" action="{% url 'ai_parse' %}" id="ai-form">
     {% csrf_token %}
+    {% get_current_language as LANG %}
+    {# English and Bangla show Bangla/Banglish/English examples; other languages get examples in their own language #}
+    {% if LANG == "en" or LANG == "bn" %}
     <label for="ai-text" class="form-label fw-semibold mb-2">{% translate "Tell me what you spent or earned — বাংলা, English, Banglish or any language" %}</label>
     <div class="voice-field mb-2">
       <textarea id="ai-text" name="text" rows="3" maxlength="2000" class="form-control" required
-        placeholder="{% translate "e.g." %} আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০, tuition theke 6000 pelam">{{ last_text }}</textarea>
+        placeholder="{% translate "e.g." %} আজ বাজারে ৫৫০ টাকা খরচ, paid rent 12000, tuition theke 6000 pelam">{{ last_text }}</textarea>
       {% include "tracker/_voice_button.html" with target="ai-text" %}
     </div>
     <div class="mb-2" data-keep-digits>
@@ -23,6 +26,19 @@
       <span class="example-chip" data-text="gotokal lunch 250 ar mobile recharge 100">gotokal lunch 250, recharge 100</span>
       <span class="example-chip" data-text="Got my salary 35000 today and paid rent 12000">salary 35000, rent 12000</span>
     </div>
+    {% else %}
+    <label for="ai-text" class="form-label fw-semibold mb-2">{% translate "Tell me what you spent or earned, in any language" %}</label>
+    <div class="voice-field mb-2">
+      <textarea id="ai-text" name="text" rows="3" maxlength="2000" class="form-control" required
+        placeholder="{% translate "e.g." %} {% translate "Spent 550 on groceries today, taxi 80, got 6000 from tutoring" %}">{{ last_text }}</textarea>
+      {% include "tracker/_voice_button.html" with target="ai-text" %}
+    </div>
+    <div class="mb-2">
+      <span class="example-chip" data-text="{% translate "Spent 550 on groceries today and 80 on a taxi" %}">{% translate "groceries 550, taxi 80" %}</span>
+      <span class="example-chip" data-text="{% translate "Yesterday lunch 250 and phone top-up 100" %}">{% translate "lunch 250, top-up 100" %}</span>
+      <span class="example-chip" data-text="{% translate "Got my salary 35000 today and paid rent 12000" %}">{% translate "salary 35000, rent 12000" %}</span>
+    </div>
+    {% endif %}
     <div class="d-flex flex-wrap align-items-center gap-2">
       <div class="me-auto">{% include "tracker/_ai_quota.html" %}</div>
       <div class="composer-actions d-flex gap-2">

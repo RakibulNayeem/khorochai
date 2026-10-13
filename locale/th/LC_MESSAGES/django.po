@@ -1398,3 +1398,27 @@ msgstr[0] "หนี้ของ %(n)s"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "หนี้ของ %(n)s เลยกำหนดชำระแล้ว"
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "บอกสิ่งที่คุณใช้จ่ายหรือได้รับ เป็นภาษาใดก็ได้"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "วันนี้ซื้อของชำ 550 ค่าแท็กซี่ 80 ได้ค่าสอนพิเศษ 6000"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "วันนี้ซื้อของชำ 550 และค่าแท็กซี่ 80"
+
+msgid "groceries 550, taxi 80"
+msgstr "ของชำ 550, แท็กซี่ 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "เมื่อวานข้าวกลางวัน 250 และเติมเงินโทรศัพท์ 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "ข้าวกลางวัน 250, เติมเงิน 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "วันนี้ได้เงินเดือน 35000 และจ่ายค่าเช่า 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "เงินเดือน 35000, ค่าเช่า 12000"

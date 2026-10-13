@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "تاریخ سررسید بدهی %(n)s گذشته است."
 msgstr[1] "تاریخ سررسید بدهی‌های %(n)s گذشته است."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "به من بگویید چه خرج کردید یا چه درآمدی داشتید، به هر زبانی"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "امروز 550 خرید خواربار، تاکسی 80، و 6000 از تدریس خصوصی گرفتم"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "امروز 550 برای خواربار و 80 برای تاکسی خرج کردم"
+
+msgid "groceries 550, taxi 80"
+msgstr "خواربار 550، تاکسی 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "دیروز ناهار 250 و شارژ موبایل 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "ناهار 250، شارژ 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "امروز حقوقم 35000 را گرفتم و 12000 اجاره دادم"
+
+msgid "salary 35000, rent 12000"
+msgstr "حقوق 35000، اجاره 12000"

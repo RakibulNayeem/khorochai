@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "Lampas na sa takdang petsa ang utang na %(n)s."
 msgstr[1] "Lampas na sa takdang petsa ang mga utang na %(n)s."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Sabihin sa akin ang ginastos o kinita mo, sa kahit anong wika"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Gumastos ng 550 sa grocery ngayon, taxi 80, kumita ng 6000 sa tutoring"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Gumastos ng 550 sa grocery ngayon at 80 sa taxi"
+
+msgid "groceries 550, taxi 80"
+msgstr "grocery 550, taxi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Kahapon tanghalian 250 at load 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "tanghalian 250, load 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Natanggap ko ang sahod na 35000 ngayon at nagbayad ng upa 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "sahod 35000, upa 12000"

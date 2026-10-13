@@ -1438,3 +1438,27 @@ msgstr[2] "ديون %(n)s تجاوزت موعد سدادها."
 msgstr[3] "ديون %(n)s تجاوزت موعد سدادها."
 msgstr[4] "ديون %(n)s تجاوزت موعد سدادها."
 msgstr[5] "ديون %(n)s تجاوزت موعد سدادها."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "أخبرني بما أنفقته أو كسبته، بأي لغة"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "أنفقت 550 على البقالة اليوم، تاكسي 80، وحصلت على 6000 من الدروس الخصوصية"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "أنفقت اليوم 550 على البقالة و80 على التاكسي"
+
+msgid "groceries 550, taxi 80"
+msgstr "بقالة 550، تاكسي 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "أمس غداء 250 وشحن رصيد الهاتف 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "غداء 250، شحن رصيد 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "استلمت راتبي 35000 اليوم ودفعت الإيجار 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "راتب 35000، إيجار 12000"

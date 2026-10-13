@@ -1398,3 +1398,27 @@ msgstr[0] "%(n)s khoản nợ"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s khoản nợ đã quá hạn thanh toán."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Cho tôi biết bạn đã chi hoặc kiếm được gì, bằng bất kỳ ngôn ngữ nào"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Hôm nay đi chợ 550, taxi 80, nhận 6000 tiền dạy kèm"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Hôm nay đi chợ hết 550 và đi taxi 80"
+
+msgid "groceries 550, taxi 80"
+msgstr "đi chợ 550, taxi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Hôm qua ăn trưa 250 và nạp tiền điện thoại 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "ăn trưa 250, nạp tiền 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Hôm nay nhận lương 35000 và trả tiền nhà 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "lương 35000, tiền nhà 12000"

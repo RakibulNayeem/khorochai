@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s schuld is over de terugbetaaldatum heen."
 msgstr[1] "%(n)s schulden zijn over hun terugbetaaldatum heen."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Vertel me wat je hebt uitgegeven of verdiend, in elke taal"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Vandaag 550 aan boodschappen, taxi 80, 6000 gekregen voor bijles"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Vandaag 550 aan boodschappen en 80 aan een taxi uitgegeven"
+
+msgid "groceries 550, taxi 80"
+msgstr "boodschappen 550, taxi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Gisteren lunch 250 en beltegoed 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "lunch 250, beltegoed 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Vandaag mijn salaris van 35000 gekregen en 12000 huur betaald"
+
+msgid "salary 35000, rent 12000"
+msgstr "salaris 35000, huur 12000"

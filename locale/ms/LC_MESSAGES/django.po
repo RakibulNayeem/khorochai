@@ -1398,3 +1398,27 @@ msgstr[0] "Hutang-hutang %(n)s"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "Hutang-hutang %(n)s telah lepas tarikh bayar balik."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Beritahu saya apa yang anda belanjakan atau perolehi, dalam apa-apa bahasa"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Belanja barang dapur 550 hari ini, teksi 80, dapat 6000 daripada tuisyen"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Belanja 550 untuk barang dapur hari ini dan 80 untuk teksi"
+
+msgid "groceries 550, taxi 80"
+msgstr "barang dapur 550, teksi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Semalam makan tengah hari 250 dan topup telefon 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "makan tengah hari 250, topup 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Dapat gaji 35000 hari ini dan bayar sewa 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "gaji 35000, sewa 12000"

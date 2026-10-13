@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s கடன் திருப்பிச் செலுத்தும் காலாவதி தேதி கடந்துவிட்டது."
 msgstr[1] "%(n)s கடன்கள் திருப்பிச் செலுத்தும் காலாவதி தேதியைத் தாண்டிவிட்டன."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "நீங்கள் என்ன செலவு செய்தீர்கள் அல்லது சம்பாதித்தீர்கள் என்று சொல்லுங்கள், எந்த மொழியிலும்"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "இன்று மளிகை 550 செலவு, டாக்ஸி 80, டியூஷனில் 6000 கிடைத்தது"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "இன்று மளிகைக்கு 550, டாக்ஸிக்கு 80 செலவு செய்தேன்"
+
+msgid "groceries 550, taxi 80"
+msgstr "மளிகை 550, டாக்ஸி 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "நேற்று மதிய உணவு 250, போன் ரீசார்ஜ் 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "மதிய உணவு 250, ரீசார்ஜ் 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "இன்று சம்பளம் 35000 வந்தது, வாடகை 12000 கொடுத்தேன்"
+
+msgid "salary 35000, rent 12000"
+msgstr "சம்பளம் 35000, வாடகை 12000"

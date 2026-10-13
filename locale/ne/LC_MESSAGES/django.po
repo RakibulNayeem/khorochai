@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s ऋण तिर्ने समय नाघेको छ।"
 msgstr[1] "%(n)s ऋणहरू तिर्ने समय नाघेका छन्।"
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "तपाईंले के खर्च गर्नुभयो वा कमाउनुभयो भन्नुहोस्, कुनै पनि भाषामा"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "आज किराना 550 खर्च, ट्याक्सी 80, ट्युसनबाट 6000 पाएँ"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "आज किरानामा 550 र ट्याक्सीमा 80 खर्च गरें"
+
+msgid "groceries 550, taxi 80"
+msgstr "किराना 550, ट्याक्सी 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "हिजो खाजा 250 र फोन रिचार्ज 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "खाजा 250, रिचार्ज 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "आज 35000 तलब पाएँ र 12000 भाडा तिरें"
+
+msgid "salary 35000, rent 12000"
+msgstr "तलब 35000, भाडा 12000"

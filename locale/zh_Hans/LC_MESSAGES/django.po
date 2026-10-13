@@ -1398,3 +1398,27 @@ msgstr[0] "%(n)s笔债务"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s笔债务已过还款期限。"
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "告诉我您的支出或收入，任何语言都可以"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "今天买菜 550，打车 80，家教收入 6000"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "今天买菜花了 550，打车 80"
+
+msgid "groceries 550, taxi 80"
+msgstr "买菜 550，打车 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "昨天午饭 250，话费充值 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "午饭 250，充值 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "今天发工资 35000，交房租 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "工资 35000，房租 12000"

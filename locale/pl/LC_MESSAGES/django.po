@@ -1414,3 +1414,27 @@ msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "Dług %(n)s przekroczył termin spłaty."
 msgstr[1] "Długi %(n)s przekroczyły termin spłaty."
 msgstr[2] "Długi %(n)s przekroczyły termin spłaty."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Powiedz mi, co wydałeś lub zarobiłeś, w dowolnym języku"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Dziś zakupy spożywcze 550, taksówka 80, dostałem 6000 za korepetycje"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Dziś wydałem 550 na zakupy i 80 na taksówkę"
+
+msgid "groceries 550, taxi 80"
+msgstr "zakupy 550, taksówka 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Wczoraj obiad 250 i doładowanie telefonu 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "obiad 250, doładowanie 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Dziś dostałem pensję 35000 i zapłaciłem 12000 czynszu"
+
+msgid "salary 35000, rent 12000"
+msgstr "pensja 35000, czynsz 12000"

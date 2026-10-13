@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s borcunun son ödeme tarihi geçti."
 msgstr[1] "%(n)s borçlarının son ödeme tarihi geçti."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Ne harcadığınızı veya kazandığınızı söyleyin, istediğiniz dilde"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Bugün markete 550 harcadım, taksi 80, özel dersten 6000 kazandım"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Bugün markete 550, taksiye 80 harcadım"
+
+msgid "groceries 550, taxi 80"
+msgstr "market 550, taksi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Dün öğle yemeği 250 ve telefon yüklemesi 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "öğle yemeği 250, yükleme 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Bugün 35000 maaşımı aldım ve 12000 kira ödedim"
+
+msgid "salary 35000, rent 12000"
+msgstr "maaş 35000, kira 12000"

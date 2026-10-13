@@ -1414,3 +1414,27 @@ msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "Срок возврата долга %(n)s истек."
 msgstr[1] "Сроки возврата долгов %(n)s истекли."
 msgstr[2] "Сроки возврата долгов %(n)s истекли."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Скажите, что вы потратили или заработали, на любом языке"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Сегодня продукты 550, такси 80, получил 6000 за репетиторство"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Сегодня потратил 550 на продукты и 80 на такси"
+
+msgid "groceries 550, taxi 80"
+msgstr "продукты 550, такси 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Вчера обед 250 и пополнение телефона 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "обед 250, пополнение 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Сегодня получил зарплату 35000 и заплатил 12000 за аренду"
+
+msgid "salary 35000, rent 12000"
+msgstr "зарплата 35000, аренда 12000"

@@ -1398,3 +1398,27 @@ msgstr[0] "%(n)sの借金"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)sの借金は返済期限を過ぎています。"
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "支出や収入を教えてください（どの言語でもOK）"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "今日は食料品 550、タクシー 80、家庭教師で 6000 もらった"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "今日は食料品に 550、タクシーに 80 使った"
+
+msgid "groceries 550, taxi 80"
+msgstr "食料品 550、タクシー 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "昨日のランチ 250 とスマホのチャージ 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "ランチ 250、チャージ 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "今日給料 35000 が入って、家賃 12000 を払った"
+
+msgid "salary 35000, rent 12000"
+msgstr "給料 35000、家賃 12000"

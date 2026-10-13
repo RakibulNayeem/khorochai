@@ -1398,3 +1398,27 @@ msgstr[0] "%(n)s 부채들"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s 부채들의 상환 기한이 지났습니다."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "지출이나 수입을 말해 주세요. 어떤 언어든 괜찮아요"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "오늘 장보기 550, 택시 80, 과외비 6000 받음"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "오늘 장보기에 550, 택시에 80 썼어요"
+
+msgid "groceries 550, taxi 80"
+msgstr "장보기 550, 택시 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "어제 점심 250, 휴대폰 충전 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "점심 250, 충전 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "오늘 월급 35000 받고 월세 12000 냈어요"
+
+msgid "salary 35000, rent 12000"
+msgstr "월급 35000, 월세 12000"

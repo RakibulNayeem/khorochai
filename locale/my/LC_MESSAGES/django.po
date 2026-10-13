@@ -1398,3 +1398,27 @@ msgstr[0] "%(n)s အကြွေးများ"
 msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "%(n)s အကြွေးများသည် ပြန်ပေးရမည့်ရက် ကျော်လွန်သွားပါပြီ။"
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "သင် ဘာသုံးခဲ့သလဲ ဘာရခဲ့သလဲ ပြောပြပါ၊ မည်သည့်ဘာသာစကားဖြင့်မဆို"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "ဒီနေ့ ဈေးဝယ် 550၊ တက္ကစီ 80၊ ကျူရှင်က 6000 ရတယ်"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "ဒီနေ့ ဈေးဝယ် 550 နဲ့ တက္ကစီ 80 သုံးခဲ့တယ်"
+
+msgid "groceries 550, taxi 80"
+msgstr "ဈေးဝယ် 550၊ တက္ကစီ 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "မနေ့က နေ့လယ်စာ 250 နဲ့ ဖုန်းငွေဖြည့် 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "နေ့လယ်စာ 250၊ ငွေဖြည့် 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "ဒီနေ့ လစာ 35000 ရပြီး အိမ်လခ 12000 ပေးခဲ့တယ်"
+
+msgid "salary 35000, rent 12000"
+msgstr "လစာ 35000၊ အိမ်လခ 12000"

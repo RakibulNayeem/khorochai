@@ -1406,3 +1406,27 @@ msgid "%(n)s debt is past its pay-back date."
 msgid_plural "%(n)s debts are past their pay-back date."
 msgstr[0] "Deni la %(n)s limepita tarehe ya kulipwa."
 msgstr[1] "Madeni ya %(n)s yamepita tarehe ya kulipwa."
+
+msgid "Tell me what you spent or earned, in any language"
+msgstr "Niambie ulichotumia au ulichopata, kwa lugha yoyote"
+
+msgid "Spent 550 on groceries today, taxi 80, got 6000 from tutoring"
+msgstr "Leo nimetumia 550 sokoni, teksi 80, nimepata 6000 kwa masomo ya ziada"
+
+msgid "Spent 550 on groceries today and 80 on a taxi"
+msgstr "Leo nimetumia 550 sokoni na 80 kwa teksi"
+
+msgid "groceries 550, taxi 80"
+msgstr "sokoni 550, teksi 80"
+
+msgid "Yesterday lunch 250 and phone top-up 100"
+msgstr "Jana chakula cha mchana 250 na vocha ya simu 100"
+
+msgid "lunch 250, top-up 100"
+msgstr "chakula cha mchana 250, vocha 100"
+
+msgid "Got my salary 35000 today and paid rent 12000"
+msgstr "Leo nimepokea mshahara 35000 na kulipa kodi ya nyumba 12000"
+
+msgid "salary 35000, rent 12000"
+msgstr "mshahara 35000, kodi 12000"
