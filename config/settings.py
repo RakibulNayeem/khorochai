@@ -99,7 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    # passwords from known data breaches (what Chrome warns about) are refused before the account or email is created
+    {"NAME": "tracker.password_validation.BreachedPasswordValidator"},
 ]
+PASSWORD_BREACH_CHECK = not RUNNING_TESTS  # tests never call the internet; they switch it on with a fake response
 
 # Interface language: chosen in Settings and stored in the "django_language" cookie.
 # Translations live in locale/bn/LC_MESSAGES/django.po -> run `python manage.py compile_po` after editing.

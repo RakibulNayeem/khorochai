@@ -1358,6 +1358,15 @@ msgstr "“Paid back” سے اکاؤنٹ سے پیسے نکل جاتے ہیں �
 msgid "No matching debts."
 msgstr "کوئی مطابقت رکھنے والا قرض نہیں ملا۔"
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "یہ پاس ورڈ ڈیٹا لیک میں ظاہر ہو چکا ہے، اس لیے یہ محفوظ نہیں۔ براہ کرم کوئی دوسرا پاس ورڈ منتخب کریں۔"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "آپ کا پاس ورڈ وہ نہیں ہونا چاہیے جو کسی ڈیٹا لیک میں ظاہر ہو چکا ہو۔"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "کم از کم 8 حروف استعمال کریں۔ یہ تمام نمبر نہیں ہو سکتے، آپ کے ای میل سے بہت زیادہ ملتے جلتے نہیں ہو سکتے، اور نہ ہی کوئی عام یا لیک شدہ پاس ورڈ ہو سکتا ہے۔"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI نے %(n)s ٹرانزیکشن تلاش کی۔ جو غلط لگے اسے درست کریں، پھر محفوظ کریں۔"

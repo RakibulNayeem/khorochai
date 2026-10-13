@@ -1358,6 +1358,15 @@ msgstr "“คุ่นเงินคิน” จะหักเงินอ�
 msgid "No matching debts."
 msgstr "ไม่พบหนี้ที่ตรงกัน"
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "รหัสผ่านนี้เคยรั่วไหลจากข้อมูลที่ถูกเจาะระบบ จึงไม่ปลอดภัย โปรดเลือก1รหัสผ่านอื่น"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "รหัสผ่านของคุณต้องไม่ใช่รหัสที่เคยรั่วไหลจากข้อมูลที่ถูกเจาะระบบ"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "ใช้ความยาวอย่างน้อย 8 ตัวอักษร ต้องไม่ใช่ตัวเลขทั้งหมด ไม่คล้ายกับอีเมลของคุณเกินไป หรือเป็นรหัสผ่านที่พบบ่อยหรือรั่วไหล"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI พบ %(n)s รายการ แก้ไขสิ่งที่ผิดพลาด จากนั้นบันทึก"

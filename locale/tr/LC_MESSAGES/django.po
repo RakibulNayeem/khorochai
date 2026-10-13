@@ -1358,6 +1358,15 @@ msgstr "“Geri ödendi” parayı hesaptan çıkarır ve bir gider (Finansal Gi
 msgid "No matching debts."
 msgstr "Eşleşen borç yok."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Bu şifre bir veri ihlalinde yer aldığı için güvenli değil. Lütfen başka bir tane seçin."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Şifreniz bir veri ihlalinde yer almış olanlardan biri olamaz."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "En az 8 karakter kullanın. Tamamen rakamlardan olamaz, e-postanıza çok benzer olamaz veya yaygın/sızdırılmış bir şifre olamaz."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI %(n)s işlem buldu. Yanlış görünen bir şey varsa düzeltin ve kaydedin."

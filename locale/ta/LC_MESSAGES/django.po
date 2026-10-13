@@ -1358,6 +1358,15 @@ msgstr "“Paid back” takes the money out of the account and counts as an expe
 msgid "No matching debts."
 msgstr "பொருத்தமான கடன்கள் எதுவும் இல்லை."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "இந்த கடவுச்சொல் தரவு மீறலில் வெளிவந்துள்ளது, எனவே இது பாதுகாப்பானது அல்ல. தயவுசெய்து வேறு ஒன்றைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "உங்கள் கடவுச்சொல் தரவு மீறலில் வெளிவந்த ஒன்றாக இருக்கக்கூடாது."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "குறைந்தது 8 எழுத்துகளைப் பயன்படுத்தவும். அது முழுவதுமாக எண்களாகவோ, உங்கள் மின்னஞ்சலை ஒத்ததாகவோ, அல்லது பொதுவான அல்லது கசிந்த கடவுச்சொல்லாகவோ இருக்கக்கூடாது."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI %(n)s பரிவர்த்தனையைக் கண்டறிந்தது. தவறாகத் தெரிவதைச் சரிசெய்து, பிறகு சேமிக்கவும்."

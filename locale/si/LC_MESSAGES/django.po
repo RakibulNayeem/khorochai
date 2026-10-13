@@ -1358,6 +1358,15 @@ msgstr "\"ආපසු ගෙවන ලදී\" මගින් ගිණුම�
 msgid "No matching debts."
 msgstr "ගැලපෙන ණය නොමැත."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "මෙම මුンපදය දත්ත උල්ලංඝනයකදී හෙළි වී ඇති බැවින් එය ආරක්ෂිත නැත. කරුණාකර වෙනත් එකක් තෝරන්න."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "ඔබේ මුරපදය දත්ත උල්ලංඝනයකදී හෙළි වූ එකක් විය නොහැක."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "අකුරු 8ක්වත් භාවිතා කරන්න. එය සම්පූර්ණයෙන්ම සංඛ්‍යා වලින් සමන්විත වීම, ඔබේ විද්‍යුත් තැපෑලට අධික ලෙස සමාන වීම හෝ පොදු/කාන්දු වූ මුරපදයක් වීම නොකළ යුතුය."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI විසින් ගනුදෙනුවක් %(n)s සොයා ගන්නා ලදී. වැරදි ලෙස පෙනෙන ඕනෑම දෙයක් නිවැරදි කර සුරකින්න."

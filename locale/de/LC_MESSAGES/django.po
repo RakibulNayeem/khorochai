@@ -1358,6 +1358,15 @@ msgstr "„Zurückgezahlt“ bucht das Geld vom Konto ab und zählt als Ausgabe 
 msgid "No matching debts."
 msgstr "Keine passenden Schulden."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Dieses Passwort wurde bei einem Datenleck gefunden und ist daher unsicher. Bitte wähle ein anderes."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Dein Passwort darf kein solches sein, das bei einem Datenleck aufgetaucht ist."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Verwende mindestens 8 Zeichen. Es darf nicht nur aus Zahlen bestehen, deiner E-Mail zu ähnlich oder ein häufig genutztes bzw. geleaktes Passwort sein."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "Die AI hat %(n)s Transaktion gefunden. Korrigiere alles, was falsch aussieht, und speichere dann."

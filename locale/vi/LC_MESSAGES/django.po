@@ -1358,6 +1358,15 @@ msgstr "“Đã trả lại” sẽ rút tiền khỏi tài khoản và được
 msgid "No matching debts."
 msgstr "Không có khoản nợ phù hợp."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Mật khẩu này đã bị rò rỉ dữ liệu nên không an toàn. Vui lòng chọn mật khẩu khác."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Mật khẩu của bạn không được là mật khẩu đã bị rò rỉ dữ liệu."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Sử dụng ít nhất 8 ký tự. Không được toàn là số, quá giống email của bạn, hoặc là mật khẩu phổ biến hay bị rò rỉ."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI đã tìm thấy %(n)s giao dịch. Chỉnh sửa bất kỳ mục nào sai, rồi lưu."

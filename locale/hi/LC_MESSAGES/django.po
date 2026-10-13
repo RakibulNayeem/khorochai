@@ -1358,6 +1358,15 @@ msgstr "“चुका दिया” विकल्प से खाते �
 msgid "No matching debts."
 msgstr "कोई मेल खाते कर्ज नहीं मिले।"
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "यह पासवर्ड डेटा लीक में सामने आ चुका है, इसलिए यह सुरक्षित नहीं है। कृपया दूसरा चुनें।"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "आपका पासवर्ड वह नहीं हो सकता जो डेटा लीक में सामने आया हो।"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "कम से कम 8 अक्षर का उपयोग करें। यह केवल अंक नहीं हो सकता, आपके ईमेल से मिलता-जुलता नहीं होना चाहिए, या कोई आम/लीक हुआ पासवर्ड नहीं होना चाहिए।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ने %(n)s ट्रांजेक्शन पाया। जो गलत लगे उसे ठीक करें, फिर सेव करें।"

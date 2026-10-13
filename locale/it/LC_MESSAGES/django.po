@@ -1358,6 +1358,15 @@ msgstr "\"Restituito\" preleva il denaro dal conto e lo conteggia come spesa (Sp
 msgid "No matching debts."
 msgstr "Nessun debito corrispondente."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Questa password è comparsa in una violazione di dati, quindi non è sicura. Scegline un'altra."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "La tua password non può essere una di quelle comparse in una violazione di dati."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Usa almeno 8 caratteri. Non può essere composta solo da numeri, essere troppo simile alla tua email o essere una password comune o trapelata."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "L'AI ha trovato %(n)s transazione. Correggi eventuali errori, poi salva."

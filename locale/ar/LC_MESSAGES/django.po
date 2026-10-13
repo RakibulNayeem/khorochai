@@ -1358,6 +1358,15 @@ msgstr "عبارة \"تمت الإعادة\" تخصم الأموال من الح
 msgid "No matching debts."
 msgstr "لا توجد ديون مطابقة."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "كلمة المرور هذه ظهرت في تسريب بيانات سابق، لذا فهي غير آمنة. يرجى اختيار كلمة مرور أخرى."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "لا يمكنك استخدام كلمة مرور ظهرت في تسريب بيانات."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "استخدم 8 أحرف على الأقل. يجب ألا تكون مكونة من أرقام فقط، أو مشابهة جداً لبريدك الإلكتروني، أو كلمة مرور شائعة أو مسربة."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."

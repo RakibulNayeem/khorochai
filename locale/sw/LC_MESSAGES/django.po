@@ -1358,6 +1358,15 @@ msgstr "“Umemlipa” kunatoa pesa kwenye akaunti na kuhesabiwa kama matumizi (
 msgid "No matching debts."
 msgstr "Hakuna madeni yanayofanana."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Nenosiri hili limeonekana katika uvujaji wa data, kwa hiyo si salama. Tafadhali chagua lingine."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Nenosiri lako haliwezi kuwa lile ambalo limeonekana katika uvujaji wa data."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Tumia angalau herufi 8. Isiwe namba zote, inayofanana sana na barua pepe yako, au nenosiri la kawaida au lililovuja."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI imepata muamala %(n)s. Rekebisha chochote kinachoonekana vibaya, kisha hifadhi."

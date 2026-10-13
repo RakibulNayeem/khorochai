@@ -1358,6 +1358,15 @@ msgstr "«Повернуто» списує гроші з рахунку та з
 msgid "No matching debts."
 msgstr "Немає відповідних боргів."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Цей пароль було скомпрометовано в результаті витоку даних, тому він небезпечний. Будь ласка, виберіть інший."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Ваш пароль не повинен бути серед тих, що з'являлися у витоках даних."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Використовуйте щонайменше 8 символів. Він не може складатися лише з цифр, бути занадто схожим на вашу електронну пошту або бути поширеним чи скомпрометованим паролем."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI знайшов %(n)s транзакцію. Виправте те, що виглядає неправильно, і збережіть."

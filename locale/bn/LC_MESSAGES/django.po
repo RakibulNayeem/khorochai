@@ -1435,3 +1435,14 @@ msgstr "“ফেরত দেওয়া হয়েছে” টাকা �
 
 msgid "No matching debts."
 msgstr "মিলে যায় এমন কোনো ধার নেই।"
+
+# ---------------------------------------------------------------- breached passwords
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "এই পাসওয়ার্ডটি আগে কোনো ডেটা ফাঁসে পাওয়া গেছে, তাই এটি নিরাপদ নয়। অন্য একটি পাসওয়ার্ড দিন।"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "ডেটা ফাঁসে পাওয়া গেছে এমন পাসওয়ার্ড ব্যবহার করা যাবে না।"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "অন্তত ৮ অক্ষর দিন। শুধু সংখ্যা, ইমেইলের মতো, অতি সাধারণ বা ফাঁস হওয়া পাসওয়ার্ড চলবে না।"
+

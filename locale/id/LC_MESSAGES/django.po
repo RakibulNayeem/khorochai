@@ -1358,6 +1358,15 @@ msgstr "“Dibayar kembali” mengeluarkan uang dari akun dan dihitung sebagai p
 msgid "No matching debts."
 msgstr "Tidak ada utang yang cocok."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Kata sandi ini telah muncul dalam kebocoran data, jadi tidak aman. Pilih kata sandi lain ya."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Kata sandi Anda tidak boleh menggunakan yang pernah muncul dalam kebocoran data."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Gunakan minimal 8 karakter. Jangan gunakan angka semua, terlalu mirip dengan email Anda, atau kata sandi yang umum atau pernah bocor."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI menemukan %(n)s transaksi. Perbaiki jika ada yang salah, lalu simpan."

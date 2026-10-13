@@ -1358,6 +1358,15 @@ msgstr "گزینه «بازپرداخت» پول را از حساب خارج ک�
 msgid "No matching debts."
 msgstr "هیچ بدهی مطابقت‌داشته‌ای یافت نشد."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "این رمز عبور در یک نشت داده ظاهر شده است، بنابراین امن نیست. لطفاً رمز عبور دیگری انتخاب کنید."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "رمز عبور شما نمی‌تواند همان رمزی باشد که در یک نشت داده ظاهر شده است."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "حداقل از ۸ کاراکتر استفاده کنید. نمی‌تواند فقط شامل اعداد باشد، خیلی شبیه به ایمیل شما باشد، یا یک رمز عبور رایج یا لو رفته باشد."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI تعداد %(n)s تراکنش پیدا کرد. هر چیزی که اشتباه به نظر می‌رسد را اصلاح و سپس ذخیره کنید."

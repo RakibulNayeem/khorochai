@@ -1358,6 +1358,15 @@ msgstr "\"Remboursé\" retire l'argent du compte et compte comme une dépense (D
 msgid "No matching debts."
 msgstr "Aucune dette correspondante."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Ce mot de passe a été compromis lors d'une fuite de données, il n'est donc pas sûr. Veuillez en choisir un autre."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Votre mot de passe ne peut pas être un mot de passe ayant apparu dans une fuite de données."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Utilisez au moins 8 caractères. Il ne peut pas comporter uniquement des chiffres, être trop similaire à votre e-mail, ou s'agir d'un mot de passe courant ou divulgué."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "L'AI a trouvé %(n)s transaction. Corrigez si besoin, puis enregistrez."

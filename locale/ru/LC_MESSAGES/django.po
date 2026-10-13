@@ -1358,6 +1358,15 @@ msgstr "Кнопка «Возвращено» снимает деньги со �
 msgid "No matching debts."
 msgstr "Нет подходящих долгов."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Этот пароль был замечен в утечке данных, поэтому он небезопасен. Пожалуйста, выберите другой."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Ваш пароль не должен быть тем, который уже появлялся в утечках данных."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Используйте не менее 8 символов. Пароль не должен состоять только из цифр, быть слишком похожим на ваш email или быть простым/скомпрометированным."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI нашел %(n)s транзакцию. Исправьте ошибки, если они есть, и сохраните."

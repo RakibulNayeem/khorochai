@@ -1358,6 +1358,15 @@ msgstr "Ang “Binayaran” ay naglalabas ng pera mula sa account at ibinibilang
 msgid "No matching debts."
 msgstr "Walang katugmang utang."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Lumitaw ang password na ito sa isang data breach kaya hindi ito ligtas. Mangyaring pumili ng iba."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Ang iyong password ay hindi maaaring maging ang lumitaw na sa isang data breach."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Gumamit ng kahit 8 character man lang. Hindi ito maaaring puro numero, masyadong katulad ng iyong email, o isang karaniwan o na-leak na password."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "Nakahanap ang AI ng %(n)s na transaksyon. Ayusin ang anumang mali, pagkatapos ay i-save."

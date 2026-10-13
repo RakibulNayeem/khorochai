@@ -1358,6 +1358,15 @@ msgstr "“Terugbetaald” haalt het geld van de rekening en telt als een uitgav
 msgid "No matching debts."
 msgstr "Geen overeenkomende schulden."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Dit wachtwoord is voorgekomen in een datalek en is daarom niet veilig. Kies een ander."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Je wachtwoord mag geen wachtwoord zijn dat in een datalek is voorgekomen."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Gebruik minimaal 8 tekens. Het mag niet alleen uit cijfers bestaan, te veel lijken op je e-mailadres of een veelgebruikt of gelekt wachtwoord zijn."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "De AI heeft %(n)s transactie gevonden. Corrigeer wat er niet klopt en sla op."

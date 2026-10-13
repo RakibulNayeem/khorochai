@@ -1358,6 +1358,15 @@ msgstr "“Devuelto” saca el dinero de la cuenta y cuenta como un gasto (Gasto
 msgid "No matching debts."
 msgstr "No hay deudas coincidentes."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "Esta contraseña ha aparecido en una filtración de datos, por lo que no es segura. Elige otra, por favor."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Tu contraseña no puede ser una que haya aparecido en una filtración de datos."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Usa al menos 8 caracteres. No puede ser solo de números, ni muy parecida a tu correo, ni una contraseña común o filtrada."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "La AI encontró %(n)s transacción. Corrige lo que parezca incorrecto y guarda."

@@ -1358,6 +1358,15 @@ msgstr "„Spłacono” pobiera pieniądze z konta i liczy się jako wydatek (Wy
 msgid "No matching debts."
 msgstr "Brak pasujących długów."
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "To hasło pojawiło się w wycieku danych, więc nie jest bezpieczne. Wybierz inne."
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "Twoje hasło nie może być tym, które pojawiło się w wycieku danych."
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "Użyj co najmniej 8 znaków. Nie może składać się samych cyfr, być zbyt podobne do e-maila ani być powszechnym lub wyciekłym hasłem."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI znalazło %(n)s transakcję. Popraw to, co wygląda na błędne, a następnie zapisz."

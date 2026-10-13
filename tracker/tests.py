@@ -828,3 +828,51 @@ class AskDebtTests(TestCase):
     def test_nobody_matches(self):
         r = self.ask({"debt_direction": "borrowed", "people": ["Nobody"]})
         self.assertContains(r, "No matching debts")
+
+
+class BreachedPasswordTests(TestCase):
+    """A password from a data breach is refused at sign-up, before any account or email is created."""
+
+    def setUp(self):
+        from django.core.cache import cache
+        cache.clear()  # allauth rate-limits sign-ups per address; other tests already used some
+
+    def fake_range(self, password, count):
+        import hashlib
+        digest = hashlib.sha1(password.encode()).hexdigest().upper()
+        resp = mock.Mock(status_code=200, text=f"{'0' * 35}:3\r\n{digest[5:]}:{count}\r\n")
+        resp.raise_for_status = lambda: None
+        return resp
+
+    @override_settings(PASSWORD_BREACH_CHECK=True)
+    def test_breached_password_is_refused_and_no_email_sent(self):
+        with mock.patch("tracker.password_validation.requests.get", return_value=self.fake_range("Password@123", 1763928)) as get:
+            r = self.client.post(reverse("account_signup"), {"email": "new@example.com", "password1": "Password@123",
+                                                             "password2": "Password@123"})
+        self.assertContains(r, "appeared in a data breach")
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertFalse(User.objects.filter(email="new@example.com").exists())
+        self.assertEqual(len(get.call_args[0][0].rsplit("/", 1)[1]), 5)  # only a 5-character hash prefix is sent
+
+    @override_settings(PASSWORD_BREACH_CHECK=True)
+    def test_safe_password_signs_up(self):
+        with mock.patch("tracker.password_validation.requests.get", return_value=self.fake_range("something-else", 9)):
+            r = self.client.post(reverse("account_signup"), {"email": "new@example.com", "password1": "kh0r0ch-zebra-river-91",
+                                                             "password2": "kh0r0ch-zebra-river-91"}, follow=True)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertTrue(User.objects.filter(email="new@example.com").exists())
+
+    @override_settings(PASSWORD_BREACH_CHECK=True)
+    def test_check_down_does_not_block_sign_up(self):
+        import requests as rq
+        with mock.patch("tracker.password_validation.requests.get", side_effect=rq.ConnectionError("down")):
+            self.client.post(reverse("account_signup"), {"email": "new@example.com", "password1": "kh0r0ch-zebra-river-91",
+                                                         "password2": "kh0r0ch-zebra-river-91"})
+        self.assertEqual(len(mail.outbox), 1)
+
+    def test_weak_password_sends_nothing(self):
+        r = self.client.post(reverse("account_signup"), {"email": "nayeem77@example.com", "password1": "nayeem77",
+                                                         "password2": "nayeem77"})
+        self.assertContains(r, "too similar to the email")
+        self.assertEqual(len(mail.outbox), 0)
+        self.assertContains(r, "leaked password")  # the rules are shown up front

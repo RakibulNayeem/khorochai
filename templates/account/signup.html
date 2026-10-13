@@ -10,6 +10,7 @@
   <form method="post" action="{{ action_url }}" class="auth-form" novalidate>
     {% csrf_token %}
     {% element fields form=form %}{% endelement %}
+    <p class="form-text mt-n2 mb-3">{% translate "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password." %}</p>
     {{ redirect_field }}
     <button class="btn btn-brand w-100">{% translate "Sign up" %}</button>
   </form>

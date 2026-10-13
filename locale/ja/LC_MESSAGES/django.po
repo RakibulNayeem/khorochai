@@ -1358,6 +1358,15 @@ msgstr "「返済しました」を選択すると口座からお金が引き落
 msgid "No matching debts."
 msgstr "一致する借入・貸付はありません。"
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "このパスワードはデータ侵害で流出したため、安全ではありません。別のものを選択してください。"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "データ侵害で流出したパスワードは使用できません。"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "8文字以上で入力してください。すべて数字にしたり、メールアドレスと似すぎているもの、よく使われるパスワードや流出したパスワードは使用できません。"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AIが%(n)s件の取引を見つけました。誤りがあれば修正して保存してください。"

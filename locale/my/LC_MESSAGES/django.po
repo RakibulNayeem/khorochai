@@ -1358,6 +1358,15 @@ msgstr "“ပြန်ဆပ်သည်” ဆိုသည်မှာ အက�
 msgid "No matching debts."
 msgstr "ကိုက်ညီသော အကြွေးများ မရှိပါ။"
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "ဤစကားဝှက်သည် ဒေတာပေါက်ကြားမှုတွင် ပါရှိခဲ့ဖူးသဖြင့် မလုံခြုံပါ။ ကျေးဇူးပြု၍ အခြားတစ်ခုကို ရွေးချယ်ပါ။"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "သင့်စကားဝှက်သည် ဒေတာပေါက်ကြားမှုတွင် ပါရှိခဲ့ဖူးသော စကားဝှက် မဖြစ်ရပါ။"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "အနည်းဆုံး စာလုံးရေ ၈ လုံး သုံးပါ။ နံပါတ်ချည်းသက်သက်၊ သင့်အီးမေးလ်နှင့် အလွန်တူနေခြင်း သို့မဟုတ် အများသုံးနှင့် ပေါက်ကြားပြီးသား စကားဝှက် ဖြစ်မနေရပါ။"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI က ငွေစာရင်း %(n)s ခုကို တွေ့ရှိခဲ့ပါတယ်။ မှားနေတာရှိရင် ပြင်ပြီး သိမ်းဆည်းပါ။"

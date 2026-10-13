@@ -1358,6 +1358,15 @@ msgstr "“फिर्ता गरियो” भन्दा खाताब
 msgid "No matching debts."
 msgstr "कुनै मिल्दो ऋण छैन।"
 
+msgid "This password has appeared in a data breach, so it isn't safe. Please choose a different one."
+msgstr "यो पासवर्ड डेटा उल्लंघनमा देखिएको छ, त्यसैले यो सुरक्षित छैन। कृपया अर्को छान्नुहोस्।"
+
+msgid "Your password can't be one that has appeared in a data breach."
+msgstr "तपाईंको पासवर्ड डेटा उल्लंघनमा आएको हुनु हुँदैन।"
+
+msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
+msgstr "कτηमा कम्तीमा ८ वटा अक्षरहरू प्रयोग गर्नुहोस्। यो सबै अंकहरू, तपाईंको इमेलसँग मिल्दोजुल्दो, वा सामान्य वा चुहिएको पासवर्ड हुनु हुँदैन।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ले %(n)s कारोबार फेला पारेको छ। गलत देखिएको कुरा सच्याउनुहोस्, त्यसपछि बचत गर्नुहोस्।"
