@@ -39,10 +39,10 @@ msgid "Transactions"
 msgstr "Транзакции"
 
 msgid "Categories &amp; Budgets"
-msgstr "Категории и бюджеты"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
-msgstr "Спросить ИИ"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "Закрыть"
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI только читает ваш текст; все итоги и балансы рассчитываются приложением на основе ваших сохраненных данных."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "Использование AI имеет ежедневный лимит, который отображается на панели управления. Он сбрасывается в полночь, и вы всегда можете добавить данные вручную."
+msgstr "Использование AI имеет дневной лимит, который указан на главном экране. Он сбрасывается в полночь, и вы всегда можете добавлять записи вручную."
 
 msgid "Never type card numbers or passwords."
 msgstr "Никогда не вводите номера карт или пароли."
@@ -1136,6 +1136,207 @@ msgstr "Валюта"
 msgid "Used for every amount in the app."
 msgstr "Используется для каждой суммы в приложении."
 
+msgid "or"
+msgstr "или"
+
+msgid "Debts"
+msgstr "Долги"
+
+msgid "Owed to me"
+msgstr "Мне должны"
+
+msgid "I owe"
+msgstr "Я должен"
+
+msgid "I borrowed"
+msgstr "Я взял в долг"
+
+msgid "I lent"
+msgstr "Я дал в долг"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Деньги, которые вы дали людям в долг или заняли у них. Выдача денег уменьшает баланс счета, а займ увеличивает его, поэтому балансы остаются верными — но это не считается доходом или расходом. Вы также можете сказать AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Активные"
+
+msgid "Closed"
+msgstr "Закрытые"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Нет закрытых долгов. Долг закрывается автоматически при полном возврате средств."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Нет активных долгов. Никто вам не должен, и вы никому не должны."
+
+msgid "Nothing here."
+msgstr "Здесь ничего нет."
+
+msgid "All debts"
+msgstr "Все долги"
+
+msgid "Owes you"
+msgstr "Должен вам"
+
+msgid "You owe"
+msgstr "Вы должны"
+
+msgid "Paid back"
+msgstr "Возвращено"
+
+msgid "Overdue"
+msgstr "Просрочено"
+
+msgid "Left to pay back"
+msgstr "Осталось вернуть"
+
+msgid "Pay back by"
+msgstr "Вернуть до"
+
+msgid "Record money you got back"
+msgstr "Записать полученный возврат"
+
+msgid "Record money you paid back"
+msgstr "Записать возвращенные деньги"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "«Вернул» добавляет деньги на счет. «Добавить к долгу» используется, когда вы доадаете им в долг."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "«Вернул» снимает деньги со счета. «Добавить к долгу» используется, когда вы больше берете в долг."
+
+msgid "History"
+msgstr "История"
+
+msgid "Lent"
+msgstr "Дано в долг"
+
+msgid "Borrowed"
+msgstr "Взято в долг"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ — это деньги, поступившие на ваш счет, а − — деньги, списанные с него."
+
+msgid "Reopen debt"
+msgstr "Открыть долг заново"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Закрыть этот долг без записи платежа? Используйте это, если долг был прощен или урегулирован иным способом. Баланс не изменится."
+
+msgid "Close without payment"
+msgstr "Закрыть без оплаты"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "Возвращено %(paid)s из %(total)s"
+
+msgid "Got paid back"
+msgstr "Получен возврат"
+
+msgid "I paid back"
+msgstr "Я вернул"
+
+msgid "Person"
+msgstr "Человек"
+
+msgid "left"
+msgstr "осталось"
+
+msgid "Was due %(day)s"
+msgstr "Срок истек %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Срок: %(day)s"
+
+msgid "of %(total)s"
+msgstr "из %(total)s"
+
+msgid "Open"
+msgstr "Открытые"
+
+msgid "e.g. Rahim"
+msgstr "напр., Рахим"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "напр., на телефон, до зарплаты"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Со счета деньги ушли (выдано) или поступили (займ). Баланс изменяется."
+
+msgid "Optional."
+msgstr "Необязательно."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "Дата возврата не может быть раньше даты образования долга."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "Осталось вернуть всего %(left)s."
+
+msgid "Added to debt"
+msgstr "Добавлено в долги"
+
+msgid "The money left or came into this account."
+msgstr "Деньги, которые остались или поступили на этот счет."
+
+msgid "Lend and borrow"
+msgstr "Долги и займы"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Отслеживайте деньги, которые вы дали или взяли в долг. Баланс счетов меняется, но это не учитывается как доход или расход."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "Дано в долг %(amount)s %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "Взято в долг %(amount)s у %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s ничего вам не должен(-на), поэтому платеж на сумму %(amount)s не сохранен."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "Вы ничего не должны %(person)s, поэтому платеж %(amount)s не был сохранен."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s вернул(-а) вам %(amount)s."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Вы вернули %(person)s %(amount)s."
+
+msgid "Debt saved."
+msgstr "Долг сохранен."
+
+msgid "Add debt"
+msgstr "Добавить долг"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Полностью возвращено. Долг закрыт."
+
+msgid "Saved. %(left)s left."
+msgstr "Сохранено. Осталось: %(left)s."
+
+msgid "Debt updated."
+msgstr "Долг обновлен."
+
+msgid "Edit debt"
+msgstr "Изменить долг"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Долг удален. Платежи по нему также были удалены."
+
+msgid "Debt closed."
+msgstr "Долг закрыт."
+
+msgid "Debt reopened."
+msgstr "Долг открыт заново."
+
+msgid "Payment updated."
+msgstr "Платеж обновлен."
+
+msgid "Edit payment"
+msgstr "Изменить платеж"
+
+msgid "Payment deleted."
+msgstr "Платеж удален."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI нашел %(n)s транзакцию. Исправьте ошибки, если они есть, и сохраните."
@@ -1166,5 +1367,20 @@ msgstr[0] "Ваш пароль должен содержать не менее %
 msgstr[1] "Ваш пароль должен содержать не менее %(min_length)d символов."
 msgstr[2] "Ваш пароль должен содержать не менее %(min_length)d символов."
 
-msgid "or"
-msgstr "или"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "Просрочено: %(n)s"
+msgstr[1] "Просрочено: %(n)s"
+msgstr[2] "Просрочено: %(n)s"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "Долг: %(n)s"
+msgstr[1] "Долги: %(n)s"
+msgstr[2] "Долги: %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "Срок возврата долга %(n)s истек."
+msgstr[1] "Сроки возврата долгов %(n)s истекли."
+msgstr[2] "Сроки возврата долгов %(n)s истекли."

@@ -16,6 +16,17 @@
         <a href="{% url 'transfer_edit' t.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
       </td>
     </tr>
+    {% elif t.is_debt %}
+    <tr class="debt-row">
+      <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>
+      <td class="text-nowrap"><span class="debt-tag">⇆ {% if t.is_record %}{% if t.kind == "repay" %}{% if t.debt.is_lent %}{% translate "Got paid back" %}{% else %}{% translate "I paid back" %}{% endif %}{% else %}{% if t.debt.is_lent %}{% translate "Lent" %}{% else %}{% translate "Borrowed" %}{% endif %}{% endif %}{% else %}{% if t.is_lent %}{% translate "Lent" %}{% else %}{% translate "Borrowed" %}{% endif %}{% endif %}</span></td>
+      <td class="small text-nowrap d-none d-sm-table-cell">{% if t.account %}{{ t.account }}{% else %}<span class="text-muted">—</span>{% endif %}</td>
+      <td class="small"><span data-keep-digits>{{ t.person }}</span>{% if t.note %} · <span class="text-muted" data-keep-digits>{{ t.note }}</span>{% endif %}</td>
+      <td class="amount text-end fw-semibold text-muted text-nowrap">{% if t.flow > 0 %}+{% else %}−{% endif %}{{ t.amount|money }}</td>
+      <td class="text-end text-nowrap">
+        <a href="{% url 'debt_detail' t.debt.pk %}" class="btn btn-sm btn-link px-1">{% translate "Open" %}</a>
+      </td>
+    </tr>
     {% else %}
     <tr>
       <td class="text-nowrap small">{{ t.date|date:"d M" }}</td>

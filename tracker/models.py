@@ -149,3 +149,87 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user} ({self.currency})"
+
+
+# ---------------------------------------------------------------- debts (money lent to / borrowed from people)
+LENT, BORROWED = "lent", "borrowed"
+DEBT_DIRECTION_CHOICES = [(LENT, _("I lent")), (BORROWED, _("I borrowed"))]
+REPAY, INCREASE = "repay", "increase"
+DEBT_RECORD_CHOICES = [(REPAY, _("Paid back")), (INCREASE, _("Added to debt"))]
+DEBT = "debt"          # used by the lists for debt rows
+# AI preview only: the four kinds of debt sentence
+LEND, BORROW, COLLECT, REPAY_DEBT = "lend", "borrow", "collect", "repay"
+DEBT_AI_TYPES = (LEND, BORROW, COLLECT, REPAY_DEBT)
+
+
+class Debt(models.Model):
+    """Money lent to someone or borrowed from someone. Not income or expense: it only moves money in or
+    out of an account until it is paid back. Remaining = amount + increases - repayments."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="debts")
+    direction = models.CharField(max_length=10, choices=DEBT_DIRECTION_CHOICES)
+    person = models.CharField(max_length=60)
+    amount = models.DecimalField(max_digits=12, decimal_places=2)
+    account = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True, related_name="debts",
+                                help_text=_("The money left or came into this account."))
+    date = models.DateField(default=timezone.localdate)
+    due_date = models.DateField(null=True, blank=True)
+    note = models.CharField(max_length=255, blank=True)
+    closed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    is_transfer = False
+    is_debt = True
+    is_record = False
+    type = DEBT
+
+    class Meta:
+        ordering = ["-date", "-created_at"]
+        indexes = [models.Index(fields=["user", "closed"])]
+
+    def __str__(self):
+        return f"{self.get_direction_display()} {self.person} {self.amount}"
+
+    @property
+    def is_lent(self):
+        return self.direction == LENT
+
+    @property
+    def flow(self):
+        """+1 when this row brought money into the account, -1 when money left it."""
+        return -1 if self.is_lent else 1
+
+    @property
+    def debt(self):
+        return self
+
+
+class DebtRecord(models.Model):
+    """A later event on a debt: (part of) it paid back, or more lent/borrowed."""
+    debt = models.ForeignKey(Debt, on_delete=models.CASCADE, related_name="records")
+    kind = models.CharField(max_length=10, choices=DEBT_RECORD_CHOICES, default=REPAY)
+    amount = models.DecimalField(max_digits=12, decimal_places=2)
+    account = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True, related_name="debt_records")
+    date = models.DateField(default=timezone.localdate)
+    note = models.CharField(max_length=255, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    is_transfer = False
+    is_debt = True
+    is_record = True
+    type = DEBT
+
+    class Meta:
+        ordering = ["-date", "-created_at"]
+
+    def __str__(self):
+        return f"{self.get_kind_display()} {self.amount} ({self.debt.person})"
+
+    @property
+    def person(self):
+        return self.debt.person
+
+    @property
+    def flow(self):
+        # a repayment on money I lent comes in; on money I borrowed it goes out. An increase is the opposite.
+        sign = 1 if self.debt.is_lent else -1
+        return sign if self.kind == REPAY else -sign

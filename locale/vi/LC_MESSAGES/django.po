@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "Danh mục &amp; Ngân sách"
 
 msgid "Ask AI"
-msgstr "Hỏi AI"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "Đóng"
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI chỉ đọc văn bản của bạn; mọi tổng số và số dư đều được ứng dụng tính toán từ dữ liệu đã lưu."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI có hạn mức sử dụng hàng ngày, được hiển thị trên bảng điều khiển. Hạn mức này sẽ đặt lại vào lúc nửa đêm và bạn luôn có thể thêm các mục theo cách thủ công."
+msgstr "Sử dụng AI có hạn mức hàng ngày, được hiển thị trên bảng điều khiển. Hạn mức làm mới vào lúc nửa đêm và bạn luôn có thể nhập thủ công."
 
 msgid "Never type card numbers or passwords."
 msgstr "Không bao giờ nhập số thẻ hoặc mật khẩu."
@@ -1136,6 +1136,207 @@ msgstr "Tiền tệ"
 msgid "Used for every amount in the app."
 msgstr "Được sử dụng cho mọi số tiền trong ứng dụng."
 
+msgid "or"
+msgstr "hoặc"
+
+msgid "Debts"
+msgstr "Khoản nợ"
+
+msgid "Owed to me"
+msgstr "Người khác nợ tôi"
+
+msgid "I owe"
+msgstr "Tôi nợ"
+
+msgid "I borrowed"
+msgstr "Tôi đã mượn"
+
+msgid "I lent"
+msgstr "Tôi đã cho mượn"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Đang hoạt động"
+
+msgid "Closed"
+msgstr "Đã đóng"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Chưa có khoản nợ nào đóng. Khoản nợ sẽ tự động đóng khi được trả hết."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Không có khoản nợ nào đang hoạt động. Không ai nợ bạn và bạn không nợ ai."
+
+msgid "Nothing here."
+msgstr "Không có gì ở đây."
+
+msgid "All debts"
+msgstr "Tất cả khoản nợ"
+
+msgid "Owes you"
+msgstr "Nợ bạn"
+
+msgid "You owe"
+msgstr "Bạn nợ"
+
+msgid "Paid back"
+msgstr "Đã trả lại"
+
+msgid "Overdue"
+msgstr "Quá hạn"
+
+msgid "Left to pay back"
+msgstr "Còn lại phải trả"
+
+msgid "Pay back by"
+msgstr "Trả lại trước"
+
+msgid "Record money you got back"
+msgstr "Ghi nhận tiền bạn đã nhận lại"
+
+msgid "Record money you paid back"
+msgstr "Ghi nhận tiền bạn đã trả lại"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"Đã trả lại\" sẽ cộng tiền vào tài khoản. \"Thêm vào khoản nợ\" là khi bạn cho họ vay thêm."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"Đã trả lại\" sẽ trừ tiền khỏi tài khoản. \"Thêm vào khoản nợ\" là khi bạn mượn thêm."
+
+msgid "History"
+msgstr "Lịch sử"
+
+msgid "Lent"
+msgstr "Đã cho mượn"
+
+msgid "Borrowed"
+msgstr "Đã mượn"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ là tiền vào tài khoản, − là tiền ra khỏi tài khoản."
+
+msgid "Reopen debt"
+msgstr "Mở lại khoản nợ"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Đóng khoản nợ này mà không ghi nhận thanh toán? Sử dụng tính năng này nếu khoản nợ được xóa hoặc giải quyết bằng cách khác. Số dư sẽ không thay đổi."
+
+msgid "Close without payment"
+msgstr "Đóng không cần thanh toán"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "Đã trả lại %(paid)s trong tổng số %(total)s"
+
+msgid "Got paid back"
+msgstr "Đã nhận lại tiền"
+
+msgid "I paid back"
+msgstr "Tôi đã trả lại"
+
+msgid "Person"
+msgstr "Người"
+
+msgid "left"
+msgstr "còn lại"
+
+msgid "Was due %(day)s"
+msgstr "Đến hạn vào %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Hạn chót %(day)s"
+
+msgid "of %(total)s"
+msgstr "trong tổng số %(total)s"
+
+msgid "Open"
+msgstr "Mở"
+
+msgid "e.g. Rahim"
+msgstr "ví dụ: Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "ví dụ: tiền điện thoại, cho đến ngày nhận lương"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Nơi tiền đi ra (cho vay) hoặc đi vào (đi mượn). Số dư của tài khoản này sẽ thay đổi."
+
+msgid "Optional."
+msgstr "Không bắt buộc."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "Ngày trả không thể trước ngày ghi nợ."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "Chỉ còn lại %(left)s để trả."
+
+msgid "Added to debt"
+msgstr "Đã thêm vào khoản nợ"
+
+msgid "The money left or came into this account."
+msgstr "Số tiền đã rời đi hoặc đi vào tài khoản này."
+
+msgid "Lend and borrow"
+msgstr "Cho mượn và mượn"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Theo dõi tiền bạn cho mượn hoặc đã mượn. Số dư tài khoản thay đổi, nhưng không được tính là thu nhập hoặc chi phí."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "Đã cho %(person)s mượn %(amount)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "Đã mượn %(amount)s từ %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s không nợ bạn gì cả, nên khoản thanh toán %(amount)s chưa được lưu."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "Bạn không nợ %(person)s khoản nào, nên khoản thanh toán %(amount)s đã không được lưu."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s đã trả lại bạn %(amount)s."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Bạn đã trả lại cho %(person)s số tiền %(amount)s."
+
+msgid "Debt saved."
+msgstr "Đã lưu khoản nợ."
+
+msgid "Add debt"
+msgstr "Thêm khoản nợ"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Đã trả hết. Khoản nợ đã được đóng."
+
+msgid "Saved. %(left)s left."
+msgstr "Đã lưu. Còn lại %(left)s."
+
+msgid "Debt updated."
+msgstr "Đã cập nhật khoản nợ."
+
+msgid "Edit debt"
+msgstr "Sửa khoản nợ"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Đã xóa khoản nợ. Các khoản thanh toán của nó cũng đã bị xóa."
+
+msgid "Debt closed."
+msgstr "Đã đóng khoản nợ."
+
+msgid "Debt reopened."
+msgstr "Đã mở lại khoản nợ."
+
+msgid "Payment updated."
+msgstr "Đã cập nhật thanh toán."
+
+msgid "Edit payment"
+msgstr "Sửa thanh toán"
+
+msgid "Payment deleted."
+msgstr "Đã xóa thanh toán."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI đã tìm thấy %(n)s giao dịch. Chỉnh sửa bất kỳ mục nào sai, rồi lưu."
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Mật khẩu của bạn phải chứa ít nhất %(min_length)d ký tự."
 
-msgid "or"
-msgstr "hoặc"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s quá hạn"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s khoản nợ"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s khoản nợ đã quá hạn thanh toán."

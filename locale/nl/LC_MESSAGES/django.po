@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "Categorieën &amp; Budgetten"
 
 msgid "Ask AI"
-msgstr "Vraag het AI"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "Sluiten"
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "De AI leest alleen je tekst; elk totaal en saldo wordt door de app berekend op basis van je opgeslagen gegevens."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI-gebruik heeft een dagelijks limiet, zichtbaar op het dashboard. Dit wordt om middernacht gereset en je kunt altijd handmatig zaken toevoegen."
+msgstr "AI-gebruik heeft een dagelijks limiet, te zien op het dashboard. Dit wordt om middernacht gereset en je kunt dingen altijd handmatig toevoegen."
 
 msgid "Never type card numbers or passwords."
 msgstr "Typ nooit kaartnummers of wachtwoorden in."
@@ -1136,6 +1136,207 @@ msgstr "Valuta"
 msgid "Used for every amount in the app."
 msgstr "Wordt gebruikt voor elk bedrag in de app."
 
+msgid "or"
+msgstr "of"
+
+msgid "Debts"
+msgstr "Schulden"
+
+msgid "Owed to me"
+msgstr "Te goed van mij"
+
+msgid "I owe"
+msgstr "Ik ben verschuldigd"
+
+msgid "I borrowed"
+msgstr "Ik heb geleend"
+
+msgid "I lent"
+msgstr "Ik heb uitgeleend"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Geld dat je aan mensen hebt uitgeleend of van ze hebt geleend. Uitlenen haalt geld van een rekening en lenen zet het erop, zodat saldi kloppen — maar het telt niet als inkomen of uitgave. Je kunt de AI ook vertellen: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Actief"
+
+msgid "Closed"
+msgstr "Gesloten"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Nog geen gesloten schulden. Een schuld sluit vanzelf wanneer deze volledig is terugbetaald."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Geen actieve schulden. Niemand is je iets verschuldigd en jij bent niemand iets verschuldigd."
+
+msgid "Nothing here."
+msgstr "Hier is niets."
+
+msgid "All debts"
+msgstr "Alle schulden"
+
+msgid "Owes you"
+msgstr "Is jou verschuldigd"
+
+msgid "You owe"
+msgstr "Je bent verschuldigd"
+
+msgid "Paid back"
+msgstr "Terugbetaald"
+
+msgid "Overdue"
+msgstr "Te laat"
+
+msgid "Left to pay back"
+msgstr "Nog te betalen"
+
+msgid "Pay back by"
+msgstr "Terugbetalen vóór"
+
+msgid "Record money you got back"
+msgstr "Ontvangen geld registreren"
+
+msgid "Record money you paid back"
+msgstr "Terugbetaald geld registreren"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“Terugbetaald” voegt het geld toe aan de rekening. “Toegevoegd aan schuld” is wanneer je ze meer leent."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“Terugbetaald” haalt het geld van de rekening. “Toegevoegd aan schuld” is wanneer je meer leent."
+
+msgid "History"
+msgstr "Geschiedenis"
+
+msgid "Lent"
+msgstr "Uitgeleend"
+
+msgid "Borrowed"
+msgstr "Geleend"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ is geld dat op je rekening is binnengekomen, − is geld dat ervan is afgegaan."
+
+msgid "Reopen debt"
+msgstr "Schuld heropenen"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Deze schuld sluiten zonder een betaling te registreren? Gebruik dit als het is kwijtgescholden of op een andere manier is opgelost. Saldi veranderen niet."
+
+msgid "Close without payment"
+msgstr "Sluiten zonder betaling"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(paid)s van %(total)s terugbetaald"
+
+msgid "Got paid back"
+msgstr "Teruggekregen"
+
+msgid "I paid back"
+msgstr "Ik heb terugbetaald"
+
+msgid "Person"
+msgstr "Persoon"
+
+msgid "left"
+msgstr "over"
+
+msgid "Was due %(day)s"
+msgstr "Was verschuldigd op %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Vervalt op %(day)s"
+
+msgid "of %(total)s"
+msgstr "van %(total)s"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "e.g. Rahim"
+msgstr "bijv. Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "bijv. voor zijn telefoon, tot salarisdag"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Waar het geld vandaan kwam (uitgeleend) of naartoe ging (geleend). Het saldo verandert."
+
+msgid "Optional."
+msgstr "Optioneel."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "De terugbetaaldatum kan niet voor de datum van de schuld liggen."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "Er hoeft slechts %(left)s te worden terugbetaald."
+
+msgid "Added to debt"
+msgstr "Toegevoegd aan schuld"
+
+msgid "The money left or came into this account."
+msgstr "Het geld dat van of naar deze rekening is gegaan."
+
+msgid "Lend and borrow"
+msgstr "Uitlenen en lenen"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Houd geld bij dat je hebt uitgeleend of geleend. Accountsaldi veranderen, maar het telt niet als inkomen of uitgave."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(amount)s uitgeleend aan %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(amount)s geleend van %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s is je niets verschuldigd, dus de betaling van %(amount)s is niet opgeslagen."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "Je bent %(person)s niets verschuldigd, dus de betaling van %(amount)s is niet opgeslagen."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s heeft je %(amount)s terugbetaald."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Je hebt %(person)s %(amount)s terugbetaald."
+
+msgid "Debt saved."
+msgstr "Schuld opgeslagen."
+
+msgid "Add debt"
+msgstr "Schuld toevoegen"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Volledig terugbetaald. De schuld is gesloten."
+
+msgid "Saved. %(left)s left."
+msgstr "Opgeslagen. %(left)s over."
+
+msgid "Debt updated."
+msgstr "Schuld bijgewerkt."
+
+msgid "Edit debt"
+msgstr "Schuld bewerken"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Schuld verwijderd. De bijbehorende betalingen zijn ook verwijderd."
+
+msgid "Debt closed."
+msgstr "Schuld gesloten."
+
+msgid "Debt reopened."
+msgstr "Schuld heropend."
+
+msgid "Payment updated."
+msgstr "Betaling bijgewerkt."
+
+msgid "Edit payment"
+msgstr "Betaling bewerken"
+
+msgid "Payment deleted."
+msgstr "Betaling verwijderd."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "De AI heeft %(n)s transactie gevonden. Corrigeer wat er niet klopt en sla op."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Je wachtwoord moet ten minste %(min_length)d teken bevatten."
 msgstr[1] "Je wachtwoord moet ten minste %(min_length)d tekens bevatten."
 
-msgid "or"
-msgstr "of"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s te laat"
+msgstr[1] "%(n)s te laat"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s schuld"
+msgstr[1] "%(n)s schulden"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s schuld is over de terugbetaaldatum heen."
+msgstr[1] "%(n)s schulden zijn over hun terugbetaaldatum heen."

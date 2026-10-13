@@ -630,7 +630,7 @@ msgid "AI usage today"
 msgstr "Matumizi ya AI leo"
 
 msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
-msgstr "Umetumia 100% ya posho yako ya AI ya leo. Itawekwa upya saa sita usiku. Bado unaweza kuongeza miamala wewe mwenyewe."
+msgstr "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
 
 msgid "Email"
 msgstr "Barua pepe"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI inasoma maandishi yako tu; kila jumla na salio huhesabiwa na programu kutoka kwa data uliyohifadhi."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "Matumizi ya AI yana kiasi cha kila siku, kinachoonekana kwenye dashibodi. Hujirekebisha saa sita usiku, na unaweza kuongeza vitu mwenyewe wakati wowote."
+msgstr "Matumizi ya AI yana kikomo cha kila siku, kinachoonyeshwa kwenye dashibodi. Kinawekwa upya usiku wa manane, na unaweza kuongeza vitu mwenyewe wakati wowote."
 
 msgid "Never type card numbers or passwords."
-msgstr "Usiwahi kuandika namba za kadi au nywila."
+msgstr "Wakati wote usiandike namba za kadi au nywila."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Badilisha mandhari, lugha na jina lako la mtumiaji kutoka kwenye menyu iliyo juu kulia."
@@ -1136,6 +1136,207 @@ msgstr "Sarafu"
 msgid "Used for every amount in the app."
 msgstr "Inatumika kwa kila kiasi kwenye programu."
 
+msgid "or"
+msgstr "au"
+
+msgid "Debts"
+msgstr "Madeni"
+
+msgid "Owed to me"
+msgstr "Wanadaiwa mimi"
+
+msgid "I owe"
+msgstr "Nina deni"
+
+msgid "I borrowed"
+msgstr "Nilikopa"
+
+msgid "I lent"
+msgstr "Nilikopesha"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Hai"
+
+msgid "Closed"
+msgstr "Limefungwa"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Hakuna madeni yaliyofungwa bado. Deni hufungwa lenyewe linapolipwa kikamilifu."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Hakuna madeni hai. Hakuna anayekudai na wewe humdai mtu."
+
+msgid "Nothing here."
+msgstr "Hakuna kitu hapa."
+
+msgid "All debts"
+msgstr "Madeni yote"
+
+msgid "Owes you"
+msgstr "Anakudai"
+
+msgid "You owe"
+msgstr "Unadaiwa"
+
+msgid "Paid back"
+msgstr "Imelipwa"
+
+msgid "Overdue"
+msgstr "Limechelewa"
+
+msgid "Left to pay back"
+msgstr "Kiasi kilichobaki kulipa"
+
+msgid "Pay back by"
+msgstr "Lipa kufikia"
+
+msgid "Record money you got back"
+msgstr "Rekodi pesa ulizorudishiwa"
+
+msgid "Record money you paid back"
+msgstr "Rekodi pesa ulizolipa"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"Imelipwa\" inaongeza pesa kwenye akaunti. \"Imeongezwa kwenye deni\" ni pale unapowakopesha zaidi."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"Imelipwa\" inapunguza pesa kutoka kwenye akaunti. \"Imeongezwa kwenye deni\" ni pale unapokopa zaidi."
+
+msgid "History"
+msgstr "Historia"
+
+msgid "Lent"
+msgstr "Imekopeshwa"
+
+msgid "Borrowed"
+msgstr "Kukopa"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ ni pesa iliyoingia kwenye akaunti yako, − ni pesa iliyotoka."
+
+msgid "Reopen debt"
+msgstr "Fungua tena deni"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Funga deni hili bila kurekodi malipo? Tumia hii ikiwa imesamehewa au kutatuliwa kwa njia nyingine. Salio halitabadilika."
+
+msgid "Close without payment"
+msgstr "Funga bila malipo"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(paid)s kati ya %(total)s imelipwa"
+
+msgid "Got paid back"
+msgstr "Umerejeshewa pesa"
+
+msgid "I paid back"
+msgstr "Nimelipa"
+
+msgid "Person"
+msgstr "Mtu"
+
+msgid "left"
+msgstr "imebaki"
+
+msgid "Was due %(day)s"
+msgstr "Ilitakiwa kulipwa %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Linatakiwa %(day)s"
+
+msgid "of %(total)s"
+msgstr "ya %(total)s"
+
+msgid "Open"
+msgstr "Wazi"
+
+msgid "e.g. Rahim"
+msgstr "k.m. Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "k.m. kwa ajili ya simu yake, hadi siku ya mshahara"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Ambako pesa zilitoka (kopesha) au ziliingia (kopa). Salio lake linabadilika."
+
+msgid "Optional."
+msgstr "Si lazima."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "Tarehe ya kulipa haiwezi kuwa kabla ya tarehe ya deni."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "%(left)s tu ndiyo imebaki kulipwa."
+
+msgid "Added to debt"
+msgstr "Limeongezwa kwenye deni"
+
+msgid "The money left or came into this account."
+msgstr "Pesa iliyobaki au kuingia kwenye akaunti hii."
+
+msgid "Lend and borrow"
+msgstr "Kopesha na ukope"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Fuatilia pesa ulizokopesha au kukopa. Salio la akaunti linabadilika, lakini halijahesabiwa kama mapato au matumizi."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "Umemkopesha %(amount)s %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "Umekopa %(amount)s kutoka kwa %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "Huna deni lolote kwa %(person)s, kwa hiyo malipo ya %(amount)s hayakuhifadhiwa."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s kakulipa %(amount)s."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Umemlipa %(person)s kiasi cha %(amount)s."
+
+msgid "Debt saved."
+msgstr "Deni limehifadhiwa."
+
+msgid "Add debt"
+msgstr "Ongeza deni"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Limelipwa kikamilifu. Deni limefungwa."
+
+msgid "Saved. %(left)s left."
+msgstr "Imehifadhiwa. %(left)s imebaki."
+
+msgid "Debt updated."
+msgstr "Deni limesasishwa."
+
+msgid "Edit debt"
+msgstr "Hariri deni"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Deni limefutwa. Malipo yake yameondolewa pia."
+
+msgid "Debt closed."
+msgstr "Deni limefungwa."
+
+msgid "Debt reopened."
+msgstr "Deni limefunguliwa tena."
+
+msgid "Payment updated."
+msgstr "Malipo yamesasishwa."
+
+msgid "Edit payment"
+msgstr "Hariri malipo"
+
+msgid "Payment deleted."
+msgstr "Malipo yamefutwa."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI imepata muamala %(n)s. Rekebisha chochote kinachoonekana vibaya, kisha hifadhi."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Nenosiri lako lazima liwe na angalau herufi %(min_length)d."
 msgstr[1] "Nenosiri lako lazima liwe na angalau herufi %(min_length)d."
 
-msgid "or"
-msgstr "au"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s limechelewa"
+msgstr[1] "%(n)s limechelewa"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "Deni la %(n)s"
+msgstr[1] "Madeni ya %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "Deni la %(n)s limepita tarehe ya kulipwa."
+msgstr[1] "Madeni ya %(n)s yamepita tarehe ya kulipwa."

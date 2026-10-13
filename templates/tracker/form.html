@@ -11,11 +11,19 @@
       {% for field in form %}
         <div class="mb-3">
           <label class="form-label small fw-semibold" for="{{ field.id_for_label }}">{{ field.label }}</label>
-          {{ field }}
+          {% if field.name == "direction" %}
+          <div class="btn-group w-100 direction-toggle" role="group" id="{{ field.id_for_label }}">
+            {% for choice in field %}
+            <input type="radio" class="btn-check" name="{{ field.html_name }}" id="{{ choice.id_for_label }}" value="{{ choice.data.value }}" autocomplete="off"{% if choice.data.selected %} checked{% endif %}>
+            <label class="btn btn-outline-secondary" for="{{ choice.id_for_label }}">{{ choice.choice_label }}</label>
+            {% endfor %}
+          </div>
+          {% else %}{{ field }}{% endif %}
           {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
           {% for e in field.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
         </div>
       {% endfor %}
+      {% if people %}<datalist id="people">{% for p in people %}<option value="{{ p }}">{% endfor %}</datalist>{% endif %}
       <div class="d-flex gap-2">
         <button class="btn btn-brand px-4">{% translate "Save" %}</button>
         <a href="javascript:history.back()" class="btn btn-outline-secondary">{% translate "Cancel" %}</a>

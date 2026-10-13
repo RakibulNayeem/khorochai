@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "카테고리 &amp; 예산"
 
 msgid "Ask AI"
-msgstr "AI에게 묻기"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "닫기"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI는 텍스트만 읽습니다. 모든 합계와 잔액은 저장된 데이터를 바탕으로 앱이 계산합니다."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI 사용에는 일일 한도가 있으며 대시보드에서 확인할 수 있습니다. 자정에 초기화되며 언제든지 수동으로 항목을 추가할 수 있습니다."
+msgstr "AI 사용량에는 대시보드에 표시되는 일일 한도가 있습니다. 자정에 재설정되며, 언제든지 직접 항목을 추가할 수 있습니다."
 
 msgid "Never type card numbers or passwords."
-msgstr "카드 번호나 비밀번호는 절대 입력하지 마세요."
+msgstr "절대 카드 번호나 비밀번호를 입력하지 마세요."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "우측 상단 메뉴에서 테마, 언어, 사용자 이름을 변경하세요."
@@ -1136,6 +1136,207 @@ msgstr "통화"
 msgid "Used for every amount in the app."
 msgstr "앱 내 모든 금액에 사용됩니다."
 
+msgid "or"
+msgstr "또는"
+
+msgid "Debts"
+msgstr "부채"
+
+msgid "Owed to me"
+msgstr "내가 받을 돈"
+
+msgid "I owe"
+msgstr "내가 갚을 돈"
+
+msgid "I borrowed"
+msgstr "빌린 돈"
+
+msgid "I lent"
+msgstr "빌려준 돈"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "사람들에게 빌려주거나 빌린 돈입니다. 빌려주면 계좌에서 돈이 나가고 빌리면 들어오므로 잔액이 정확히 유지되지만, 수입이나 지출로 집계되지는 않습니다. AI에게 다음과 같이 말할 수도 있습니다: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "활성"
+
+msgid "Closed"
+msgstr "마감됨"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "마감된 부채가 없습니다. 부채는 모두 상환되면 자동으로 마감됩니다."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "활성 부채가 없습니다. 받을 돈도 갚을 돈도 없습니다."
+
+msgid "Nothing here."
+msgstr "항목이 없습니다."
+
+msgid "All debts"
+msgstr "모든 부채"
+
+msgid "Owes you"
+msgstr "나에게 빚짐"
+
+msgid "You owe"
+msgstr "빌린 돈"
+
+msgid "Paid back"
+msgstr "상환됨"
+
+msgid "Overdue"
+msgstr "연체됨"
+
+msgid "Left to pay back"
+msgstr "남은 상환 금액"
+
+msgid "Pay back by"
+msgstr "상환 기한:"
+
+msgid "Record money you got back"
+msgstr "돌려받은 돈 기록"
+
+msgid "Record money you paid back"
+msgstr "갚은 돈 기록"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "‘상환됨’은 계좌에 돈을 더하고, ‘부채에 추가’는 돈을 더 빌려줄 때 사용합니다."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "‘상환됨’은 계좌에서 돈이 나가고, ‘부채에 추가’는 돈을 더 빌릴 때 사용합니다."
+
+msgid "History"
+msgstr "기록"
+
+msgid "Lent"
+msgstr "빌려줌"
+
+msgid "Borrowed"
+msgstr "빌림"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+는 계좌에 들어온 돈, −는 계좌에서 나간 돈입니다."
+
+msgid "Reopen debt"
+msgstr "부채 다시 열기"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "상환 기록 없이 이 부채를 마감하시겠습니까? 탕감되었거나 다른 방법으로 해결된 경우에 사용하세요. 잔액은 변경되지 않습니다."
+
+msgid "Close without payment"
+msgstr "상환 없이 마감"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "총 %(total)s 중 %(paid)s 상환됨"
+
+msgid "Got paid back"
+msgstr "상환 받음"
+
+msgid "I paid back"
+msgstr "상환함"
+
+msgid "Person"
+msgstr "사람"
+
+msgid "left"
+msgstr "남음"
+
+msgid "Was due %(day)s"
+msgstr "%(day)s 마감 예정"
+
+msgid "Due %(day)s"
+msgstr "%(day)s 마감"
+
+msgid "of %(total)s"
+msgstr "총 %(total)s 중"
+
+msgid "Open"
+msgstr "열기"
+
+msgid "e.g. Rahim"
+msgstr "예: 라힘"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "예: 핸드폰 값, 월급날까지"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "돈이 나간 곳(빌려줌) 또는 들어온 곳(빌림). 잔액이 변경됩니다."
+
+msgid "Optional."
+msgstr "선택 사항입니다."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "상환일은 부채 발생일보다 빠를 수 없습니다."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "%(left)s만 남았습니다."
+
+msgid "Added to debt"
+msgstr "부채에 추가됨"
+
+msgid "The money left or came into this account."
+msgstr "이 계좌로 들어오거나 나간 금액입니다."
+
+msgid "Lend and borrow"
+msgstr "빌려주기 및 빌리기"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "빌려주거나 빌린 돈을 관리하세요. 계좌 잔액은 변경되지만 수입이나 지출로 집계되지 않습니다."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s님에게 %(amount)s를 빌려주었습니다."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s님에게 %(amount)s를 빌렸습니다."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s님에게 갚을 돈이 없으므로 %(amount)s 상환이 저장되지 않았습니다."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s님에게 갚을 돈이 없으므로 %(amount)s 상환이 저장되지 않았습니다."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s님이 %(amount)s를 갚았습니다."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "%(person)s님에게 %(amount)s를 상환했습니다."
+
+msgid "Debt saved."
+msgstr "부채가 저장되었습니다."
+
+msgid "Add debt"
+msgstr "부채 추가"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "모두 상환되었습니다. 부채가 마감됩니다."
+
+msgid "Saved. %(left)s left."
+msgstr "저장되었습니다. %(left)s 남음."
+
+msgid "Debt updated."
+msgstr "부채가 업데이트되었습니다."
+
+msgid "Edit debt"
+msgstr "부채 수정"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "부채가 삭제되었습니다. 관련 상환 내역도 함께 삭제되었습니다."
+
+msgid "Debt closed."
+msgstr "부채가 마감되었습니다."
+
+msgid "Debt reopened."
+msgstr "부채가 다시 열렸습니다."
+
+msgid "Payment updated."
+msgstr "상환이 업데이트되었습니다."
+
+msgid "Edit payment"
+msgstr "상환 수정"
+
+msgid "Payment deleted."
+msgstr "상환이 삭제되었습니다."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI가 %(n)s건의 거래를 찾았습니다. 잘못된 부분을 수정하고 저장하세요."
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "비밀번호는 최소 %(min_length)d자 이상이어야 합니다."
 
-msgid "or"
-msgstr "또는"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s 연체됨"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s 부채들"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s 부채들의 상환 기한이 지났습니다."

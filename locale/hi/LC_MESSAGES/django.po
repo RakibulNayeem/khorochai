@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "श्रेणियाँ &amp; बजट"
 
 msgid "Ask AI"
-msgstr "AI से पूछें"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "बंद करें"
@@ -54,7 +54,7 @@ msgid "System follows your phone or computer's dark mode setting."
 msgstr "सिस्टम आपके फोन या कंप्यूटर की डार्क मोड सेटिंग का पालन करता है।"
 
 msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
-msgstr "ऐप के मेनू, बटन और संदेशों की भाषा बदलता है। आप AI से किसी भी भाषा में लिख या बोल सकते हैं — বাংলা, अंग्रेज़ी, Banglish और भी बहुत कुछ।"
+msgstr "ऐप के मेनू, बटन और संदेश बदलता है। आप AI से किसी भी भाषा में टाइप या बात कर सकते हैं — বাংলা, English, Banglish और बहुत कुछ।"
 
 msgid "These settings are saved in this browser."
 msgstr "ये सेटिंग्स इस ब्राउज़र में सेव की गई हैं।"
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI केवल आपके टेक्स्ट को पढ़ता है; हर टोटल और बैलेंस ऐप द्वारा आपके सेव किए गए डेटा से कैलकुलेट किया जाता है।"
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI के उपयोग की एक दैनिक सीमा है, जो डैशबोर्ड पर दिखाई देती है। यह आधी रात को रीसेट हो जाती है, और आप हमेशा मैन्युअल रूप से चीजें जोड़ सकते हैं।"
+msgstr "AI के इस्तेमाल की एक दैनिक सीमा है, जो डैशबोर्ड पर दिखती है। यह आधी रात को रीसेट हो जाती है, और आप हमेशा चीज़ें मैन्युअली जोड़ सकते हैं।"
 
 msgid "Never type card numbers or passwords."
 msgstr "कभी भी कार्ड नंबर या पासवर्ड टाइप न करें।"
@@ -1136,6 +1136,207 @@ msgstr "मुद्रा"
 msgid "Used for every amount in the app."
 msgstr "ऐप में हर राशि के लिए इस्तेमाल किया जाता है।"
 
+msgid "or"
+msgstr "या"
+
+msgid "Debts"
+msgstr "कर्ज"
+
+msgid "Owed to me"
+msgstr "मुझे मिलना बाकी है"
+
+msgid "I owe"
+msgstr "मुझे देना है"
+
+msgid "I borrowed"
+msgstr "मैंने उधार लिया"
+
+msgid "I lent"
+msgstr "मैंने उधार दिया"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "वह पैसा जो आपने लोगों को उधार दिया है या उनसे लिया है। उधार देने से खाते से पैसे निकलते हैं और लेने से जमा होते हैं, इसलिए बैलेंस सही रहता है — लेकिन इसे आय या खर्च के रूप में नहीं गिना जाता। आप AI को यह भी बता सकते हैं: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”।"
+
+msgid "Active"
+msgstr "सक्रिय"
+
+msgid "Closed"
+msgstr "बंद किया गया"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "अभी तक कोई बंद कर्ज नहीं है। पूरा भुगतान होने पर कर्ज अपने आप बंद हो जाता है।"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "कोई सक्रिय कर्ज नहीं है। न तो किसी को आपको देना है और न ही आपको किसी को देना है।"
+
+msgid "Nothing here."
+msgstr "यहाँ कुछ नहीं है।"
+
+msgid "All debts"
+msgstr "सभी कर्ज"
+
+msgid "Owes you"
+msgstr "आपकी तरफ बाकी है"
+
+msgid "You owe"
+msgstr "आप पर बकाया है"
+
+msgid "Paid back"
+msgstr "चुका दिया"
+
+msgid "Overdue"
+msgstr "समय सीमा समाप्त"
+
+msgid "Left to pay back"
+msgstr "चुकाना बाकी है"
+
+msgid "Pay back by"
+msgstr "तक चुकाना है"
+
+msgid "Record money you got back"
+msgstr "वापस मिले पैसे दर्ज करें"
+
+msgid "Record money you paid back"
+msgstr "चुकाए गए पैसे दर्ज करें"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"वापस किया\" खाते में पैसे जोड़ता है। \"कर्ज में जोड़ा\" तब होता है जब आप उन्हें और उधार देते हैं।"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"वापस किया\" खाते से पैसे निकालता है। \"कर्ज में जोड़ा\" तब होता है जब आप और उधार लेते हैं।"
+
+msgid "History"
+msgstr "इतिहास"
+
+msgid "Lent"
+msgstr "उधार दिया"
+
+msgid "Borrowed"
+msgstr "उधार लिया"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ वह पैसा है जो आपके खाते में आया, − वह पैसा है जो उससे बाहर गया।"
+
+msgid "Reopen debt"
+msgstr "कर्ज फिर से खोलें"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "भुगतान दर्ज किए बिना इस कर्ज को बंद करें? यदि इसे माफ कर दिया गया है या किसी अन्य तरीके से निपटाया गया है तो इसका उपयोग करें। बैलेंस नहीं बदलेगा।"
+
+msgid "Close without payment"
+msgstr "बिना भुगतान के बंद करें"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s में से %(paid)s चुका दिया गया"
+
+msgid "Got paid back"
+msgstr "रुपये वापस मिल गए"
+
+msgid "I paid back"
+msgstr "मैंने चुकाया"
+
+msgid "Person"
+msgstr "व्यक्ति"
+
+msgid "left"
+msgstr "शेष"
+
+msgid "Was due %(day)s"
+msgstr "%(day)s को देय था"
+
+msgid "Due %(day)s"
+msgstr "देय %(day)s"
+
+msgid "of %(total)s"
+msgstr "कुल %(total)s में से"
+
+msgid "Open"
+msgstr "खोलें"
+
+msgid "e.g. Rahim"
+msgstr "उदा. रहीम"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "उदा. उसके फोन के लिए, सैलरी के दिन तक"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "पैसा कहाँ से निकला (उधार दिया) या आया (उधार लिया)। इसका बैलेंस बदलता है।"
+
+msgid "Optional."
+msgstr "वैकल्पिक।"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "वापسی की तारीख, कर्ज की तारीख से पहले नहीं हो सकती।"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "चुकाने के लिए केवल %(left)s बचे हैं।"
+
+msgid "Added to debt"
+msgstr "कर्ج में जोड़ा गया"
+
+msgid "The money left or came into this account."
+msgstr "इस खाते में पैसे बचे या आए।"
+
+msgid "Lend and borrow"
+msgstr "लेन-देन"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "अपने दिए या लिए गए उधार का हिसाब रखें। खाते का बैलेंस बदलता है, लेकिन इसे आय या खर्च के रूप में नहीं गिना जाता।"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s को %(amount)s उधार दिए।"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s से %(amount)s उधार लिए।"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s को आपको कुछ नहीं देना है, इसलिए %(amount)s का भुगतान सेव नहीं किया गया।"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "आप %(person)s के कुछ भी नहीं, इसलिए %(amount)s का भुगतान सहेजा नहीं गया।"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s ने आपको %(amount)s वापस लौटा दिए।"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "आपने %(person)s को %(amount)s वापस कर दिए।"
+
+msgid "Debt saved."
+msgstr "कर्ज सेव हो गया।"
+
+msgid "Add debt"
+msgstr "कर्ज जोड़ें"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "पूरा भुगतान हो चुका है। कर्ज बंद है।"
+
+msgid "Saved. %(left)s left."
+msgstr "सहेजा गया। %(left)s शेष है।"
+
+msgid "Debt updated."
+msgstr "कर्ज अपडेट कर दिया गया।"
+
+msgid "Edit debt"
+msgstr "कर्ज एडिट करें"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "कर्ज हटा दिया गया। इसके भुगतान भी हटा दिए गए हैं।"
+
+msgid "Debt closed."
+msgstr "कर्ज बंद कर दिया गया।"
+
+msgid "Debt reopened."
+msgstr "कर्ज फिर से खोल दिया गया।"
+
+msgid "Payment updated."
+msgstr "भुगतान अपडेट कर दिया गया।"
+
+msgid "Edit payment"
+msgstr "भुगतान एडिट करें"
+
+msgid "Payment deleted."
+msgstr "भुगतान हटा दिया गया।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ने %(n)s ट्रांजेक्शन पाया। जो गलत लगे उसे ठीक करें, फिर सेव करें।"
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "आपके पासवर्ड में कम से कम %(min_length)d अक्षर होना चाहिए।"
 msgstr[1] "आपके पासवर्ड में कम से कम %(min_length)d अक्षर होने चाहिए।"
 
-msgid "or"
-msgstr "या"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s का समय निकल चुका है"
+msgstr[1] "%(n)s का समय निकल चुका है"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s का कर्ज"
+msgstr[1] "%(n)s के कर्ज"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s का कर्ज चुकाने की तारीख निकल चुकी है।"
+msgstr[1] "%(n)s के कर्ज चुकाने की तारीख निकल चुकी है।"

@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "श्रेणीहरू &amp; बजेटहरू"
 
 msgid "Ask AI"
-msgstr "AI लाई सोध्नुहोस्"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "बन्द गर्नुहोस्"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI ले तपाईंको पाठ मात्र पढ्छ; प्रत्येक कुल र मौज्दात एपद्वारा तपाईंको बचत गरिएको डेटाबाट गणना गरिन्छ।"
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI प्रयोगको दैनिक सीमा हुन्छ, जुन ड्यासबोर्डमा देखाइन्छ। यो मध्यरातमा रिसेट हुन्छ, र तपाईंले सधैं म्यानुअल रूपमा कुराहरू थप्न सक्नुहुन्छ।"
+msgstr "AI प्रयोगको दैनिक सीमा हुन्छ, जुन ड्यासबोर्डमा देखाइन्छ। यो मध्यरातमा रिसेट हुन्छ, र तपाईंले जतिबेला पनि म्यानुअल रूपमा थप्न सक्नुहुन्छ।"
 
 msgid "Never type card numbers or passwords."
-msgstr "कार्ड नम्बर वा पासवर्डहरू कहिल्यै टाइप नगर्नुहोस्।"
+msgstr "कहिल्यै पनि कार्ड नम्बर वा पासवर्ड नलेख्नुहोस्।"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "माथिल्लो दायाँपट्टिको मेनुबाट थिम, भाषा र आफ्नो प्रयोगकर्ता नाम परिवर्तन गर्नुहोस्।"
@@ -1136,6 +1136,207 @@ msgstr "मुद्रा"
 msgid "Used for every amount in the app."
 msgstr "एपमा हरेक रकमका लागि प्रयोग गरिन्छ।"
 
+msgid "or"
+msgstr "वा"
+
+msgid "Debts"
+msgstr "ऋणहरू"
+
+msgid "Owed to me"
+msgstr "मैले पाउनुपर्ने"
+
+msgid "I owe"
+msgstr "मैले तिर्न बाँकी छ"
+
+msgid "I borrowed"
+msgstr "मैले लिएँ"
+
+msgid "I lent"
+msgstr "मैले दिएँ"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "सक्रिय"
+
+msgid "Closed"
+msgstr "बन्द गरिएको"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "अहिलेसम्म कुनै बन्द भएका ऋणहरू छैनन्। पूर्ण रूपमा तिरीसकेपछि ऋण आफैं बन्द हुन्छ।"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "कुनै पनि सक्रिय ऋण छैन। कसैले तपाईंलाई तिर्न बाँकी छैन र तपाईंले कसैलाई तिर्न बाँकी छैन।"
+
+msgid "Nothing here."
+msgstr "यहाँ केही छैन।"
+
+msgid "All debts"
+msgstr "सबै ऋणहरू"
+
+msgid "Owes you"
+msgstr "तपाईंलाई तिर्न बाँकी छ"
+
+msgid "You owe"
+msgstr "तपाईंले तिर्न बाँकी छ"
+
+msgid "Paid back"
+msgstr "फिर्ता गरियो"
+
+msgid "Overdue"
+msgstr "म्याद नाघेको"
+
+msgid "Left to pay back"
+msgstr "तिर्न बाँकी"
+
+msgid "Pay back by"
+msgstr "सम्म तिर्नुहोस्"
+
+msgid "Record money you got back"
+msgstr "फिर्ता पाइएको पैसा रेकर्ड गर्नुहोस्"
+
+msgid "Record money you paid back"
+msgstr "फिर्ता तिरेको पैसा रेकर्ड गर्नुहोस्"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“फिर्ता गरियो” ले खातामा पैसा थप्छ। “ऋणमा थपियो” भनेको तपाईंले उनीहरूलाई थप ऋण दिँदा हो।"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“फिर्ता गरियो” ले खाताबाट पैसा झिक्छ। “ऋणमा थपियो” भनेको तपाईंले थप ऋण लिँदा हो।"
+
+msgid "History"
+msgstr "इतिहास"
+
+msgid "Lent"
+msgstr "दिएको"
+
+msgid "Borrowed"
+msgstr "लिएको"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ भनेको तपाईंको खातामा आएको पैसा हो, − भनेको बाहिर गएको पैसा हो।"
+
+msgid "Reopen debt"
+msgstr "ऋण पुनः खोल्नुहोस्"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "भुक्तानी रेकर्ड नगरी यो ऋण बन्द गर्ने? यदि यो मिनाहा गरिएको छ वा अन्य तरिकाले मिलाइएको छ भने यो प्रयोग गर्नुहोस्। ब्यालेन्स परिवर्तन हुनेछैन।"
+
+msgid "Close without payment"
+msgstr "भुक्तानी बिना बन्द गर्नुहोस्"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s मध्ये %(paid)s तिम्रो भुक्तानी भयो"
+
+msgid "Got paid back"
+msgstr "फिर्ता पाइयो"
+
+msgid "I paid back"
+msgstr "मैले तिरेँ"
+
+msgid "Person"
+msgstr "व्यक्ति"
+
+msgid "left"
+msgstr "बाँकी"
+
+msgid "Was due %(day)s"
+msgstr "%(day)s तिर्न बाँकी थियो"
+
+msgid "Due %(day)s"
+msgstr "मिति %(day)s"
+
+msgid "of %(total)s"
+msgstr "%(total)s को"
+
+msgid "Open"
+msgstr "खुला"
+
+msgid "e.g. Rahim"
+msgstr "जस्तै: रहिम"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "जस्तै: उसको फोनको लागि, तलबको दिनसम्म"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "पैसा कहाँबाट गयो (ऋण दिएको) वा कहाँ आयो (ऋण लिएको)। यसको ब्यालेन्स परिवर्तन हुन्छ।"
+
+msgid "Optional."
+msgstr "ऐच्छिक।"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "फिर्ता गर्ने मिति ऋण लिएको मितिभन्दा अगाडि हुन सक्दैन।"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "केवल %(left)s तिर्न बाँकी छ।"
+
+msgid "Added to debt"
+msgstr "ऋणमा थपियो"
+
+msgid "The money left or came into this account."
+msgstr "यस खातामा बाँकी रहेको वा आएको पैसा।"
+
+msgid "Lend and borrow"
+msgstr "दिने र लिने"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "तपाईंले दिएको वा लिनुभएको पैसाको रेकर्ड राख्नुहोस्। खाताको ब्यालेन्स परिवर्तन हुन्छ, तर यसलाई आम्दानी वा खर्चको रूपमा गणना गरिँदैन।"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s लाई %(amount)s ऋण दिनुभयो।"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s बाट %(amount)s ऋण लिनुभयो।"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s ले तपाईंलाई केही तिर्न बाँकी छैन, त्यसैले %(amount)s को भुक्तानी सेभ भएन।"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "तपाईंले %(person)s लाई केही तिर्न बाँकी छैन, त्यसैले %(amount)s को भुक्तानी सेभ भएन।"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s ले तपाईंलाई %(amount)s फिर्ता तिरे।"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "तपाईंले %(person)s लाई %(amount)s फिर्ता दिनुभयो।"
+
+msgid "Debt saved."
+msgstr "ऋण सेभ भयो।"
+
+msgid "Add debt"
+msgstr "ऋण थप्नुहोस्"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "पूर्ण रूपमा तिम्रो भुक्तानी भयो। ऋण बन्द गरिएको छ।"
+
+msgid "Saved. %(left)s left."
+msgstr "सेभ भयो। %(left)s बाँकी छ।"
+
+msgid "Debt updated."
+msgstr "ऋण अपडेट भयो।"
+
+msgid "Edit debt"
+msgstr "ऋण सम्पादन गर्नुहोस्"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "ऋण मेटाइयो। यसको भुक्तानीहरू पनि हटाइएका छन्।"
+
+msgid "Debt closed."
+msgstr "ऋण बन्द भयो।"
+
+msgid "Debt reopened."
+msgstr "ऋण पुनः खोलियो।"
+
+msgid "Payment updated."
+msgstr "भुक्तानी अपडेट भयो।"
+
+msgid "Edit payment"
+msgstr "भुक्तानी सम्पादन गर्नुहोस्"
+
+msgid "Payment deleted."
+msgstr "भुक्तानी मेटाइयो।"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI ले %(n)s कारोबार फेला पारेको छ। गलत देखिएको कुरा सच्याउनुहोस्, त्यसपछि बचत गर्नुहोस्।"
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "तपाईंको पासवर्डमा कम्तीमा %(min_length)d क्यारेक्टर हुनुपर्छ।"
 msgstr[1] "तपाईंको पासवर्डमा कम्तीमा %(min_length)d क्यारेक्टरहरू हुनुपर्छ।"
 
-msgid "or"
-msgstr "वा"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s म्याद नाघेको"
+msgstr[1] "%(n)s म्याद नाघेको"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s ऋण"
+msgstr[1] "%(n)s ऋणहरू"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s ऋण तिर्ने समय नाघेको छ।"
+msgstr[1] "%(n)s ऋणहरू तिर्ने समय नाघेका छन्।"

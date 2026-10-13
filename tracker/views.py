@@ -17,8 +17,11 @@ from django.views.decorators.http import require_POST
 
 from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
-from .forms import AccountForm, CategoryForm, ProfileForm, TransactionForm, TransferForm
-from .models import BALANCE, BUDGET, EXPENSE, INCOME, TRANSFER, Account, Category, Transaction, Transfer
+from .forms import AccountForm, CategoryForm, DebtForm, DebtRecordForm, ProfileForm, TransactionForm, TransferForm
+from .models import (
+    BALANCE, BORROW, BORROWED, BUDGET, COLLECT, DEBT, DEBT_AI_TYPES, EXPENSE, INCOME, LEND, LENT, REPAY, TRANSFER,
+    Account, Category, Debt, DebtRecord, Transaction, Transfer,
+)
 from .currency import current as current_currency
 from .templatetags.money import money
 
@@ -68,6 +71,8 @@ def help_page(request):
          "examples": ["bkash e lunch 300 dilam", "ATM theke 2000 tullam", "move 500 from cash to bkash"]},
         {"icon": "balance", "title": _("Set an account balance"), "text": _("Tell the AI how much is in an account right now."),
          "examples": ["amar bkash e 5000 ache", "bank balance 50000"]},
+        {"icon": "debt", "title": _("Lend and borrow"), "text": _("Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."),
+         "examples": ["rahim ke 500 dhar dilam", "karim theke 2000 dhar nilam", "রহিম ৩০০ টাকা ফেরত দিল"]},
         {"icon": "budget", "title": _("Monthly budgets"), "text": _("Set a spending limit for a category and watch the progress bar on the dashboard."),
          "examples": ["khabar e mashe 6000 budget", "transport budget 2000"]},
         {"icon": "ask", "title": _("Ask about your money"), "text": _("Use Ask AI for totals, breakdowns and comparisons."),
@@ -132,6 +137,7 @@ def dashboard(request):
         "budgets": services.budget_status(request.user, start, end),
         "all_time_balance": services.all_time_balance(request.user),
         "accounts": services.account_balances(request.user),
+        "debts": services.debt_summary(request.user),
         "ai_quota": services.ai_quota(request.user),
         "greeting": _greeting(request.user),
         "today": timezone.localdate(),
@@ -140,6 +146,7 @@ def dashboard(request):
             .select_related("category", "account")[:50],
             Transfer.objects.filter(user=request.user, date__gte=r_start, date__lte=r_end)
             .select_related("from_account", "to_account")[:50],
+            services.debt_events(request.user, r_start, r_end),
             limit=50,
         ),
         "recent_period": period,
@@ -187,7 +194,7 @@ def ai_parse(request):
     usage = {}
     try:
         data = llm.parse_transactions(text, timezone.localdate(), exp_names, inc_names, account_names, usage=usage,
-                                      currency=current_currency()[0])
+                                      currency=current_currency()[0], people=services.open_debt_people(request.user))
         services.record_ai_usage(request.user, usage.get("tokens", 0))
     except llm.LLMError as exc:
         logger.error("AI parse failed: %s", exc)
@@ -208,6 +215,7 @@ def ai_parse(request):
         "raw_text": text,
         "categories": Category.objects.filter(user=request.user),
         "accounts": services.sorted_accounts(request.user),
+        "people": services.all_debt_people(request.user),
         "row_count": len(rows),
     })
 
@@ -222,14 +230,14 @@ def ai_confirm(request):
     raw_text = (request.POST.get("raw_text") or "")[:MAX_INPUT_CHARS]
     user = request.user
     today = timezone.localdate()
-    saved, new_cats, skipped, balances, budgets = 0, [], 0, [], []
+    saved, new_cats, skipped, balances, budgets, debt_msgs = 0, [], 0, [], [], []
 
     with db_transaction.atomic():
         for i in range(count):
             if not request.POST.get(f"include_{i}"):
                 continue
             type_ = request.POST.get(f"type_{i}")
-            if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE, BUDGET):
+            if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE, BUDGET) + DEBT_AI_TYPES:
                 skipped += 1
                 continue
             if type_ == BUDGET:
@@ -265,6 +273,13 @@ def ai_confirm(request):
             amount = services.parse_amount(request.POST.get(f"amount_{i}"))
             if amount is None:
                 skipped += 1
+                continue
+            if type_ in DEBT_AI_TYPES:
+                msg = _save_debt_row(request, i, type_, amount, today)
+                if msg is None:
+                    skipped += 1
+                else:
+                    debt_msgs.append(msg)
                 continue
             if type_ == TRANSFER:
                 src = Account.objects.filter(user=user, pk=request.POST.get(f"account_{i}") or 0).first()
@@ -317,11 +332,39 @@ def ai_confirm(request):
         messages.success(request, _("Balance updated: %(list)s.") % {"list": ", ".join(balances)})
     if budgets:
         messages.success(request, _("Monthly budget set: %(list)s.") % {"list": ", ".join(budgets)})
+    for msg in debt_msgs:
+        (messages.success if msg[0] else messages.warning)(request, msg[1])
     if skipped:
         messages.warning(request, _("%(n)s row(s) skipped because the amount, type or accounts were invalid.") % {"n": skipped})
-    if not saved and not skipped and not balances and not budgets:
+    if not saved and not skipped and not balances and not budgets and not debt_msgs:
         messages.info(request, _("Nothing was saved."))
     return redirect("dashboard")
+
+
+def _save_debt_row(request, i, type_, amount, today):
+    """Save one lend/borrow/collect/repay row from the AI preview. Returns (ok, message), or None if invalid."""
+    user = request.user
+    person = " ".join((request.POST.get(f"person_{i}") or "").split())[:60]
+    account = Account.objects.filter(user=user, pk=request.POST.get(f"account_{i}") or 0).first()
+    if not person or not account:
+        return None
+    date = services.parse_date(request.POST.get(f"date_{i}"), today)
+    note = (request.POST.get(f"note_{i}") or "")[:255]
+    if type_ in (LEND, BORROW):
+        due = services.parse_date(request.POST.get(f"due_date_{i}"))
+        Debt.objects.create(user=user, direction=LENT if type_ == LEND else BORROWED, person=person, amount=amount,
+                            account=account, date=date, due_date=due if due and due >= date else None, note=note)
+        text = (_("Lent %(amount)s to %(person)s.") if type_ == LEND else _("Borrowed %(amount)s from %(person)s."))
+        return True, text % {"amount": money(amount), "person": person}
+    direction = LENT if type_ == COLLECT else BORROWED
+    if not services.record_debt_payment(user, person, direction, amount, account, date, note):
+        if type_ == COLLECT:
+            text = _("%(person)s doesn't owe you anything, so the %(amount)s payment was not saved.")
+        else:
+            text = _("You don't owe %(person)s anything, so the %(amount)s payment was not saved.")
+        return False, text % {"amount": money(amount), "person": person}
+    text = (_("%(person)s paid you back %(amount)s.") if type_ == COLLECT else _("You paid %(person)s back %(amount)s."))
+    return True, text % {"amount": money(amount), "person": person}
 
 
 # --------------------------------------------------------------------------- AI: voice input
@@ -443,11 +486,29 @@ def _filtered_transfers(request):
     return qs
 
 
+def _filtered_debt_events(request):
+    """Debt rows matching the same filters (they have no category, so a category filter hides them)."""
+    type_ = request.GET.get("type", "")
+    if type_ in (INCOME, EXPENSE, TRANSFER) or request.GET.get("category") or request.GET.get("account") == "none":
+        return []
+    start = end = None
+    month = request.GET.get("month", "")
+    if month:
+        start, end = services.month_bounds(services.parse_month(month))
+    start = services.parse_date(request.GET.get("from")) or start
+    end = services.parse_date(request.GET.get("to")) or end
+    acc = request.GET.get("account", "")
+    return services.debt_events(request.user, start, end, int(acc) if acc.isdigit() else None,
+                                request.GET.get("q", "").strip())
+
+
 @login_required
 def transaction_list(request):
     qs = _filtered_transactions(request)
-    rows = qs.none() if request.GET.get("type") == TRANSFER else qs
-    items = services.merge_with_transfers(rows, _filtered_transfers(request))
+    type_ = request.GET.get("type")
+    rows = qs.none() if type_ in (TRANSFER, DEBT) else qs
+    transfers = Transfer.objects.none() if type_ == DEBT else _filtered_transfers(request)
+    items = services.merge_with_transfers(rows, transfers, _filtered_debt_events(request))
     page = Paginator(items, 50).get_page(request.GET.get("page"))
     params = request.GET.copy()
     params.pop("page", None)
@@ -518,6 +579,9 @@ def export_csv(request):
     for t in _filtered_transfers(request):
         writer.writerow([t.date, "transfer", t.amount, "", f"{t.from_account.name} -> {t.to_account.name}",
                          t.note, "", ""])
+    for t in _filtered_debt_events(request):
+        kind = (f"debt {t.kind}" if t.is_record else f"debt {t.direction}")
+        writer.writerow([t.date, kind, t.amount, t.person, t.account.name if t.account else "", t.note, "", ""])
     return response
 
 
@@ -669,3 +733,125 @@ def transfer_delete(request, pk):
     get_object_or_404(Transfer, pk=pk, user=request.user).delete()
     messages.success(request, _("Transfer deleted."))
     return redirect("accounts")
+
+
+# --------------------------------------------------------------------------- debts (lend & borrow)
+
+@login_required
+def debt_list(request):
+    show_closed = request.GET.get("show") == "closed"
+    debts = services.debts_with_totals(request.user)
+    summary = services.debt_summary(request.user, debts)
+
+    def order(d):  # overdue first, then by pay-back date (none last), then newest
+        return (not d.overdue, d.due_date is None, d.due_date or d.date, -d.date.toordinal())
+
+    shown = sorted((d for d in debts if d.closed == show_closed), key=order)
+    if show_closed:
+        shown.sort(key=lambda d: d.date, reverse=True)
+    return render(request, "tracker/debts.html", {
+        "summary": summary,
+        "show_closed": show_closed,
+        "lent": [d for d in shown if d.direction == LENT],
+        "borrowed": [d for d in shown if d.direction == BORROWED],
+        "closed_count": sum(1 for d in debts if d.closed),
+        "open_count": sum(1 for d in debts if not d.closed),
+    })
+
+
+@login_required
+def debt_create(request):
+    direction = request.GET.get("type") if request.GET.get("type") in (LENT, BORROWED) else LENT
+    initial = {"date": timezone.localdate(), "direction": direction, "account": services.default_account(request.user),
+               "person": request.GET.get("person", "")[:60]}
+    form = DebtForm(request.POST or None, user=request.user, initial=initial)
+    if request.method == "POST" and form.is_valid():
+        d = form.save(commit=False)
+        d.user = request.user
+        d.save()
+        messages.success(request, _("Debt saved."))
+        return redirect("debt_detail", pk=d.pk)
+    return render(request, "tracker/form.html", {"form": form, "title": _("Add debt"),
+                                                "people": services.all_debt_people(request.user)})
+
+
+@login_required
+def debt_detail(request, pk):
+    debt = get_object_or_404(Debt.objects.select_related("account"), pk=pk, user=request.user)
+    services.debt_totals(debt)
+    initial = {"kind": REPAY, "date": timezone.localdate(), "account": debt.account or services.default_account(request.user),
+               "amount": debt.remaining if debt.remaining > 0 else None}
+    form = DebtRecordForm(request.POST or None, user=request.user, debt=debt, initial=initial)
+    if request.method == "POST" and form.is_valid():
+        r = form.save(commit=False)
+        r.debt = debt
+        r.save()
+        services.refresh_debt_status(debt)
+        if debt.closed:
+            messages.success(request, _("Fully paid back. The debt is closed."))
+        else:
+            messages.success(request, _("Saved. %(left)s left.") % {"left": money(debt.remaining)})
+        return redirect("debt_detail", pk=debt.pk)
+    history = [{"r": r, "flow": r.flow} for r in debt.records.select_related("account")]
+    return render(request, "tracker/debt_detail.html", {"debt": debt, "form": form, "history": history,
+                                                       "show_form": request.method == "POST"})
+
+
+@login_required
+def debt_edit(request, pk):
+    debt = get_object_or_404(Debt, pk=pk, user=request.user)
+    settled_by_hand = debt.closed and services.debt_totals(debt).remaining > 0  # keep it closed
+    form = DebtForm(request.POST or None, instance=debt, user=request.user)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        if not settled_by_hand:
+            services.refresh_debt_status(debt)
+        messages.success(request, _("Debt updated."))
+        return redirect("debt_detail", pk=debt.pk)
+    return render(request, "tracker/form.html", {"form": form, "title": _("Edit debt"),
+                                                "people": services.all_debt_people(request.user),
+                                                "delete_url": reverse("debt_delete", args=[debt.pk])})
+
+
+@login_required
+@require_POST
+def debt_delete(request, pk):
+    get_object_or_404(Debt, pk=pk, user=request.user).delete()
+    messages.success(request, _("Debt deleted. Its payments were removed too."))
+    return redirect("debts")
+
+
+@login_required
+@require_POST
+def debt_settle(request, pk):
+    """Close a debt that won't be paid in full (forgiven or settled some other way), or reopen it.
+    No money moves, so account balances don't change."""
+    debt = get_object_or_404(Debt, pk=pk, user=request.user)
+    debt.closed = not debt.closed
+    debt.save(update_fields=["closed"])
+    messages.success(request, _("Debt closed.") if debt.closed else _("Debt reopened."))
+    return redirect("debt_detail", pk=debt.pk)
+
+
+@login_required
+def debt_record_edit(request, pk):
+    record = get_object_or_404(DebtRecord.objects.select_related("debt"), pk=pk, debt__user=request.user)
+    form = DebtRecordForm(request.POST or None, instance=record, user=request.user, debt=record.debt)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        services.refresh_debt_status(record.debt)
+        messages.success(request, _("Payment updated."))
+        return redirect("debt_detail", pk=record.debt.pk)
+    return render(request, "tracker/form.html", {"form": form, "title": _("Edit payment"),
+                                                "delete_url": reverse("debt_record_delete", args=[record.pk])})
+
+
+@login_required
+@require_POST
+def debt_record_delete(request, pk):
+    record = get_object_or_404(DebtRecord.objects.select_related("debt"), pk=pk, debt__user=request.user)
+    debt = record.debt
+    record.delete()
+    services.refresh_debt_status(debt)
+    messages.success(request, _("Payment deleted."))
+    return redirect("debt_detail", pk=debt.pk)

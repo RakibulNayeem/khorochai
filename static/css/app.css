@@ -380,3 +380,30 @@ html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastalee
 .lp-or { display: flex; align-items: center; gap: .75rem; color: var(--muted); font-size: .8125rem; margin: .55rem 0 .55rem 8%; }
 .lp-or::before, .lp-or::after { content: ""; flex: 1; border-top: 1px solid var(--border); }
 [dir="rtl"] .lp-or { margin: .55rem 8% .55rem 0; }
+
+/* ---------------------------------------------------------------- debts */
+.debt-card { color: var(--ink); --tone: var(--income); transition: transform .1s ease-out, box-shadow .15s ease; }
+.debt-card.is-borrowed, .debt-head.is-borrowed { --tone: var(--expense); }
+.debt-head { --tone: var(--income); }
+.debt-card:hover { color: var(--ink); text-decoration: none; box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }
+.debt-card:active { transform: scale(.985); }
+.debt-card.is-overdue { box-shadow: var(--shadow-card), inset 3px 0 0 #d93025; }
+.debt-avatar { width: 40px; height: 40px; flex: none; border-radius: 50%; display: inline-grid; place-items: center;
+  font-weight: 650; color: var(--tone); background: color-mix(in srgb, var(--tone) 14%, transparent); }
+.debt-avatar.lg { width: 52px; height: 52px; font-size: 1.3rem; }
+.debt-progress { height: 6px; background: var(--surface-2); }
+.debt-progress .progress-bar { background: var(--tone); }
+.min-w-0 { min-width: 0; }
+.debt-tabs .nav-link { color: var(--muted); border-radius: 999px; padding: .3rem .9rem; }
+.debt-tabs .nav-link.active { background: var(--surface-2); color: var(--ink); font-weight: 600; }
+.debt-tabs .badge { background: var(--surface); color: var(--muted); font-weight: 600; }
+.debt-row .debt-tag { color: var(--muted); }
+/* "I lent / I borrowed" toggle */
+.direction-toggle .btn-check:checked + .btn { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.preview-row.is-lend, .preview-row.is-collect { --dot: var(--income); }
+.preview-row.is-borrow, .preview-row.is-repay { --dot: var(--expense); }
+.preview-row:not(.is-lend):not(.is-borrow):not(.is-collect):not(.is-repay) .debt-only { display: none; }
+.preview-row:not(.is-lend):not(.is-borrow) .new-debt-only { display: none; }
+.preview-row.is-lend .no-debt, .preview-row.is-borrow .no-debt, .preview-row.is-collect .no-debt, .preview-row.is-repay .no-debt { display: none; }
+.debt-summary { color: var(--ink); }
+.debt-summary:hover { color: var(--ink); text-decoration: none; box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }

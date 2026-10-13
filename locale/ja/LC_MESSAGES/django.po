@@ -39,7 +39,7 @@ msgid "Transactions"
 msgstr "取引"
 
 msgid "Categories &amp; Budgets"
-msgstr "カテゴリーと予算"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
 msgstr "AIに質問"
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AIはテキストを読み取るだけです。合計や残高は、保存されたデータからアプリが計算します。"
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AIの利用には1日の上限があり、ダッシュボードで確認できます。上限は深夜0時にリセットされますが、いつでも手動で追加可能です。"
+msgstr "AIの使用にはダッシュボードに表示される1日の制限があります。夜中の12時にリセットされますが、手動でいつでも追加できます。"
 
 msgid "Never type card numbers or passwords."
 msgstr "カード番号やパスワードは絶対に入力しないでください。"
@@ -1136,6 +1136,207 @@ msgstr "通貨"
 msgid "Used for every amount in the app."
 msgstr "アプリ内のすべての金額に使用されます。"
 
+msgid "or"
+msgstr "または"
+
+msgid "Debts"
+msgstr "借金"
+
+msgid "Owed to me"
+msgstr "受取予定"
+
+msgid "I owe"
+msgstr "自分が借りている"
+
+msgid "I borrowed"
+msgstr "借りた"
+
+msgid "I lent"
+msgstr "貸した"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "人に貸した、または人から借りたお金。貸すと口座からお金が減り、借りると口座にお金が増えるため残高が正しく保たれますが、収入や支出としてはカウントされません。AIに次のように話しかけることもできます：「rahim ke 500 dhar dilam」、「karim theke 2000 dhar nilam」、「rahim 300 ferot dilo」。"
+
+msgid "Active"
+msgstr "アクティブ"
+
+msgid "Closed"
+msgstr "終了済み"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "終了した借金はまだありません。全額返済されると、借金は自動的に終了します。"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "アクティブな借金はありません。誰にも貸しておらず、誰からも借りていません。"
+
+msgid "Nothing here."
+msgstr "ここには何もありません。"
+
+msgid "All debts"
+msgstr "すべての借金"
+
+msgid "Owes you"
+msgstr "あなたの受取人"
+
+msgid "You owe"
+msgstr "貸し（借り）があります"
+
+msgid "Paid back"
+msgstr "返済済み"
+
+msgid "Overdue"
+msgstr "期限超過"
+
+msgid "Left to pay back"
+msgstr "残りの返済額"
+
+msgid "Pay back by"
+msgstr "返済期限"
+
+msgid "Record money you got back"
+msgstr "受け取った返済を記録"
+
+msgid "Record money you paid back"
+msgstr "支払った返済を記録"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "「返済」を選ぶと口座にお金が追加されます。「借入の追加」を選ぶとさらに貸し出します。"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "「返済」を選ぶと口座からお金が引き落とされます。「借入の追加」を選ぶとさらに借り入れます。"
+
+msgid "History"
+msgstr "履歴"
+
+msgid "Lent"
+msgstr "貸したお金"
+
+msgid "Borrowed"
+msgstr "借りたお金"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+は口座に入ったお金、−は口座から出たお金です。"
+
+msgid "Reopen debt"
+msgstr "借金を再開"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "支払いを記録せずにこの借金を終了しますか？免除された場合や他の方法で清算された場合に使用します。残高は変更されません。"
+
+msgid "Close without payment"
+msgstr "支払いなしで終了"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s中 %(paid)s 返済済み"
+
+msgid "Got paid back"
+msgstr "返済を受け取りました"
+
+msgid "I paid back"
+msgstr "返済した"
+
+msgid "Person"
+msgstr "人物"
+
+msgid "left"
+msgstr "残り"
+
+msgid "Was due %(day)s"
+msgstr "%(day)sが期限でした"
+
+msgid "Due %(day)s"
+msgstr "%(day)s期限"
+
+msgid "of %(total)s"
+msgstr "%(total)s中"
+
+msgid "Open"
+msgstr "未完了"
+
+msgid "e.g. Rahim"
+msgstr "例：Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "例：携帯代として、給料日まで"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "お金の出入りがあった場所（貸出先または借入元）。残高が変動します。"
+
+msgid "Optional."
+msgstr "任意"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "返済予定日を借入日より前に設定することはできません。"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "残りの返済額は %(left)s のみです。"
+
+msgid "Added to debt"
+msgstr "借金に追加されました"
+
+msgid "The money left or came into this account."
+msgstr "この口座から出入りした金額です。"
+
+msgid "Lend and borrow"
+msgstr "貸し借り"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "貸し借りしたお金を管理します。口座残高は変わりますが、収入や支出としてはカウントされません。"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)sに%(amount)s貸しました。"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)sから%(amount)s借りました。"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)sへの未払い金がないため、%(amount)sの支払いは保存されませんでした。"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "%(person)sへの未払い金がないため、%(amount)sの支払いは保存されませんでした。"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)sから%(amount)s返済されました。"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "%(person)sに%(amount)s返済しました。"
+
+msgid "Debt saved."
+msgstr "借金が保存されました。"
+
+msgid "Add debt"
+msgstr "借金を追加"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "全額返済されました。借金は終了です。"
+
+msgid "Saved. %(left)s left."
+msgstr "保存しました。残り %(left)s。"
+
+msgid "Debt updated."
+msgstr "借金が更新されました。"
+
+msgid "Edit debt"
+msgstr "借金を編集"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "借金が削除されました。関連する支払いも削除されました。"
+
+msgid "Debt closed."
+msgstr "借金が終了しました。"
+
+msgid "Debt reopened."
+msgstr "借金が再開されました。"
+
+msgid "Payment updated."
+msgstr "支払いが更新されました。"
+
+msgid "Edit payment"
+msgstr "支払いを編集"
+
+msgid "Payment deleted."
+msgstr "支払いが削除されました。"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AIが%(n)s件の取引を見つけました。誤りがあれば修正して保存してください。"
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "パスワードは%(min_length)d文字以上である必要があります。"
 
-msgid "or"
-msgstr "または"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s 期限切れ"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)sの借金"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)sの借金は返済期限を過ぎています。"

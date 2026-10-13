@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{{ debt.person }} · {% translate "Debts" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="mb-3"><a href="{% url 'debts' %}{% if debt.closed %}?show=closed{% endif %}" class="small">← {% translate "All debts" %}</a></div>
+
+<div class="row g-3 justify-content-center">
+<div class="col-lg-8">
+  <div class="card p-3 p-md-4 mb-3 debt-head {% if debt.is_lent %}is-lent{% else %}is-borrowed{% endif %}">
+    <div class="d-flex align-items-center gap-3 mb-3">
+      <span class="debt-avatar lg" aria-hidden="true" data-keep-digits>{{ debt.person|slice:":1"|upper }}</span>
+      <div class="flex-grow-1 min-w-0">
+        <h1 class="h4 m-0 text-truncate" data-keep-digits>{{ debt.person }}</h1>
+        <div class="small text-muted">{% if debt.is_lent %}{% translate "Owes you" %}{% else %}{% translate "You owe" %}{% endif %}
+          {% if debt.closed %}· <span class="badge badge-new">{% if debt.remaining > 0 %}{% translate "Closed" %}{% else %}{% translate "Paid back" %}{% endif %}</span>{% endif %}
+          {% if debt.overdue %}· <span class="text-danger fw-semibold">{% translate "Overdue" %}</span>{% endif %}</div>
+      </div>
+      <a href="{% url 'debt_edit' debt.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-2">
+      <div>
+        <div class="card-title-sm">{% translate "Left to pay back" %}</div>
+        <div class="stat {% if debt.is_lent %}text-income{% else %}text-expense{% endif %}">{{ debt.remaining|money }}</div>
+      </div>
+      <div class="text-end small text-muted">
+        {% blocktranslate with paid=debt.repaid|money total=debt.total|money %}{{ paid }} of {{ total }} paid back{% endblocktranslate %}
+      </div>
+    </div>
+    <div class="progress debt-progress my-2"><div class="progress-bar" style="width: {{ debt.pct_paid }}%"></div></div>
+
+    <dl class="row small mb-0 mt-3">
+      <dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Date" %}</dt><dd class="col-7 col-sm-8">{{ debt.date|date:"d M Y" }}</dd>
+      <dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Pay back by" %}</dt><dd class="col-7 col-sm-8">{% if debt.due_date %}{{ debt.due_date|date:"d M Y" }}{% else %}—{% endif %}</dd>
+      <dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Account" %}</dt><dd class="col-7 col-sm-8">{% if debt.account %}{{ debt.account }}{% else %}—{% endif %}</dd>
+      {% if debt.note %}<dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Note" %}</dt><dd class="col-7 col-sm-8" data-keep-digits>{{ debt.note }}</dd>{% endif %}
+    </dl>
+  </div>
+
+  {% if not debt.closed %}
+  <div class="card p-3 p-md-4 mb-3">
+    <h2 class="h6 mb-3">{% if debt.is_lent %}{% translate "Record money you got back" %}{% else %}{% translate "Record money you paid back" %}{% endif %}</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="row g-2">
+        <div class="col-6 col-md-3">
+          <label class="form-label small text-muted mb-1" for="{{ form.kind.id_for_label }}">{{ form.kind.label }}</label>{{ form.kind }}
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label small text-muted mb-1" for="{{ form.amount.id_for_label }}">{{ form.amount.label }} ({{ currency_symbol }})</label>{{ form.amount }}
+          {% for e in form.amount.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label small text-muted mb-1" for="{{ form.account.id_for_label }}">{{ form.account.label }}</label>{{ form.account }}
+          {% for e in form.account.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label small text-muted mb-1" for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>{{ form.date }}
+        </div>
+        <div class="col-12">
+          <label class="form-label small text-muted mb-1" for="{{ form.note.id_for_label }}">{{ form.note.label }}</label>{{ form.note }}
+        </div>
+      </div>
+      <div class="form-text">{% if debt.is_lent %}{% translate "“Paid back” adds the money to the account. “Added to debt” is when you lend them more." %}{% else %}{% translate "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more." %}{% endif %}</div>
+      <button class="btn btn-brand px-4 mt-3">{% translate "Save" %}</button>
+    </form>
+  </div>
+  {% endif %}
+
+  <div class="card p-3 mb-3">
+    <div class="card-title-sm mb-2">{% translate "History" %}</div>
+    <div class="table-responsive"><table class="table align-middle mb-0">
+      <tbody>
+      {% for h in history %}
+      <tr>
+        <td class="text-nowrap small">{{ h.r.date|date:"d M Y" }}</td>
+        <td>{{ h.r.get_kind_display }}{% if h.r.note %}<div class="small text-muted" data-keep-digits>{{ h.r.note }}</div>{% endif %}</td>
+        <td class="small text-nowrap d-none d-sm-table-cell">{% if h.r.account %}{{ h.r.account }}{% else %}—{% endif %}</td>
+        <td class="amount text-end fw-semibold text-nowrap {% if h.flow > 0 %}text-income{% else %}text-expense{% endif %}">{% if h.flow > 0 %}+{% else %}−{% endif %}{{ h.r.amount|money }}</td>
+        <td class="text-end"><a href="{% url 'debt_record_edit' h.r.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td class="text-nowrap small">{{ debt.date|date:"d M Y" }}</td>
+        <td>{% if debt.is_lent %}{% translate "Lent" %}{% else %}{% translate "Borrowed" %}{% endif %}</td>
+        <td class="small text-nowrap d-none d-sm-table-cell">{% if debt.account %}{{ debt.account }}{% else %}—{% endif %}</td>
+        <td class="amount text-end fw-semibold text-nowrap {% if debt.is_lent %}text-expense{% else %}text-income{% endif %}">{% if debt.is_lent %}−{% else %}+{% endif %}{{ debt.amount|money }}</td>
+        <td class="text-end"><a href="{% url 'debt_edit' debt.pk %}" class="btn btn-sm btn-link px-1">{% translate "Edit" %}</a></td>
+      </tr>
+      </tbody>
+    </table></div>
+    <div class="small text-muted mt-2">{% translate "+ is money that came into your account, − is money that left it." %}</div>
+  </div>
+
+  <form method="post" action="{% url 'debt_settle' debt.pk %}" class="d-flex flex-wrap align-items-center gap-2">
+    {% csrf_token %}
+    {% if debt.closed %}
+      <button class="btn btn-sm btn-outline-secondary">{% translate "Reopen debt" %}</button>
+    {% else %}
+      <button class="btn btn-sm btn-outline-secondary" onclick="return confirm('{% translate 'Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change.' as q %}{{ q|escapejs }}');">{% translate "Close without payment" %}</button>
+    {% endif %}
+  </form>
+</div>
+</div>
+{% endblock %}

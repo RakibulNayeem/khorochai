@@ -69,6 +69,7 @@
         <li class="nav-item"><a class="nav-link {% if url == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}">{% translate "Dashboard" %}</a></li>
         <li class="nav-item"><a class="nav-link {% if url == 'transactions' %}active{% endif %}" href="{% url 'transactions' %}">{% translate "Transactions" %}</a></li>
         <li class="nav-item"><a class="nav-link {% if url == 'accounts' %}active{% endif %}" href="{% url 'accounts' %}">{% translate "Accounts" %}</a></li>
+        <li class="nav-item"><a class="nav-link {% if url == 'debts' or url == 'debt_detail' %}active{% endif %}" href="{% url 'debts' %}">{% translate "Debts" %}</a></li>
         <li class="nav-item"><a class="nav-link {% if url == 'categories' %}active{% endif %}" href="{% url 'categories' %}">{% translate "Categories &amp; Budgets" %}</a></li>
         <li class="nav-item"><a class="nav-link nav-ask {% if url == 'ask' %}active{% endif %}" href="{% url 'ask' %}">{% translate "Ask AI" %}</a></li>
       </ul>

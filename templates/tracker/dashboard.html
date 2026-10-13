@@ -81,6 +81,15 @@
   {% endfor %}
 </div>
 
+{% if debts.has_open %}
+<!-- Debts -->
+<a href="{% url 'debts' %}" class="card debt-summary p-3 mb-4 d-flex flex-row flex-wrap align-items-center gap-3">
+  <span class="card-title-sm me-auto">{% translate "Debts" %}{% if debts.overdue_count %} · <span class="text-danger">{% blocktranslate count n=debts.overdue_count %}{{ n }} overdue{% plural %}{{ n }} overdue{% endblocktranslate %}</span>{% endif %}</span>
+  <span class="small text-muted">{% translate "Owed to me" %} <span class="fw-semibold amount text-income">{{ debts.owed_to_me|money }}</span></span>
+  <span class="small text-muted">{% translate "I owe" %} <span class="fw-semibold amount text-expense">{{ debts.i_owe|money }}</span></span>
+</a>
+{% endif %}
+
 <div class="row g-3 mb-4">
   <!-- Expense by category -->
   <div class="col-lg-5"><div class="card p-3 h-100">

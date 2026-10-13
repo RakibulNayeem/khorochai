@@ -39,7 +39,7 @@ msgid "Transactions"
 msgstr "Transacciones"
 
 msgid "Categories &amp; Budgets"
-msgstr "Categorías y presupuestos"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
 msgstr "Preguntar a la IA"
@@ -54,7 +54,7 @@ msgid "System follows your phone or computer's dark mode setting."
 msgstr "El sistema sigue la configuración de modo oscuro de tu teléfono o computadora."
 
 msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
-msgstr "Cambia los menús, botones y mensajes de la app. Siempre puedes escribirle o hablarle a la IA en cualquier idioma: বাংলা, inglés, Banglish y más."
+msgstr "Cambia los menús, botones y mensajes de la app. Siempre puedes escribir o hablar con la AI en cualquier idioma: বাংলা, English, Banglish y más."
 
 msgid "These settings are saved in this browser."
 msgstr "Estos ajustes se guardan en este navegador."
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "La AI solo lee tu texto; cada total y saldo es calculado por la app a partir de tus datos guardados."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "El uso de IA tiene un límite diario que se muestra en el panel. Se restablece a medianoche y siempre puedes añadir elementos manualmente."
+msgstr "El uso de AI tiene un límite diario, visible en el panel. Se reinicia a medianoche y siempre puedes añadir cosas manualmente."
 
 msgid "Never type card numbers or passwords."
 msgstr "Nunca escribas números de tarjeta ni contraseñas."
@@ -1136,6 +1136,207 @@ msgstr "Moneda"
 msgid "Used for every amount in the app."
 msgstr "Se usa para cada cantidad en la aplicación."
 
+msgid "or"
+msgstr "o"
+
+msgid "Debts"
+msgstr "Deudas"
+
+msgid "Owed to me"
+msgstr "Me deben"
+
+msgid "I owe"
+msgstr "Debo"
+
+msgid "I borrowed"
+msgstr "Pedí prestado"
+
+msgid "I lent"
+msgstr "Presté"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Dinero que prestaste a personas o pediste prestado. Prestar saca dinero de una cuenta y pedir prestado lo ingresa, por lo que los saldos se mantienen correctos, pero no cuenta como ingreso ni gasto. También puedes decirle a la AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Activa"
+
+msgid "Closed"
+msgstr "Cerrada"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Aún no hay deudas cerradas. Una deuda se cierra sola cuando se paga por completo."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "No hay deudas activas. Nadie te debe y no le debes a nadie."
+
+msgid "Nothing here."
+msgstr "No hay nada aquí."
+
+msgid "All debts"
+msgstr "Todas las deudas"
+
+msgid "Owes you"
+msgstr "Te debe"
+
+msgid "You owe"
+msgstr "Debes"
+
+msgid "Paid back"
+msgstr "Devuelto"
+
+msgid "Overdue"
+msgstr "Vencida"
+
+msgid "Left to pay back"
+msgstr "Falta por devolver"
+
+msgid "Pay back by"
+msgstr "Devolver antes del"
+
+msgid "Record money you got back"
+msgstr "Registrar dinero que te devolvieron"
+
+msgid "Record money you paid back"
+msgstr "Registrar dinero que devolviste"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“Devuelto” añade el dinero a la cuenta. “Añadido a la deuda” es cuando les prestas más."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“Devuelto” saca el dinero de la cuenta. “Añadido a la deuda” es cuando pides más prestado."
+
+msgid "History"
+msgstr "Historial"
+
+msgid "Lent"
+msgstr "Prestado"
+
+msgid "Borrowed"
+msgstr "Prestado (recibido)"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ es dinero que entró a tu cuenta, − es dinero que salió de ella."
+
+msgid "Reopen debt"
+msgstr "Reabrir deuda"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "¿Cerrar esta deuda sin registrar un pago? Úsalo si fue perdonada o saldada de otra forma. Los saldos no cambiarán."
+
+msgid "Close without payment"
+msgstr "Cerrar sin pago"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(paid)s de %(total)s devuelto"
+
+msgid "Got paid back"
+msgstr "Recibiste un reembolso"
+
+msgid "I paid back"
+msgstr "Devolví"
+
+msgid "Person"
+msgstr "Persona"
+
+msgid "left"
+msgstr "restante"
+
+msgid "Was due %(day)s"
+msgstr "Vencía el %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Vence el %(day)s"
+
+msgid "of %(total)s"
+msgstr "de %(total)s"
+
+msgid "Open"
+msgstr "Abierta"
+
+msgid "e.g. Rahim"
+msgstr "ej. Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "ej. para su teléfono, hasta el día de pago"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "De dónde salió el dinero (prestado) o a dónde entró (pedido prestado). Su saldo cambia."
+
+msgid "Optional."
+msgstr "Opcional."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "La fecha de devolución no puede ser anterior a la fecha de la deuda."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "Solo queda por devolver %(left)s."
+
+msgid "Added to debt"
+msgstr "Añadido a la deuda"
+
+msgid "The money left or came into this account."
+msgstr "El dinero que quedó o entró en esta cuenta."
+
+msgid "Lend and borrow"
+msgstr "Prestar y pedir prestado"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Lleva un registro del dinero que prestaste o pediste prestado. Los saldos de las cuentas cambian, pero no cuenta como ingreso ni gasto."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "Prestaste %(amount)s a %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "Pediste prestados %(amount)s a %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s no te debe nada, por lo que el pago de %(amount)s no se guardó."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "No le debes nada a %(person)s, por lo que el pago de %(amount)s no se guardó."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s te devolvió %(amount)s."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Le devolviste %(amount)s a %(person)s."
+
+msgid "Debt saved."
+msgstr "Deuda guardada."
+
+msgid "Add debt"
+msgstr "Añadir deuda"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Totalmente devuelto. La deuda está cerrada."
+
+msgid "Saved. %(left)s left."
+msgstr "Guardado. Queda %(left)s."
+
+msgid "Debt updated."
+msgstr "Deuda actualizada."
+
+msgid "Edit debt"
+msgstr "Editar deuda"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Deuda eliminada. Sus pagos también fueron eliminados."
+
+msgid "Debt closed."
+msgstr "Deuda cerrada."
+
+msgid "Debt reopened."
+msgstr "Deuda reabierta."
+
+msgid "Payment updated."
+msgstr "Pago actualizado."
+
+msgid "Edit payment"
+msgstr "Editar pago"
+
+msgid "Payment deleted."
+msgstr "Pago eliminado."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "La AI encontró %(n)s transacción. Corrige lo que parezca incorrecto y guarda."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Tu contraseña debe contener al menos %(min_length)d carácter."
 msgstr[1] "Tu contraseña debe contener al menos %(min_length)d caracteres."
 
-msgid "or"
-msgstr "o"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s vencida"
+msgstr[1] "%(n)s vencida"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "Deuda de %(n)s"
+msgstr[1] "Deudas de %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "La deuda de %(n)s ha vencido."
+msgstr[1] "Las deudas de %(n)s han vencido."

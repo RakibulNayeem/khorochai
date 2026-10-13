@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "Mga Kategorya &amp; Budget"
 
 msgid "Ask AI"
-msgstr "Magtanong sa AI"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "Isara"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "Binabasa lang ng AI ang iyong text; ang bawat kabuuan at balanse ay kinakalkula ng app mula sa iyong mga naka-save na data."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "Ang paggamit ng AI ay may pang-araw-araw na allowance, na makikita sa dashboard. Nagre-reset ito tuwing hatinggabi, at maaari kang magdagdag ng mga item nang manu-mano anumang oras."
+msgstr "Ang paggamit ng AI ay may pang-araw-araw na limitasyon na makikita sa dashboard. Nagre-reset ito tuwing hatinggabi, at maaari kang magdagdag nang manu-mano anumang oras."
 
 msgid "Never type card numbers or passwords."
-msgstr "Huwag na huwag mag-type ng mga numero ng card o password."
+msgstr "Huwag kailanman mag-type ng mga numero ng kard o password."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Baguhin ang tema, wika, at username mula sa menu sa kanang bahagi sa itaas."
@@ -1136,6 +1136,207 @@ msgstr "Currency"
 msgid "Used for every amount in the app."
 msgstr "Ginagamit para sa bawat halaga sa app."
 
+msgid "or"
+msgstr "o"
+
+msgid "Debts"
+msgstr "Mga utang"
+
+msgid "Owed to me"
+msgstr "Utang sa akin"
+
+msgid "I owe"
+msgstr "Utang ko"
+
+msgid "I borrowed"
+msgstr "Umutang ako"
+
+msgid "I lent"
+msgstr "Nagpautang ako"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Perang ipinautang mo sa mga tao o hiniram mo sa kanila. Ang pagpapautang ay naglalabas ng pera mula sa isang account at ang pag-utang ay naglalagay dito, kaya nananatiling tama ang mga balanse — ngunit hindi ito binibilang bilang kita o gastusin. Maaari mo ring sabihin sa AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Aktibo"
+
+msgid "Closed"
+msgstr "Sarado"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Wala pang mga saradong utang. Kusang nagsasara ang utang kapag nabayaran na ito nang buo."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Walang mga aktibong utang. Walang utang sa iyo at wala kang utang kaninoman."
+
+msgid "Nothing here."
+msgstr "Walang anuman dito."
+
+msgid "All debts"
+msgstr "Lahat ng utang"
+
+msgid "Owes you"
+msgstr "May utang sa iyo"
+
+msgid "You owe"
+msgstr "May utang ka"
+
+msgid "Paid back"
+msgstr "Nabayaran na"
+
+msgid "Overdue"
+msgstr "Lampas sa takdang petsa"
+
+msgid "Left to pay back"
+msgstr "Natitirang bayaran"
+
+msgid "Pay back by"
+msgstr "Magbayad sa o bago ang"
+
+msgid "Record money you got back"
+msgstr "Itala ang perang natanggap mo"
+
+msgid "Record money you paid back"
+msgstr "Itala ang perang ibinayad mo"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "Ang “Binayaran” ay nagdaragdag ng pera sa account. Ang “Idagdag sa utang” ay kapag pinautang mo sila nang higit pa."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "Ang “Binayaran” ay nagbabawas ng pera mula sa account. Ang “Idagdag sa utang” ay kapag umutang ka pa."
+
+msgid "History"
+msgstr "Kasaysayan"
+
+msgid "Lent"
+msgstr "Ipinautang"
+
+msgid "Borrowed"
+msgstr "Hiniram"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ ay pera na pumasok sa iyong account, − ay pera na lumabas dito."
+
+msgid "Reopen debt"
+msgstr "Muling buksan ang utang"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Isara ang utang na ito nang hindi nagtatala ng pagbabayad? Gamitin ito kung ito ay pinatawad o naayos sa ibang paraan. Hindi magbabago ang mga balanse."
+
+msgid "Close without payment"
+msgstr "Isara nang walang bayad"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "Nabayaran ang %(paid)s sa %(total)s"
+
+msgid "Got paid back"
+msgstr "Nakatanggap ng bayad"
+
+msgid "I paid back"
+msgstr "Nagbayad ako"
+
+msgid "Person"
+msgstr "Tao"
+
+msgid "left"
+msgstr "natitira"
+
+msgid "Was due %(day)s"
+msgstr "Dapat bayaran noong %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Dapat bayaran sa %(day)s"
+
+msgid "of %(total)s"
+msgstr "mula sa %(total)s"
+
+msgid "Open"
+msgstr "Buksan"
+
+msgid "e.g. Rahim"
+msgstr "hal. Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "hal. para sa kanyang telepono, hanggang sa araw ng sweldo"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Kung saan lumabas ang pera (pinautang) o pumasok (umutang). Nagbabago ang balanse nito."
+
+msgid "Optional."
+msgstr "Opsyonal."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "Ang petsa ng pagbabayad ay hindi maaaring mauna sa petsa ng utang."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "%(left)s na lang ang natitirang bayaran."
+
+msgid "Added to debt"
+msgstr "Idinagdag sa utang"
+
+msgid "The money left or came into this account."
+msgstr "Ang natitirang pera o pumasok sa account na ito."
+
+msgid "Lend and borrow"
+msgstr "Magpautang at umutang"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Subaybayan ang perang ipinautang o hiniram mo. Nagbabago ang mga balanse ng account, ngunit hindi ito binibilang bilang kita o gastusin."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "Pina-utang ng %(amount)s si %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "Umutang ng %(amount)s kay %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "Walang utang sa iyo si %(person)s, kaya hindi na-save ang bayad na %(amount)s."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "Wala kang utang kay %(person)s, kaya hindi nai-save ang bayad na %(amount)s."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "Nagbayad sa iyo si %(person)s ng %(amount)s."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Binayaran mo si %(person)s ng %(amount)s."
+
+msgid "Debt saved."
+msgstr "Na-save ang utang."
+
+msgid "Add debt"
+msgstr "Magdagdag ng utang"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Bayad na nang buo. Sarado na ang utang."
+
+msgid "Saved. %(left)s left."
+msgstr "Na-save na. May natitirang %(left)s."
+
+msgid "Debt updated."
+msgstr "Na-update ang utang."
+
+msgid "Edit debt"
+msgstr "I-edit ang utang"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Na-delete ang utang. Tinanggal din ang mga pagbabayad nito."
+
+msgid "Debt closed."
+msgstr "Sarado na ang utang."
+
+msgid "Debt reopened."
+msgstr "Muling binuksan ang utang."
+
+msgid "Payment updated."
+msgstr "Na-update ang pagbabayad."
+
+msgid "Edit payment"
+msgstr "I-edit ang bayad"
+
+msgid "Payment deleted."
+msgstr "Na-delete ang pagbabayad."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "Nakahanap ang AI ng %(n)s na transaksyon. Ayusin ang anumang mali, pagkatapos ay i-save."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Ang iyong password ay dapat maglaman ng hindi bababa sa %(min_length)d karakter."
 msgstr[1] "Ang iyong password ay dapat maglaman ng hindi bababa sa %(min_length)d mga karakter."
 
-msgid "or"
-msgstr "o"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "Lampas sa takdang petsa ang %(n)s"
+msgstr[1] "Lampas sa takdang petsa ang %(n)s"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "Utang na %(n)s"
+msgstr[1] "Mga utang na %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "Lampas na sa takdang petsa ang utang na %(n)s."
+msgstr[1] "Lampas na sa takdang petsa ang mga utang na %(n)s."

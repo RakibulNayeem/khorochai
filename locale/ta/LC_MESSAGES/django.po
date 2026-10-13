@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "வகைகள் &amp; பட்ஜெட்டுகள்"
 
 msgid "Ask AI"
-msgstr "AI-யிடம் கேளுங்கள்"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "மூடு"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI உங்கள் உரையை மட்டுமே படிக்கிறது; ஒவ்வொரு மொத்தத் தொகையும் இருப்பும் உங்கள் சேமிக்கப்பட்ட தரவுகளிலிருந்து ஆப்பால் கணக்கிடப்படுகிறது."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI பயன்பாட்டிற்கு தினசரி வரம்பு உள்ளது, அது டேஷ்போர்டில் காட்டப்படும். இது நள்ளிரவில் ரீசெட் ஆகும், மேலும் நீங்கள் எப்போதும் கைமுறையாகச் சேர்த்துக் கொள்ளலாம்."
+msgstr "AI பயன்பாட்டிற்கு தினசரி வரம்பு உள்ளது, இது டாஷ்போர்டில் காட்டப்படும். இது நள்ளிரவில் மீட்டமைக்கப்படும், நீங்கள் எப்போதும் கைமுறையாகச் சேர்க்கலாம்."
 
 msgid "Never type card numbers or passwords."
-msgstr "கார்டு எண்களையோ அல்லது கடவுச்சொற்களையோ ஒருபோதும் உள்ளிட வேண்டாம்."
+msgstr "ஒருபோதும் கார்டு எண்கள் அல்லது கடவுச்சொற்களை உள்ளிட வேண்டாம்."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "வலது மேல் மூலையில் உள்ள மெனுவிலிருந்து தீம், மொழி மற்றும் உங்கள் பயனர் பெயரை மாற்றவும்."
@@ -1136,6 +1136,207 @@ msgstr "நாணயம்"
 msgid "Used for every amount in the app."
 msgstr "பயன்பாட்டில் உள்ள ஒவ்வொரு தொகைக்கும் பயன்படுத்தப்படுகிறது."
 
+msgid "or"
+msgstr "அல்லது"
+
+msgid "Debts"
+msgstr "கடன்கள்"
+
+msgid "Owed to me"
+msgstr "எனக்கு வர வேண்டியது"
+
+msgid "I owe"
+msgstr "நான் கொடுக்க வேண்டும்"
+
+msgid "I borrowed"
+msgstr "நான் கடன் வாங்கினேன்"
+
+msgid "I lent"
+msgstr "நான் கடன் கொடுத்தேன்"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "நீங்கள் மக்களுக்குக் கொடுத்த அல்லது அவர்களிடம் வாங்கிய பணம். கடன் கொடுத்தால் கணக்கிலிருந்து பணம் வெளியேறும், கடன் வாங்கினால் உள்ளே வரும், எனவே இருப்புக்கள் சரியாக இருக்கும் — ஆனால் அது வருமானம் அல்லது செலவாகக் கணக்கிடப்படாது. AI-யிடம் நீங்கள் கூறலாம்: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "செயலில் உள்ளது"
+
+msgid "Closed"
+msgstr "மூடப்பட்டது"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "மூடப்பட்ட கடன்கள் எதுவும் இல்லை. முழுமையாகத் திருப்பிச் செலுத்தப்படும் போது கடன் தானாகவே மூடிக்கொள்ளும்."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "செயலில் உள்ள கடன்கள் இல்லை. யாரும் உங்களுக்குத் தர வேண்டியதில்லை, நீங்களும் யாருக்கும் தர வேண்டியதில்லை."
+
+msgid "Nothing here."
+msgstr "இங்கே எதுவும் இல்லை."
+
+msgid "All debts"
+msgstr "அனைத்துக் கடன்களும்"
+
+msgid "Owes you"
+msgstr "உங்களுக்குத் தர வேண்டியது"
+
+msgid "You owe"
+msgstr "நீங்கள் கடன்பட்டுள்ளீர்கள்"
+
+msgid "Paid back"
+msgstr "திருப்பிச் செலுத்தப்பட்டது"
+
+msgid "Overdue"
+msgstr "காலாவதியானது"
+
+msgid "Left to pay back"
+msgstr "திரும்பச் செலுத்த வேண்டியது"
+
+msgid "Pay back by"
+msgstr "இதற்குள் திருப்பிச் செலுத்தவும்"
+
+msgid "Record money you got back"
+msgstr "நீங்கள் திரும்பப் பெற்ற பணத்தைப் பதிவு செய்யுங்கள்"
+
+msgid "Record money you paid back"
+msgstr "நீங்கள் திருப்பிச் செலுத்திய பணத்தைப் பதிவு செய்யுங்கள்"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"திருப்பிச் செலுத்தியது\" கணக்கில் பணத்தைச் சேர்க்கும். \"கடனில் சேர்க்கப்பட்டது\" என்பது அவர்களுக்கு மேலும் கடன் தரும் போது."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"திருப்பிச் செலுத்தியது\" கணக்கிலிருந்து பணத்தை எடுக்கும். \"கடனில் சேர்க்கப்பட்டது\" என்பது நீங்கள் மேலும் கடன் வாங்கும் போது."
+
+msgid "History"
+msgstr "வரலாறு"
+
+msgid "Lent"
+msgstr "கடன் கொடுக்கப்பட்டது"
+
+msgid "Borrowed"
+msgstr "வாங்கப்பட்டது"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ என்பது உங்கள் கணக்கிற்கு வந்த பணம், − என்பது அதிலிருந்து சென்ற பணம்."
+
+msgid "Reopen debt"
+msgstr "கடனை மீண்டும் திற"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "பணம் செலுத்தலைப் பதிவு செய்யாமல் இந்தக் கடனை மூடுவதா? இது தள்ளுபடி செய்யப்பட்டாலோ அல்லது வேறு வழியில் தீர்க்கப்பட்டாலோ இதைப் பயன்படுத்தவும். இருப்புக்கள் மாறாது."
+
+msgid "Close without payment"
+msgstr "பணம் செலுத்தாமல் மூடவும்"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s-இல் %(paid)s திருப்பிச் செலுத்தப்பட்டது"
+
+msgid "Got paid back"
+msgstr "பணம் திரும்பப் பெறப்பட்டது"
+
+msgid "I paid back"
+msgstr "நான் திருப்பிச் செலுத்தினேன்"
+
+msgid "Person"
+msgstr "நபர்"
+
+msgid "left"
+msgstr "மீதி"
+
+msgid "Was due %(day)s"
+msgstr "%(day)s அன்று செலுத்த வேண்டியிருந்தது"
+
+msgid "Due %(day)s"
+msgstr "%(day)s அன்று செலுத்த வேண்டும்"
+
+msgid "of %(total)s"
+msgstr "%(total)s-ல்"
+
+msgid "Open"
+msgstr "திற"
+
+msgid "e.g. Rahim"
+msgstr "எ.கா. ரஹீம்"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "எ.கா. அவனது போனுக்காக, சம்பள நாள் வரை"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "பணம் சென்ற இடம் (கடன் கொடுத்தது) அல்லது வந்த இடம் (கடன் வாங்கியது). இதன் இருப்பு மாறும்."
+
+msgid "Optional."
+msgstr "விருப்பத்தேர்வு."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "திருப்பிக் செலுத்தும் தேதி, கடன் வாங்கிய தேதிக்கு முன்பு இருக்க முடியாது."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "திருப்பிச் செலுத்த %(left)s மட்டுமே বাকি உள்ளது."
+
+msgid "Added to debt"
+msgstr "கடனில் சேர்க்கப்பட்டது"
+
+msgid "The money left or came into this account."
+msgstr "இந்த கணக்கில் இருந்து பணம் வெளியேறியது அல்லது வந்தது."
+
+msgid "Lend and borrow"
+msgstr "கடன் வாங்குதல் மற்றும் கொடுத்தல்"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "நீங்கள் கொடுத்த அல்லது வாங்கிய பணத்தைக் கண்காணிக்கவும். கணக்கு இருப்புக்கள் மாறும், ஆனால் அது வருமானம் அல்லது செலவாகக் கணக்கிடப்படாது."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s-க்கு %(amount)s கடன் கொடுக்கப்பட்டது."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s-மிடமிருந்து %(amount)s கடன் வாங்கப்பட்டது."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s உங்களுக்கு எந்தப் பணமும் தர வேண்டியதில்லை, எனவே %(amount)s செலுத்துதல் சேமிக்கப்படவில்லை."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "நீங்கள் %(person)s-க்கு எதுவும் கடன்படவில்லை, எனவே %(amount)s செலுத்துதல் சேமிக்கப்படவில்லை."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s உங்களுக்கு %(amount)s திருப்பித் தந்தார்."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "நீங்கள் %(person)s-க்கு %(amount)s திருப்பிச் செலுத்தினீர்கள்."
+
+msgid "Debt saved."
+msgstr "கடன் சேமிக்கப்பட்டது."
+
+msgid "Add debt"
+msgstr "கடன் சேர்"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "முழுமையாகத் திருப்பிச் செலுத்தப்பட்டது. கடன் மூடப்பட்டது."
+
+msgid "Saved. %(left)s left."
+msgstr "சேமிக்கப்பட்டது. %(left)s மீதமுள்ளது."
+
+msgid "Debt updated."
+msgstr "கடன் புதுப்பிக்கப்பட்டது."
+
+msgid "Edit debt"
+msgstr "கடனைத் திருத்து"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "கடன் நீக்கப்பட்டது. அதன் கட்டணங்களும் அகற்றப்பட்டன."
+
+msgid "Debt closed."
+msgstr "கடன் மூடப்பட்டது."
+
+msgid "Debt reopened."
+msgstr "கடன் மீண்டும் திறக்கப்பட்டது."
+
+msgid "Payment updated."
+msgstr "பணம் செலுத்தப்பட்டது புதுப்பிக்கப்பட்டது."
+
+msgid "Edit payment"
+msgstr "பணம் செலுத்தலைத் திருத்து"
+
+msgid "Payment deleted."
+msgstr "பணம் செலுத்தப்பட்டது நீக்கப்பட்டது."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI %(n)s பரிவர்த்தனையைக் கண்டறிந்தது. தவறாகத் தெரிவதைச் சரிசெய்து, பிறகு சேமிக்கவும்."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "உங்கள் கடவுச்சொல் குறைந்தபட்சம் %(min_length)d எழுத்தைக் கொண்டிருக்க வேண்டும்."
 msgstr[1] "உங்கள் கடவுச்சொல் குறைந்தபட்சம் %(min_length)d எழுத்துகளைக் கொண்டிருக்க வேண்டும்."
 
-msgid "or"
-msgstr "அல்லது"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s காலாவதியானது"
+msgstr[1] "%(n)s காலாவதியானது"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s கடன்"
+msgstr[1] "%(n)s கடன்கள்"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s கடன் திருப்பிச் செலுத்தும் காலாவதி தேதி கடந்துவிட்டது."
+msgstr[1] "%(n)s கடன்கள் திருப்பிச் செலுத்தும் காலாவதி தேதியைத் தாண்டிவிட்டன."

@@ -1,0 +1,23 @@
+{% load i18n money %}
+<a href="{% url 'debt_detail' d.pk %}" class="card debt-card p-3 mb-2 {% if d.is_lent %}is-lent{% else %}is-borrowed{% endif %}{% if d.overdue %} is-overdue{% endif %}">
+  <div class="d-flex align-items-center gap-3">
+    <span class="debt-avatar" aria-hidden="true" data-keep-digits>{{ d.person|slice:":1"|upper }}</span>
+    <div class="flex-grow-1 min-w-0">
+      <div class="d-flex justify-content-between gap-2">
+        <span class="fw-semibold text-truncate" data-keep-digits>{{ d.person }}</span>
+        <span class="fw-semibold amount text-nowrap {% if d.is_lent %}text-income{% else %}text-expense{% endif %}">{% if d.closed %}{{ d.total|money }}{% else %}{{ d.remaining|money }}{% endif %}</span>
+      </div>
+      <div class="d-flex justify-content-between gap-2 small text-muted">
+        <span class="text-truncate">
+          {% if d.overdue %}<span class="text-danger fw-semibold">{% blocktranslate with day=d.due_date|date:"d M" %}Was due {{ day }}{% endblocktranslate %}</span>
+          {% elif d.due_soon %}<span class="text-warning fw-semibold">{% blocktranslate with day=d.due_date|date:"d M" %}Due {{ day }}{% endblocktranslate %}</span>
+          {% elif d.due_date and not d.closed %}{% blocktranslate with day=d.due_date|date:"d M" %}Due {{ day }}{% endblocktranslate %}
+          {% else %}{{ d.date|date:"d M Y" }}{% endif %}
+          {% if d.note %} · <span data-keep-digits>{{ d.note }}</span>{% endif %}
+        </span>
+        <span class="text-nowrap">{% if d.closed %}{% if d.remaining > 0 %}{% translate "Closed" %}{% else %}{% translate "Paid back" %}{% endif %}{% elif d.repaid %}{% blocktranslate with total=d.total|money %}of {{ total }}{% endblocktranslate %}{% else %}{% translate "left" %}{% endif %}</span>
+      </div>
+      {% if not d.closed and d.repaid %}<div class="progress debt-progress mt-2"><div class="progress-bar" style="width: {{ d.pct_paid }}%"></div></div>{% endif %}
+    </div>
+  </div>
+</a>

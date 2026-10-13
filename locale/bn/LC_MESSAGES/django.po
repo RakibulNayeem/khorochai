@@ -1197,3 +1197,218 @@ msgstr "অ্যাপের সব পরিমাণে এটি ব্য�
 
 msgid "or"
 msgstr "অথবা"
+
+# ---------------------------------------------------------------- debts
+msgid "Debts"
+msgstr "ধার-দেনা"
+
+msgid "Owed to me"
+msgstr "আমি পাবো"
+
+msgid "I owe"
+msgstr "আমি দেবো"
+
+msgid "I borrowed"
+msgstr "ধার নিলাম"
+
+msgid "I lent"
+msgstr "ধার দিলাম"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "কাউকে ধার দেওয়া বা কারও কাছ থেকে ধার নেওয়া টাকা। ধার দিলে অ্যাকাউন্ট থেকে টাকা কমে, ধার নিলে বাড়ে — তাই ব্যালেন্স ঠিক থাকে, কিন্তু এটা আয় বা খরচ হিসেবে গোনা হয় না। AI-কেও বলতে পারেন: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”।"
+
+msgid "Active"
+msgstr "চলমান"
+
+msgid "Closed"
+msgstr "বন্ধ"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "এখনো কোনো বন্ধ ধার নেই। পুরো টাকা ফেরত দিলে ধার নিজে থেকেই বন্ধ হয়ে যায়।"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "কোনো চলমান ধার নেই। কেউ আপনার কাছে পাবে না, আপনিও কারও কাছে পাবেন না।"
+
+msgid "Nothing here."
+msgstr "এখানে কিছু নেই।"
+
+msgid "All debts"
+msgstr "সব ধার-দেনা"
+
+msgid "Owes you"
+msgstr "আপনি পাবেন"
+
+msgid "You owe"
+msgstr "আপনি দেবেন"
+
+msgid "Paid back"
+msgstr "ফেরত দেওয়া হয়েছে"
+
+msgid "Overdue"
+msgstr "সময় পেরিয়ে গেছে"
+
+msgid "Left to pay back"
+msgstr "ফেরত বাকি"
+
+msgid "Pay back by"
+msgstr "ফেরতের তারিখ"
+
+msgid "Record money you got back"
+msgstr "ফেরত পাওয়া টাকা লিখুন"
+
+msgid "Record money you paid back"
+msgstr "ফেরত দেওয়া টাকা লিখুন"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“ফেরত দেওয়া হয়েছে” টাকা অ্যাকাউন্টে যোগ করে। আরও ধার দিলে “ধারে যোগ” বেছে নিন।"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“ফেরত দেওয়া হয়েছে” টাকা অ্যাকাউন্ট থেকে কমায়। আরও ধার নিলে “ধারে যোগ” বেছে নিন।"
+
+msgid "History"
+msgstr "ইতিহাস"
+
+msgid "Lent"
+msgstr "ধার দেওয়া"
+
+msgid "Borrowed"
+msgstr "ধার নেওয়া"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ মানে অ্যাকাউন্টে টাকা এসেছে, − মানে অ্যাকাউন্ট থেকে টাকা গেছে।"
+
+msgid "Reopen debt"
+msgstr "ধার আবার চালু করুন"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "টাকা ফেরতের হিসাব ছাড়াই এই ধার বন্ধ করবেন? মাফ করে দিলে বা অন্যভাবে মিটে গেলে এটা ব্যবহার করুন। ব্যালেন্স বদলাবে না।"
+
+msgid "Close without payment"
+msgstr "ফেরত ছাড়াই বন্ধ করুন"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s-এর মধ্যে %(paid)s ফেরত"
+
+msgid "Got paid back"
+msgstr "ফেরত পেলাম"
+
+msgid "I paid back"
+msgstr "ফেরত দিলাম"
+
+msgid "Person"
+msgstr "ব্যক্তি"
+
+msgid "left"
+msgstr "বাকি"
+
+msgid "Was due %(day)s"
+msgstr "ফেরতের তারিখ ছিল %(day)s"
+
+msgid "Due %(day)s"
+msgstr "ফেরত %(day)s"
+
+msgid "of %(total)s"
+msgstr "%(total)s-এর মধ্যে"
+
+msgid "Open"
+msgstr "খুলুন"
+
+msgid "e.g. Rahim"
+msgstr "যেমন: রহিম"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "যেমন: ফোনের জন্য, বেতন পর্যন্ত"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "যে অ্যাকাউন্ট থেকে টাকা গেছে (ধার দিলে) বা যেখানে এসেছে (ধার নিলে)। এর ব্যালেন্স বদলাবে।"
+
+msgid "Optional."
+msgstr "ঐচ্ছিক।"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "ফেরতের তারিখ ধারের তারিখের আগে হতে পারে না।"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "ফেরত বাকি মাত্র %(left)s।"
+
+msgid "Added to debt"
+msgstr "ধারে যোগ"
+
+msgid "The money left or came into this account."
+msgstr "এই অ্যাকাউন্ট থেকে টাকা গেছে বা এখানে এসেছে।"
+
+msgid "Lend and borrow"
+msgstr "ধার দেওয়া ও নেওয়া"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "কাকে কত ধার দিলেন বা কার কাছ থেকে নিলেন তার হিসাব রাখুন। অ্যাকাউন্টের ব্যালেন্স বদলায়, কিন্তু আয় বা খরচ হিসেবে গোনা হয় না।"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s-কে %(amount)s ধার দেওয়া হলো।"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s-এর কাছ থেকে %(amount)s ধার নেওয়া হলো।"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s আপনার কাছে কিছু ধারে না, তাই %(amount)s ফেরত সেভ করা হয়নি।"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "আপনি %(person)s-এর কাছে কিছু ধারেন না, তাই %(amount)s ফেরত সেভ করা হয়নি।"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s আপনাকে %(amount)s ফেরত দিয়েছে।"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "আপনি %(person)s-কে %(amount)s ফেরত দিয়েছেন।"
+
+msgid "Debt saved."
+msgstr "ধার সেভ হয়েছে।"
+
+msgid "Add debt"
+msgstr "ধার যোগ করুন"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "পুরো টাকা ফেরত হয়েছে। ধার বন্ধ হলো।"
+
+msgid "Saved. %(left)s left."
+msgstr "সেভ হয়েছে। বাকি %(left)s।"
+
+msgid "Debt updated."
+msgstr "ধার আপডেট হয়েছে।"
+
+msgid "Edit debt"
+msgstr "ধার এডিট করুন"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "ধার মুছে ফেলা হয়েছে। এর ফেরতের হিসাবও মুছে গেছে।"
+
+msgid "Debt closed."
+msgstr "ধার বন্ধ হয়েছে।"
+
+msgid "Debt reopened."
+msgstr "ধার আবার চালু হয়েছে।"
+
+msgid "Payment updated."
+msgstr "ফেরতের হিসাব আপডেট হয়েছে।"
+
+msgid "Edit payment"
+msgstr "ফেরতের হিসাব এডিট করুন"
+
+msgid "Payment deleted."
+msgstr "ফেরতের হিসাব মুছে ফেলা হয়েছে।"
+
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)sটি সময় পেরিয়েছে"
+msgstr[1] "%(n)sটি সময় পেরিয়েছে"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)sটি ধার"
+msgstr[1] "%(n)sটি ধার"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)sটি ধারের ফেরতের তারিখ পেরিয়ে গেছে।"
+msgstr[1] "%(n)sটি ধারের ফেরতের তারিখ পেরিয়ে গেছে।"
+

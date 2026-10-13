@@ -630,7 +630,7 @@ msgid "AI usage today"
 msgstr "Penggunaan AI hari ini"
 
 msgid "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
-msgstr "Anda telah menggunakan 100% peruntukan AI hari ini. Ia akan ditetapkan semula pada tengah malam. Anda masih boleh menambah transaksi secara manual."
+msgstr "You've used 100% of today's AI allowance. It resets at midnight. You can still add transactions manually."
 
 msgid "Email"
 msgstr "E-mel"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI hanya membaca teks anda; setiap jumlah dan baki dikira oleh aplikasi daripada data yang anda simpan."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "Penggunaan AI mempunyai had harian yang dipaparkan pada papan pemuka. Ia akan ditetapkan semula pada tengah malam, dan anda sentiasa boleh menambah perkara secara manual."
+msgstr "Penggunaan AI mempunyai had harian, seperti yang ditunjukkan pada papan pemuka. Ia akan diset semula pada tengah malam, dan anda sentiasa boleh menambah perkara secara manual."
 
 msgid "Never type card numbers or passwords."
-msgstr "Jangan sekali-kali menaip nombor kad atau kata laluan."
+msgstr "Jangan sesekali taip nombor kad atau kata laluan."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Tukar tema, bahasa dan nama pengguna anda dari menu di bahagian atas sebelah kanan."
@@ -1136,6 +1136,207 @@ msgstr "Mata wang"
 msgid "Used for every amount in the app."
 msgstr "Digunakan untuk setiap jumlah dalam aplikasi."
 
+msgid "or"
+msgstr "atau"
+
+msgid "Debts"
+msgstr "Hutang"
+
+msgid "Owed to me"
+msgstr "Berhutang kepada saya"
+
+msgid "I owe"
+msgstr "Saya berhutang"
+
+msgid "I borrowed"
+msgstr "Saya pinjam"
+
+msgid "I lent"
+msgstr "Saya beri pinjam"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Wang yang anda beri pinjam kepada orang lain atau pinjam daripada mereka. Memberi pinjam mengeluarkan wang daripada akaun dan meminjam memasukkannya, jadi baki kekal betul — tetapi ia tidak dikira sebagai pendapatan atau perbelanjaan. Anda juga boleh beritahu AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Aktif"
+
+msgid "Closed"
+msgstr "Ditutup"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Tiada hutang ditutup lagi. Hutang akan ditutup sendiri apabila ia dibayar sepenuhnya."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Tiada hutang aktif. Tiada sesiapa berhutang dengan anda dan anda tidak berhutang dengan sesiapa."
+
+msgid "Nothing here."
+msgstr "Tiada apa-apa di sini."
+
+msgid "All debts"
+msgstr "Semua hutang"
+
+msgid "Owes you"
+msgstr "Berhutang dengan anda"
+
+msgid "You owe"
+msgstr "Anda berhutang"
+
+msgid "Paid back"
+msgstr "Dibayar balik"
+
+msgid "Overdue"
+msgstr "Lewat"
+
+msgid "Left to pay back"
+msgstr "Baki untuk dibayar balik"
+
+msgid "Pay back by"
+msgstr "Bayar balik menjelang"
+
+msgid "Record money you got back"
+msgstr "Rekod wang yang anda terima"
+
+msgid "Record money you paid back"
+msgstr "Rekod wang yang anda bayar balik"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“Dibayar balik” memasukkan wang ke dalam akaun. “Tambah pada hutang” adalah apabila anda meminjamkan lebih banyak kepada mereka."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“Dibayar balik” mengeluarkan wang daripada akaun. “Tambah pada hutang” adalah apabila anda meminjam lebih banyak."
+
+msgid "History"
+msgstr "Sejarah"
+
+msgid "Lent"
+msgstr "Diberi pinjam"
+
+msgid "Borrowed"
+msgstr "Dipinjam"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ ialah wang yang masuk ke akaun anda, − ialah wang yang keluar daripadanya."
+
+msgid "Reopen debt"
+msgstr "Buka semula hutang"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Tutup hutang ini tanpa merekodkan pembayaran? Guna ini jika ia telah dimaafkan atau diselesaikan dengan cara lain. Baki tidak akan berubah."
+
+msgid "Close without payment"
+msgstr "Tutup tanpa pembayaran"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(paid)s daripada %(total)s telah dibayar balik"
+
+msgid "Got paid back"
+msgstr "Mendapat bayaran balik"
+
+msgid "I paid back"
+msgstr "Saya bayar balik"
+
+msgid "Person"
+msgstr "Orang"
+
+msgid "left"
+msgstr "baki"
+
+msgid "Was due %(day)s"
+msgstr "Tempoh matang pada %(day)s"
+
+msgid "Due %(day)s"
+msgstr "Tarikh akhir %(day)s"
+
+msgid "of %(total)s"
+msgstr "daripada %(total)s"
+
+msgid "Open"
+msgstr "Buka"
+
+msgid "e.g. Rahim"
+msgstr "cth. Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "cth. untuk telefonnya, sehingga hari gaji"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Tempat wang keluar (dipinjamkan) atau masuk (dipinjam). Bakinya berubah."
+
+msgid "Optional."
+msgstr "Pilihan."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "Tarikh bayar balik tidak boleh sebelum tarikh hutang."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "Hanya tinggal %(left)s untuk dibayar balik."
+
+msgid "Added to debt"
+msgstr "Dimasukkan ke hutang"
+
+msgid "The money left or came into this account."
+msgstr "Baki wang atau masuk ke akaun ini."
+
+msgid "Lend and borrow"
+msgstr "Beri pinjam dan pinjam"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Jejak wang yang anda beri pinjam atau pinjam. Baki akaun berubah, tetapi ia tidak dikira sebagai pendapatan atau perbelanjaan."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "Meminjamkan sebanyak %(amount)s kepada %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "Meminjam sebanyak %(amount)s daripada %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s tidak berhutang apa-apa dengan anda, jadi pembayaran sebanyak %(amount)s tidak disimpan."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "Anda tidak berhutang apa-apa kepada %(person)s, jadi bayaran %(amount)s tidak disimpan."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s telah membayar balik sebanyak %(amount)s kepada anda."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "Anda telah membayar balik %(person)s sebanyak %(amount)s."
+
+msgid "Debt saved."
+msgstr "Hutang disimpan."
+
+msgid "Add debt"
+msgstr "Tambah hutang"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Dibayar penuh. Hutang ditutup."
+
+msgid "Saved. %(left)s left."
+msgstr "Disimpan. Baki %(left)s."
+
+msgid "Debt updated."
+msgstr "Hutang dikemas kini."
+
+msgid "Edit debt"
+msgstr "Sunting hutang"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Hutang dipadamkan. Pembayarannya juga telah dibuang."
+
+msgid "Debt closed."
+msgstr "Hutang ditutup."
+
+msgid "Debt reopened."
+msgstr "Hutang dibuka semula."
+
+msgid "Payment updated."
+msgstr "Pembayaran dikemas kini."
+
+msgid "Edit payment"
+msgstr "Sunting pembayaran"
+
+msgid "Payment deleted."
+msgstr "Pembayaran dipadamkan."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI menemui %(n)s transaksi. Betulkan apa yang salah, kemudian simpan."
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Kata laluan anda mesti mengandungi sekurang-kurangnya %(min_length)d aksara."
 
-msgid "or"
-msgstr "atau"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s lewat"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "Hutang-hutang %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "Hutang-hutang %(n)s telah lepas tarikh bayar balik."

@@ -39,10 +39,10 @@ msgid "Transactions"
 msgstr "المعاملات"
 
 msgid "Categories &amp; Budgets"
-msgstr "الفئات والميزانيات"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
-msgstr "اسأل الذكاء الاصطناعي"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "إغلاق"
@@ -54,7 +54,7 @@ msgid "System follows your phone or computer's dark mode setting."
 msgstr "يتبع النظام إعدادات الوضع المظلم في هاتفك أو حاسوبك."
 
 msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
-msgstr "يغيّر لغة القوائم والأزرار والرسائل في التطبيق. يمكنك دائماً الكتابة أو التحدث إلى الذكاء الاصطناعي بأي لغة — বাংলা والإنجليزية وBanglish وغيرها."
+msgstr "يغير قوائم التطبيق وأزراره ورسائله. يمكنك دائماً الكتابة أو التحدث إلى AI بأي لغة — বাংলা، English، Banglish والمزيد."
 
 msgid "These settings are saved in this browser."
 msgstr "هذه الإعدادات محفوظة في هذا المتصفح."
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "الذكاء الاصطناعي يقرأ نصك فقط؛ يتم حساب كل إجمالي ورصيد بواسطة التطبيق من بياناتك المحفوظة."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "يحتوي استخدام AI على مخصص يومي يظهر في لوحة التحكم. يتم إعادة تعيينه عند منتصف الليل، ويمكنك دائماً إضافة العناصر يدوياً."
+msgstr "استخدام AI له حد يومي يظهر في لوحة التحكم. يعاد ضبطه في منتصف الليل، ويمكنك دائماً إضافة المعاملات يدوياً."
 
 msgid "Never type card numbers or passwords."
-msgstr "لا تقم أبداً بكتابة أرقام البطاقات أو كلمات المرور."
+msgstr "لا تقم أبداً كتابة أرقام البطاقات أو كلمات المرور."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "قم بتغيير السمة واللغة واسم المستخدم الخاص بك من القائمة الموجودة في أعلى اليمين."
@@ -1136,6 +1136,207 @@ msgstr "العملة"
 msgid "Used for every amount in the app."
 msgstr "يُستخدم لكل مبلغ في التطبيق."
 
+msgid "or"
+msgstr "أو"
+
+msgid "Debts"
+msgstr "الديون"
+
+msgid "Owed to me"
+msgstr "مستحق لي"
+
+msgid "I owe"
+msgstr "أنا مدين"
+
+msgid "I borrowed"
+msgstr "لقد اقترضت"
+
+msgid "I lent"
+msgstr "لقد أخلفت"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "الأموال التي أقرَضتها لأشخاص أو اقترضتَها منهم. الإقراض يخرج الأموال من الحساب والاقتراض يدخلها، لذا تظل الأرصدة صحيحة — ولكنها لا تُحتسب كدخل أو مصروف. يمكنك أيضاً إخبار AI: “rahim ke 500 dhar dilam”، “karim theke 2000 dhar nilam”، “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Closed"
+msgstr "مغلق"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "لا توجد ديون مغلقة بعد. يُغلق الدين تلقائياً عند سداده بالكامل."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "لا توجد ديون نشطة. لا أحد يدين لك بشيء ولا أنت مدين لأحد."
+
+msgid "Nothing here."
+msgstr "لا يوجد شيء هنا."
+
+msgid "All debts"
+msgstr "كل الديون"
+
+msgid "Owes you"
+msgstr "مدين لك"
+
+msgid "You owe"
+msgstr "أنت تدين"
+
+msgid "Paid back"
+msgstr "تم السداد"
+
+msgid "Overdue"
+msgstr "متأخر"
+
+msgid "Left to pay back"
+msgstr "المتبقي للسداد"
+
+msgid "Pay back by"
+msgstr "السداد في موعد"
+
+msgid "Record money you got back"
+msgstr "تسجيل الأموال التي استرددتها"
+
+msgid "Record money you paid back"
+msgstr "تسجيل الأموال التي سددتها"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"تم السداد\" يضيف المال إلى الحساب. \"أُضيف إلى الدين\" يحدث عندما تقرضهم المزيد."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"تم السداد\" يخصم المال من الحساب. \"أُضيف إلى الدين\" يحدث عندما تقترض المزيد."
+
+msgid "History"
+msgstr "السجل"
+
+msgid "Lent"
+msgstr "مُقرض"
+
+msgid "Borrowed"
+msgstr "مقتترض"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ هو المال الذي دخل إلى حسابك، و − هو المال الذي خرج منه."
+
+msgid "Reopen debt"
+msgstr "إعادة فتح الدين"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "إغلاق هذا الدين دون تسجيل دفعة؟ استخدم هذا الخيار إذا تم إسقاطه أو تسويته بطريقة أخرى. لن تتغير الأرصدة."
+
+msgid "Close without payment"
+msgstr "إغلاق بدون دفع"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "تم سداد %(paid)s من %(total)s"
+
+msgid "Got paid back"
+msgstr "تم استرداد المبلغ"
+
+msgid "I paid back"
+msgstr "لقد سددت"
+
+msgid "Person"
+msgstr "الشخص"
+
+msgid "left"
+msgstr "المتبقي"
+
+msgid "Was due %(day)s"
+msgstr "كان مستحقاً في %(day)s"
+
+msgid "Due %(day)s"
+msgstr "يستحق في %(day)s"
+
+msgid "of %(total)s"
+msgstr "من %(total)s"
+
+msgid "Open"
+msgstr "فتح"
+
+msgid "e.g. Rahim"
+msgstr "مثال: رحيم"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "مثال: لشراء هاتفه، حتى موعد الراتب"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "المكان الذي خرج منه المال (إقراض) أو دخل إليه (اقتراض). يتغير رصيده."
+
+msgid "Optional."
+msgstr "اختياري."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "لا يمكن أن يكون تاريخ السداد قبل تاريخ الدين."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "متبقٍ %(left)s فقط للسداد."
+
+msgid "Added to debt"
+msgstr "تمت الإضافة إلى الدين"
+
+msgid "The money left or came into this account."
+msgstr "المال المتبقي أو الوارد إلى هذا الحساب."
+
+msgid "Lend and borrow"
+msgstr "الإقراض والاقتراض"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "تتبع الأموال التي أقرضتها أو اقترضتها. تتغير أرصدة الحسابات، ولكن لا يُحسب ذلك كدخل أو مصروف."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "أقرضت %(amount)s إلى %(person)s."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "اقتترضت %(amount)s من %(person)s."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s لا يدين لك بشيء، لذلك لم يتم حفظ دفعة %(amount)s."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "أنت لا تدين لـ %(person)s بشيء، لذا لم يتم حفظ دفعة %(amount)s."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "قام %(person)s بسداد %(amount)s لك."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "لقد سددت لـ %(person)s مبلغ %(amount)s."
+
+msgid "Debt saved."
+msgstr "تم حفظ الدين."
+
+msgid "Add debt"
+msgstr "إضافة دين"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "تم السداد بالكامل. تم إغلاق الدين."
+
+msgid "Saved. %(left)s left."
+msgstr "تم الحفظ. المتبقي: %(left)s."
+
+msgid "Debt updated."
+msgstr "تم تحديث الدين."
+
+msgid "Edit debt"
+msgstr "تعديل الدين"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "تم حذف الدين وإزالة دفعاته أيضاً."
+
+msgid "Debt closed."
+msgstr "تم إغلاق الدين."
+
+msgid "Debt reopened."
+msgstr "تم إعادة فتح الدين."
+
+msgid "Payment updated."
+msgstr "تم تحديث الدفعة."
+
+msgid "Edit payment"
+msgstr "تعديل الدفعة"
+
+msgid "Payment deleted."
+msgstr "تم حذف الدفعة."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "وجد الذكاء الاصطناعي %(n)s معاملات. صحح أي شيء يبدو خاطئاً، ثم احفظ."
@@ -1181,5 +1382,29 @@ msgstr[3] "يجب أن تحتوي كلمة مرورك على %(min_length)d أح
 msgstr[4] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
 msgstr[5] "يجب أن تحتوي كلمة مرورك على %(min_length)d أحرف على الأقل."
 
-msgid "or"
-msgstr "أو"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "متأخر %(n)s"
+msgstr[1] "متأخر %(n)s"
+msgstr[2] "متأخر %(n)s"
+msgstr[3] "متأخر %(n)s"
+msgstr[4] "متأخر %(n)s"
+msgstr[5] "متأخر %(n)s"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "ديون %(n)s"
+msgstr[1] "دين %(n)s"
+msgstr[2] "ديون %(n)s"
+msgstr[3] "ديون %(n)s"
+msgstr[4] "ديون %(n)s"
+msgstr[5] "ديون %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "ديون %(n)s تجاوزت موعد سدادها."
+msgstr[1] "دين %(n)s تجاوز موعد سداده."
+msgstr[2] "ديون %(n)s تجاوزت موعد سدادها."
+msgstr[3] "ديون %(n)s تجاوزت موعد سدادها."
+msgstr[4] "ديون %(n)s تجاوزت موعد سدادها."
+msgstr[5] "ديون %(n)s تجاوزت موعد سدادها."

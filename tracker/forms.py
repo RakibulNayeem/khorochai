@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import gettext, gettext_lazy as _
 
-from .models import EXPENSE, Account, Category, Transaction, Transfer
+from .models import DEBT_DIRECTION_CHOICES, EXPENSE, Account, Category, Debt, DebtRecord, Transaction, Transfer
 
 
 class BootstrapMixin:
@@ -174,4 +174,80 @@ class TransferForm(BootstrapMixin, forms.ModelForm):
         data = super().clean()
         if data.get("from_account") and data.get("from_account") == data.get("to_account"):
             self.add_error("to_account", _("Pick two different accounts."))
+        return data
+
+
+class DebtForm(BootstrapMixin, forms.ModelForm):
+    class Meta:
+        model = Debt
+        fields = ("direction", "person", "amount", "account", "date", "due_date", "note")
+        widgets = {
+            "direction": forms.RadioSelect,
+            "person": forms.TextInput(attrs={"list": "people", "autocomplete": "off", "placeholder": _("e.g. Rahim")}),
+            "amount": forms.NumberInput(attrs={"step": "0.01", "min": "0.01"}),
+            "date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
+            "due_date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
+            "note": forms.TextInput(attrs={"placeholder": _("e.g. for his phone, till salary day")}),
+        }
+        labels = {"direction": _("Type"), "person": _("Person"), "amount": _("Amount"), "account": _("Account"),
+                  "date": _("Date"), "due_date": _("Pay back by"), "note": _("Note")}
+        help_texts = {"account": _("Where the money went out of (lent) or came into (borrowed). Its balance changes."),
+                      "due_date": _("Optional.")}
+
+    def __init__(self, *args, user=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["account"].queryset = Account.objects.filter(user=user)
+        self.fields["account"].required = True
+        self._style()
+        self.fields["direction"].widget.attrs.pop("class", None)  # drawn as two toggle buttons in form.html
+        self.fields["direction"].choices = DEBT_DIRECTION_CHOICES  # no empty "---------" choice
+
+    def clean_person(self):
+        return " ".join(self.cleaned_data["person"].split())
+
+    def clean_amount(self):
+        amount = self.cleaned_data["amount"]
+        if amount is None or amount <= 0:
+            raise forms.ValidationError(_("Amount must be greater than zero."))
+        return amount
+
+    def clean(self):
+        data = super().clean()
+        if data.get("due_date") and data.get("date") and data["due_date"] < data["date"]:
+            self.add_error("due_date", _("The pay-back date can't be before the date of the debt."))
+        return data
+
+
+class DebtRecordForm(BootstrapMixin, forms.ModelForm):
+    class Meta:
+        model = DebtRecord
+        fields = ("kind", "amount", "account", "date", "note")
+        widgets = {
+            "amount": forms.NumberInput(attrs={"step": "0.01", "min": "0.01"}),
+            "date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
+        }
+        labels = {"kind": _("Type"), "amount": _("Amount"), "account": _("Account"), "date": _("Date"), "note": _("Note")}
+
+    def __init__(self, *args, user=None, debt=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.debt = debt
+        self.fields["account"].queryset = Account.objects.filter(user=user)
+        self.fields["account"].required = True
+        self._style()
+
+    def clean_amount(self):
+        amount = self.cleaned_data["amount"]
+        if amount is None or amount <= 0:
+            raise forms.ValidationError(_("Amount must be greater than zero."))
+        return amount
+
+    def clean(self):
+        data = super().clean()
+        if self.debt and data.get("kind") == "repay" and data.get("amount"):
+            from .services import debt_totals
+            debt_totals(self.debt)
+            left = self.debt.remaining + (self.instance.amount if self.instance.pk and self.instance.kind == "repay" else 0)
+            if data["amount"] > left:
+                from .templatetags.money import money
+                self.add_error("amount", gettext("Only %(left)s is left to pay back.") % {"left": money(max(left, 0))})
         return data

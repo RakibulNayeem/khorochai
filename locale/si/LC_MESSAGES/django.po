@@ -39,10 +39,10 @@ msgid "Transactions"
 msgstr "ගනුදෙනු"
 
 msgid "Categories &amp; Budgets"
-msgstr "ප්‍රවර්ග සහ අයවැය"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
-msgstr "AI ගෙන් අසන්න"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "වසන්න"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI කියවන්නේ ඔබේ පෙළ පමණි; සෑම මුළු එකතුවක් සහ ශේෂයක්ම යෙදුම මගින් ඔබේ සුරකින ලද දත්ත වලින් ගණනය කරනු ලැබේ."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI භාවිතය සඳහා දෛනික දීමනාවක් ඇත, එය ඩෑෂ්බෝඩ් එකේ දැක්වේ. එය මධ්‍යම රාත්‍රියේදී නැවත සැකසෙන අතර, ඔබට ඕනෑම වේලාවක අතින් දත්ත ඇතුළත් කළ හැක."
+msgstr "AI භාවිතය සඳහා දෛනික සීමාවක් ඇත, එය ඩෑෂ්බෝඩ් එකේ පෙන්වයි. එය මධ්යම රාත්‍රියට යළි පිහිටුවන අතර, ඔබට සෑම විටම අත动ින් දේවල් එකතු කළ හැක."
 
 msgid "Never type card numbers or passwords."
-msgstr "කිසිවිටෙකත් කාඩ්පත් අංක හෝ මුරපද ටයිප් නොකරන්න."
+msgstr "කිසිවිටක කාඩ්පත් අංක හෝ මුරපද ටයිප් නොකරන්න."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "ඉහළ දකුණු කෙළවරේ ඇති මෙනුවෙන් තේමාව, භාෂාව සහ ඔබේ පරිශීලක නාමය වෙනස් කරන්න."
@@ -1136,6 +1136,207 @@ msgstr "මුදල් වර්ගය"
 msgid "Used for every amount in the app."
 msgstr "යෙදුමේ සෑම මුදලක් සඳහාම භාවිතා වේ."
 
+msgid "or"
+msgstr "නැතහොත්"
+
+msgid "Debts"
+msgstr "ණය"
+
+msgid "Owed to me"
+msgstr "මට ලැබිය යුතු"
+
+msgid "I owe"
+msgstr "මම ණයයි"
+
+msgid "I borrowed"
+msgstr "මම ණයට ගත්තෙමි"
+
+msgid "I lent"
+msgstr "මම ණයට දුන්නෙමි"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "සක්‍රීය"
+
+msgid "Closed"
+msgstr "වසා ඇත"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "වසා දැමූ ණය නොමැත. සම්පූර්ණයෙන්ම ගෙවා අවසන් වූ විට ණය ස්වයංක්‍රීයව වැසේ."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "সක්‍රීය ණය නැත. කිසිවෙක් ඔබට ණය නැති අතර ඔබත් කිසිවෙකුට ණය නැත."
+
+msgid "Nothing here."
+msgstr "මෙහි කිසිවක් නැත."
+
+msgid "All debts"
+msgstr "සියලුම ණය"
+
+msgid "Owes you"
+msgstr "ඔබට ණයයි"
+
+msgid "You owe"
+msgstr "ඔබ ණයයි"
+
+msgid "Paid back"
+msgstr "ආපසු ගෙවන ලදී"
+
+msgid "Overdue"
+msgstr "කල් ඉක්ම ගිය"
+
+msgid "Left to pay back"
+msgstr "ආපසු ගෙවීමට ඉතිරිව ඇත"
+
+msgid "Pay back by"
+msgstr "විසින් ආපසු ගෙවන්න"
+
+msgid "Record money you got back"
+msgstr "ඔබට ලැබුණු මුදල් වාර්තා කරන්න"
+
+msgid "Record money you paid back"
+msgstr "ඔබ ආපසු ගෙවූ මුදල් වාර්තා කරන්න"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"ආපසු ගෙවන ලදී\" යන්නෙන් ගිණුමට මුදල් එකතු වේ. \"ණයට එකතු කරන ලදී\" යනු ඔබ ඔවුන්ට වැඩිපුර ණයට දෙන විටය."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"ආපසු ගෙවන ලදී\" යන්නෙන් ගිණුමෙන් මුදල් ඉවත් වේ. \"ණයට එකතු කරන ලදී\" යනු ඔබ වැඩිපුර ණයට ගන්නා විටය."
+
+msgid "History"
+msgstr "ඉතිහාසය"
+
+msgid "Lent"
+msgstr "ණයට දුන්නා"
+
+msgid "Borrowed"
+msgstr "ණයට ගත්"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ යනු ඔබේ ගිණුමට පැමිණි මුදල්, − යනු එයින් පිටව ගිය මුදල්."
+
+msgid "Reopen debt"
+msgstr "ණය නැවත විවෘත කරන්න"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "ගෙවීමක් සටහන් නොකර මෙම ණය වසා දමන්නද? එය කමා කර ඇත්නම් හෝ වෙනත් ක්‍රමයකින් විසඳා ඇත්නම් මෙය භාවිතා කරන්න. ශේෂයන් වෙනස් නොවනු ඇත."
+
+msgid "Close without payment"
+msgstr "ගෙවීමකින් තොරව වසා දමන්න"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s වලින් %(paid)sක් ගෙවා ඇත"
+
+msgid "Got paid back"
+msgstr "ආපසු ගෙවීමක් ලැබුණි"
+
+msgid "I paid back"
+msgstr "මම ආපසු ගෙව්වෙමි"
+
+msgid "Person"
+msgstr "వ్యକ୍තියා"
+
+msgid "left"
+msgstr "ඉතිරි"
+
+msgid "Was due %(day)s"
+msgstr "ගෙවිය යුතුව තිබුණේ %(day)s"
+
+msgid "Due %(day)s"
+msgstr "%(day)s දිනට නියමිතයි"
+
+msgid "of %(total)s"
+msgstr "%(total)s න්"
+
+msgid "Open"
+msgstr "විවෘතයි"
+
+msgid "e.g. Rahim"
+msgstr "උදා: Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "උදා: ඔහුගේ දුරකථනය සඳහා, වැටුප් දිනය දක්වා"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "මුදල් පිටතට ගිය (ණයට දුන්) හෝ ඇතුළට පැමිණි (ණයටගත්) තැන. එහි ශේෂය වෙනස් වේ."
+
+msgid "Optional."
+msgstr "ಐच्छिकයි."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "ආපසු ගෙවන දිනය ණය වූ දිනයට පෙර විය නොහැක."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "ආපසු ගෙවීමට ඉතිරිව ඇත්තේ %(left)s පමණි."
+
+msgid "Added to debt"
+msgstr "ණයට එකතු කරන ලදී"
+
+msgid "The money left or came into this account."
+msgstr "ഈ ගිණුමට ඉතිරි වූ හෝ ලැබුණු මුදල."
+
+msgid "Lend and borrow"
+msgstr "ණයට දීම සහ ණයට ගැනීම"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "ඔබ ණයට දුන් හෝ ණයට ගත් මුදල් නිරීක්ෂණය කරන්න. ගිණුම් ශේෂයන් වෙනස් වේ, නමුත් එය ආදායමක් හෝ වියදමක් ලෙස නොගැණේ."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)sට %(amount)sක් ණයට දෙන ලදී."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)sගෙන් %(amount)sක් ණයට ගන්නා ලදී."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s ඔබට කිසිවක් දීමට නැත, එබැවින් %(amount)s ගෙවීම සුරකින ලද්දේ නැත."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "ඔබ %(person)s වෙත කිසිවක් ණය නැත, එබැවින් %(amount)s ගෙවීම සුරැකී නැත."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s ඔබට %(amount)sක් ආපසු ගෙවා ඇත."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "ඔබ %(person)s ට %(amount)s ක් ආපසු ගෙවා ඇත."
+
+msgid "Debt saved."
+msgstr "ණය සුරකින ලදී."
+
+msgid "Add debt"
+msgstr "ණය එකතු කරන්න"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "সম্পূর্ণ ලෙස ගෙවා ඇත. ණය වසා ඇත."
+
+msgid "Saved. %(left)s left."
+msgstr "සුරකින ලදී. %(left)s ඉතිරියි."
+
+msgid "Debt updated."
+msgstr "ණය යාවත්කාලීන කරන ලදී."
+
+msgid "Edit debt"
+msgstr "ණය සංස්කරණය කරන්න"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "ණය මකා දමන ලදී. එහි ගෙවීම් ද ඉවත් කරන ලදී."
+
+msgid "Debt closed."
+msgstr "ණය වසා දමන ලදී."
+
+msgid "Debt reopened."
+msgstr "ණය නැවත විවෘත කරන ලදී."
+
+msgid "Payment updated."
+msgstr "ගෙවීම යාවත්කාලීන කරන ලදී."
+
+msgid "Edit payment"
+msgstr "ගෙවීම සංස්කරණය කරන්න"
+
+msgid "Payment deleted."
+msgstr "ගෙවීම මකා දමන ලදී."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI විසින් ගනුදෙනුවක් %(n)s සොයා ගන්නා ලදී. වැරදි ලෙස පෙනෙන ඕනෑම දෙයක් නිවැරදි කර සුරකින්න."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "ඔබේ මුරපදයේ අවම වශයෙන් අක්ෂර %(min_length)dක් තිබිය යුතුය."
 msgstr[1] "ඔබේ මුරපදයේ අවම වශයෙන් අක්ෂර %(min_length)dක් තිබිය යුතුය."
 
-msgid "or"
-msgstr "හෝ"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s කල් ඉකුත් වී ඇත"
+msgstr[1] "%(n)s කල් ඉකුත් වී ඇත"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s ණය"
+msgstr[1] "%(n)s ණය"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s ණය ගෙවිය යුතු දිනය ඉක්මවා ගොස් ඇත."
+msgstr[1] "%(n)s ණය ගෙවිය යුතු දිනය ඉක්මවා ගොස් ඇත."

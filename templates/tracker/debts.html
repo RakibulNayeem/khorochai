@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n money %}
+{% block title %}{% translate "Debts" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+  <h1 class="h4 m-0">{% translate "Debts" %}</h1>
+  <div class="d-flex gap-2">
+    <a href="{% url 'debt_add' %}?type=borrowed" class="btn btn-sm btn-outline-secondary">+ {% translate "I borrowed" %}</a>
+    <a href="{% url 'debt_add' %}?type=lent" class="btn btn-sm btn-brand">+ {% translate "I lent" %}</a>
+  </div>
+</div>
+<p class="text-muted small">{% translate "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”." %}</p>
+
+<div class="row g-3 mb-3">
+  <div class="col-6"><div class="card p-3 h-100">
+    <div class="card-title-sm">{% translate "Owed to me" %}</div>
+    <div class="stat text-income">{{ summary.owed_to_me|money }}</div>
+    <div class="small text-muted">{% blocktranslate count n=summary.lent_count %}{{ n }} debt{% plural %}{{ n }} debts{% endblocktranslate %}</div>
+  </div></div>
+  <div class="col-6"><div class="card p-3 h-100">
+    <div class="card-title-sm">{% translate "I owe" %}</div>
+    <div class="stat text-expense">{{ summary.i_owe|money }}</div>
+    <div class="small text-muted">{% blocktranslate count n=summary.borrowed_count %}{{ n }} debt{% plural %}{{ n }} debts{% endblocktranslate %}</div>
+  </div></div>
+</div>
+{% if summary.overdue_count %}
+<div class="alert alert-warning py-2 small">{% blocktranslate count n=summary.overdue_count %}{{ n }} debt is past its pay-back date.{% plural %}{{ n }} debts are past their pay-back date.{% endblocktranslate %}</div>
+{% endif %}
+
+<ul class="nav nav-pills debt-tabs mb-3">
+  <li class="nav-item"><a class="nav-link {% if not show_closed %}active{% endif %}" href="{% url 'debts' %}">{% translate "Active" %} <span class="badge rounded-pill">{{ open_count }}</span></a></li>
+  <li class="nav-item"><a class="nav-link {% if show_closed %}active{% endif %}" href="?show=closed">{% translate "Closed" %} <span class="badge rounded-pill">{{ closed_count }}</span></a></li>
+</ul>
+
+{% if not lent and not borrowed %}
+<div class="card p-4 text-center text-muted">
+  {% if show_closed %}{% translate "No closed debts yet. A debt closes by itself when it is fully paid back." %}
+  {% else %}{% translate "No active debts. Nobody owes you and you owe nobody." %}{% endif %}
+</div>
+{% else %}
+<div class="row g-3">
+  <div class="col-lg-6">
+    <h2 class="h6 text-muted mb-2">{% translate "Owed to me" %} <span class="fw-normal">· {% translate "I lent" %}</span></h2>
+    {% for d in lent %}{% include "tracker/_debt_card.html" %}{% empty %}<p class="text-muted small">{% translate "Nothing here." %}</p>{% endfor %}
+  </div>
+  <div class="col-lg-6">
+    <h2 class="h6 text-muted mb-2">{% translate "I owe" %} <span class="fw-normal">· {% translate "I borrowed" %}</span></h2>
+    {% for d in borrowed %}{% include "tracker/_debt_card.html" %}{% empty %}<p class="text-muted small">{% translate "Nothing here." %}</p>{% endfor %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -156,14 +156,14 @@ def call_llm(system: str, user: str, usage: dict | None = None) -> dict:
 
 # --------------------------------------------------------------------------- prompts
 
-PARSE_PROMPT = """You extract income, expense, transfer, balance and budget entries for a personal budget app used in Bangladesh.
+PARSE_PROMPT = """You extract income, expense, transfer, balance, budget and debt (lend/borrow) entries for a personal budget app used in Bangladesh.
 The user may write in English, Bangla, Banglish (Bangla in English letters) or any other language,
 and may mention several transactions in one message.
 
 Return ONLY JSON in exactly this shape:
-{"transactions": [{"type": "expense" or "income" or "transfer" or "balance" or "budget", "amount": number, "category": "string",
-  "is_new_category": true or false, "account": "string", "to_account": "string",
-  "note": "short note", "date": "YYYY-MM-DD"}],
+{"transactions": [{"type": "expense" or "income" or "transfer" or "balance" or "budget" or "lend" or "borrow" or "collect" or "repay",
+  "amount": number, "category": "string", "is_new_category": true or false, "account": "string", "to_account": "string",
+  "person": "string", "due_date": "YYYY-MM-DD or empty string", "note": "short note", "date": "YYYY-MM-DD"}],
  "message": "short explanation ONLY if no transaction was found, otherwise empty string"}
 
 Rules:
@@ -205,6 +205,18 @@ Rules:
    expense category (exact name; or a new short English name with is_new_category=true), account = "",
    to_account = "". "budget/বাজেট/limit/sima/সীমা/er beshi na/বেশি না" signal a budget.
    "remove/delete/bad dao the food budget" = type "budget" with amount 0.
+   DEBTS: money lent to or borrowed from a PERSON, to be paid back later. Not income or expense.
+   "dhar/ধার/loan/rin/ঋণ/udhar/borrow/lend/owe/pabo/পাবো/debo/দেবো" signal a debt.
+   - "lend": I gave someone money as a loan: "rahim ke 500 dhar dilam", "রহিমকে ৫০০ টাকা ধার দিলাম", "lent 2000 to Karim".
+   - "borrow": I took a loan from someone: "karim theke 2000 dhar nilam", "করিমের কাছ থেকে ২০০০ ধার নিলাম", "borrowed 1000 from Rina".
+   - "collect": someone paid me back money I had lent them: "rahim 300 ferot dilo", "রহিম ৩০০ টাকা ফেরত দিল", "Karim paid me back 500".
+   - "repay": I paid back money I had borrowed: "karim ke 1000 shodh korlam", "করিমকে ১০০০ টাকা ফেরত দিলাম", "repaid Rina 500".
+   person = the other person's name as written (or a short description like "Ma", "boss"); keep the user's spelling,
+   but if it is one of these people the user already has an open debt with, use that exact spelling: __PEOPLE__
+   account = the account the money left or came into ("" if not said). due_date = when it should be paid back,
+   if mentioned ("next month e ferot debe", "by Friday"), else "". category = "", is_new_category = false.
+   For other types person = "" and due_date = "".
+   Giving money as a gift or help that is NOT to be paid back is an expense (category Family/Gift), not "lend".
 6. note: short description in the user's own language, e.g. "রিকশা ভাড়া", "lunch with friends".
 7. Never calculate totals. Never invent transactions. If there is no money amount at all,
    return {"transactions": [], "message": "<explain briefly in the user's language>"}.
@@ -236,6 +248,19 @@ Input: "khabar e mashe 6000 budget, transport 2000"
 Output: {"transactions": [
  {"type":"budget","amount":6000,"category":"Food","is_new_category":false,"account":"","to_account":"","note":"","date":"__TODAY__"},
  {"type":"budget","amount":2000,"category":"Transport","is_new_category":false,"account":"","to_account":"","note":"","date":"__TODAY__"}],
+ "message": ""}
+
+Example
+Input: "rahim ke 500 dhar dilam bkash e, next friday ferot debe. karim theke 2000 dhar nilam"
+Output: {"transactions": [
+ {"type":"lend","amount":500,"category":"","is_new_category":false,"account":"bKash","to_account":"","person":"Rahim","due_date":"<next Friday as YYYY-MM-DD>","note":"ধার","date":"__TODAY__"},
+ {"type":"borrow","amount":2000,"category":"","is_new_category":false,"account":"","to_account":"","person":"Karim","due_date":"","note":"ধার","date":"__TODAY__"}],
+ "message": ""}
+
+Example
+Input: "রহিম ৩০০ টাকা ফেরত দিল"
+Output: {"transactions": [
+ {"type":"collect","amount":300,"category":"","is_new_category":false,"account":"","to_account":"","person":"রহিম","due_date":"","note":"ফেরত","date":"__TODAY__"}],
  "message": ""}
 
 Example
@@ -278,7 +303,7 @@ Rules:
 """
 
 
-def _fill(template: str, today, expense_names, income_names, account_names=(), currency="BDT") -> str:
+def _fill(template: str, today, expense_names, income_names, account_names=(), currency="BDT", people=()) -> str:
     import datetime as dt
 
     yesterday = today - dt.timedelta(days=1)
@@ -291,11 +316,13 @@ def _fill(template: str, today, expense_names, income_names, account_names=(), c
         .replace("__INCOME__", ", ".join(income_names) or "(none)")
         .replace("__ACCOUNTS__", ", ".join(account_names) or "(none)")
         .replace("__CURRENCY__", currency)
+        .replace("__PEOPLE__", ", ".join(people) or "(none yet)")
     )
 
 
-def parse_transactions(text, today, expense_names, income_names, account_names=(), usage=None, currency="BDT") -> dict:
-    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names, currency)
+def parse_transactions(text, today, expense_names, income_names, account_names=(), usage=None, currency="BDT",
+                       people=()) -> dict:
+    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names, currency, people)
     return call_llm(system, normalize_text(text), usage=usage)
 
 

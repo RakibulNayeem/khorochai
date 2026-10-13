@@ -39,10 +39,10 @@ msgid "Transactions"
 msgstr "تراکنش‌ها"
 
 msgid "Categories &amp; Budgets"
-msgstr "دسته‌بندی‌ها و بودجه‌ها"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
-msgstr "از هوش مصنوعی بپرسید"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "بستن"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI فقط متن شما را می‌خواند؛ هر مجموع و موجودی توسط برنامه از داده‌های ذخیره‌شده شما محاسبه می‌شود."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "استفاده از AI دارای سقف روزانه است که در داشبورد نمایش داده می‌شود. این سقف در نیمه‌شب بازنشانی می‌شود و شما همیشه می‌توانید موارد را به‌صورت دستی اضافه کنید."
+msgstr "استفاده از AI سهمیه روزانه دارد که در داشبورد نشان داده می‌شود. این سهمیه نیمه‌شب بازنشانی می‌شود و همیشه می‌توانید مواردی را به‌صورت دستی اضافه کنید."
 
 msgid "Never type card numbers or passwords."
-msgstr "هرگز شماره کارت یا رمز عبور خود را تایپ نکنید."
+msgstr "هرگز شماره کارت یا رمز عبور را تایپ نکنید."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "تم، زبان و نام کاربری خود را از منوی بالا سمت راست تغییر دهید."
@@ -1136,6 +1136,207 @@ msgstr "واحد پول"
 msgid "Used for every amount in the app."
 msgstr "برای هر مبلغی در برنامه استفاده می‌شود."
 
+msgid "or"
+msgstr "یا"
+
+msgid "Debts"
+msgstr "بدهی‌ها"
+
+msgid "Owed to me"
+msgstr "طلب من"
+
+msgid "I owe"
+msgstr "بدهکارم"
+
+msgid "I borrowed"
+msgstr "قرض گرفتم"
+
+msgid "I lent"
+msgstr "قرض دادم"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "پولی که به افراد قرض داده‌اید یا از آن‌ها گرفته‌اید. قرض دادن پول را از حساب کم می‌کند و قرض گرفتن آن را اضافه می‌کند، بنابراین موجودی‌ها درست می‌مانند — اما به عنوان درآمد یا هزینه حساب نمی‌شوند. همچنین می‌توانید به AI بگویید: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Closed"
+msgstr "بسته شده"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "هنوز بدهی بسته‌شده‌ای وجود ندارد. وقتی بدهی کاملاً پس داده شود، خودبه‌خود بسته می‌شود."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "هیچ بدهی فعالی وجود ندارد. نه کسی به شما بدهکار است و نه شما به کسی بدهکارید."
+
+msgid "Nothing here."
+msgstr "اینجا چیزی نیست."
+
+msgid "All debts"
+msgstr "همه بدهی‌ها"
+
+msgid "Owes you"
+msgstr "به شما بدهکار است"
+
+msgid "You owe"
+msgstr "شما بدهکار هستید"
+
+msgid "Paid back"
+msgstr "پس داده شد"
+
+msgid "Overdue"
+msgstr "معوقه"
+
+msgid "Left to pay back"
+msgstr "باقی‌مانده برای پس دادن"
+
+msgid "Pay back by"
+msgstr "تاریخ بازپرداخت"
+
+msgid "Record money you got back"
+msgstr "ثبت پولی که پس گرفتید"
+
+msgid "Record money you paid back"
+msgstr "ثبت پولی که پس دادید"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "«پس‌داده‌شده» پول را به حساب اضافه می‌کند. «افزودن به بدهی» زمانی است که پول بیشتری به آن‌ها قرض می‌دهید."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "«پس‌داده‌شده» پول را از حساب خارج می‌کند. «افزودن به بدهی» زمانی است که بیشتر قرض می‌گیرید."
+
+msgid "History"
+msgstr "تاریخچه"
+
+msgid "Lent"
+msgstr "قرض داده‌شده"
+
+msgid "Borrowed"
+msgstr "قرض گرفته‌شده"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ پولی است که به حساب شما آمده، − پولی است که از آن خارج شده است."
+
+msgid "Reopen debt"
+msgstr "باز کردن مجدد بدهی"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "این بدهی بدون ثبت پرداخت بسته شود؟ اگر بخشیده شده یا به شکل دیگری تسویه شده از این گزینه استفاده کنید. موجودی‌ها تغییری نخواهند کرد."
+
+msgid "Close without payment"
+msgstr "بستن بدون پرداخت"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(paid)s از %(total)s پس داده شد"
+
+msgid "Got paid back"
+msgstr "پس گرفته شد"
+
+msgid "I paid back"
+msgstr "پس دادم"
+
+msgid "Person"
+msgstr "شخص"
+
+msgid "left"
+msgstr "باقیمانده"
+
+msgid "Was due %(day)s"
+msgstr "سررسید در %(day)s بود"
+
+msgid "Due %(day)s"
+msgstr "سررسید %(day)s"
+
+msgid "of %(total)s"
+msgstr "از %(total)s"
+
+msgid "Open"
+msgstr "باز"
+
+msgid "e.g. Rahim"
+msgstr "مثلاً رحیم"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "مثلاً برای گوشی‌اش، تا روز حقوق"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "جایی که پول از آن خارج شد (قرض داده شده) یا به آن واریز شد (قرض گرفته شده). موجودی آن تغییر می‌کند."
+
+msgid "Optional."
+msgstr "اختیاری."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "تاریخ بازپرداخت نمی‌تواند قبل از تاریخ بدهی باشد."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "فقط %(left)s برای پس دادن باقی مانده است."
+
+msgid "Added to debt"
+msgstr "به بدهی اضافه شد"
+
+msgid "The money left or came into this account."
+msgstr "پولی که به این حساب واریز شد یا از آن برداشت شد."
+
+msgid "Lend and borrow"
+msgstr "قرض دادن و گرفتن"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "پول‌هایی را که قرض داده‌اید یا گرفته‌اید پیگیری کنید. موجودی حساب‌ها تغییر می‌کند، اما به عنوان درآمد یا هزینه محاسبه نمی‌شود."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "مبلغ %(amount)s به %(person)s قرض دادید."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "مبلغ %(amount)s از %(person)s قرض گرفتید."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s چیزی به شما بدهکار نیست، بنابراین پرداخت %(amount)s ذخیره نشد."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "شما به %(person)s چیزی بدهکار نیستید، بنابراین پرداخت %(amount)s ذخیره نشد."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s مبلغ %(amount)s را به شما پس داد."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "شما مبلغ %(amount)s را به %(person)s پس دادید."
+
+msgid "Debt saved."
+msgstr "بدهی ذخیره شد."
+
+msgid "Add debt"
+msgstr "افزودن بدهی"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "کاملاً پس داده شد. بدهی بسته است."
+
+msgid "Saved. %(left)s left."
+msgstr "ذخیره شد. %(left)s باقی مانده است."
+
+msgid "Debt updated."
+msgstr "بدهی به‌روزرسانی شد."
+
+msgid "Edit debt"
+msgstr "ویرایش بدهی"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "بدهی حذف شد. پرداخت‌های آن نیز حذف شدند."
+
+msgid "Debt closed."
+msgstr "بدهی بسته شد."
+
+msgid "Debt reopened."
+msgstr "بدهی مجدداً باز شد."
+
+msgid "Payment updated."
+msgstr "پرداخت به‌روزرسانی شد."
+
+msgid "Edit payment"
+msgstr "ویرایش پرداخت"
+
+msgid "Payment deleted."
+msgstr "پرداخت حذف شد."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI تعداد %(n)s تراکنش پیدا کرد. هر چیزی که اشتباه به نظر می‌رسد را اصلاح و سپس ذخیره کنید."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "رمز عبور شما باید حداقل شامل %(min_length)d کاراکتر باشد."
 msgstr[1] "رمز عبور شما باید حداقل شامل %(min_length)d کاراکتر باشد."
 
-msgid "or"
-msgstr "یا"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s معوقه"
+msgstr[1] "%(n)s معوقه"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "بدهی %(n)s"
+msgstr[1] "بدهی‌های %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "تاریخ سررسید بدهی %(n)s گذشته است."
+msgstr[1] "تاریخ سررسید بدهی‌های %(n)s گذشته است."

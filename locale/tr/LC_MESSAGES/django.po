@@ -153,7 +153,7 @@ msgid "Over budget by %(a)s"
 msgstr "Bütçe aşımı: %(a)s"
 
 msgid "%(p)s%% used"
-msgstr "%(p)s%% kullanıldı"
+msgstr "%(p)s%% used"
 
 msgid "No budgets yet. Type or say “khabar e mashe 6000 budget” in the box above, or set one under Categories."
 msgstr "Henüz bütçe yok. Yukarıdaki kutuya “khabar e mashe 6000 budget” yazın veya söyleyin ya da Kategoriler kısmından bir tane belirleyin."
@@ -618,7 +618,7 @@ msgid "Show all dates"
 msgstr "Tüm tarihleri göster"
 
 msgid "AI today: %(p)s%% used"
-msgstr "Bugünkü AI: %(p)s%% kullanıldı"
+msgstr "AI today: %(p)s%% used"
 
 msgid "%(used)s of %(limit)s AI tokens used today. The AI runs on a free plan with a daily limit; it resets at midnight."
 msgstr "Bugün %(limit)s AI token'ının %(used)s kadarı kullanıldı. AI, günlük limitli ücretsiz bir planda çalışır; gece yarısı sıfırlanır."
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI sadece metninizi okur; her toplam ve bakiye, kayıtlı verilerinizden uygulama tarafından hesaplanır."
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI kullanımının günlük bir limiti vardır ve bu gösterge panelinde görünür. Gece yarısı sıfırlanır ve her zaman manuel olarak ekleme yapabilirsiniz."
+msgstr "AI kullanımının panoda gösterilen günlük bir limiti vardır. Gece yarısı sıfırlanır, her zaman manuel olarak ekleme yapabilirsiniz."
 
 msgid "Never type card numbers or passwords."
-msgstr "Asla kart numarası veya şifre girmeyin."
+msgstr "Asla kart numarası veya şifre yazmayın."
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "Sağ üstteki menüden temayı, dili ve kullanıcı adınızı değiştirin."
@@ -1136,6 +1136,207 @@ msgstr "Para birimi"
 msgid "Used for every amount in the app."
 msgstr "Uygulamadaki her tutar için kullanılır."
 
+msgid "or"
+msgstr "veya"
+
+msgid "Debts"
+msgstr "Borçlar"
+
+msgid "Owed to me"
+msgstr "Bana borçlu olunan"
+
+msgid "I owe"
+msgstr "Borçluyum"
+
+msgid "I borrowed"
+msgstr "Borç aldım"
+
+msgid "I lent"
+msgstr "Borç verdim"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "İnsanlara verdiğiniz veya onlardan aldığınız borçlar. Borç vermek hesaptan para çıkarır ve borç almak hesaba para ekler; böylece bakiyeler doğru kalır — ancak gelir veya gider olarak sayılmaz. Ayrıca AI'a şunları söyleyebilirsiniz: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "Aktif"
+
+msgid "Closed"
+msgstr "Kapalı"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "Henüz kapatılmış borç yok. Bir borç, tamamen ödendiğinde kendiliğinden kapanır."
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "Aktif borç yok. Kimseye borcunuz yok, kimse de size borçlu değil."
+
+msgid "Nothing here."
+msgstr "Burada hiçbir şey yok."
+
+msgid "All debts"
+msgstr "Tüm borçlar"
+
+msgid "Owes you"
+msgstr "Size borçlu"
+
+msgid "You owe"
+msgstr "Borçlusunuz"
+
+msgid "Paid back"
+msgstr "Geri ödendi"
+
+msgid "Overdue"
+msgstr "Gecikmiş"
+
+msgid "Left to pay back"
+msgstr "Kalan ödeme"
+
+msgid "Pay back by"
+msgstr "Son ödeme tarihi"
+
+msgid "Record money you got back"
+msgstr "Aldığınız parayı kaydedin"
+
+msgid "Record money you paid back"
+msgstr "Ödediğiniz parayı kaydedin"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"Geri ödendi\" parayı hesaba ekler. \"Borca eklendi\" onlara daha fazla borç verdiğiniz zamandır."
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"Geri ödendi\" parayı hesaptan çıkarır. \"Borca eklendi\" daha fazla borç aldığınız zamandır."
+
+msgid "History"
+msgstr "Geçmiş"
+
+msgid "Lent"
+msgstr "Verilen"
+
+msgid "Borrowed"
+msgstr "Borç alınan"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ hesabınıza gelen para, − hesabınızdan çıkan para demektir."
+
+msgid "Reopen debt"
+msgstr "Borcu yeniden aç"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "Ödeme kaydetmeden bu borç kapatılsın mı? Borç silindiyse veya başka bir şekilde kapatıldıysa bunu kullanın. Bakiyeler değişmez."
+
+msgid "Close without payment"
+msgstr "Ödemesiz kapat"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "Toplam %(total)s tutardan %(paid)s ödendi"
+
+msgid "Got paid back"
+msgstr "Geri ödendi"
+
+msgid "I paid back"
+msgstr "Geri ödedim"
+
+msgid "Person"
+msgstr "Kişi"
+
+msgid "left"
+msgstr "kaldı"
+
+msgid "Was due %(day)s"
+msgstr "%(day)s vadeliydi"
+
+msgid "Due %(day)s"
+msgstr "Son tarih: %(day)s"
+
+msgid "of %(total)s"
+msgstr "toplam %(total)s içinden"
+
+msgid "Open"
+msgstr "Açık"
+
+msgid "e.g. Rahim"
+msgstr "örn. Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "örn. telefonu için, maaş gününe kadar"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "Paranın çıktığı (borç verilen) veya girdiği (borç alınan) yer. Bakiyesi değişir."
+
+msgid "Optional."
+msgstr "İsteğe bağlı."
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "Geri ödeme tarihi borç tarihinden önce olamaz."
+
+msgid "Only %(left)s is left to pay back."
+msgstr "Geri ödenmesi gereken sadece %(left)s kaldı."
+
+msgid "Added to debt"
+msgstr "Borca eklendi"
+
+msgid "The money left or came into this account."
+msgstr "Bu hesaba giren veya çıkan para."
+
+msgid "Lend and borrow"
+msgstr "Borç al ve ver"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "Verdiğiniz veya aldığınız borçları takip edin. Hesap bakiyeleri değişir ancak gelir veya gider olarak sayılmaz."
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s kişisine %(amount)s borç verildi."
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s kişisinden %(amount)s borç alındı."
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s size borçlu değil, bu nedenle %(amount)s ödeme kaydedilmedi."
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s kişisine borcunuz yok, bu nedenle %(amount)s tutarındaki ödeme kaydedilmedi."
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s size %(amount)s geri ödedi."
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "%(person)s kişisine %(amount)s geri ödediniz."
+
+msgid "Debt saved."
+msgstr "Borç kaydedildi."
+
+msgid "Add debt"
+msgstr "Borç ekle"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "Tamamen ödendi. Borç kapatıldı."
+
+msgid "Saved. %(left)s left."
+msgstr "Kaydedildi. %(left)s kaldı."
+
+msgid "Debt updated."
+msgstr "Borç güncellendi."
+
+msgid "Edit debt"
+msgstr "Borcu düzenle"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "Borç silindi. Ödemeleri de kaldırıldı."
+
+msgid "Debt closed."
+msgstr "Borç kapatıldı."
+
+msgid "Debt reopened."
+msgstr "Borç yeniden açıldı."
+
+msgid "Payment updated."
+msgstr "Ödeme güncellendi."
+
+msgid "Edit payment"
+msgstr "Ödemeyi düzenle"
+
+msgid "Payment deleted."
+msgstr "Ödeme silindi."
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI %(n)s işlem buldu. Yanlış görünen bir şey varsa düzeltin ve kaydedin."
@@ -1161,5 +1362,17 @@ msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "Şifreniz en az %(min_length)d karakter içermelidir."
 msgstr[1] "Şifreniz en az %(min_length)d karakter içermelidir."
 
-msgid "or"
-msgstr "veya"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s gecikmiş"
+msgstr[1] "%(n)s gecikmiş"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s borcu"
+msgstr[1] "%(n)s borcu"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s borcunun son ödeme tarihi geçti."
+msgstr[1] "%(n)s borçlarının son ödeme tarihi geçti."

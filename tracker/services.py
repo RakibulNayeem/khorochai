@@ -6,14 +6,15 @@ import datetime as dt
 from decimal import Decimal, InvalidOperation
 
 from django.conf import settings
-from django.db.models import Count, F, Q, Sum
-from django.db.models.functions import TruncMonth
+from django.db.models import Count, DecimalField, F, Q, Sum, Value
+from django.db.models.functions import Coalesce, TruncMonth
 from django.utils import timezone
 from django.utils.formats import date_format
 from django.utils.translation import gettext
 
 from .models import (
-    ACCOUNT_KIND_ORDER, BALANCE, BUDGET, EXPENSE, INCOME, TRANSFER, Account, AIUsage, Category, Transaction, Transfer, category_label,
+    ACCOUNT_KIND_ORDER, BALANCE, BORROW, BORROWED, BUDGET, DEBT_AI_TYPES, EXPENSE, INCOME, INCREASE, LEND, LENT,
+    REPAY, TRANSFER, Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer, category_label,
 )
 
 DEFAULT_CATEGORIES = [
@@ -78,18 +79,31 @@ def default_account(user):
 
 
 def account_balances(user):
-    """[{account, balance, income, expense}] using SQL sums. Balance = opening + income - expense ± transfers."""
+    """[{account, balance, income, expense}] using SQL sums.
+    Balance = opening + income - expense ± transfers ± debts (lending takes money out, borrowing brings it in,
+    and paying back reverses that)."""
     accounts = sorted_accounts(user)
     sums = {}
     for r in Transaction.objects.filter(user=user, account__isnull=False).values("account_id", "type").annotate(t=Sum("amount")):
         sums[(r["account_id"], r["type"])] = r["t"]
     t_in = {r["to_account_id"]: r["t"] for r in Transfer.objects.filter(user=user).values("to_account_id").annotate(t=Sum("amount"))}
     t_out = {r["from_account_id"]: r["t"] for r in Transfer.objects.filter(user=user).values("from_account_id").annotate(t=Sum("amount"))}
+    debt_flow = {}
+    for r in Debt.objects.filter(user=user, account__isnull=False).values("account_id", "direction").annotate(t=Sum("amount")):
+        sign = -1 if r["direction"] == LENT else 1
+        debt_flow[r["account_id"]] = debt_flow.get(r["account_id"], Decimal("0")) + sign * r["t"]
+    for r in (DebtRecord.objects.filter(debt__user=user, account__isnull=False)
+              .values("account_id", "debt__direction", "kind").annotate(t=Sum("amount"))):
+        sign = 1 if r["debt__direction"] == LENT else -1
+        if r["kind"] != REPAY:
+            sign = -sign
+        debt_flow[r["account_id"]] = debt_flow.get(r["account_id"], Decimal("0")) + sign * r["t"]
     rows = []
     for a in accounts:
         inc = sums.get((a.id, INCOME), Decimal("0"))
         exp = sums.get((a.id, EXPENSE), Decimal("0"))
-        bal = a.opening_balance + inc - exp + t_in.get(a.id, Decimal("0")) - t_out.get(a.id, Decimal("0"))
+        bal = (a.opening_balance + inc - exp + t_in.get(a.id, Decimal("0")) - t_out.get(a.id, Decimal("0"))
+               + debt_flow.get(a.id, Decimal("0")))
         rows.append({"account": a, "balance": bal, "income": inc, "expense": exp})
     return rows
 
@@ -221,7 +235,7 @@ def clean_parsed(data, user):
         if not isinstance(item, dict):
             continue
         type_ = str(item.get("type", "")).lower().strip()
-        if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE, BUDGET):
+        if type_ not in (INCOME, EXPENSE, TRANSFER, BALANCE, BUDGET) + DEBT_AI_TYPES:
             type_ = EXPENSE
         if type_ == BUDGET:
             row = _budget_row(item, cats, today)
@@ -242,6 +256,9 @@ def clean_parsed(data, user):
         if type_ == TRANSFER:
             rows.append(_transfer_row(item, amount, date, accounts, fallback_account))
             continue
+        if type_ in DEBT_AI_TYPES:
+            rows.append(_debt_row(item, type_, amount, date, accounts, fallback_account, user))
+            continue
         cat_name = " ".join(str(item.get("category") or "").split())[:60]
         match = next((c for c in cats if c.type == type_ and c.name.lower() == cat_name.lower()), None)
         acc_name = str(item.get("account") or "").strip().lower()
@@ -255,10 +272,35 @@ def clean_parsed(data, user):
             "to_account_id": None,
             "note": str(item.get("note") or "")[:255],
             "date": date,
+            "person": "",
         })
     if not rows and not message:
         message = gettext("No income or expense with an amount was found in your message.")
     return rows, message
+
+
+def _debt_row(item, type_, amount, date, accounts, fallback_account, user):
+    """Lending, borrowing, or a debt being paid back. A name that differs from an earlier debt's only in
+    upper/lower case is written the earlier way, so payments find the right debt."""
+    acc_name = str(item.get("account") or "").strip().lower()
+    account = next((a for a in accounts if a.name.lower() == acc_name), None) or fallback_account
+    person = " ".join(str(item.get("person") or "").split())[:60]
+    if person:
+        known = Debt.objects.filter(user=user, person__iexact=person).order_by("-date").values_list("person", flat=True).first()
+        person = known or person
+    due = parse_date(item.get("due_date")) if type_ in (LEND, BORROW) else None
+    return {
+        "type": type_,
+        "amount": amount,
+        "category_id": None,
+        "new_category": "",
+        "account_id": account.id if account else None,
+        "to_account_id": None,
+        "note": str(item.get("note") or "")[:255],
+        "date": date,
+        "person": person,
+        "due_date": due if due and due >= date else None,
+    }
 
 
 def _budget_row(item, cats, today):
@@ -275,6 +317,7 @@ def _budget_row(item, cats, today):
         "to_account_id": None,
         "note": "",
         "date": today,
+        "person": "",
     }
 
 
@@ -290,6 +333,7 @@ def _balance_row(item, accounts, fallback_account, today):
         "to_account_id": None,
         "note": "",
         "date": today,
+        "person": "",
     }
 
 
@@ -315,13 +359,119 @@ def _transfer_row(item, amount, date, accounts, fallback_account):
         "to_account_id": dst.id if dst else None,
         "note": str(item.get("note") or "")[:255],
         "date": date,
+        "person": "",
     }
 
 
-def merge_with_transfers(transactions, transfers, limit=None):
-    """Transactions and transfers in one list, newest first (for the tables)."""
-    items = sorted(list(transactions) + list(transfers), key=lambda t: (t.date, t.created_at), reverse=True)
+def merge_with_transfers(transactions, transfers, debt_items=(), limit=None):
+    """Transactions, transfers and debt events in one list, newest first (for the tables)."""
+    items = sorted(list(transactions) + list(transfers) + list(debt_items), key=lambda t: (t.date, t.created_at), reverse=True)
     return items[:limit] if limit else items
+
+
+# --------------------------------------------------------------------------- debts
+
+ZERO = Value(Decimal("0"), output_field=DecimalField(max_digits=12, decimal_places=2))
+
+
+def debts_with_totals(user):
+    """The user's debts, each with .added, .repaid, .total, .remaining, .pct_paid and .overdue (SQL sums)."""
+    today = timezone.localdate()
+    qs = (Debt.objects.filter(user=user).select_related("account")
+          .annotate(repaid=Coalesce(Sum("records__amount", filter=Q(records__kind=REPAY)), ZERO),
+                    added=Coalesce(Sum("records__amount", filter=Q(records__kind=INCREASE)), ZERO)))
+    return [_add_totals(d, today) for d in qs]
+
+
+def _add_totals(d, today=None):
+    today = today or timezone.localdate()
+    d.total = d.amount + d.added
+    d.remaining = d.total - d.repaid
+    d.pct_paid = min(round(float(d.repaid / d.total * 100)), 100) if d.total > 0 else 100
+    open_ = not d.closed and d.remaining > 0
+    d.overdue = bool(open_ and d.due_date and d.due_date < today)
+    d.due_soon = bool(open_ and not d.overdue and d.due_date and (d.due_date - today).days <= 3)
+    return d
+
+
+def debt_totals(debt):
+    """Totals for one debt (same attributes as debts_with_totals)."""
+    sums = {r["kind"]: r["t"] for r in debt.records.values("kind").annotate(t=Sum("amount"))}
+    debt.repaid = sums.get(REPAY, Decimal("0"))
+    debt.added = sums.get(INCREASE, Decimal("0"))
+    return _add_totals(debt)
+
+
+def debt_summary(user, debts=None):
+    """What others owe me and what I owe, over open debts."""
+    debts = debts if debts is not None else debts_with_totals(user)
+    open_ = [d for d in debts if not d.closed]
+    lent = [d for d in open_ if d.direction == LENT]
+    borrowed = [d for d in open_ if d.direction == BORROWED]
+    owed_to_me = sum((max(d.remaining, 0) for d in lent), Decimal("0"))
+    i_owe = sum((max(d.remaining, 0) for d in borrowed), Decimal("0"))
+    return {
+        "owed_to_me": owed_to_me, "i_owe": i_owe, "net": owed_to_me - i_owe,
+        "lent_count": len(lent), "borrowed_count": len(borrowed),
+        "overdue_count": sum(1 for d in open_ if d.overdue),
+        "has_open": bool(open_),
+    }
+
+
+def refresh_debt_status(debt):
+    """A debt closes by itself when it is fully paid back, and reopens if a payment is removed or more is added."""
+    debt_totals(debt)
+    closed = debt.remaining <= 0
+    if closed != debt.closed:
+        debt.closed = closed
+        debt.save(update_fields=["closed"])
+        _add_totals(debt)
+    return debt
+
+
+def open_debt_people(user):
+    """Names of people with an open debt (told to the AI so it spells them the same way)."""
+    return sorted(set(Debt.objects.filter(user=user, closed=False).values_list("person", flat=True)), key=str.lower)
+
+
+def all_debt_people(user):
+    return sorted(set(Debt.objects.filter(user=user).values_list("person", flat=True)), key=str.lower)
+
+
+def record_debt_payment(user, person, direction, amount, account, date, note=""):
+    """A payment from/to `person` without a particular debt chosen (the AI's "rahim 300 ferot dilo"):
+    it pays off that person's open debts of `direction`, oldest first; anything paid beyond what is owed
+    goes on the newest one. Returns the records created ([] when there is no open debt with them)."""
+    debts = [d for d in debts_with_totals(user)
+             if not d.closed and d.direction == direction and d.person.lower() == person.lower()]
+    debts.sort(key=lambda d: (d.date, d.created_at))
+    records, left = [], amount
+    for i, d in enumerate(debts):
+        part = left if i == len(debts) - 1 else min(left, max(d.remaining, Decimal("0")))
+        if part <= 0:
+            continue
+        records.append(DebtRecord.objects.create(debt=d, kind=REPAY, amount=part, account=account, date=date, note=note))
+        refresh_debt_status(d)
+        left -= part
+        if left <= 0:
+            break
+    return records
+
+
+def debt_events(user, start=None, end=None, account_id=None, q=""):
+    """Debt rows for the transaction lists: each new debt and each later payment (both have .flow, +1 in / -1 out)."""
+    debts = Debt.objects.filter(user=user).select_related("account")
+    records = DebtRecord.objects.filter(debt__user=user).select_related("debt", "account")
+    if start:
+        debts, records = debts.filter(date__gte=start), records.filter(date__gte=start)
+    if end:
+        debts, records = debts.filter(date__lte=end), records.filter(date__lte=end)
+    if account_id:
+        debts, records = debts.filter(account_id=account_id), records.filter(account_id=account_id)
+    if q:
+        debts = debts.filter(Q(person__icontains=q) | Q(note__icontains=q))
+        records = records.filter(Q(debt__person__icontains=q) | Q(note__icontains=q))
+    return list(debts[:200]) + list(records[:200])
 
 
 # --------------------------------------------------------------------------- summaries

@@ -10,7 +10,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 from . import llm
-from .models import Account, AIUsage, Category, Transaction, Transfer
+from .models import Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer
 
 
 class FlowTests(TestCase):
@@ -599,3 +599,153 @@ class HedgingTests(TestCase):
             raise llm.LLMError("503 high demand")
         with mock.patch.dict(llm.TRANSCRIBERS, {"gemini": down, "groq": lambda a, m: ("hello 250", 5)}):
             self.assertEqual(llm.transcribe(b"x"), "hello 250")
+
+
+class DebtTests(TestCase):
+    """Lend and borrow: balances move, income/expense don't, and debts close when paid back."""
+
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.login(username="rakib", password="pass12345!")
+        self.cash = Account.objects.get(user=self.user, name="Cash")
+        self.bkash = Account.objects.get(user=self.user, name="bKash")
+        self.cash.opening_balance = Decimal("5000")
+        self.cash.save()
+        self.today = timezone.localdate()
+
+    def balances(self):
+        return {row["account"].name: row["balance"] for row in self.client.get(reverse("accounts")).context["rows"]}
+
+    def add(self, direction, person, amount, account, **extra):
+        data = {"direction": direction, "person": person, "amount": amount, "account": account.id,
+                "date": self.today.isoformat(), "due_date": "", "note": ""}
+        data.update(extra)
+        return self.client.post(reverse("debt_add"), data)
+
+    def test_lend_and_get_paid_back(self):
+        r = self.add("lent", "Rahim", "1000", self.cash)
+        debt = Debt.objects.get()
+        self.assertRedirects(r, reverse("debt_detail", args=[debt.pk]))
+        self.assertEqual(self.balances()["Cash"], Decimal("4000"))
+        # part paid back into bKash
+        r = self.client.post(reverse("debt_detail", args=[debt.pk]), {"kind": "repay", "amount": "300",
+                             "account": self.bkash.id, "date": self.today.isoformat(), "note": ""}, follow=True)
+        self.assertContains(r, "left")
+        self.assertEqual(self.balances()["bKash"], Decimal("300"))
+        debt.refresh_from_db()
+        self.assertFalse(debt.closed)
+        # can't be paid back more than is owed
+        r = self.client.post(reverse("debt_detail", args=[debt.pk]), {"kind": "repay", "amount": "800",
+                             "account": self.cash.id, "date": self.today.isoformat()})
+        self.assertContains(r, "is left to pay back")
+        # the rest closes it
+        self.client.post(reverse("debt_detail", args=[debt.pk]), {"kind": "repay", "amount": "700",
+                         "account": self.cash.id, "date": self.today.isoformat()})
+        debt.refresh_from_db()
+        self.assertTrue(debt.closed)
+        self.assertEqual(self.balances()["Cash"], Decimal("4700"))
+        # never income or expense
+        dash = self.client.get(reverse("dashboard"))
+        self.assertEqual(dash.context["summary"]["income"], Decimal("0"))
+        self.assertEqual(dash.context["summary"]["expense"], Decimal("0"))
+        # deleting a payment reopens it
+        self.client.post(reverse("debt_record_delete", args=[DebtRecord.objects.get(amount=700).pk]))
+        debt.refresh_from_db()
+        self.assertFalse(debt.closed)
+
+    def test_borrow_increase_and_repay(self):
+        self.add("borrowed", "Karim", "2000", self.bkash)
+        debt = Debt.objects.get()
+        self.assertEqual(self.balances()["bKash"], Decimal("2000"))
+        self.client.post(reverse("debt_detail", args=[debt.pk]), {"kind": "increase", "amount": "500",
+                         "account": self.bkash.id, "date": self.today.isoformat()})
+        self.client.post(reverse("debt_detail", args=[debt.pk]), {"kind": "repay", "amount": "1000",
+                         "account": self.cash.id, "date": self.today.isoformat()})
+        bal = self.balances()
+        self.assertEqual(bal["bKash"], Decimal("2500"))
+        self.assertEqual(bal["Cash"], Decimal("4000"))
+        summary = self.client.get(reverse("debts")).context["summary"]
+        self.assertEqual(summary["i_owe"], Decimal("1500"))
+        self.assertEqual(summary["owed_to_me"], Decimal("0"))
+
+    def test_debts_page_lists_and_closes(self):
+        self.add("lent", "Rahim", "500", self.cash, due_date=(self.today + dt.timedelta(days=7)).isoformat())
+        self.assertContains(self.add("lent", "Rahim", "500", self.cash,
+                                     date=self.today.isoformat(), due_date=(self.today - dt.timedelta(days=1)).isoformat()),
+                            "before the date", status_code=200)
+        self.add("borrowed", "Karim", "800", self.cash)
+        r = self.client.get(reverse("debts"))
+        self.assertEqual(len(r.context["lent"]), 1)
+        self.assertEqual(len(r.context["borrowed"]), 1)
+        self.assertEqual(r.context["summary"]["owed_to_me"], Decimal("500"))
+        self.assertEqual(r.context["summary"]["overdue_count"], 0)  # due date before the debt date was refused
+        # close without payment: balance doesn't change, it moves to Closed
+        karim = Debt.objects.get(person="Karim")
+        before = self.balances()["Cash"]
+        self.client.post(reverse("debt_settle", args=[karim.pk]))
+        self.assertEqual(self.balances()["Cash"], before)
+        self.assertEqual(len(self.client.get(reverse("debts")).context["borrowed"]), 0)
+        self.assertEqual(len(self.client.get(reverse("debts") + "?show=closed").context["borrowed"]), 1)
+        # editing keeps a hand-closed debt closed
+        self.client.post(reverse("debt_edit", args=[karim.pk]), {"direction": "borrowed", "person": "Karim", "amount": "900",
+                         "account": self.cash.id, "date": self.today.isoformat()})
+        karim.refresh_from_db()
+        self.assertTrue(karim.closed)
+        self.assertEqual(karim.amount, Decimal("900"))
+
+    def test_overdue(self):
+        Debt.objects.create(user=self.user, direction="lent", person="Rahim", amount=100, account=self.cash,
+                            date=self.today - dt.timedelta(days=10), due_date=self.today - dt.timedelta(days=1))
+        r = self.client.get(reverse("debts"))
+        self.assertEqual(r.context["summary"]["overdue_count"], 1)
+        self.assertContains(r, "past its pay-back date")
+        self.assertContains(self.client.get(reverse("dashboard")), "1 overdue")
+
+    def test_ai_lend_borrow_and_collect(self):
+        Debt.objects.create(user=self.user, direction="lent", person="Rahim", amount=200, account=self.cash,
+                            date=self.today - dt.timedelta(days=5))
+        fake = {"transactions": [
+            {"type": "lend", "amount": 500, "person": "rahim", "account": "bkash", "due_date": "", "note": "dhar"},
+            {"type": "borrow", "amount": 2000, "person": "Karim", "account": "", "note": ""},
+            {"type": "collect", "amount": 300, "person": "Rahim", "account": "", "note": "ferot"},
+        ], "message": ""}
+        with mock.patch.object(llm, "call_llm", return_value=fake) as call:
+            r = self.client.post(reverse("ai_parse"), {"text": "rahim ke 500 dhar dilam..."})
+        self.assertIn("Rahim", call.call_args[0][0])  # the AI is told the people with open debts
+        rows = r.context["rows"]
+        self.assertEqual([x["type"] for x in rows], ["lend", "borrow", "collect"])
+        self.assertEqual(rows[0]["person"], "Rahim")  # matched to the earlier spelling
+        self.assertEqual(rows[0]["account_id"], self.bkash.id)
+        self.assertContains(r, "I lent")
+        post = {"row_count": 4, "raw_text": "x"}
+        for i, row in enumerate(rows):
+            post.update({f"include_{i}": "1", f"type_{i}": row["type"], f"amount_{i}": str(row["amount"]),
+                         f"account_{i}": row["account_id"], f"person_{i}": row["person"], f"note_{i}": "",
+                         f"date_{i}": self.today.isoformat(), f"due_date_{i}": ""})
+        post.update({"include_3": "1", "type_3": "repay", "amount_3": "100", "account_3": self.cash.id,
+                     "person_3": "Nobody", "date_3": self.today.isoformat()})
+        r = self.client.post(reverse("ai_confirm"), post, follow=True)
+        self.assertContains(r, "Lent")
+        self.assertContains(r, "paid you back")
+        self.assertContains(r, "anything")  # nobody to repay: warned, not saved
+        self.assertEqual(Debt.objects.count(), 3)
+        self.assertFalse(Transaction.objects.exists())
+        # 300 back: 200 closes the old debt, 100 goes to the newer one
+        old = Debt.objects.get(amount=200)
+        self.assertTrue(old.closed)
+        new = Debt.objects.get(amount=500)
+        self.assertEqual(new.records.get().amount, Decimal("100"))
+        bal = self.balances()
+        self.assertEqual(bal["Cash"], Decimal("5000") - 200 + 2000 + 300)
+        self.assertEqual(bal["bKash"], Decimal("-500"))
+        # debts show up in the lists
+        self.assertContains(self.client.get(reverse("transactions")), "Got paid back")
+        self.assertContains(self.client.get(reverse("transactions") + "?type=debt"), "Borrowed")
+        self.assertNotContains(self.client.get(reverse("transactions") + "?type=expense"), "Borrowed")
+
+    def test_debts_are_private(self):
+        other = User.objects.create_user("other", password="pass12345!")
+        d = Debt.objects.create(user=other, direction="lent", person="X", amount=1, date=self.today)
+        self.assertEqual(self.client.get(reverse("debt_detail", args=[d.pk])).status_code, 404)
+        self.assertEqual(self.client.post(reverse("debt_delete", args=[d.pk])).status_code, 404)
+        self.assertNotContains(self.client.get(reverse("debts")), ">X<")

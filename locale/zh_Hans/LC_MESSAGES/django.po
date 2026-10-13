@@ -39,10 +39,10 @@ msgid "Transactions"
 msgstr "交易记录"
 
 msgid "Categories &amp; Budgets"
-msgstr "分类与预算"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
-msgstr "问 AI"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "关闭"
@@ -54,7 +54,7 @@ msgid "System follows your phone or computer's dark mode setting."
 msgstr "系统跟随您手机或电脑的深色模式设置。"
 
 msgid "Changes the app's menus, buttons and messages. You can always type or speak to the AI in any language — বাংলা, English, Banglish and more."
-msgstr "更改应用菜单、按钮和消息的语言。您始终可以用任何语言向 AI 输入或说话——বাংলা、英语、Banglish 等。"
+msgstr "更改应用的菜单、按钮和消息。你随时可以使用任何语言与 AI 打字或语音交流 — বাংলা、English、Banglish 等。"
 
 msgid "These settings are saved in this browser."
 msgstr "这些设置已保存在此浏览器中。"
@@ -876,7 +876,7 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI 仅读取您的文字；所有总额和余额均由应用根据您的保存数据计算得出。"
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI 使用有每日限额，显示在仪表板上。它会在午夜重置，你也可以随时手动添加内容。"
+msgstr "AI 使用有每日额度，显示在仪表盘上。它会在午夜重置，你随时可以手动添加。"
 
 msgid "Never type card numbers or passwords."
 msgstr "切勿输入卡号或密码。"
@@ -1136,6 +1136,207 @@ msgstr "货币"
 msgid "Used for every amount in the app."
 msgstr "用于应用中的所有金额。"
 
+msgid "or"
+msgstr "或"
+
+msgid "Debts"
+msgstr "债务"
+
+msgid "Owed to me"
+msgstr "应收账款"
+
+msgid "I owe"
+msgstr "我欠"
+
+msgid "I borrowed"
+msgstr "我借入"
+
+msgid "I lent"
+msgstr "我借出"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "你借给别人或向别人借的钱。借出会从账户中扣除资金，借入会存入资金，因此余额保持正确——但这不计为收入或支出。你也可以告诉 AI：“rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”。"
+
+msgid "Active"
+msgstr "进行中"
+
+msgid "Closed"
+msgstr "已关闭"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "暂无已关闭的债务。全额还清后债务会自动关闭。"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "没有进行中的债务。没有人欠你，你也不欠任何人。"
+
+msgid "Nothing here."
+msgstr "这里什么也没有。"
+
+msgid "All debts"
+msgstr "所有债务"
+
+msgid "Owes you"
+msgstr "欠你"
+
+msgid "You owe"
+msgstr "你欠"
+
+msgid "Paid back"
+msgstr "已还款"
+
+msgid "Overdue"
+msgstr "已逾期"
+
+msgid "Left to pay back"
+msgstr "待还金额"
+
+msgid "Pay back by"
+msgstr "还款期限"
+
+msgid "Record money you got back"
+msgstr "记录收回的钱"
+
+msgid "Record money you paid back"
+msgstr "记录偿还的钱"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“已还款”会将资金计入账户。“增加债务”是指你借给他们更多钱。"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“已还款”会从账户中扣除资金。“增加债务”是指你借入更多钱。"
+
+msgid "History"
+msgstr "历史记录"
+
+msgid "Lent"
+msgstr "已借出"
+
+msgid "Borrowed"
+msgstr "已借入"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ 表示收入账户的钱，− 表示账户支出的钱。"
+
+msgid "Reopen debt"
+msgstr "重新打开债务"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "不记录付款就关闭此债务？如果债务已被免除或通过其他方式解决，请使用此选项。余额不会改变。"
+
+msgid "Close without payment"
+msgstr "直接关闭"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "已还 %(paid)s，共 %(total)s"
+
+msgid "Got paid back"
+msgstr "已收回还款"
+
+msgid "I paid back"
+msgstr "我已还"
+
+msgid "Person"
+msgstr "人员"
+
+msgid "left"
+msgstr "剩"
+
+msgid "Was due %(day)s"
+msgstr "原定于 %(day)s 到期"
+
+msgid "Due %(day)s"
+msgstr "%(day)s到期"
+
+msgid "of %(total)s"
+msgstr "总共 %(total)s"
+
+msgid "Open"
+msgstr "打开"
+
+msgid "e.g. Rahim"
+msgstr "例如：Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "例如：买手机、撑到发工资"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "资金流出（借出）或流入（借入）的地方。其余额会发生变化。"
+
+msgid "Optional."
+msgstr "可选。"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "还款日期不能早于借款日期。"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "仅剩 %(left)s 待还。"
+
+msgid "Added to debt"
+msgstr "已添加至债务"
+
+msgid "The money left or came into this account."
+msgstr "该账户的剩余或转入资金。"
+
+msgid "Lend and borrow"
+msgstr "借出与借入"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "记录你借出或借入的钱。账户余额会改变，但这不计为收入或支出。"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "借给 %(person)s %(amount)s。"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "向 %(person)s 借入 %(amount)s。"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s不欠你任何钱，因此未保存 %(amount)s 的付款记录。"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "你不欠 %(person)s 任何钱，因此 %(amount)s 的还款未保存。"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s还给你 %(amount)s。"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "你已向 %(person)s 还款 %(amount)s。"
+
+msgid "Debt saved."
+msgstr "债务已保存。"
+
+msgid "Add debt"
+msgstr "添加债务"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "已全额还清。债务已关闭。"
+
+msgid "Saved. %(left)s left."
+msgstr "已保存。还剩 %(left)s。"
+
+msgid "Debt updated."
+msgstr "债务已更新。"
+
+msgid "Edit debt"
+msgstr "编辑债务"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "债务已删除。其付款记录也已被移除。"
+
+msgid "Debt closed."
+msgstr "债务已关闭。"
+
+msgid "Debt reopened."
+msgstr "债务已重新打开。"
+
+msgid "Payment updated."
+msgstr "付款已更新。"
+
+msgid "Edit payment"
+msgstr "编辑付款"
+
+msgid "Payment deleted."
+msgstr "付款已删除。"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI 找到了 %(n)s 条交易。如有错误请修改，然后保存。"
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "您的密码必须至少包含 %(min_length)d 个字符。"
 
-msgid "or"
-msgstr "或"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s逾期"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s笔债务"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s笔债务已过还款期限。"

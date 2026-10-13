@@ -42,7 +42,7 @@ msgid "Categories &amp; Budgets"
 msgstr "หมวดหมู่ &amp; งบประมาณ"
 
 msgid "Ask AI"
-msgstr "ถาม AI"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "ปิด"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI เพียงแค่อ่านข้อความของคุณ ยอดรวมและยอดคงเหลือทั้งหมดคำนวณโดยแอปจากข้อมูลที่คุณบันทึกไว้"
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "การใช้งาน AI มีวงเงินรายวันแสดงบนแดชบอร์ด โดยจะรีเซ็ตตอนเที่ยงคืน และคุณสามารถเพิ่มรายการด้วยตนเองได้เสมอ"
+msgstr "การใช้งาน AI มีโควตาต่อวันแสดงอยู่บนแดชบอร์ด จะรีเซ็ตตอนเที่ยงคืน และคุณสามารถเพิ่มรายการเองได้ตลอดเวลา"
 
 msgid "Never type card numbers or passwords."
-msgstr "ห้ามพิมพ์หมายเลขบัตรหรือรหัสผ่านโดยเด็ดขาด"
+msgstr "อย่าพิมพ์หมายเลขบัตรหรือรหัสผ่านเด็ดขาด"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "เปลี่ยนธีม ภาษา และชื่อผู้ใช้ของคุณได้จากเมนูที่มุมขวาบน"
@@ -1136,6 +1136,207 @@ msgstr "สกุลเงิน"
 msgid "Used for every amount in the app."
 msgstr "ใช้สำหรับทุกจำนวนเงินในแอป"
 
+msgid "or"
+msgstr "หรือ"
+
+msgid "Debts"
+msgstr "หนี้"
+
+msgid "Owed to me"
+msgstr "ที่ควรได้คืน"
+
+msgid "I owe"
+msgstr "ฉันเป็นหนี้"
+
+msgid "I borrowed"
+msgstr "ฉันยืมมา"
+
+msgid "I lent"
+msgstr "ฉันให้ยืม"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "เงินที่คุณให้คนอื่นยืมหรือยืมมาจากพวกเขา การให้ยืมจะหักเงินออกจากบัญชีและการยืมจะเพิ่มเงินเข้าไป ยอดเงินจึงถูกต้องเสมอ แต่จะไม่ถูกนับเป็นรายรับหรือรายจ่าย คุณยังสามารถบอก AI ได้ว่า: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "ใช้งานอยู่"
+
+msgid "Closed"
+msgstr "ปิดแล้ว"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "ยังไม่มีหนี้ที่ปิดแล้ว หนี้จะปิดโดยอัตโนมัติเมื่อชำระคืนครบถ้วน"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "ไม่มีหนี้ที่ใช้งานอยู่ ไม่มีใครติดหนี้คุณและคุณไม่ได้ติดหนี้ใคร"
+
+msgid "Nothing here."
+msgstr "ไม่มีอะไรอยู่ที่นี่"
+
+msgid "All debts"
+msgstr "หนี้ทั้งหมด"
+
+msgid "Owes you"
+msgstr "ติดหนี้คุณ"
+
+msgid "You owe"
+msgstr "คุณเป็นหนี้"
+
+msgid "Paid back"
+msgstr "ชำระคืนแล้ว"
+
+msgid "Overdue"
+msgstr "เกินกำหนด"
+
+msgid "Left to pay back"
+msgstr "ยอดที่ต้องคืนอีก"
+
+msgid "Pay back by"
+msgstr "กำหนดคืนภายใน"
+
+msgid "Record money you got back"
+msgstr "บันทึกเงินที่คุณได้รับคืน"
+
+msgid "Record money you paid back"
+msgstr "บันทึกเงินที่คุณจ่ายคืน"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "\"คืนเงินแล้ว\" จะเพิ่มเงินกลับเข้าบัญชี \"เพิ่มหนี้\" คือเมื่อคุณให้พวกเขา 10 เพิ่ม"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "\"คืนเงินแล้ว\" จะหักเงินออกจากบัญชี \"เพิ่มหนี้\" คือเมื่อคุณกู้ยืมเพิ่ม"
+
+msgid "History"
+msgstr "ประวัติ"
+
+msgid "Lent"
+msgstr "ให้ยืมไป"
+
+msgid "Borrowed"
+msgstr "ยืมมา"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ คือเงินเข้าบัญชีของคุณ, − คือเงินออกจากบัญชี"
+
+msgid "Reopen debt"
+msgstr "เปิดหนี้อีกครั้ง"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "ปิดหนี้นี้โดยไม่บันทึกการชำระเงิน? ใช้ตัวเลือกนี้หากได้รับการยกหนี้หรือตกลงกันด้วยวิธีอื่น ยอดคงเหลือจะไม่เปลี่ยนแปลง"
+
+msgid "Close without payment"
+msgstr "ปิดโดยไม่ชำระเงิน"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "ชำระแล้ว %(paid)s จาก %(total)s"
+
+msgid "Got paid back"
+msgstr "ได้รับเงินคืนแล้ว"
+
+msgid "I paid back"
+msgstr "ฉันคืนเงินแล้ว"
+
+msgid "Person"
+msgstr "บุคคล"
+
+msgid "left"
+msgstr "เหลือ"
+
+msgid "Was due %(day)s"
+msgstr "ครบกำหนดเมื่อ %(day)s"
+
+msgid "Due %(day)s"
+msgstr "ครบกำหนด %(day)s"
+
+msgid "of %(total)s"
+msgstr "จาก %(total)s"
+
+msgid "Open"
+msgstr "เปิด"
+
+msgid "e.g. Rahim"
+msgstr "เช่น ระฮิม"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "เช่น ค่าโทรศัพท์ของเขา, จนถึงวันเงินเดือนออก"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "แหล่งที่เงินออกไป (ให้ยืม) หรือเข้ามา (ยืมมา) ยอดเงินจะเปลี่ยนไปตามนี้"
+
+msgid "Optional."
+msgstr "ไม่บังคับ"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "วันที่ต้องคืนไม่สามารถมาก่อนวันที่เริ่มเป็นหนี้ได้"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "เหลือต้องชำระอีกเพียง %(left)s"
+
+msgid "Added to debt"
+msgstr "เพิ่มลงในหนี้แล้ว"
+
+msgid "The money left or came into this account."
+msgstr "เงินที่เหลือหรือเข้ามาในบัญชีนี้"
+
+msgid "Lend and borrow"
+msgstr "ให้ยืมและยืมมา"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "ติดตามเงินที่คุณให้ยืมหรือยืมมา ยอดเงินในบัญชีจะเปลี่ยนไป แต่จะไม่ถูกนับเป็นรายรับหรือรายจ่าย"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "ให้ %(person)s ยืมเงิน %(amount)s"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "ยืมเงิน %(amount)s จาก %(person)s"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s ไม่ได้ติดหนี้คุณ ดังนั้นจึงไม่ได้บันทึกการชำระเงิน %(amount)s นี้"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "คุณไม่ได้ติดหนี้ %(person)s ดังนั้นจึงไม่ได้บันทึกการชำระเงินจำนวน %(amount)s"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s คืนเงินให้คุณ %(amount)s"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "คุณคืนเงินให้ %(person)s จำนวน %(amount)s แล้ว"
+
+msgid "Debt saved."
+msgstr "บันทึกหนี้แล้ว"
+
+msgid "Add debt"
+msgstr "เพิ่มหนี้"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "ชำระคืนครบแล้ว ปิดหนี้เรียบร้อย"
+
+msgid "Saved. %(left)s left."
+msgstr "บันทึกแล้ว เหลือ %(left)s"
+
+msgid "Debt updated."
+msgstr "อัปเดตหนี้แล้ว"
+
+msgid "Edit debt"
+msgstr "แก้ไขหนี้"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "ลบหนี้แล้ว ประวัติการชำระเงินถูกลบไปด้วย"
+
+msgid "Debt closed."
+msgstr "ปิดหนี้แล้ว"
+
+msgid "Debt reopened."
+msgstr "เปิดหนี้อีกครั้งแล้ว"
+
+msgid "Payment updated."
+msgstr "อัปเดตการชำระเงินแล้ว"
+
+msgid "Edit payment"
+msgstr "แก้ไขการชำระเงิน"
+
+msgid "Payment deleted."
+msgstr "ลบการชำระเงินแล้ว"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI พบ %(n)s รายการ แก้ไขสิ่งที่ผิดพลาด จากนั้นบันทึก"
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "รหัสผ่านของคุณต้องมีความยาวอย่างน้อย %(min_length)d ตัวอักษร"
 
-msgid "or"
-msgstr "หรือ"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s เกินกำหนด"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "หนี้ของ %(n)s"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "หนี้ของ %(n)s เลยกำหนดชำระแล้ว"

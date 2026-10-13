@@ -39,10 +39,10 @@ msgid "Transactions"
 msgstr "ငွေကြေးမှတ်တမ်းများ"
 
 msgid "Categories &amp; Budgets"
-msgstr "အမျိုးအစားများနှင့် ဘတ်ဂျက်များ"
+msgstr "Categories &amp; Budgets"
 
 msgid "Ask AI"
-msgstr "AI ကို မေးပါ"
+msgstr "Ask AI"
 
 msgid "Close"
 msgstr "ပိတ်ရန်"
@@ -876,10 +876,10 @@ msgid "The AI only reads your text; every total and balance is calculated by the
 msgstr "AI က သင့်စာသားကိုသာ ဖတ်ရှုခြင်းဖြစ်ပြီး၊ စုစုပေါင်းနှင့် လက်ကျန်ငွေအားလုံးကို သင်သိမ်းဆည်းထားသော အချက်အလက်များမှ App က တွက်ချက်ပေးခြင်း ဖြစ်သည်။"
 
 msgid "AI use has a daily allowance, shown on the dashboard. It resets at midnight, and you can always add things manually."
-msgstr "AI အသုံးပြုမှုတွင် နေ့စဉ်သုံးစွဲနိုင်သည့် ပမာဏသတ်မှတ်ချက်ရှိပြီး Dashboard တွင် ကြည့်ရှုနိုင်ပါသည်။ ၎င်းသည် သန်းခေါင်ယံအချိန်တွင် ပြန်လည်စတင်မည်ဖြစ်ပြီး သင်ကိုယ်တိုင်လည်း အချက်အလက်များကို အမြဲထည့်သွင်းနိုင်ပါသည်။"
+msgstr "AI သုံးစွဲမှုတွင် ပင်မစာမျက်နှာ၌ ပြထားသည့် နေ့စဉ်ကန့်သတ်ချက် ရှိသည်။ ၎င်းသည် သန်းခေါင်ယံတွင် ပြန်စတင်မည်ဖြစ်ပြီး၊ သင်သည် အရာများကို ကိုယ်တိုင်အမြဲ ထည့်သွင်းနိုင်သည်။"
 
 msgid "Never type card numbers or passwords."
-msgstr "ကတ်နံပါတ်များ သို့မဟုတ် စကားဝှက်များကို ဘယ်သောအခါမှ မရိုက်ထည့်ပါနှင့်။"
+msgstr "ကတ်နံပါတ်များ သို့မဟုတ် စကားဝှက်များကို ဘယ်တော့မှ မရိုက်ထည့်ပါနှင့်။"
 
 msgid "Change the theme, language and your username from the menu at the top right."
 msgstr "ညာဘက်အပေါ်ထောင့်ရှိ မီနူးမှတစ်ဆင့် Theme၊ ဘာသာစကားနှင့် သုံးစွဲသူအမည်တို့ကို ပြောင်းလဲနိုင်ပါသည်။"
@@ -1136,6 +1136,207 @@ msgstr "ငွေကြေး"
 msgid "Used for every amount in the app."
 msgstr "အက်ပ်အတွင်းရှိ ငွေပမာဏတိုင်းအတွက် အသုံးပြုသည်။"
 
+msgid "or"
+msgstr "သို့မဟုတ်"
+
+msgid "Debts"
+msgstr "အကြွေးများ"
+
+msgid "Owed to me"
+msgstr "ငါ့ကိုပေးရန်ရှိသည်"
+
+msgid "I owe"
+msgstr "ကျွန်ုပ် ပေးရန်ရှိသည်"
+
+msgid "I borrowed"
+msgstr "ကျွန်ုပ် ချေးယူသည်"
+
+msgid "I lent"
+msgstr "ကျွန်ုပ် ချေးငှားသည်"
+
+msgid "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+msgstr "Money you lent to people or borrowed from them. Lending takes money out of an account and borrowing puts it in, so balances stay right — but it is not counted as income or expense. You can also tell the AI: “rahim ke 500 dhar dilam”, “karim theke 2000 dhar nilam”, “rahim 300 ferot dilo”."
+
+msgid "Active"
+msgstr "လက်ရှိလုပ်ဆောင်ဆဲ"
+
+msgid "Closed"
+msgstr "ပိတ်ပြီး"
+
+msgid "No closed debts yet. A debt closes by itself when it is fully paid back."
+msgstr "ပိတ်ထားသော အကြွေးများ မရှိသေးပါ။ ငွေအပြည့်အဝ ဆပ်ပြီးသောအခါ အကြွေးသည် အလိုအလျောက် ပိတ်သွားမည်ဖြစ်သည်။"
+
+msgid "No active debts. Nobody owes you and you owe nobody."
+msgstr "လက်ရှိလုပ်ဆောင်ဆဲ အကြွေးများ မရှိပါ။ မည်သူ့ကိုမျှ အကြွေးမတင်သလို မည်သူ့ထံမှလည်း အကြွေးမရှိပါ။"
+
+msgid "Nothing here."
+msgstr "ဒီမှာ ဘာမှမရှိပါ။"
+
+msgid "All debts"
+msgstr "အကြွေးအားလုံး"
+
+msgid "Owes you"
+msgstr "သင့်အား အကြွေးတင်သည်"
+
+msgid "You owe"
+msgstr "သင်အကြွေးတင်နေသည်"
+
+msgid "Paid back"
+msgstr "ပြန်ဆပ်ပြီး"
+
+msgid "Overdue"
+msgstr "ရက်လွန်"
+
+msgid "Left to pay back"
+msgstr "ပြန်ဆပ်ရန် ကျန်ရှိသည်"
+
+msgid "Pay back by"
+msgstr "ပြန်ဆပ်ရမည့်ရက်"
+
+msgid "Record money you got back"
+msgstr "ပြန်ရခဲ့သောငွေကို မှတ်တမ်းတင်ပါ"
+
+msgid "Record money you paid back"
+msgstr "ပြန်ဆပ်ခဲ့သောငွေကို မှတ်တမ်းတင်ပါ"
+
+msgid "“Paid back” adds the money to the account. “Added to debt” is when you lend them more."
+msgstr "“ပြန်ဆပ်သည်” သည် ငွေကို အကောင့်ထဲသို့ ပေါင်းထည့်သည်။ “အကြွေးတိုးသည်” သည် ၎င်းတို့အား ထပ်ချေးသည့်အခါ ဖြစ်သည်။"
+
+msgid "“Paid back” takes the money out of the account. “Added to debt” is when you borrow more."
+msgstr "“ပြန်ဆပ်သည်” သည် အကောင့်ထဲမှ ငွေကို နှုတ်ယူသည်။ “အကြွေးတိုးသည်” သည် သင်ပိုမိုချေးယူသည့်အခါ ဖြစ်သည်။"
+
+msgid "History"
+msgstr "မှတ်တမ်း"
+
+msgid "Lent"
+msgstr "ချေးငှားထားသည်"
+
+msgid "Borrowed"
+msgstr "ချေးယူထားသည်"
+
+msgid "+ is money that came into your account, − is money that left it."
+msgstr "+ သည် သင့်အကောင့်ထဲသို့ ဝင်လာသည့်ငွေဖြစ်ပြီး၊ − သည် အကောင့်ထဲမှ ထွက်သွားသည့်ငွေဖြစ်သည်။"
+
+msgid "Reopen debt"
+msgstr "အကြွေးကို ပြန်ဖွင့်ရန်"
+
+msgid "Close this debt without recording a payment? Use this if it was forgiven or settled another way. Balances will not change."
+msgstr "ငွေပေးချေမှုကို မှတ်တမ်းမတင်ဘဲ ဤအကြွေးကို ပိတ်မလား။ လွှတ်ငغ်ပေးလိုက်လျှင် သို့မဟုတ် အခြားနည်းလမ်းဖြင့် ရှင်းလင်းပြီးပါက ဤအရာကို အသုံးပြုပါ။ လက်ကျန်ငွေများ ပြောင်းလဲမည်မဟုတ်ပါ။"
+
+msgid "Close without payment"
+msgstr "ငွေပေးချေမှုမရှိဘဲ ပိတ်ရန်"
+
+msgid "%(paid)s of %(total)s paid back"
+msgstr "%(total)s ထဲမှ %(paid)s ကို ပြန်ဆပ်ပြီး"
+
+msgid "Got paid back"
+msgstr "ငွေပြန်ရခဲ့သည်"
+
+msgid "I paid back"
+msgstr "ကျွန်ုပ် ပြန်ဆပ်သည်"
+
+msgid "Person"
+msgstr "လူပုဂ္ဂိုလ်"
+
+msgid "left"
+msgstr "ကျန်ရှိသည်"
+
+msgid "Was due %(day)s"
+msgstr "%(day)s က ပေးရန်ရှိသည်"
+
+msgid "Due %(day)s"
+msgstr "%(day)s တွင် ပေးရန်"
+
+msgid "of %(total)s"
+msgstr "%(total)s ထဲမှ"
+
+msgid "Open"
+msgstr "ဖွင့်ရန်"
+
+msgid "e.g. Rahim"
+msgstr "ဥပမာ - Rahim"
+
+msgid "e.g. for his phone, till salary day"
+msgstr "ဥပမာ - သူ့ဖုန်းအတွက်၊ လစာရက်အထိ"
+
+msgid "Where the money went out of (lent) or came into (borrowed). Its balance changes."
+msgstr "ငွေထွက်သွားသည့် (ချေးငွေ) သို့မဟုတ် ဝင်လာသည့် (ချေးယူငွေ) နေရာ။ ၎င်း၏ လက်ကျန်ငွေ ပြောင်းလဲသွားပါမည်။"
+
+msgid "Optional."
+msgstr "ရွေးချယ်နိုင်သည်။"
+
+msgid "The pay-back date can't be before the date of the debt."
+msgstr "ပြန်ဆပ်ရမည့်ရက်သည် အကြွေးတင်သည့်ရက်ထက် စော၍မရပါ။"
+
+msgid "Only %(left)s is left to pay back."
+msgstr "ပြန်ဆပ်ရန် %(left)s သာ ကျန်တော့သည်။"
+
+msgid "Added to debt"
+msgstr "အကြွေးသို့ ထည့်ပြီးပါပြီ"
+
+msgid "The money left or came into this account."
+msgstr "ဤအကောင့်ထဲသို့ ဝင်လာသော သို့မဟုတ် ထွက်သွားသော ငွေကြေး။"
+
+msgid "Lend and borrow"
+msgstr "ချေးငှားခြင်းနှင့် ချေးယူခြင်း"
+
+msgid "Keep track of money you lent or borrowed. Account balances change, but it is not counted as income or expense."
+msgstr "သင်ချေးငှားထားသော သို့မဟုတ် ချေးယူထားသော ငွေများကို ခြေရာခံပါ။ အကောင့်လက်ကျန်များ ပြောင်းလဲသော်လည်း ဝင်ငွေ သို့မဟုတ် ထွက်ငွေအဖြစ် မရေတွက်ပါ။"
+
+msgid "Lent %(amount)s to %(person)s."
+msgstr "%(person)s ထံသို့ %(amount)s ချေးငှားခဲ့သည်။"
+
+msgid "Borrowed %(amount)s from %(person)s."
+msgstr "%(person)s ထံမှ %(amount)s ချေးယူခဲ့သည်။"
+
+msgid "%(person)s doesn't owe you anything, so the %(amount)s payment was not saved."
+msgstr "%(person)s က သင့်ကို ဘာမှ အကြွေးမတင်ပါ၊ ထို့ကြောင့် %(amount)s ငွေပေးချေမှုကို သိမ်းဆည်းမထားပါ။"
+
+msgid "You don't owe %(person)s anything, so the %(amount)s payment was not saved."
+msgstr "သင်သည် %(person)s ထံတွင် ဘာမှအကြွေးမရှိတော့ပါ၊ ထို့ကြောင့် %(amount)s ငွေပေးချေမှုကို သိမ်းဆည်းမထားပါ။"
+
+msgid "%(person)s paid you back %(amount)s."
+msgstr "%(person)s က သင့်ကို %(amount)s ပြန်ပေးခဲ့သည်။"
+
+msgid "You paid %(person)s back %(amount)s."
+msgstr "သင်သည် %(person)s ကို %(amount)s ပြန်ဆပ်လိုက်သည်။"
+
+msgid "Debt saved."
+msgstr "အကြွေးကို သိမ်းဆည်းပြီးပါပြီ။"
+
+msgid "Add debt"
+msgstr "အကြွေးထည့်ရန်"
+
+msgid "Fully paid back. The debt is closed."
+msgstr "အကုန်ပြန်ဆပ်ပြီးပါပြီ။ အကြွေးပိတ်သွားပါပြီ။"
+
+msgid "Saved. %(left)s left."
+msgstr "သိမ်းဆည်းပြီးပါပြီ။ %(left)s ကျန်ရှိသည်။"
+
+msgid "Debt updated."
+msgstr "အကြွေးကို အပ်ဒိတ်လုပ်ပြီးပါပြီ။"
+
+msgid "Edit debt"
+msgstr "အကြွေးကို တည်းဖြတ်ရန်"
+
+msgid "Debt deleted. Its payments were removed too."
+msgstr "အကြွေးကို ဖျက်လိုက်ပါပြီ။ ၎င်း၏ ငွေပေးချေမှုများကိုလည်း ဖယ်ရှားခဲ့သည်။"
+
+msgid "Debt closed."
+msgstr "အကြွေးပိတ်ပြီးပါပြီ။"
+
+msgid "Debt reopened."
+msgstr "အကြွေးကို ပြန်ဖွင့်လိုက်ပါပြီ။"
+
+msgid "Payment updated."
+msgstr "ငွေပေးချေမှုကို အပ်ဒိတ်လုပ်ပြီးပါပြီ။"
+
+msgid "Edit payment"
+msgstr "ငွေပေးချေမှုကို တည်းဖြတ်ရန်"
+
+msgid "Payment deleted."
+msgstr "ငွေပေးချေမှုကို ဖျက်လိုက်ပါပြီ။"
+
 msgid "The AI found %(n)s transaction. Fix anything that looks wrong, then save."
 msgid_plural "The AI found %(n)s transactions. Fix anything that looks wrong, then save."
 msgstr[0] "AI က ငွေစာရင်း %(n)s ခုကို တွေ့ရှိခဲ့ပါတယ်။ မှားနေတာရှိရင် ပြင်ပြီး သိမ်းဆည်းပါ။"
@@ -1156,5 +1357,14 @@ msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "သင်၏ စကားဝှက်တွင် အနည်းဆုံး စာလုံး %(min_length)d လုံး ပါဝင်ရပါမည်။"
 
-msgid "or"
-msgstr "သို့မဟုတ်"
+msgid "%(n)s overdue"
+msgid_plural "%(n)s overdue"
+msgstr[0] "%(n)s ရက်လွန်"
+
+msgid "%(n)s debt"
+msgid_plural "%(n)s debts"
+msgstr[0] "%(n)s အကြွေးများ"
+
+msgid "%(n)s debt is past its pay-back date."
+msgid_plural "%(n)s debts are past their pay-back date."
+msgstr[0] "%(n)s အကြွေးများသည် ပြန်ပေးရမည့်ရက် ကျော်လွန်သွားပါပြီ။"

@@ -27,6 +27,7 @@
         <option value="expense" {% if f.type == "expense" %}selected{% endif %}>{% translate "Expense" %}</option>
         <option value="income" {% if f.type == "income" %}selected{% endif %}>{% translate "Income" %}</option>
         <option value="transfer" {% if f.type == "transfer" %}selected{% endif %}>⇄ {% translate "Transfer" %}</option>
+        <option value="debt" {% if f.type == "debt" %}selected{% endif %}>⇆ {% translate "Debts" %}</option>
       </select>
     </div>
     <div class="col-6 col-md-2">
