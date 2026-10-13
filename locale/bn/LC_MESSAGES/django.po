@@ -1446,3 +1446,62 @@ msgstr "ডেটা ফাঁসে পাওয়া গেছে এমন �
 msgid "Use at least 8 characters. It can't be all numbers, too similar to your email, or a common or leaked password."
 msgstr "অন্তত ৮ অক্ষর দিন। শুধু সংখ্যা, ইমেইলের মতো, অতি সাধারণ বা ফাঁস হওয়া পাসওয়ার্ড চলবে না।"
 
+
+# ---------------------------------------------------------------- privacy page
+msgid "Privacy"
+msgstr "গোপনীয়তা"
+
+msgid "Privacy policy"
+msgstr "গোপনীয়তা নীতি"
+
+msgid "Last updated: 13 October 2026"
+msgstr "সর্বশেষ হালনাগাদ: ১৩ অক্টোবর ২০২৬"
+
+msgid "KhorochAi is a personal money tracker. This page explains what we store, why, and how to delete it."
+msgstr "KhorochAi একটি ব্যক্তিগত টাকার হিসাব রাখার অ্যাপ। আমরা কী রাখি, কেন রাখি এবং কীভাবে মুছবেন — এই পাতায় তা বলা আছে।"
+
+msgid "What we store"
+msgstr "আমরা কী রাখি"
+
+msgid "Your email address, username and password (stored only as a secure hash)."
+msgstr "আপনার ইমেইল, ইউজারনেম ও পাসওয়ার্ড (পাসওয়ার্ড শুধু নিরাপদ হ্যাশ আকারে রাখা হয়)।"
+
+msgid "What you add to the app: transactions, accounts, categories, budgets, debts and the text you typed to add them."
+msgstr "আপনি অ্যাপে যা যোগ করেন: লেনদেন, অ্যাকাউন্ট, ক্যাটাগরি, বাজেট, ধার-দেনা এবং সেগুলো যোগ করতে যা লিখেছেন।"
+
+msgid "Your settings: language, theme and currency."
+msgstr "আপনার সেটিংস: ভাষা, থিম ও মুদ্রা।"
+
+msgid "Log in with Google or Facebook"
+msgstr "Google বা Facebook দিয়ে লগইন"
+
+msgid "If you choose to log in with Google or Facebook, we receive only your name, email address and an account ID from them, to create and log you in to your account. We never get your Google or Facebook password and we never post anything for you."
+msgstr "Google বা Facebook দিয়ে লগইন করলে আমরা তাদের কাছ থেকে শুধু আপনার নাম, ইমেইল ও একটি অ্যাকাউন্ট আইডি পাই — আপনার অ্যাকাউন্ট খুলতে ও লগইন করাতে। আপনার Google বা Facebook পাসওয়ার্ড আমরা কখনো পাই না, আর আপনার হয়ে কিছু পোস্টও করি না।"
+
+msgid "AI processing"
+msgstr "AI দিয়ে প্রক্রিয়া"
+
+msgid "When you use Add with AI, voice input or Ask AI, the text or recording you send is passed to our AI service providers only to understand it, and the result comes back to the app. Don't include card numbers or passwords in what you type or say."
+msgstr "AI দিয়ে যোগ, ভয়েস বা AI-কে জিজ্ঞেস করা ব্যবহার করলে আপনার লেখা বা রেকর্ডিং শুধু বোঝার জন্য আমাদের AI সেবাদাতাদের কাছে যায়, আর ফলাফল অ্যাপে ফিরে আসে। লেখায় বা কথায় কার্ড নম্বর বা পাসওয়ার্ড দেবেন না।"
+
+msgid "What we don't do"
+msgstr "আমরা যা করি না"
+
+msgid "We don't sell your data, show ads, or share your data with anyone except the services needed to run the app (hosting, database, email and AI)."
+msgstr "আমরা আপনার তথ্য বিক্রি করি না, বিজ্ঞাপন দেখাই না, আর অ্যাপ চালাতে যে সেবাগুলো লাগে (হোস্টিং, ডেটাবেস, ইমেইল ও AI) সেগুলো ছাড়া কারও সাথে শেয়ার করি না।"
+
+msgid "Cookies"
+msgstr "কুকি"
+
+msgid "We use cookies only to keep you logged in, protect forms, and remember your language and theme."
+msgstr "আমরা কুকি ব্যবহার করি শুধু আপনাকে লগইন রাখতে, ফর্ম সুরক্ষিত রাখতে এবং আপনার ভাষা ও থিম মনে রাখতে।"
+
+msgid "Deleting your data"
+msgstr "আপনার তথ্য মুছে ফেলা"
+
+msgid "To delete your account and all its data, email <a href=\"mailto:%(email)s\">%(email)s</a> from the email address you log in with. We delete everything within 30 days and confirm by email. If you logged in with Facebook, you can also remove KhorochAi in Facebook under Settings → Apps and websites; then email us to delete your data."
+msgstr "আপনার অ্যাকাউন্ট ও সব তথ্য মুছতে, যে ইমেইল দিয়ে লগইন করেন সেখান থেকে <a href=\"mailto:%(email)s\">%(email)s</a>-এ ইমেইল করুন। আমরা ৩০ দিনের মধ্যে সব মুছে ইমেইলে জানাব। Facebook দিয়ে লগইন করে থাকলে Facebook-এর Settings → Apps and websites থেকেও KhorochAi সরাতে পারেন; তারপর তথ্য মুছতে আমাদের ইমেইল করুন।"
+
+msgid "Questions about privacy: <a href=\"mailto:%(email)s\">%(email)s</a>."
+msgstr "গোপনীয়তা নিয়ে প্রশ্ন: <a href=\"mailto:%(email)s\">%(email)s</a>।"
+

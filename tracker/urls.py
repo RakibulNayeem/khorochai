@@ -35,4 +35,5 @@ urlpatterns = [
     path("settings/", views.preferences, name="preferences"),
     path("help/", views.help_page, name="help"),
     path("about/", views.about_page, name="about"),
+    path("privacy/", views.privacy_page, name="privacy"),
 ]

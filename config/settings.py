@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    # always installed; a button only appears once its keys are set (see SOCIALACCOUNT_PROVIDERS below)
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
 ]
 
 MIDDLEWARE = [
@@ -163,14 +166,12 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL = "http" if DEBUG else "https"
 # Google / Facebook login: each one switches on only when its keys are set.
 SOCIALACCOUNT_PROVIDERS = {}
 if os.environ.get("GOOGLE_CLIENT_ID") and os.environ.get("GOOGLE_CLIENT_SECRET"):
-    INSTALLED_APPS.append("allauth.socialaccount.providers.google")
     SOCIALACCOUNT_PROVIDERS["google"] = {
         "APP": {"client_id": os.environ["GOOGLE_CLIENT_ID"], "secret": os.environ["GOOGLE_CLIENT_SECRET"]},
         "SCOPE": ["profile", "email"],
         "AUTH_PARAMS": {"prompt": "select_account"},
     }
 if os.environ.get("FACEBOOK_APP_ID") and os.environ.get("FACEBOOK_APP_SECRET"):
-    INSTALLED_APPS.append("allauth.socialaccount.providers.facebook")
     SOCIALACCOUNT_PROVIDERS["facebook"] = {
         "APP": {"client_id": os.environ["FACEBOOK_APP_ID"], "secret": os.environ["FACEBOOK_APP_SECRET"]},
         "METHOD": "oauth2",
