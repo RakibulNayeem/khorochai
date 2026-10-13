@@ -293,7 +293,9 @@ Rules:
   EXPENSE: __EXPENSE__
   INCOME: __INCOME__
   ACCOUNTS: __ACCOUNTS__
-  Map words like food/khabar/খাবার to the closest category. If the question is about a specific
+  Map words like food/khabar/খাবার to the closest category. Paying back loans/debts (dhar shodh, ধার শোধ, rin shodh,
+  loan repayment, ferot dilam) is the expense category "Financial Expenses". When a category covers the question,
+  keyword must be "" (don't also search the notes for the same words). If the question is about a specific
   thing that is not a category (e.g. "rickshaw", "coffee"), put it in keyword instead.
 - "how much did I spend/save/earn", "balance", "income vs expense" questions: choose type sensibly
   ("both" for balance / savings / comparisons).
