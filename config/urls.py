@@ -1,9 +1,7 @@
-from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     # login, sign-up, email codes, password reset, Google (django-allauth)
     path("auth/", include("allauth.urls")),
     # old addresses

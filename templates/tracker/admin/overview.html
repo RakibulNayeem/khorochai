@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block title %}Admin panel · KhorochAi{% endblock %}
+{% block content %}
+{% include "tracker/admin/_nav.html" %}
+
+<!-- Users -->
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3"><a href="{% url 'admin_users' %}" class="card p-3 h-100 text-reset text-decoration-none">
+    <div class="card-title-sm">Users</div>
+    <div class="stat">{{ stats.users|intcomma }}</div>
+    <div class="small text-muted">{{ stats.verified_pct }}% verified · {{ stats.google }} via Google</div>
+  </a></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">New sign-ups</div>
+    <div class="stat">{{ stats.new_7 }}</div>
+    <div class="small text-muted">last 7 days · {{ stats.new_today }} today · {{ stats.new_30 }} in 30 days</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">Active users</div>
+    <div class="stat">{{ stats.active_7 }}</div>
+    <div class="small text-muted">added an entry or used AI in the last 7 days</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><a href="{% url 'admin_users' %}?status=inactive" class="card p-3 h-100 text-reset text-decoration-none">
+    <div class="card-title-sm">Deactivated</div>
+    <div class="stat{% if stats.inactive %} text-expense{% endif %}">{{ stats.inactive }}</div>
+    <div class="small text-muted">can't log in</div>
+  </a></div>
+</div>
+
+<!-- AI today -->
+<div class="row g-3 mb-4">
+  <div class="col-lg-5"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">AI today (whole app)</div>
+    <div class="d-flex justify-content-between small"><span>Requests</span><span>{{ ai.requests|intcomma }} / {{ ai.requests_limit|intcomma }}</span></div>
+    <div class="progress mb-3"><div class="progress-bar {% if ai.requests_pct >= 90 %}bg-danger{% elif ai.requests_pct >= 70 %}bg-warning{% else %}bg-success{% endif %}" style="width: {{ ai.requests_pct }}%"></div></div>
+    <div class="d-flex justify-content-between small"><span>Tokens</span><span>{{ ai.tokens|intcomma }} / {{ ai.tokens_limit|intcomma }}</span></div>
+    <div class="progress mb-3"><div class="progress-bar {% if ai.tokens_pct >= 90 %}bg-danger{% elif ai.tokens_pct >= 70 %}bg-warning{% else %}bg-success{% endif %}" style="width: {{ ai.tokens_pct }}%"></div></div>
+    <div class="small text-muted mt-auto">AI stops for everyone when either bar is full; it resets at midnight (Bangladesh time). Each user may use {{ ai.per_user_limit|intcomma }} tokens a day.</div>
+  </div></div>
+  <div class="col-lg-7"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">Top AI users today{% if ai.users_today %} · {{ ai.users_today }}{% endif %}</div>
+    {% if ai.top %}
+    <div class="table-responsive">
+    <table class="table table-sm mb-0 align-middle">
+      <thead><tr><th>User</th><th class="text-end">Requests</th><th class="text-end">Tokens</th><th class="text-nowrap" style="width:30%;min-width:90px">Of own limit</th></tr></thead>
+      {% for r in ai.top %}
+      <tr>
+        <td class="text-truncate" style="max-width:220px" data-keep-digits><a href="{% url 'admin_user' r.user.pk %}">{{ r.user.email }}</a></td>
+        <td class="text-end">{{ r.requests }}</td>
+        <td class="text-end">{{ r.tokens|intcomma }}</td>
+        <td><div class="progress" title="{{ r.pct }}%"><div class="progress-bar {% if r.pct >= 100 %}bg-danger{% elif r.pct >= 80 %}bg-warning{% else %}bg-success{% endif %}" style="width: {{ r.pct }}%"></div></div></td>
+      </tr>
+      {% endfor %}
+    </table>
+    </div>
+    {% else %}
+    <p class="text-muted text-center my-4">Nobody has used AI today yet.</p>
+    {% endif %}
+  </div></div>
+</div>
+
+<!-- Charts -->
+<div class="row g-3 mb-4">
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">New sign-ups · last 30 days</div>
+    <div class="admin-chart" style="height:220px"><canvas id="signupChart"></canvas></div>
+  </div></div>
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">AI requests · last 30 days</div>
+    <div class="admin-chart" style="height:220px"><canvas id="aiChart"></canvas></div>
+  </div></div>
+  <div class="col-12"><div class="card p-3">
+    <div class="card-title-sm mb-2">Entries added per day · last 30 days</div>
+    <div class="admin-chart" style="height:240px"><canvas id="activityChart"></canvas></div>
+  </div></div>
+</div>
+
+<!-- Features + totals -->
+<div class="row g-3">
+  <div class="col-lg-7"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">What people use · last 30 days</div>
+    {% for f in features %}
+    <div class="mb-2">
+      <div class="d-flex justify-content-between small"><span>{{ f.label }}</span><span class="fw-semibold">{{ f.n|intcomma }}</span></div>
+      <div class="progress" style="height:6px"><div class="progress-bar" style="width: {{ f.bar }}%; background: var(--primary)"></div></div>
+    </div>
+    {% endfor %}
+  </div></div>
+  <div class="col-lg-5"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">All time</div>
+    <table class="table table-sm mb-0">
+      <tr><td>Transactions</td><td class="text-end fw-semibold">{{ totals.transactions|intcomma }}</td></tr>
+      <tr><td>Transfers</td><td class="text-end fw-semibold">{{ totals.transfers|intcomma }}</td></tr>
+      <tr><td>Debts</td><td class="text-end fw-semibold">{{ totals.debts|intcomma }}</td></tr>
+      <tr><td>Money accounts</td><td class="text-end fw-semibold">{{ totals.accounts|intcomma }}</td></tr>
+      <tr><td>Budgets set</td><td class="text-end fw-semibold">{{ totals.budgets|intcomma }}</td></tr>
+      <tr><td>Users not on BDT</td><td class="text-end fw-semibold">{{ totals.other_currency|intcomma }}</td></tr>
+    </table>
+  </div></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ chart_data|json_script:"chart-data" }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+  const d = JSON.parse(document.getElementById('chart-data').textContent);
+  const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const charts = [];
+  function drawCharts() {
+    charts.splice(0).forEach(c => c.destroy());
+    Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+    Chart.defaults.color = css('--muted');
+    Chart.defaults.borderColor = css('--border');
+    const opts = (stacked) => ({ responsive: true, maintainAspectRatio: false,
+      scales: { x: { stacked, grid: { display: false } }, y: { stacked, beginAtZero: true, ticks: { precision: 0 } } },
+      plugins: { legend: { display: stacked, position: 'bottom', labels: { boxWidth: 12 } } } });
+    charts.push(new Chart(document.getElementById('signupChart'), { type: 'bar',
+      data: { labels: d.days, datasets: [{ label: 'Sign-ups', data: d.signups, backgroundColor: css('--primary') }] },
+      options: opts(false) }));
+    charts.push(new Chart(document.getElementById('aiChart'), { type: 'line',
+      data: { labels: d.days, datasets: [{ label: 'Requests', data: d.ai_requests, borderColor: css('--primary'),
+        backgroundColor: css('--primary'), tension: .3, pointRadius: 2 }] },
+      options: opts(false) }));
+    charts.push(new Chart(document.getElementById('activityChart'), { type: 'bar',
+      data: { labels: d.days, datasets: [
+        { label: 'With AI', data: d.ai_entries, backgroundColor: css('--primary') },
+        { label: 'By hand', data: d.manual_entries, backgroundColor: css('--chart-income') },
+        { label: 'Transfers', data: d.transfers, backgroundColor: '#94a3b8' },
+        { label: 'Debts', data: d.debts, backgroundColor: css('--chart-expense') } ] },
+      options: opts(true) }));
+  }
+  if (window.Chart) {
+    drawCharts();
+    window.addEventListener('themechange', drawCharts);
+  }
+</script>
+{% endblock %}

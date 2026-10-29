@@ -407,3 +407,6 @@ html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastalee
 .preview-row.is-lend .no-debt, .preview-row.is-borrow .no-debt, .preview-row.is-collect .no-debt, .preview-row.is-repay .no-debt { display: none; }
 .debt-summary { color: var(--ink); }
 .debt-summary:hover { color: var(--ink); text-decoration: none; box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }
+
+/* Admin panel: charts fill a fixed-height box */
+.admin-chart { position: relative; }

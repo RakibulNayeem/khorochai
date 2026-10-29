@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block title %}{{ target.email }} · Admin panel · KhorochAi{% endblock %}
+{% block content %}
+{% include "tracker/admin/_nav.html" %}
+
+<a href="{% url 'admin_users' %}" class="small">← All users</a>
+<div class="d-flex flex-wrap align-items-center gap-2 mt-2 mb-3" data-keep-digits>
+  <h2 class="h5 m-0">{{ target.email|default:target.username }}</h2>
+  {% if not target.is_active %}<span class="badge text-bg-danger">Deactivated</span>{% else %}<span class="badge text-bg-success">Active</span>{% endif %}
+  {% if target.is_superuser %}<span class="badge badge-new">Superuser</span>{% elif target.is_staff %}<span class="badge badge-new">Staff</span>{% endif %}
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">Account</div>
+    <table class="table table-sm mb-0">
+      <tr><td class="text-muted">Name</td><td data-keep-digits>{{ target.username }}</td></tr>
+      <tr><td class="text-muted">Email</td><td data-keep-digits>
+        {% for e in emails %}<div>{{ e.email }} {% if e.verified %}<span class="badge text-bg-success">verified</span>{% else %}<span class="badge text-bg-warning">not verified</span>{% endif %}</div>{% empty %}{{ target.email }}{% endfor %}
+      </td></tr>
+      <tr><td class="text-muted">Log in with Google</td><td>{{ google|yesno:"Yes,No" }}</td></tr>
+      <tr><td class="text-muted">Joined</td><td>{{ target.date_joined|date:"d M Y, H:i" }}</td></tr>
+      <tr><td class="text-muted">Last login</td><td>{% if target.last_login %}{{ target.last_login|date:"d M Y, H:i" }} ({{ target.last_login|timesince }} ago){% else %}never{% endif %}</td></tr>
+      <tr><td class="text-muted">Last entry</td><td>{% if last_entry %}{{ last_entry|date:"d M Y, H:i" }}{% else %}none yet{% endif %}</td></tr>
+      <tr><td class="text-muted">Currency</td><td>{{ currency }}</td></tr>
+    </table>
+  </div></div>
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">What they have</div>
+    <table class="table table-sm mb-0">
+      {% for label, n in counts %}<tr><td>{{ label }}</td><td class="text-end fw-semibold">{{ n|intcomma }}</td></tr>{% endfor %}
+    </table>
+  </div></div>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">AI usage · last 14 days</div>
+    <div class="d-flex justify-content-between small"><span>Today</span><span>{{ ai_today.tokens|default:0|intcomma }} / {{ ai_limit|intcomma }} tokens</span></div>
+    <div class="progress mb-3"><div class="progress-bar {% if ai_pct >= 100 %}bg-danger{% elif ai_pct >= 80 %}bg-warning{% else %}bg-success{% endif %}" style="width: {{ ai_pct }}%"></div></div>
+    <table class="table table-sm mb-0">
+      <thead><tr><th>Day</th><th class="text-end">Requests</th><th class="text-end">Tokens</th></tr></thead>
+      {% for r in ai_days %}{% if r.requests or forloop.first %}
+      <tr><td>{{ r.day|date:"D, d M" }}</td><td class="text-end">{{ r.requests }}</td><td class="text-end">{{ r.tokens|intcomma }}</td></tr>
+      {% endif %}{% endfor %}
+    </table>
+  </div></div>
+
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">Actions</div>
+    {% if block_reason %}
+      <p class="text-muted mb-0">{{ block_reason }}</p>
+    {% else %}
+      <form method="post" action="{% url 'admin_user_action' target.pk %}" class="mb-3">{% csrf_token %}
+        <input type="hidden" name="action" value="reset_ai">
+        <button class="btn btn-outline-secondary btn-sm"{% if not ai_today.tokens %} disabled{% endif %}>Reset today's AI usage</button>
+        <div class="small text-muted mt-1">Gives them their full daily AI allowance again. It also frees that much of the app's daily total.</div>
+      </form>
+
+      <form method="post" action="{% url 'admin_user_action' target.pk %}" class="mb-3">{% csrf_token %}
+        {% if target.is_active %}
+        <input type="hidden" name="action" value="deactivate">
+        <button class="btn btn-outline-danger btn-sm" onclick="return confirm('Deactivate this account? They are logged out and can\'t log in until you activate it again.')">Deactivate (ban)</button>
+        <div class="small text-muted mt-1">Logs them out everywhere and blocks login. Their data is kept.</div>
+        {% else %}
+        <input type="hidden" name="action" value="activate">
+        <button class="btn btn-outline-success btn-sm">Activate again</button>
+        <div class="small text-muted mt-1">Lets them log in again with all their data.</div>
+        {% endif %}
+      </form>
+
+      <div class="menu-sep my-3"></div>
+      <form method="post" action="{% url 'admin_user_action' target.pk %}">{% csrf_token %}
+        <input type="hidden" name="action" value="delete">
+        <div class="fw-semibold text-danger small mb-1">Delete account and all data</div>
+        <div class="small text-muted mb-2">For privacy requests. Every entry, account, debt and setting of theirs is removed. This can't be undone. Type <strong data-keep-digits>{{ target.email }}</strong> to confirm.</div>
+        <div class="d-flex gap-2">
+          <input name="confirm_email" class="form-control form-control-sm" autocomplete="off" placeholder="{{ target.email }}" data-keep-digits required>
+          <button class="btn btn-danger btn-sm text-nowrap">Delete forever</button>
+        </div>
+      </form>
+    {% endif %}
+  </div></div>
+</div>
+{% endblock %}

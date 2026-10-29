@@ -938,3 +938,73 @@ class SocialLoginTests(TestCase):
         r = self.client.get(reverse("privacy"))
         self.assertContains(r, "Deleting your data")
         self.assertContains(r, "khorochai@gmail.com")
+
+
+class AdminPanelTests(TestCase):
+    def setUp(self):
+        self.boss = User.objects.create_user("boss", email="boss@example.com", password="pass12345!",
+                                             is_staff=True, is_superuser=True)
+        self.helper = User.objects.create_user("helper", email="helper@example.com", password="pass12345!", is_staff=True)
+        self.user = User.objects.create_user("rina", email="rina@example.com", password="pass12345!")
+        Transaction.objects.create(user=self.user, type="expense", amount=Decimal("750"), note="secret note")
+        AIUsage.objects.create(user=self.user, date=timezone.localdate(), count=3, tokens=2400)
+
+    def act(self, action, user=None, **extra):
+        return self.client.post(reverse("admin_user_action", args=[(user or self.user).pk]),
+                                {"action": action, **extra}, follow=True)
+
+    def test_only_staff_can_open_it(self):
+        self.assertRedirects(self.client.get(reverse("admin_overview")), "/auth/login/?next=/admin/",
+                             fetch_redirect_response=False)
+        self.client.login(username="rina", password="pass12345!")
+        for name, args in [("admin_overview", []), ("admin_users", []), ("admin_user", [self.user.pk])]:
+            self.assertEqual(self.client.get(reverse(name, args=args)).status_code, 404)
+        self.assertEqual(self.act("deactivate", self.boss).status_code, 404)
+        self.assertNotContains(self.client.get(reverse("dashboard")), "Admin panel")
+
+    def test_pages_show_counts_not_money_or_text(self):
+        self.client.login(username="boss", password="pass12345!")
+        self.assertContains(self.client.get(reverse("dashboard")), "Admin panel")
+        r = self.client.get(reverse("admin_overview"))
+        self.assertContains(r, "AI today (whole app)")
+        self.assertContains(r, "rina@example.com")  # top AI user today
+        self.assertContains(self.client.get(reverse("admin_users"), {"q": "rina"}), "rina@example.com")
+        self.assertNotContains(self.client.get(reverse("admin_users"), {"q": "rina"}), "helper@example.com")
+        r = self.client.get(reverse("admin_user", args=[self.user.pk]))
+        self.assertContains(r, "2,400 / 30,000 tokens")
+        self.assertNotContains(r, "750")
+        self.assertNotContains(r, "secret note")
+
+    def test_deactivate_activate_and_reset_ai(self):
+        self.client.login(username="boss", password="pass12345!")
+        self.act("deactivate")
+        self.user.refresh_from_db()
+        self.assertFalse(self.user.is_active)
+        self.assertFalse(self.client.login(username="rina", password="pass12345!"))
+        self.act("activate")
+        self.user.refresh_from_db()
+        self.assertTrue(self.user.is_active)
+        self.act("reset_ai")
+        usage = AIUsage.objects.get(user=self.user)
+        self.assertEqual((usage.count, usage.tokens), (0, 0))
+
+    def test_delete_needs_the_email_typed(self):
+        self.client.login(username="boss", password="pass12345!")
+        r = self.act("delete", confirm_email="wrong@example.com")
+        self.assertContains(r, "Type the user&#x27;s email exactly")
+        self.assertTrue(User.objects.filter(pk=self.user.pk).exists())
+        r = self.act("delete", confirm_email="RINA@example.com")
+        self.assertContains(r, "rina@example.com and all their data are deleted.")
+        self.assertFalse(User.objects.filter(pk=self.user.pk).exists())
+        self.assertFalse(Transaction.objects.filter(note="secret note").exists())
+
+    def test_cant_act_on_self_or_staff_without_superuser(self):
+        self.client.login(username="boss", password="pass12345!")
+        self.assertContains(self.act("deactivate", self.boss), "You can&#x27;t do this to your own account.")
+        self.client.login(username="helper", password="pass12345!")
+        self.assertContains(self.act("deactivate", self.boss), "Only a superuser can change another staff account.")
+        self.boss.refresh_from_db()
+        self.assertTrue(self.boss.is_active)
+        self.act("deactivate")  # a staff member may still manage normal users
+        self.user.refresh_from_db()
+        self.assertFalse(self.user.is_active)
