@@ -1496,6 +1496,9 @@ msgstr "কুকি"
 msgid "We use cookies only to keep you logged in, protect forms, and remember your language and theme."
 msgstr "আমরা কুকি ব্যবহার করি শুধু আপনাকে লগইন রাখতে, ফর্ম সুরক্ষিত রাখতে এবং আপনার ভাষা ও থিম মনে রাখতে।"
 
+msgid "We use Microsoft Clarity to see which pages and buttons people use, so we can improve the app. It records clicks and scrolling and sets its own cookies. While you are logged in, all text on the page, including your amounts and names, is hidden from it."
+msgstr "অ্যাপটি আরও ভালো করতে মানুষ কোন পেজ ও বাটন ব্যবহার করে তা দেখতে আমরা Microsoft Clarity ব্যবহার করি। এটি ক্লিক ও স্ক্রল রেকর্ড করে এবং নিজের কুকি রাখে। আপনি লগইন থাকা অবস্থায় পেজের সব লেখা, আপনার টাকার পরিমাণ ও নামসহ, এর কাছে লুকানো থাকে।"
+
 msgid "Deleting your data"
 msgstr "আপনার তথ্য মুছে ফেলা"
 

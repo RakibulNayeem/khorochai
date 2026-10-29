@@ -222,6 +222,11 @@ AI_DAILY_TOKENS_TOTAL = int(os.environ.get("AI_DAILY_TOKENS_TOTAL", "1000000"))
 AI_DAILY_REQUESTS_TOTAL = int(os.environ.get("AI_DAILY_REQUESTS_TOTAL", "400"))
 
 
+# ---------------------------------------------------------------- Analytics
+# Microsoft Clarity (heatmaps + session recordings). Off while the project ID is empty.
+CLARITY_PROJECT_ID = os.environ.get("CLARITY_PROJECT_ID", "").strip()
+
+
 # ---------------------------------------------------------------- Help & contact page
 CONTACT_EMAIL = "khorochai@gmail.com"
 DEVELOPER = {

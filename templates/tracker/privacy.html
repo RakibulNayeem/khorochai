@@ -27,6 +27,7 @@
 
     <h2 class="h6 mt-3">{% translate "Cookies" %}</h2>
     <p>{% translate "We use cookies only to keep you logged in, protect forms, and remember your language and theme." %}</p>
+    {% if clarity_id %}<p>{% translate "We use Microsoft Clarity to see which pages and buttons people use, so we can improve the app. It records clicks and scrolling and sets its own cookies. While you are logged in, all text on the page, including your amounts and names, is hidden from it." %}</p>{% endif %}
 
     <h2 class="h6 mt-3" id="delete">{% translate "Deleting your data" %}</h2>
     <p>{% blocktranslate with email=contact_email %}To delete your account and all its data, email <a href="mailto:{{ email }}">{{ email }}</a> from the email address you log in with. We delete everything within 30 days and confirm by email. If you logged in with Google, you can also remove KhorochAi's access at myaccount.google.com → Security → Third-party connections.{% endblocktranslate %}</p>

@@ -34,4 +34,5 @@ def preferences(request):
         "currency_code": currency.current()[0],
         "currency_symbol": currency.current()[1],
         "contact_email": settings.CONTACT_EMAIL,
+        "clarity_id": settings.CLARITY_PROJECT_ID,
     }
