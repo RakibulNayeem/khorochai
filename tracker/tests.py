@@ -1008,3 +1008,14 @@ class AdminPanelTests(TestCase):
         self.act("deactivate")  # a staff member may still manage normal users
         self.user.refresh_from_db()
         self.assertFalse(self.user.is_active)
+
+    @override_settings(CLARITY_PROJECT_ID="clar123")
+    def test_clarity_never_sees_the_panel_or_staff(self):
+        tag = "clarity.ms/tag/"
+        self.assertContains(self.client.get(reverse("privacy")), tag)  # visitors: on
+        self.client.login(username="rina", password="pass12345!")
+        self.assertContains(self.client.get(reverse("dashboard")), tag)  # normal users: on (text masked)
+        self.assertNotContains(self.client.get(reverse("admin_overview")), tag, status_code=404)
+        self.client.login(username="boss", password="pass12345!")
+        for name, args in [("dashboard", []), ("admin_overview", []), ("admin_users", []), ("admin_user", [self.user.pk])]:
+            self.assertNotContains(self.client.get(reverse(name, args=args)), tag)

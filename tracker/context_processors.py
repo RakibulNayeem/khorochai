@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.urls import reverse
 
 from . import currency
 
@@ -23,6 +24,15 @@ def _profile(user):
     return {"name": name, "initials": initials, "color": color}
 
 
+def _clarity_id(request, user):
+    """Clarity's project ID, or "" where it must not run: the admin panel, and any page a staff member opens."""
+    if user is not None and user.is_staff:
+        return ""
+    if request.path.startswith(reverse("admin_overview")):
+        return ""
+    return settings.CLARITY_PROJECT_ID
+
+
 def preferences(request):
     """Theme and language choices for every page (navbar menu + <html> attributes)."""
     user = getattr(request, "user", None)
@@ -34,5 +44,5 @@ def preferences(request):
         "currency_code": currency.current()[0],
         "currency_symbol": currency.current()[1],
         "contact_email": settings.CONTACT_EMAIL,
-        "clarity_id": settings.CLARITY_PROJECT_ID,
+        "clarity_id": _clarity_id(request, user),
     }

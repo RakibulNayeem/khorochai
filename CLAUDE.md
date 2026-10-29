@@ -34,7 +34,7 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "à¦†à
   - Users: search and filter; each user's page lets staff deactivate or activate them, reset today's AI usage, or delete them with all their data (type the email to confirm).
   - It shows counts only, never users' amounts or what they typed. Only a superuser can act on staff accounts, and nobody on their own.
   - Staff-only, so its text is English and not translated. Non-staff get a 404.
-- **Analytics:** Microsoft Clarity (project `z57gryr8d2`), off when `DEBUG` is on. Logged-in pages mask all text.
+- **Analytics:** Microsoft Clarity (project `z57gryr8d2`), off when `DEBUG` is on. Logged-in pages mask all text. Never loaded on `/admin/` or for staff accounts.
 - **Auth:** django-allauth, mounted at `/auth/` because `/accounts/` is the money-accounts page.
   - Email-only login.
   - Email verification and password reset use 6-digit codes, sent through Gmail SMTP.
@@ -53,7 +53,7 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "à¦†à
 - **Digits:** Bangla digits are applied client-side. Mark user-typed text with `data-keep-digits` to exempt it.
 - **Currency:** a logged-in user's currency comes from `Profile` and defaults to BDT. It is only guessed from the language for visitors.
 - **Local database:** `.env` points at the **live** Neon database; leave it that way. For local trials with fake data, set `DATABASE_URL=""` to use SQLite.
-- **Tests** always use SQLite: `python manage.py test tracker`, about 72 tests.
+- **Tests** always use SQLite: `python manage.py test tracker`, about 73 tests.
 - **Migrations:** run them on Neon (`python manage.py migrate`) *before* pushing a change that needs them.
 
 ## Pending / ideas
