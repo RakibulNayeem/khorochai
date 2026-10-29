@@ -28,7 +28,9 @@ def _clarity_id(request, user):
     """Clarity's project ID, or "" where it must not run: the admin panel, and any page a staff member opens."""
     if user is not None and user.is_staff:
         return ""
-    if request.path.startswith(reverse("admin_overview")):
+    panel = reverse("admin_overview")
+    # also the login page a logged-out visitor is sent to from the panel: its URL holds ?next=/admin/...
+    if request.path.startswith(panel) or request.GET.get("next", "").startswith(panel):
         return ""
     return settings.CLARITY_PROJECT_ID
 
