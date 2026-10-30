@@ -24,7 +24,16 @@
       const row = document.createElement('button');
       row.type = 'button';
       row.className = 'picker-row';
-      row.textContent = `${p.icon} ${p.name}`;
+      if (p.logo) {
+        const logo = document.createElement('img');
+        logo.src = p.logo;
+        logo.alt = '';
+        logo.className = 'picker-logo';
+        logo.loading = 'lazy';
+        row.append(logo, p.name);
+      } else {
+        row.textContent = `${p.icon} ${p.name}`;
+      }
       row.addEventListener('click', () => choose(p));
       list.appendChild(row);
     });

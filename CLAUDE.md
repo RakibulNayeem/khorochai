@@ -14,6 +14,7 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "à¦†à
 - **Voice input:** the mic records a 16 kHz WAV (`static/js/voice.js`). Gemini transcribes it, with Groq Whisper as the backup.
 - **Accounts:** Cash, bKash, Nagad, Rocket, Bank and Card are created per user. Balances are worked out in SQL by `services.account_balances`.
   - The add/edit form has a search list of Bangladeshi banks, bank cards and mobile services (`tracker/providers.py`). Picking only fills the name, icon and color; names stay free to rename.
+  - Logos are in `static/img/banks/`. `Account.logo` finds one from the account's name and type, so renaming can't leave a wrong logo; names with no logo show the emoji. Check any new logo by eye: bank sites often serve the wrong image.
 - **Categories and budgets:** default categories are created per user by a signal. Budgets are monthly and per expense category.
 - **Debts** (`Debt`, `DebtRecord`):
   - a list of "Owed to me" and "I owe", active and closed, with overdue dates;

@@ -88,7 +88,7 @@
 <div class="account-strip mb-4">
   {% for r in accounts %}
   <a href="{% url 'transactions' %}?account={{ r.account.pk }}" class="card account-chip p-3 d-flex flex-row align-items-center gap-2" style="--acc: {{ r.account.color }}">
-    <span class="acc-tile sm" aria-hidden="true">{{ r.account.icon }}</span>
+    {% include "tracker/_account_tile.html" with account=r.account small=True %}
     <span class="d-flex flex-column lh-sm">
       <span class="small text-muted text-nowrap">{{ r.account.label }}</span>
       <span class="fw-semibold amount {% if r.balance < 0 %}text-expense{% endif %}">{{ r.balance|money }}</span>

@@ -3,7 +3,13 @@
 Picking only fills the account's name, icon and color, so an account never depends on this list:
 users can rename it, and a bank leaving the list changes nothing for them.
 Names stay in English. The second value is what else people may search for: short names and Bangla.
+
+Logos are looked up by the account's name, so renaming an account to another bank can't leave the old bank's logo.
+Names missing from LOGOS have no logo we could confirm, and those accounts show their emoji instead.
 """
+import re
+
+from django.templatetags.static import static
 
 # kind -> (icon, color) of an account with nothing more specific
 KIND_DEFAULTS = {
@@ -99,19 +105,48 @@ MOBILE_SERVICES = [
     ("Tap", "Trust Axiata Pay ট্যাপ", *KIND_DEFAULTS["mobile"]),
 ]
 
+LOGOS = frozenset({
+    "AB Bank", "Agrani Bank", "Bangladesh Commerce Bank", "Bank Asia", "BASIC Bank", "BRAC Bank", "Citibank N.A.",
+    "Citizens Bank", "Commercial Bank of Ceylon", "Community Bank Bangladesh", "Dhaka Bank", "Eastern Bank", "EXIM Bank",
+    "Grameen Bank", "Habib Bank", "HSBC", "ICB Islamic Bank", "IFIC Bank", "Jamuna Bank", "Meghna Bank", "Mercantile Bank",
+    "Midland Bank", "Mutual Trust Bank", "National Bank", "NRBC Bank", "One Bank", "Padma Bank", "Premier Bank", "Prime Bank",
+    "Pubali Bank", "Rajshahi Krishi Unnayan Bank", "Rupali Bank", "SBAC Bank", "Shahjalal Islami Bank", "Shimanto Bank",
+    "Social Islami Bank", "Sonali Bank", "Southeast Bank", "Standard Chartered", "The City Bank", "Union Bank",
+    "United Commercial Bank", "Uttara Bank",
+    "bKash", "Nagad", "OK Wallet", "Pathao Pay", "Tap", "Upay",
+})
+BANK_NAMES = sorted((name for name, _ in BANKS), key=len, reverse=True)
+MOBILE_NAMES = sorted((row[0] for row in MOBILE_SERVICES), key=len, reverse=True)
+
+
+def logo_file(name):
+    return "img/banks/" + re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") + ".png"
+
+
+def logo_for(account_name, kind):
+    """The logo for an account, or "". Longest name first: "National Bank of Pakistan" is not "National Bank"."""
+    names = MOBILE_NAMES if kind == "mobile" else BANK_NAMES if kind in ("bank", "card") else ()
+    typed = account_name.lower()
+    for name in names:
+        if typed == name.lower() or typed.startswith(name.lower() + " "):
+            return logo_file(name) if name in LOGOS else ""
+    return ""
+
 
 def picker_data():
     """What the account form's search list needs, by account kind. A card is listed by the bank that issued it."""
     def bank_rows(kind, suffix=""):
         icon, color = KIND_DEFAULTS[kind]
-        return [{"name": f"{name}{suffix}", "search": f"{name} {words}".lower(), "icon": icon, "color": color}
+        return [{"name": f"{name}{suffix}", "search": f"{name} {words}".lower(), "icon": icon, "color": color,
+                 "logo": static(logo_file(name)) if name in LOGOS else ""}
                 for name, words in BANKS]
 
     return {
         "lists": {
             "bank": bank_rows("bank"),
             "card": bank_rows("card", " Card"),
-            "mobile": [{"name": name, "search": f"{name} {words}".lower(), "icon": icon, "color": color}
+            "mobile": [{"name": name, "search": f"{name} {words}".lower(), "icon": icon, "color": color,
+                        "logo": static(logo_file(name)) if name in LOGOS else ""}
                        for name, words, icon, color in MOBILE_SERVICES],
         },
         "defaults": {kind: {"icon": icon, "color": color} for kind, (icon, color) in KIND_DEFAULTS.items()},

@@ -1,0 +1,1 @@
+{% load static %}<span class="acc-tile{% if small %} sm{% endif %}{% if account.logo %} has-logo{% endif %}" aria-hidden="true">{% if account.logo %}<img src="{% static account.logo %}" alt="" loading="lazy">{% else %}{{ account.icon }}{% endif %}</span>

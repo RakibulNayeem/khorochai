@@ -3,6 +3,8 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext, gettext_lazy as _
 
+from .providers import logo_for
+
 INCOME = "income"
 EXPENSE = "expense"
 TRANSFER = "transfer"  # only used by the AI preview + lists; stored in the Transfer model
@@ -82,6 +84,10 @@ class Account(models.Model):
     @property
     def label(self):
         return self.name  # account names are the user's own words: never translated
+
+    @property
+    def logo(self):
+        return logo_for(self.name, self.kind)
 
     def __str__(self):
         return f"{self.icon} {self.label}".strip()

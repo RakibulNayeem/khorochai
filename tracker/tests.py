@@ -4,6 +4,7 @@ from decimal import Decimal
 from unittest import mock
 
 from django.contrib.auth.models import User
+from django.contrib.staticfiles import finders
 from django.core import mail
 from django.test import TestCase, override_settings
 from django.urls import reverse
@@ -11,7 +12,7 @@ from django.utils import timezone
 
 from . import llm, services
 from .models import Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer
-from .providers import picker_data
+from .providers import BANKS, LOGOS, MOBILE_SERVICES, logo_file, logo_for, picker_data
 
 
 class FlowTests(TestCase):
@@ -226,6 +227,30 @@ class AccountTests(TestCase):
             "kind": "bank", "name": "My salary account", "icon": "🏦", "color": "#2563eb", "opening_balance": "0"})
         bank.refresh_from_db()
         self.assertEqual(bank.name, "My salary account")
+
+    def test_logo_follows_the_account_name_and_type(self):
+        self.assertEqual(logo_for("bKash", "mobile"), "img/banks/bkash.png")
+        self.assertEqual(logo_for("BRAC Bank Card", "card"), "img/banks/brac-bank.png")
+        self.assertEqual(logo_for("brac bank savings", "bank"), "img/banks/brac-bank.png")
+        self.assertEqual(logo_for("National Bank", "bank"), "img/banks/national-bank.png")
+        self.assertEqual(logo_for("National Bank of Pakistan", "bank"), "")  # not National Bank's logo
+        self.assertEqual(logo_for("Rocket", "mobile"), "")  # no confirmed logo yet: shows the emoji
+        self.assertEqual(logo_for("BRAC Bank", "cash"), "")
+        self.assertEqual(logo_for("Tapan", "mobile"), "")  # a whole-word match, not "Tap"
+        self.assertEqual(logo_for("My salary", "bank"), "")
+
+    def test_every_logo_has_a_file(self):
+        known = {name for name, _ in BANKS} | {row[0] for row in MOBILE_SERVICES}
+        self.assertLessEqual(LOGOS, known)
+        for name in LOGOS:
+            self.assertIsNotNone(finders.find(logo_file(name)), name)
+
+    def test_account_pages_show_the_logo(self):
+        r = self.client.get(reverse("accounts"))
+        self.assertContains(r, "img/banks/bkash.png")
+        self.assertContains(r, "🚀")  # Rocket keeps its emoji
+        self.assertContains(self.client.get(reverse("dashboard")), "img/banks/bkash.png")
+        self.assertContains(self.client.get(reverse("account_add")), "img/banks/brac-bank.png")
 
     def test_picker_names_fit_an_account(self):
         lists = picker_data()["lists"]
