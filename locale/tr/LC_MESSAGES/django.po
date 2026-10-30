@@ -1430,3 +1430,12 @@ msgstr "Bugün 35000 maaşımı aldım ve 12000 kira ödedim"
 
 msgid "salary 35000, rent 12000"
 msgstr "maaş 35000, kira 12000"
+
+msgid "Find in the list"
+msgstr "Listede bul"
+
+msgid "Search by name"
+msgstr "Ada göre ara"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Listede yok mu? Adı aşağıdaki kutuya yazın."

@@ -1430,3 +1430,12 @@ msgstr "Natanggap ko ang sahod na 35000 ngayon at nagbayad ng upa 12000"
 
 msgid "salary 35000, rent 12000"
 msgstr "sahod 35000, upa 12000"
+
+msgid "Find in the list"
+msgstr "Hanapin sa listahan"
+
+msgid "Search by name"
+msgstr "Maghanap ayon sa pangalan"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Wala sa listahan? I-type ang pangalan sa kahon sa ibaba."

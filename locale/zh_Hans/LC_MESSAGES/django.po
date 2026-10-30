@@ -1422,3 +1422,12 @@ msgstr "今天发工资 35000，交房租 12000"
 
 msgid "salary 35000, rent 12000"
 msgstr "工资 35000，房租 12000"
+
+msgid "Find in the list"
+msgstr "在列表中查找"
+
+msgid "Search by name"
+msgstr "按名称搜索"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "列表中没有？请在下面的框中输入名称。"

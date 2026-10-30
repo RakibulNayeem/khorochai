@@ -1430,3 +1430,12 @@ msgstr "අද වැටුප 35000ක් ලැබුණා, කුලිය 1
 
 msgid "salary 35000, rent 12000"
 msgstr "වැටුප 35000, කුලිය 12000"
+
+msgid "Find in the list"
+msgstr "ලැයිස්තුවෙන් සොයන්න"
+
+msgid "Search by name"
+msgstr "නමින් සොයන්න"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "ලැයිස්තුවේ නැද්ද? පහත කොටුවේ නම ටයිප් කරන්න."

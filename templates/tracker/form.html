@@ -9,6 +9,7 @@
       {% csrf_token %}
       {{ form.non_field_errors }}
       {% for field in form %}
+        {% if picker and field.name == "name" %}{% include "tracker/_account_picker.html" %}{% endif %}
         <div class="mb-3">
           <label class="form-label small fw-semibold" for="{{ field.id_for_label }}">{{ field.label }}</label>
           {% if field.name == "direction" %}
@@ -40,3 +41,4 @@
   </div>
 </div></div>
 {% endblock %}
+{% block scripts %}{% if picker %}{% load static %}<script src="{% static 'js/account_picker.js' %}" defer></script>{% endif %}{% endblock %}

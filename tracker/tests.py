@@ -9,8 +9,9 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
-from . import llm
+from . import llm, services
 from .models import Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer
+from .providers import picker_data
 
 
 class FlowTests(TestCase):
@@ -182,6 +183,61 @@ class AccountTests(TestCase):
         rows = r.context["rows"]
         self.assertEqual(rows[0]["account_id"], self.bkash.id)
         self.assertEqual(rows[1]["account_id"], self.cash.id)  # default account
+
+    def test_ai_general_word_finds_renamed_account(self):
+        Account.objects.filter(user=self.user, name="Bank").update(name="BRAC Bank")
+        Account.objects.filter(user=self.user, name="Card").update(name="EBL Card")
+        fake = {"transactions": [
+            {"type": "expense", "amount": 500, "category": "Food", "account": "Bank", "note": "a"},
+            {"type": "expense", "amount": 80, "category": "Food", "account": "card", "note": "b"},
+            {"type": "expense", "amount": 90, "category": "Food", "account": "brac bank", "note": "c"},
+        ], "message": ""}
+        with mock.patch.object(llm, "call_llm", return_value=fake) as call:
+            r = self.client.post(reverse("ai_parse"), {"text": "bank theke 500, card e 80"})
+        bank = Account.objects.get(user=self.user, name="BRAC Bank")
+        card = Account.objects.get(user=self.user, name="EBL Card")
+        self.assertEqual([row["account_id"] for row in r.context["rows"]], [bank.id, card.id, bank.id])
+        self.assertIn("BRAC Bank = bank", call.call_args[0][0])  # the AI is told the type of a renamed account
+
+    def test_account_form_offers_the_lists(self):
+        r = self.client.get(reverse("account_add"))
+        self.assertContains(r, "account-picker-data")
+        self.assertContains(r, "Dutch-Bangla Bank Card")
+        self.assertContains(r, "js/account_picker.js")
+        r = self.client.get(reverse("category_add"))
+        self.assertNotContains(r, "account-picker")
+
+    def test_add_account_starts_with_the_icon_of_its_type(self):
+        r = self.client.get(reverse("account_add") + "?kind=bank")
+        self.assertEqual(r.context["form"].initial["icon"], "🏦")
+        r = self.client.get(reverse("account_add") + "?kind=nonsense")
+        self.assertEqual(r.context["form"].initial["kind"], "mobile")
+
+    def test_default_accounts_can_be_renamed_from_the_list(self):
+        bank = Account.objects.get(user=self.user, name="Bank")
+        Transaction.objects.create(user=self.user, type="income", amount=700, account=bank)
+        r = self.client.post(reverse("account_edit", args=[bank.id]), {
+            "kind": "bank", "name": "BRAC Bank", "icon": "🏦", "color": "#2563eb", "opening_balance": "0"})
+        self.assertRedirects(r, reverse("accounts"))
+        bank.refresh_from_db()
+        self.assertEqual(bank.name, "BRAC Bank")
+        self.assertEqual(bank.transactions.count(), 1)
+        self.client.post(reverse("account_edit", args=[bank.id]), {
+            "kind": "bank", "name": "My salary account", "icon": "🏦", "color": "#2563eb", "opening_balance": "0"})
+        bank.refresh_from_db()
+        self.assertEqual(bank.name, "My salary account")
+
+    def test_picker_names_fit_an_account(self):
+        lists = picker_data()["lists"]
+        self.assertEqual(set(lists), {"bank", "card", "mobile"})
+        for rows in lists.values():
+            names = [row["name"] for row in rows]
+            self.assertEqual(len(names), len(set(names)))
+            max_len = Account._meta.get_field("name").max_length
+            self.assertTrue(all(len(n) <= max_len for n in names), names)
+        defaults = {name: (icon, color) for name, _, icon, color, _ in services.DEFAULT_ACCOUNTS}
+        for row in lists["mobile"][:3]:
+            self.assertEqual((row["icon"], row["color"]), defaults[row["name"]])
 
     def test_ai_transfer(self):
         fake = {"transactions": [

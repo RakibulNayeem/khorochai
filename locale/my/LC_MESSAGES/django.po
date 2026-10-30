@@ -1422,3 +1422,12 @@ msgstr "ဒီနေ့ လစာ 35000 ရပြီး အိမ်လခ 12000
 
 msgid "salary 35000, rent 12000"
 msgstr "လစာ 35000၊ အိမ်လခ 12000"
+
+msgid "Find in the list"
+msgstr "စာရင်းတွင် ရှာပါ"
+
+msgid "Search by name"
+msgstr "အမည်ဖြင့် ရှာပါ"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "စာရင်းတွင် မရှိပါက အောက်ပါအကွက်တွင် အမည်ကို ရိုက်ထည့်ပါ။"

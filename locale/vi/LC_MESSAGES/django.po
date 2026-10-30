@@ -1422,3 +1422,12 @@ msgstr "Hôm nay nhận lương 35000 và trả tiền nhà 12000"
 
 msgid "salary 35000, rent 12000"
 msgstr "lương 35000, tiền nhà 12000"
+
+msgid "Find in the list"
+msgstr "Tìm trong danh sách"
+
+msgid "Search by name"
+msgstr "Tìm theo tên"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Không có trong danh sách? Nhập tên vào ô bên dưới."

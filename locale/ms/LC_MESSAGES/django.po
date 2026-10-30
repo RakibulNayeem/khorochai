@@ -1422,3 +1422,12 @@ msgstr "Dapat gaji 35000 hari ini dan bayar sewa 12000"
 
 msgid "salary 35000, rent 12000"
 msgstr "gaji 35000, sewa 12000"
+
+msgid "Find in the list"
+msgstr "Cari dalam senarai"
+
+msgid "Search by name"
+msgstr "Cari mengikut nama"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Tiada dalam senarai? Taip nama di dalam kotak di bawah."

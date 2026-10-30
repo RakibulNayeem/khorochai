@@ -1422,3 +1422,12 @@ msgstr "今日給料 35000 が入って、家賃 12000 を払った"
 
 msgid "salary 35000, rent 12000"
 msgstr "給料 35000、家賃 12000"
+
+msgid "Find in the list"
+msgstr "リストから探す"
+
+msgid "Search by name"
+msgstr "名前で検索"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "リストにない場合は、下の欄に名前を入力してください。"

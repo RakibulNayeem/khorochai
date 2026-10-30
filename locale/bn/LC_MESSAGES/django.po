@@ -1522,3 +1522,11 @@ msgstr "আপনার অ্যাকাউন্ট ও সব তথ্য �
 msgid "Google login"
 msgstr "Google লগইন"
 
+msgid "Find in the list"
+msgstr "তালিকায় খুঁজুন"
+
+msgid "Search by name"
+msgstr "নাম লিখে খুঁজুন"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "তালিকায় নেই? নিচের ঘরে নামটি লিখুন।"

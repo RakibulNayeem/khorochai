@@ -1430,3 +1430,12 @@ msgstr "आज 35000 तलब पाएँ र 12000 भाडा तिरे�
 
 msgid "salary 35000, rent 12000"
 msgstr "तलब 35000, भाडा 12000"
+
+msgid "Find in the list"
+msgstr "सूचीमा खोज्नुहोस्"
+
+msgid "Search by name"
+msgstr "नामले खोज्नुहोस्"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "सूचीमा छैन? तलको बाकसमा नाम लेख्नुहोस्।"

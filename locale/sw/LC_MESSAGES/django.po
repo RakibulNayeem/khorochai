@@ -1430,3 +1430,12 @@ msgstr "Leo nimepokea mshahara 35000 na kulipa kodi ya nyumba 12000"
 
 msgid "salary 35000, rent 12000"
 msgstr "mshahara 35000, kodi 12000"
+
+msgid "Find in the list"
+msgstr "Tafuta kwenye orodha"
+
+msgid "Search by name"
+msgstr "Tafuta kwa jina"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Haipo kwenye orodha? Andika jina kwenye kisanduku hapa chini."

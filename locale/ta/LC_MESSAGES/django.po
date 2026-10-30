@@ -1430,3 +1430,12 @@ msgstr "இன்று சம்பளம் 35000 வந்தது, வா�
 
 msgid "salary 35000, rent 12000"
 msgstr "சம்பளம் 35000, வாடகை 12000"
+
+msgid "Find in the list"
+msgstr "பட்டியலில் தேடுங்கள்"
+
+msgid "Search by name"
+msgstr "பெயரால் தேடுங்கள்"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "பட்டியலில் இல்லையா? கீழே உள்ள பெட்டியில் பெயரை உள்ளிடுங்கள்."

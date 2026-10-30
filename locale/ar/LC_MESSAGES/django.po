@@ -1462,3 +1462,12 @@ msgstr "استلمت راتبي 35000 اليوم ودفعت الإيجار 12000
 
 msgid "salary 35000, rent 12000"
 msgstr "راتب 35000، إيجار 12000"
+
+msgid "Find in the list"
+msgstr "ابحث في القائمة"
+
+msgid "Search by name"
+msgstr "ابحث بالاسم"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "ليس في القائمة؟ اكتب الاسم في الحقل أدناه."

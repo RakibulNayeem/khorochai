@@ -1430,3 +1430,12 @@ msgstr "امروز حقوقم 35000 را گرفتم و 12000 اجاره دادم
 
 msgid "salary 35000, rent 12000"
 msgstr "حقوق 35000، اجاره 12000"
+
+msgid "Find in the list"
+msgstr "در فهرست پیدا کنید"
+
+msgid "Search by name"
+msgstr "جستجو با نام"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "در فهرست نیست؟ نام را در کادر زیر بنویسید."

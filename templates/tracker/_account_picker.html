@@ -1,0 +1,7 @@
+{% load i18n %}<div class="mb-3" id="account-picker" hidden>
+  <label class="form-label small fw-semibold" for="account-picker-q">{% translate "Find in the list" %}</label>
+  <input type="search" class="form-control" id="account-picker-q" placeholder="{% translate 'Search by name' %}" autocomplete="off">
+  <div class="picker-list" id="account-picker-list" hidden></div>
+  <div class="form-text">{% translate "Not in the list? Type the name in the box below." %}</div>
+</div>
+{{ picker|json_script:"account-picker-data" }}

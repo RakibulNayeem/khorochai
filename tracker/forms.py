@@ -120,7 +120,7 @@ class CategoryForm(BootstrapMixin, forms.ModelForm):
 class AccountForm(BootstrapMixin, forms.ModelForm):
     class Meta:
         model = Account
-        fields = ("name", "kind", "icon", "color", "opening_balance", "is_default")
+        fields = ("kind", "name", "icon", "color", "opening_balance", "is_default")
         widgets = {
             "color": forms.TextInput(attrs={"type": "color"}),
             "icon": forms.TextInput(attrs={"placeholder": _("e.g. 💵")}),

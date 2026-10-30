@@ -1438,3 +1438,12 @@ msgstr "Сьогодні отримав зарплату 35000 і заплати
 
 msgid "salary 35000, rent 12000"
 msgstr "зарплата 35000, оренда 12000"
+
+msgid "Find in the list"
+msgstr "Знайти у списку"
+
+msgid "Search by name"
+msgstr "Пошук за назвою"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Немає у списку? Введіть назву в полі нижче."

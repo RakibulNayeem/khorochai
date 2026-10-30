@@ -1422,3 +1422,12 @@ msgstr "오늘 월급 35000 받고 월세 12000 냈어요"
 
 msgid "salary 35000, rent 12000"
 msgstr "월급 35000, 월세 12000"
+
+msgid "Find in the list"
+msgstr "목록에서 찾기"
+
+msgid "Search by name"
+msgstr "이름으로 검색"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "목록에 없나요? 아래 칸에 이름을 입력하세요."

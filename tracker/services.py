@@ -13,6 +13,7 @@ from django.utils.formats import date_format
 from django.utils.translation import gettext
 
 from .models import (
+    BANK, CARD,
     ACCOUNT_KIND_ORDER, BALANCE, BORROW, BORROWED, BUDGET, DEBT_AI_TYPES, EXPENSE, FINANCIAL_EXPENSES, INCOME, INCREASE, LEND, LENT,
     REPAY, TRANSFER, Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer, category_label,
 )
@@ -77,6 +78,16 @@ def sorted_accounts(user):
 def default_account(user):
     accounts = sorted_accounts(user)
     return next((a for a in accounts if a.is_default), accounts[0] if accounts else None)
+
+
+def find_account(accounts, name):
+    """The account the AI named. "Bank" or "Card" with no account of that name means the first of that type,
+    because users rename those two to their own bank's name."""
+    name = str(name or "").strip().lower()
+    exact = next((a for a in accounts if a.name.lower() == name), None)
+    if exact or name not in (BANK, CARD):
+        return exact
+    return next((a for a in accounts if a.kind == name), None)
 
 
 def account_balances(user):
@@ -262,8 +273,7 @@ def clean_parsed(data, user):
             continue
         cat_name = " ".join(str(item.get("category") or "").split())[:60]
         match = next((c for c in cats if c.type == type_ and c.name.lower() == cat_name.lower()), None)
-        acc_name = str(item.get("account") or "").strip().lower()
-        account = next((a for a in accounts if a.name.lower() == acc_name), None) or fallback_account
+        account = find_account(accounts, item.get("account")) or fallback_account
         rows.append({
             "type": type_,
             "amount": amount,
@@ -283,8 +293,7 @@ def clean_parsed(data, user):
 def _debt_row(item, type_, amount, date, accounts, fallback_account, user):
     """Lending, borrowing, or a debt being paid back. A name that differs from an earlier debt's only in
     upper/lower case is written the earlier way, so payments find the right debt."""
-    acc_name = str(item.get("account") or "").strip().lower()
-    account = next((a for a in accounts if a.name.lower() == acc_name), None) or fallback_account
+    account = find_account(accounts, item.get("account")) or fallback_account
     person = " ".join(str(item.get("person") or "").split())[:60]
     if person:
         known = Debt.objects.filter(user=user, person__iexact=person).order_by("-date").values_list("person", flat=True).first()
@@ -323,8 +332,7 @@ def _budget_row(item, cats, today):
 
 
 def _balance_row(item, accounts, fallback_account, today):
-    name = str(item.get("account") or "").strip().lower()
-    account = next((a for a in accounts if a.name.lower() == name), None) or fallback_account
+    account = find_account(accounts, item.get("account")) or fallback_account
     return {
         "type": BALANCE,
         "amount": parse_balance(item.get("amount")),
@@ -340,11 +348,7 @@ def _balance_row(item, accounts, fallback_account, today):
 
 def _transfer_row(item, amount, date, accounts, fallback_account):
     """Match both sides of a transfer; fill a missing side so the preview always has two different accounts."""
-    def find(name):
-        name = str(name or "").strip().lower()
-        return next((a for a in accounts if a.name.lower() == name), None)
-
-    src, dst = find(item.get("account")), find(item.get("to_account"))
+    src, dst = find_account(accounts, item.get("account")), find_account(accounts, item.get("to_account"))
     if src is None:
         src = fallback_account if fallback_account != dst else None
     if src is None or src == dst:

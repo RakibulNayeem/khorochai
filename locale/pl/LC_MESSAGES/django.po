@@ -1438,3 +1438,12 @@ msgstr "Dziś dostałem pensję 35000 i zapłaciłem 12000 czynszu"
 
 msgid "salary 35000, rent 12000"
 msgstr "pensja 35000, czynsz 12000"
+
+msgid "Find in the list"
+msgstr "Znajdź na liście"
+
+msgid "Search by name"
+msgstr "Szukaj po nazwie"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "Nie ma na liście? Wpisz nazwę w polu poniżej."

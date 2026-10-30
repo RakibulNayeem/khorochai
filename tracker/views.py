@@ -18,6 +18,7 @@ from django.views.decorators.http import require_POST
 from . import llm, services
 from .context_processors import THEME_COOKIE, THEMES
 from .forms import AccountForm, CategoryForm, DebtForm, DebtRecordForm, ProfileForm, TransactionForm, TransferForm
+from .providers import KIND_DEFAULTS, picker_data
 from .models import (
     BALANCE, BORROW, BORROWED, BUDGET, COLLECT, DEBT, DEBT_AI_TYPES, EXPENSE, INCOME, LEND, LENT, REPAY, TRANSFER,
     Account, Category, Debt, DebtRecord, Transaction, Transfer,
@@ -195,11 +196,14 @@ def ai_parse(request):
         return redirect("dashboard")
 
     exp_names, inc_names = services.category_names(request.user)
-    account_names = [a.name for a in Account.objects.filter(user=request.user)]
+    user_accounts = list(Account.objects.filter(user=request.user))
+    account_names = [a.name for a in user_accounts]
+    account_types = [f"{a.name} = {a.kind}" for a in user_accounts]
     usage = {}
     try:
         data = llm.parse_transactions(text, timezone.localdate(), exp_names, inc_names, account_names, usage=usage,
-                                      currency=current_currency()[0], people=services.open_debt_people(request.user))
+                                      currency=current_currency()[0], people=services.open_debt_people(request.user),
+                                      account_types=account_types)
         services.record_ai_usage(request.user, usage.get("tokens", 0))
     except llm.LLMError as exc:
         logger.error("AI parse failed: %s", exc)
@@ -681,13 +685,15 @@ def account_list(request):
 
 @login_required
 def account_create(request):
-    form = AccountForm(request.POST or None, user=request.user,
-                       initial={"kind": request.GET.get("kind", "mobile"), "icon": "📱", "color": "#0ea5e9"})
+    kind = request.GET.get("kind")
+    kind = kind if kind in KIND_DEFAULTS else "mobile"
+    icon, color = KIND_DEFAULTS[kind]
+    form = AccountForm(request.POST or None, user=request.user, initial={"kind": kind, "icon": icon, "color": color})
     if request.method == "POST" and form.is_valid():
         a = _save_account(form, request.user)
         messages.success(request, _("Account '%(name)s' added.") % {"name": a.label})
         return redirect("accounts")
-    return render(request, "tracker/form.html", {"form": form, "title": _("Add account")})
+    return render(request, "tracker/form.html", {"form": form, "title": _("Add account"), "picker": picker_data()})
 
 
 @login_required
@@ -698,7 +704,7 @@ def account_edit(request, pk):
         _save_account(form, request.user)
         messages.success(request, _("Account updated."))
         return redirect("accounts")
-    return render(request, "tracker/form.html", {"form": form, "title": _("Edit account"),
+    return render(request, "tracker/form.html", {"form": form, "title": _("Edit account"), "picker": picker_data(),
                                                 "delete_url": reverse("account_delete", args=[a.pk])})
 
 

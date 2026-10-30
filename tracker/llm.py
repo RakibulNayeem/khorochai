@@ -185,6 +185,9 @@ Rules:
 5. account: which of the user's money accounts was used, exact name from: __ACCOUNTS__
    e.g. "bkash e pathalam", "বিকাশে", "bKash theke" = bKash; "card diye", "কার্ডে" = Card;
    "bank theke", "ব্যাংকে" = Bank; "nogod" / "নগদে" = Nagad; "cash", "hate" = Cash.
+   Users rename accounts, so use each account's type: __ACCOUNT_TYPES__
+   A general word like "bank", "ATM" or "card" means the account of that type (bank or card) even when its name
+   is different, e.g. "BRAC Bank". If several fit, use the one the user named, otherwise the first listed.
    If no account is mentioned, use an empty string "".
    TRANSFER: money moved between two of the user's OWN accounts is type "transfer" (not income or expense):
    "move 500 from cash to bkash", "bkash theke 1000 cash out", "ATM theke 2000 tullam" (Bank -> Cash),
@@ -319,7 +322,8 @@ Rules:
 """
 
 
-def _fill(template: str, today, expense_names, income_names, account_names=(), currency="BDT", people=()) -> str:
+def _fill(template: str, today, expense_names, income_names, account_names=(), currency="BDT", people=(),
+          account_types=()) -> str:
     import datetime as dt
 
     yesterday = today - dt.timedelta(days=1)
@@ -331,14 +335,15 @@ def _fill(template: str, today, expense_names, income_names, account_names=(), c
         .replace("__EXPENSE__", ", ".join(expense_names) or "(none)")
         .replace("__INCOME__", ", ".join(income_names) or "(none)")
         .replace("__ACCOUNTS__", ", ".join(account_names) or "(none)")
+        .replace("__ACCOUNT_TYPES__", ", ".join(account_types) or "(none)")
         .replace("__CURRENCY__", currency)
         .replace("__PEOPLE__", ", ".join(people) or "(none yet)")
     )
 
 
 def parse_transactions(text, today, expense_names, income_names, account_names=(), usage=None, currency="BDT",
-                       people=()) -> dict:
-    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names, currency, people)
+                       people=(), account_types=()) -> dict:
+    system = _fill(PARSE_PROMPT, today, expense_names, income_names, account_names, currency, people, account_types)
     return call_llm(system, normalize_text(text), usage=usage)
 
 

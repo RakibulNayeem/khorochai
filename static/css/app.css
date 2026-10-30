@@ -190,6 +190,9 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
 .acc-tile { width: 36px; height: 36px; flex: none; display: inline-grid; place-items: center; font-size: 1.05rem;
   border-radius: 10px; background: color-mix(in srgb, var(--acc, var(--muted)) 16%, transparent); }
 .acc-tile.sm { width: 28px; height: 28px; font-size: .9rem; border-radius: 8px; }
+.picker-list { max-height: 240px; overflow-y: auto; margin-top: 4px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.picker-row { display: block; width: 100%; padding: .55rem .75rem; border: 0; background: none; color: var(--ink); text-align: start; }
+.picker-row:hover, .picker-row:focus-visible { background: var(--surface-2); }
 .account-strip { display: flex; gap: .75rem; overflow-x: auto; padding: 2px 2px .4rem; scrollbar-width: thin; }
 .account-chip { flex: 0 0 auto; min-width: 168px; color: var(--ink); transition: transform .1s ease-out, box-shadow .15s ease; }
 .account-chip:hover { color: var(--ink); text-decoration: none; box-shadow: var(--shadow-card), 0 0 0 1px var(--border); }

@@ -1430,3 +1430,12 @@ msgstr "Hoy cobré mi sueldo de 35000 y pagué 12000 de alquiler"
 
 msgid "salary 35000, rent 12000"
 msgstr "sueldo 35000, alquiler 12000"
+
+msgid "Find in the list"
+msgstr "Buscar en la lista"
+
+msgid "Search by name"
+msgstr "Buscar por nombre"
+
+msgid "Not in the list? Type the name in the box below."
+msgstr "¿No está en la lista? Escribe el nombre en el campo de abajo."
