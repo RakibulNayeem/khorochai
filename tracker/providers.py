@@ -113,7 +113,7 @@ LOGOS = frozenset({
     "Pubali Bank", "Rajshahi Krishi Unnayan Bank", "Rupali Bank", "SBAC Bank", "Shahjalal Islami Bank", "Shimanto Bank",
     "Social Islami Bank", "Sonali Bank", "Southeast Bank", "Standard Chartered", "The City Bank", "Union Bank",
     "United Commercial Bank", "Uttara Bank",
-    "bKash", "Nagad", "OK Wallet", "Pathao Pay", "Tap", "Upay",
+    "bKash", "Nagad", "OK Wallet", "Pathao Pay", "Rocket", "Tap", "Upay",
 })
 BANK_NAMES = sorted((name for name, _ in BANKS), key=len, reverse=True)
 MOBILE_NAMES = sorted((row[0] for row in MOBILE_SERVICES), key=len, reverse=True)

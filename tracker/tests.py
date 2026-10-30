@@ -234,7 +234,8 @@ class AccountTests(TestCase):
         self.assertEqual(logo_for("brac bank savings", "bank"), "img/banks/brac-bank.png")
         self.assertEqual(logo_for("National Bank", "bank"), "img/banks/national-bank.png")
         self.assertEqual(logo_for("National Bank of Pakistan", "bank"), "")  # not National Bank's logo
-        self.assertEqual(logo_for("Rocket", "mobile"), "")  # no confirmed logo yet: shows the emoji
+        self.assertEqual(logo_for("Rocket", "mobile"), "img/banks/rocket.png")
+        self.assertEqual(logo_for("mCash", "mobile"), "")  # no confirmed logo yet: shows the emoji
         self.assertEqual(logo_for("BRAC Bank", "cash"), "")
         self.assertEqual(logo_for("Tapan", "mobile"), "")  # a whole-word match, not "Tap"
         self.assertEqual(logo_for("My salary", "bank"), "")
@@ -248,7 +249,8 @@ class AccountTests(TestCase):
     def test_account_pages_show_the_logo(self):
         r = self.client.get(reverse("accounts"))
         self.assertContains(r, "img/banks/bkash.png")
-        self.assertContains(r, "🚀")  # Rocket keeps its emoji
+        self.assertContains(r, "img/banks/rocket.png")
+        self.assertContains(r, "💵")  # Cash has no logo, so it keeps its emoji
         self.assertContains(self.client.get(reverse("dashboard")), "img/banks/bkash.png")
         self.assertContains(self.client.get(reverse("account_add")), "img/banks/brac-bank.png")
 
