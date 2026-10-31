@@ -6,8 +6,9 @@ import datetime as dt
 from decimal import Decimal, InvalidOperation
 
 from django.conf import settings
+from django.db import IntegrityError, transaction
 from django.db.models import Count, DecimalField, F, Q, Sum, Value
-from django.db.models.functions import Coalesce, TruncMonth
+from django.db.models.functions import Coalesce, Least, TruncMonth
 from django.utils import timezone
 from django.utils.formats import date_format
 from django.utils.translation import gettext
@@ -15,7 +16,7 @@ from django.utils.translation import gettext
 from .models import (
     BANK, CARD,
     ACCOUNT_KIND_ORDER, BALANCE, BORROW, BORROWED, BUDGET, DEBT_AI_TYPES, EXPENSE, FINANCIAL_EXPENSES, INCOME, INCREASE, LEND, LENT,
-    REPAY, TRANSFER, Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer, category_label,
+    REPAY, TRANSFER, Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Transaction, Transfer, category_label,
 )
 
 DEFAULT_CATEGORIES = [
@@ -78,6 +79,34 @@ def sorted_accounts(user):
 def default_account(user):
     accounts = sorted_accounts(user)
     return next((a for a in accounts if a.is_default), accounts[0] if accounts else None)
+
+
+MAX_ACTIVITY_SECONDS_PER_PING = 120
+MAX_GUEST_ROWS_PER_DAY = 50000  # the counter is open to anyone: a flood of made-up IDs stops here
+
+
+def record_activity(user, visitor_id, seconds, view):
+    """Add one browser ping to today's counts. Staff aren't counted, so the numbers show real users."""
+    if user is not None and user.is_staff:
+        return
+    today = timezone.localdate()
+    seconds = max(0, min(seconds, MAX_ACTIVITY_SECONDS_PER_PING))
+    row = {"date": today, "user": user}
+    if user is None:
+        row["visitor_id"] = visitor_id
+    changes = {"views": F("views") + (1 if view else 0), "last_seen": timezone.now(),
+               "seconds": Least(F("seconds") + seconds, Value(86400))}
+    if user is not None:
+        changes["visitor_id"] = visitor_id
+    if DailyActivity.objects.filter(**row).update(**changes):
+        return
+    if user is None and DailyActivity.objects.filter(date=today, user__isnull=True).count() >= MAX_GUEST_ROWS_PER_DAY:
+        return
+    try:
+        with transaction.atomic():
+            DailyActivity.objects.create(date=today, user=user, visitor_id=visitor_id, views=1 if view else 0, seconds=seconds)
+    except IntegrityError:  # two pings at once: the other one made the row
+        DailyActivity.objects.filter(**row).update(**changes)
 
 
 def find_account(accounts, name):

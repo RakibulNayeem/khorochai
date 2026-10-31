@@ -23,6 +23,8 @@
       <tr><td class="text-muted">Joined</td><td>{{ target.date_joined|date:"d M Y, H:i" }}</td></tr>
       <tr><td class="text-muted">Last login</td><td>{% if target.last_login %}{{ target.last_login|date:"d M Y, H:i" }} ({{ target.last_login|timesince }} ago){% else %}never{% endif %}</td></tr>
       <tr><td class="text-muted">Last entry</td><td>{% if last_entry %}{{ last_entry|date:"d M Y, H:i" }}{% else %}none yet{% endif %}</td></tr>
+      <tr><td class="text-muted">Last seen</td><td>{% if last_seen %}{{ last_seen|date:"d M Y, H:i" }} ({{ last_seen|timesince }} ago){% else %}not yet{% endif %}</td></tr>
+      <tr><td class="text-muted">Time on site</td><td>{{ time_today }} today · {{ time_30 }} in 30 days · {{ days_30 }} day{{ days_30|pluralize }} active</td></tr>
       <tr><td class="text-muted">Currency</td><td>{{ currency }}</td></tr>
     </table>
   </div></div>

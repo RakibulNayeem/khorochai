@@ -4,6 +4,31 @@
 {% block content %}
 {% include "tracker/admin/_nav.html" %}
 
+<!-- Visitors -->
+<div class="row g-3 mb-2">
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">Visitors today</div>
+    <div class="stat">{{ visits.visitors_today|intcomma }}</div>
+    <div class="small text-muted">{{ visits.users_today }} logged in · {{ visits.guests_today }} guest{{ visits.guests_today|pluralize }} · {{ visits.views_today|intcomma }} page view{{ visits.views_today|pluralize }}</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">Users who visited</div>
+    <div class="stat">{{ visits.users_today }}</div>
+    <div class="small text-muted">today · {{ visits.active_7 }} in 7 days · {{ visits.active_30 }} in 30 days</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">Average time today</div>
+    <div class="stat">{{ visits.avg_time }}</div>
+    <div class="small text-muted">per visitor · {{ visits.avg_user_time }} per logged-in user</div>
+  </div></div>
+  <div class="col-6 col-lg-3"><div class="card p-3 h-100">
+    <div class="card-title-sm">Total time today</div>
+    <div class="stat">{{ visits.total_time }}</div>
+    <div class="small text-muted">everyone added together</div>
+  </div></div>
+</div>
+<p class="small text-muted mb-4">Time counts only while a tab is open, visible and in use, so it's an estimate. Staff aren't counted.</p>
+
 <!-- Users -->
 <div class="row g-3 mb-4">
   <div class="col-6 col-lg-3"><a href="{% url 'admin_users' %}" class="card p-3 h-100 text-reset text-decoration-none">
@@ -17,7 +42,7 @@
     <div class="small text-muted">last 7 days · {{ stats.new_today }} today · {{ stats.new_30 }} in 30 days</div>
   </div></div>
   <div class="col-6 col-lg-3"><div class="card p-3 h-100">
-    <div class="card-title-sm">Active users</div>
+    <div class="card-title-sm">Users adding data</div>
     <div class="stat">{{ stats.active_7 }}</div>
     <div class="small text-muted">added an entry or used AI in the last 7 days</div>
   </div></div>
@@ -62,6 +87,14 @@
 
 <!-- Charts -->
 <div class="row g-3 mb-4">
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">Visitors · last 30 days</div>
+    <div class="admin-chart" style="height:220px"><canvas id="visitorChart"></canvas></div>
+  </div></div>
+  <div class="col-lg-6"><div class="card p-3 h-100">
+    <div class="card-title-sm mb-2">Average minutes per visitor · last 30 days</div>
+    <div class="admin-chart" style="height:220px"><canvas id="timeChart"></canvas></div>
+  </div></div>
   <div class="col-lg-6"><div class="card p-3 h-100">
     <div class="card-title-sm mb-2">New sign-ups · last 30 days</div>
     <div class="admin-chart" style="height:220px"><canvas id="signupChart"></canvas></div>
@@ -116,6 +149,17 @@
     const opts = (stacked) => ({ responsive: true, maintainAspectRatio: false,
       scales: { x: { stacked, grid: { display: false } }, y: { stacked, beginAtZero: true, ticks: { precision: 0 } } },
       plugins: { legend: { display: stacked, position: 'bottom', labels: { boxWidth: 12 } } } });
+    charts.push(new Chart(document.getElementById('visitorChart'), { type: 'bar',
+      data: { labels: d.days, datasets: [
+        { label: 'Logged in', data: d.visit_users, backgroundColor: css('--primary') },
+        { label: 'Guests', data: d.visit_guests, backgroundColor: '#94a3b8' } ] },
+      options: opts(true) }));
+    const minutes = opts(false);
+    minutes.scales.y.ticks = {};
+    charts.push(new Chart(document.getElementById('timeChart'), { type: 'line',
+      data: { labels: d.days, datasets: [{ label: 'Minutes', data: d.avg_minutes, borderColor: css('--primary'),
+        backgroundColor: css('--primary'), tension: .3, pointRadius: 2 }] },
+      options: minutes }));
     charts.push(new Chart(document.getElementById('signupChart'), { type: 'bar',
       data: { labels: d.days, datasets: [{ label: 'Sign-ups', data: d.signups, backgroundColor: css('--primary') }] },
       options: opts(false) }));

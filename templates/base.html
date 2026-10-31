@@ -155,5 +155,6 @@
   });
 </script>
 {% block scripts %}{% endblock %}
+{% if track_activity %}<script src="{% static 'js/activity.js' %}" data-url="{% url 'activity_ping' %}" defer></script>{% endif %}
 </body>
 </html>

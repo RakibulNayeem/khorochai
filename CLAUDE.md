@@ -34,6 +34,7 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "à¦†à
 - **Admin panel** (`/admin/`, `tracker/admin_panel.py`): our own, for staff only; Django's admin is removed.
   - Overview: users and sign-ups, AI usage today against the limits, charts for the last 30 days, feature use.
   - Users: search and filter; each user's page lets staff deactivate or activate them, reset today's AI usage, or delete them with all their data (type the email to confirm).
+  - Visitors: today's visitors (logged in and guests), users seen in 7 and 30 days, time on site, 30-day charts, and each user's last seen. `static/js/activity.js` posts to `/activity/`; `DailyActivity` keeps one row per person per day. Staff aren't counted, and it's off in `DEBUG` unless `TRACK_ACTIVITY=1`.
   - It shows counts only, never users' amounts or what they typed. Only a superuser can act on staff accounts, and nobody on their own.
   - Staff-only, so its text is English and not translated. Non-staff get a 404.
 - **Analytics:** Microsoft Clarity (project `z57gryr8d2`), off when `DEBUG` is on. Logged-in pages mask all text. Never loaded on `/admin/` or for staff accounts.

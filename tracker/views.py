@@ -1,5 +1,6 @@
 import csv
 import logging
+import re
 
 from django.conf import settings as django_settings
 from django.contrib import messages
@@ -13,6 +14,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext as _, ngettext
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 from . import llm, services
@@ -659,6 +661,21 @@ def category_delete(request, pk):
         msg += " " + _("%(n)s transaction(s) are now Uncategorized.") % {"n": n}
     messages.success(request, msg)
     return redirect("categories")
+
+
+# --------------------------------------------------------------------------- visit and time counts
+
+@csrf_exempt  # also runs for visitors with no CSRF cookie; all it can change is a counter
+@require_POST
+def activity_ping(request):
+    visitor = request.POST.get("visitor", "")
+    if not re.fullmatch(r"[a-f0-9]{32}", visitor):
+        return HttpResponse(status=400)
+    seconds = request.POST.get("seconds", "0")
+    user = request.user if request.user.is_authenticated else None
+    services.record_activity(user, visitor, int(seconds) if seconds.isascii() and seconds.isdigit() else 0,
+                             request.POST.get("view") == "1")
+    return HttpResponse(status=204)
 
 
 # --------------------------------------------------------------------------- accounts & transfers

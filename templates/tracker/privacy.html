@@ -4,7 +4,7 @@
 {% block content %}
 <div class="row justify-content-center"><div class="col-lg-8">
   <h1 class="h3 mb-1">{% translate "Privacy policy" %}</h1>
-  <p class="text-muted small mb-4">{% translate "Last updated: 13 October 2026" %}</p>
+  <p class="text-muted small mb-4">{% translate "Last updated: 31 October 2026" %}</p>
 
   <div class="card p-3 p-md-4 privacy">
     <p>{% translate "KhorochAi is a personal money tracker. This page explains what we store, why, and how to delete it." %}</p>
@@ -28,6 +28,8 @@
     <h2 class="h6 mt-3">{% translate "Cookies" %}</h2>
     <p>{% translate "We use cookies only to keep you logged in, protect forms, and remember your language and theme." %}</p>
     {% if clarity_id %}<p>{% translate "We use Microsoft Clarity to see which pages and buttons people use, so we can improve the app. It records clicks and scrolling and sets its own cookies. While you are logged in, all text on the page, including your amounts and names, is hidden from it." %}</p>{% endif %}
+
+    <p>{% translate "We also count visits and time spent on the site for each day, to see how much the app is used. Only these numbers are kept, never what you type or your amounts. If you aren't logged in, you are counted by a random ID kept in your browser, and we don't save your IP address for this." %}</p>
 
     <h2 class="h6 mt-3" id="delete">{% translate "Deleting your data" %}</h2>
     <p>{% blocktranslate with email=contact_email %}To delete your account and all its data, email <a href="mailto:{{ email }}">{{ email }}</a> from the email address you log in with. We delete everything within 30 days and confirm by email. If you logged in with Google, you can also remove KhorochAi's access at myaccount.google.com → Security → Third-party connections.{% endblocktranslate %}</p>

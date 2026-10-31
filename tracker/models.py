@@ -151,6 +151,25 @@ class AIUsage(models.Model):
         constraints = [models.UniqueConstraint(fields=["user", "date"], name="unique_ai_usage_per_day")]
 
 
+class DailyActivity(models.Model):
+    """Visits and time on the site for one person on one day, for the admin panel. Only these numbers, nothing they did.
+    A row has a user when logged in; a visitor who isn't logged in is known only by a random ID from their browser."""
+    date = models.DateField(db_index=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True, related_name="activity")
+    visitor_id = models.CharField(max_length=32)
+    views = models.PositiveIntegerField(default=0)
+    seconds = models.PositiveIntegerField(default=0)
+    last_seen = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["date", "user"], condition=models.Q(user__isnull=False),
+                                    name="unique_activity_per_user_day"),
+            models.UniqueConstraint(fields=["date", "visitor_id"], condition=models.Q(user__isnull=True),
+                                    name="unique_activity_per_visitor_day"),
+        ]
+
+
 class Profile(models.Model):
     """Per-user settings that must follow the user to every device."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile")

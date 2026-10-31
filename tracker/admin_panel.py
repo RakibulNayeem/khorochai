@@ -19,7 +19,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
-from .models import Account, AIUsage, Category, Debt, Profile, Transaction, Transfer
+from .models import Account, AIUsage, Category, DailyActivity, Debt, Profile, Transaction, Transfer
 
 CHART_DAYS = 30
 USER_SORTS = {"joined": F("date_joined").desc(), "login": F("last_login").desc(nulls_last=True), "email": F("email").asc()}
@@ -51,6 +51,52 @@ def _series(by_day, days):
 
 def _pct(part, whole):
     return min(round(part / whole * 100), 100) if whole else 0
+
+
+def _duration(seconds):
+    """Time spent in a short form: 45s, 4m 12s, 1h 05m."""
+    seconds = round(seconds or 0)
+    if seconds < 60:
+        return f"{seconds}s"
+    minutes, seconds = divmod(seconds, 60)
+    if minutes < 60:
+        return f"{minutes}m {seconds:02d}s"
+    hours, minutes = divmod(minutes, 60)
+    return f"{hours}h {minutes:02d}m"
+
+
+def _visits(start, days):
+    """Numbers for the Visitors section. Someone who visits and then logs in on the same day counts once, as a user."""
+    today, week_ago, month_ago = days[-1], days[-7], days[0]
+    rows = DailyActivity.objects.filter(date__gte=start)
+    members = rows.filter(user__isnull=False)
+    logged_in_too = DailyActivity.objects.filter(date=OuterRef("date"), user__isnull=False, visitor_id=OuterRef("visitor_id"))
+    guests = rows.filter(user__isnull=True).exclude(Exists(logged_in_too))
+    member_days = {r["date"]: r["n"] for r in members.values("date").annotate(n=Count("id"))}
+    guest_days = {r["date"]: r["n"] for r in guests.values("date").annotate(n=Count("id"))}
+    all_days = {r["date"]: r for r in rows.values("date").annotate(s=Sum("seconds"), v=Sum("views"))}
+    member_seconds = members.filter(date=today).aggregate(s=Sum("seconds"))["s"] or 0
+
+    def per_visitor(day):
+        people = member_days.get(day, 0) + guest_days.get(day, 0)
+        return (all_days.get(day, {}).get("s") or 0) / people if people else 0
+
+    users_today, guests_today = member_days.get(today, 0), guest_days.get(today, 0)
+    return {
+        "visitors_today": users_today + guests_today,
+        "users_today": users_today,
+        "guests_today": guests_today,
+        "views_today": all_days.get(today, {}).get("v") or 0,
+        "active_7": members.filter(date__gte=week_ago).values("user").distinct().count(),
+        "active_30": members.filter(date__gte=month_ago).values("user").distinct().count(),
+        "avg_time": _duration(per_visitor(today)),
+        "avg_user_time": _duration(member_seconds / users_today if users_today else 0),
+        "total_time": _duration(all_days.get(today, {}).get("s")),
+    }, {
+        "visit_users": _series(member_days, days),
+        "visit_guests": _series(guest_days, days),
+        "avg_minutes": [round(per_visitor(d) / 60, 1) for d in days],
+    }
 
 
 def _verified():
@@ -96,10 +142,12 @@ def overview(request):
         ("AI requests (add, voice, Ask AI)", AIUsage.objects.filter(date__gte=month_ago).aggregate(n=Sum("count"))["n"] or 0),
     ]
     feature_max = max((n for _, n in features), default=0)
+    visits, visit_charts = _visits(start, days)
 
     return render(request, "tracker/admin/overview.html", {
         "tab": "overview",
         "today": today,
+        "visits": visits,
         "stats": {
             "users": total_users,
             "new_today": users.filter(date_joined__date=today).count(),
@@ -140,6 +188,7 @@ def overview(request):
             "manual_entries": _series(manual_entries, days),
             "transfers": _series(transfers, days),
             "debts": _series(debts, days),
+            **visit_charts,
         },
     })
 
@@ -200,6 +249,8 @@ def user_detail(request, pk):
     usage = {r.date: r for r in AIUsage.objects.filter(user=target, date__gte=start)}
     days = [start + dt.timedelta(days=i) for i in range(14)]
     ai_today = usage.get(today)
+    activity = DailyActivity.objects.filter(user=target)
+    month = activity.filter(date__gte=today - dt.timedelta(days=CHART_DAYS - 1))
     return render(request, "tracker/admin/user_detail.html", {
         "tab": "users",
         "target": target,
@@ -217,6 +268,10 @@ def user_detail(request, pk):
             ("Open debts", target.debts.filter(closed=False).count()),
         ],
         "last_entry": target.transactions.order_by("-created_at").values_list("created_at", flat=True).first(),
+        "last_seen": activity.order_by("-last_seen").values_list("last_seen", flat=True).first(),
+        "time_today": _duration(activity.filter(date=today).aggregate(s=Sum("seconds"))["s"]),
+        "time_30": _duration(month.aggregate(s=Sum("seconds"))["s"]),
+        "days_30": month.count(),
         "ai_today": ai_today,
         "ai_pct": _pct(ai_today.tokens if ai_today else 0, settings.AI_DAILY_TOKENS_PER_USER),
         "ai_limit": settings.AI_DAILY_TOKENS_PER_USER,

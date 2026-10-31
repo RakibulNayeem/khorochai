@@ -11,7 +11,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 from . import llm, services
-from .models import Account, AIUsage, Category, Debt, DebtRecord, Transaction, Transfer
+from .models import Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Transaction, Transfer
 from .providers import BANKS, LOGOS, MOBILE_SERVICES, logo_file, logo_for, picker_data
 
 
@@ -1021,6 +1021,98 @@ class SocialLoginTests(TestCase):
         r = self.client.get(reverse("privacy"))
         self.assertContains(r, "Deleting your data")
         self.assertContains(r, "khorochai@gmail.com")
+
+
+class ActivityTests(TestCase):
+    A, B = "a" * 32, "b" * 32
+
+    def setUp(self):
+        self.user = User.objects.create_user("rina", email="rina@example.com", password="pass12345!")
+        self.boss = User.objects.create_user("boss", email="boss@example.com", password="pass12345!", is_staff=True)
+
+    def ping(self, visitor=None, seconds=0, view=False):
+        return self.client.post(reverse("activity_ping"), {"visitor": visitor or self.A, "seconds": seconds, "view": "1" if view else "0"})
+
+    def test_guest_visit_and_time_add_up(self):
+        self.assertEqual(self.ping(view=True).status_code, 204)
+        self.ping(seconds=60)
+        self.ping(seconds=30, view=True)
+        row = DailyActivity.objects.get()
+        self.assertEqual((row.user, row.visitor_id, row.views, row.seconds, row.date), (None, self.A, 2, 90, timezone.localdate()))
+
+    def test_logged_in_user_has_one_row_a_day_across_devices(self):
+        self.client.force_login(self.user)
+        self.ping(self.A, 10, True)
+        self.ping(self.B, 20, True)
+        row = DailyActivity.objects.get()
+        self.assertEqual((row.user, row.views, row.seconds), (self.user, 2, 30))
+
+    def test_staff_are_not_counted(self):
+        self.client.force_login(self.boss)
+        self.assertEqual(self.ping(seconds=10, view=True).status_code, 204)
+        self.assertFalse(DailyActivity.objects.exists())
+
+    def test_bad_input_is_refused_or_limited(self):
+        self.assertEqual(self.ping("not-an-id").status_code, 400)
+        self.assertEqual(self.client.get(reverse("activity_ping")).status_code, 405)
+        self.ping(seconds=999999)
+        self.assertEqual(DailyActivity.objects.get().seconds, services.MAX_ACTIVITY_SECONDS_PER_PING)
+        self.client.post(reverse("activity_ping"), {"visitor": self.A, "seconds": "-5"})
+        self.client.post(reverse("activity_ping"), {"visitor": self.A, "seconds": "١٢"})
+        self.assertEqual(DailyActivity.objects.get().seconds, services.MAX_ACTIVITY_SECONDS_PER_PING)
+
+    def test_a_day_never_goes_past_24_hours(self):
+        DailyActivity.objects.create(date=timezone.localdate(), visitor_id=self.A, seconds=86390)
+        self.ping(seconds=60)
+        self.assertEqual(DailyActivity.objects.get().seconds, 86400)
+
+    def test_guest_rows_are_capped(self):
+        with mock.patch.object(services, "MAX_GUEST_ROWS_PER_DAY", 1):
+            self.ping(self.A, view=True)
+            self.ping(self.B, view=True)
+            self.ping(self.A, view=True)  # someone already counted keeps counting
+        self.assertEqual(DailyActivity.objects.get().views, 2)
+
+    @override_settings(TRACK_ACTIVITY=True)
+    def test_script_runs_for_visitors_not_staff_or_the_panel(self):
+        self.assertContains(self.client.get(reverse("about")), "js/activity.js")
+        self.assertNotContains(self.client.get("/auth/login/?next=/admin/"), "js/activity.js")
+        self.client.force_login(self.user)
+        self.assertContains(self.client.get(reverse("dashboard")), "js/activity.js")
+        self.client.force_login(self.boss)
+        self.assertNotContains(self.client.get(reverse("dashboard")), "js/activity.js")
+        self.assertNotContains(self.client.get(reverse("admin_overview")), "js/activity.js")
+
+    @override_settings(TRACK_ACTIVITY=False)
+    def test_script_can_be_switched_off(self):
+        self.assertNotContains(self.client.get(reverse("about")), "js/activity.js")
+
+    def test_panel_numbers(self):
+        today = timezone.localdate()
+        other = User.objects.create_user("omar", email="omar@example.com", password="pass12345!")
+        DailyActivity.objects.create(date=today, user=self.user, visitor_id=self.A, views=3, seconds=300)
+        DailyActivity.objects.create(date=today, visitor_id=self.A, views=1, seconds=30)  # same browser before logging in
+        DailyActivity.objects.create(date=today, visitor_id=self.B, views=2, seconds=30)
+        DailyActivity.objects.create(date=today - dt.timedelta(days=5), user=other, visitor_id=self.B, seconds=60)
+        DailyActivity.objects.create(date=today - dt.timedelta(days=20), user=other, visitor_id=self.B, seconds=60)
+        self.client.force_login(self.boss)
+        r = self.client.get(reverse("admin_overview"))
+        v = r.context["visits"]
+        self.assertEqual((v["visitors_today"], v["users_today"], v["guests_today"], v["views_today"]), (2, 1, 1, 6))
+        self.assertEqual((v["active_7"], v["active_30"]), (2, 2))
+        self.assertEqual((v["avg_time"], v["avg_user_time"], v["total_time"]), ("3m 00s", "5m 00s", "6m 00s"))
+        chart = r.context["chart_data"]
+        self.assertEqual((chart["visit_users"][-1], chart["visit_guests"][-1], chart["avg_minutes"][-1]), (1, 1, 3.0))
+        self.assertEqual(len(chart["visit_users"]), 30)
+
+    def test_user_page_and_deleting_a_user(self):
+        DailyActivity.objects.create(date=timezone.localdate(), user=self.user, visitor_id=self.A, seconds=3700)
+        self.client.force_login(self.boss)
+        r = self.client.get(reverse("admin_user", args=[self.user.pk]))
+        self.assertEqual((r.context["time_today"], r.context["time_30"], r.context["days_30"]), ("1h 01m", "1h 01m", 1))
+        self.assertIsNotNone(r.context["last_seen"])
+        self.user.delete()
+        self.assertFalse(DailyActivity.objects.exists())
 
 
 class AdminPanelTests(TestCase):

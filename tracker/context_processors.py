@@ -24,20 +24,19 @@ def _profile(user):
     return {"name": name, "initials": initials, "color": color}
 
 
-def _clarity_id(request, user):
-    """Clarity's project ID, or "" where it must not run: the admin panel, and any page a staff member opens."""
+def _counts_as_a_visit(request, user):
+    """False on the admin panel and on any page a staff member opens: analytics must not run there."""
     if user is not None and user.is_staff:
-        return ""
+        return False
     panel = reverse("admin_overview")
     # also the login page a logged-out visitor is sent to from the panel: its URL holds ?next=/admin/...
-    if request.path.startswith(panel) or request.GET.get("next", "").startswith(panel):
-        return ""
-    return settings.CLARITY_PROJECT_ID
+    return not (request.path.startswith(panel) or request.GET.get("next", "").startswith(panel))
 
 
 def preferences(request):
     """Theme and language choices for every page (navbar menu + <html> attributes)."""
     user = getattr(request, "user", None)
+    counts = _counts_as_a_visit(request, user)
     return {
         "theme": get_theme(request),
         "languages": settings.LANGUAGES,
@@ -46,5 +45,6 @@ def preferences(request):
         "currency_code": currency.current()[0],
         "currency_symbol": currency.current()[1],
         "contact_email": settings.CONTACT_EMAIL,
-        "clarity_id": _clarity_id(request, user),
+        "clarity_id": settings.CLARITY_PROJECT_ID if counts else "",
+        "track_activity": settings.TRACK_ACTIVITY and counts,
     }

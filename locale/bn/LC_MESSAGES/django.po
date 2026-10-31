@@ -1454,8 +1454,8 @@ msgstr "গোপনীয়তা"
 msgid "Privacy policy"
 msgstr "গোপনীয়তা নীতি"
 
-msgid "Last updated: 13 October 2026"
-msgstr "সর্বশেষ হালনাগাদ: ১৩ অক্টোবর ২০২৬"
+msgid "Last updated: 31 October 2026"
+msgstr "সর্বশেষ হালনাগাদ: ৩১ অক্টোবর ২০২৬"
 
 msgid "KhorochAi is a personal money tracker. This page explains what we store, why, and how to delete it."
 msgstr "KhorochAi একটি ব্যক্তিগত টাকার হিসাব রাখার অ্যাপ। আমরা কী রাখি, কেন রাখি এবং কীভাবে মুছবেন — এই পাতায় তা বলা আছে।"
@@ -1530,3 +1530,6 @@ msgstr "নাম লিখে খুঁজুন"
 
 msgid "Not in the list? Type the name in the box below."
 msgstr "তালিকায় নেই? নিচের ঘরে নামটি লিখুন।"
+
+msgid "We also count visits and time spent on the site for each day, to see how much the app is used. Only these numbers are kept, never what you type or your amounts. If you aren't logged in, you are counted by a random ID kept in your browser, and we don't save your IP address for this."
+msgstr "অ্যাপটি কতটা ব্যবহার হচ্ছে তা বোঝার জন্য আমরা প্রতিদিনের ভিজিট ও সাইটে কাটানো সময়ও গণনা করি। শুধু এই সংখ্যাগুলোই রাখা হয়, আপনি কী লিখেছেন বা আপনার টাকার পরিমাণ কখনো নয়। লগইন না করা থাকলে আপনার ব্রাউজারে রাখা একটি র‍্যান্ডম আইডি দিয়ে আপনাকে গণনা করা হয়, আর এর জন্য আমরা আপনার আইপি ঠিকানা সংরক্ষণ করি না।"

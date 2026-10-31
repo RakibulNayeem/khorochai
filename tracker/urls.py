@@ -36,6 +36,7 @@ urlpatterns = [
     path("help/", views.help_page, name="help"),
     path("about/", views.about_page, name="about"),
     path("privacy/", views.privacy_page, name="privacy"),
+    path("activity/", views.activity_ping, name="activity_ping"),
     # our own admin panel (staff only); replaces Django's /admin/
     path("admin/", admin_panel.overview, name="admin_overview"),
     path("admin/users/", admin_panel.user_list, name="admin_users"),
