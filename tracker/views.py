@@ -4,18 +4,16 @@ import hmac
 import json
 import logging
 import re
-import uuid
 from functools import wraps
 
 from django.conf import settings as django_settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.db import IntegrityError, transaction as db_transaction
+from django.db import transaction as db_transaction
 from django.db.models import Q
 from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
-from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -195,19 +193,6 @@ def landing(request):
                                                    "shot_lang": shot_lang})
 
 
-def manifest(request):
-    """Web app manifest, so KhorochAi can be installed to the home screen."""
-    icon = lambda name, size, purpose="any": {"src": static(f"img/pwa/{name}"), "sizes": f"{size}x{size}",
-                                              "type": "image/png", "purpose": purpose}
-    data = {
-        "name": "KhorochAi", "short_name": "KhorochAi", "id": "/", "start_url": "/", "scope": "/",
-        "display": "standalone", "orientation": "portrait",
-        "theme_color": "#1e2a44", "background_color": "#f5f5f7",
-        "icons": [icon("icon-192.png", 192), icon("icon-512.png", 512), icon("icon-maskable-512.png", 512, "maskable")],
-    }
-    return JsonResponse(data, content_type="application/manifest+json")
-
-
 def assetlinks(request):
     """Digital Asset Links: tells Android that the KhorochAi app may open this site full-screen."""
     return JsonResponse([{
@@ -219,15 +204,10 @@ def assetlinks(request):
 
 def service_worker(request):
     """The service worker, served from the site root so it controls every page."""
-    response = render(request, "sw.js", {"build_id": django_settings.BUILD_ID}, content_type="text/javascript")
+    response = render(request, "sw.js", content_type="text/javascript")
     response["Service-Worker-Allowed"] = "/"
     response["Cache-Control"] = "no-cache"
     return response
-
-
-def offline(request):
-    """Public fallback page for when a page can't load without internet (never shows user data)."""
-    return render(request, "tracker/offline.html")
 
 
 def dashboard(request):
@@ -661,64 +641,6 @@ def transaction_create(request):
         messages.success(request, _("Transaction added."))
         return redirect("dashboard")
     return render(request, "tracker/form.html", {"form": form, "title": _("Add transaction")})
-
-
-MAX_SYNC_ENTRIES = 50
-
-
-@_json_auth
-def offline_data(request):
-    """What the offline entry form needs: the user's categories and accounts, saved in the browser while online."""
-    user = request.user
-    services.ensure_default_categories(user)
-    services.ensure_default_accounts(user)
-    default = services.default_account(user)
-    return JsonResponse({
-        "user": user.pk,
-        "categories": [{"id": c.pk, "type": c.type, "label": str(c)} for c in Category.objects.filter(user=user)],
-        "accounts": [{"id": a.pk, "label": a.label} for a in services.sorted_accounts(user)],
-        "default_account": default.pk if default else None,
-    })
-
-
-@_json_auth
-@require_POST
-def transaction_sync(request):
-    """Save entries that were typed offline. Safe to repeat: an entry's client_id decides whether it already exists."""
-    try:
-        entries = json.loads(request.body or b"{}").get("entries", [])
-    except (ValueError, AttributeError):
-        return JsonResponse({"error": "bad request"}, status=400)
-    if not isinstance(entries, list) or len(entries) > MAX_SYNC_ENTRIES:
-        return JsonResponse({"error": "bad request"}, status=400)
-    results = []
-    for entry in entries:
-        if not isinstance(entry, dict):
-            continue
-        cid = entry.get("client_id")
-        try:
-            cid = str(uuid.UUID(str(cid)))
-        except ValueError:
-            results.append({"client_id": str(cid), "status": "invalid", "error": "bad id"})
-            continue
-        if Transaction.objects.filter(user=request.user, client_id=cid).exists():
-            results.append({"client_id": cid, "status": "synced"})
-            continue
-        form = TransactionForm({k: entry.get(k, "") for k in ("type", "amount", "category", "account", "note", "date")},
-                               user=request.user)
-        if not form.is_valid():
-            error = "; ".join(m for errs in form.errors.values() for m in errs)
-            results.append({"client_id": cid, "status": "invalid", "error": error})
-            continue
-        t = form.save(commit=False)
-        t.user, t.source, t.client_id = request.user, "manual", cid
-        try:
-            with db_transaction.atomic():
-                t.save()
-        except IntegrityError:  # the same entry arrived twice at once
-            pass
-        results.append({"client_id": cid, "status": "synced"})
-    return JsonResponse({"results": results})
 
 
 @login_required

@@ -14,7 +14,6 @@
       <div class="d-flex flex-wrap gap-2 mt-4">
         <a class="btn btn-brand btn-lg px-4" href="{% url 'account_signup' %}">{% translate "Create free account" %}</a>
         <a class="btn btn-outline-secondary btn-lg px-4" href="{% url 'account_login' %}">{% translate "Log in" %}</a>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-pwa-install hidden>{% translate "Install KhorochAi" %}</button>
         <a class="btn btn-outline-secondary btn-lg px-4" href="{% static 'downloads/KhorochAi.apk' %}" download="KhorochAi.apk" data-android-download>{% translate "Download Android app" %}</a>
       </div>
       <p class="small text-muted mt-3 mb-0">{% translate "Sign up with your email. You check every entry before it's saved." %}</p>
