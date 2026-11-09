@@ -91,7 +91,7 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
 .wordmark-ai { color: var(--gold-text); }
 .wordmark-bn { height: 26px; width: auto; color: var(--ink); display: block; }  /* Bangla name, drawn as shapes */
 .wordmark-bn .wordmark-ai-path { fill: var(--gold-text); }
-.navbar .nav-link { color: var(--muted); font-weight: 500; border-radius: 8px; padding: .35rem .7rem !important; }
+.navbar .nav-link { color: var(--muted); font-weight: 500; border-radius: 8px; padding: .35rem .7rem !important; white-space: nowrap; }
 .navbar .nav-link:hover { color: var(--ink); text-decoration: none; }
 .navbar .nav-link.active { color: var(--ink) !important; background: var(--surface-2); font-weight: 600; }
 .navbar .nav-link.nav-ask { background: var(--primary); color: var(--on-primary) !important; font-weight: 600;
@@ -115,7 +115,7 @@ a:hover { color: var(--link); text-decoration: underline; text-underline-offset:
 .menu-toggle[aria-expanded="true"] .menu-lines span:nth-child(2) { opacity: 0; }
 .menu-toggle[aria-expanded="true"] .menu-lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
 @media (prefers-reduced-motion: reduce) { .menu-lines span { transition: none; } }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .navbar-nav { padding: .5rem 0; gap: .15rem; }
   .navbar .nav-link.nav-ask { display: inline-block; margin: .35rem 0 0; }
 }
@@ -416,3 +416,42 @@ html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastalee
 
 /* Admin panel: charts fill a fixed-height box */
 .admin-chart { position: relative; }
+
+/* ---------------------------------------------------------------- debt form + reminders */
+.debt-form .direction-toggle .btn { padding: .55rem; font-weight: 600; }
+.debt-form .direction-toggle .btn-check:checked + .btn { background: var(--surface); color: var(--income); border-color: var(--income); box-shadow: inset 0 0 0 1px var(--income); }
+.debt-form .direction-toggle .btn-check[value="borrowed"]:checked + .btn { color: var(--expense); border-color: var(--expense); box-shadow: inset 0 0 0 1px var(--expense); }
+.due-hint { color: var(--income); font-weight: 500; }
+.remind-box { border: 0; padding: 0; margin: 0; }
+.remind-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.remind-chips .chip { padding: .35rem .9rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--ink); font-size: .875rem; cursor: pointer; user-select: none; }
+.remind-chips .btn-check:checked + .chip { border-color: var(--income); color: var(--income); font-weight: 600;
+  background: color-mix(in srgb, var(--income) 10%, var(--surface)); }
+.remind-chips .btn-check:focus-visible + .chip { box-shadow: 0 0 0 3px var(--focus); }
+.remind-custom { display: flex; align-items: center; gap: .5rem; }
+.remind-custom input { width: 6rem; }
+.remind-box [hidden] { display: none !important; }
+.form-switch .form-check-input:checked { background-color: var(--income); border-color: var(--income); }
+
+.bell { position: relative; }
+.bell-badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
+  background: #d93025; color: #fff; font-size: .7rem; font-weight: 700; line-height: 18px; text-align: center; }
+.reminder-menu { width: min(360px, calc(100vw - 24px)); max-height: 70vh; overflow-y: auto; }
+.notif { background: var(--surface-2); border-radius: 14px; padding: .65rem .75rem; margin-bottom: .5rem; }
+.notif-app { display: flex; align-items: center; gap: .4rem; font-size: .7rem; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+.notif-app img { border-radius: 4px; }
+.notif-text { display: block; color: var(--ink); text-decoration: none; margin-top: .25rem; }
+.notif-text:hover { color: var(--ink); }
+.notif-title { font-weight: 700; font-size: .95rem; }
+.notif.is-overdue .notif-title { color: #d93025; }
+.notif-body { font-size: .85rem; color: var(--muted); }
+.notif-actions { display: flex; gap: .4rem; margin-top: .5rem; }
+.notif-actions form { display: contents; }
+.notif-btn { flex: 1; text-align: center; border: 0; border-radius: 8px; padding: .3rem .5rem; font-size: .8rem; font-weight: 600;
+  background: var(--surface); color: var(--ink); text-decoration: none; }
+.notif-btn.is-main { color: var(--income); }
+.notif-btn:hover { background: var(--border); color: var(--ink); }
+@media (max-width: 575.98px) {
+  .reminder-menu.show { position: fixed; top: 64px; left: 12px; right: 12px; width: auto; }
+}

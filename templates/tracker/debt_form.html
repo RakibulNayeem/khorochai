@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{{ title }} · KhorochAi{% endblock %}
+{% block content %}
+{% comment %}Add/edit a debt: who, how much, when it's due and when to be reminded.{% endcomment %}
+<div class="row justify-content-center"><div class="col-md-10 col-lg-7 col-xl-6">
+  <div class="card p-3 p-md-4 debt-form">
+    <h1 class="h5 mb-1">{{ title }}</h1>
+    <p class="small text-muted mb-3">{% translate "Save money you will get back or pay back. We'll remind you on time." %}</p>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      <div class="btn-group w-100 direction-toggle mb-3" role="group" aria-label="{{ form.direction.label }}">
+        {% for choice in form.direction %}
+        <input type="radio" class="btn-check" name="{{ form.direction.html_name }}" id="{{ choice.id_for_label }}" value="{{ choice.data.value }}" autocomplete="off"{% if choice.data.selected %} checked{% endif %}>
+        <label class="btn btn-outline-secondary" for="{{ choice.id_for_label }}">{{ choice.choice_label }}</label>
+        {% endfor %}
+      </div>
+
+      <div class="row g-3">
+        {% include "tracker/_debt_field.html" with field=form.person col="col-sm-6" %}
+        {% include "tracker/_debt_field.html" with field=form.phone col="col-sm-6" optional=True %}
+        {% include "tracker/_debt_field.html" with field=form.amount col="col-sm-6" %}
+        {% include "tracker/_debt_field.html" with field=form.date col="col-sm-6" %}
+        {% include "tracker/_debt_field.html" with field=form.due_date col="col-sm-6" optional=True %}
+        {% include "tracker/_debt_field.html" with field=form.account col="col-sm-6" %}
+      </div>
+
+      <fieldset class="remind-box mt-3" id="remind-box">
+        <legend class="form-label small fw-semibold mb-2">{{ form.remind.label }}</legend>
+        <div class="remind-chips">
+          {% for choice in form.remind %}
+          <input type="radio" class="btn-check" name="{{ form.remind.html_name }}" id="{{ choice.id_for_label }}" value="{{ choice.data.value }}" autocomplete="off"{% if choice.data.selected %} checked{% endif %}>
+          <label class="chip" for="{{ choice.id_for_label }}">{{ choice.choice_label }}</label>
+          {% endfor %}
+        </div>
+        <div class="remind-custom mt-2" id="remind-custom">
+          <label class="small text-muted" for="{{ form.remind_custom.id_for_label }}">{{ form.remind_custom.label }}</label>
+          {{ form.remind_custom }}
+          {% for e in form.remind_custom.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+        </div>
+        <div class="row g-3 mt-0 remind-when" id="remind-when">
+          {% include "tracker/_debt_field.html" with field=form.remind_time col="col-sm-6" %}
+          <div class="col-sm-6 d-flex align-items-center">
+            <div class="form-check form-switch m-0">
+              {{ form.remind_daily }}
+              <label class="form-check-label small fw-semibold" for="{{ form.remind_daily.id_for_label }}">{{ form.remind_daily.label }}</label>
+              <div class="form-text mt-0">{{ form.remind_daily.help_text }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-text" id="remind-needs-date">{% translate "Set a pay-back date to get a reminder." %}</div>
+      </fieldset>
+
+      <div class="row g-3 mt-0">
+        {% include "tracker/_debt_field.html" with field=form.note col="col-12" optional=True %}
+      </div>
+      {% if people %}<datalist id="people">{% for p in people %}<option value="{{ p }}">{% endfor %}</datalist>{% endif %}
+
+      <div class="d-flex gap-2 mt-4">
+        <a href="javascript:history.back()" class="btn btn-outline-secondary px-4">{% translate "Cancel" %}</a>
+        <button class="btn btn-brand flex-grow-1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="me-1"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span id="save-label" data-plain="{% translate 'Save' %}" data-remind="{% translate 'Save & set reminder' %}">{% translate "Save" %}</span>
+        </button>
+      </div>
+    </form>
+
+    {% if delete_url %}
+    <hr>
+    <form method="post" action="{{ delete_url }}" onsubmit="return confirm('{% translate 'Delete this permanently?' as q %}{{ q|escapejs }}');">
+      {% csrf_token %}
+      <button class="btn btn-sm btn-outline-danger">{% translate "Delete" %}</button>
+    </form>
+    {% endif %}
+  </div>
+</div></div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/debt_form.js' %}" defer></script>{% endblock %}

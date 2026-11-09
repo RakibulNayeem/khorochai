@@ -6,8 +6,8 @@ Logged out: a gear with theme and language, so visitors can switch them on the l
   {% if profile %}
   <button class="user-chip" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{% translate 'Account menu' %}">
     <span class="avatar" style="--avatar: {{ profile.color }}" aria-hidden="true">{{ profile.initials }}</span>
-    <span class="user-chip-name d-none d-md-inline" data-keep-digits>{{ profile.name }}</span>
-    <svg class="user-chip-caret d-none d-md-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    <span class="user-chip-name d-none d-xl-inline" data-keep-digits>{{ profile.name }}</span>
+    <svg class="user-chip-caret d-none d-xl-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
   </button>
   {% else %}
   <button class="btn btn-sm btn-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false"

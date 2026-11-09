@@ -1,3 +1,4 @@
+import datetime as dt
 import csv
 import logging
 import re
@@ -809,8 +810,8 @@ def debt_create(request):
         d.save()
         messages.success(request, _("Debt saved."))
         return redirect("debt_detail", pk=d.pk)
-    return render(request, "tracker/form.html", {"form": form, "title": _("Add debt"),
-                                                "people": services.all_debt_people(request.user)})
+    return render(request, "tracker/debt_form.html", {"form": form, "title": _("Add debt"),
+                                                     "people": services.all_debt_people(request.user)})
 
 
 @login_required
@@ -848,9 +849,23 @@ def debt_edit(request, pk):
             services.refresh_debt_status(debt)
         messages.success(request, _("Debt updated."))
         return redirect("debt_detail", pk=debt.pk)
-    return render(request, "tracker/form.html", {"form": form, "title": _("Edit debt"),
-                                                "people": services.all_debt_people(request.user),
-                                                "delete_url": reverse("debt_delete", args=[debt.pk])})
+    return render(request, "tracker/debt_form.html", {"form": form, "title": _("Edit debt"),
+                                                     "people": services.all_debt_people(request.user),
+                                                     "delete_url": reverse("debt_delete", args=[debt.pk])})
+
+
+@login_required
+@require_POST
+def debt_snooze(request, pk):
+    """Hide a debt's reminder until tomorrow at its reminder time."""
+    debt = get_object_or_404(Debt, pk=pk, user=request.user)
+    debt.snoozed_until = timezone.localdate() + dt.timedelta(days=1)
+    debt.save(update_fields=["snoozed_until"])
+    messages.success(request, _("Snoozed until tomorrow."))
+    nxt = request.POST.get("next", "")
+    if url_has_allowed_host_and_scheme(nxt, allowed_hosts={request.get_host()}, require_https=request.is_secure()):
+        return redirect(nxt)
+    return redirect("debt_detail", pk=debt.pk)
 
 
 @login_required

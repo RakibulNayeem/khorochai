@@ -32,13 +32,15 @@
     <dl class="row small mb-0 mt-3">
       <dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Date" %}</dt><dd class="col-7 col-sm-8">{{ debt.date|date:"d M Y" }}</dd>
       <dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Pay back by" %}</dt><dd class="col-7 col-sm-8">{% if debt.due_date %}{{ debt.due_date|date:"d M Y" }}{% else %}—{% endif %}</dd>
+      {% if debt.phone %}<dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Phone" %}</dt><dd class="col-7 col-sm-8" data-keep-digits><a href="tel:{{ debt.phone }}">{{ debt.phone }}</a></dd>{% endif %}
+      {% if debt.due_date and not debt.closed %}<dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Reminder" %}</dt><dd class="col-7 col-sm-8">{% if debt.remind_days is None %}{% translate "Off" %}{% else %}{% if debt.remind_days == 0 %}{% translate "On due date" %}{% else %}{% blocktranslate count n=debt.remind_days %}{{ n }} day before{% plural %}{{ n }} days before{% endblocktranslate %}{% endif %}, {{ debt.remind_time|time:"H:i" }}{% if debt.remind_daily %} · {% translate "daily if overdue" %}{% endif %}{% endif %}</dd>{% endif %}
       <dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Account" %}</dt><dd class="col-7 col-sm-8">{% if debt.account %}{{ debt.account }}{% else %}—{% endif %}</dd>
       {% if debt.note %}<dt class="col-5 col-sm-4 text-muted fw-normal">{% translate "Note" %}</dt><dd class="col-7 col-sm-8" data-keep-digits>{{ debt.note }}</dd>{% endif %}
     </dl>
   </div>
 
   {% if not debt.closed %}
-  <div class="card p-3 p-md-4 mb-3">
+  <div class="card p-3 p-md-4 mb-3" id="record">
     <h2 class="h6 mb-3">{% if debt.is_lent %}{% translate "Record money you got back" %}{% else %}{% translate "Record money you paid back" %}{% endif %}</h2>
     <form method="post" novalidate>
       {% csrf_token %}

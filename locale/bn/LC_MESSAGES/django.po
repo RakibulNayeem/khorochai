@@ -1533,3 +1533,136 @@ msgstr "তালিকায় নেই? নিচের ঘরে নাম�
 
 msgid "We also count visits and time spent on the site for each day, to see how much the app is used. Only these numbers are kept, never what you type or your amounts. If you aren't logged in, you are counted by a random ID kept in your browser, and we don't save your IP address for this."
 msgstr "অ্যাপটি কতটা ব্যবহার হচ্ছে তা বোঝার জন্য আমরা প্রতিদিনের ভিজিট ও সাইটে কাটানো সময়ও গণনা করি। শুধু এই সংখ্যাগুলোই রাখা হয়, আপনি কী লিখেছেন বা আপনার টাকার পরিমাণ কখনো নয়। লগইন না করা থাকলে আপনার ব্রাউজারে রাখা একটি র‍্যান্ডম আইডি দিয়ে আপনাকে গণনা করা হয়, আর এর জন্য আমরা আপনার আইপি ঠিকানা সংরক্ষণ করি না।"
+
+# ---------------------------------------------------------------- debt reminders
+msgid "Save money you will get back or pay back. We'll remind you on time."
+msgstr "যে টাকা ফেরত পাবেন বা দেবেন, সেভ করুন। সময়মতো মনে করিয়ে দেব।"
+
+msgid "Phone"
+msgstr "ফোন"
+
+msgid "optional"
+msgstr "ঐচ্ছিক"
+
+msgid "Remind me"
+msgstr "মনে করিয়ে দিন"
+
+msgid "On due date"
+msgstr "ফেরতের দিন"
+
+msgid "1 day before"
+msgstr "১ দিন আগে"
+
+msgid "3 days before"
+msgstr "৩ দিন আগে"
+
+msgid "Custom"
+msgstr "নিজে ঠিক করুন"
+
+msgid "No reminder"
+msgstr "রিমাইন্ডার নয়"
+
+msgid "Days before"
+msgstr "কত দিন আগে"
+
+msgid "Reminder time"
+msgstr "রিমাইন্ডারের সময়"
+
+msgid "Repeat daily if overdue"
+msgstr "দেরি হলে প্রতিদিন মনে করাবে"
+
+msgid "Every day until it is paid back."
+msgstr "টাকা ফেরত না দেওয়া পর্যন্ত প্রতিদিন।"
+
+msgid "Use digits only, e.g. 01712-345678."
+msgstr "শুধু সংখ্যা লিখুন, যেমন 01712-345678।"
+
+msgid "How many days before the due date?"
+msgstr "ফেরতের তারিখের কত দিন আগে?"
+
+msgid "Set a pay-back date to get a reminder."
+msgstr "রিমাইন্ডার পেতে ফেরতের তারিখ দিন।"
+
+msgid "Save & set reminder"
+msgstr "সেভ করুন ও রিমাইন্ডার দিন"
+
+msgid "Today"
+msgstr "আজ"
+
+msgid "Tomorrow"
+msgstr "আগামীকাল"
+
+msgid "1 day from today"
+msgstr "আজ থেকে ১ দিন পর"
+
+msgid "N days from today"
+msgstr "আজ থেকে N দিন পর"
+
+msgid "Already passed"
+msgstr "তারিখ পার হয়ে গেছে"
+
+msgid "Reminders"
+msgstr "রিমাইন্ডার"
+
+msgid "Reminder"
+msgstr "রিমাইন্ডার"
+
+msgid "Turn on notifications"
+msgstr "নোটিফিকেশন চালু করুন"
+
+msgid "now"
+msgstr "এখন"
+
+msgid "Mark received"
+msgstr "পেয়েছি"
+
+msgid "Mark paid"
+msgstr "দিয়েছি"
+
+msgid "Snooze"
+msgstr "পরে মনে করাও"
+
+msgid "Snoozed until tomorrow."
+msgstr "আগামীকাল আবার মনে করাব।"
+
+msgid "Call"
+msgstr "কল করুন"
+
+msgid "No reminders right now. Add a pay-back date to a debt to get one."
+msgstr "এখন কোনো রিমাইন্ডার নেই। ধার-দেনায় ফেরতের তারিখ দিলে রিমাইন্ডার পাবেন।"
+
+msgid "Off"
+msgstr "বন্ধ"
+
+msgid "%(n)s day before"
+msgid_plural "%(n)s days before"
+msgstr[0] "%(n)s দিন আগে"
+msgstr[1] "%(n)s দিন আগে"
+
+msgid "daily if overdue"
+msgstr "দেরি হলে প্রতিদিন"
+
+msgid "Overdue: %(person)s"
+msgstr "সময় পেরিয়ে গেছে: %(person)s"
+
+msgid "%(amount)s was due %(day)s · %(n)d day late"
+msgid_plural "%(amount)s was due %(day)s · %(n)d days late"
+msgstr[0] "%(amount)s ফেরতের কথা ছিল %(day)s · %(n)d দিন দেরি"
+msgstr[1] "%(amount)s ফেরতের কথা ছিল %(day)s · %(n)d দিন দেরি"
+
+msgid "Due today: %(amount)s"
+msgstr "আজ ফেরতের দিন: %(amount)s"
+
+msgid "Due tomorrow: %(amount)s"
+msgstr "আগামীকাল ফেরতের দিন: %(amount)s"
+
+msgid "Due in %(n)d day: %(amount)s"
+msgid_plural "Due in %(n)d days: %(amount)s"
+msgstr[0] "%(n)d দিন পর ফেরতের দিন: %(amount)s"
+msgstr[1] "%(n)d দিন পর ফেরতের দিন: %(amount)s"
+
+msgid "%(person)s will pay you back on %(day)s."
+msgstr "%(person)s %(day)s টাকা ফেরত দেবেন।"
+
+msgid "Pay %(person)s back by %(day)s."
+msgstr "%(day)s-এর মধ্যে %(person)s-কে টাকা ফেরত দিন।"

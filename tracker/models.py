@@ -1,3 +1,5 @@
+import datetime as dt
+
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
@@ -202,6 +204,14 @@ class Debt(models.Model):
     date = models.DateField(default=timezone.localdate)
     due_date = models.DateField(null=True, blank=True)
     note = models.CharField(max_length=255, blank=True)
+    # db_default too, so older code still running during a deploy can insert debts without these columns
+    phone = models.CharField(max_length=20, blank=True, default="", db_default="")
+    # reminder: None = off; otherwise how many days before the due date it starts (0 = on the due date)
+    remind_days = models.PositiveSmallIntegerField(null=True, blank=True)
+    remind_time = models.TimeField(default=dt.time(9, 0), db_default=dt.time(9, 0))
+    remind_daily = models.BooleanField(default=True, db_default=True,
+                                       help_text=_("Keep reminding every day while it is overdue."))
+    snoozed_until = models.DateField(null=True, blank=True)
     closed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

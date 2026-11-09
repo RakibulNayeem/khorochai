@@ -19,7 +19,9 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "আ�
 - **Debts** (`Debt`, `DebtRecord`):
   - a list of "Owed to me" and "I owe", active and closed, with overdue dates;
   - a detail page to record payments or add more;
-  - a debt closes by itself when fully paid back.
+  - a debt closes by itself when fully paid back;
+  - reminders: the debt form (`debt_form.html`) sets "remind me" (on the due date, 1 or 3 days before, or custom), a time and "repeat daily if overdue". `services.debt_reminders` decides what's on now; the navbar bell lists them as phone-style cards with "Mark received/paid" and "Snooze" (until tomorrow).
+  - `static/js/reminders.js` also shows them as device notifications once allowed, each once a day, but only when the user opens the site. Notifications while the site is closed would need Web Push and a scheduler; not built.
 - **Ask AI:**
   - money questions → `run_query`;
   - debt questions → `run_debt_query`.
@@ -56,7 +58,7 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "আ�
 - **Digits:** Bangla digits are applied client-side. Mark user-typed text with `data-keep-digits` to exempt it.
 - **Currency:** a logged-in user's currency comes from `Profile` and defaults to BDT. It is only guessed from the language for visitors.
 - **Local database:** `.env` points at the **live** Neon database; leave it that way. For local trials with fake data, set `DATABASE_URL=""` to use SQLite.
-- **Tests** always use SQLite: `python manage.py test tracker`, about 73 tests.
+- **Tests** always use SQLite: `python manage.py test tracker`, about 100 tests.
 - **Migrations:** run them on Neon (`python manage.py migrate`) *before* pushing a change that needs them.
 
 ## Pending / ideas

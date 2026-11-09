@@ -1,7 +1,8 @@
 from django.conf import settings
 from django.urls import reverse
+from django.utils import timezone
 
-from . import currency
+from . import currency, services
 
 THEME_COOKIE = "theme"
 THEMES = ("light", "dark", "system")
@@ -47,4 +48,15 @@ def preferences(request):
         "contact_email": settings.CONTACT_EMAIL,
         "clarity_id": settings.CLARITY_PROJECT_ID if counts else "",
         "track_activity": settings.TRACK_ACTIVITY and counts,
+        **_reminders(request, user),
     }
+
+
+def _reminders(request, user):
+    """Debt reminders for the bell in the navbar; not on the staff panel."""
+    if user is None or not user.is_authenticated or request.path.startswith(reverse("admin_overview")):
+        return {}
+    found = services.debt_reminders(user)
+    data = [{"id": f"{d.pk}-{timezone.localdate().isoformat()}", "title": d.title, "body": d.body,
+             "url": reverse("debt_detail", args=[d.pk])} for d in found]
+    return {"reminders": found, "reminder_data": data, "show_bell": True}

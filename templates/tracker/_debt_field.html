@@ -1,0 +1,10 @@
+{% load i18n %}<div class="{{ col }}">
+  <label class="form-label small fw-semibold" for="{{ field.id_for_label }}">{{ field.label }}{% if optional %} <span class="text-muted fw-normal">({% translate "optional" %})</span>{% endif %}</label>
+  {{ field }}
+  {% if field.name == "due_date" %}<div class="form-text due-hint" id="due-hint" aria-live="polite"
+       data-today="{% translate 'Today' %}" data-tomorrow="{% translate 'Tomorrow' %}"
+       data-one="{% translate '1 day from today' %}" data-many="{% translate 'N days from today' %}"
+       data-past="{% translate 'Already passed' %}"></div>{% endif %}
+  {% if field.help_text and field.name != "remind_daily" %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+  {% for e in field.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+</div>

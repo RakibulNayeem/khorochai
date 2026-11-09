@@ -30,6 +30,7 @@ urlpatterns = [
     path("debts/<int:pk>/edit/", views.debt_edit, name="debt_edit"),
     path("debts/<int:pk>/delete/", views.debt_delete, name="debt_delete"),
     path("debts/<int:pk>/settle/", views.debt_settle, name="debt_settle"),
+    path("debts/<int:pk>/snooze/", views.debt_snooze, name="debt_snooze"),
     path("debts/records/<int:pk>/edit/", views.debt_record_edit, name="debt_record_edit"),
     path("debts/records/<int:pk>/delete/", views.debt_record_delete, name="debt_record_delete"),
     path("settings/", views.preferences, name="preferences"),

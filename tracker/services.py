@@ -11,7 +11,7 @@ from django.db.models import Count, DecimalField, F, Q, Sum, Value
 from django.db.models.functions import Coalesce, Least, TruncMonth
 from django.utils import timezone
 from django.utils.formats import date_format
-from django.utils.translation import gettext
+from django.utils.translation import gettext, ngettext
 
 from .models import (
     BANK, CARD,
@@ -450,6 +450,61 @@ def debt_summary(user, debts=None):
         "overdue_count": sum(1 for d in open_ if d.overdue),
         "has_open": bool(open_),
     }
+
+
+MAX_REMIND_DAYS = 60  # same limit as the form
+
+
+def debt_reminders(user, now=None):
+    """Open debts whose reminder is on now, overdue first. Each gets .days_left plus .title and .body,
+    the text shown in the bell menu and in phone notifications.
+
+    A reminder starts `remind_days` before the due date, at `remind_time` on that first day, and runs to the due
+    date; after that only if `remind_daily`. A snooze hides it until `remind_time` on `snoozed_until`."""
+    now = timezone.localtime(now)
+    today = now.date()
+    qs = (Debt.objects.filter(user=user, closed=False, remind_days__isnull=False, due_date__isnull=False,
+                              due_date__lte=today + dt.timedelta(days=MAX_REMIND_DAYS))
+          .annotate(repaid=Coalesce(Sum("records__amount", filter=Q(records__kind=REPAY)), ZERO),
+                    added=Coalesce(Sum("records__amount", filter=Q(records__kind=INCREASE)), ZERO)))
+    found = []
+    for d in qs:
+        _add_totals(d, today)
+        start = d.due_date - dt.timedelta(days=d.remind_days)
+        if d.remaining <= 0 or today < start or (d.overdue and not d.remind_daily):
+            continue
+        if d.snoozed_until and today < d.snoozed_until:
+            continue
+        if today in (start, d.snoozed_until) and now.time() < d.remind_time:
+            continue
+        d.days_left = (d.due_date - today).days
+        d.title, d.body = _reminder_text(d)
+        found.append(d)
+    found.sort(key=lambda d: d.days_left)
+    return found
+
+
+def _reminder_text(d):
+    from .templatetags.money import money
+    amount, day = money(d.remaining), date_format(d.due_date, "j M")
+    if d.overdue:
+        late = -d.days_left
+        title = gettext("Overdue: %(person)s") % {"person": d.person}
+        body = ngettext("%(amount)s was due %(day)s · %(n)d day late", "%(amount)s was due %(day)s · %(n)d days late",
+                        late) % {"amount": amount, "day": day, "n": late}
+        return title, body
+    if d.days_left == 0:
+        title = gettext("Due today: %(amount)s") % {"amount": amount}
+    elif d.days_left == 1:
+        title = gettext("Due tomorrow: %(amount)s") % {"amount": amount}
+    else:
+        title = ngettext("Due in %(n)d day: %(amount)s", "Due in %(n)d days: %(amount)s",
+                         d.days_left) % {"n": d.days_left, "amount": amount}
+    if d.is_lent:
+        body = gettext("%(person)s will pay you back on %(day)s.") % {"person": d.person, "day": day}
+    else:
+        body = gettext("Pay %(person)s back by %(day)s.") % {"person": d.person, "day": day}
+    return title, body
 
 
 def refresh_debt_status(debt):

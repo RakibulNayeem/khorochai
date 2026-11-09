@@ -1,0 +1,39 @@
+{% load i18n static %}{% comment %}
+Navbar bell: debt reminders that are on now, drawn like phone notifications. reminders.js also shows them as
+real notifications on this device once the user allows it.
+{% endcomment %}
+<div class="dropdown reminders">
+  <button class="btn btn-icon bell" type="button" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false"
+          aria-label="{% translate 'Reminders' %}" title="{% translate 'Reminders' %}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+    {% if reminders %}<span class="bell-badge">{{ reminders|length }}</span>{% endif %}
+  </button>
+  <div class="dropdown-menu dropdown-menu-end reminder-menu p-2">
+    <div class="d-flex align-items-center justify-content-between px-1 pb-2">
+      <span class="fw-semibold">{% translate "Reminders" %}</span>
+      <button type="button" class="btn btn-sm btn-link p-0" id="notify-on" hidden>{% translate "Turn on notifications" %}</button>
+    </div>
+    {% for r in reminders %}
+    <div class="notif {% if r.overdue %}is-overdue{% endif %}">
+      <div class="notif-app"><img src="{% static 'img/logo.svg' %}" alt="" width="16" height="16"> KhorochAi
+        <span class="ms-auto">{% if r.overdue %}{% translate "Overdue" %}{% else %}{% translate "now" %}{% endif %}</span></div>
+      <a class="notif-text" href="{% url 'debt_detail' r.pk %}">
+        <div class="notif-title">{{ r.title }}</div>
+        <div class="notif-body">{{ r.body }}{% if r.note %} · <span data-keep-digits>{{ r.note }}</span>{% endif %}</div>
+      </a>
+      <div class="notif-actions">
+        <a class="notif-btn is-main" href="{% url 'debt_detail' r.pk %}#record">{% if r.is_lent %}{% translate "Mark received" %}{% else %}{% translate "Mark paid" %}{% endif %}</a>
+        <form method="post" action="{% url 'debt_snooze' r.pk %}">{% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          <button class="notif-btn">{% translate "Snooze" %}</button>
+        </form>
+        {% if r.phone %}<a class="notif-btn" href="tel:{{ r.phone }}">{% translate "Call" %}</a>{% endif %}
+      </div>
+    </div>
+    {% empty %}
+    <div class="text-muted small px-1 py-3 text-center">{% translate "No reminders right now. Add a pay-back date to a debt to get one." %}</div>
+    {% endfor %}
+    <a class="d-block small text-center pt-2" href="{% url 'debts' %}">{% translate "All debts" %}</a>
+  </div>
+</div>
+{{ reminder_data|json_script:"reminder-data" }}

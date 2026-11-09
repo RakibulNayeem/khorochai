@@ -177,33 +177,63 @@ class TransferForm(BootstrapMixin, forms.ModelForm):
         return data
 
 
+REMIND_CHOICES = [("0", _("On due date")), ("1", _("1 day before")), ("3", _("3 days before")), ("custom", _("Custom")), ("off", _("No reminder"))]
+MAX_REMIND_DAYS = 60
+
+
 class DebtForm(BootstrapMixin, forms.ModelForm):
+    """A debt and, when it has a pay-back date, when to be reminded about it."""
+    remind = forms.ChoiceField(label=_("Remind me"), choices=REMIND_CHOICES, widget=forms.RadioSelect, required=False)
+    remind_custom = forms.IntegerField(label=_("Days before"), min_value=1, max_value=MAX_REMIND_DAYS, required=False,
+                                       widget=forms.NumberInput(attrs={"min": 1, "max": MAX_REMIND_DAYS}))
+
     class Meta:
         model = Debt
-        fields = ("direction", "person", "amount", "account", "date", "due_date", "note")
+        fields = ("direction", "person", "phone", "amount", "date", "due_date", "remind_time", "remind_daily",
+                  "account", "note")
         widgets = {
             "direction": forms.RadioSelect,
             "person": forms.TextInput(attrs={"list": "people", "autocomplete": "off", "placeholder": _("e.g. Rahim")}),
+            "phone": forms.TextInput(attrs={"type": "tel", "autocomplete": "off", "placeholder": "01XXX-XXXXXX",
+                                            "inputmode": "tel"}),
             "amount": forms.NumberInput(attrs={"step": "0.01", "min": "0.01"}),
             "date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
             "due_date": forms.DateInput(attrs={"type": "date"}, format="%Y-%m-%d"),
+            "remind_time": forms.TimeInput(attrs={"type": "time"}, format="%H:%M"),
             "note": forms.TextInput(attrs={"placeholder": _("e.g. for his phone, till salary day")}),
         }
-        labels = {"direction": _("Type"), "person": _("Person"), "amount": _("Amount"), "account": _("Account"),
-                  "date": _("Date"), "due_date": _("Pay back by"), "note": _("Note")}
+        labels = {"direction": _("Type"), "person": _("Person"), "phone": _("Phone"), "amount": _("Amount"),
+                  "account": _("Account"), "date": _("Date"), "due_date": _("Pay back by"),
+                  "remind_time": _("Reminder time"), "remind_daily": _("Repeat daily if overdue"), "note": _("Note")}
         help_texts = {"account": _("Where the money went out of (lent) or came into (borrowed). Its balance changes."),
-                      "due_date": _("Optional.")}
+                      "remind_daily": _("Every day until it is paid back.")}
 
     def __init__(self, *args, user=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["account"].queryset = Account.objects.filter(user=user)
         self.fields["account"].required = True
+        self.fields["remind_time"].required = False
+        days = self.instance.remind_days if self.instance.pk else 1  # new debts: a day before, if a date is set
+        if days is None:
+            self.initial.setdefault("remind", "off")
+        elif str(days) in ("0", "1", "3"):
+            self.initial.setdefault("remind", str(days))
+        else:
+            self.initial.setdefault("remind", "custom")
+            self.initial.setdefault("remind_custom", days)
         self._style()
-        self.fields["direction"].widget.attrs.pop("class", None)  # drawn as two toggle buttons in form.html
+        self.fields["direction"].widget.attrs.pop("class", None)  # drawn as two toggle buttons
+        self.fields["remind"].widget.attrs.pop("class", None)     # drawn as chips
         self.fields["direction"].choices = DEBT_DIRECTION_CHOICES  # no empty "---------" choice
 
     def clean_person(self):
         return " ".join(self.cleaned_data["person"].split())
+
+    def clean_phone(self):
+        phone = "".join(self.cleaned_data["phone"].split())
+        if phone and not all(c.isdigit() or c in "+-" for c in phone):
+            raise forms.ValidationError(_("Use digits only, e.g. 01712-345678."))
+        return phone
 
     def clean_amount(self):
         amount = self.cleaned_data["amount"]
@@ -215,7 +245,25 @@ class DebtForm(BootstrapMixin, forms.ModelForm):
         data = super().clean()
         if data.get("due_date") and data.get("date") and data["due_date"] < data["date"]:
             self.add_error("due_date", _("The pay-back date can't be before the date of the debt."))
+        remind = data.get("remind")
+        if remind == "custom" and not data.get("remind_custom"):
+            self.add_error("remind_custom", _("How many days before the due date?"))
+        if not data.get("remind_time"):
+            data["remind_time"] = self.instance.remind_time
         return data
+
+    def save(self, commit=True):
+        debt = super().save(commit=False)
+        remind = self.cleaned_data.get("remind")
+        if not debt.due_date or remind in (None, "", "off"):
+            debt.remind_days = None
+        else:
+            debt.remind_days = self.cleaned_data["remind_custom"] if remind == "custom" else int(remind)
+        if "due_date" in self.changed_data or "remind" in self.changed_data:
+            debt.snoozed_until = None  # a new date or reminder starts fresh
+        if commit:
+            debt.save()
+        return debt
 
 
 class DebtRecordForm(BootstrapMixin, forms.ModelForm):

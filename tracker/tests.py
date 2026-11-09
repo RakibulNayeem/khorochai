@@ -869,6 +869,72 @@ class DebtTests(TestCase):
         self.assertContains(self.client.get(reverse("dashboard")), "Paid back Karim")
 
 
+class ReminderTests(TestCase):
+    """Debt reminders: set on the debt form, shown in the bell from N days before the due date."""
+
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.login(username="rakib", password="pass12345!")
+        self.cash = Account.objects.get(user=self.user, name="Cash")
+        self.today = timezone.localdate()
+
+    def add(self, due_in, **extra):
+        data = {"direction": "lent", "person": "Rahim", "phone": "01712-345678", "amount": "5000",
+                "account": self.cash.id, "date": self.today.isoformat(),
+                "due_date": (self.today + dt.timedelta(days=due_in)).isoformat() if due_in is not None else "",
+                "remind": "1", "remind_time": "00:00", "remind_daily": "on", "note": ""}
+        data.update(extra)
+        r = self.client.post(reverse("debt_add"), data)
+        self.assertEqual(r.status_code, 302, getattr(r, "context", None) and r.context["form"].errors)
+        return Debt.objects.latest("id")
+
+    def shown(self):
+        return [d.pk for d in services.debt_reminders(self.user)]
+
+    def test_form_saves_reminder(self):
+        d = self.add(3, remind="custom", remind_custom="5", remind_time="08:30")
+        self.assertEqual((d.remind_days, d.remind_time, d.remind_daily, d.phone), (5, dt.time(8, 30), True, "01712-345678"))
+        self.assertEqual(self.add(None).remind_days, None)  # no due date, no reminder
+        self.assertEqual(self.add(3, remind="off").remind_days, None)
+
+    def test_starts_n_days_before_and_repeats_when_overdue(self):
+        later = self.add(3)          # reminds from 1 day before: not yet
+        tomorrow = self.add(1)
+        overdue = self.add(-2, date=(self.today - dt.timedelta(days=5)).isoformat())
+        once = self.add(-2, date=(self.today - dt.timedelta(days=5)).isoformat(), remind_daily="")
+        self.assertEqual(self.shown(), [overdue.pk, tomorrow.pk])
+        found = services.debt_reminders(self.user)
+        self.assertIn("Overdue: Rahim", found[0].title)
+        self.assertIn("2 days late", found[0].body)
+        self.assertIn("Due tomorrow", found[1].title)
+        self.assertNotIn(later.pk, self.shown())
+        self.assertNotIn(once.pk, self.shown())
+
+    def test_waits_for_the_reminder_time_on_the_first_day(self):
+        d = self.add(1, remind_time="23:59")
+        now = timezone.make_aware(dt.datetime.combine(self.today, dt.time(12, 0)))
+        self.assertEqual([x.pk for x in services.debt_reminders(self.user, now)], [])
+        d.remind_time = dt.time(11, 0)
+        d.save()
+        self.assertEqual([x.pk for x in services.debt_reminders(self.user, now)], [d.pk])
+
+    def test_snooze_and_paid_back_hide_it(self):
+        d = self.add(0)
+        self.assertContains(self.client.get(reverse("dashboard")), "Due today")
+        self.client.post(reverse("debt_snooze", args=[d.pk]))
+        self.assertEqual(self.shown(), [])
+        d2 = self.add(0, person="Mitu")
+        DebtRecord.objects.create(debt=d2, kind="repay", amount=Decimal("5000"), account=self.cash)
+        services.refresh_debt_status(d2)
+        self.assertEqual(self.shown(), [])
+
+    def test_others_cannot_snooze(self):
+        d = self.add(0)
+        User.objects.create_user("other", password="pass12345!")
+        self.client.login(username="other", password="pass12345!")
+        self.assertEqual(self.client.post(reverse("debt_snooze", args=[d.pk])).status_code, 404)
+
+
 class AskDebtTests(TestCase):
     """Ask AI answers "who owes whom" from the saved debts."""
 
