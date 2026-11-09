@@ -1429,3 +1429,27 @@ class DailyReminderTests(TestCase):
         self.assertNotContains(self.client.get("/settings/"), "daily-reminder")
         with override_settings(VAPID_PUBLIC_KEY="pub", VAPID_PRIVATE_KEY="priv"):
             self.assertContains(self.client.get("/settings/"), 'id="daily-reminder"')
+
+
+class AndroidAppTests(TestCase):
+    def test_assetlinks_names_the_app_and_its_key(self):
+        r = self.client.get("/.well-known/assetlinks.json")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Content-Type"], "application/json")
+        target = r.json()[0]["target"]
+        self.assertEqual(target["namespace"], "android_app")
+        self.assertEqual(target["package_name"], "app.vercel.khorochai.twa")
+        self.assertRegex(target["sha256_cert_fingerprints"][0], r"^([0-9A-F]{2}:){31}[0-9A-F]{2}$")
+
+    def test_download_button_on_home_page_and_after_login(self):
+        self.assertContains(self.client.get("/"), "downloads/KhorochAi.apk")
+        user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.force_login(user)
+        for url in ("/", "/settings/"):
+            self.assertContains(self.client.get(url), "downloads/KhorochAi.apk")
+
+    def test_apk_is_served_by_the_site(self):
+        path = finders.find("downloads/KhorochAi.apk")
+        self.assertIsNotNone(path)
+        with open(path, "rb") as f:
+            self.assertEqual(f.read(2), b"PK")   # an APK is a zip file

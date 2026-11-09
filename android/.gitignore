@@ -1,0 +1,10 @@
+# build output and local files; the signing key lives outside the repo (~/.khorochai-android)
+*.apk
+*.aab
+build/
+app/build/
+.gradle/
+local.properties
+*.keystore
+*.jks
+*.idsig

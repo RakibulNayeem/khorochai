@@ -7,6 +7,9 @@
   let deferred = null;
 
   const show = (on) => buttons.forEach((b) => { b.hidden = !on; });
+  if (standalone || document.referrer.startsWith('android-app://')) {
+    document.querySelectorAll('[data-android-download]').forEach((el) => { el.hidden = true; });
+  }
   if (standalone) return;
 
   if (ios) {
