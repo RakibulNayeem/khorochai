@@ -16,15 +16,14 @@
   "startUrl": "/",
   "iconUrl": "https://khorochai.vercel.app/static/img/pwa/icon-512.png",
   "maskableIconUrl": "https://khorochai.vercel.app/static/img/pwa/icon-maskable-512.png",
-  "webManifestUrl": "https://khorochai.vercel.app/manifest.webmanifest",
-  "appVersion": "1.0.0",
-  "appVersionCode": 1,
+  "appVersion": "1.0.1",
+  "appVersionCode": 2,
   "signingKey": {
     "path": "/home/rakib/.khorochai-android/khorochai.keystore",
     "alias": "khorochai"
   },
   "splashScreenFadeOutDuration": 300,
-  "enableSiteSettingsShortcut": false,
+  "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
   "fallbackType": "customtabs",

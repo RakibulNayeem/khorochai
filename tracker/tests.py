@@ -1265,84 +1265,6 @@ class AdminPanelTests(TestCase):
             self.assertNotContains(self.client.get(reverse(name, args=args)), tag)
 
 
-class PwaTests(TestCase):
-    def test_manifest(self):
-        r = self.client.get("/manifest.webmanifest")
-        self.assertEqual(r.status_code, 200)
-        self.assertEqual(r["Content-Type"], "application/manifest+json")
-        data = r.json()
-        self.assertEqual((data["name"], data["short_name"], data["display"]), ("KhorochAi", "KhorochAi", "standalone"))
-        self.assertTrue(any(i["purpose"] == "maskable" and i["sizes"] == "512x512" for i in data["icons"]))
-
-    def test_pages_link_manifest_and_install_button(self):
-        html = self.client.get("/").content.decode()
-        self.assertIn('rel="manifest"', html)
-        self.assertEqual(html.count("data-pwa-install"), 2)  # navbar + landing hero
-
-    def test_service_worker_served_from_root(self):
-        r = self.client.get("/sw.js")
-        self.assertEqual(r.status_code, 200)
-        self.assertEqual(r["Service-Worker-Allowed"], "/")
-        self.assertIn("text/javascript", r["Content-Type"])
-        body = r.content.decode()
-        self.assertIn("/offline/", body)
-        self.assertNotIn("{%", body)
-
-    def test_offline_page_is_public_and_has_no_user_data(self):
-        r = self.client.get("/offline/")
-        self.assertEqual(r.status_code, 200)
-        self.assertContains(r, "KhorochAi")
-
-
-class OfflineSyncTests(TestCase):
-    def setUp(self):
-        self.user = User.objects.create_user("rakib", password="pass12345!")
-        self.client.force_login(self.user)
-        services.ensure_default_categories(self.user)
-        services.ensure_default_accounts(self.user)
-        self.cat = Category.objects.filter(user=self.user, type="expense").first()
-        self.entry = {"client_id": "6f1c2c1e-3a53-4d8e-9a43-0d6a5c1b7e11", "type": "expense", "amount": "120.50",
-                      "category": self.cat.pk, "account": services.default_account(self.user).pk,
-                      "note": "tea", "date": "2026-11-09"}
-
-    def sync(self, *entries):
-        return self.client.post("/transactions/sync/", data={"entries": list(entries)}, content_type="application/json")
-
-    def test_sync_saves_entry_and_is_safe_to_repeat(self):
-        for _ in range(2):
-            r = self.sync(self.entry)
-            self.assertEqual(r.json()["results"], [{"client_id": self.entry["client_id"], "status": "synced"}])
-        self.assertEqual(Transaction.objects.filter(user=self.user).count(), 1)
-        t = Transaction.objects.get(user=self.user)
-        self.assertEqual((str(t.amount), t.note, str(t.client_id)), ("120.50", "tea", self.entry["client_id"]))
-
-    def test_invalid_entry_is_reported_not_saved(self):
-        bad = dict(self.entry, amount="-5")
-        self.assertEqual(self.sync(bad).json()["results"][0]["status"], "invalid")
-        self.assertEqual(Transaction.objects.count(), 0)
-
-    def test_cannot_use_another_users_account(self):
-        other = User.objects.create_user("other", password="pass12345!")
-        services.ensure_default_accounts(other)
-        theirs = services.default_account(other)
-        self.assertEqual(self.sync(dict(self.entry, account=theirs.pk)).json()["results"][0]["status"], "invalid")
-
-    def test_requires_login_and_post(self):
-        self.client.logout()
-        self.assertEqual(self.sync(self.entry).status_code, 401)
-        self.assertEqual(self.client.get("/transactions/offline-data/").status_code, 401)
-        self.client.force_login(self.user)
-        self.assertEqual(self.client.get("/transactions/sync/").status_code, 405)
-
-    def test_offline_data_lists_only_own_items(self):
-        other = User.objects.create_user("other", password="pass12345!")
-        services.ensure_default_accounts(other)
-        data = self.client.get("/transactions/offline-data/").json()
-        self.assertEqual(data["user"], self.user.pk)
-        own = {a.pk for a in Account.objects.filter(user=self.user)}
-        self.assertEqual({a["id"] for a in data["accounts"]}, own)
-
-
 class DailyReminderTests(TestCase):
     SUB = {"endpoint": "https://push.example.com/abc", "keys": {"p256dh": "pk", "auth": "ak"}}
 
@@ -1453,3 +1375,28 @@ class AndroidAppTests(TestCase):
         self.assertIsNotNone(path)
         with open(path, "rb") as f:
             self.assertEqual(f.read(2), b"PK")   # an APK is a zip file
+
+
+class NoPwaTests(TestCase):
+    """KhorochAi is an Android app plus a normal website: no installable web app, no offline mode."""
+
+    def test_pwa_pages_are_gone(self):
+        for url in ("/manifest.webmanifest", "/offline/", "/transactions/sync/", "/transactions/offline-data/"):
+            self.assertEqual(self.client.get(url).status_code, 404, url)
+
+    def test_pages_have_no_install_prompt_or_offline_banner(self):
+        html = self.client.get("/").content.decode()
+        for gone in ('rel="manifest"', "data-pwa-install", "offline-banner", "update-toast"):
+            self.assertNotIn(gone, html)
+        self.assertIn("downloads/KhorochAi.apk", html)   # the Android app download stays
+
+    def test_service_worker_only_handles_notifications(self):
+        r = self.client.get("/sw.js")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Service-Worker-Allowed"], "/")
+        body = r.content.decode()
+        self.assertIn("'push'", body)
+        self.assertIn("'notificationclick'", body)
+        self.assertNotIn("'fetch'", body)          # it never intercepts requests
+        self.assertNotIn("caches.open", body)      # and never stores anything
+        self.assertNotIn("{%", body)

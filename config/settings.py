@@ -200,9 +200,6 @@ if not DEBUG:
 # ---------------------------------------------------------------- AI settings
 # Provider order: the first one is tried first, the next is the fallback.
 LLM_PROVIDERS = env_list("LLM_PROVIDERS", "gemini,groq")
-# Identifies this deploy: it is stamped into /sw.js, so the browser notices a new version and offers a refresh.
-BUILD_ID = (os.environ.get("VERCEL_GIT_COMMIT_SHA") or os.environ.get("VERCEL_DEPLOYMENT_ID") or "dev")[:12]
-
 # The Android app (android/, a Trusted Web Activity) and the public fingerprint of the key that signs it. The site publishes
 # them at /.well-known/assetlinks.json; that is what lets the app open KhorochAi full-screen without a browser address bar.
 ANDROID_APP_PACKAGE = "app.vercel.khorochai.twa"
