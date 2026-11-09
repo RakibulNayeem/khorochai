@@ -1263,3 +1263,18 @@ class AdminPanelTests(TestCase):
         self.client.login(username="boss", password="pass12345!")
         for name, args in [("dashboard", []), ("admin_overview", []), ("admin_users", []), ("admin_user", [self.user.pk])]:
             self.assertNotContains(self.client.get(reverse(name, args=args)), tag)
+
+
+class PwaTests(TestCase):
+    def test_manifest(self):
+        r = self.client.get("/manifest.webmanifest")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Content-Type"], "application/manifest+json")
+        data = r.json()
+        self.assertEqual((data["name"], data["short_name"], data["display"]), ("KhorochAi", "KhorochAi", "standalone"))
+        self.assertTrue(any(i["purpose"] == "maskable" and i["sizes"] == "512x512" for i in data["icons"]))
+
+    def test_pages_link_manifest_and_install_button(self):
+        html = self.client.get("/").content.decode()
+        self.assertIn('rel="manifest"', html)
+        self.assertEqual(html.count("data-pwa-install"), 2)  # navbar + landing hero

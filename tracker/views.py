@@ -11,6 +11,7 @@ from django.db import transaction as db_transaction
 from django.db.models import Q
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -122,6 +123,19 @@ def landing(request):
     shot_lang = "bn" if request.LANGUAGE_CODE == "bn" else "en"  # screenshots exist in these two
     return render(request, "tracker/landing.html", {"demo_rows": demo_rows, "steps": steps, "features": features,
                                                    "shot_lang": shot_lang})
+
+
+def manifest(request):
+    """Web app manifest, so KhorochAi can be installed to the home screen."""
+    icon = lambda name, size, purpose="any": {"src": static(f"img/pwa/{name}"), "sizes": f"{size}x{size}",
+                                              "type": "image/png", "purpose": purpose}
+    data = {
+        "name": "KhorochAi", "short_name": "KhorochAi", "id": "/", "start_url": "/", "scope": "/",
+        "display": "standalone", "orientation": "portrait",
+        "theme_color": "#1e2a44", "background_color": "#f5f5f7",
+        "icons": [icon("icon-192.png", 192), icon("icon-512.png", 512), icon("icon-maskable-512.png", 512, "maskable")],
+    }
+    return JsonResponse(data, content_type="application/manifest+json")
 
 
 def dashboard(request):
