@@ -1440,3 +1440,16 @@ class AndroidAppTests(TestCase):
         self.assertEqual(target["namespace"], "android_app")
         self.assertEqual(target["package_name"], "app.vercel.khorochai.twa")
         self.assertRegex(target["sha256_cert_fingerprints"][0], r"^([0-9A-F]{2}:){31}[0-9A-F]{2}$")
+
+    def test_download_button_on_home_page_and_after_login(self):
+        self.assertContains(self.client.get("/"), "downloads/KhorochAi.apk")
+        user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.force_login(user)
+        for url in ("/", "/settings/"):
+            self.assertContains(self.client.get(url), "downloads/KhorochAi.apk")
+
+    def test_apk_is_served_by_the_site(self):
+        path = finders.find("downloads/KhorochAi.apk")
+        self.assertIsNotNone(path)
+        with open(path, "rb") as f:
+            self.assertEqual(f.read(2), b"PK")   # an APK is a zip file

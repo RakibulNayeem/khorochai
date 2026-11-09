@@ -40,6 +40,13 @@
   </form>
   <p class="small text-muted mt-3">{% translate "These settings are saved in this browser." %}</p>
 
+  <h2 class="h5 mt-4 mb-3" data-android-download>{% translate "Android app" %}</h2>
+  <div class="card p-3 p-md-4" data-android-download>
+    <p class="mb-3">{% translate "Use KhorochAi as an app on your Android phone." %}</p>
+    <a class="btn btn-brand align-self-start" href="{% static 'downloads/KhorochAi.apk' %}" download="KhorochAi.apk">{% translate "Download Android app" %}</a>
+    <div class="form-text mt-2">{% translate "Open the downloaded file to install. If Android asks, allow installing apps from this source (your browser or Files app) just once." %}</div>
+  </div>
+
   {% if reminder %}
   <h2 class="h5 mt-4 mb-3">{% translate "Daily reminder" %}</h2>
   <div class="card p-3 p-md-4" id="daily-reminder" hidden

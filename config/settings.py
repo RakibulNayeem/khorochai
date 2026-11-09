@@ -134,6 +134,7 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 WHITENOISE_USE_FINDERS = True
+WHITENOISE_MIMETYPES = {".apk": "application/vnd.android.package-archive"}   # so Android offers to install the downloaded app
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
