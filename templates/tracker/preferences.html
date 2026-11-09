@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block title %}{% translate "Settings" %} · KhorochAi{% endblock %}
 {% block content %}
 <div class="row justify-content-center"><div class="col-md-8 col-lg-6">
@@ -39,6 +39,27 @@
     <button class="btn btn-brand px-4 align-self-start">{% translate "Save" %}</button>
   </form>
   <p class="small text-muted mt-3">{% translate "These settings are saved in this browser." %}</p>
+
+  {% if reminder %}
+  <h2 class="h5 mt-4 mb-3">{% translate "Daily reminder" %}</h2>
+  <div class="card p-3 p-md-4" id="daily-reminder" hidden
+       data-key="{{ reminder.public_key }}" data-enabled="{{ reminder.enabled|yesno:'1,0' }}"
+       data-subscribe-url="{% url 'reminder_subscribe' %}" data-unsubscribe-url="{% url 'reminder_unsubscribe' %}"
+       data-msg-denied="{% translate 'Notifications are blocked for this site. Allow them in your browser settings, then try again.' %}"
+       data-msg-ios="{% translate 'On iPhone, first add KhorochAi to your Home Screen (Share, then Add to Home Screen), then open it from there.' %}"
+       data-msg-error="{% translate 'Could not turn the reminder on. Please try again.' %}"
+       data-msg-on="{% translate 'Reminder is on.' %}" data-msg-off="{% translate 'Reminder is off.' %}">
+    <div class="form-check form-switch mb-3">
+      <input class="form-check-input" type="checkbox" role="switch" id="reminder-toggle">
+      <label class="form-check-label" for="reminder-toggle">{% translate "Remind me daily to record my khoroch" %}</label>
+    </div>
+    <label class="form-label" for="reminder-time">{% translate "Time" %}</label>
+    <input type="time" id="reminder-time" class="form-control" style="max-width: 10rem" value="{{ reminder.time }}">
+    <div class="form-text">{% translate "Bangladesh time. You get no reminder on days you've already recorded something. Turn it on in each browser or phone where you want it." %}</div>
+    <div id="reminder-status" class="small mt-2" role="status" aria-live="polite"></div>
+  </div>
+  <script src="{% static 'js/daily-reminder.js' %}" defer></script>
+  {% endif %}
 
   {% if user.is_authenticated %}
   <h2 class="h5 mt-4 mb-3">{% translate "Profile" %}</h2>

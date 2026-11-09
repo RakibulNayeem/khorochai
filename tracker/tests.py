@@ -10,8 +10,8 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
-from . import llm, services
-from .models import Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Transaction, Transfer
+from . import llm, reminders, services
+from .models import Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Profile, PushSubscription, Transaction, Transfer
 from .providers import BANKS, LOGOS, MOBILE_SERVICES, logo_file, logo_for, picker_data
 
 
@@ -1263,3 +1263,169 @@ class AdminPanelTests(TestCase):
         self.client.login(username="boss", password="pass12345!")
         for name, args in [("dashboard", []), ("admin_overview", []), ("admin_users", []), ("admin_user", [self.user.pk])]:
             self.assertNotContains(self.client.get(reverse(name, args=args)), tag)
+
+
+class PwaTests(TestCase):
+    def test_manifest(self):
+        r = self.client.get("/manifest.webmanifest")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Content-Type"], "application/manifest+json")
+        data = r.json()
+        self.assertEqual((data["name"], data["short_name"], data["display"]), ("KhorochAi", "KhorochAi", "standalone"))
+        self.assertTrue(any(i["purpose"] == "maskable" and i["sizes"] == "512x512" for i in data["icons"]))
+
+    def test_pages_link_manifest_and_install_button(self):
+        html = self.client.get("/").content.decode()
+        self.assertIn('rel="manifest"', html)
+        self.assertEqual(html.count("data-pwa-install"), 2)  # navbar + landing hero
+
+    def test_service_worker_served_from_root(self):
+        r = self.client.get("/sw.js")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Service-Worker-Allowed"], "/")
+        self.assertIn("text/javascript", r["Content-Type"])
+        body = r.content.decode()
+        self.assertIn("/offline/", body)
+        self.assertNotIn("{%", body)
+
+    def test_offline_page_is_public_and_has_no_user_data(self):
+        r = self.client.get("/offline/")
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "KhorochAi")
+
+
+class OfflineSyncTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.force_login(self.user)
+        services.ensure_default_categories(self.user)
+        services.ensure_default_accounts(self.user)
+        self.cat = Category.objects.filter(user=self.user, type="expense").first()
+        self.entry = {"client_id": "6f1c2c1e-3a53-4d8e-9a43-0d6a5c1b7e11", "type": "expense", "amount": "120.50",
+                      "category": self.cat.pk, "account": services.default_account(self.user).pk,
+                      "note": "tea", "date": "2026-11-09"}
+
+    def sync(self, *entries):
+        return self.client.post("/transactions/sync/", data={"entries": list(entries)}, content_type="application/json")
+
+    def test_sync_saves_entry_and_is_safe_to_repeat(self):
+        for _ in range(2):
+            r = self.sync(self.entry)
+            self.assertEqual(r.json()["results"], [{"client_id": self.entry["client_id"], "status": "synced"}])
+        self.assertEqual(Transaction.objects.filter(user=self.user).count(), 1)
+        t = Transaction.objects.get(user=self.user)
+        self.assertEqual((str(t.amount), t.note, str(t.client_id)), ("120.50", "tea", self.entry["client_id"]))
+
+    def test_invalid_entry_is_reported_not_saved(self):
+        bad = dict(self.entry, amount="-5")
+        self.assertEqual(self.sync(bad).json()["results"][0]["status"], "invalid")
+        self.assertEqual(Transaction.objects.count(), 0)
+
+    def test_cannot_use_another_users_account(self):
+        other = User.objects.create_user("other", password="pass12345!")
+        services.ensure_default_accounts(other)
+        theirs = services.default_account(other)
+        self.assertEqual(self.sync(dict(self.entry, account=theirs.pk)).json()["results"][0]["status"], "invalid")
+
+    def test_requires_login_and_post(self):
+        self.client.logout()
+        self.assertEqual(self.sync(self.entry).status_code, 401)
+        self.assertEqual(self.client.get("/transactions/offline-data/").status_code, 401)
+        self.client.force_login(self.user)
+        self.assertEqual(self.client.get("/transactions/sync/").status_code, 405)
+
+    def test_offline_data_lists_only_own_items(self):
+        other = User.objects.create_user("other", password="pass12345!")
+        services.ensure_default_accounts(other)
+        data = self.client.get("/transactions/offline-data/").json()
+        self.assertEqual(data["user"], self.user.pk)
+        own = {a.pk for a in Account.objects.filter(user=self.user)}
+        self.assertEqual({a["id"] for a in data["accounts"]}, own)
+
+
+class DailyReminderTests(TestCase):
+    SUB = {"endpoint": "https://push.example.com/abc", "keys": {"p256dh": "pk", "auth": "ak"}}
+
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.force_login(self.user)
+
+    def subscribe(self, time="21:00", sub=None):
+        return self.client.post("/reminder/subscribe/", data={"subscription": sub or self.SUB, "time": time},
+                                content_type="application/json")
+
+    def at(self, hour, minute=0):
+        return timezone.make_aware(dt.datetime.combine(timezone.localdate(), dt.time(hour, minute)))
+
+    def test_subscribe_saves_device_and_setting(self):
+        self.assertEqual(self.subscribe("20:30").status_code, 200)
+        p = Profile.objects.get(user=self.user)
+        self.assertTrue(p.daily_reminder)
+        self.assertEqual(p.reminder_time, dt.time(20, 30))
+        self.assertEqual(PushSubscription.objects.get(user=self.user).endpoint, self.SUB["endpoint"])
+
+    def test_subscribe_rejects_bad_input(self):
+        self.assertEqual(self.subscribe("25:99").status_code, 400)
+        self.assertEqual(self.subscribe(sub={"endpoint": "http://insecure", "keys": {"p256dh": "a", "auth": "b"}}).status_code, 400)
+        self.assertEqual(PushSubscription.objects.count(), 0)
+
+    def test_unsubscribe_turns_off_and_forgets_device(self):
+        self.subscribe()
+        self.client.post("/reminder/unsubscribe/", data={"endpoint": self.SUB["endpoint"]}, content_type="application/json")
+        self.assertFalse(Profile.objects.get(user=self.user).daily_reminder)
+        self.assertEqual(PushSubscription.objects.count(), 0)
+
+    def test_requires_login(self):
+        self.client.logout()
+        self.assertEqual(self.subscribe().status_code, 401)
+
+    def test_cron_needs_the_secret(self):
+        with override_settings(CRON_SECRET="s3cret"):
+            self.assertEqual(self.client.get("/cron/reminders/").status_code, 404)
+            self.assertEqual(self.client.get("/cron/reminders/", headers={"Authorization": "Bearer nope"}).status_code, 404)
+            self.assertEqual(self.client.get("/cron/reminders/", headers={"Authorization": "Bearer s3cret"}).status_code, 200)
+        with override_settings(CRON_SECRET=""):
+            self.assertEqual(self.client.get("/cron/reminders/", headers={"Authorization": "Bearer "}).status_code, 404)
+
+    def due_profile(self, time=dt.time(9, 0)):
+        PushSubscription.objects.create(user=self.user, **{"endpoint": self.SUB["endpoint"], "p256dh": "pk", "auth": "ak"})
+        Profile.objects.update_or_create(user=self.user, defaults={"daily_reminder": True, "reminder_time": time, "last_reminded": None})
+
+    @mock.patch("tracker.reminders.webpush")
+    def test_sends_once_per_day_when_due(self, push):
+        self.due_profile()
+        self.assertEqual(reminders.send_due(self.at(9, 10))["sent"], 1)
+        self.assertEqual(reminders.send_due(self.at(9, 25))["sent"], 0)   # already reminded today
+        self.assertEqual(push.call_count, 1)
+        self.assertIn("আজকের খরচ লিখেছেন?", push.call_args.kwargs["data"])
+
+    @mock.patch("tracker.reminders.webpush")
+    def test_not_before_the_time_and_not_when_very_late(self, push):
+        self.due_profile(dt.time(9, 0))
+        self.assertEqual(reminders.send_due(self.at(8, 45))["sent"], 0)
+        self.assertEqual(reminders.send_due(self.at(12, 30))["skipped"], 1)  # over 3 hours late
+        push.assert_not_called()
+
+    @mock.patch("tracker.reminders.webpush")
+    def test_skipped_when_something_was_recorded_today(self, push):
+        self.due_profile()
+        Transaction.objects.create(user=self.user, type="expense", amount=10, date=timezone.localdate())
+        self.assertEqual(reminders.send_due(self.at(9, 10))["skipped"], 1)
+        push.assert_not_called()
+
+    def test_expired_device_is_removed_and_failures_retry(self):
+        self.due_profile()
+        gone = reminders.WebPushException("gone", response=mock.Mock(status_code=410))
+        with mock.patch("tracker.reminders.webpush", side_effect=gone):
+            self.assertEqual(reminders.send_due(self.at(9, 10))["removed"], 1)
+        self.assertEqual(PushSubscription.objects.count(), 0)
+        self.due_profile()
+        down = reminders.WebPushException("down", response=mock.Mock(status_code=503))
+        with mock.patch("tracker.reminders.webpush", side_effect=down):
+            reminders.send_due(self.at(9, 10))
+        self.assertIsNone(Profile.objects.get(user=self.user).last_reminded)   # will try again on the next run
+
+    def test_settings_card_only_when_keys_are_set(self):
+        self.assertNotContains(self.client.get("/settings/"), "daily-reminder")
+        with override_settings(VAPID_PUBLIC_KEY="pub", VAPID_PRIVATE_KEY="priv"):
+            self.assertContains(self.client.get("/settings/"), 'id="daily-reminder"')

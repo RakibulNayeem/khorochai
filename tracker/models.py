@@ -107,6 +107,8 @@ class Transaction(models.Model):
     date = models.DateField(default=timezone.localdate)
     raw_text = models.TextField(blank=True, help_text="Original message typed by the user (AI entries).")
     source = models.CharField(max_length=10, choices=SOURCE_CHOICES, default="manual")
+    # Made by the browser for entries typed offline, so a retried sync can't create the same entry twice.
+    client_id = models.UUIDField(null=True, blank=True, editable=False)
     # Set when this expense is the repayment of a borrowed debt; it is kept in step with that record.
     debt_record = models.OneToOneField("DebtRecord", on_delete=models.CASCADE, null=True, blank=True, related_name="expense")
     created_at = models.DateTimeField(auto_now_add=True)
@@ -114,6 +116,7 @@ class Transaction(models.Model):
     class Meta:
         ordering = ["-date", "-created_at"]
         indexes = [models.Index(fields=["user", "date"])]
+        constraints = [models.UniqueConstraint(fields=["user", "client_id"], name="unique_transaction_client_id")]
 
     is_transfer = False
 
@@ -176,9 +179,22 @@ class Profile(models.Model):
     """Per-user settings that must follow the user to every device."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile")
     currency = models.CharField(max_length=3, default="BDT")
+    # Daily "did you record today's khoroch?" push reminder. The time is Bangladesh time (settings.TIME_ZONE).
+    daily_reminder = models.BooleanField(default=False)
+    reminder_time = models.TimeField(default=dt.time(21, 0))
+    last_reminded = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.user} ({self.currency})"
+
+
+class PushSubscription(models.Model):
+    """One browser/device that agreed to receive push notifications."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="push_subscriptions")
+    endpoint = models.TextField(unique=True)
+    p256dh = models.CharField(max_length=255)
+    auth = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 # ---------------------------------------------------------------- debts (money lent to / borrowed from people)

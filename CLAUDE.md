@@ -39,6 +39,10 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "à¦†à
   - Visitors: today's visitors (logged in and guests), users seen in 7 and 30 days, time on site, 30-day charts, and each user's last seen. `static/js/activity.js` posts to `/activity/`; `DailyActivity` keeps one row per person per day. Staff aren't counted, and it's off in `DEBUG` unless `TRACK_ACTIVITY=1`.
   - It shows counts only, never users' amounts or what they typed. Only a superuser can act on staff accounts, and nobody on their own.
   - Staff-only, so its text is English and not translated. Non-staff get a 404.
+- **PWA:** installable (`/manifest.webmanifest`, icons in `static/img/pwa/`, install buttons in the navbar and landing page).
+  - Service worker `templates/sw.js`, served at `/sw.js`. It caches only static and CDN files, **never pages or API responses** (they are per-user). `BUILD_ID` (from `VERCEL_GIT_COMMIT_SHA`) is stamped into it, so a deploy shows the "New version available" toast.
+  - Offline: a failed page load shows the public `/offline/` page, which has an expense/income form. Entries wait in IndexedDB (`static/js/offline-store.js`, uses `idb`) and are sent to `/transactions/sync/`; `Transaction.client_id` stops duplicates. Logging out removes the saved categories/accounts but keeps unsent entries.
+  - Daily reminder (Web Push): Settings toggle + time (Dhaka). `PushSubscription` and `Profile.daily_reminder/reminder_time/last_reminded`. `tracker/reminders.py` sends it; an outside scheduler (cron-job.org, every 15 min) calls `/cron/reminders/` with `Authorization: Bearer $CRON_SECRET`. Env: `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` (`python manage.py generate_vapid_keys`), `CRON_SECRET`. The Settings card is hidden until the VAPID keys are set.
 - **Analytics:** Microsoft Clarity (project `z57gryr8d2`), off when `DEBUG` is on. Logged-in pages mask all text. Never loaded on `/admin/` or for staff accounts.
 - **Auth:** django-allauth, mounted at `/auth/` because `/accounts/` is the money-accounts page.
   - Email-only login.

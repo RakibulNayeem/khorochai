@@ -1,16 +1,21 @@
 import datetime as dt
 import csv
+import hmac
+import json
 import logging
 import re
+import uuid
+from functools import wraps
 
 from django.conf import settings as django_settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.db import transaction as db_transaction
+from django.db import IntegrityError, transaction as db_transaction
 from django.db.models import Q
-from django.http import HttpResponse, JsonResponse
+from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -18,16 +23,26 @@ from django.utils.translation import gettext as _, ngettext
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
-from . import llm, services
+from . import llm, reminders, services
 from .context_processors import THEME_COOKIE, THEMES
 from .forms import AccountForm, CategoryForm, DebtForm, DebtRecordForm, ProfileForm, TransactionForm, TransferForm
 from .providers import KIND_DEFAULTS, picker_data
 from .models import (
     BALANCE, BORROW, BORROWED, BUDGET, COLLECT, DEBT, DEBT_AI_TYPES, EXPENSE, INCOME, LEND, LENT, REPAY, TRANSFER,
-    Account, Category, Debt, DebtRecord, Transaction, Transfer,
+    Account, Category, Debt, DebtRecord, Profile, PushSubscription, Transaction, Transfer,
 )
 from .currency import current as current_currency
 from .templatetags.money import money
+
+
+def _json_auth(view):
+    """Like login_required, but answers a fetch() with 401 instead of redirecting it to the login page."""
+    @wraps(view)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return JsonResponse({"error": "login"}, status=401)
+        return view(request, *args, **kwargs)
+    return wrapper
 
 logger = logging.getLogger(__name__)
 
@@ -61,7 +76,63 @@ def preferences(request):
         if lang in dict(django_settings.LANGUAGES):
             response.set_cookie(django_settings.LANGUAGE_COOKIE_NAME, lang, max_age=year, samesite="Lax")
         return response
-    return render(request, "tracker/preferences.html", {"username_form": username_form})
+    context = {"username_form": username_form}
+    if request.user.is_authenticated and django_settings.VAPID_PUBLIC_KEY and django_settings.VAPID_PRIVATE_KEY:
+        profile = Profile.objects.filter(user=request.user).first()
+        context["reminder"] = {
+            "public_key": django_settings.VAPID_PUBLIC_KEY,
+            "enabled": bool(profile and profile.daily_reminder),
+            "time": (profile.reminder_time if profile else dt.time(21, 0)).strftime("%H:%M"),
+        }
+    return render(request, "tracker/preferences.html", context)
+
+
+# --------------------------------------------------------------------------- daily reminder (Web Push)
+
+@_json_auth
+@require_POST
+def reminder_subscribe(request):
+    """Turn the daily reminder on (or change its time) and remember this device's push subscription."""
+    try:
+        data = json.loads(request.body or b"{}")
+        sub = data["subscription"]
+        endpoint, keys = sub["endpoint"], sub["keys"]
+        p256dh, auth = keys["p256dh"], keys["auth"]
+        time = dt.datetime.strptime(data["time"], "%H:%M").time()
+    except (ValueError, KeyError, TypeError):
+        return JsonResponse({"error": "bad request"}, status=400)
+    if not (isinstance(endpoint, str) and endpoint.startswith("https://") and isinstance(p256dh, str) and isinstance(auth, str)
+            and len(endpoint) <= 2000 and len(p256dh) <= 255 and len(auth) <= 255):
+        return JsonResponse({"error": "bad request"}, status=400)
+    PushSubscription.objects.update_or_create(
+        endpoint=endpoint, defaults={"user": request.user, "p256dh": p256dh, "auth": auth})
+    now = timezone.localtime()
+    # A time that has already passed today waits until tomorrow, so turning it on at 10 pm doesn't ping at once.
+    Profile.objects.update_or_create(user=request.user, defaults={
+        "daily_reminder": True, "reminder_time": time, "last_reminded": now.date() if time <= now.time() else None})
+    return JsonResponse({"ok": True})
+
+
+@_json_auth
+@require_POST
+def reminder_unsubscribe(request):
+    """Turn the daily reminder off and forget this device."""
+    try:
+        endpoint = json.loads(request.body or b"{}").get("endpoint")
+    except (ValueError, AttributeError):
+        return JsonResponse({"error": "bad request"}, status=400)
+    if isinstance(endpoint, str):
+        PushSubscription.objects.filter(user=request.user, endpoint=endpoint).delete()
+    Profile.objects.update_or_create(user=request.user, defaults={"daily_reminder": False})
+    return JsonResponse({"ok": True})
+
+
+def cron_reminders(request):
+    """Called every ~15 minutes by an outside scheduler (cron-job.org) with `Authorization: Bearer <CRON_SECRET>`."""
+    secret = django_settings.CRON_SECRET
+    if not secret or not hmac.compare_digest(request.headers.get("Authorization", ""), f"Bearer {secret}"):
+        raise Http404
+    return JsonResponse(reminders.send_due())
 
 
 # --------------------------------------------------------------------------- help & contact
@@ -122,6 +193,32 @@ def landing(request):
     shot_lang = "bn" if request.LANGUAGE_CODE == "bn" else "en"  # screenshots exist in these two
     return render(request, "tracker/landing.html", {"demo_rows": demo_rows, "steps": steps, "features": features,
                                                    "shot_lang": shot_lang})
+
+
+def manifest(request):
+    """Web app manifest, so KhorochAi can be installed to the home screen."""
+    icon = lambda name, size, purpose="any": {"src": static(f"img/pwa/{name}"), "sizes": f"{size}x{size}",
+                                              "type": "image/png", "purpose": purpose}
+    data = {
+        "name": "KhorochAi", "short_name": "KhorochAi", "id": "/", "start_url": "/", "scope": "/",
+        "display": "standalone", "orientation": "portrait",
+        "theme_color": "#1e2a44", "background_color": "#f5f5f7",
+        "icons": [icon("icon-192.png", 192), icon("icon-512.png", 512), icon("icon-maskable-512.png", 512, "maskable")],
+    }
+    return JsonResponse(data, content_type="application/manifest+json")
+
+
+def service_worker(request):
+    """The service worker, served from the site root so it controls every page."""
+    response = render(request, "sw.js", {"build_id": django_settings.BUILD_ID}, content_type="text/javascript")
+    response["Service-Worker-Allowed"] = "/"
+    response["Cache-Control"] = "no-cache"
+    return response
+
+
+def offline(request):
+    """Public fallback page for when a page can't load without internet (never shows user data)."""
+    return render(request, "tracker/offline.html")
 
 
 def dashboard(request):
@@ -555,6 +652,64 @@ def transaction_create(request):
         messages.success(request, _("Transaction added."))
         return redirect("dashboard")
     return render(request, "tracker/form.html", {"form": form, "title": _("Add transaction")})
+
+
+MAX_SYNC_ENTRIES = 50
+
+
+@_json_auth
+def offline_data(request):
+    """What the offline entry form needs: the user's categories and accounts, saved in the browser while online."""
+    user = request.user
+    services.ensure_default_categories(user)
+    services.ensure_default_accounts(user)
+    default = services.default_account(user)
+    return JsonResponse({
+        "user": user.pk,
+        "categories": [{"id": c.pk, "type": c.type, "label": str(c)} for c in Category.objects.filter(user=user)],
+        "accounts": [{"id": a.pk, "label": a.label} for a in services.sorted_accounts(user)],
+        "default_account": default.pk if default else None,
+    })
+
+
+@_json_auth
+@require_POST
+def transaction_sync(request):
+    """Save entries that were typed offline. Safe to repeat: an entry's client_id decides whether it already exists."""
+    try:
+        entries = json.loads(request.body or b"{}").get("entries", [])
+    except (ValueError, AttributeError):
+        return JsonResponse({"error": "bad request"}, status=400)
+    if not isinstance(entries, list) or len(entries) > MAX_SYNC_ENTRIES:
+        return JsonResponse({"error": "bad request"}, status=400)
+    results = []
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        cid = entry.get("client_id")
+        try:
+            cid = str(uuid.UUID(str(cid)))
+        except ValueError:
+            results.append({"client_id": str(cid), "status": "invalid", "error": "bad id"})
+            continue
+        if Transaction.objects.filter(user=request.user, client_id=cid).exists():
+            results.append({"client_id": cid, "status": "synced"})
+            continue
+        form = TransactionForm({k: entry.get(k, "") for k in ("type", "amount", "category", "account", "note", "date")},
+                               user=request.user)
+        if not form.is_valid():
+            error = "; ".join(m for errs in form.errors.values() for m in errs)
+            results.append({"client_id": cid, "status": "invalid", "error": error})
+            continue
+        t = form.save(commit=False)
+        t.user, t.source, t.client_id = request.user, "manual", cid
+        try:
+            with db_transaction.atomic():
+                t.save()
+        except IntegrityError:  # the same entry arrived twice at once
+            pass
+        results.append({"client_id": cid, "status": "synced"})
+    return JsonResponse({"results": results})
 
 
 @login_required
