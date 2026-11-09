@@ -199,6 +199,9 @@ if not DEBUG:
 # ---------------------------------------------------------------- AI settings
 # Provider order: the first one is tried first, the next is the fallback.
 LLM_PROVIDERS = env_list("LLM_PROVIDERS", "gemini,groq")
+# Identifies this deploy: it is stamped into /sw.js, so the browser notices a new version and offers a refresh.
+BUILD_ID = (os.environ.get("VERCEL_GIT_COMMIT_SHA") or os.environ.get("VERCEL_DEPLOYMENT_ID") or "dev")[:12]
+
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 # "-latest" follows Google's current Flash-Lite model, so it never disappears when an old version is retired
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-lite-latest")

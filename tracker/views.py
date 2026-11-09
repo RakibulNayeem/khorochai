@@ -138,6 +138,19 @@ def manifest(request):
     return JsonResponse(data, content_type="application/manifest+json")
 
 
+def service_worker(request):
+    """The service worker, served from the site root so it controls every page."""
+    response = render(request, "sw.js", {"build_id": django_settings.BUILD_ID}, content_type="text/javascript")
+    response["Service-Worker-Allowed"] = "/"
+    response["Cache-Control"] = "no-cache"
+    return response
+
+
+def offline(request):
+    """Public fallback page for when a page can't load without internet (never shows user data)."""
+    return render(request, "tracker/offline.html")
+
+
 def dashboard(request):
     if not request.user.is_authenticated:
         return landing(request)

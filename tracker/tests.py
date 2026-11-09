@@ -1278,3 +1278,17 @@ class PwaTests(TestCase):
         html = self.client.get("/").content.decode()
         self.assertIn('rel="manifest"', html)
         self.assertEqual(html.count("data-pwa-install"), 2)  # navbar + landing hero
+
+    def test_service_worker_served_from_root(self):
+        r = self.client.get("/sw.js")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Service-Worker-Allowed"], "/")
+        self.assertIn("text/javascript", r["Content-Type"])
+        body = r.content.decode()
+        self.assertIn("/offline/", body)
+        self.assertNotIn("{%", body)
+
+    def test_offline_page_is_public_and_has_no_user_data(self):
+        r = self.client.get("/offline/")
+        self.assertEqual(r.status_code, 200)
+        self.assertContains(r, "KhorochAi")

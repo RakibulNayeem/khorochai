@@ -53,6 +53,7 @@
 </head>
 {% comment %}Logged-in pages show amounts, names and debts: Clarity masks all their text, clicks and scrolls still count.{% endcomment %}
 <body{% if clarity_id and user.is_authenticated %} data-clarity-mask="true"{% endif %}>
+<div id="offline-banner" class="offline-banner" role="status" hidden>{% translate "You're offline — entries will sync when you're back online." %}</div>
 {% with url=request.resolver_match.url_name %}
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
@@ -165,9 +166,10 @@
   <span>{% translate "To install KhorochAi: tap Share, then Add to Home Screen." %}</span>
   <button type="button" class="btn-close" aria-label="{% translate 'Close' %}"></button>
 </div>
+<script src="{% static 'js/pwa.js' %}" defer></script>
 <script src="{% static 'js/pwa-install.js' %}" defer></script>
 {% block scripts %}{% endblock %}
-{% if show_bell %}<script src="{% static 'js/reminders.js' %}" data-sw="{% static 'js/sw.js' %}" defer></script>{% endif %}
+{% if show_bell %}<script src="{% static 'js/reminders.js' %}" defer></script>{% endif %}
 {% if track_activity %}<script src="{% static 'js/activity.js' %}" data-url="{% url 'activity_ping' %}" defer></script>{% endif %}
 </body>
 </html>

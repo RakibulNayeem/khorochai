@@ -1,7 +1,6 @@
 // Debt reminders as real notifications on this device (phone or computer), once the user allows them.
 // Each reminder is shown once a day, when a page of the site is opened. The bell menu always lists them.
 (function () {
-  const me = document.currentScript || document.querySelector('script[data-sw]');
   const dataEl = document.getElementById('reminder-data');
   const button = document.getElementById('notify-on');
   if (!dataEl || !('Notification' in window)) return;
@@ -16,16 +15,8 @@
   function registration() {
     // Android only shows notifications through a service worker; desktop browsers can use either.
     if (!('serviceWorker' in navigator)) return Promise.resolve(null);
-    // The worker lives under /static/js/, outside the pages' scope, so serviceWorker.ready never resolves here:
-    // wait for this registration's own worker to become active instead.
-    return navigator.serviceWorker.register(me.dataset.sw).then((reg) => new Promise((resolve) => {
-      const worker = reg.installing || reg.waiting;
-      if (reg.active || !worker) return resolve(reg.active ? reg : null);
-      worker.addEventListener('statechange', () => {
-        if (worker.state === 'activated') resolve(reg);
-        if (worker.state === 'redundant') resolve(null);
-      });
-    })).catch(() => null);
+    // The site's worker (/sw.js, registered by pwa.js on every page) controls the whole site.
+    return navigator.serviceWorker.ready.catch(() => null);
   }
 
   function showDue() {

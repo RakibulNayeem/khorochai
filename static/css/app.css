@@ -466,3 +466,6 @@ html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastalee
 }
 .pwa-ios-hint[hidden] { display: none; }
 .pwa-ios-hint .btn-close { filter: invert(1); }
+
+.offline-banner { position: sticky; top: 0; z-index: 1100; padding: .4rem 1rem; text-align: center; font-size: .875rem; background: #f2a900; color: #1e2a44; }
+.offline-banner[hidden] { display: none; }
