@@ -458,14 +458,14 @@ html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastalee
 
 /* ---------------------------------------------------------------- PWA install */
 .nav-install { white-space: nowrap; }
-.pwa-ios-hint {
+.pwa-toast {
   position: fixed; left: 12px; right: 12px; bottom: 16px; z-index: 1080;
   display: flex; align-items: center; justify-content: space-between; gap: .75rem;
   padding: .75rem 1rem; border-radius: 12px; background: var(--primary); color: var(--bg);
   box-shadow: 0 8px 24px rgba(0, 0, 0, .25); font-size: .9rem;
 }
-.pwa-ios-hint[hidden] { display: none; }
-.pwa-ios-hint .btn-close { filter: invert(1); }
+.pwa-toast[hidden] { display: none; }
+.pwa-toast .btn-close { filter: invert(1); }
 
 .offline-banner { position: sticky; top: 0; z-index: 1100; padding: .4rem 1rem; text-align: center; font-size: .875rem; background: #f2a900; color: #1e2a44; }
 .offline-banner[hidden] { display: none; }

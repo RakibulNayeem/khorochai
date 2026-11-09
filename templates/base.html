@@ -162,7 +162,12 @@
     setTimeout(dismiss, 6000);
   });
 </script>
-<div id="pwa-ios-hint" class="pwa-ios-hint" role="status" hidden>
+<div id="update-toast" class="pwa-toast" role="status" hidden>
+  <span>{% translate "New version available" %}</span>
+  <button type="button" class="btn btn-sm btn-light ms-auto" data-refresh>{% translate "Refresh" %}</button>
+  <button type="button" class="btn-close" aria-label="{% translate 'Close' %}"></button>
+</div>
+<div id="pwa-ios-hint" class="pwa-toast" role="status" hidden>
   <span>{% translate "To install KhorochAi: tap Share, then Add to Home Screen." %}</span>
   <button type="button" class="btn-close" aria-label="{% translate 'Close' %}"></button>
 </div>
