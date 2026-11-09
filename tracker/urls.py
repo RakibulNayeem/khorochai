@@ -43,6 +43,7 @@ urlpatterns = [
     path("reminder/subscribe/", views.reminder_subscribe, name="reminder_subscribe"),
     path("reminder/unsubscribe/", views.reminder_unsubscribe, name="reminder_unsubscribe"),
     path("cron/reminders/", views.cron_reminders, name="cron_reminders"),
+    path(".well-known/assetlinks.json", views.assetlinks, name="assetlinks"),
     path("sw.js", views.service_worker, name="service_worker"),
     path("offline/", views.offline, name="offline"),
     path("activity/", views.activity_ping, name="activity_ping"),

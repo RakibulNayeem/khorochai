@@ -202,6 +202,11 @@ LLM_PROVIDERS = env_list("LLM_PROVIDERS", "gemini,groq")
 # Identifies this deploy: it is stamped into /sw.js, so the browser notices a new version and offers a refresh.
 BUILD_ID = (os.environ.get("VERCEL_GIT_COMMIT_SHA") or os.environ.get("VERCEL_DEPLOYMENT_ID") or "dev")[:12]
 
+# The Android app (android/, a Trusted Web Activity) and the public fingerprint of the key that signs it. The site publishes
+# them at /.well-known/assetlinks.json; that is what lets the app open KhorochAi full-screen without a browser address bar.
+ANDROID_APP_PACKAGE = "app.vercel.khorochai.twa"
+ANDROID_APP_SHA256 = "A0:B6:CF:53:DD:77:5B:DA:1A:85:DA:01:AE:80:E4:BC:1D:94:62:C3:99:5E:82:CD:CD:58:7E:07:40:2B:34:6E"
+
 # Daily reminder (Web Push). Create the keys with `python manage.py generate_vapid_keys`.
 # The reminder section in Settings stays hidden until both VAPID keys are set. CRON_SECRET guards /cron/reminders/.
 VAPID_PUBLIC_KEY = os.environ.get("VAPID_PUBLIC_KEY", "")

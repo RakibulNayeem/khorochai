@@ -1429,3 +1429,14 @@ class DailyReminderTests(TestCase):
         self.assertNotContains(self.client.get("/settings/"), "daily-reminder")
         with override_settings(VAPID_PUBLIC_KEY="pub", VAPID_PRIVATE_KEY="priv"):
             self.assertContains(self.client.get("/settings/"), 'id="daily-reminder"')
+
+
+class AndroidAppTests(TestCase):
+    def test_assetlinks_names_the_app_and_its_key(self):
+        r = self.client.get("/.well-known/assetlinks.json")
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r["Content-Type"], "application/json")
+        target = r.json()[0]["target"]
+        self.assertEqual(target["namespace"], "android_app")
+        self.assertEqual(target["package_name"], "app.vercel.khorochai.twa")
+        self.assertRegex(target["sha256_cert_fingerprints"][0], r"^([0-9A-F]{2}:){31}[0-9A-F]{2}$")

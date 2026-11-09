@@ -208,6 +208,15 @@ def manifest(request):
     return JsonResponse(data, content_type="application/manifest+json")
 
 
+def assetlinks(request):
+    """Digital Asset Links: tells Android that the KhorochAi app may open this site full-screen."""
+    return JsonResponse([{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {"namespace": "android_app", "package_name": django_settings.ANDROID_APP_PACKAGE,
+                   "sha256_cert_fingerprints": [django_settings.ANDROID_APP_SHA256]},
+    }], safe=False)
+
+
 def service_worker(request):
     """The service worker, served from the site root so it controls every page."""
     response = render(request, "sw.js", {"build_id": django_settings.BUILD_ID}, content_type="text/javascript")
