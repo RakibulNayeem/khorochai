@@ -12,6 +12,7 @@ const PRECACHE = [
   '{% static "css/app.css" %}',
   '{% static "js/offline.js" %}',
   '{% static "js/offline-store.js" %}',
+  '{% static "js/vendor/idb.umd.js" %}',
   '{% static "img/pwa/icon-192.png" %}',
   '{% static "img/logo.svg" %}',
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',

@@ -22,6 +22,34 @@
     <p class="text-secondary mb-3">{% translate "You're offline — entries will sync when you're back online." %}</p>
     <button type="button" class="btn btn-outline-secondary" onclick="location.reload()">{% translate "Try again" %}</button>
   </div>
+
+  <p id="offline-synced" class="alert alert-success" hidden>{% translate "Your entries are synced." %}</p>
+  <p id="offline-unavailable" class="text-secondary text-center small" hidden>{% translate "To add entries offline, open KhorochAi once while you're online." %}</p>
+  <form id="offline-form" class="card card-body mb-3" hidden>
+    <h2 class="h6 mb-3">{% translate "Add transaction" %}</h2>
+    <div class="btn-group mb-3" role="group">
+      <input type="radio" class="btn-check" name="type" id="t-exp" value="expense" checked>
+      <label class="btn btn-outline-secondary" for="t-exp">{% translate "Expense" %}</label>
+      <input type="radio" class="btn-check" name="type" id="t-inc" value="income">
+      <label class="btn btn-outline-secondary" for="t-inc">{% translate "Income" %}</label>
+    </div>
+    <label class="form-label" for="o-amount">{% translate "Amount" %}</label>
+    <input class="form-control mb-3" id="o-amount" name="amount" type="number" inputmode="decimal" step="0.01" min="0.01" required>
+    <label class="form-label" for="o-cat">{% translate "Category" %}</label>
+    <select class="form-select mb-3" id="o-cat" name="category"></select>
+    <label class="form-label" for="o-acc">{% translate "Account" %}</label>
+    <select class="form-select mb-3" id="o-acc" name="account"></select>
+    <label class="form-label" for="o-note">{% translate "Note" %}</label>
+    <input class="form-control mb-3" id="o-note" name="note" maxlength="255" data-keep-digits>
+    <label class="form-label" for="o-date">{% translate "Date" %}</label>
+    <input class="form-control mb-3" id="o-date" name="date" type="date" required>
+    <button class="btn btn-brand" type="submit">{% translate "Save on this device" %}</button>
+    <p id="offline-saved" class="small text-success mt-2 mb-0" hidden>{% translate "Saved. It will sync when you're back online." %}</p>
+  </form>
+  {% include "tracker/_pending_list.html" %}
 </main>
+<script src="{% static 'js/vendor/idb.umd.js' %}"></script>
+<script src="{% static 'js/offline-store.js' %}"></script>
+<script src="{% static 'js/offline.js' %}"></script>
 </body>
 </html>

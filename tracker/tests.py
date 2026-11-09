@@ -1292,3 +1292,52 @@ class PwaTests(TestCase):
         r = self.client.get("/offline/")
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, "KhorochAi")
+
+
+class OfflineSyncTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.force_login(self.user)
+        services.ensure_default_categories(self.user)
+        services.ensure_default_accounts(self.user)
+        self.cat = Category.objects.filter(user=self.user, type="expense").first()
+        self.entry = {"client_id": "6f1c2c1e-3a53-4d8e-9a43-0d6a5c1b7e11", "type": "expense", "amount": "120.50",
+                      "category": self.cat.pk, "account": services.default_account(self.user).pk,
+                      "note": "tea", "date": "2026-11-09"}
+
+    def sync(self, *entries):
+        return self.client.post("/transactions/sync/", data={"entries": list(entries)}, content_type="application/json")
+
+    def test_sync_saves_entry_and_is_safe_to_repeat(self):
+        for _ in range(2):
+            r = self.sync(self.entry)
+            self.assertEqual(r.json()["results"], [{"client_id": self.entry["client_id"], "status": "synced"}])
+        self.assertEqual(Transaction.objects.filter(user=self.user).count(), 1)
+        t = Transaction.objects.get(user=self.user)
+        self.assertEqual((str(t.amount), t.note, str(t.client_id)), ("120.50", "tea", self.entry["client_id"]))
+
+    def test_invalid_entry_is_reported_not_saved(self):
+        bad = dict(self.entry, amount="-5")
+        self.assertEqual(self.sync(bad).json()["results"][0]["status"], "invalid")
+        self.assertEqual(Transaction.objects.count(), 0)
+
+    def test_cannot_use_another_users_account(self):
+        other = User.objects.create_user("other", password="pass12345!")
+        services.ensure_default_accounts(other)
+        theirs = services.default_account(other)
+        self.assertEqual(self.sync(dict(self.entry, account=theirs.pk)).json()["results"][0]["status"], "invalid")
+
+    def test_requires_login_and_post(self):
+        self.client.logout()
+        self.assertEqual(self.sync(self.entry).status_code, 401)
+        self.assertEqual(self.client.get("/transactions/offline-data/").status_code, 401)
+        self.client.force_login(self.user)
+        self.assertEqual(self.client.get("/transactions/sync/").status_code, 405)
+
+    def test_offline_data_lists_only_own_items(self):
+        other = User.objects.create_user("other", password="pass12345!")
+        services.ensure_default_accounts(other)
+        data = self.client.get("/transactions/offline-data/").json()
+        self.assertEqual(data["user"], self.user.pk)
+        own = {a.pk for a in Account.objects.filter(user=self.user)}
+        self.assertEqual({a["id"] for a in data["accounts"]}, own)

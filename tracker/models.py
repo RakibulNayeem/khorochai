@@ -107,6 +107,8 @@ class Transaction(models.Model):
     date = models.DateField(default=timezone.localdate)
     raw_text = models.TextField(blank=True, help_text="Original message typed by the user (AI entries).")
     source = models.CharField(max_length=10, choices=SOURCE_CHOICES, default="manual")
+    # Made by the browser for entries typed offline, so a retried sync can't create the same entry twice.
+    client_id = models.UUIDField(null=True, blank=True, editable=False)
     # Set when this expense is the repayment of a borrowed debt; it is kept in step with that record.
     debt_record = models.OneToOneField("DebtRecord", on_delete=models.CASCADE, null=True, blank=True, related_name="expense")
     created_at = models.DateTimeField(auto_now_add=True)
@@ -114,6 +116,7 @@ class Transaction(models.Model):
     class Meta:
         ordering = ["-date", "-created_at"]
         indexes = [models.Index(fields=["user", "date"])]
+        constraints = [models.UniqueConstraint(fields=["user", "client_id"], name="unique_transaction_client_id")]
 
     is_transfer = False
 

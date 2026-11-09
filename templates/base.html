@@ -168,6 +168,8 @@
 </div>
 <script src="{% static 'js/pwa.js' %}" defer></script>
 <script src="{% static 'js/pwa-install.js' %}" defer></script>
+<script src="{% static 'js/vendor/idb.umd.js' %}" defer></script>
+<script src="{% static 'js/offline-store.js' %}" data-auth="{{ user.is_authenticated|yesno:'1,0' }}" defer></script>
 {% block scripts %}{% endblock %}
 {% if show_bell %}<script src="{% static 'js/reminders.js' %}" defer></script>{% endif %}
 {% if track_activity %}<script src="{% static 'js/activity.js' %}" data-url="{% url 'activity_ping' %}" defer></script>{% endif %}
