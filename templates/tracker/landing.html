@@ -90,6 +90,19 @@
   </div>
 </section>
 
+<!-- Install the app -->
+<section class="lp-section">
+  <div class="card p-4 p-md-5 text-center">
+    <img src="{% static 'img/logo-192.png' %}" alt="" width="56" height="56" class="mx-auto mb-3">
+    <h2 class="lp-h2 mb-2">{% translate "Get the app on your phone" %}</h2>
+    <p class="text-muted mb-4 mx-auto lp-narrow">{% translate "Add KhorochAi to your home screen on Android or iPhone. It opens full screen like any other app, with nothing to download from a store." %}</p>
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+      {% include "tracker/_install_button.html" %}
+      <a class="btn btn-outline-secondary btn-lg px-4" href="{% url 'install' %}">{% translate "How to install on Android or iPhone" %}</a>
+    </div>
+  </div>
+</section>
+
 <!-- Final call to action -->
 <section class="lp-section">
   <div class="card lp-cta text-center p-4 p-md-5">

@@ -1,3 +1,4 @@
+import json
 import re
 import datetime as dt
 from decimal import Decimal
@@ -29,6 +30,23 @@ class FlowTests(TestCase):
         r = self.client.get(reverse("dashboard"))
         self.assertEqual(r.status_code, 200)
         self.assertContains(r, "Add with AI")
+
+    def test_app_install_pieces(self):
+        """Manifest, root-scope service worker and install page work without logging in; dashboard links to them."""
+        anon = self.client_class()
+        m = anon.get(reverse("web_manifest"))
+        self.assertEqual(m.status_code, 200)
+        self.assertEqual(m["Content-Type"], "application/manifest+json")
+        data = json.loads(m.content)
+        self.assertEqual(data["display"], "standalone")
+        self.assertTrue({"any", "maskable"} <= {i["purpose"] for i in data["icons"]})
+        sw = anon.get(reverse("service_worker"))
+        self.assertEqual(sw.status_code, 200)
+        self.assertIn("javascript", sw["Content-Type"])
+        self.assertContains(anon.get(reverse("install")), "Add to Home Screen")
+        r = self.client.get(reverse("dashboard"))
+        self.assertContains(r, reverse("install"))
+        self.assertContains(r, 'rel="manifest"')
 
     def test_ai_parse_preview_and_confirm(self):
         fake = {"transactions": [

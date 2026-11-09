@@ -1,0 +1,6 @@
+{% load i18n %}{% comment %}
+The install button. static/js/install.js shows it only when the browser can install the app right now (Android, Chrome
+and Edge on computers), and swaps it for "App installed" once the app is on the device. Elsewhere (iPhone, iPad) it stays hidden.
+{% endcomment %}
+<button type="button" class="btn btn-brand btn-lg px-4" data-install-btn hidden>{% translate "Install the app" %}</button>
+<span class="fw-semibold text-income" data-install-done hidden>✓ {% translate "App installed" %}</span>

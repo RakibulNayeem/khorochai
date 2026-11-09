@@ -1,4 +1,8 @@
-// Service worker for debt reminder notifications: opening one takes you to the debt.
+// Service worker, served from /sw.js so it covers the whole site (and makes the app installable).
+// It shows debt reminder notifications (opening one takes you to the debt).
+// It deliberately caches no pages: they hold people's money data.
+self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('activate', (event) => event.waitUntil(self.clients.claim()));
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   const url = (event.notification.data && event.notification.data.url) || '/';

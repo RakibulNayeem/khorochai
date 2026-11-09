@@ -9,8 +9,10 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import transaction as db_transaction
 from django.db.models import Q
-from django.http import HttpResponse, JsonResponse
+from django.contrib.staticfiles import finders
+from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.templatetags.static import static
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
@@ -87,6 +89,46 @@ def help_page(request):
 
 def about_page(request):
     return render(request, "tracker/about.html")
+
+
+def install_page(request):
+    """How to put KhorochAi on a phone or computer: one-tap install where the browser allows it, steps otherwise."""
+    return render(request, "tracker/install.html")
+
+
+def web_manifest(request):
+    """The app's identity for "Add to Home Screen" / "Install app". Served from the root so its scope is the whole site."""
+    def icon(path, size, purpose):
+        return {"src": static(path), "sizes": f"{size}x{size}", "type": "image/png", "purpose": purpose}
+
+    data = {
+        "id": "/",
+        "name": "KhorochAi",
+        "short_name": "KhorochAi",
+        "description": "Track spending and income by typing or speaking, in English, বাংলা or Banglish.",
+        "start_url": "/?source=pwa",
+        "scope": "/",
+        "display": "standalone",
+        "orientation": "portrait",
+        "background_color": "#1e2a44",
+        "theme_color": "#1e2a44",
+        "icons": [
+            icon("img/logo-192.png", 192, "any"),
+            icon("img/logo-512.png", 512, "any"),
+            icon("img/pwa-icon-512.png", 512, "maskable"),
+        ],
+    }
+    return JsonResponse(data, content_type="application/manifest+json")
+
+
+def service_worker(request):
+    """The service worker must be served from the root to control the whole site (a /static/ copy only covers /static/)."""
+    path = finders.find("js/sw.js")
+    if not path:
+        raise Http404
+    response = FileResponse(open(path, "rb"), content_type="text/javascript")
+    response["Cache-Control"] = "no-cache"
+    return response
 
 
 def privacy_page(request):

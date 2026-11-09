@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{% translate "Get the app" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-lg-10 col-xl-9">
+  <div class="page-hero text-center mb-4">
+    <img src="{% static 'img/logo-192.png' %}" alt="" width="72" height="72" class="mb-3">
+    <h1 class="h2 mb-2">{% translate "Get the KhorochAi app" %}</h1>
+    <p class="text-muted mb-3 mx-auto about-lead">{% translate "Add KhorochAi to your home screen. It opens full screen like any other app, with its own icon, and there is nothing to download from a store." %}</p>
+    {% include "tracker/_install_button.html" %}
+  </div>
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-6">
+      <div class="card p-3 p-md-4 h-100">
+        <h2 class="h5 mb-3">{% translate "Android" %}</h2>
+        <ol class="help-list small mb-3 ps-3">
+          <li>{% translate "Open KhorochAi in Chrome." %}</li>
+          <li>{% translate "Tap “Install the app” above. If you don't see it, tap the ⋮ menu at the top right and choose “Install app” or “Add to Home screen”." %}</li>
+          <li>{% translate "Tap Install. The KhorochAi icon appears on your home screen." %}</li>
+        </ol>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-3 p-md-4 h-100">
+        <h2 class="h5 mb-3">{% translate "iPhone and iPad" %}</h2>
+        <ol class="help-list small mb-3 ps-3">
+          <li>{% translate "Open KhorochAi in Safari." %}</li>
+          <li>{% translate "Tap the Share button (the square with an arrow pointing up)." %}</li>
+          <li>{% translate "Scroll down, tap “Add to Home Screen”, then tap Add." %}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="card p-3 p-md-4">
+    <div class="fw-semibold mb-1">{% translate "On a computer" %}</div>
+    <div class="small text-muted">{% translate "In Chrome or Edge, use “Install the app” above, or the install icon at the right end of the address bar." %}</div>
+  </div>
+</div></div>
+{% endblock %}

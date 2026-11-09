@@ -1666,3 +1666,59 @@ msgstr "%(person)s %(day)s টাকা ফেরত দেবেন।"
 
 msgid "Pay %(person)s back by %(day)s."
 msgstr "%(day)s-এর মধ্যে %(person)s-কে টাকা ফেরত দিন।"
+
+# ---------------------------------------------------------------- install the app
+msgid "Get the app"
+msgstr "অ্যাপ নিন"
+
+msgid "Install the app"
+msgstr "অ্যাপ ইনস্টল করুন"
+
+msgid "App installed"
+msgstr "অ্যাপ ইনস্টল করা হয়েছে"
+
+msgid "Get the KhorochAi app"
+msgstr "খরচAi অ্যাপ নিন"
+
+msgid "Add KhorochAi to your home screen. It opens full screen like any other app, with its own icon, and there is nothing to download from a store."
+msgstr "খরচAi আপনার হোম স্ক্রিনে যোগ করুন। এটি অন্য যেকোনো অ্যাপের মতো পুরো স্ক্রিনে খোলে, নিজস্ব আইকন থাকে, আর কোনো স্টোর থেকে ডাউনলোড করতে হয় না।"
+
+msgid "Android"
+msgstr "অ্যান্ড্রয়েড"
+
+msgid "Open KhorochAi in Chrome."
+msgstr "Chrome-এ খরচAi খুলুন।"
+
+msgid "Tap “Install the app” above. If you don't see it, tap the ⋮ menu at the top right and choose “Install app” or “Add to Home screen”."
+msgstr "উপরের “অ্যাপ ইনস্টল করুন” চাপুন। না দেখলে ডান পাশে উপরের ⋮ মেনু চেপে “Install app” বা “Add to Home screen” বেছে নিন।"
+
+msgid "Tap Install. The KhorochAi icon appears on your home screen."
+msgstr "Install চাপুন। হোম স্ক্রিনে খরচAi-এর আইকন চলে আসবে।"
+
+msgid "iPhone and iPad"
+msgstr "আইফোন ও আইপ্যাড"
+
+msgid "Open KhorochAi in Safari."
+msgstr "Safari-তে খরচAi খুলুন।"
+
+msgid "Tap the Share button (the square with an arrow pointing up)."
+msgstr "Share বোতাম চাপুন (উপরের দিকে তীরসহ চৌকো চিহ্ন)।"
+
+msgid "Scroll down, tap “Add to Home Screen”, then tap Add."
+msgstr "নিচে স্ক্রল করে “Add to Home Screen” চাপুন, তারপর Add চাপুন।"
+
+msgid "On a computer"
+msgstr "কম্পিউটারে"
+
+msgid "In Chrome or Edge, use “Install the app” above, or the install icon at the right end of the address bar."
+msgstr "Chrome বা Edge-এ উপরের “অ্যাপ ইনস্টল করুন” ব্যবহার করুন, অথবা অ্যাড্রেস বারের ডান প্রান্তের ইনস্টল আইকন চাপুন।"
+
+msgid "Get the app on your phone"
+msgstr "আপনার ফোনে অ্যাপ নিন"
+
+msgid "Add KhorochAi to your home screen on Android or iPhone. It opens full screen like any other app, with nothing to download from a store."
+msgstr "অ্যান্ড্রয়েড বা আইফোনের হোম স্ক্রিনে খরচAi যোগ করুন। এটি অন্য যেকোনো অ্যাপের মতো পুরো স্ক্রিনে খোলে, স্টোর থেকে কিছু ডাউনলোড করতে হয় না।"
+
+msgid "How to install on Android or iPhone"
+msgstr "অ্যান্ড্রয়েড বা আইফোনে কীভাবে ইনস্টল করবেন"
+
