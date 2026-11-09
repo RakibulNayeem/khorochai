@@ -82,7 +82,19 @@ self.addEventListener('message', (event) => {
   }
 });
 
-// Debt reminders: opening a notification takes you to the debt.
+// Daily reminder sent from the server (Web Push).
+self.addEventListener('push', (event) => {
+  let data = {};
+  try { data = event.data.json(); } catch (e) { /* no payload */ }
+  event.waitUntil(self.registration.showNotification(data.title || 'KhorochAi', {
+    body: data.body || '',
+    icon: '{% static "img/pwa/icon-192.png" %}',
+    tag: 'daily-reminder',
+    data: { url: data.url || '/' },
+  }));
+});
+
+// Opening a notification (debt reminder or daily reminder) takes you to the debt.
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   const url = (event.notification.data && event.notification.data.url) || '/';

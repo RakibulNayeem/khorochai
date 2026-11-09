@@ -1,5 +1,6 @@
 import datetime as dt
 import csv
+import hmac
 import json
 import logging
 import re
@@ -12,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import IntegrityError, transaction as db_transaction
 from django.db.models import Q
-from django.http import HttpResponse, JsonResponse
+from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.templatetags.static import static
 from django.urls import reverse
@@ -22,16 +23,26 @@ from django.utils.translation import gettext as _, ngettext
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
-from . import llm, services
+from . import llm, reminders, services
 from .context_processors import THEME_COOKIE, THEMES
 from .forms import AccountForm, CategoryForm, DebtForm, DebtRecordForm, ProfileForm, TransactionForm, TransferForm
 from .providers import KIND_DEFAULTS, picker_data
 from .models import (
     BALANCE, BORROW, BORROWED, BUDGET, COLLECT, DEBT, DEBT_AI_TYPES, EXPENSE, INCOME, LEND, LENT, REPAY, TRANSFER,
-    Account, Category, Debt, DebtRecord, Transaction, Transfer,
+    Account, Category, Debt, DebtRecord, Profile, PushSubscription, Transaction, Transfer,
 )
 from .currency import current as current_currency
 from .templatetags.money import money
+
+
+def _json_auth(view):
+    """Like login_required, but answers a fetch() with 401 instead of redirecting it to the login page."""
+    @wraps(view)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return JsonResponse({"error": "login"}, status=401)
+        return view(request, *args, **kwargs)
+    return wrapper
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +76,63 @@ def preferences(request):
         if lang in dict(django_settings.LANGUAGES):
             response.set_cookie(django_settings.LANGUAGE_COOKIE_NAME, lang, max_age=year, samesite="Lax")
         return response
-    return render(request, "tracker/preferences.html", {"username_form": username_form})
+    context = {"username_form": username_form}
+    if request.user.is_authenticated and django_settings.VAPID_PUBLIC_KEY and django_settings.VAPID_PRIVATE_KEY:
+        profile = Profile.objects.filter(user=request.user).first()
+        context["reminder"] = {
+            "public_key": django_settings.VAPID_PUBLIC_KEY,
+            "enabled": bool(profile and profile.daily_reminder),
+            "time": (profile.reminder_time if profile else dt.time(21, 0)).strftime("%H:%M"),
+        }
+    return render(request, "tracker/preferences.html", context)
+
+
+# --------------------------------------------------------------------------- daily reminder (Web Push)
+
+@_json_auth
+@require_POST
+def reminder_subscribe(request):
+    """Turn the daily reminder on (or change its time) and remember this device's push subscription."""
+    try:
+        data = json.loads(request.body or b"{}")
+        sub = data["subscription"]
+        endpoint, keys = sub["endpoint"], sub["keys"]
+        p256dh, auth = keys["p256dh"], keys["auth"]
+        time = dt.datetime.strptime(data["time"], "%H:%M").time()
+    except (ValueError, KeyError, TypeError):
+        return JsonResponse({"error": "bad request"}, status=400)
+    if not (isinstance(endpoint, str) and endpoint.startswith("https://") and isinstance(p256dh, str) and isinstance(auth, str)
+            and len(endpoint) <= 2000 and len(p256dh) <= 255 and len(auth) <= 255):
+        return JsonResponse({"error": "bad request"}, status=400)
+    PushSubscription.objects.update_or_create(
+        endpoint=endpoint, defaults={"user": request.user, "p256dh": p256dh, "auth": auth})
+    now = timezone.localtime()
+    # A time that has already passed today waits until tomorrow, so turning it on at 10 pm doesn't ping at once.
+    Profile.objects.update_or_create(user=request.user, defaults={
+        "daily_reminder": True, "reminder_time": time, "last_reminded": now.date() if time <= now.time() else None})
+    return JsonResponse({"ok": True})
+
+
+@_json_auth
+@require_POST
+def reminder_unsubscribe(request):
+    """Turn the daily reminder off and forget this device."""
+    try:
+        endpoint = json.loads(request.body or b"{}").get("endpoint")
+    except (ValueError, AttributeError):
+        return JsonResponse({"error": "bad request"}, status=400)
+    if isinstance(endpoint, str):
+        PushSubscription.objects.filter(user=request.user, endpoint=endpoint).delete()
+    Profile.objects.update_or_create(user=request.user, defaults={"daily_reminder": False})
+    return JsonResponse({"ok": True})
+
+
+def cron_reminders(request):
+    """Called every ~15 minutes by an outside scheduler (cron-job.org) with `Authorization: Bearer <CRON_SECRET>`."""
+    secret = django_settings.CRON_SECRET
+    if not secret or not hmac.compare_digest(request.headers.get("Authorization", ""), f"Bearer {secret}"):
+        raise Http404
+    return JsonResponse(reminders.send_due())
 
 
 # --------------------------------------------------------------------------- help & contact
@@ -588,16 +655,6 @@ def transaction_create(request):
 
 
 MAX_SYNC_ENTRIES = 50
-
-
-def _json_auth(view):
-    """Like login_required, but answers a fetch() with 401 instead of redirecting it to the login page."""
-    @wraps(view)
-    def wrapper(request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return JsonResponse({"error": "login"}, status=401)
-        return view(request, *args, **kwargs)
-    return wrapper
 
 
 @_json_auth

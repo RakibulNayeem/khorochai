@@ -10,8 +10,8 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
-from . import llm, services
-from .models import Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Transaction, Transfer
+from . import llm, reminders, services
+from .models import Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Profile, PushSubscription, Transaction, Transfer
 from .providers import BANKS, LOGOS, MOBILE_SERVICES, logo_file, logo_for, picker_data
 
 
@@ -1341,3 +1341,91 @@ class OfflineSyncTests(TestCase):
         self.assertEqual(data["user"], self.user.pk)
         own = {a.pk for a in Account.objects.filter(user=self.user)}
         self.assertEqual({a["id"] for a in data["accounts"]}, own)
+
+
+class DailyReminderTests(TestCase):
+    SUB = {"endpoint": "https://push.example.com/abc", "keys": {"p256dh": "pk", "auth": "ak"}}
+
+    def setUp(self):
+        self.user = User.objects.create_user("rakib", password="pass12345!")
+        self.client.force_login(self.user)
+
+    def subscribe(self, time="21:00", sub=None):
+        return self.client.post("/reminder/subscribe/", data={"subscription": sub or self.SUB, "time": time},
+                                content_type="application/json")
+
+    def at(self, hour, minute=0):
+        return timezone.make_aware(dt.datetime.combine(timezone.localdate(), dt.time(hour, minute)))
+
+    def test_subscribe_saves_device_and_setting(self):
+        self.assertEqual(self.subscribe("20:30").status_code, 200)
+        p = Profile.objects.get(user=self.user)
+        self.assertTrue(p.daily_reminder)
+        self.assertEqual(p.reminder_time, dt.time(20, 30))
+        self.assertEqual(PushSubscription.objects.get(user=self.user).endpoint, self.SUB["endpoint"])
+
+    def test_subscribe_rejects_bad_input(self):
+        self.assertEqual(self.subscribe("25:99").status_code, 400)
+        self.assertEqual(self.subscribe(sub={"endpoint": "http://insecure", "keys": {"p256dh": "a", "auth": "b"}}).status_code, 400)
+        self.assertEqual(PushSubscription.objects.count(), 0)
+
+    def test_unsubscribe_turns_off_and_forgets_device(self):
+        self.subscribe()
+        self.client.post("/reminder/unsubscribe/", data={"endpoint": self.SUB["endpoint"]}, content_type="application/json")
+        self.assertFalse(Profile.objects.get(user=self.user).daily_reminder)
+        self.assertEqual(PushSubscription.objects.count(), 0)
+
+    def test_requires_login(self):
+        self.client.logout()
+        self.assertEqual(self.subscribe().status_code, 401)
+
+    def test_cron_needs_the_secret(self):
+        with override_settings(CRON_SECRET="s3cret"):
+            self.assertEqual(self.client.get("/cron/reminders/").status_code, 404)
+            self.assertEqual(self.client.get("/cron/reminders/", headers={"Authorization": "Bearer nope"}).status_code, 404)
+            self.assertEqual(self.client.get("/cron/reminders/", headers={"Authorization": "Bearer s3cret"}).status_code, 200)
+        with override_settings(CRON_SECRET=""):
+            self.assertEqual(self.client.get("/cron/reminders/", headers={"Authorization": "Bearer "}).status_code, 404)
+
+    def due_profile(self, time=dt.time(9, 0)):
+        PushSubscription.objects.create(user=self.user, **{"endpoint": self.SUB["endpoint"], "p256dh": "pk", "auth": "ak"})
+        Profile.objects.update_or_create(user=self.user, defaults={"daily_reminder": True, "reminder_time": time, "last_reminded": None})
+
+    @mock.patch("tracker.reminders.webpush")
+    def test_sends_once_per_day_when_due(self, push):
+        self.due_profile()
+        self.assertEqual(reminders.send_due(self.at(9, 10))["sent"], 1)
+        self.assertEqual(reminders.send_due(self.at(9, 25))["sent"], 0)   # already reminded today
+        self.assertEqual(push.call_count, 1)
+        self.assertIn("আজকের খরচ লিখেছেন?", push.call_args.kwargs["data"])
+
+    @mock.patch("tracker.reminders.webpush")
+    def test_not_before_the_time_and_not_when_very_late(self, push):
+        self.due_profile(dt.time(9, 0))
+        self.assertEqual(reminders.send_due(self.at(8, 45))["sent"], 0)
+        self.assertEqual(reminders.send_due(self.at(12, 30))["skipped"], 1)  # over 3 hours late
+        push.assert_not_called()
+
+    @mock.patch("tracker.reminders.webpush")
+    def test_skipped_when_something_was_recorded_today(self, push):
+        self.due_profile()
+        Transaction.objects.create(user=self.user, type="expense", amount=10, date=timezone.localdate())
+        self.assertEqual(reminders.send_due(self.at(9, 10))["skipped"], 1)
+        push.assert_not_called()
+
+    def test_expired_device_is_removed_and_failures_retry(self):
+        self.due_profile()
+        gone = reminders.WebPushException("gone", response=mock.Mock(status_code=410))
+        with mock.patch("tracker.reminders.webpush", side_effect=gone):
+            self.assertEqual(reminders.send_due(self.at(9, 10))["removed"], 1)
+        self.assertEqual(PushSubscription.objects.count(), 0)
+        self.due_profile()
+        down = reminders.WebPushException("down", response=mock.Mock(status_code=503))
+        with mock.patch("tracker.reminders.webpush", side_effect=down):
+            reminders.send_due(self.at(9, 10))
+        self.assertIsNone(Profile.objects.get(user=self.user).last_reminded)   # will try again on the next run
+
+    def test_settings_card_only_when_keys_are_set(self):
+        self.assertNotContains(self.client.get("/settings/"), "daily-reminder")
+        with override_settings(VAPID_PUBLIC_KEY="pub", VAPID_PRIVATE_KEY="priv"):
+            self.assertContains(self.client.get("/settings/"), 'id="daily-reminder"')
