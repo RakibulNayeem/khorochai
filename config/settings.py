@@ -247,10 +247,11 @@ TRIAL_DAYS = 15
 TRIAL_START = dt.date(2026, 11, 24)  # users who joined before this day get their trial from this day
 PLAN_PRICES = {"monthly": 149, "yearly": 1299}  # taka
 PLAN_DAYS = {"monthly": 30, "yearly": 365}
-# Where users send the money, e.g. "bkash=01XXXXXXXXX (Personal);nagad=01XXXXXXXXX;bank=DBBL, A/C 123, Name"
+# Where users send the money (Send Money, personal). The PAYMENT_NUMBERS env overrides it, e.g. "bkash=01XXXXXXXXX (Personal);nagad=01XXXXXXXXX;bank=DBBL, A/C 123, Name"
+DEFAULT_PAYMENT_NUMBERS = "bkash=01774517825;nagad=01774517825;rocket=01774517825"
 PAYMENT_NUMBERS = dict(
     (k.strip().lower(), v.strip()) for k, _, v in
-    (part.partition("=") for part in os.environ.get("PAYMENT_NUMBERS", "").split(";")) if k.strip() and v.strip()
+    (part.partition("=") for part in os.environ.get("PAYMENT_NUMBERS", DEFAULT_PAYMENT_NUMBERS).split(";")) if k.strip() and v.strip()
 )
 PAYMENT_SCREENSHOT_MAX_BYTES = 3_000_000
 

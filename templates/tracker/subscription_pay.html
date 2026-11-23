@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %}{% translate "Pay for your plan" %} · KhorochAi{% endblock %}
+{% block title %}{% translate "Pay for your plan" %} · KhorochAi<script>
+  document.querySelectorAll('[data-copy]').forEach((btn) => btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(btn.dataset.copy); } catch (e) { return; }
+    const label = btn.textContent;
+    btn.textContent = '{% translate "Copied" as copied %}{{ copied|escapejs }}';
+    setTimeout(() => { btn.textContent = label; }, 1500);
+  }));
+</script>
+{% endblock %}
 {% block content %}
 <div class="row justify-content-center"><div class="col-md-8 col-lg-6">
   <a href="{% url 'subscription' %}" class="small">← {% translate "Subscription" %}</a>
@@ -11,16 +19,25 @@
       <span class="fw-semibold">{{ plan_label }}</span>
       <span class="h4 fw-bold m-0">৳{{ price }}</span>
     </div>
+    <p class="small mb-2">{% blocktranslate %}Pay ৳{{ price }} yourself with <strong>Send Money</strong> to this number, then fill in the form below:{% endblocktranslate %}</p>
+    {% if pay_to %}
+    <div class="d-flex flex-column gap-2 mb-3">
+      {% for label, number in pay_to %}
+      <div class="d-flex align-items-center justify-content-between gap-2 border rounded px-3 py-2">
+        <div>
+          <div class="small text-muted">{{ label }} · {% translate "Personal" %}</div>
+          <div class="fw-bold fs-5" data-keep-digits>{{ number }}</div>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-copy="{{ number }}">{% translate "Copy" %}</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="small text-muted mb-3">{% blocktranslate %}Payment numbers are coming soon. Please email us at {{ contact_email }} to pay.{% endblocktranslate %}</div>
+    {% endif %}
     <ol class="small mb-0 ps-3">
-      <li>{% blocktranslate %}Send ৳{{ price }} with Send Money (or a bank transfer) to one of these:{% endblocktranslate %}
-        {% if pay_to %}
-        <ul class="list-unstyled my-2">
-          {% for label, number in pay_to %}<li><span class="text-muted">{{ label }}:</span> <strong data-keep-digits>{{ number }}</strong></li>{% endfor %}
-        </ul>
-        {% else %}
-        <div class="my-2 text-muted">{% blocktranslate %}Payment numbers are coming soon. Please email us at {{ contact_email }} to pay.{% endblocktranslate %}</div>
-        {% endif %}
-      </li>
+      <li>{% blocktranslate %}Open your bKash, Nagad or Rocket app and choose Send Money (not Payment).{% endblocktranslate %}</li>
+      <li>{% blocktranslate %}Send exactly ৳{{ price }} to the number above.{% endblocktranslate %}</li>
       <li>{% translate "Fill in the form below with the transaction ID from your payment message." %}</li>
       <li>{% translate "We check it and activate your plan, usually within a day." %}</li>
     </ol>
@@ -50,4 +67,12 @@
     <button class="btn btn-brand px-4 align-self-start">{% translate "Submit payment" %}</button>
   </form>
 </div></div>
+<script>
+  document.querySelectorAll('[data-copy]').forEach((btn) => btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(btn.dataset.copy); } catch (e) { return; }
+    const label = btn.textContent;
+    btn.textContent = '{% translate "Copied" as copied %}{{ copied|escapejs }}';
+    setTimeout(() => { btn.textContent = label; }, 1500);
+  }));
+</script>
 {% endblock %}

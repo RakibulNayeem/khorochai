@@ -1784,8 +1784,24 @@ msgid "Pay for your plan"
 msgstr "প্ল্যানের পেমেন্ট করুন"
 
 #, python-format
-msgid "Send ৳%(price)s with Send Money (or a bank transfer) to one of these:"
-msgstr "নিচের যেকোনো একটিতে সেন্ড মানি (বা ব্যাংক ট্রান্সফার) করে ৳%(price)s পাঠান:"
+msgid "Pay ৳%(price)s yourself with <strong>Send Money</strong> to this number, then fill in the form below:"
+msgstr "এই নম্বরে <strong>সেন্ড মানি</strong> করে নিজে ৳%(price)s পাঠান, তারপর নিচের ফর্মটি পূরণ করুন:"
+
+msgid "Open your bKash, Nagad or Rocket app and choose Send Money (not Payment)."
+msgstr "আপনার বিকাশ, নগদ বা রকেট অ্যাপ খুলে সেন্ড মানি বেছে নিন (পেমেন্ট নয়)।"
+
+#, python-format
+msgid "Send exactly ৳%(price)s to the number above."
+msgstr "উপরের নম্বরে ঠিক ৳%(price)s পাঠান।"
+
+msgid "Personal"
+msgstr "পার্সোনাল"
+
+msgid "Copy"
+msgstr "কপি"
+
+msgid "Copied"
+msgstr "কপি হয়েছে"
 
 #, python-format
 msgid "Payment numbers are coming soon. Please email us at %(contact_email)s to pay."

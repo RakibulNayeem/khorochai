@@ -36,7 +36,7 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "আ�
 - **Subscription** (`tracker/billing.py`, `/subscription/`): Free Trial (15 days), Monthly ৳149, Yearly ৳1299 (`PLAN_PRICES` in settings).
   - Trial = 15 days from sign-up, or from `TRIAL_START` (2026-11-24) for users who joined earlier.
   - Users pay outside the app (bKash, Nagad, Rocket, bank) and submit a `Payment` (name, phone, paid-from, transaction ID, optional screenshot). One pending payment at a time.
-  - Where to pay comes from the `PAYMENT_NUMBERS` env, e.g. `bkash=01XXXXXXXXX (Personal);nagad=01XXXXXXXXX;bank=DBBL, A/C …`. Without it the page asks users to email.
+  - Users send money themselves (Send Money) to 01774517825 on bKash, Nagad and Rocket (`DEFAULT_PAYMENT_NUMBERS` in settings; the `PAYMENT_NUMBERS` env overrides it, e.g. `bkash=01XXXXXXXXX;bank=DBBL, A/C …`).
   - Screenshots are stored in the database (`Payment.screenshot`, PNG/JPEG/WebP checked by their first bytes, max 3 MB) and served only to the owner and staff.
   - Staff approve or reject in the admin panel's Payments tab. Approving sets `Profile.plan` / `paid_until`; new days start after the trial and after days already paid.
   - **Nothing is locked yet** when a trial or plan ends; the page only shows the status.
