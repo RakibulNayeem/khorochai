@@ -4,6 +4,7 @@ Django settings for the AI Budget Tracker.
 Works locally (SQLite) and on Vercel + Neon (PostgreSQL) with no code changes.
 All secrets come from environment variables (.env locally, Vercel dashboard in production).
 """
+import datetime as dt
 import os
 import sys
 from pathlib import Path
@@ -237,6 +238,21 @@ VOICE_HEDGE_SECONDS = float(os.environ.get("VOICE_HEDGE_SECONDS", "8"))
 AI_DAILY_TOKENS_PER_USER = int(os.environ.get("AI_DAILY_TOKENS_PER_USER", "30000"))
 AI_DAILY_TOKENS_TOTAL = int(os.environ.get("AI_DAILY_TOKENS_TOTAL", "1000000"))
 AI_DAILY_REQUESTS_TOTAL = int(os.environ.get("AI_DAILY_REQUESTS_TOTAL", "400"))
+
+
+# ---------------------------------------------------------------- Subscription
+# Users pay by bKash, Nagad, Rocket or bank transfer and send the details; staff approve it in the admin panel.
+# Nothing is locked yet when a trial or plan ends: the page only shows the status.
+TRIAL_DAYS = 15
+TRIAL_START = dt.date(2026, 11, 24)  # users who joined before this day get their trial from this day
+PLAN_PRICES = {"monthly": 149, "yearly": 1299}  # taka
+PLAN_DAYS = {"monthly": 30, "yearly": 365}
+# Where users send the money, e.g. "bkash=01XXXXXXXXX (Personal);nagad=01XXXXXXXXX;bank=DBBL, A/C 123, Name"
+PAYMENT_NUMBERS = dict(
+    (k.strip().lower(), v.strip()) for k, _, v in
+    (part.partition("=") for part in os.environ.get("PAYMENT_NUMBERS", "").split(";")) if k.strip() and v.strip()
+)
+PAYMENT_SCREENSHOT_MAX_BYTES = 3_000_000
 
 
 # ---------------------------------------------------------------- Analytics

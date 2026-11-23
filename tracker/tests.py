@@ -11,7 +11,9 @@ from django.urls import reverse
 from django.utils import timezone
 
 from . import llm, reminders, services
-from .models import Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Profile, PushSubscription, Transaction, Transfer
+from .models import (
+    Account, AIUsage, Category, DailyActivity, Debt, DebtRecord, Payment, Profile, PushSubscription, Transaction, Transfer,
+)
 from .providers import BANKS, LOGOS, MOBILE_SERVICES, logo_file, logo_for, picker_data
 
 
@@ -1400,3 +1402,110 @@ class NoPwaTests(TestCase):
         self.assertNotIn("'fetch'", body)          # it never intercepts requests
         self.assertNotIn("caches.open", body)      # and never stores anything
         self.assertNotIn("{%", body)
+
+
+PNG = b"\x89PNG\r\n\x1a\n" + b"\x00" * 64
+
+
+@override_settings(TRIAL_START=dt.date(2026, 1, 1), TRIAL_DAYS=15, PLAN_PRICES={"monthly": 149, "yearly": 1299},
+                   PLAN_DAYS={"monthly": 30, "yearly": 365}, PAYMENT_NUMBERS={"bkash": "01700000000"})
+class SubscriptionTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("payer", email="payer@example.com", password="pass12345!")
+        self.staff = User.objects.create_user("boss", email="boss@example.com", password="pass12345!", is_staff=True)
+        self.client.login(username="payer", password="pass12345!")
+        self.today = timezone.localdate()
+
+    def _pay(self, plan="monthly", **extra):
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        data = {"method": "bkash", "name": "Payer", "phone": "01800000000", "paid_from": "01800000000",
+                "transaction_id": "abc123", "note": "", **extra}
+        data.setdefault("screenshot_file", SimpleUploadedFile("shot.png", PNG, content_type="image/png"))
+        return self.client.post(reverse("subscription_pay", args=[plan]), data)
+
+    def test_new_user_is_on_trial(self):
+        from . import billing
+        sub = billing.status(self.user)
+        self.assertEqual(sub["plan"], "trial")
+        self.assertEqual(sub["ends"], self.today + dt.timedelta(days=14))
+        self.assertEqual(sub["days_left"], 15)
+        r = self.client.get(reverse("subscription"))
+        self.assertContains(r, "৳149")
+        self.assertContains(r, "৳1299")
+
+    def test_old_user_gets_trial_from_launch_day(self):
+        from . import billing
+        User.objects.filter(pk=self.user.pk).update(date_joined=timezone.now() - dt.timedelta(days=400))
+        self.user.refresh_from_db()
+        with override_settings(TRIAL_START=self.today - dt.timedelta(days=3)):
+            self.assertEqual(billing.status(self.user)["plan"], "trial")
+        self.assertEqual(billing.status(self.user)["plan"], "expired")
+
+    def test_submit_payment_then_approve_extends_after_trial(self):
+        from . import billing
+        r = self._pay("monthly")
+        self.assertRedirects(r, reverse("subscription"))
+        p = Payment.objects.get(user=self.user)
+        self.assertEqual((p.status, p.amount, p.transaction_id, p.screenshot_type), ("pending", 149, "ABC123", "image/png"))
+        self.assertEqual(bytes(p.screenshot), PNG)
+        # only one payment waits at a time
+        self.assertRedirects(self._pay("yearly"), reverse("subscription"))
+        self.assertEqual(Payment.objects.count(), 1)
+
+        self.client.login(username="boss", password="pass12345!")
+        r = self.client.get(reverse("admin_payments"))
+        self.assertContains(r, "ABC123")
+        self.client.post(reverse("admin_payment_review", args=[p.pk]), {"action": "approve"})
+        p.refresh_from_db()
+        self.assertEqual((p.status, p.reviewed_by), ("approved", self.staff))
+        sub = billing.status(self.user)
+        self.assertEqual(sub["plan"], "monthly")
+        self.assertEqual(sub["ends"], billing.trial_end(self.user) + dt.timedelta(days=30))
+        # approving twice changes nothing
+        self.client.post(reverse("admin_payment_review", args=[p.pk]), {"action": "approve"})
+        self.assertEqual(billing.status(self.user)["ends"], sub["ends"])
+
+    def test_renewal_adds_after_paid_days(self):
+        from . import billing
+        Profile.objects.update_or_create(user=self.user, defaults={"plan": "monthly", "paid_until": self.today + dt.timedelta(days=100)})
+        p = Payment.objects.create(user=self.user, plan="yearly", amount=1299, method="nagad", name="x", phone="1",
+                                   paid_from="1", transaction_id="T")
+        self.assertTrue(billing.approve(p, self.staff))
+        self.assertEqual(billing.status(self.user)["ends"], self.today + dt.timedelta(days=100 + 365))
+
+    def test_reject_shows_note_to_user(self):
+        self._pay()
+        p = Payment.objects.get()
+        self.client.login(username="boss", password="pass12345!")
+        self.client.post(reverse("admin_payment_review", args=[p.pk]), {"action": "reject", "admin_note": "Wrong ID"})
+        p.refresh_from_db()
+        self.assertEqual((p.status, p.admin_note), ("rejected", "Wrong ID"))
+        self.client.login(username="payer", password="pass12345!")
+        self.assertContains(self.client.get(reverse("subscription")), "Wrong ID")
+
+    def test_screenshot_must_be_an_image_and_is_private(self):
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        r = self._pay(screenshot_file=SimpleUploadedFile("x.png", b"<html>evil</html>", content_type="image/png"))
+        self.assertEqual(r.status_code, 200)
+        self.assertFalse(Payment.objects.exists())
+        self._pay()
+        p = Payment.objects.get()
+        url = reverse("payment_screenshot", args=[p.pk])
+        r = self.client.get(url)
+        self.assertEqual((r.status_code, r["Content-Type"]), (200, "image/png"))
+        User.objects.create_user("other", password="pass12345!")
+        self.client.login(username="other", password="pass12345!")
+        self.assertEqual(self.client.get(url).status_code, 404)
+        self.client.login(username="boss", password="pass12345!")
+        self.assertEqual(self.client.get(url).status_code, 200)
+
+    def test_non_staff_cannot_review(self):
+        self._pay()
+        p = Payment.objects.get()
+        r = self.client.post(reverse("admin_payment_review", args=[p.pk]), {"action": "approve"})
+        self.assertEqual(r.status_code, 404)
+        p.refresh_from_db()
+        self.assertEqual(p.status, "pending")
+
+    def test_unknown_plan_is_404(self):
+        self.assertEqual(self.client.get(reverse("subscription_pay", args=["lifetime"])).status_code, 404)

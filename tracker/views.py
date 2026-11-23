@@ -21,13 +21,16 @@ from django.utils.translation import gettext as _, ngettext
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
-from . import llm, reminders, services
+from . import billing, llm, reminders, services
 from .context_processors import THEME_COOKIE, THEMES
-from .forms import AccountForm, CategoryForm, DebtForm, DebtRecordForm, ProfileForm, TransactionForm, TransferForm
+from .forms import (
+    AccountForm, CategoryForm, DebtForm, DebtRecordForm, PaymentForm, ProfileForm, TransactionForm, TransferForm,
+)
 from .providers import KIND_DEFAULTS, picker_data
 from .models import (
     BALANCE, BORROW, BORROWED, BUDGET, COLLECT, DEBT, DEBT_AI_TYPES, EXPENSE, INCOME, LEND, LENT, REPAY, TRANSFER,
-    Account, Category, Debt, DebtRecord, Profile, PushSubscription, Transaction, Transfer,
+    PAY_METHOD_CHOICES, PLAN_CHOICES, Account, Category, Debt, DebtRecord, Payment, Profile, PushSubscription,
+    Transaction, Transfer,
 )
 from .currency import current as current_currency
 from .templatetags.money import money
@@ -997,3 +1000,68 @@ def debt_record_delete(request, pk):
     services.refresh_debt_status(debt)
     messages.success(request, _("Payment deleted."))
     return redirect("debt_detail", pk=debt.pk)
+
+
+# --------------------------------------------------------------------------- subscription
+
+def _plans():
+    prices = django_settings.PLAN_PRICES
+    return {
+        "monthly": prices["monthly"],
+        "yearly": prices["yearly"],
+        "yearly_per_month": prices["yearly"] // 12,
+        "yearly_saves": prices["monthly"] * 12 - prices["yearly"],
+        "yearly_saves_pct": round((1 - prices["yearly"] / (prices["monthly"] * 12)) * 100),
+        "trial_days": django_settings.TRIAL_DAYS,
+    }
+
+
+@login_required
+def subscription(request):
+    return render(request, "tracker/subscription.html", {
+        "sub": billing.status(request.user),
+        "plans": _plans(),
+        "payments": request.user.payments.defer("screenshot")[:20],
+    })
+
+
+@login_required
+def subscription_pay(request, plan):
+    if plan not in django_settings.PLAN_PRICES:
+        raise Http404
+    sub = billing.status(request.user)
+    if sub["pending"]:
+        messages.info(request, _("Your payment is waiting for review. You can send another after it is checked."))
+        return redirect("subscription")
+    if request.method == "POST":
+        form = PaymentForm(request.POST, request.FILES)
+        if form.is_valid():
+            payment = form.save(commit=False)
+            payment.user, payment.plan, payment.amount = request.user, plan, django_settings.PLAN_PRICES[plan]
+            payment.save()
+            messages.success(request, _("Thanks! We got your payment details and will activate your plan after checking them."))
+            return redirect("subscription")
+    else:
+        form = PaymentForm(initial={"method": "bkash", "name": request.user.username})
+    return render(request, "tracker/subscription_pay.html", {
+        "form": form,
+        "plan": plan,
+        "plan_label": dict(PLAN_CHOICES)[plan],
+        "price": django_settings.PLAN_PRICES[plan],
+        "pay_to": [(label, django_settings.PAYMENT_NUMBERS[key]) for key, label in PAY_METHOD_CHOICES
+                   if key in django_settings.PAYMENT_NUMBERS],
+    })
+
+
+@login_required
+def payment_screenshot(request, pk):
+    """The screenshot of a payment, for the user who sent it and for staff."""
+    payment = get_object_or_404(Payment.objects.only("user_id", "screenshot", "screenshot_type"), pk=pk)
+    if payment.user_id != request.user.pk and not request.user.is_staff:
+        raise Http404
+    if not payment.screenshot or payment.screenshot_type not in ("image/png", "image/jpeg", "image/webp"):
+        raise Http404
+    response = HttpResponse(bytes(payment.screenshot), content_type=payment.screenshot_type)
+    response["Cache-Control"] = "private, max-age=3600"
+    response["X-Content-Type-Options"] = "nosniff"
+    return response

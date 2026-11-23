@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Subscription" %} · KhorochAi{% endblock %}
+{% block content %}
+<h1 class="h4 mb-1">{% translate "Subscription" %}</h1>
+<p class="text-muted small mb-3">{% translate "Manage your plan and payments" %}</p>
+
+{% if sub.pending %}
+<div class="alert alert-info">
+  {% blocktranslate with plan=sub.pending.get_plan_display amount=sub.pending.amount %}Your {{ plan }} payment of ৳{{ amount }} is waiting for review. We usually check it within a day.{% endblocktranslate %}
+</div>
+{% endif %}
+{% if sub.plan == "trial" %}
+<div class="alert alert-warning">
+  {% blocktranslate count n=sub.days_left with days=plans.trial_days day=sub.ends|date:"j M Y" %}Your {{ days }}-day free trial ends in {{ n }} day ({{ day }}).{% plural %}Your {{ days }}-day free trial ends in {{ n }} days ({{ day }}).{% endblocktranslate %}
+  {% translate "Subscribe anytime — your transactions, budgets and reports stay safe." %}
+</div>
+{% elif sub.plan == "expired" %}
+<div class="alert alert-danger">{% translate "Your free trial or plan has ended. Subscribe to keep using KhorochAi — your data is safe." %}</div>
+{% else %}
+<div class="alert alert-success">
+  {% blocktranslate with day=sub.ends|date:"j M Y" %}Your plan is active until {{ day }}.{% endblocktranslate %}
+  {% translate "You can renew early: new days are added after the current ones." %}
+</div>
+{% endif %}
+
+<div class="row g-3 mb-2">
+  <div class="col-md-4">
+    <div class="card p-3 p-md-4 h-100{% if sub.plan == 'trial' %} border-success{% endif %}">
+      {% if sub.plan == "trial" %}<span class="badge text-bg-success align-self-start mb-2">{% translate "Current plan" %}</span>{% endif %}
+      <h2 class="h5 mb-1">{% translate "Free Trial" %}</h2>
+      <div class="mb-1"><span class="h3 fw-bold">৳0</span> <span class="text-muted small">/ {% blocktranslate count n=plans.trial_days %}{{ n }} day{% plural %}{{ n }} days{% endblocktranslate %}</span></div>
+      <p class="small text-muted">{% translate "Try every feature, no card needed" %}</p>
+      <ul class="list-unstyled small mb-3 plan-features">
+        <li>✓ {% translate "All features" %}</li>
+        <li>✓ {% translate "AI entry in Bangla & English" %}</li>
+        <li>✓ {% translate "Ask AI" %}</li>
+        <li>✓ {% translate "Budgets & reports" %}</li>
+        <li>✓ {% translate "No payment card required" %}</li>
+      </ul>
+      <button class="btn btn-outline-secondary mt-auto" disabled>{% if sub.plan == "trial" %}{% translate "Current plan" %}{% else %}{% translate "Free Trial" %}{% endif %}</button>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3 p-md-4 h-100{% if sub.plan == 'monthly' %} border-success{% endif %}">
+      {% if sub.plan == "monthly" %}<span class="badge text-bg-success align-self-start mb-2">{% translate "Current plan" %}</span>{% endif %}
+      <h2 class="h5 mb-1">{% translate "Monthly" %}</h2>
+      <div class="mb-1"><span class="h3 fw-bold">৳{{ plans.monthly }}</span> <span class="text-muted small">/ {% translate "month" %}</span></div>
+      <p class="small text-muted">{% translate "Flexible — pay when you need it" %}</p>
+      <ul class="list-unstyled small mb-3 plan-features">
+        <li>✓ {% translate "AI entry by text and voice" %}</li>
+        <li>✓ {% translate "Ask AI" %}</li>
+        <li>✓ {% translate "Budgets, debts & reminders" %}</li>
+        <li>✓ {% translate "CSV export" %}</li>
+      </ul>
+      {% if sub.pending %}<button class="btn btn-outline-secondary mt-auto" disabled>{% translate "Waiting for review" %}</button>
+      {% else %}<a class="btn btn-outline-success mt-auto" href="{% url 'subscription_pay' 'monthly' %}">{% if sub.plan == "monthly" %}{% translate "Renew" %}{% else %}{% translate "Take subscription" %}{% endif %}</a>{% endif %}
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3 p-md-4 h-100 border-success">
+      <span class="badge text-bg-success align-self-start mb-2">{% if sub.plan == "yearly" %}{% translate "Current plan" %}{% else %}{% blocktranslate with pct=plans.yearly_saves_pct %}Best value · save {{ pct }}%{% endblocktranslate %}{% endif %}</span>
+      <h2 class="h5 mb-1">{% translate "Yearly" %}</h2>
+      <div class="mb-1"><span class="h3 fw-bold">৳{{ plans.yearly }}</span> <span class="text-muted small">/ {% translate "year" %}</span></div>
+      <p class="small text-muted">{% blocktranslate with price=plans.yearly_per_month %}Just ৳{{ price }} a month, billed yearly{% endblocktranslate %}</p>
+      <ul class="list-unstyled small mb-3 plan-features">
+        <li>✓ {% translate "Everything in Monthly" %}</li>
+        <li>✓ {% blocktranslate with amount=plans.yearly_saves %}Save ৳{{ amount }} every year{% endblocktranslate %}</li>
+        <li>✓ {% translate "Priority support" %}</li>
+      </ul>
+      {% if sub.pending %}<button class="btn btn-outline-secondary mt-auto" disabled>{% translate "Waiting for review" %}</button>
+      {% else %}<a class="btn btn-brand mt-auto" href="{% url 'subscription_pay' 'yearly' %}">{% if sub.plan == "yearly" %}{% translate "Renew" %}{% else %}{% translate "Take subscription" %}{% endif %}</a>{% endif %}
+    </div>
+  </div>
+</div>
+<p class="small text-muted">{% translate "Prices in BDT · Pay with bKash, Nagad, Rocket or bank transfer." %}</p>
+
+{% if payments %}
+<h2 class="h5 mt-4 mb-3">{% translate "Your payments" %}</h2>
+<div class="card p-0">
+  <div class="table-responsive">
+  <table class="table mb-0 align-middle">
+    <thead><tr>
+      <th class="ps-3">{% translate "Date" %}</th><th>{% translate "Plan" %}</th><th class="text-end">{% translate "Amount" %}</th>
+      <th>{% translate "Paid with" %}</th><th>{% translate "Transaction ID" %}</th><th class="pe-3">{% translate "Status" %}</th>
+    </tr></thead>
+    {% for p in payments %}
+    <tr>
+      <td class="ps-3 text-nowrap small">{{ p.created_at|date:"j M Y" }}</td>
+      <td>{{ p.get_plan_display }}</td>
+      <td class="text-end text-nowrap">৳{{ p.amount }}</td>
+      <td>{{ p.get_method_display }}</td>
+      <td class="small" data-keep-digits>{{ p.transaction_id }}</td>
+      <td class="pe-3">
+        {% if p.status == "pending" %}<span class="badge text-bg-warning">{{ p.get_status_display }}</span>
+        {% elif p.status == "approved" %}<span class="badge text-bg-success">{{ p.get_status_display }}</span>
+        {% else %}<span class="badge text-bg-danger">{{ p.get_status_display }}</span>
+          {% if p.admin_note %}<div class="small text-muted mt-1" data-keep-digits>{{ p.admin_note }}</div>{% endif %}{% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,6 +1,7 @@
-"""Our own admin panel at /admin/: users, AI usage, app activity and user actions. Staff only.
+"""Our own admin panel at /admin/: users, AI usage, app activity, user actions and subscription payments. Staff only.
 
-It shows counts, never users' amounts, the people they owe or what they typed.
+It shows counts, never users' amounts, the people they owe or what they typed. The one exception is the
+subscription payments users send us to review.
 """
 import datetime as dt
 from functools import wraps
@@ -16,10 +17,12 @@ from django.db.models import Count, Exists, F, OuterRef, Q, Subquery, Sum
 from django.db.models.functions import TruncDate
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
-from .models import Account, AIUsage, Category, DailyActivity, Debt, Profile, Transaction, Transfer
+from . import billing
+from .models import Account, AIUsage, Category, DailyActivity, Debt, Payment, Profile, Transaction, Transfer
 
 CHART_DAYS = 30
 USER_SORTS = {"joined": F("date_joined").desc(), "login": F("last_login").desc(nulls_last=True), "email": F("email").asc()}
@@ -278,6 +281,7 @@ def user_detail(request, pk):
         "ai_days": [{"day": d, "requests": usage[d].count if d in usage else 0,
                      "tokens": usage[d].tokens if d in usage else 0} for d in reversed(days)],
         "block_reason": _manage_block_reason(request.user, target),
+        "sub": billing.status(target),
     })
 
 
@@ -311,4 +315,50 @@ def user_action(request, pk):
         return redirect("admin_users")
     else:
         messages.error(request, "Unknown action.")
+    return back
+
+
+PAYMENT_TABS = ("pending", "approved", "rejected", "all")
+
+
+@staff_required
+def payment_list(request):
+    """Subscription payments users reported. Unlike the rest of the panel this shows their details,
+    because staff must check them against the bKash/Nagad/Rocket/bank statement before approving."""
+    show = request.GET.get("status") if request.GET.get("status") in PAYMENT_TABS else "pending"
+    payments = Payment.objects.select_related("user", "reviewed_by").defer("screenshot").annotate(
+        has_screenshot=Q(screenshot__isnull=False))
+    counts = {r["status"]: r["n"] for r in Payment.objects.values("status").annotate(n=Count("id"))}
+    if show != "all":
+        payments = payments.filter(status=show)
+    if show == "pending":
+        payments = payments.order_by("created_at")  # oldest first: they have waited longest
+    return render(request, "tracker/admin/payments.html", {
+        "tab": "payments",
+        "show": show,
+        "tabs": [(t, t.capitalize(), counts.get(t, 0) if t != "all" else sum(counts.values())) for t in PAYMENT_TABS],
+        "page": Paginator(payments, 20).get_page(request.GET.get("page")),
+    })
+
+
+@staff_required
+@require_POST
+def payment_review(request, pk):
+    payment = get_object_or_404(Payment.objects.select_related("user").defer("screenshot"), pk=pk)
+    back = redirect(f"{reverse('admin_payments')}?status=pending")
+    action = request.POST.get("action")
+    if action == "approve":
+        done = billing.approve(payment, request.user)
+        if done:
+            until = Profile.objects.get(user=payment.user).paid_until
+            messages.success(request, f"Approved. {payment.user.email} has {payment.get_plan_display()} until {until:%d %b %Y}.")
+    elif action == "reject":
+        done = billing.reject(payment, request.user, request.POST.get("admin_note", "").strip())
+        if done:
+            messages.success(request, f"Rejected the payment from {payment.user.email}.")
+    else:
+        messages.error(request, "Unknown action.")
+        return back
+    if not done:
+        messages.error(request, "This payment was already reviewed.")
     return back

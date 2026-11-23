@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Pay for your plan" %} · KhorochAi{% endblock %}
+{% block content %}
+<div class="row justify-content-center"><div class="col-md-8 col-lg-6">
+  <a href="{% url 'subscription' %}" class="small">← {% translate "Subscription" %}</a>
+  <h1 class="h4 mt-2 mb-3">{% translate "Pay for your plan" %}</h1>
+
+  <div class="card p-3 p-md-4 mb-3">
+    <div class="d-flex justify-content-between align-items-baseline mb-2">
+      <span class="fw-semibold">{{ plan_label }}</span>
+      <span class="h4 fw-bold m-0">৳{{ price }}</span>
+    </div>
+    <ol class="small mb-0 ps-3">
+      <li>{% blocktranslate %}Send ৳{{ price }} with Send Money (or a bank transfer) to one of these:{% endblocktranslate %}
+        {% if pay_to %}
+        <ul class="list-unstyled my-2">
+          {% for label, number in pay_to %}<li><span class="text-muted">{{ label }}:</span> <strong data-keep-digits>{{ number }}</strong></li>{% endfor %}
+        </ul>
+        {% else %}
+        <div class="my-2 text-muted">{% blocktranslate %}Payment numbers are coming soon. Please email us at {{ contact_email }} to pay.{% endblocktranslate %}</div>
+        {% endif %}
+      </li>
+      <li>{% translate "Fill in the form below with the transaction ID from your payment message." %}</li>
+      <li>{% translate "We check it and activate your plan, usually within a day." %}</li>
+    </ol>
+  </div>
+
+  <form method="post" enctype="multipart/form-data" class="card p-3 p-md-4" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors }}</div>{% endif %}
+    <fieldset class="mb-3">
+      <legend class="form-label fs-6">{{ form.method.label }}</legend>
+      <div class="d-flex flex-wrap gap-3">
+        {% for radio in form.method %}
+        <div class="form-check">{{ radio.tag }}<label class="form-check-label" for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label></div>
+        {% endfor %}
+      </div>
+      {% for e in form.method.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
+    </fieldset>
+    {% for field in form %}{% if field.name != "method" %}
+    <div class="mb-3">
+      <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {{ field }}
+      {% if field.help_text %}<div class="form-text">{{ field.help_text }}</div>{% endif %}
+      {% for e in field.errors %}<div class="invalid-feedback d-block">{{ e }}</div>{% endfor %}
+    </div>
+    {% endif %}{% endfor %}
+    <div class="small text-muted mb-3" data-keep-digits>{% translate "Email" %}: {{ user.email }}</div>
+    <button class="btn btn-brand px-4 align-self-start">{% translate "Submit payment" %}</button>
+  </form>
+</div></div>
+{% endblock %}

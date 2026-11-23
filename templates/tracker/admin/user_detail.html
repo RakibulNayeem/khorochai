@@ -26,6 +26,7 @@
       <tr><td class="text-muted">Last seen</td><td>{% if last_seen %}{{ last_seen|date:"d M Y, H:i" }} ({{ last_seen|timesince }} ago){% else %}not yet{% endif %}</td></tr>
       <tr><td class="text-muted">Time on site</td><td>{{ time_today }} today · {{ time_30 }} in 30 days · {{ days_30 }} day{{ days_30|pluralize }} active</td></tr>
       <tr><td class="text-muted">Currency</td><td>{{ currency }}</td></tr>
+      <tr><td class="text-muted">Plan</td><td>{% if sub.plan == "trial" %}Free trial{% elif sub.plan == "expired" %}<span class="text-danger">Expired</span>{% else %}{{ sub.plan|capfirst }}{% endif %} · until {{ sub.ends|date:"d M Y" }}{% if sub.pending %} · <a href="{% url 'admin_payments' %}">payment pending</a>{% endif %}</td></tr>
     </table>
   </div></div>
   <div class="col-lg-6"><div class="card p-3 h-100">

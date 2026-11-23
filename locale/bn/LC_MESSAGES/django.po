@@ -1666,3 +1666,190 @@ msgstr "%(person)s %(day)s টাকা ফেরত দেবেন।"
 
 msgid "Pay %(person)s back by %(day)s."
 msgstr "%(day)s-এর মধ্যে %(person)s-কে টাকা ফেরত দিন।"
+
+msgid "Subscription"
+msgstr "সাবস্ক্রিপশন"
+
+msgid "Manage your plan and payments"
+msgstr "আপনার প্ল্যান ও পেমেন্ট দেখুন"
+
+#, python-format
+msgid "Your %(plan)s payment of ৳%(amount)s is waiting for review. We usually check it within a day."
+msgstr "আপনার %(plan)s প্ল্যানের ৳%(amount)s পেমেন্ট যাচাইয়ের অপেক্ষায় আছে। সাধারণত এক দিনের মধ্যে আমরা যাচাই করি।"
+
+msgid "Subscribe anytime — your transactions, budgets and reports stay safe."
+msgstr "যেকোনো সময় সাবস্ক্রাইব করুন — আপনার লেনদেন, বাজেট ও রিপোর্ট নিরাপদ থাকবে।"
+
+msgid "Your free trial or plan has ended. Subscribe to keep using KhorochAi — your data is safe."
+msgstr "আপনার ফ্রি ট্রায়াল বা প্ল্যান শেষ হয়েছে। KhorochAi ব্যবহার চালিয়ে যেতে সাবস্ক্রাইব করুন — আপনার তথ্য নিরাপদ আছে।"
+
+#, python-format
+msgid "Your plan is active until %(day)s."
+msgstr "আপনার প্ল্যান %(day)s পর্যন্ত চালু আছে।"
+
+msgid "You can renew early: new days are added after the current ones."
+msgstr "আগেভাগেই রিনিউ করতে পারেন: নতুন দিনগুলো বর্তমান মেয়াদের পরে যোগ হবে।"
+
+msgid "Current plan"
+msgstr "বর্তমান প্ল্যান"
+
+msgid "Free Trial"
+msgstr "ফ্রি ট্রায়াল"
+
+msgid "Try every feature, no card needed"
+msgstr "সব ফিচার ব্যবহার করে দেখুন, কোনো কার্ড লাগবে না"
+
+msgid "All features"
+msgstr "সব ফিচার"
+
+msgid "AI entry in Bangla & English"
+msgstr "বাংলা ও ইংরেজিতে AI দিয়ে এন্ট্রি"
+
+msgid "Budgets & reports"
+msgstr "বাজেট ও রিপোর্ট"
+
+msgid "No payment card required"
+msgstr "কোনো পেমেন্ট কার্ড লাগবে না"
+
+msgid "Monthly"
+msgstr "মাসিক"
+
+msgid "Yearly"
+msgstr "বার্ষিক"
+
+msgid "month"
+msgstr "মাস"
+
+msgid "year"
+msgstr "বছর"
+
+msgid "Flexible — pay when you need it"
+msgstr "সুবিধামতো — যখন দরকার তখন পেমেন্ট করুন"
+
+msgid "AI entry by text and voice"
+msgstr "লিখে ও বলে AI দিয়ে এন্ট্রি"
+
+msgid "Budgets, debts & reminders"
+msgstr "বাজেট, ধার-দেনা ও রিমাইন্ডার"
+
+msgid "CSV export"
+msgstr "CSV এক্সপোর্ট"
+
+msgid "Waiting for review"
+msgstr "যাচাইয়ের অপেক্ষায়"
+
+msgid "Renew"
+msgstr "রিনিউ করুন"
+
+msgid "Take subscription"
+msgstr "সাবস্ক্রিপশন নিন"
+
+#, python-format
+msgid "Best value · save %(pct)s%%"
+msgstr "সেরা মূল্য · %(pct)s%% সাশ্রয়"
+
+#, python-format
+msgid "Just ৳%(price)s a month, billed yearly"
+msgstr "মাসে মাত্র ৳%(price)s, বছরে একবার পেমেন্ট"
+
+msgid "Everything in Monthly"
+msgstr "মাসিক প্ল্যানের সবকিছু"
+
+#, python-format
+msgid "Save ৳%(amount)s every year"
+msgstr "প্রতি বছর ৳%(amount)s সাশ্রয়"
+
+msgid "Priority support"
+msgstr "অগ্রাধিকার সহায়তা"
+
+msgid "Prices in BDT · Pay with bKash, Nagad, Rocket or bank transfer."
+msgstr "দাম টাকায় · বিকাশ, নগদ, রকেট বা ব্যাংক ট্রান্সফারে পেমেন্ট করুন।"
+
+msgid "Your payments"
+msgstr "আপনার পেমেন্ট"
+
+msgid "Plan"
+msgstr "প্ল্যান"
+
+msgid "Status"
+msgstr "অবস্থা"
+
+msgid "Paid with"
+msgstr "যেভাবে পেমেন্ট করেছেন"
+
+msgid "Transaction ID"
+msgstr "ট্রানজেকশন আইডি"
+
+msgid "Pay for your plan"
+msgstr "প্ল্যানের পেমেন্ট করুন"
+
+#, python-format
+msgid "Send ৳%(price)s with Send Money (or a bank transfer) to one of these:"
+msgstr "নিচের যেকোনো একটিতে সেন্ড মানি (বা ব্যাংক ট্রান্সফার) করে ৳%(price)s পাঠান:"
+
+#, python-format
+msgid "Payment numbers are coming soon. Please email us at %(contact_email)s to pay."
+msgstr "পেমেন্ট নম্বর শিগগিরই যোগ হবে। পেমেন্ট করতে %(contact_email)s-এ ইমেইল করুন।"
+
+msgid "Fill in the form below with the transaction ID from your payment message."
+msgstr "পেমেন্টের মেসেজে পাওয়া ট্রানজেকশন আইডি দিয়ে নিচের ফর্মটি পূরণ করুন।"
+
+msgid "We check it and activate your plan, usually within a day."
+msgstr "আমরা যাচাই করে আপনার প্ল্যান চালু করে দেব, সাধারণত এক দিনের মধ্যে।"
+
+msgid "Submit payment"
+msgstr "পেমেন্ট জমা দিন"
+
+msgid "Payment screenshot"
+msgstr "পেমেন্টের স্ক্রিনশট"
+
+msgid "Optional, but it helps us confirm your payment faster."
+msgstr "ঐচ্ছিক, তবে এতে আপনার পেমেন্ট দ্রুত যাচাই করা যায়।"
+
+msgid "Your name"
+msgstr "আপনার নাম"
+
+msgid "Phone number"
+msgstr "ফোন নম্বর"
+
+msgid "Paid from (number or account)"
+msgstr "যে নম্বর বা অ্যাকাউন্ট থেকে পাঠিয়েছেন"
+
+msgid "Note (optional)"
+msgstr "নোট (ঐচ্ছিক)"
+
+msgid "The screenshot is too large. Please use one under 3 MB."
+msgstr "স্ক্রিনশটটি অনেক বড়। ৩ MB-এর ছোট একটি দিন।"
+
+msgid "Please upload a PNG, JPG or WebP image."
+msgstr "PNG, JPG বা WebP ছবি আপলোড করুন।"
+
+msgid "Bank transfer"
+msgstr "ব্যাংক ট্রান্সফার"
+
+msgid "Pending review"
+msgstr "যাচাইয়ের অপেক্ষায়"
+
+msgid "Approved"
+msgstr "অনুমোদিত"
+
+msgid "Rejected"
+msgstr "বাতিল"
+
+msgid "Your payment is waiting for review. You can send another after it is checked."
+msgstr "আপনার পেমেন্ট যাচাইয়ের অপেক্ষায় আছে। যাচাই শেষ হলে আরেকটি পাঠাতে পারবেন।"
+
+msgid "Thanks! We got your payment details and will activate your plan after checking them."
+msgstr "ধন্যবাদ! আপনার পেমেন্টের তথ্য পেয়েছি, যাচাই করে প্ল্যান চালু করে দেব।"
+
+#, python-format
+msgid "Your %(days)s-day free trial ends in %(n)s day (%(day)s)."
+msgid_plural "Your %(days)s-day free trial ends in %(n)s days (%(day)s)."
+msgstr[0] "আপনার %(days)s দিনের ফ্রি ট্রায়াল %(n)s দিন পর শেষ হবে (%(day)s)।"
+msgstr[1] "আপনার %(days)s দিনের ফ্রি ট্রায়াল %(n)s দিন পর শেষ হবে (%(day)s)।"
+
+#, python-format
+msgid "%(n)s day"
+msgid_plural "%(n)s days"
+msgstr[0] "%(n)s দিন"
+msgstr[1] "%(n)s দিন"

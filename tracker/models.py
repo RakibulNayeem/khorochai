@@ -183,6 +183,9 @@ class Profile(models.Model):
     daily_reminder = models.BooleanField(default=False)
     reminder_time = models.TimeField(default=dt.time(21, 0))
     last_reminded = models.DateField(null=True, blank=True)
+    # Subscription: the last approved plan and the day it runs until. db_default so older code can still insert.
+    plan = models.CharField(max_length=10, blank=True, default="", db_default="")
+    paid_until = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.user} ({self.currency})"
@@ -292,3 +295,39 @@ class DebtRecord(models.Model):
         # a repayment on money I lent comes in; on money I borrowed it goes out. An increase is the opposite.
         sign = 1 if self.debt.is_lent else -1
         return sign if self.kind == REPAY else -sign
+
+
+# ---------------------------------------------------------------- subscription payments (checked by staff)
+MONTHLY, YEARLY = "monthly", "yearly"
+PLAN_CHOICES = [(MONTHLY, _("Monthly")), (YEARLY, _("Yearly"))]
+PAY_METHOD_CHOICES = [("bkash", "bKash"), ("nagad", "Nagad"), ("rocket", "Rocket"), ("bank", _("Bank transfer"))]
+PENDING, APPROVED, REJECTED = "pending", "approved", "rejected"
+PAYMENT_STATUS_CHOICES = [(PENDING, _("Pending review")), (APPROVED, _("Approved")), (REJECTED, _("Rejected"))]
+
+
+class Payment(models.Model):
+    """A subscription payment the user made outside the app and reported here. Staff approve or reject it;
+    approving extends Profile.paid_until."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="payments")
+    plan = models.CharField(max_length=10, choices=PLAN_CHOICES)
+    amount = models.PositiveIntegerField()  # taka, the plan's price when it was submitted
+    method = models.CharField(max_length=10, choices=PAY_METHOD_CHOICES)
+    name = models.CharField(max_length=80)
+    phone = models.CharField(max_length=20)
+    paid_from = models.CharField(max_length=40)  # the number or bank account the money came from
+    transaction_id = models.CharField(max_length=40)
+    note = models.CharField(max_length=255, blank=True)
+    screenshot = models.BinaryField(null=True, blank=True, editable=False)  # kept in the database: Vercel has no disk
+    screenshot_type = models.CharField(max_length=20, blank=True)
+    status = models.CharField(max_length=10, choices=PAYMENT_STATUS_CHOICES, default=PENDING, db_index=True)
+    admin_note = models.CharField(max_length=255, blank=True)
+    reviewed_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True,
+                                    related_name="+")
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"{self.user} {self.plan} {self.amount} ({self.status})"

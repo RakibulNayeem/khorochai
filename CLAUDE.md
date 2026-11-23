@@ -33,11 +33,18 @@ An AI expense and income tracker for Bangladesh. Users type or speak, e.g. "আ�
   - 32 currencies, saved per user;
   - Help and About pages;
   - landing page for visitors.
+- **Subscription** (`tracker/billing.py`, `/subscription/`): Free Trial (15 days), Monthly ৳149, Yearly ৳1299 (`PLAN_PRICES` in settings).
+  - Trial = 15 days from sign-up, or from `TRIAL_START` (2026-11-24) for users who joined earlier.
+  - Users pay outside the app (bKash, Nagad, Rocket, bank) and submit a `Payment` (name, phone, paid-from, transaction ID, optional screenshot). One pending payment at a time.
+  - Where to pay comes from the `PAYMENT_NUMBERS` env, e.g. `bkash=01XXXXXXXXX (Personal);nagad=01XXXXXXXXX;bank=DBBL, A/C …`. Without it the page asks users to email.
+  - Screenshots are stored in the database (`Payment.screenshot`, PNG/JPEG/WebP checked by their first bytes, max 3 MB) and served only to the owner and staff.
+  - Staff approve or reject in the admin panel's Payments tab. Approving sets `Profile.plan` / `paid_until`; new days start after the trial and after days already paid.
+  - **Nothing is locked yet** when a trial or plan ends; the page only shows the status.
 - **Admin panel** (`/admin/`, `tracker/admin_panel.py`): our own, for staff only; Django's admin is removed.
   - Overview: users and sign-ups, AI usage today against the limits, charts for the last 30 days, feature use.
   - Users: search and filter; each user's page lets staff deactivate or activate them, reset today's AI usage, or delete them with all their data (type the email to confirm).
   - Visitors: today's visitors (logged in and guests), users seen in 7 and 30 days, time on site, 30-day charts, and each user's last seen. `static/js/activity.js` posts to `/activity/`; `DailyActivity` keeps one row per person per day. Staff aren't counted, and it's off in `DEBUG` unless `TRACK_ACTIVITY=1`.
-  - It shows counts only, never users' amounts or what they typed. Only a superuser can act on staff accounts, and nobody on their own.
+  - It shows counts only, never users' amounts or what they typed. Exception: the Payments tab shows the subscription payments users send for review. Only a superuser can act on staff accounts, and nobody on their own.
   - Staff-only, so its text is English and not translated. Non-staff get a 404.
 - **Android app and reminders** (the site is *not* an installable web app: no manifest, no offline mode, no page caching):
   - `android/` is a Trusted Web Activity (built with Bubblewrap, package `app.vercel.khorochai.twa`) that opens the live site. Rebuild with `android/build.sh`: raise `appVersionCode` in `twa-manifest.json` first, then copy `android/app-release-signed.apk` to `static/downloads/KhorochAi.apk` and deploy. The signing key is **outside the repo** (`~/.khorochai-android/`); back it up, because every update must use the same key. The site publishes the key's fingerprint at `/.well-known/assetlinks.json` (`ANDROID_APP_*` in settings), which lets the app open full-screen.

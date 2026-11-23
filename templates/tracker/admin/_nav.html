@@ -2,10 +2,11 @@
 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
   <div>
     <h1 class="h4 m-0">Admin panel</h1>
-    <div class="small text-muted">Counts only: users' amounts and what they typed are never shown here.</div>
+    <div class="small text-muted">Counts only: users' amounts and what they typed are never shown here (Payments shows what users sent for review).</div>
   </div>
   <div class="btn-group btn-group-sm period-switch" role="group" aria-label="Admin sections">
     <a href="{% url 'admin_overview' %}" class="btn btn-outline-secondary{% if tab == 'overview' %} active{% endif %}">Overview</a>
     <a href="{% url 'admin_users' %}" class="btn btn-outline-secondary{% if tab == 'users' %} active{% endif %}">Users</a>
+    <a href="{% url 'admin_payments' %}" class="btn btn-outline-secondary{% if tab == 'payments' %} active{% endif %}">Payments{% if pending_payments %} <span class="badge text-bg-danger rounded-pill ms-1">{{ pending_payments }}</span>{% endif %}</a>
   </div>
 </div>

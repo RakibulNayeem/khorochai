@@ -49,7 +49,16 @@ def preferences(request):
         "clarity_id": settings.CLARITY_PROJECT_ID if counts else "",
         "track_activity": settings.TRACK_ACTIVITY and counts,
         **_reminders(request, user),
+        **_admin_badges(request, user),
     }
+
+
+def _admin_badges(request, user):
+    """Payments waiting for review, for the Payments tab of the admin panel."""
+    if user is None or not user.is_staff or not request.path.startswith(reverse("admin_overview")):
+        return {}
+    from .models import PENDING, Payment
+    return {"pending_payments": Payment.objects.filter(status=PENDING).count()}
 
 
 def _reminders(request, user):

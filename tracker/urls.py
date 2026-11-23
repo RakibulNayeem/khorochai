@@ -34,6 +34,9 @@ urlpatterns = [
     path("debts/records/<int:pk>/edit/", views.debt_record_edit, name="debt_record_edit"),
     path("debts/records/<int:pk>/delete/", views.debt_record_delete, name="debt_record_delete"),
     path("settings/", views.preferences, name="preferences"),
+    path("subscription/", views.subscription, name="subscription"),
+    path("subscription/<str:plan>/pay/", views.subscription_pay, name="subscription_pay"),
+    path("subscription/payments/<int:pk>/screenshot/", views.payment_screenshot, name="payment_screenshot"),
     path("help/", views.help_page, name="help"),
     path("about/", views.about_page, name="about"),
     path("privacy/", views.privacy_page, name="privacy"),
@@ -48,4 +51,6 @@ urlpatterns = [
     path("admin/users/", admin_panel.user_list, name="admin_users"),
     path("admin/users/<int:pk>/", admin_panel.user_detail, name="admin_user"),
     path("admin/users/<int:pk>/action/", admin_panel.user_action, name="admin_user_action"),
+    path("admin/payments/", admin_panel.payment_list, name="admin_payments"),
+    path("admin/payments/<int:pk>/review/", admin_panel.payment_review, name="admin_payment_review"),
 ]

@@ -1,8 +1,10 @@
 from django import forms
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.utils.translation import gettext, gettext_lazy as _
 
-from .models import DEBT_DIRECTION_CHOICES, EXPENSE, Account, Category, Debt, DebtRecord, Transaction, Transfer
+from .billing import image_type
+from .models import DEBT_DIRECTION_CHOICES, EXPENSE, PAY_METHOD_CHOICES, Account, Category, Debt, DebtRecord, Payment, Transaction, Transfer
 
 
 class BootstrapMixin:
@@ -299,3 +301,50 @@ class DebtRecordForm(BootstrapMixin, forms.ModelForm):
                 from .templatetags.money import money
                 self.add_error("amount", gettext("Only %(left)s is left to pay back.") % {"left": money(max(left, 0))})
         return data
+
+
+class PaymentForm(BootstrapMixin, forms.ModelForm):
+    """What a user sends after paying for a plan. The screenshot is checked to be a real PNG, JPEG or WebP image."""
+    screenshot_file = forms.FileField(label=_("Payment screenshot"), required=False,
+                                      help_text=_("Optional, but it helps us confirm your payment faster."))
+
+    class Meta:
+        model = Payment
+        fields = ("method", "name", "phone", "paid_from", "transaction_id", "note")
+        labels = {"method": _("Paid with"), "name": _("Your name"), "phone": _("Phone number"),
+                  "paid_from": _("Paid from (number or account)"), "transaction_id": _("Transaction ID"),
+                  "note": _("Note (optional)")}
+        widgets = {"method": forms.RadioSelect}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._style()
+        self.fields["method"].choices = PAY_METHOD_CHOICES  # no empty "---------" radio
+        self.fields["method"].widget.attrs["class"] = "form-check-input"
+        self.fields["screenshot_file"].widget.attrs["accept"] = "image/png,image/jpeg,image/webp"
+        for name in ("phone", "paid_from"):
+            self.fields[name].widget.attrs.update({"inputmode": "tel", "autocomplete": "tel"})
+
+    def clean_transaction_id(self):
+        return self.cleaned_data["transaction_id"].strip().upper()
+
+    def clean_screenshot_file(self):
+        upload = self.cleaned_data.get("screenshot_file")
+        if not upload:
+            return None
+        if upload.size > settings.PAYMENT_SCREENSHOT_MAX_BYTES:
+            raise forms.ValidationError(_("The screenshot is too large. Please use one under 3 MB."))
+        data = upload.read()
+        mime = image_type(data)
+        if not mime:
+            raise forms.ValidationError(_("Please upload a PNG, JPG or WebP image."))
+        return data, mime
+
+    def save(self, commit=True):
+        payment = super().save(commit=False)
+        shot = self.cleaned_data.get("screenshot_file")
+        if shot:
+            payment.screenshot, payment.screenshot_type = shot
+        if commit:
+            payment.save()
+        return payment
