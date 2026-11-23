@@ -19,8 +19,15 @@ def env_list(name, default=""):
     return [x.strip() for x in os.environ.get(name, default).split(",") if x.strip()]
 
 
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-only-insecure-key-change-me")
+RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == "test"
 DEBUG = os.environ.get("DEBUG", "False").lower() in ("1", "true", "yes")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "")
+if not SECRET_KEY:
+    if not (DEBUG or RUNNING_TESTS):
+        # The code is public, so a built-in fallback key would let anyone forge login sessions.
+        from django.core.exceptions import ImproperlyConfigured
+        raise ImproperlyConfigured("Set DJANGO_SECRET_KEY: production must never run without its own secret key.")
+    SECRET_KEY = "dev-only-insecure-key"
 
 ALLOWED_HOSTS = env_list("ALLOWED_HOSTS", "localhost,127.0.0.1,.vercel.app")
 CSRF_TRUSTED_ORIGINS = env_list("CSRF_TRUSTED_ORIGINS", "https://*.vercel.app")
@@ -78,7 +85,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 # ---------------------------------------------------------------- Database
 # Local: SQLite. Production: set DATABASE_URL to your Neon *pooled* connection string.
 DATABASE_URL = os.environ.get("DATABASE_URL")
-RUNNING_TESTS = len(sys.argv) > 1 and sys.argv[1] == "test"
 if DATABASE_URL and not RUNNING_TESTS:  # tests always use local SQLite, never the live database
     DATABASES = {
         # Keep connections open between requests (a new TLS + login handshake costs several round trips);

@@ -7,6 +7,10 @@ Type what you spent or earned in **English, বাংলা or Banglish**. The A
 
 > **AI reads your text. Python does the math.** The AI never calculates totals, so numbers are always correct.
 
+**Live:** https://khorochai.vercel.app
+
+<img src="static/img/landing/desktop-light-en.webp" alt="KhorochAi dashboard" width="800">
+
 ## Features
 - ✨ AI input: `আজ বাজারে ৫৫০ টাকা খরচ, রিকশা ৮০, টিউশন থেকে ৫০০০ পেলাম` → 3 transactions
 - Preview screen before saving (edit amount, type, category, date; untick to skip)
@@ -20,7 +24,7 @@ Type what you spent or earned in **English, বাংলা or Banglish**. The A
 - Accounts: Cash, bKash, Nagad, Bank, Card (add your own). The AI picks the account from your text
   ("bkash e 500 dilam"); "Move money" records ATM withdrawals / cash outs between accounts
 - Daily AI token allowance per user and for the whole app (stays inside the free tiers), shown as "% used" next to the AI box
-- ⚙ Settings (gear icon, top right): Light / Dark / System theme and English / বাংলা interface
+- ⚙ Settings (gear icon, top right): Light / Dark / System theme, 29 interface languages and 32 currencies
 - Free AI: Google Gemini (main) + Groq (backup). If the AI fails, you can still add manually.
 
 ## Project structure
@@ -32,7 +36,7 @@ KhorochAi/
 │   ├── services.py    validation, totals, budgets, query engine (all math here)
 │   ├── views.py       pages and AI flows
 │   ├── models.py      Category, Transaction
-│   └── tests.py       10 tests (AI is mocked)
+│   └── tests.py       ~100 tests (AI is mocked)
 ├── templates/         HTML (Bootstrap)
 ├── static/css/app.css
 ├── requirements.txt
@@ -186,3 +190,6 @@ The button appears on the login page only when these keys are set.
 
 Privacy note: the text you type is sent to Google (or Groq) to be understood. Free-tier
 data may be used by the provider to improve their models. Don't type card numbers or passwords.
+
+## License
+MIT — see [LICENSE](LICENSE).
