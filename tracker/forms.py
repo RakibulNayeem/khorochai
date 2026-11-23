@@ -319,7 +319,9 @@ class PaymentForm(BootstrapMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._style()
-        self.fields["method"].choices = PAY_METHOD_CHOICES  # no empty "---------" radio
+        # no empty "---------" radio, and only the methods we can be paid with yet
+        self.fields["method"].choices = [(k, label) for k, label in PAY_METHOD_CHOICES
+                                         if k in settings.PAYMENT_NUMBERS] or PAY_METHOD_CHOICES
         self.fields["method"].widget.attrs["class"] = "form-check-input"
         self.fields["screenshot_file"].widget.attrs["accept"] = "image/png,image/jpeg,image/webp"
         for name in ("phone", "paid_from"):

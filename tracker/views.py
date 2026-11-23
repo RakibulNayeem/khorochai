@@ -1025,6 +1025,16 @@ def subscription(request):
     })
 
 
+def _pay_to():
+    """Where to send money: methods that share a number are shown once together ("bKash · Nagad · Rocket");
+    a method with no number yet gets "" (shown as "Not available yet")."""
+    groups = {}
+    for key, label in PAY_METHOD_CHOICES:
+        number = django_settings.PAYMENT_NUMBERS.get(key, "")
+        groups.setdefault(number or key, (number, []))[1].append(str(label))
+    return [(" · ".join(labels), number) for number, labels in groups.values()]
+
+
 @login_required
 def subscription_pay(request, plan):
     if plan not in django_settings.PLAN_PRICES:
@@ -1048,8 +1058,8 @@ def subscription_pay(request, plan):
         "plan": plan,
         "plan_label": dict(PLAN_CHOICES)[plan],
         "price": django_settings.PLAN_PRICES[plan],
-        "pay_to": [(label, django_settings.PAYMENT_NUMBERS[key]) for key, label in PAY_METHOD_CHOICES
-                   if key in django_settings.PAYMENT_NUMBERS],
+        "pay_to": _pay_to(),
+        "has_numbers": bool(django_settings.PAYMENT_NUMBERS),
     })
 
 

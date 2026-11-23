@@ -1869,3 +1869,6 @@ msgid "%(n)s day"
 msgid_plural "%(n)s days"
 msgstr[0] "%(n)s দিন"
 msgstr[1] "%(n)s দিন"
+
+msgid "Not available yet"
+msgstr "এখনো চালু হয়নি"

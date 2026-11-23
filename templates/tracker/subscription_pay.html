@@ -20,15 +20,22 @@
       <span class="h4 fw-bold m-0">৳{{ price }}</span>
     </div>
     <p class="small mb-2">{% blocktranslate %}Pay ৳{{ price }} yourself with <strong>Send Money</strong> to this number, then fill in the form below:{% endblocktranslate %}</p>
-    {% if pay_to %}
+    {% if has_numbers %}
     <div class="d-flex flex-column gap-2 mb-3">
       {% for label, number in pay_to %}
       <div class="d-flex align-items-center justify-content-between gap-2 border rounded px-3 py-2">
+        {% if number %}
         <div>
-          <div class="small text-muted">{{ label }} · {% translate "Personal" %}</div>
+          <div class="small text-muted">{{ label }} ({% translate "Personal" %})</div>
           <div class="fw-bold fs-5" data-keep-digits>{{ number }}</div>
         </div>
         <button type="button" class="btn btn-sm btn-outline-secondary" data-copy="{{ number }}">{% translate "Copy" %}</button>
+        {% else %}
+        <div>
+          <div class="small text-muted">{{ label }}</div>
+          <div class="text-muted">{% translate "Not available yet" %}</div>
+        </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
